@@ -1,0 +1,39 @@
+/* pages/twoKfTsks/twoKfTsks.wxss */
+@import '../common/common.wxss';
+page{
+  padding: 0 30rpx;
+  width: 690rpx;
+}
+.title{
+  margin-top: 28rpx;
+  font-size: 28rpx;
+  color: #fff;
+  background: #0187e6;
+  width: 188rpx;
+  border-radius: 12rpx;
+  height: 52rpx;
+  line-height: 52rpx;
+}
+.title view{
+  display: inline-block;
+}
+.title1{
+  width: 64rpx;
+  text-align: center;
+  /* float: left; */
+}
+.title2{
+  width: 124rpx;
+  text-align: center;
+  height: 52rpx;
+  /* padding: 0 34rpx; */
+  border-radius: 12rpx;
+  background: #47b3ff;
+  /* float: left; */
+}
+.detail{
+  font-size:28rpx;
+  color: #000;
+  line-height: 42rpx;
+  margin:66rpx 0 64rpx;
+}

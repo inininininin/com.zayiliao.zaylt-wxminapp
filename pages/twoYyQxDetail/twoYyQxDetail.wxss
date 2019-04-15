@@ -1,0 +1,44 @@
+/* pages/twoYyQxDetail/twoYyQxDetail.wxss */
+page{
+  padding-bottom: 100rpx;
+}
+.swiper{
+  width: 750rpx;
+  height: 350rpx;
+}
+.swiper image{
+   width: 750rpx;
+  height: 350rpx;
+}
+.detail{
+  width: 690rpx;
+  margin: 70rpx 30rpx;
+}
+.btn{
+  width: 750rpx;
+  height: 100rpx;
+  /* vertical-align: middle; */
+  text-align: center;
+  background: #00b2d3;
+  position: fixed;
+  bottom: 0;left: 0;
+  font-size: 36rpx;
+  color: #fff;
+ 
+ 
+  display: inline-block;
+}
+.btn image{
+  width: 44rpx;
+  height: 44rpx;
+  display: inline-block;
+   margin-right: 20rpx;
+    line-height: 130rpx;
+    vertical-align: middle;
+}
+.btn text{
+  display: inline-block;
+  height: 38rpx;
+  line-height: 100rpx !important;
+  margin: 0;
+}

@@ -1,0 +1,28 @@
+<view class='bylist'>
+  <view class='bydetail'>
+    <view class='bydetail1'>
+      <text class='bydetail11'>王雪</text>
+      <text class='bydetail12'>025-45485145</text>
+    </view>
+    <view class='bydetail2'>病种：脊椎病</view>
+    <view class='bydetail3'>加入时间：2018-06-27 15:56</view>
+    <view class='bydetail4'>
+      <text class='bydetail41'>来源：神经外科</text>
+      <text class='bydetail13'>已确认</text>
+    </view>
+
+  </view>
+  <view class='bydetail'>
+    <view class='bydetail1'>
+      <text class='bydetail11'>王雪</text>
+      <text class='bydetail12'>025-45485145</text>
+
+    </view>
+    <view class='bydetail2'>病种：脊椎病</view>
+    <view class='bydetail3'>加入时间：2018-06-27 15:56</view>
+    <view class='bydetail4'>
+      <text class='bydetail41'>来源：神经外科</text>
+      <text class='bydetail13'>已确认</text>
+    </view>
+  </view>
+</view>

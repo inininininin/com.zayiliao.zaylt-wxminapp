@@ -1,0 +1,64 @@
+<!--pages/twoQhospitalDetail/twoQhospitalDetail.wxml-->
+<view>
+  <include src="../common/common.wxml" />
+</view>
+<image class='topimg' src='https://www.njshangka.com{{dataItem.cover}}'></image>
+<view class='hosDetail'>
+  <view class='hosDetail1' bindtap='hospitalDetail'>
+    <image src='../img/hospital_icon9@2x.png'></image>
+    <text>医院信息</text>
+  </view>
+  <view class='hosDetail1' bindtap='hosXm'>
+    <image src='../img/hospital_icon-10@2x.png'></image>
+    <text>医院项目</text>
+  </view>
+  <view class='hosDetail1' bindtap='tske'>
+    <image src='../img/hospital_icon--11@2x.png'></image>
+    <text>特色科室</text>
+  </view>
+</view>
+<view style='height:20rpx;width:750rpx;background:#f2f2f2'></view>
+
+<view class='location'>
+  <image src='../img/img11@2x.png'></image>
+  <view>
+    <view class='loone'  bindtap='click' data-latitude='{{dataItem.latitude}}' data-longitude='{{dataItem.longitude}}'>
+      <image src='../img/map@2x.png'></image>
+      <text>{{dataItem.provinceName||''}}{{dataItem.cityName||""}}{{dataItem.districtName||''}}</text>
+    </view>
+    <view class='lotwo' bindtap='phone' data-phone='{{dataItem.tel}}'>
+      <image src='../img/phone@2x.png'></image>
+      <text>{{dataItem.tel}}</text>
+    </view>
+  </view>
+</view>
+<view style='height:20rpx;width:750rpx;background:#f2f2f2'></view>
+<view class='doctd' wx:if='{{doc==1}}'>
+  <text class='doctd1'>医生团队</text>
+  <image src='../img/back.png'></image>
+  <text class='doctd2' bindtap='moredoc'>查看更多</text>
+</view>
+<view class='doclist'>
+  <template name="schemeItem">
+  <navigator url='../twoKfDocDetail/twoKfDocDetail?id={{id}}'>
+    <view class='docitem'>
+      <image  src='https://www.njshangka.com{{headimg}}'></image>
+
+      <view class='docdetail'>
+        <view class='docd1'>
+          <text class='docd11'>{{name}}</text>
+          <text class='docd12'>{{jobTitles}}</text>
+          <!-- <text class='docd12'>教授</text> -->
+        </view>
+        <view class='docd2'>{{hos}} | {{office}}</view>
+        <view class='docd3'>{{goodAtBrief}}</view>
+
+      </view>
+    </view>
+  </navigator>
+  
+  </template>
+</view>
+<block wx:for="{{docList}}" wx:key="docList">
+  <template is="schemeItem" data="{{...item}}" />
+</block>

@@ -1,0 +1,10 @@
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+    <view>
+    <image bindtap='userIndex' style='margin-left:30rpx;'  src='../img/wo@2x.png'></image>
+    <text>{{navtitle}}</text></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,93 @@
+/* pages/KMZaddoutpatient/KMZaddoutpatient.wxss */
+/* pages/addHospital/addHospital.wxss */
+
+page {
+  background: #fff;
+   width: 100%;
+  height:100%; 
+   overflow: hidden 
+}
+
+.lf {
+  float: left;
+}
+
+.rt {
+  float: right;
+}
+.clear{clear: both}
+text {
+  margin: 0 30rpx;
+  width: 150rpx;
+  font-size: 32rpx;
+  color: #666;
+  line-height: 100rpx;
+}
+.hospitalName, .chargePeople,.remark,.address,.hospitalTel,.belongHos,.phone,.passward {
+  height: 100rpx;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1rpx solid #e5e5e5;
+  /* border-top: 1rpx solid #e5e5e5; */
+  line-height: 100rpx;
+}
+
+input {
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #000;
+  width: 510rpx;
+}
+.belongHos text:last-child{
+  width: 350rpx;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+.belongHos image{
+  width: 24rpx;
+  height: 13rpx;
+  margin-right: 30rpx;
+  margin-top: 43.5rpx;
+}
+.hospitaiList{
+  display: block;
+  position: absolute;
+  width: 750rpx;
+  /* height: 100%; */
+  /* top: 628rpx; */
+  top: 848rpx;
+  bottom: 120rpx;
+  background: #fff;
+  overflow-y: scroll;
+}
+.hospitalNames{
+  height: 100rpx;
+  width: 100%;
+  background: #fff;
+  color: #666;
+  font-size: 32rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  /* border-top: 1rpx solid #e5e5e5; */
+  line-height: 100rpx;
+  text-align: center;
+}
+
+
+.btn{
+  width: 100%;  
+  height: 120rpx;
+  border-top: 1rpx solid #e5e5e5;
+  position: fixed;
+  
+  bottom:0;
+}
+.btn button{
+  height: 90rpx;
+  margin: 15rpx 30rpx;
+  border: 0;
+  background:#32afff;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 90rpx;
+}

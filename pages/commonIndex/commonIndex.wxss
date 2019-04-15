@@ -1,0 +1,41 @@
+/* pages/common/common.wxss */
+page {
+  height: 100%;
+}
+.container {
+  box-sizing: border-box;
+  /* height: 100%; */
+    background: #fff;
+}
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+   background: #fff;
+}
+.status-bar {
+  /* background: rgba(255, 0, 0, 0.1); */
+}
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header image {
+  float: left;
+  width: 24rpx;
+  height: 40rpx;
+}
+.title-bar view{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+   /* justify-content: space-between; */
+    align-items: center;
+}
+.title-bar view text{
+  display: inline-block;
+  text-align: center;
+  width: 82.9%;
+}

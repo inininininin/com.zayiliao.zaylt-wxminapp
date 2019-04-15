@@ -1,0 +1,14 @@
+/* pages/twoKfXmDetail/twoKfXmDetail.wxss */
+@import '../common/common.wxss';
+page{
+  width: 750rpx;
+}
+image{
+  width: 750rpx;
+  height: 460rpx;
+  vertical-align: bottom;
+}
+.index{
+  width: 690rpx;
+  margin: 20rpx 30rpx;
+}

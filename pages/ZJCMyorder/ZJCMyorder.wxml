@@ -1,0 +1,73 @@
+<!--pages/ZJCMyorder/ZJCMyorder.wxml-->
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view>
+        <image bindtap='backHistory' style='margin-left:30rpx;border-radius:6rpx;display:inline-block' src='../img/backArrow.png'></image>
+        <text>{{navtitle}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='toplineTop' style='padding-top:132rpx'>
+  <view class='topline' style='top:{{statusBarHeight+titleBarHeight}}px'>
+    <view style='height:24rpx;width:100%;background:#f5f5f5;'></view>
+    <view>
+      <text class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav" style=''>审核中</text>
+      <text class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">待收货</text>
+      <text class="tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">已完成</text>
+    </view>
+    <view style='height:24rpx;width:100%;background:#f5f5f5;'></view>
+  </view>
+</view>
+
+
+
+<view class='list' wx:for="{{schemeList}}" wx:for-item="item" wx:key="index" wx:if="{{currentTab==0}}">
+  <navigator url='../ZJCOrderDetailno/ZJCOrderDetailno?id={{item.orderId}}&overIf=0'>
+    <view class='line1'>
+      <image src='../img/blue@2x.png'></image>
+      <view class='line1Mid'>
+        <text>订单编号：{{item.orderId}}</text>
+        <text>{{item.addTimes}}</text>
+      </view>
+      <view class='line1Det'>详情
+        <image src='../img/back.png'></image>
+      </view>
+    </view>
+  </navigator>
+</view>
+<view class='list' wx:for="{{schemeList}}" wx:for-item="item" wx:key="index" wx:if="{{currentTab==1}}">
+  <navigator url='../ZJCOrderDetailno/ZJCOrderDetailno?id={{item.orderId}}&overIf=1'>
+    <view class='line1'>
+      <image src='../img/orange@2x.png'></image>
+      <view class='line1Mid'>
+        <text>订单编号：{{item.orderId}}</text>
+        <text>{{item.addTimes}}</text>
+      </view>
+      <view class='line1Det'>详情
+        <image src='../img/back.png'></image>
+      </view>
+    </view>
+  </navigator>
+</view>
+<view class='list' wx:for="{{schemeList}}" wx:for-item="item" wx:key="index" wx:if="{{currentTab==2}}">
+  <navigator url='../ZJCOrderDetail/ZJCOrderDetail?id={{item.orderId}}'>
+    <view class='finishLine'>
+      <view class='line2'>
+        <image src='../img/green@2x.png'></image>
+        <view class='line1Mid'>
+          <text>订单编号：{{item.orderId}}</text>
+          <text>{{item.addTimes}}</text>
+        </view>
+        <view class='line1Det'>详情
+          <image src='../img/back.png'></image>
+        </view>
+      </view>
+      <view wx:if="{{item.status==4}}" class='shixiao'>订单已失效</view>
+      <view wx:if="{{item.status==2}}" class='wancheng'>订单已完成</view>
+    </view>
+  </navigator>
+</view>

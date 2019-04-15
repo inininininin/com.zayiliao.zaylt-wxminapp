@@ -1,0 +1,51 @@
+/* pages/twoKfMoreDoc/twoKfMoreDoc.wxss */
+@import '../common/common.wxss';
+.docitem{
+  width: 750rpx;
+  height: 252rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.docitem>image{
+  border-radius: 37.5rpx;
+  width: 75rpx;
+  height: 75rpx;
+  float: left;
+  margin: 34rpx 30rpx;
+}
+.docdetail{
+  width: 585rpx;
+  height: 184rpx;
+  margin-top: 34rpx;
+  float: left;
+}
+.docd1{
+  height: 32rpx;
+  line-height: 32rpx;
+}
+.docd11{
+  font-size: 32rpx;
+  color: #333;
+}
+.docd12{
+  font-size: 26rpx;
+  color: #a1a2a4;
+  margin-left: 20rpx;
+ 
+}
+.docd2{
+  font-size: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  color: #333; margin-top: 24rpx;
+}
+.docd3{
+  font-size: 26rpx;
+  line-height: 38rpx;
+  color: #a1a2a4; margin-top: 24rpx;
+  display: inline-block;
+      overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

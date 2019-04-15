@@ -1,0 +1,35 @@
+<!--pages/twoMzbylist/twoMzbylist.wxml-->
+
+<view>
+  <include src="../common/common.wxml" />
+</view>
+<view>
+  <text class='title'>拥有病源信息</text>
+</view>
+<view class='bylist'>
+  <template name="hospitalSchemeItem">
+  <view class='bydetail'>
+    <view class='bydetail1'>
+      <text class='bydetail11'>{{realname||''}}</text>
+      <text class='bydetail12'>{{tel||''}}</text>
+      <text class='bydetail13' wx:if='{{status==1}}'>待接收</text>
+      <text class='bydetail13 makesure' data-id='{{id}}' bindtap='makesure' wx:if='{{status==3}}'>确认</text>
+      <text class='bydetail13' wx:if='{{status==4}}'>已确认</text>
+    </view>
+    <view class='bydetail2'>病种：{{sickness||''}}</view>
+    <view class='bydetail3'>加入时间：{{addTime||''}}</view>
+  </view>
+  </template>
+  <block wx:for="{{hospitalSchemeList}}" wx:key="hospitalSchemeList">
+  <template is="hospitalSchemeItem" data="{{...item}}" />
+</block>
+  <!-- <view class='bydetail'>
+    <view class='bydetail1'>
+      <text class='bydetail11'>王雪</text>
+      <text class='bydetail12'>025-45485145</text>
+      <text class='bydetail13'>已确认</text>
+    </view>
+    <view class='bydetail2'>病种：脊椎病</view>
+    <view class='bydetail3'>加入时间：2018-06-27 15:56</view>
+  </view> -->
+</view>

@@ -1,0 +1,64 @@
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view>
+        <image bindtap='backHistory' style='margin-left:30rpx;border-radius:6rpx;display:inline-block' src='../img/backArrow.png'></image>
+        <text>{{navtitle}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="swiper-container">
+  <swiper bindchange="swiperChange" class="swiper" current="{{swiperCurrent}}" autoplay="false" interval="5000" duration="1000">
+    <block wx:for="{{movies}}">
+      <swiper-item>
+        <navigator wx:if='{{item.type==4}}' url='../ZJCQxDetail/ZJCQxDetail?deviceId={{item.link}}'>
+        <image src="https://www.njshangka.com{{item.cover}}" class="slide-image" mode="aspectFill" />
+        </navigator>
+        <navigator wx:if='{{item.type==1}}' url='../webview/webview?href={{item.link}}'>
+        <image src="https://www.njshangka.com{{item.cover}}" class="slide-image" mode="aspectFill" />
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="dots">
+    <block wx:for="{{movies}}" wx:key="unique">
+      <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+    </block>
+  </view>
+</view>
+
+<view class="classify _44f602a">
+  <scroll-view class="classify_catetory _44f602a" scroll-y scroll-with-animation="true">
+    <view style='width:160rpx;' class="name {{ index === activeIndex ? 'active' : '' }} _44f602a" wx:for="{{ rootcateList }}" wx:key="item" bindtap="changeCate" data-index="{{ index }}" data-name='{{item.name}}' style='background:{{item.bgcolor}};color:{{item.color}};border-left: 8px solid {{item.colors}}'
+      data-id="{{ item.typeId }}" data-name="{{ item.name }}">
+      {{ item.name }}
+    </view>
+  </scroll-view>
+  <scroll-view class="classify_detail _44f602a" scroll-y scroll-with-animation="true">
+    <view class="children _44f602a" class="children_item _44f602a" wx:for="{{ showList }}" wx:for-item="item" wx:key="index">
+      <view hover-class="none">
+        <navigator class='navigator1' url='../ZJCQxDetail/ZJCQxDetail?deviceId={{item.deviceId}}&count={{item.countInShoppingcart}}'>
+          <image src='https://www.njshangka.com{{item.cover}}'></image>
+        </navigator>
+        <view class="child_name _44f602a" data-name='{{item.name}}' bindtap='selectOver'>
+          <navigator class='navigator2' url='../ZJCQxDetail/ZJCQxDetail?deviceId={{item.deviceId}}&count={{item.countInShoppingcart}}'>
+            <view class='child_name_1'>{{ item.name }}</view>
+            <view class='child_name_2'>{{ item.name }}</view>
+          </navigator>
+          <view class='adddel'>
+            <image data-id="{{ item.deviceId }}" bindtap='del' data-num='{{item.countInShoppingcart}}' wx:if='{{item.countInShoppingcart!=0}}' src='../img/jian@2x.png'></image>
+            <input bindblur='inputVal' data-num='{{item.countInShoppingcart}}' data-id="{{ item.deviceId }}" wx:if='{{item.countInShoppingcart!=0}}' value='{{item.countInShoppingcart}}'></input>
+            <image data-id="{{ item.deviceId }}" bindtap='add' style='float:right' data-num='{{item.countInShoppingcart}}' src='../img/jia@2x.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<view class='shoppingCartList' bindtap='shoppingCartList'>
+  <image src='../img/jicai-cheng@2x.png'></image>
+  <text>{{qixienum}}</text>
+</view>

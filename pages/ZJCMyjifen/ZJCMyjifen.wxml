@@ -1,0 +1,32 @@
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view>
+        <image bindtap='backHistory' style='margin-left:30rpx;border-radius:6rpx;display:inline-block' src='../img/system-backnew.png'></image>
+        <text>{{navtitle}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='jifenIcon'>
+    <image src='../img/jifen@2x.png'></image>
+    <text>{{bonusPoint}}</text>
+  </view>
+</view>
+<view style='width:100%;height:24rpx;background:#f2f2f2;'></view>
+<view class='lineTop'>
+  <image src='../img/lishijilu@2x.png'></image>
+  <text>积分使用明细</text>
+</view>
+<view class='linelist' >
+  <view class='line' wx:for="{{ schemeList }}"   wx:for-item="item" wx:key="index">
+    <view class='lineone'>
+      <text>{{item.note}}</text>
+      <text>{{item.addTimes}}</text>
+    </view>
+    <view class='linetwo'>{{item.amount}}</view>
+  </view>
+</view>
+
+
+<view class='gouse' bindtap='gouse'>去使用</view>

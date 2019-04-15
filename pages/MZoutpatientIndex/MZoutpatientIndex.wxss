@@ -1,0 +1,31 @@
+/* pages/MZoutpatientIndex/MZoutpatientIndex.wxss */
+.selectNo{
+  /* float: right; */
+  position: fixed;
+  right: 10rpx;
+  top: 10rpx;
+  color: #00b7ee;
+  margin: 10rpx 10rpx;
+}
+.content{
+  width: 450rpx;
+  margin: 360rpx 150rpx auto;  
+}
+.box{
+  width: 90rpx;
+  height: 140rpx;
+  display: inline-block;
+  margin-right: 90rpx;
+}
+.box:last-child{
+  margin-right: 0  !important;
+}
+.box image{
+  width: 90rpx;
+  height: 90rpx;
+}
+.box text{
+  margin-top: 20rpx;
+  font-size: 23rpx;
+  color: #00b7ee;
+}

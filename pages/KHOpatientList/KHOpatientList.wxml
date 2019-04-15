@@ -1,0 +1,23 @@
+<view>
+  <include src="../common/common.wxml" />
+</view>
+<view style='width:100%；height:2rpx;border-bottom:1rpx solid #e5e5e5;'></view>
+<template name="schemeItem">
+  <view class='patient'>
+    <view class='patientLf lf' patientId='{{patientId}}'>
+     
+      <text max-length='4'>{{realname}}<text style='display:inline-block;width:18rpx;'></text>{{tel}}</text>
+      <text>病种：{{(sickness||'')}}</text>
+       <text>{{(addTime||'')}}</text> 
+      <text class='from lf' >来源：{{clinicName}}</text>     
+    </view>
+ <button  style='color:#ccc;background:#fff;' wx:if="{{status==3}}" status class='btn rt' data-patientid='{{patientId}}'>未确认</button>
+     <button style='color:#ccc;background:#fff;'  wx:if="{{status==4}}" status class='btn rt' patientId='{{patientId}}'>已确认</button>
+
+   
+  </view>
+</template>
+<!--项目模块end  -->
+<block wx:for="{{schemeList}}" wx:key="schemeList">
+  <template is="schemeItem" data="{{...item}}" />
+</block>

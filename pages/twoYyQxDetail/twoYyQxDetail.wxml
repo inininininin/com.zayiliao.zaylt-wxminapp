@@ -1,0 +1,18 @@
+<swiper class="swiper" indicator-dots="true" indicator-active-color='#00b2d3' indicator-color='#d0c8c0' autoplay="true" interval="5000" duration="1000">
+  <block wx:for="{{picses}}" wx:for-index="index">
+    <swiper-item>
+      <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class='detail'>
+  <import src="../../wxParse/wxParse.wxml" />
+  <template  is="wxParse" data="{{wxParseData:info.nodes}}" />
+</view>
+
+
+<view class='btn' bindtap='phone'>
+  <image src='../img/dianhua.png'></image>
+  <text>立即联系</text>
+</view>

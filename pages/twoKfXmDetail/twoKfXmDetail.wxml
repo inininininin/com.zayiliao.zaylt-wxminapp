@@ -1,0 +1,9 @@
+<!--pages/twoKfXmDetail/twoKfXmDetail.wxml-->
+<view>
+  <include src="../common/common.wxml" />
+</view>
+<view>
+<image src='https://www.njshangka.com{{cover}}'></image>
+<import src="../../wxParse/wxParse.wxml" />
+<view class='index'><template is="wxParse" data="{{wxParseData:info.nodes}}" /></view>
+</view>

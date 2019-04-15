@@ -1,0 +1,27 @@
+<!--pages/twoKfDocDetail/twoKfDocDetail.wxml-->
+
+<view>
+  <include src="../common/common.wxml" />
+</view>
+<view>
+  <view class='docD'>
+  <image src='https://www.njshangka.com{{dataItem.headimg}}'></image>
+  <view class='docview'>
+    <view class='name'>{{dataItem.name}}</view>
+    <view class='intro'>
+      <view class='intro1'><text class='intro11'>{{dataItem.office}}</text>|<text class='intro12'>{{dataItem.jobTitles}}</text></view>
+      <view class='intro2'>{{dataItem.hoapitalName}}</view>
+    </view>
+  </view>
+  </view>
+  <view class='sc'>
+  <text class='scTitle'>擅长：</text>
+  <text class='scDetail'>{{dataItem.goodAt}}</text>
+  </view>
+  <view class='sc'>
+  <text class='scTitle'>简介：</text>
+  <import src="../../wxParse/wxParse.wxml" />
+  <template  is="wxParse" data="{{wxParseData:info.nodes}}" />
+  <!-- <text class='scDetail'><template is="wxParse" data="{{wxParseData:info.nodes}}" /></text> -->
+  </view>
+</view>

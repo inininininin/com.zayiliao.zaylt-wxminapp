@@ -1,0 +1,236 @@
+.container {
+  box-sizing: border-box;
+  height: 750rpx;
+  /* background: url(https://www.njshangka.com/yichaxun/weixin/bg1.png) no-repeat; *//* background-size: cover; */
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* background: rgba(0, 0, 255, 0.1); */
+}
+
+.status-bar {
+  /* background: rgba(255, 0, 0, 0.1); */
+}
+
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header image {
+  float: left;
+  width: 24rpx;
+  height: 40rpx;
+}
+
+.title-bar view {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.title-bar view text {
+  display: inline-block;
+  text-align: center;
+  width: 87.2%;
+  color: #fff;
+}
+
+.jifenIcon {
+  width: 100%;
+}
+
+.jifenIcon image {
+  width: 180rpx;
+  height: 180rpx;
+  margin-left: 285rpx;
+  /* margin-top: 45rpx; */
+  position: absolute;
+}
+
+.jifenIcon text {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+  position: relative;
+  top: 100rpx;
+  text-align: center;
+}
+
+.swiper {
+  height: 750rpx;
+  width: 750rpx;
+}
+
+.swiper swiper-item image {
+  height: 750rpx;
+  width: 750rpx;
+}
+
+.details {
+  width: 686rpx;
+  margin: 0 32rpx 98rpx;
+}
+
+.details .title {
+  display: inline-block;
+  margin: 26rpx 0;
+  font-size: 30rpx;
+  color: rgb(51, 51, 51);
+}
+.bottomBtn{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 750rpx;
+  height: 98rpx;
+  border: 0;
+}
+
+.bottomBtnLf{
+  width:298rpx;
+  height: 100%;
+  background: #fff;
+float: left;
+}
+.bottomBtnLf image{
+  width: 31rpx;
+  height: 44rpx;
+ float: left;
+ margin: 27rpx 133.5rpx;
+}
+.bottomBtnLf text{
+  display: inline-block;
+  width: 28rpx;
+  height: 28rpx;
+  border-radius: 14rpx;
+  background: rgb(0,183,238);
+  color: #fff;
+  line-height: 28rpx;
+  font-size: 18rpx;
+  text-align: center;
+  position: absolute;
+  top: 18rpx;
+  left: 152rpx;
+}
+.bottomBtnRt{
+  float: left;
+  width: 452rpx;
+  height: 100%;
+  background:rgb(0,183,238);
+  font-size: 36rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 98rpx;
+}
+.bgblack{
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  position: fixed;
+  z-index: 555;
+  top: 0;left: 0;
+}
+.popwindow{
+  position: fixed;
+  z-index: 888;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  height: 538rpx;
+  width: 750rpx;
+  border-top-left-radius: 15rpx;
+  border-top-right-radius: 15rpx;
+}
+.topView image{
+  width: 184rpx;
+  height: 184rpx;
+  margin :32rpx;
+    float: left;
+}
+.topView view{
+  width: 470rpx;
+  float: left;
+  margin-top: 32rpx;
+}
+.poptitle{
+  font-size: 30rpx;
+  color: rgb(51, 51, 51);
+  margin: 4rpx 0 10rpx;
+    overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  width: 470rpx;
+}
+.popdetail{
+  font-size: 26rpx;
+  color:rgb(153,153,153);
+    overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  width: 470rpx;
+}
+.midView{
+  float: left;
+  width: 750rpx;
+  border-top: 1rpx solid #e5e5e5;
+  height: 162rpx;
+}
+.midView>text{
+  display: inline-block;
+  font-size: 34rpx;
+  color: rgb(51, 51, 51);
+  margin: 34rpx 32rpx;
+}
+.adddel {
+  width: 148rpx;
+  float: right;
+  margin-top: 34rpx;
+  margin-right: 32rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+}
+
+.adddel image {
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 50%;
+  float: left;
+  margin-right: 0;
+}
+
+.adddel input {
+  display: inline-block;
+  width: 60rpx;
+  height: 44rpx;
+  padding: 0;
+  border: 0;
+  text-align: center;
+  float: left;
+}
+.sureBtn{
+  float: left;
+  height: 80rpx;
+  width: 686rpx;
+  margin: 24rpx 32rpx;
+  border-radius: 40rpx;
+  background: rgb(0,183,238);
+  line-height: 80rpx;
+  color: #fff;
+  font-size: 36rpx;
+  text-align: center;
+}

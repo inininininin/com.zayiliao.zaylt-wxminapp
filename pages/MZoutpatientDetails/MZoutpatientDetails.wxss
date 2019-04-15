@@ -1,0 +1,10 @@
+/* pages/MZoutpatientDetails/MZoutpatientDetails.wxss */
+.name{
+  font-size:32rpx;
+  margin: 40rpx 30rpx 0;
+}
+text{
+  display: block;
+  font-size: 26rpx;
+  margin: 20rpx 30rpx;
+}

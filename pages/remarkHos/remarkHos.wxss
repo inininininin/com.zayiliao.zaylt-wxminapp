@@ -1,0 +1,72 @@
+/* pages/remarks/remarks.wxss */
+page{
+  background: #f2f2f2;
+  width: 100%;
+  height: auto;
+  /* margin-bottom: 120rpx; */
+  padding-bottom:120rpx;
+}
+.box{
+  width: 710rpx;
+  background: #fff;
+  margin: 20rpx;
+   height: 200rpx;
+}
+.boxLeft{
+  float: left;
+  width: 154rpx;
+  height: 200rpx;
+   display: inline-block;
+}
+.boxLeft text{
+  display: block;
+  text-align: center;
+}
+.boxLeft text:first-child{
+  font-size: 34rpx;
+  margin-top: 31rpx;
+}
+.boxLeft text:nth-child(2){
+  font-size: 32rpx;
+  margin-top: 16rpx;
+}
+.boxLeft text:last-child{
+  font-size: 24rpx;
+   margin-top: 8rpx;
+}
+.boxRight{
+  width: 482rpx;
+  height: 136rpx;
+  margin-top: 20rpx;
+  border-left: 1rpx solid #e5e5e5;
+  font-size: 28rpx;
+  color: #000;
+  display: inline-block;
+  padding: 12rpx 36rpx;
+}
+.boxRight text{
+      overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+.btn{
+  margin-top: 120rpx;
+  background: #fff;
+  width: 100%;  
+  height: 120rpx;
+  border-top: 1rpx solid #e5e5e5;
+  position: fixed;
+  
+  bottom:0;
+}
+.btn button{
+  height: 90rpx;
+  margin: 15rpx 30rpx;
+  border: 0;
+  background:#32afff;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 90rpx;
+}

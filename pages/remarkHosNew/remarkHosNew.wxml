@@ -1,0 +1,7 @@
+<!--pages/remarkNew/remarkNew.wxml-->
+<textarea placeholder='请输入备注' bindinput='remark' maxlength='500'>
+
+</textarea>
+<view class='btn' >
+  <button class='makesure' bindtap='add'>提交</button>
+</view>

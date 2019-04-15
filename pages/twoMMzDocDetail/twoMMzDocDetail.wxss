@@ -1,0 +1,58 @@
+/* pages/twoKfDocDetail/twoKfDocDetail.wxss */
+@import '../common/common.wxss';
+.docD{
+  margin: 20rpx 30rpx;
+  width: 690rpx;
+  height: 238rpx;
+  background: url('https://www.njshangka.com/zaylt/wxminapp/img/img22.png');
+  /* background: url('https://www.njshangka.com/zaylt/wxminapp/img/img22.png'); */
+  background-size: cover;
+}
+.docD image{
+  width: 140rpx;
+  height: 140rpx;
+  margin: 49rpx 40rpx 49rpx 49rpx;
+  display: inline-block;
+  float: left;
+  border-radius: 70rpx;
+}
+.docview{
+  float: left;
+  width: 360rpx;
+  margin-top: 52rpx;
+}
+.name{
+  font-size: 32rpx;
+  line-height: 32rpx;
+  height: 32rpx;
+  color: #333;
+  margin-bottom: 24rpx;
+}
+.intro{
+  font-size: 28rpx;
+  line-height: 39rpx;
+  color: #333;
+}
+.sc{
+  display: block;
+  margin-top: 30rpx;
+  width: 690rpx;
+  padding: 30rpx 30rpx 8rpx;
+  font-size: 28rpx;
+  line-height: 50rpx;
+}
+.scTitle{
+  font-size: 32rpx;
+  color: #000;
+  line-height: 50rpx;
+  display: block;
+}
+.scDetail{
+  font-size: 28rpx;
+  color: #333;
+  line-height: 41rpx;
+  /* margin-bottom: 28rpx; */
+}
+.sc image{
+  width: 100% !important;
+}

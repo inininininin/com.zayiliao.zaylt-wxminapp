@@ -1,0 +1,53 @@
+<view style='height:1rpx;background:#f2f2f2;width:100%；'></view>
+
+<view class='phone lf'>
+  <text class='lf'>账号</text>
+  <input bindinput='phone' class='lf' placeholder='请输入账号' placeholder-style='color：#ccc；font-size：32rpx；'></input>
+</view>
+<view class='passward lf'>
+  <text class='lf'>密码</text>
+  <input bindinput='passward' class='lf' placeholder='请输入密码' placeholder-style='color：#ccc；font-size：32rpx；'></input>
+</view>
+<view style='height:20rpx;background:#f2f2f2;width:100%；'></view>
+<view class='hospitalName lf'>
+  <text class='lf'>门诊名称</text>
+  <input bindinput='hospitalName' class='lf' placeholder='请输入门诊名称' placeholder-style='color：#ccc；font-size：32rpx；'></input>
+</view>
+<view class='chargePeople lf'>
+  <text class='lf'>负责人</text>
+  <input bindinput='chargePeople' class='lf' placeholder='请输入负责人姓名' placeholder-style='color：#ccc；font-size：32rpx；'></input>
+</view>
+<view class='hospitalTel lf'>
+  <text class='lf'>联系方式</text>
+  <input bindinput='hospitalTel' type='number' class='lf' placeholder='请输入联系方式' placeholder-style='color：#ccc；font-size：32rpx；'></input>
+</view>
+
+<view class='address lf'>
+  <text class='lf'>地址</text>
+  <input bindinput='address' class='lf' placeholder='请输入门诊地址' placeholder-style='color：#ccc；font-size：32rpx；'></input>
+</view>
+<view class='remark lf'>
+  <text class='lf'>备注</text>
+  <input bindinput='remark' class='lf' placeholder='请输入备注信息' placeholder-style='color：#ccc；font-size：32rpx；'></input>
+</view>
+<view style='height:20rpx;background:#f2f2f2;width:100%；' class='clear'></view>
+<view class='belongHos lf' bindtap='clickHos' data-src='{{iconSrc}}'>
+  <text class='lf'>所属医院</text>
+ <text class='lf'>{{hospitalname}}</text>
+  <image class='rt'  src='{{iconSrc}}'></image>
+</view>
+
+<view class='hospitaiList'>
+  <template name="hospitalSchemeItem">
+    <view bindtap='select' class='hospitalNames' data-name='{{name}}' data-hospitalid='{{hospitalId}}'>
+      {{name}}
+    </view>
+  </template>
+  <block wx:for="{{hospitalSchemeList}}" wx:key="hospitalSchemeList">
+    <template is="hospitalSchemeItem" data="{{...item}}" />
+  </block>
+  
+</view>
+
+
+<view class='btn' bindtap='submit'><button>提交</button></view>

@@ -1,0 +1,30 @@
+<view><include src="../commonIndex/commonIndex.wxml"/></view>
+
+  <image class='topimg' src='../img/hospital_img-1@2x.png'></image>
+  <text class='title'><text style='color:#ccc;margin-right:20rpx;'>——</text>医院详细内容<text style='color:#ccc;margin-left:20rpx;'>——</text></text>
+<view class='hosdetail'  bindtap='hospital'>
+  <image class='lf' src='../img/hospital_icon2@2x.png'></image>
+  <view class='tit lf'>
+    <text class='tit1'>医院信息</text>
+    <text class='tit2'>医院微官网，掌握更多医院信息</text>
+  </view>
+</view>
+<view class='hosdetail'  bindtap='outpatient'>
+  <image class='lf' src='../img/hospital_icon3@2x.png'></image>
+  <view class='tit lf'>
+    <text class='tit1'>门诊信息</text>
+    <text class='tit2'>医院底下包括的所有门诊信息</text>
+  </view>
+</view>
+<view class='hosdetail'  bindtap='patient'>
+  <image class='lf' src='../img/gongxiang.png'></image>
+  <view class='tit lf'>
+    <text class='tit1'>共享采购</text>
+    <text class='tit2'>共享采购，医疗器械</text>
+  </view>
+</view>
+
+
+
+
+

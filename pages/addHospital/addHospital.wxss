@@ -1,0 +1,109 @@
+/* pages/addHospital/addHospital.wxss */
+@import '../common/common.wxss';
+page {
+  background: #fff;
+}
+
+.lf {
+  float: left;
+}
+
+.rt {
+  float: right;
+}
+
+.distributionNum, .hospitalName {
+  /* margin-top: 20rpx; */
+  height: 100rpx;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1rpx solid #e5e5e5;
+  line-height: 100rpx;
+}
+
+text {
+  margin: 0 30rpx;
+  width: 150rpx;
+  font-size: 32rpx;
+  color: #666;
+  line-height: 100rpx;
+}
+
+input {
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #333;
+  width: 510rpx;
+}
+
+.distributionPassword {
+  height: 100rpx;
+  width: 100%;
+  background: #fff;
+  line-height: 100rpx;
+}
+
+.hospitalTel, .chargePeople {
+  height: 100rpx;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1rpx solid #e5e5e5;
+  line-height: 100rpx;
+}
+
+/*添加图片  */
+
+.addPic {
+  /* line-height: 0; */
+  margin-top: 44rpx;
+  margin-left: 30rpx;
+}
+
+.addPic text {
+  line-height: normal;
+}
+
+.addPic image {
+  width: 210rpx;
+  height: 210rpx;
+}
+
+.btns {
+  width: 100%;
+  height: 120rpx;
+  border-top: 1rpx solid #e5e5e5;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+}
+
+.btns button {
+  height: 90rpx;
+  margin: 15rpx 30rpx;
+  border: 0;
+  background: #32afff;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 90rpx;
+}
+.line1{
+  height: 246rpx;
+}
+.wxtx {
+  font-size: 32rpx;
+  height: 32rpx;
+  color: #666;
+  display: block;
+  margin-bottom: 30rpx;
+  margin-left: 30rpx;
+ width:750rpx;
+}
+.wxtx1{
+  font-size: 26rpx;
+  height: 26rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+  margin-left: 30rpx;
+  display: block;
+  width:750rpx;
+}

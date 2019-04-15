@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b53384fc-1cc2-4671-adbb-c093083bf852" name="Default" comment="">
+      <change type="DELETED" beforePath="D:\工作\忠安医联体\pages\img\bg2.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/img/topImg.png" afterPath="$PROJECT_DIR$/pages/img/topImg.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/AllhospitalDetails/AllhospitalDetails.js" afterPath="$PROJECT_DIR$/pages/AllhospitalDetails/AllhospitalDetails.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/AllhospitalDetails/AllhospitalDetails.wxml" afterPath="$PROJECT_DIR$/pages/AllhospitalDetails/AllhospitalDetails.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/HosaddOutpatient/HosaddOutpatient.js" afterPath="$PROJECT_DIR$/pages/HosaddOutpatient/HosaddOutpatient.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/HosoutpatientList/HosoutpatientList.js" afterPath="$PROJECT_DIR$/pages/HosoutpatientList/HosoutpatientList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/HosoutpatientList/HosoutpatientList.wxml" afterPath="$PROJECT_DIR$/pages/HosoutpatientList/HosoutpatientList.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/HospatientDetails/HospatientDetails.js" afterPath="$PROJECT_DIR$/pages/HospatientDetails/HospatientDetails.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/HospitalDetails/HospitalDetails.js" afterPath="$PROJECT_DIR$/pages/HospitalDetails/HospitalDetails.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/KHOedithospital/KHOedithospital.js" afterPath="$PROJECT_DIR$/pages/KHOedithospital/KHOedithospital.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/KHOoutpatientList/KHOoutpatientList.js" afterPath="$PROJECT_DIR$/pages/KHOoutpatientList/KHOoutpatientList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/KHOpatientList/KHOpatientList.js" afterPath="$PROJECT_DIR$/pages/KHOpatientList/KHOpatientList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/KHOpatientList/KHOpatientList.wxml" afterPath="$PROJECT_DIR$/pages/KHOpatientList/KHOpatientList.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/KHOpatientList/KHOpatientList.wxss" afterPath="$PROJECT_DIR$/pages/KHOpatientList/KHOpatientList.wxss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/KHospitalIndex/KHospitalIndex.js" afterPath="$PROJECT_DIR$/pages/KHospitalIndex/KHospitalIndex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/KHospitalIndex/KHospitalIndex.wxml" afterPath="$PROJECT_DIR$/pages/KHospitalIndex/KHospitalIndex.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/KHospitalIndex/KHospitalIndex.wxss" afterPath="$PROJECT_DIR$/pages/KHospitalIndex/KHospitalIndex.wxss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/KMZaddoutpatient/KMZaddoutpatient.js" afterPath="$PROJECT_DIR$/pages/KMZaddoutpatient/KMZaddoutpatient.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/KMZhospitalDetails/KMZhospitalDetails.js" afterPath="$PROJECT_DIR$/pages/KMZhospitalDetails/KMZhospitalDetails.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/KMZhospitalDetails/KMZhospitalDetails.wxml" afterPath="$PROJECT_DIR$/pages/KMZhospitalDetails/KMZhospitalDetails.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/KMZpatientList/KMZpatientList.js" afterPath="$PROJECT_DIR$/pages/KMZpatientList/KMZpatientList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/KedithospitalDetails/KedithospitalDetails.js" afterPath="$PROJECT_DIR$/pages/KedithospitalDetails/KedithospitalDetails.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/KedithospitalDetails/KedithospitalDetails.wxml" afterPath="$PROJECT_DIR$/pages/KedithospitalDetails/KedithospitalDetails.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/KedithospitalDetails/KedithospitalDetails.wxss" afterPath="$PROJECT_DIR$/pages/KedithospitalDetails/KedithospitalDetails.wxss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/KhospitalDetails/KhospitalDetails.js" afterPath="$PROJECT_DIR$/pages/KhospitalDetails/KhospitalDetails.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/KhospitalDetails/KhospitalDetails.wxml" afterPath="$PROJECT_DIR$/pages/KhospitalDetails/KhospitalDetails.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/KhospitalDetails/KhospitalDetails.wxss" afterPath="$PROJECT_DIR$/pages/KhospitalDetails/KhospitalDetails.wxss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/KpatientsList/KpatientsList.js" afterPath="$PROJECT_DIR$/pages/KpatientsList/KpatientsList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/MZaddpatient/MZaddpatient.js" afterPath="$PROJECT_DIR$/pages/MZaddpatient/MZaddpatient.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/MZaddpatient/MZaddpatient.wxml" afterPath="$PROJECT_DIR$/pages/MZaddpatient/MZaddpatient.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/MZaddpatient/MZaddpatient.wxss" afterPath="$PROJECT_DIR$/pages/MZaddpatient/MZaddpatient.wxss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/MZdetails/MZdetails.js" afterPath="$PROJECT_DIR$/pages/MZdetails/MZdetails.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/MZeditDetails/MZeditDetails.js" afterPath="$PROJECT_DIR$/pages/MZeditDetails/MZeditDetails.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/MZeditDetails/MZeditDetails.wxml" afterPath="$PROJECT_DIR$/pages/MZeditDetails/MZeditDetails.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/MZeditDetails/MZeditDetails.wxss" afterPath="$PROJECT_DIR$/pages/MZeditDetails/MZeditDetails.wxss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/MZeditHospitalInfo/MZeditHospitalInfo.js" afterPath="$PROJECT_DIR$/pages/MZeditHospitalInfo/MZeditHospitalInfo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/MZeditHospitalInfo/MZeditHospitalInfo.wxml" afterPath="$PROJECT_DIR$/pages/MZeditHospitalInfo/MZeditHospitalInfo.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/MZeditHospitalInfo/MZeditHospitalInfo.wxss" afterPath="$PROJECT_DIR$/pages/MZeditHospitalInfo/MZeditHospitalInfo.wxss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/MZhospitalDetails/MZhospitalDetails.js" afterPath="$PROJECT_DIR$/pages/MZhospitalDetails/MZhospitalDetails.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/MZhospitalDetails/MZhospitalDetails.wxml" afterPath="$PROJECT_DIR$/pages/MZhospitalDetails/MZhospitalDetails.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/MZoutpatientIndex/MZoutpatientIndex.js" afterPath="$PROJECT_DIR$/pages/MZoutpatientIndex/MZoutpatientIndex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/MZoutpatientPatient/MZoutpatientPatient.js" afterPath="$PROJECT_DIR$/pages/MZoutpatientPatient/MZoutpatientPatient.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/MZoutpatientPatient/MZoutpatientPatient.wxml" afterPath="$PROJECT_DIR$/pages/MZoutpatientPatient/MZoutpatientPatient.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/MZoutpatientPatient/MZoutpatientPatient.wxss" afterPath="$PROJECT_DIR$/pages/MZoutpatientPatient/MZoutpatientPatient.wxss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/addHospital/addHospital.js" afterPath="$PROJECT_DIR$/pages/addHospital/addHospital.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/addHospital/addHospital.wxml" afterPath="$PROJECT_DIR$/pages/addHospital/addHospital.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/addHospital/addHospital.wxss" afterPath="$PROJECT_DIR$/pages/addHospital/addHospital.wxss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.json" afterPath="$PROJECT_DIR$/app.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.wxss" afterPath="$PROJECT_DIR$/app.wxss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/hospitalList/hospitalList.js" afterPath="$PROJECT_DIR$/pages/hospitalList/hospitalList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/hospitalList/hospitalList.wxml" afterPath="$PROJECT_DIR$/pages/hospitalList/hospitalList.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/hospitalList/hospitalList.wxss" afterPath="$PROJECT_DIR$/pages/hospitalList/hospitalList.wxss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/login/login.js" afterPath="$PROJECT_DIR$/pages/login/login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/login/login.wxml" afterPath="$PROJECT_DIR$/pages/login/login.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/login/login.wxss" afterPath="$PROJECT_DIR$/pages/login/login.wxss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/logs/logs.js" afterPath="$PROJECT_DIR$/pages/logs/logs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/outpatientList/outpatientList.js" afterPath="$PROJECT_DIR$/pages/outpatientList/outpatientList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/patientList/patientList.js" afterPath="$PROJECT_DIR$/pages/patientList/patientList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/patientList/patientList.wxml" afterPath="$PROJECT_DIR$/pages/patientList/patientList.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.config.json" afterPath="$PROJECT_DIR$/project.config.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/remarkHos/remarkHos.js" afterPath="$PROJECT_DIR$/pages/remarkHos/remarkHos.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/remarkHosNew/remarkHosNew.js" afterPath="$PROJECT_DIR$/pages/remarkHosNew/remarkHosNew.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/remarkNew/remarkNew.js" afterPath="$PROJECT_DIR$/pages/remarkNew/remarkNew.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/remarkNew/remarkNew.wxml" afterPath="$PROJECT_DIR$/pages/remarkNew/remarkNew.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/remarkNew/remarkNew.wxss" afterPath="$PROJECT_DIR$/pages/remarkNew/remarkNew.wxss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/remarks/remarks.js" afterPath="$PROJECT_DIR$/pages/remarks/remarks.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/remarks/remarks.wxml" afterPath="$PROJECT_DIR$/pages/remarks/remarks.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/remarks/remarks.wxss" afterPath="$PROJECT_DIR$/pages/remarks/remarks.wxss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/selectRole/selectRole.js" afterPath="$PROJECT_DIR$/pages/selectRole/selectRole.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/util.js" afterPath="$PROJECT_DIR$/utils/util.js" />
+    </list>
+    <ignored path="忠安医联体.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="忠安医联体" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="twoYyDocDetail.wxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/twoYyDocDetail/twoYyDocDetail.wxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="608">
+              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="twoYyHosIndex.wxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/twoYyHosIndex/twoYyHosIndex.wxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="304" max-vertical-offset="779">
+              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="twoYyMoreDoc.wxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/twoYyMoreDoc/twoYyMoreDoc.wxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="646">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="twoYyQxDetail.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/twoYyQxDetail/twoYyQxDetail.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="799" max-vertical-offset="2337">
+              <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="twoYyQxList.wxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/twoYyQxList/twoYyQxList.wxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="399">
+              <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="twoYyXmDetail.wxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/twoYyXmDetail/twoYyXmDetail.wxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="285">
+              <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="twoLoginXy.wxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/twoLoginXy/twoLoginXy.wxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="152">
+              <caret line="1" column="82" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="82" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="twoLoginXy.wxss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/twoLoginXy/twoLoginXy.wxss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="114">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="twoLoginXy.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/twoLoginXy/twoLoginXy.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="114">
+              <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MZoutpatientIndex.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/MZoutpatientIndex/MZoutpatientIndex.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.21782178" vertical-offset="381" max-vertical-offset="2299">
+              <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/pages/AllhospitalDetails/AllhospitalDetails.js" />
+        <option value="$PROJECT_DIR$/pages/HosaddOutpatient/HosaddOutpatient.js" />
+        <option value="$PROJECT_DIR$/pages/HosoutpatientList/HosoutpatientList.js" />
+        <option value="$PROJECT_DIR$/pages/HospatientDetails/HospatientDetails.js" />
+        <option value="$PROJECT_DIR$/pages/HospitalDetails/HospitalDetails.js" />
+        <option value="$PROJECT_DIR$/pages/KHOoutpatientList/KHOoutpatientList.js" />
+        <option value="$PROJECT_DIR$/pages/KHOpatientList/KHOpatientList.js" />
+        <option value="$PROJECT_DIR$/pages/KMZaddoutpatient/KMZaddoutpatient.js" />
+        <option value="$PROJECT_DIR$/pages/KMZhospitalDetails/KMZhospitalDetails.js" />
+        <option value="$PROJECT_DIR$/pages/KMZpatientList/KMZpatientList.js" />
+        <option value="$PROJECT_DIR$/pages/KhospitalDetails/KhospitalDetails.js" />
+        <option value="$PROJECT_DIR$/pages/KpatientsList/KpatientsList.js" />
+        <option value="$PROJECT_DIR$/pages/MZaddpatient/MZaddpatient.js" />
+        <option value="$PROJECT_DIR$/pages/MZdetails/MZdetails.js" />
+        <option value="$PROJECT_DIR$/pages/MZeditDetails/MZeditDetails.js" />
+        <option value="$PROJECT_DIR$/pages/MZhospitalDetails/MZhospitalDetails.js" />
+        <option value="$PROJECT_DIR$/pages/MZoutpatientPatient/MZoutpatientPatient.js" />
+        <option value="$PROJECT_DIR$/pages/hospitalList/hospitalList.js" />
+        <option value="$PROJECT_DIR$/pages/AllhospitalDetails/AllhospitalDetails.wxml" />
+        <option value="$PROJECT_DIR$/pages/KHOedithospital/KHOedithospital.js" />
+        <option value="$PROJECT_DIR$/pages/KMZhospitalDetails/KMZhospitalDetails.wxml" />
+        <option value="$PROJECT_DIR$/pages/KedithospitalDetails/KedithospitalDetails.js" />
+        <option value="$PROJECT_DIR$/pages/KedithospitalDetails/KedithospitalDetails.wxml" />
+        <option value="$PROJECT_DIR$/pages/KhospitalDetails/KhospitalDetails.wxml" />
+        <option value="$PROJECT_DIR$/pages/MZeditHospitalInfo/MZeditHospitalInfo.js" />
+        <option value="$PROJECT_DIR$/pages/MZeditHospitalInfo/MZeditHospitalInfo.wxml" />
+        <option value="$PROJECT_DIR$/pages/MZhospitalDetails/MZhospitalDetails.wxml" />
+        <option value="$PROJECT_DIR$/pages/addHospital/addHospital.js" />
+        <option value="$PROJECT_DIR$/pages/addHospital/addHospital.wxml" />
+        <option value="$PROJECT_DIR$/pages/hospitalList/hospitalList.wxml" />
+        <option value="$PROJECT_DIR$/pages/twoKfDocDetail/twoKfDocDetail.wxml" />
+        <option value="$PROJECT_DIR$/pages/twoKfMoreDoc/twoKfMoreDoc.wxml" />
+        <option value="$PROJECT_DIR$/pages/twoKfXmDetail/twoKfXmDetail.wxml" />
+        <option value="$PROJECT_DIR$/pages/twoKfXmList/twoKfXmList.wxml" />
+        <option value="$PROJECT_DIR$/pages/twoMMzDocDetail/twoMMzDocDetail.wxml" />
+        <option value="$PROJECT_DIR$/pages/twoMMzHosIndex/twoMMzHosIndex.wxml" />
+        <option value="$PROJECT_DIR$/pages/twoMMzHoswgw/twoMMzHoswgw.wxml" />
+        <option value="$PROJECT_DIR$/pages/twoMMzMoreDoc/twoMMzMoreDoc.wxml" />
+        <option value="$PROJECT_DIR$/pages/twoMMzYyXm/twoMMzYyXm.wxml" />
+        <option value="$PROJECT_DIR$/pages/twoMMzYyxmDetail/twoMMzYyxmDetail.wxml" />
+        <option value="$PROJECT_DIR$/pages/twoQhospitalDetail/twoQhospitalDetail.wxml" />
+        <option value="$PROJECT_DIR$/pages/twoYyDocDetail/twoYyDocDetail.wxml" />
+        <option value="$PROJECT_DIR$/pages/twoYyHosIndex/twoYyHosIndex.wxml" />
+        <option value="$PROJECT_DIR$/pages/twoYyMoreDoc/twoYyMoreDoc.wxml" />
+        <option value="$PROJECT_DIR$/pages/twoYyQxDetail/twoYyQxDetail.js" />
+        <option value="$PROJECT_DIR$/pages/twoYyQxList/twoYyQxList.wxml" />
+        <option value="$PROJECT_DIR$/pages/twoYyXmDetail/twoYyXmDetail.wxml" />
+        <option value="$PROJECT_DIR$/pages/twoLoginXy/twoLoginXy.wxml" />
+        <option value="$PROJECT_DIR$/pages/MZoutpatientIndex/MZoutpatientIndex.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="忠安医联体" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="忠安医联体" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="忠安医联体" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="忠安医联体" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="忠安医联体" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="忠安医联体" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="忠安医联体" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twoLoginXy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b53384fc-1cc2-4671-adbb-c093083bf852" name="Default" comment="" />
+      <created>1545901626129</created>
+      <option name="number" value="Default" />
+      <updated>1545901626129</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pages/HosaddOutpatient/HosaddOutpatient.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1278" max-vertical-offset="3382">
+          <caret line="74" column="14" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/HosoutpatientList/HosoutpatientList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="305" max-vertical-offset="2470">
+          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/HospatientDetails/HospatientDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1882" max-vertical-offset="3971">
+          <caret line="106" column="12" selection-start-line="106" selection-start-column="12" selection-end-line="106" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/HospitalDetails/HospitalDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="381" max-vertical-offset="2280">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/KHOoutpatientList/KHOoutpatientList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="381" max-vertical-offset="2375">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/KHOpatientList/KHOpatientList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="457" max-vertical-offset="3249">
+          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/KMZaddoutpatient/KMZaddoutpatient.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3326" max-vertical-offset="4503">
+          <caret line="182" column="14" selection-start-line="182" selection-start-column="14" selection-end-line="182" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/KMZhospitalDetails/KMZhospitalDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="229" max-vertical-offset="1843">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/KMZpatientList/KMZpatientList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="3268">
+          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/KhospitalDetails/KhospitalDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="229" max-vertical-offset="1995">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/KpatientsList/KpatientsList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="685" max-vertical-offset="3439">
+          <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/MZaddpatient/MZaddpatient.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1084" max-vertical-offset="3116">
+          <caret line="64" column="12" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/MZdetails/MZdetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="191" max-vertical-offset="1311">
+          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/MZeditDetails/MZeditDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2034" max-vertical-offset="3135">
+          <caret line="114" column="14" selection-start-line="114" selection-start-column="14" selection-end-line="114" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/MZhospitalDetails/MZhospitalDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="1824">
+          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/MZoutpatientPatient/MZoutpatientPatient.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2794" max-vertical-offset="4047">
+          <caret line="155" column="12" selection-start-line="155" selection-start-column="12" selection-end-line="155" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/hospitalList/hospitalList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="381" max-vertical-offset="2793">
+          <caret line="34" column="15" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/AllhospitalDetails/AllhospitalDetails.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="115" max-vertical-offset="646">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/KHOedithospital/KHOedithospital.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4694" max-vertical-offset="5339">
+          <caret line="254" column="16" selection-start-line="254" selection-start-column="16" selection-end-line="254" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/KMZhospitalDetails/KMZhospitalDetails.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="115" max-vertical-offset="646">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/KedithospitalDetails/KedithospitalDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1654" max-vertical-offset="3800">
+          <caret line="94" column="16" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/KedithospitalDetails/KedithospitalDetails.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="471" max-vertical-offset="855">
+          <caret line="32" column="96" selection-start-line="32" selection-start-column="96" selection-end-line="32" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/KhospitalDetails/KhospitalDetails.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="115" max-vertical-offset="646">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/MZeditHospitalInfo/MZeditHospitalInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4789" max-vertical-offset="5491">
+          <caret line="259" column="16" selection-start-line="259" selection-start-column="16" selection-end-line="259" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/MZeditHospitalInfo/MZeditHospitalInfo.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="461" max-vertical-offset="1045">
+          <caret line="31" column="114" selection-start-line="31" selection-start-column="114" selection-end-line="31" selection-end-column="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/MZhospitalDetails/MZhospitalDetails.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="115" max-vertical-offset="646">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/addHospital/addHospital.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1293" max-vertical-offset="3135">
+          <caret line="75" column="16" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/addHospital/addHospital.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="461" max-vertical-offset="893">
+          <caret line="31" column="95" selection-start-line="31" selection-start-column="95" selection-end-line="31" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/hospitalList/hospitalList.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="741">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/twoKfDocDetail/twoKfDocDetail.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/twoKfMoreDoc/twoKfMoreDoc.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="589">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/twoKfXmDetail/twoKfXmDetail.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="209">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/twoKfXmList/twoKfXmList.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="361">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/twoMMzDocDetail/twoMMzDocDetail.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/twoMMzHosIndex/twoMMzHosIndex.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="172" max-vertical-offset="703">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/twoMMzHoswgw/twoMMzHoswgw.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="723" max-vertical-offset="1330">
+          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/twoMMzMoreDoc/twoMMzMoreDoc.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="665">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/twoMMzYyXm/twoMMzYyXm.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="437">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/twoMMzYyxmDetail/twoMMzYyxmDetail.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="266">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/twoQhospitalDetail/twoQhospitalDetail.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="647" max-vertical-offset="1254">
+          <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/twoYyDocDetail/twoYyDocDetail.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="608">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/twoYyHosIndex/twoYyHosIndex.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="172" max-vertical-offset="779">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/twoYyMoreDoc/twoYyMoreDoc.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="646">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/twoYyQxDetail/twoYyQxDetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="799" max-vertical-offset="2337">
+          <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/twoYyQxList/twoYyQxList.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="399">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/twoYyXmDetail/twoYyXmDetail.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/twoLoginXy/twoLoginXy.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="152">
+          <caret line="1" column="82" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/twoLoginXy/twoLoginXy.wxss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="397">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/twoLoginXy/twoLoginXy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.1108313" vertical-offset="838" max-vertical-offset="1349">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/twoLoginXy/twoLoginXy.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="114">
+          <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/MZoutpatientIndex/MZoutpatientIndex.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21782178" vertical-offset="381" max-vertical-offset="2299">
+          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

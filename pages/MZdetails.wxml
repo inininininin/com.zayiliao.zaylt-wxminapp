@@ -1,0 +1,11 @@
+<!--pages/MZdetails.wxml-->
+<!-- <text>pages/MZdetails.wxml</text> -->
+<image src='img/topImg.png'></image>
+<view class='details'>
+  <text class='title'>门诊名称：袁州明月医院门诊</text>
+  <text>负责人：某某某</text>
+  <text>联系方式：025-12345678</text>
+  <text>地址：江苏省南京市</text>
+  <text>备注：院长名称未填写</text>
+</view>
+<view class='btn'><button>编辑</button></view>

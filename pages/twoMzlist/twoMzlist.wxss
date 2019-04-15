@@ -1,0 +1,143 @@
+/* pages/twoMzlist/twoMzlist.wxss */
+@import '../common/common.wxss';
+page{
+  width: 100%;
+  /* height:100%; */
+  background: #fff;
+  padding-bottom: 120rpx;
+}
+.mzdetail{
+  height: 272rpx;
+  width: 750rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.mzname{
+  font-size: 32rpx;
+  color: #000; 
+  display: inline-block;
+  margin:36rpx auto 30rpx 30rpx;
+  height: 32rpx;
+  line-height: 32rpx; 
+}
+.mznum{
+  margin-left: 46rpx;
+  display: inline-block;
+  height: 40rpx;
+  border-radius: 20rpx;
+  width: 180rpx;
+  background: linear-gradient(to right, #4fb1f4, #5a84dd);
+  /* background:  linear-gradient(to right, #fbea27, #ffd303); */
+  font-size: 26rpx;
+  color: #fff;
+  text-align: center;
+}
+.mznum image{
+  width: 22rpx;
+  height: 26rpx;
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+.mznum text{
+  line-height: 40rpx;
+}
+.mzdoc{
+  font-size: 28rpx;
+  color: #666;
+  display: block;
+}
+.mzdocname{
+  margin: 0 36rpx 0 30rpx;
+}
+.time{
+  margin-top:20rpx;
+  display: block;
+  font-size: 28rpx;
+  color: #8f8f8f;
+  width: 600rpx;
+  margin-left: 30rpx;
+  line-height: 40rpx;
+}
+.mzaddress{
+  margin-top: 15rpx;
+  display: block;
+  font-size: 28rpx;
+  color: #8f8f8f;
+  width: 600rpx;
+  margin-left: 30rpx;
+  line-height: 40rpx;
+}
+.back{
+  width:18rpx;
+  height: 100%;
+  float: right;
+  margin-right: 30rpx; line-height: 272rpx;
+}
+.back image{
+  width: 18rpx;
+  height: 32rpx; 
+}
+.mzlf{
+  width: 640rpx;
+  float: left;
+}
+.kong{
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  width: 750rpx;
+  height: 100%;
+  background: #fff;
+}
+.kongpic{
+  margin-top: 100rpx;
+  margin-bottom: 45rpx;
+  margin-left:138.5rpx; 
+  width: 473rpx;
+  height: 473rpx;
+}
+.kongte1{
+  font-size: 32rpx;
+  color: #000;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+.kongte2{
+  display: inline-block;
+  color: #666;
+  font-size: 28rpx;
+  text-align: center;
+  width: 100%;
+  margin: 38rpx auto 55rpx;
+}
+.kongadd{
+  width: 180rpx;
+  height: 72rpx;
+  border-radius: 12rpx;
+  background: #32afff;
+  color: #fff;
+  line-height: 72rpx;
+  font-size: 34rpx;
+}
+.kongadd::after{
+  border: none;
+}
+.btns {
+  z-index: 999;
+  width: 100%;
+  height: 120rpx;
+  border-top: 1rpx solid #e5e5e5;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+}
+
+.btns button {
+  height: 90rpx;
+  margin: 15rpx 30rpx;
+  border: 0;
+  background: #32afff;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 90rpx;
+}

@@ -1,0 +1,302 @@
+/* pages/ZJCOrderDetail/ZJCOrderDetail.wxss */
+page {
+  height: 100%;
+  background: #f5f5f5;
+}
+
+.container {
+  box-sizing: border-box;
+  height: 493rpx;
+  background: url(https://www.njshangka.com/yichaxun/weixin/bg1.png) no-repeat;
+  background-size: cover;
+}
+.containers{
+  box-sizing: border-box;
+  height: 493rpx;
+  background: url(https://www.njshangka.com/yichaxun/weixin/bg2.png) no-repeat;
+  background-size: cover;
+}
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* background: rgba(0, 0, 255, 0.1); */
+}
+
+.status-bar {
+  /* background: rgba(255, 0, 0, 0.1); */
+}
+
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header image {
+  float: left;
+  width: 24rpx;
+  height: 40rpx;
+}
+
+.title-bar view {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.title-bar view text {
+  display: inline-block;
+  text-align: center;
+  width: 87.2%;
+  color: #fff;
+}
+.jifenIcon {
+  width: 100%;
+}
+
+.jifenIcon image {
+  width: 180rpx;
+  height: 180rpx;
+  margin-left: 285rpx;
+  /* margin-top: 45rpx; */
+  position: absolute;
+}
+
+.jifenIcon text {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+  position: relative;
+  top: 100rpx;
+  text-align: center;
+}
+.orderId{
+  height: 100rpx;
+  line-height: 80rpx;
+  font-size: 34rpx;
+  color: rgb(51,51,51);
+  float: left;
+  width: 718rpx;
+  text-align: left;
+  padding-left: 32rpx;
+  background: #fff;
+}
+
+/* 地址栏 */
+.address {
+  width: 100%;
+  height: 160rpx;
+  background: #fff;
+  margin-top: 20rpx;
+  /* line-height: 160rpx; */
+}
+
+.address image:first-child {
+  width: 36rpx;
+  height: 46rpx;
+  float: left;
+  /* display: inline-block; *//* vertical-align: middle; */
+  line-height: 160rpx;
+  margin: 57rpx 32rpx;
+}
+
+.address image:last-child {
+  width: 18rpx;
+  height: 32rpx;
+  display: inline-block;
+  /* vertical-align: middle; */
+  line-height: 160rpx;
+  float: right;
+  margin: 64rpx 32rpx;
+}
+
+.address view {
+  float: left;
+  /* display: inline-block; */
+  width: 550rpx;
+  height: 160rpx;
+}
+
+.address view .view1 {
+  font-size: 34rpx;
+  line-height: 34rpx;
+  margin: 30rpx auto 32rpx 0;
+  display: block;
+  color: rgb(51, 51, 51);
+}
+
+.address view .view2 {
+  font-size: 32rpx;
+  line-height: 32rpx;
+  color: rgb(187, 187, 187);
+  margin: 30rpx auto 32rpx 0;
+  display: block;
+}
+
+.address view .name {
+  font-size: 34rpx;
+  line-height: 34rpx !important;
+  width: auto;
+  margin: 30rpx auto 32rpx 0;
+  display: inline-block;
+  color: rgb(51, 51, 51);
+}
+
+.address view .num {
+  font-size: 30rpx;
+  line-height: 34rpx !important;
+  margin: 30rpx auto 32rpx 30rpx;
+  display: inline-block;
+  color: rgb(187, 187, 187);
+}
+
+.address view .addressDv {
+  font-size: 32rpx;
+  line-height: 32rpx !important;
+  margin: 0 auto 32rpx 0;
+  display: block;
+  color: rgb(51, 51, 51);
+   overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.list{
+  width: 100%;
+  height: auto;
+  background: #fff;
+  margin-top: 24rpx;
+  margin-bottom: 144rpx;
+}
+.listItem{
+  height: 196rpx;
+  width: 718rpx;
+  margin-left: 32rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.listItem image{
+  width: 132rpx;
+  height: 132rpx;
+  /* border-radius: 66rpx; */
+  margin: 32rpx 30rpx 32rpx 0;
+   float: left;
+}
+.listItem .listDetail{
+  width: 400rpx;
+  float: left
+}
+.listName{
+  margin: 32rpx auto 10rpx 0;
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+  line-height: 30rpx;
+  display: block;
+}
+.listIntro{
+  font-size: 26rpx;
+  color: rgb(153,153,153)
+}
+.listNum{
+  width: 138rpx;
+  float: right;
+  margin-top: 138rpx;
+  line-height: 30rpx;
+}
+.listNum text:first-child{
+font-size: 26rpx;
+color: rgb(153,153,153);
+ display: inline-block;
+  /* float: right; */
+}
+.listNum text:last-child{
+  width: 78rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+  display: inline-block;
+  /* float: right; */
+}
+
+
+.bottom{
+  width: 750rpx;
+  height: 144rpx;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.bottom .bottomlf{
+  float: left;
+  margin-left: 32rpx;
+}
+.bottom .bottomlf text:first-child{
+  display: block;
+  margin: 34rpx 0 14rpx;
+  font-size: 28rpx;
+  color: rgb(51, 51, 51)
+}
+.bottom .bottomlf text:last-child{
+  display: block;
+  font-size: 34rpx;
+  color: rgb(51, 51, 51)
+}
+.bottom .bottomrt{
+  float: right;margin-right: 32rpx;
+}
+.bottom .bottomrt text:first-child{
+  display: block;
+  margin: 34rpx 0 24rpx;
+  font-size: 24rpx;
+  color: rgb(102, 102, 102);
+  text-align: right;
+}
+.bottom .bottomrt text:last-child{
+  display: block;
+  font-size: 32rpx;
+  color: rgb(102, 102, 102);
+  text-align: right;
+}
+
+.bottoms{
+  width: 750rpx;
+  height: 98rpx;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.bottoms .bottomlf{
+  float: left;
+  width: 320rpx;
+  background: #fff;
+  height: 100%;
+  text-align: center;
+}
+.bottoms .bottomlf image{
+  width: 28rpx;
+  height: 30rpx;
+  float: left;
+  margin: 14rpx 146rpx 10rpx;
+}
+.bottoms .bottomlf text{
+  display: block;
+  font-size: 30rpx;
+}
+.bottoms .bottomrt{
+  float: right;
+  width: 430rpx;
+  background: rgb(0,219,248);
+  font-size: 36rpx;
+  text-align: center;
+  color: #fff;
+  line-height: 98rpx;
+}

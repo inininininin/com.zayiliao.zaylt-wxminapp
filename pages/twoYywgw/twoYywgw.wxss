@@ -1,0 +1,151 @@
+/* pages/twoQhospitalDetail/twoQhospitalDetail.wxss */
+@import '../common/common.wxss';
+
+.topimg{
+  width: 750rpx;
+  height: 352rpx;
+  vertical-align: bottom;
+}
+.hosDetail{
+  width: 750rpx;
+  height: 176rpx;
+  background: #fff;
+}
+.hosDetail .hosDetail1{
+  width: 249rpx;
+  border-right: 1rpx solid #e5e5e5;
+  height: 150rpx;
+  /* padding-top: 13rpx; */
+  margin-top: 13rpx;
+  text-align: center;
+  float: left;
+}
+.hosDetail image{
+  width: 60rpx;
+  height: 50rpx;
+  margin-bottom: 25rpx;
+  margin-top: 23rpx;
+}
+.hosDetail .hosDetail1 text{
+  display: block;
+  font-size: 24rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+  color: #b1b1b1;
+}
+.location{
+  height: 176rpx;
+  width: 750rpx;
+  font-size: 26rpx;
+  color: #666;
+  vertical-align: middle;
+}
+.location>image{
+  width: 166rpx;
+  height: 144rpx;
+  float: left;
+  margin: 16rpx 40rpx 16rpx 30rpx;
+}
+.location view{
+  width: 480rpx;
+  float: left;
+}
+.location view text{
+  display: inline-block;
+  width: 428rpx;
+  line-height: 32rpx;
+}
+.location view image{
+  width: 22rpx;
+  height: 32rpx;
+  margin-right: 30rpx;
+   vertical-align: middle;
+}
+.loone{
+  height: 58rpx;
+  vertical-align: middle;
+  line-height: 26rpx;
+  padding-top: 38rpx;
+  margin-bottom: 16rpx;
+  display: inline-block;
+  float: left;
+}
+.location .loone>image{
+  vertical-align: top;
+}
+.lotwo{
+  height: 26rpx;
+  line-height: 26rpx;
+  vertical-align: middle;
+}
+.doctd{
+  height: 90rpx;
+  width: 750rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  line-height: 90rpx;
+}
+.doctd image{
+  float:right;
+  width: 18rpx;
+  height: 32rpx;
+  margin: 29rpx 30rpx 29rpx 20rpx;
+}
+.doctd1{
+  font-size: 32rpx;
+  color: #666;
+  margin-left: 30rpx;
+}
+.doctd2{
+  float: right;
+  font-size: 28rpx;
+  color: #999;
+}
+.docitem{
+  width: 750rpx;
+  height: 252rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.docitem>image{
+  border-radius: 37.5rpx;
+  width: 75rpx;
+  height: 75rpx;
+  float: left;
+  margin: 34rpx 30rpx;
+}
+.docdetail{
+  width: 585rpx;
+  height: 184rpx;
+  margin-top: 34rpx;
+  float: left;
+}
+.docd1{
+  height: 32rpx;
+  line-height: 32rpx;
+}
+.docd11{
+  font-size: 32rpx;
+  color: #333;
+}
+.docd12{
+  font-size: 26rpx;
+  color: #a1a2a4;
+  margin-left: 20rpx;
+ 
+}
+.docd2{
+  font-size: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  color: #333; margin-top: 24rpx;
+}
+.docd3{
+  font-size: 26rpx;
+  line-height: 38rpx;
+  color: #a1a2a4; margin-top: 24rpx;
+  display: inline-block;
+      overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

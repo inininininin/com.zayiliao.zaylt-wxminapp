@@ -1,0 +1,37 @@
+/* pages/MZdetails.wxss */
+.details{
+  width: 100%;
+}
+.details text{
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 28rpx;
+  color: #000;
+  line-height: 42rpx;
+}
+.title{
+  font-size: 32rpx;
+  color: #000;
+  margin-top: 70rpx;
+  margin-bottom: 16rpx;
+}
+
+
+.btn{
+  width: 100%;  
+  height: 120rpx;
+  border-top: 1rpx solid #e5e5e5;
+  position: fixed;
+  
+  bottom:0;
+}
+.btn button{
+  height: 90rpx;
+  margin: 15rpx 30rpx;
+  border: 0;
+  background:#32afff;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 90rpx;
+}

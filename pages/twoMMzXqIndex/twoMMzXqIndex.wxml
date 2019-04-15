@@ -1,0 +1,30 @@
+<!--pages/twoQmzdetail/twoQmzdetail.wxml-->
+<view>
+  <include src="../common/common.wxml" />
+</view>
+<image class='topimg' src='../img/he.png'></image>
+<view class='mz'>
+  <text class='mztitle'>{{schemeList.name}}</text>
+  <text class='mzdoc'>{{schemeList.headmanName}}</text>
+  <text class='mzdoc'>{{schemeList.contactTel}}</text>
+  <text class='mzaddress'>{{schemeList.address}}</text>
+</view>
+<view class='bz'>
+  <text>备注</text>
+</view>
+<text class='bzdetail' style='padding-bottom:0'>{{schemeList.remark}}</text>
+
+<view class='bz'>
+  <text>特色项目</text>
+</view>
+<view  class='bzdetail'>
+ <import src="../../wxParse/wxParse.wxml" />
+  <template  is="wxParse" data="{{wxParseData:info.nodes}}" />
+</view>
+ <view class='btns' bindtap='edit'>
+  <button>修改</button>
+</view>
+<!-- <text class='bzdetail'>{{schemeList.remark}}</text> -->
+
+
+

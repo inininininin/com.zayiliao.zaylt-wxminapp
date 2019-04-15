@@ -1,0 +1,24 @@
+<view>
+  <include src="../common/common.wxml" />
+</view>
+<view class="title">拥有病源信息</view>
+<template name="hospitalSchemeItem">
+  <view class='patient'>
+    <view class='patientLf lf'>
+     
+      <text>{{realname}}   {{tel}}</text>
+      <text>病种：{{(sickness||'')}}</text>
+       <text>加入时间：{{(addTime||'')}}</text>
+      <text class='from lf' data-phone='{{tel}}' bindtap='phoneNow'>一键拨号</text><text bindtap='remarkUrl' data-patientid='{{patientId}} ' class='from lf'>备注</text>
+    </view>
+    <button bindtap='referral' style='background:#00b8e9' wx:if="{{status==1}}" status class='btn rt' data-patientid='{{patientId}}'>转诊</button>
+     <button style='background:#ccc'  wx:if="{{status==3||status==4}}" status class='btn rt' patientId='{{patientId}}'>已转诊</button>
+  </view>
+</template>
+<!--项目模块end  -->
+<block wx:for="{{hospitalSchemeList}}" wx:key="hospitalSchemeList">
+  <template is="hospitalSchemeItem" data="{{...item}}" />
+</block>
+<view class='btns' bindtap='add'>
+  <button>新增</button>
+</view>

@@ -1,0 +1,39 @@
+/* pages/ZJCSetaddress/ZJCSetaddress.wxss */
+@import '../common/common.wxss';
+.placeholder{
+  font-size: 30rpx;
+  color: #ccc;
+}
+input{
+  font-size: 30rpx;
+  color: #000;
+  width: 720rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-left: 30rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+textarea .placeholder{
+  line-height: 60rpx;
+}
+.addressDetail{
+  padding: 20rpx 0;
+  height: 300rpx;
+  width: 720rpx;
+  margin-left: 30rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  color: #000;
+}
+.submit{
+  width: 686rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  background: rgb(0,183,238);
+  color: #fff;
+  font-size: 36rpx;
+  text-align: center;line-height: 80rpx;
+  position: fixed;
+  bottom: 24rpx;
+  left: 32rpx;
+}

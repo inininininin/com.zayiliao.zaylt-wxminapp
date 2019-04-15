@@ -1,0 +1,53 @@
+/* pages/MZoutpatientPatient/MZoutpatientPatient.wxss */
+.title{
+  font-size: 32rpx;
+  color: #000;
+  height: 90rpx;
+  padding: 0 0 0 30rpx;
+  line-height: 90rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.patient{
+  width: 100%;
+  font-size: 28rpx;
+  color: #000;
+  height: 188rpx;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 50rpx;
+}
+.patientLf{
+  width: 480rpx;
+  
+}
+.patientLf text{
+  display: block;
+  margin-left: 30rpx;
+  
+}
+.patientLf text:first-child{
+   margin: 20rpx 0 10rpx 30rpx; 
+}
+.patientLf text:nth-child(2){
+   margin-bottom: 10rpx;
+}
+.patientLf text:last-child{
+  margin-top: 20rpx;
+   margin-left: 30rpx;
+   color:#00b8e9;
+}
+   .lf{
+  float: left;
+}   
+.rt{
+  float: right;
+}
+.btn{
+  width: 160rpx;
+  height: 70rpx;
+  font-size: 32rpx;
+  line-height: 70rpx;
+  margin: 84rpx 30rpx 84rpx 0;
+  background: #00b8e9;
+  color: #fff;
+  border: 0;
+}

@@ -1,0 +1,32 @@
+<view>
+  <include src="../common/common.wxml" />
+</view>
+<view class='hospitalName'>门诊名称</view>
+<view>
+  <input bindblur='name' type='text' class='name' placeholder='请输入门诊名称' placeholder-style='font-size:28rpx;color:#ccc;' value='{{schemeList.name}}'></input>
+
+  <text class='hospitalIntro'>负责人名称</text>
+</view>
+<view>
+  <input bindblur='headmanName' type='text' class='headmanName' placeholder='请输入负责人名称' placeholder-style='font-size:28rpx;color:#ccc;' value='{{schemeList.headmanName}}'></input>
+
+  <text class='hospitalIntro'>联系方式</text>
+</view>
+<view>
+  <input bindblur='contactTel' type='text' type='number' class='contactTel' placeholder='请输入联系电话' placeholder-style='font-size:28rpx;color:#ccc;' value='{{schemeList.contactTel}}'></input>
+
+  <text class='hospitalIntro'>地址</text>
+</view>
+<view>
+  <input bindblur='address' type='text' class='address' placeholder='请输入地址信息' placeholder-style='font-size:28rpx;color:#ccc;' value='{{schemeList.address}}'></input>
+
+  <text class='hospitalIntro'>备注</text>
+</view>
+<view>
+  <input bindblur='remark' type='text' class='remark' placeholder='请输入需要备注的内容' placeholder-style='font-size:28rpx;color:#ccc;' value='{{schemeList.remark}}'></input>
+  </view>
+
+
+  <view class='btn' bindtap='edit'>
+  <button class='makesure' bindtap='add'>编辑</button>
+</view>

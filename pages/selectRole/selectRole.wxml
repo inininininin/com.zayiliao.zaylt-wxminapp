@@ -1,0 +1,26 @@
+<!--pages/selectRole/selectRole.wxml-->
+<!-- <text>pages/selectRole/selectRole.wxml</text> -->
+<view class='selectNo' bindtap='selectNo'>切换账号</view>
+<view class='boxBoom'>
+  <view class='box lf' bindtap='hospital'>
+    <view class='boxTop'>
+      <image src='../img/out.png'></image>
+    </view>
+    <view class='boxBottom'>医院
+    </view>
+  </view>
+  <view class='box lf' bindtap='outpatient'>
+    <view class='boxTop'>
+      <image src='../img/hos.png'></image>
+    </view>
+    <view class='boxBottom'>门诊
+    </view>
+  </view>
+  <view class='box lf' bindtap='patient'>
+    <view class='boxTop'>
+      <image src='../img/pat.png'></image>
+    </view>
+    <view class='boxBottom'>病源
+    </view>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+<!--pages/AllhospitalDetails/AllhospitalDetails.wxml-->
+<!-- <text>pages/AllhospitalDetails/AllhospitalDetails.wxml</text> -->
+<view>
+  <include src="../common/common.wxml" />
+</view>
+<view class='titleOne'>
+  <view class='Num'>
+    <text>01</text>
+  </view>
+  <text>{{schemeList.name}}</text>
+</view>
+<view class='intro1'>{{schemeList.intro1||''}}
+</view>
+<image src='https://www.njshangka.com{{schemeList.introPic1}}' class='pic1'></image>
+<view class='intro1'>
+  {{schemeList.intro2||''}}</view>
+<image src='https://www.njshangka.com{{schemeList.introPic2}}' class='pic1'></image>
+<view class='intro1'>
+  {{schemeList.intro3||''}}
+</view>
+<view class='titleTwo'>
+  <view class='Num'>
+    <text>02</text>
+  </view>
+  <text>联系方式</text>
+</view>
+<view class=' name'>门诊名称：{{schemeList.name||''}}</view>
+<view class='text linkMan'>负责人：{{schemeList.headmanName||''}}</view>
+<view class='text contactInfo'>联系方式：{{schemeList.tel||''}}</view>
+<view class='text address' style='margin-bottom:160rpx;'>地址：{{schemeList.address||''}}</view>
+
+
+<view class='btns' bindtap='add'>
+  <button>修改</button>
+</view>
+<!-- <view class='btn' bindtap='edit'><button>编辑</button></view> -->

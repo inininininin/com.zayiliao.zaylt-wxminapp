@@ -1,0 +1,38 @@
+<!--pages/ZJCOrder/ZJCOrder.wxml-->
+<view><include src="../common/common.wxml"/></view>
+<navigator url='../ZJCSetaddress/ZJCSetaddress'>
+<view wx:if='{{addressIf==0}}' class='address' bindtap='address'>
+  <image src='../img/dingweiweizhi@2x.png'></image>
+  <view>
+  <text class='view1'>您需要我们送到哪里？</text>
+  <text class='view2'>添加收货地址和联系方式</text>
+  </view>
+  <image src='../img/back.png'></image>
+</view>
+</navigator>
+<navigator url='../ZJCSetaddress/ZJCSetaddress'>
+<view wx:if='{{addressIf!=0}}'  class='address' bindtap='address'>
+  <image src='../img/weizhi@2x.png'></image>
+  <view>
+  <text class='name'>{{addressList.name}}</text>
+  <text class='num'>{{addressList.tel}}</text>
+  <text class='addressDv'>{{addressList.address1}} <text style='display:inline-block;width:10rpx;'></text> {{addressList.address2}}</text>
+  </view>
+  <image src='../img/back.png'></image>
+</view>
+</navigator>
+
+ <view class="children _44f602a">
+      <view hover-class="none" class="children_item _44f602a" wx:for="{{ showList }}" wx:for-item="item" wx:key="index" >
+      <image src='https://www.njshangka.com{{item.deviceCover}}'></image>
+        <view class="child_name _44f602a" data-name='{{item.deviceName}}' bindtap='selectOver'>
+          <view class='child_name_1'>{{ item.deviceName }}</view>
+          <view class='child_name_2'>{{ item.brief }}</view>
+          <view class='adddel'><image data-id="{{ item.deviceId }}" bindtap='del' data-num='{{item.count}}' wx:if='{{item.count!=0}}'  src='../img/jian@2x.png'></image>
+          <input bindblur='inputVal'data-num='{{item.count}}' data-id="{{ item.deviceId }}" wx:if='{{item.count!=0}}' value='{{item.count}}'></input>
+          <image data-id="{{ item.deviceId }}" bindtap='add' style='float:right' data-num='{{item.count}}' src='../img/jia@2x.png'></image></view>
+        </view>
+      </view>
+    </view>
+
+<view class='submit' bindtap='submit'>提交</view>

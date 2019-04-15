@@ -1,0 +1,10 @@
+<!--pages/MZdetails.wxml-->
+<!-- <text>pages/MZdetails.wxml</text> -->
+<image style='width:750rpx' src='../img/topImg.png'></image>
+<view class='details'>
+  <text class='title'>门诊名称：{{name}}</text>
+  <text>负责人：{{headmanName}}</text>
+  <text>联系方式：{{contactTel}}</text>
+  <text>地址：{{address}}</text>
+  <text>备注：{{remark}}</text>
+</view>

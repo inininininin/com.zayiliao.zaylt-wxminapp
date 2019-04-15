@@ -1,0 +1,37 @@
+<!--pages/MZoutpatientDetails/MZoutpatientDetails.wxml-->
+<!-- <text>pages/MZoutpatientDetails/MZoutpatientDetails.wxml</text> -->
+<!-- <view class='list'>
+  <view class='listLf lf'>
+    <view class='name'>门诊名称：袁州明月医院门诊</view>
+    <text class='linkMan'>负责人：0551-123456</text>
+    <text class='contactInfo'>联系方式：0551-123456</text>
+    <text class='address'>地址：江苏省南京市</text>
+    <text class='remark'>备注：院长名称未填写</text>
+  </view>
+  <image class='rt' src='../img/back.png'></image>
+</view> -->
+
+<!--可是模板  -->
+<template name="hospitalSchemeItem">
+  <navigator url="../AllMzdetails/MZdetails?clinicId={{name}}'{{headmanName}}'{{contactTel}}'{{address}}'{{remark}}">
+    <view class='list'>
+      <view class='listLf lf'>
+        <view class='name'>门诊名称：{{name}}</view>
+        <text class='linkMan'>负责人：{{headmanName}}</text>
+        <text class='contactInfo'>联系方式：{{contactTel}}</text>
+        <text class='address'>地址：{{address}}</text>
+        <text class='remark'>备注：{{remark}}</text>
+      </view>
+      <image class='' src='../img/back.png'></image>
+    </view>
+  </navigator>
+</template>
+<!--项目模块end  -->
+<block wx:for="{{hospitalSchemeList}}" wx:key="hospitalSchemeList">
+  <template is="hospitalSchemeItem" data="{{...item}}" />
+</block>
+
+
+<view class='btn' bindtap='add'>
+  <button class='makesure'>添加</button>
+</view>

@@ -1,0 +1,18 @@
+<!--pages/twoKfTsks/twoKfTsks.wxml-->
+<view>
+  <include src="../common/common.wxml" />
+</view>
+<template name="schemeItem">
+  <view>
+    <view class='title'>
+      <view class='title1'>{{num}}、</view>
+      <view class='title2'>{{name}}</view>
+    </view>
+    <view class='detail'>
+      <text>{{content}}</text>
+    </view>
+  </view>
+</template>
+<block wx:for="{{hospitalSchemeList}}" wx:key="hospitalSchemeList">
+  <template is="schemeItem" data="{{...item}}" />
+</block>

@@ -1,0 +1,29 @@
+<!--pages/login/login.wxml-->
+<!-- <text>pages/login/login.wxml</text> -->
+<!-- <image src='../img/bg1.png'></image> -->
+<!-- <view class='viewBox'  style="background-image:url('http://zasellaid.njshangka.com/bg1.png') ">
+    <view class='inputBox lf'>
+      <input bindinput="loginPhone"  type='number' placeholder='请输入手机号码' placeholder-style='color:#ccc;font-size:32rpx'></input>
+      <input bindinput="loginPassward"  type='password' placeholder='请输入密码' placeholder-style='color:#ccc;font-size:32rpx'></input>
+
+      <button bindtap='loginBtn' class='loginBtn'>登录</button>
+    </view>
+</view> -->
+<view class='mainbox'>
+    <image class='topimg' src='../img/hospital_img7@2x.png'></image>
+ 
+    <view class='phone'>
+      <image class='tou' src='../img/hospital_icon5@2x.png'></image>
+      <input bindinput='loginPhone' placeholder-class='inputs' placeholder='输入账号'></input>
+    </view>
+    <view class='pwd'>
+      <image class='tou' src='../img/hospital_icon6@2x.png'></image>
+      <input bindinput='loginPassward' placeholder-class='inputs' placeholder='输入密码'></input>
+    </view>
+
+
+    <button class='loginBtn' bindtap='loginBtn'>登录</button>
+    <text class='admintit'>仅支持管理员分配的账号</text>
+    <image class='imgbottom' src='../img/hospital_img8@2x.png'></image>
+    <view class='bottomtit' bindtap='loginXx'>登录及同意<view class='userXy' bindtap='loginXy'>共享医连体用户协议</view></view>
+</view>

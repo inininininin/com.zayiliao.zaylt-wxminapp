@@ -1,0 +1,51 @@
+/* pages/twoBylist/twoBylist.wxss */
+.bydetail{
+  height: 240rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+  width: 100%;
+}
+.bydetail>view{
+  margin-left: 30rpx;
+}
+.bydetail1{
+  margin-top: 48rpx;
+   height: 32rpx;
+    line-height: 32rpx;
+}
+.bydetail11{
+  font-size: 32rpx;
+  margin-right: 44rpx;
+  color: #000;
+}
+.bydetail12{
+  font-size: 28rpx;
+  color: #333;
+}
+.bydetail13{
+  font-size: 28rpx;
+  color: #666;
+  float: right;
+  margin-right: 30rpx;
+}
+.bydetail2{
+  margin-top: 24rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.bydetail3{
+  font-size: 28rpx;
+  line-height: 28rpx;
+    margin-top: 16rpx;
+  color: #333;
+}
+.bydetail4{
+  margin-top: 20rpx;
+   height: 28rpx;
+  line-height: 28rpx;
+}
+.bydetail41{
+  font-size: 28rpx;
+  color: #00b7ee;
+  display: inline-block;
+ 
+}

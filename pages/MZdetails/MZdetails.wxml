@@ -1,0 +1,13 @@
+<!--pages/MZdetails.wxml-->
+<!-- <text>pages/MZdetails.wxml</text> -->
+<image style='width:750rpx' src='../img/topImg.png'></image>
+<view class='details'>
+  <text class='title'>门诊名称：{{schemeList.name}}</text>
+  <text>负责人：{{schemeList.headmanName}}</text>
+  <text>联系方式：{{schemeList.contactTel}}</text>
+  <text>地址：{{schemeList.address}}</text>
+  <text>备注：{{schemeList.remark}}</text>
+</view>
+<view class='btn' bindtap='edit'>
+  <button class='makesure' bindtap='add'>编辑</button>
+</view>

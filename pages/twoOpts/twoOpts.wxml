@@ -1,0 +1,16 @@
+<!--pages/twoQmzdetail/twoQmzdetail.wxml-->
+<image class='topimg' src='../img/he.png'></image>
+<view class='mz'>
+  <text class='mztitle'>艺福堂门诊</text>
+  <text class='mzdoc'>李医生</text>
+  <text class='mzdoc'>13811521203</text>
+  <text class='mzaddress'>江苏省江苏省江苏省江苏省江苏省江苏省江苏省江苏省江苏省江苏省江苏省江苏省江苏省江苏省</text>
+</view>
+<view class='bz'>
+  <text>备注</text>
+</view>
+<text class='bzdetail'>是大神卡发上来看发上来看咖啡机暗示法梁会计了三分是大神卡发上来看发上来看咖啡机暗示法梁会计了三分是大神卡发上来看发上来看咖啡asf暗示法机暗示法梁会计了三分是大神卡发上来看发上来看咖啡机暗示法梁会计了三分</text>
+<view class='tsxm'>
+  <text>特色项目</text>
+</view>
+<text class='bzdetail'>是大神卡发上来看发上来看咖啡机暗示法梁会计了三分是大神卡发上来看发上来看咖啡机暗示法梁会计了三分是大神卡发上来看发上来看咖啡asf暗示法机暗示法梁会计了三分是大神卡发上来看发上来看咖啡机暗示法梁会计了三分</text>

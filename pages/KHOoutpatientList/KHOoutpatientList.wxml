@@ -1,0 +1,18 @@
+<!--pages/outpatientList/outpatientList.wxml-->
+<!-- <text>pages/outpatientList/outpatientList.wxml</text> -->
+<template name="hospitalSchemeItem">
+  <navigator url="../AllMzdetails/MZdetails?clinicId={{name}}'{{headmanName}}'{{contactTel}}'{{address}}'{{remark}}'{{clinicId}}">
+    <view class='outpatientList'>
+      <view class='lf'>
+        <text class='outpatientName'>门诊名称：{{name}}</text>
+        <text class='patient'>病源{{patientCount}}个</text>
+      </view>
+      <image class='rt back' src='../img/back.png'></image>
+    </view>
+  </navigator>
+</template>
+
+<block wx:for="{{hospitalSchemeList}}" wx:key="hospitalSchemeList">
+  <template is="hospitalSchemeItem" data="{{...item}}" />
+</block>
+

@@ -1,0 +1,16 @@
+<view>
+<template name="hospitalSchemeItem">
+  <navigator url='../twoYyQxDetail/twoYyQxDetail?id={{deviceId}}'>
+    <view class='qx'>
+    <image src='https://www.njshangka.com{{cover}}'></image>
+    <view class='qxIntro'>
+      <text class='qxIntro1'>{{name}}</text>
+      <text class='qxIntro2'>{{brief}}</text>
+    </view>
+  </view>
+  </navigator>
+  </template>
+</view>
+<block wx:for="{{hospitalSchemeList}}" wx:key="hospitalSchemeList">
+  <template is="hospitalSchemeItem" data="{{...item}}" />
+</block>

@@ -1,0 +1,95 @@
+/* pages/AllhospitalDetails/AllhospitalDetails.wxss */
+@import '../common/common.wxss';
+
+page{
+  padding-bottom: 120rpx;
+}
+.titleOne,.titleTwo{
+   font-size: 32rpx;
+  color: #333;
+  text-align: center;
+  margin-top: 60rpx;
+  margin-bottom: 42rpx;
+}
+.Num{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  border: 1rpx solid #000;
+  font-size: 32rpx;
+  color: #333;
+  display: inline-block;
+  text-align: center;
+  margin-right: 30rpx;
+}
+.Num text{
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  border: 1rpx dotted #000;
+  border-radius: 50%;
+  margin: 9rpx ;
+}
+.intro1,.intrp2,.intrp3,.intrp4,.intrp5{
+  font-size: 28rpx;
+  color: #333;
+  line-height: 44rpx;
+  margin: 0 30rpx;
+}
+.pic1,.pic2{
+  width: 690rpx;
+  margin: 46rpx 30rpx;
+
+  vertical-align: middle;
+}
+
+.name{
+  text-align: center;
+  font-size:32rpx;
+  margin: 40rpx 30rpx 0;
+}
+.text{
+  text-align: center;
+  /* display: block; */
+  font-size: 26rpx;
+  margin: 20rpx 30rpx;
+}
+
+
+.btn{
+  width: 100%;  
+  height: 120rpx;
+  border-top: 1rpx solid #e5e5e5;
+  position: fixed;
+  
+  bottom:0;
+}
+.btn button{
+  height: 90rpx;
+  margin: 15rpx 30rpx;
+  border: 0;
+  background:#32afff;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 90rpx;
+}
+
+.btns {
+  z-index: 999;
+  width: 100%;
+  height: 120rpx;
+  border-top: 1rpx solid #e5e5e5;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+}
+
+.btns button {
+  height: 90rpx;
+  margin: 15rpx 30rpx;
+  border: 0;
+  background: #32afff;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 90rpx;
+}

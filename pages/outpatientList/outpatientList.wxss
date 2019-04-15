@@ -1,0 +1,55 @@
+/* pages/outpatientList/outpatientList.wxss */
+page{
+  padding-bottom: 120rpx;
+}
+.lf {
+  float: left;
+}
+
+.rt {
+  float: right;
+}
+
+.outpatientList {
+  width: 100%;
+  height: 200rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.outpatientList text:first-child {
+  font-size: 32rpx;
+  color: #000;
+  display: block;
+  margin: 57rpx 30rpx 13rpx;
+}
+
+.outpatientList text:last-child {
+  color: #00b7ee;
+  font-size: 28rpx;
+  margin: 0 30rpx;
+}
+
+.back {
+  width: 18rpx;
+  height: 32rpx;
+  margin: 84rpx 30rpx 84rpx 0;
+}
+
+.btns {
+  width: 100%;
+  height: 120rpx;
+  border-top: 1rpx solid #e5e5e5;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+}
+
+.btns button {
+  height: 90rpx;
+  margin: 15rpx 30rpx;
+  border: 0;
+  background: #32afff;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 90rpx;
+}

@@ -1,0 +1,42 @@
+<!--pages/twoQmzdetail/twoQmzdetail.wxml-->
+<view>
+  <include src="../common/common.wxml" />
+</view>
+<image class='topimg' src='../img/he.png'></image>
+<view class='mz'>
+  <text class='mztitle'>{{schemeList.name}}</text>
+  <text class='mzdoc'>{{schemeList.headmanName}}</text>
+  <text class='mzdoc'>{{schemeList.contactTel}}</text>
+  <text class='mzaddress'>{{schemeList.address}}</text>
+</view>
+<view class='bz'>
+  <text>备注</text>
+</view>
+<text class='bzdetail'>{{schemeList.remark}}</text>
+<view style='height:20rpx;width:750rpx;background:#f2f2f2'></view>
+<view class='bydetail'>
+  <view class='byxx'>病源信息</view>
+  <template name="schemeItem">
+    <view class='byxxde'>
+      <view class='byxxde1'>
+        <text class='byxxde11'>{{realname}}</text>
+        <text class='byxxde12'>{{tel||''}}</text>
+        <text class='byxxde13' wx:if='{{status==1}}'>待接收</text>
+        <text class='byxxde13' wx:if='{{status==3}}'>已转诊</text>
+        <text class='byxxde13' wx:if='{{status==4}}'>已确认</text>
+      </view>
+      <view class='byxxde2'>病种：{{sickness||''}}</view>
+      <view class='byxxde3'>加入时间：{{addTime||''}}</view>
+    </view>
+  </template>
+<block wx:for="{{patients}}" wx:key="patients">
+  <template is="schemeItem" data="{{...item}}" />
+</block>
+</view>
+<navigator url='../twoMzbylist/twoMzbylist?id={{clinicId}}'>
+  <view class='lookmore' wx:if='{{long==1}}'>
+  <text>查看更多</text>
+  <image src='../img/back.png'></image>
+</view>
+</navigator>
+

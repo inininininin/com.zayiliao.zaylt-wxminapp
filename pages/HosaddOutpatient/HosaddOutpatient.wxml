@@ -1,0 +1,41 @@
+<view style='height:20rpx;background:#f2f2f2;width:100%；'></view>
+<view class='distributionNum'>
+  <text class='lf'>账号</text>
+  <input bindinput="distributionNum"  class='lf' placeholder='请输入账号' placeholder-style='color：#ccc；font-size：32rpx；'></input>
+</view>
+<view class='distributionPassword'>
+  <text class='lf'>密码</text>
+  <input bindinput="distributionPassword"  class='lf' placeholder='请输入密码' placeholder-style='color：#ccc；font-size：32rpx；'></input>
+</view>
+<view style='height:20rpx;background:#f2f2f2;width:100%；'></view>
+<view class='hospitalName'>
+  <text class='lf'>门诊名称</text>
+  <input bindinput="hospitalName"  class='lf' placeholder='请输入门诊名称' placeholder-style='color：#ccc；font-size：32rpx；'></input>
+</view>
+<view class='chargePeople'>
+  <text class='lf'>负责人</text>
+  <input bindinput="chargePeople"  class='lf' placeholder='请输入负责人姓名' placeholder-style='color：#ccc；font-size：32rpx；'></input>
+</view>
+<view class='hospitalTel'>
+  <text class='lf'>联系方式</text>
+  <input bindinput="hospitalTel" type='number' class='lf' placeholder='请输入联系方式' placeholder-style='color：#ccc；font-size：32rpx；'></input>
+</view>
+<view class='address'>
+  <text class='lf'>地址</text>
+  <input bindinput="address"  class='lf' placeholder='请输入地址' placeholder-style='color：#ccc；font-size：32rpx；'></input>
+</view>
+<view class='remark'>
+  <text class='lf'>备注</text>
+  <input bindinput="remark"  class='lf' placeholder='请输入备注' placeholder-style='color：#ccc；font-size：32rpx；'></input>
+</view>
+
+<!--添加图片  -->
+<!-- <view class='addPic'> -->
+<!-- <text class='lf'>添加图片</text> -->
+<!-- <image bindtap='addPicture' class='lf' src='../img/addPic.png'></image>  -->
+<!-- <image bindtap='addPicture'  class="addPicture userHeadImg lf" wx:if="{{userHeadImgUrl}}" src="{{userHeadImgUrl}}"></image> -->
+<!-- <image bindtap='addPicture'  class="addPicture userHeadImg lf" wx:if="{{!userHeadImgUrl}}" src='../img/addPic.png'></image> -->
+<!-- </view> -->
+<view class='btn'>
+  <button class='makesure' bindtap='add'>确定</button>
+</view>

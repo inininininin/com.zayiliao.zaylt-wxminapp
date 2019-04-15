@@ -1,0 +1,54 @@
+/* pages/ZJCindex/ZJCindex.wxss */
+@import '../common/common.wxss';
+.topImg{
+  width: 750rpx;
+  /* height: 240rpx; */
+  margin-top: 70rpx;
+}
+.topImg image{
+  width: 120rpx;
+  height: 120rpx;
+  margin-left: 315rpx;
+  margin-bottom: 18rpx;
+}
+.name{
+  font-size: 34rpx;
+  line-height: 34rpx;
+  color: rgb(51, 51, 51);
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+.address{
+  font-size: 28rpx;
+  color: rab(153,153,153);
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 110rpx;
+}
+.line{
+  height: 104rpx;
+  line-height: 104rpx;
+}
+.line view{
+  display: inline-block;
+  width: 626rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.imglf{
+width: 60rpx;
+height: 60rpx;
+margin-left: 32rpx;
+margin-right: 32rpx;
+position: static;
+vertical-align: middle;
+ display: inline-block;
+}
+.imgrt{
+  width: 16rpx;
+  height: 26rpx;
+  margin-right: 32rpx;
+  float: right;
+  margin-top: 39rpx;
+}

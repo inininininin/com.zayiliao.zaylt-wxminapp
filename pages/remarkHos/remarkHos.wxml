@@ -1,0 +1,15 @@
+  <block class="_d4d55f2" wx:for="{{ remarkSchemeList }}" wx:for-index="index" wx:for-item="item" wx:key="index"> 
+<view class='box'>
+  <view class='boxLeft'>
+    <text>{{item.rownum}}</text>
+    <text>周{{item.day}}</text>
+    <text>{{item.time}}</text>
+  </view>
+  <view class='boxRight'>
+    <text>{{item.remark}}</text>
+  </view>
+</view>
+ </block> 
+<view class='btn' bindtap='edit'>
+  <button class='makesure' bindtap='add'>新增</button>
+</view>

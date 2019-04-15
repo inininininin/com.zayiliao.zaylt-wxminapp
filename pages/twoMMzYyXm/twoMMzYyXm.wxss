@@ -1,0 +1,37 @@
+/* pages/twoKfXmList/twoKfXmList.wxss */
+@import '../common/common.wxss';
+page{
+  background: #fff;
+}
+.xmlist{
+  width: 730rpx;
+  margin: 20rpx 20rpx;
+}
+.xm{
+  display: inline-block;
+  width: 335rpx;
+  height: 214rpx;
+  position: relative;
+  margin: 0 10rpx 20rpx;
+}
+.xm image{
+    width: 335rpx;
+  height: 214rpx;
+}
+.xm text{
+  position: absolute;
+  bottom: 0;left: 0;
+  width: 335rpx;
+  height: 50rpx;
+  display: block;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}

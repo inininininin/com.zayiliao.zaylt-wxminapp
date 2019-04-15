@@ -1,0 +1,46 @@
+<!--pages/twoMzlist/twoMzlist.wxml-->
+<view>
+  <include src="../common/common.wxml" />
+</view>
+<view wx:if='{{hos==1}}' class='kong'>
+  <image class='kongpic' src='../img/hospital_icon1@2x.png'></image>
+  <text class='kongte1'>该医院下未添加任何门诊</text>
+  <text class='kongte2'>____  请为该医院添加门诊哦！  ____</text>
+  <button class='kongadd'>新增</button>
+</view>
+<view class='mzlist' wx:if='{{hos==2}}'>
+  <template name="hospitalSchemeItem">
+    <navigator url="../twoQmzdetail/twoQmzdetail?clinicId={{name}}'{{headmanName}}'{{contactTel}}'{{address}}'{{remark}}'{{clinicId}}">
+
+
+      <view class='mzdetail'>
+        <view class='mzlf'>
+          <view class='mzname'>{{name}}</view>
+          <view class='mznum'>
+            <image src='../img/hospital_icon12@2x.png'></image>病源{{patientCount}}个</view>
+          <view class='mzdoc'>
+            <text class='mzdocname'>{{headmanName}}</text>
+            <text class='mzdocnum'>{{contactTel}}</text>
+          </view>
+          <view class='time'>加入时间：{{addTime}}</view>
+          <view class='mzaddress'>{{address}}</view>
+        </view>
+        <view class='back'>
+          <image src='../img/back.png'></image>
+        </view>
+      </view>
+    </navigator>
+  </template>
+
+ 
+</view>
+<view wx:if='{{hos==2}}' class='btns' bindtap='add'>
+  <button>新增</button>
+</view>
+
+
+
+
+<block wx:for="{{hospitalSchemeList}}" wx:key="hospitalSchemeList">
+  <template is="hospitalSchemeItem" data="{{...item}}" />
+</block>

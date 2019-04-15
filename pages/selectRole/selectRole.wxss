@@ -1,0 +1,56 @@
+/* pages/selectRole/selectRole.wxss */
+page{
+  background: #83cbcb
+}
+.selectNo{
+  /* float: right; */
+  position: fixed;
+  right: 10rpx;
+  top: 10rpx;
+  color: #fff;
+  margin: 10rpx 10rpx;
+}
+.lf{
+  float: left;
+}
+.rt{
+  float: right；
+}
+.boxBoom{
+  width: 634rpx;
+  margin: 400rpx auto;
+}
+.box{
+  width: 198rpx;
+  height: 220rpx;
+  /* border-radius:20rpx; */
+}
+.box:first-child{
+  margin: 0 20rpx 0 0;
+}
+.box:last-child{
+  margin: 0 0 0 20rpx;
+}
+.box .boxTop{
+  height: 156rpx;
+  width: 100%;
+  background: #c3e5e4;
+  border-top-left-radius:20rpx;
+  border-top-right-radius:20rpx;
+}
+.boxTop image{
+  width: 63rpx;
+  height: 63rpx;
+  margin: 46.5rpx 67.5rpx;
+}
+.boxBottom{
+  height:64rpx;
+  width: 100%;
+  line-height: 64rpx;
+  background: #fff;
+  font-size: 28rpx;
+  color: #000;
+  text-align: center;
+  border-bottom-left-radius:20rpx;
+  border-bottom-right-radius:20rpx;
+}

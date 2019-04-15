@@ -1,0 +1,38 @@
+<view><include src="../commonIndex/commonIndex.wxml"/></view>
+  <image class='topimg' src='../img/hospital_img-1@2x.png'></image>
+  <!-- <text class='qhzh' bindtap='qhzh'>切换账号</text> -->
+  <text class='title'><text style='color:#ccc;margin-right:20rpx;'>——</text>了解关于门诊信息<text style='color:#ccc;margin-left:20rpx;'>——</text></text>
+
+<view class='hosdetail'  bindtap='outpatient'>
+  <image class='lf' src='../img/hospital_icon3@2x.png'></image>
+  <view class='tit lf'>
+    <text class='tit1'>门诊信息</text>
+    <text class='tit2'>该门诊的详细信息</text>
+  </view>
+</view>
+<view class='hosdetail'  bindtap='bingyuan'>
+  <image class='lf' src='../img/hospital_icon4@2x.png'></image>
+  <view class='tit lf'>
+    <text class='tit1'>病源信息</text>
+    <text class='tit2'>门诊底下所有病员信息</text>
+  </view>
+</view>
+<view class='hosdetail'  bindtap='hospital'>
+  <image class='lf' src='../img/hospital_icon2@2x.png'></image>
+  <view class='tit lf'>
+    <text class='tit1'>所属医院信息</text>
+    <text class='tit2'>医院微官网，掌握更多医院信息</text>
+  </view>
+</view>
+<view class='hosdetail'  bindtap='patient'>
+  <image class='lf' src='../img/gongxiang.png'></image>
+  <view class='tit lf'>
+    <text class='tit1'>共享采购</text>
+    <text class='tit2'>共享采购，医疗器械</text>
+  </view>
+</view>
+
+
+
+
+

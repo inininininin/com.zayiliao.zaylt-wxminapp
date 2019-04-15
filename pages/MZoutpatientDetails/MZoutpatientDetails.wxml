@@ -1,0 +1,7 @@
+<!--pages/MZoutpatientDetails/MZoutpatientDetails.wxml-->
+<!-- <text>pages/MZoutpatientDetails/MZoutpatientDetails.wxml</text> -->
+<view class='name'>门诊名称：袁州明月医院门诊</view>
+<text class='linkMan'>负责人：0551-123456</text>
+<text class='contactInfo'>联系方式：0551-123456</text>
+<text class='address'>地址：江苏省南京市</text>
+<text class='remark'>备注：院长名称未填写</text>

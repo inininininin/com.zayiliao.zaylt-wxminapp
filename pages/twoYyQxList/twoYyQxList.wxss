@@ -1,0 +1,43 @@
+/* pages/twoYyQxList/twoYyQxList.wxss */
+.qx{
+  width: 690rpx;
+  margin-left: 30rpx;
+  padding-right: 30rpx;
+  height: 188rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.qx image{
+  width: 180rpx;
+  height: 140rpx;
+  margin: 24rpx 0;
+float: left;
+}
+.qxIntro{
+float: left;
+  width: 485rpx;
+  margin-left: 24rpx;
+  margin-top:37rpx; 
+}
+.qxIntro1{
+  font-size: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  color: #000;
+  display: block;
+  overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.qxIntro2{
+  font-size: 22rpx;
+  line-height: 35rpx;
+  margin-top: 20rpx;
+  display: block;
+  overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
