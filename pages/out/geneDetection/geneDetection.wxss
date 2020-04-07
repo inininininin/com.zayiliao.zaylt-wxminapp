@@ -1,0 +1,248 @@
+.container {
+  box-sizing: border-box;
+  /* height: 100%; */
+  background: #fff;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+}
+
+.status-bar {
+  /* background: rgba(255, 0, 0, 0.1); */
+}
+
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .search {
+  margin-top: 24rpx;
+  position: absolute;
+  width: 42rpx;
+  height: 42rpx;
+  left: 0;
+}
+.title-bar view {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  /* display: flex; *//* justify-content: space-between; */
+  align-items: center;
+}
+
+.title-bar view picker {
+  font-size: 28rpx;
+  display: inline-block;
+  text-align: center !important;
+  width: 40%;
+  height: 44rpx;
+  margin: 0 30% !important;
+  line-height: 44rpx !important;
+  padding-top: 12rpx;
+  position: relative;
+}
+
+.title-bar view picker view {
+  text-align: center !important;
+  height: 44rpx;
+  line-height: 44rpx !important;
+  padding-top: 12rpx;
+  /* font-size: 26rpx !important; */
+}
+
+.arror {
+  width: 17rpx !important;
+  height: 10rpx !important;
+  position: absolute;
+  top: 17rpx;
+  right: 70rpx;
+}
+
+.fenlei {
+  height: 44rpx;
+  margin: 0 30% !important;
+  line-height: 44rpx !important;
+  /* padding-top: 12rpx; */
+  position: relative;
+  /* border-bottom: 1rpx solid #e6e6e6; */
+  display: flex;
+  align-items: center;
+  width: 300rpx !important;
+}
+
+.fenlei text {
+  font-size: 30rpx;
+  color: #000;
+  /* margin-left: 15rpx; */
+}
+
+/* 下拉框 */
+
+.select_box {
+  background: #fff;
+  width: 300rpx !important;
+  /* margin: 0 auto; */
+  height: 44rpx;
+  line-height: 44rpx;
+  text-align: left;
+  position: relative;
+}
+
+.select {
+  box-sizing: border-box;
+  width: 100%;
+  height: 86rpx;
+  /* border: 1px solid #efefef; */
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+}
+
+.select_text {
+  font-size: 28rpx;
+  flex: 1;
+  color: rgb(102, 102, 102);
+  line-height: 86rpx;
+  height: 86rpx;
+}
+
+.select_img {
+  width: 16rpx !important;
+  height: 10rpx !important;
+  /* display: block; */
+  transition: transform 0.3s;
+  position: absolute;
+  right: 50rpx;
+  /* margin-left: -50rpx; *//* margin-top: 0 !important; */
+}
+
+.select_img_rotate {
+  transform: rotate(180deg);
+}
+
+.option_box {
+  position: absolute;
+  top: 88rpx;
+  width: 300rpx;
+  /* border-top: 0; */
+  border-bottom: 0;
+  border-top: none;
+  border: 1px solid #efefef;
+  box-sizing: border-box;
+  height: 0;
+  overflow-y: auto;
+  background: #fff;
+  transition: height 0.3s;
+  z-index: 100;
+  box-shadow: 0, 0, 5rpx, 10rpx, #000;
+}
+
+.option {
+  display: block;
+  font-size: 28rpx;
+  line-height: 66rpx;
+  /* border-bottom: 1px solid #efefef; *//* padding: 10rpx; */
+  color: rgb(102, 102, 102);
+}
+
+.option::selection {
+  color: rgb(43, 119, 239);
+}
+
+page {
+  background: #f2f2f2;
+}
+
+.shareJch {
+  width: 702rpx;
+  height: 98rpx;
+  background: #fff;
+  margin: 24rpx;
+  line-height: 98rpx;
+}
+
+.shareJch text:first-child {
+  color: rgb(43, 119, 239);
+  float: left;
+  font-size: 28rpx;
+  margin-left: 30rpx;
+}
+
+.shareJch text:nth-child(3) {
+  color: rgb(102, 102, 102);
+  float: right;
+  font-size: 28rpx;
+  margin-right: 10rpx;
+}
+
+.shareJch image {
+  width: 16rpx;
+  height: 26rpx;
+  float: right;
+  margin: 36rpx 30rpx 36rpx 0;
+}
+
+.outpatient {
+  width: 702rpx;
+  margin: 24rpx;
+  background: #fff;
+  height: auto;
+}
+
+.outLine1 {
+  height: 102rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  width: 702rpx;
+  /* margin: 24rpx; */
+  line-height: 102rpx;
+}
+
+.hosimg {
+  width: 46rpx;
+  height: 34rpx;
+  vertical-align: middle;
+  margin-left: 30rpx;
+}
+.hosname{
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+  margin-left: 20rpx;
+}
+.outLine1>view{
+  float: right;
+  margin-right: 24rpx;
+}
+.outLine1>view image {
+  width: 22rpx;
+  height: 24rpx;
+}
+
+.outLine1>view text {
+  font-size: 26rpx;
+  margin-left: 10rpx;
+  margin-right: 30rpx;
+}
+.outLine2>view>view{
+  font-size: 26rpx;
+  color: rgb(102, 102, 102);
+}
+.line1>view:first-child{
+  margin: 30rpx 0 20rpx;
+  margin-left:30rpx;
+}
+.line1>view:last-child{
+  padding-bottom: 30rpx;
+  margin-left:30rpx;
+}
+.line2{
+  height: 86rpx;
+  line-height: 86rpx;
+  margin-left: 30rpx;
+}

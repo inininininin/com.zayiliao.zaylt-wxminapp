@@ -1,0 +1,41 @@
+/* pages/out/highQualityCase/highQualityCase.wxss */
+@import '../../common/common.wxss';
+.highBox{
+  height: 218rpx;
+  width: 686rpx;
+  margin: 0 32rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  position: relative;
+}
+.highBox>view{
+  
+ display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  margin-top: 30rpx;
+  float: left;
+  width: 416rpx;
+  font-size: 32rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(51,51,51,1);
+line-height:45rpx;
+
+}
+.highBox>view>view {
+  position: absolute;
+  bottom: 30rpx;
+  left: 0;
+}
+.highBox>view>view image{
+  width: 22rpx;
+  height: 22rpx;
+  margin-right: 12rpx;
+}
+.highBox>.image{
+  width: 216rpx;
+  height: 170rpx;
+  float: right;
+  margin-top: 24rpx;
+}

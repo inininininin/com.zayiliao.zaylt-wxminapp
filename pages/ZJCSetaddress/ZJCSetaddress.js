@@ -1,4 +1,5 @@
 // pages/ZJCSetaddress/ZJCSetaddress.js
+var app=getApp()
 Page({
 
   /**
@@ -6,8 +7,8 @@ Page({
    */
   data: {
     navtitle: '地址管理',
-    statusBarHeight: '',
-    titleBarHeight: '',
+    statusBarHeight: getApp().globalData.statusBarHeight,
+    titleBarHeight: getApp().globalData.titleBarHeight,
     addressList: [],
     name:'',
     tel:'',
@@ -29,12 +30,13 @@ Page({
       domain: domain,
     })
     wx.request({
-      url: that.data.domain + '/zaylt/c/procurement/receivers',
+      url: app.globalData.url + '/clientend2/clinicend/pointexchange/receivers',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
+        'cookie': app.globalData.cookie
       },
       data: {
-        token: that.data.token,
+        token: app.globalData.token,
         pn: 1,
         ps: 1,
       },
@@ -62,6 +64,7 @@ Page({
           }
         } else {
           wx.showModal({
+            showCancel: false,
             title: res.data.codeMsg
           })
         }
@@ -91,12 +94,13 @@ Page({
   modify:function(e){
     var that=this
     wx.request({
-      url: that.data.domain + '/zaylt/c/procurement/receiveralter',
+      url: app.globalData.url + '/clientend2/clinicend/pointexchange/receiveralter',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
+        'cookie': app.globalData.cookie
       },
       data: {
-        token: that.data.token,
+        token: app.globalData.token,
         receiverId: that.data.receiverId,
         name: that.data.name,
         tel: that.data.tel,
@@ -111,6 +115,7 @@ Page({
             })
         } else {
           wx.showModal({
+            showCancel: false,
             title: res.data.codeMsg
           })
         }
@@ -120,12 +125,13 @@ Page({
   add: function (e) {
     var that = this
     wx.request({
-      url: that.data.domain + '/zaylt/c/procurement/receiveradd',
+      url: app.globalData.url + '/clientend2/clinicend/pointexchange/receiveradd',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
+        'cookie': app.globalData.cookie
       },
       data: {
-        token: that.data.token,
+        token: app.globalData.token,
         name: that.data.name,
         tel: that.data.tel,
         address: that.data.address1 + "%$" + that.data.address2,
@@ -140,6 +146,7 @@ Page({
           })
         } else {
           wx.showModal({
+            showCancel: false,
             title: res.data.codeMsg
           })
         }
@@ -151,11 +158,7 @@ Page({
    */
   onReady: function () {
 
-    const vm = this
-    vm.setData({
-      statusBarHeight: getApp().globalData.statusBarHeight,
-      titleBarHeight: getApp().globalData.titleBarHeight
-    })
+    
   },
 
   backHistory: function (e) {
@@ -204,6 +207,19 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    if (app.globalData.lastClient == 1) {
+      var path = '/pages/index/index'
+    } else {
+      var path = '/pages/out/index/index'
+    }
+    return {
+      title: '欢迎使用共享医联体小程序', //分享内容
+      path: path, //分享地址
+      imageUrl: 'https://zaylt.njshangka.com/favicon.ico', //分享图片
+      success: function (res) {
+      },
+      fail: function (res) {
+      }
+    }
   }
 })

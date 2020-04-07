@@ -1,0 +1,125 @@
+<!--pages/Third/index/index.wxml-->
+<view class="container" style="height:{{225+statusBarHeight}}px;padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class='indexTopBg' style='height:{{160+statusBarHeight}}px'>
+    <view class="header">
+      <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+      <view class="title-bar" style="height:{{titleBarHeight}}px;position:relative">
+        <view class='backHistory' bindtap='backHistory'>
+          <image src='../../img/system-backnew.png'></image>
+        </view>
+        <view>
+          <!-- <image bindtap='backHistory' style='margin-left:30rpx;border-radius:6rpx;display:inline-block' src='../../img/system-backnew.png'></image> -->
+          <text>{{navtitle}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="swiper-container" style='top:{{45+statusBarHeight}}px'>
+    <swiper bindchange="swiperChange" class="swiper" current="{{swiperCurrent}}" autoplay="false" interval="5000" duration="1000">
+      <block wx:for="{{cover}}" wx:for-index="index">
+        <swiper-item>
+         <navigator wx:if='{{item.jump==0}}' url=''>
+            <!-- <image src="{{item}}" class="slide-image" mode="aspectFill" /> -->
+            <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
+          </navigator>
+          <navigator wx:if='{{item.jump==1}}' url='../../webview/webview?href={{item.jump1Url}}'>
+            <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
+          </navigator>
+          <navigator wx:if='{{item.jump==2}}' url='../../out/articleDetail/articleDetail?id={{item.jump2ArticleId}}'>
+            <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
+          </navigator>
+          <navigator wx:if='{{item.jump==3}}' url='../../out/expertIntroduction/expertIntroduction?id={{item.jump3DoctorId}}'>
+            <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
+          </navigator>
+          <navigator wx:if='{{item.jump==4}}' url='../../out/highQualityCaseDetail/highQualityCaseDetail?id={{item.jump4ProjectId}}'>
+            <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
+          </navigator>
+          <navigator wx:if='{{item.jump==5}}' url='../../out/eventAnnouncementDetail/eventAnnouncementDetail?id={{item.jump5ActivityId}}'>
+            <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
+          </navigator>
+          <navigator wx:if='{{item.jump==6}}' url='../../out/hospitalImage/hospitalImage?id={{item.hospitalMaincarouselId}}'>
+            <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
+          </navigator>
+          <navigator wx:if='{{item.jump==7}}' url='../../out/expertIntroduction/expertIntroduction?id={{item.hospitalMaincarouselId}}'>
+            <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
+          </navigator>
+          <navigator wx:if='{{item.jump==8}}' url='../../out/expertIntroduction/expertIntroduction?id={{item.hospitalMaincarouselId}}'>
+            <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
+          </navigator>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="dots">
+      <block wx:for="{{cover}}" wx:key="unique">
+        <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+      </block>
+    </view>
+  </view>
+</view>
+
+<view class='mainBox'>
+  <view>
+    <view bindtap='qdmz'>
+      <image src='../../img/qudaomenzhen@2x.png'></image>
+      <text>渠道门诊</text>
+    </view>
+    <view bindtap='bygl'>
+      <image src='../../img/bingyuanguanli@2x.png'></image>
+      <text>病源管理</text>
+    </view>
+    <view bindtap='qxjc'>
+      <image src='../../img/qixiejicai@2x.png'></image>
+      <text>器械集采</text>
+    </view>
+    <view bindtap="yyzx">
+      <image src='../../img/yunyingzhongxin@2x.png'></image>
+      <text>运营中心</text>
+    </view>
+  </view>
+  <view>
+    <view bindtap="jyjc">
+      <image src='../../img/jiyinjiance@2x.png'></image>
+      <text>基因检测</text>
+    </view>
+    <view bindtap="ylzy">
+      <image src='../../img/yiliaoziyuan@2x.png'></image>
+      <text>医疗资源</text>
+    </view>
+    <view bindtap="yyhd">
+      <image src='../../img/yiyuanhuodong@2x.png'></image>
+      <text>医院活动</text>
+    </view>
+    <view bindtap="qtxm">
+      <image src='../../img/qita@2x.png'></image>
+      <text>其他项目</text>
+    </view>
+  </view>
+</view>
+
+
+<view class='operate'>
+
+  <view class='yyjx'>
+    <image src='../../img/CombinedShape@2x.png'></image>
+    <text>运营精选</text>
+  </view>
+
+  <view wx:for='{{schemeList}}'>
+    <!-- {{item.url}} -->
+    <navigator url='../../out/articleDetail/articleDetail?id={{item.itemId}}&contentBtId={{item.contentBtId}}'>
+      <view class='highBox'>
+        <view>
+          <text>{{item.title}}</text>
+          <view>
+            <image src='../../img/time@2x.png'></image>
+            <text style='color:rgb(153,153,153)'>{{item.addTime}}</text>
+          </view>
+        </view>
+        <view class='image' style='background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;'>
+
+        </view>
+        <!-- <image src='{{item.cover}}'></image> -->
+      </view>
+    </navigator>
+  </view>
+</view>

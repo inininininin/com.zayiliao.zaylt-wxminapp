@@ -1,0 +1,46 @@
+<!--pages/manage/mine/mine.wxml-->
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+    <view>
+    <!-- <image bindtap='backHistory' style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;'  src='../img/shape@2x.png'></image>
+    <text class='titleText'>{{navtitle}}</text> -->
+    </view>
+    </view>
+  </view>
+</view>
+
+<view class='topline'>
+  <image src='{{headimg}}'></image>
+  <view>
+    <text>{{phone}}</text>
+    <text>{{realname}}</text>
+  </view>
+</view>
+<view class='line' bindtap='numberSecurity'>
+<!-- <navigator url='../numberSecurity/numberSecurity'> -->
+<text>账号与安全</text>
+<image src='../../img/back.png'></image>
+<!-- </navigator> -->
+</view>
+
+<view class='bottomBth'>
+<!-- <navigator  hover-class='none' url='../index/index'> -->
+  <view bindtap='index'>
+    <image class='bottomBthimg1' src='../../img/shouye@2x.png'></image>
+    <text>医院</text>
+  </view>
+   <!-- </navigator> -->
+  <!-- <navigator  hover-class='none' url='../clinic/clinic'> -->
+  <view bindtap='clinic'>
+    <image class='bottomBthimg2' src='../../img/Hospital@2x.png'></image>
+    <text>门诊</text>
+  </view>
+  <!-- </navigator> -->
+ 
+  <view>
+    <image class='bottomBthimg3' src='../../img/wode-blue@2x.png'></image>
+    <text  class='selectBtn'>我的</text>
+  </view>
+</view>

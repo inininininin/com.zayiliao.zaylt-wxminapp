@@ -1,0 +1,22 @@
+<view>
+  <include src="../../common/common.wxml" />
+</view>
+<view class='news'>
+  <navigator url='../newsLIst/newsLIst?type=1'>
+  <view>
+  <image class='Tbicon' src='../../img/yiyuanxiaoxi@2x.png'></image>
+  <text>医院消息</text>
+  <image class='rtIcon' src='../../img/right@2x.png'></image>
+  <text class='num'>{{num1}}</text>
+  </view>
+  
+  </navigator>
+   <navigator url='../newsLIst/newsLIst?type=2'>
+  <view>
+  <image class='Tbicon' src='../../img/xitongxiaoxi@2x.png'></image>
+  <text>系统消息</text>
+  <image class='rtIcon' src='../../img/right@2x.png'></image>
+  <text class='num'>{{num2}}</text>
+  </view>
+  </navigator>
+</view>

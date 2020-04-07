@@ -1,0 +1,123 @@
+@import '../common/common.wxss';
+
+page {
+  background: #f2f2f2;
+}
+
+.sendRec {
+  width: 702rpx;
+  height: 98rpx;
+  border-radius: 5rpx;
+  text-align: center;
+  line-height: 98rpx;
+  font-size: 30rpx;
+  color: rgb(43, 119, 239);
+  background: #fff;
+  margin: 24rpx;
+}
+
+.sendRec text {
+  float: right;
+  margin-right: 266rpx;
+}
+
+.sendRec image {
+  float: left;
+  margin-left: 266rpx;
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 34rpx;
+  /* margin-right: 16rpx; *//* vertical-align: middle; */
+}
+
+.imgBox {
+  background: #fff;
+  width: 750rpx;
+  height: 230rpx;
+  /* margin: 0 0 24rpx 0; */
+}
+
+.imgBox>view {
+  position: relative;
+  width: 480rpx;
+  height: 230rpx;
+  float: left;
+}
+
+.imgBox>view>text:nth-child(1) {
+  margin: 30rpx 0 0 32rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-top: 30rpx;
+  float: left;
+  width: 416rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 45rpx;
+}
+
+.imgBox>view>text:nth-child(2) {
+  position: absolute;
+  left: 32rpx;
+  bottom: 30rpx;
+  /* margin: 16rpx 0 0 32rpx; */
+  height: 28rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgb(118, 136, 146);
+  line-height: 28rpx;
+  display: block;
+}
+
+.touch-item {
+  /* font-size: 14px; */
+  display: flex;
+  justify-content: space-between;
+  /* border-bottom:1px solid #ccc; */
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 24rpx;
+  background: #fff;
+}
+
+.content {
+  width: 750rpx;
+  /* padding: 10px; *//* line-height: 22px; */
+  margin-right: 0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: translateX(90px);
+  transform: translateX(90px);
+  margin-left: -185rpx;
+}
+
+.del {
+  background-color: orangered;
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  -webkit-transform: translateX(90px);
+  transform: translateX(90px);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.touch-move-active .content, .touch-move-active .del {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.boxImg {
+  width: 216rpx !important;
+  height: 170rpx !important;
+  float: right;
+  margin: 30rpx 32rpx 30rpx 20rpx;
+}

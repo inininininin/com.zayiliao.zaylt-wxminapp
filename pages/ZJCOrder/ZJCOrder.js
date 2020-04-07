@@ -1,4 +1,5 @@
 // pages/ZJCOrder/ZJCOrder.js
+var app=getApp()
 Page({
 
   /**
@@ -6,14 +7,14 @@ Page({
    */
   data: {
     navtitle: '采购清单表',
-    statusBarHeight: '',
-    titleBarHeight: '',
-    addressIf:'1',
-    domain:'',
-    token:'',
-    showList:[],
-    addressIf:'',
-    addressList:[],
+    statusBarHeight: getApp().globalData.statusBarHeight,
+    titleBarHeight: getApp().globalData.titleBarHeight,
+    addressIf: '1',
+    domain: '',
+    token: '',
+    showList: [],
+    addressIf: '',
+    addressList: [],
   },
   add: function (e) {
     var that = this
@@ -26,12 +27,13 @@ Page({
     var deviceId = e.currentTarget.dataset.id;
     num++;
     wx.request({
-      url: that.data.domain + '/zaylt/c/procurement/shoppingcart/move',
+      url: app.globalData.url + '/c/procurement/shoppingcart/move',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
+        'cookie': app.globalData.cookie
       },
       data: {
-        token: that.data.token,
+        token: app.globalData.token,
         count: 1,
         deviceId: deviceId,
       },
@@ -49,6 +51,7 @@ Page({
           })
         } else {
           wx.showModal({
+            showCancel: false,
             title: res.data.codeMsg
           })
         }
@@ -64,12 +67,13 @@ Page({
     num--;
     if (num == 0) {
       wx.request({
-        url: that.data.domain + '/zaylt/c/procurement/shoppingcart/remove',
+        url: app.globalData.url + '/c/procurement/shoppingcart/remove',
         header: {
           "Content-Type": "application/x-www-form-urlencoded",
+          'cookie': app.globalData.cookie
         },
         data: {
-          token: that.data.token,
+          token: app.globalData.token,
           deviceId: deviceId,
         },
         method: 'post',
@@ -79,6 +83,7 @@ Page({
             that.listNum();
           } else {
             wx.showModal({
+              showCancel: false,
               title: res.data.codeMsg
             })
           }
@@ -86,12 +91,13 @@ Page({
       });
     } else {
       wx.request({
-        url: that.data.domain + '/zaylt/c/procurement/shoppingcart/sub',
+        url: app.globalData.url + '/c/procurement/shoppingcart/sub',
         header: {
           "Content-Type": "application/x-www-form-urlencoded",
+          'cookie': app.globalData.cookie
         },
         data: {
-          token: that.data.token,
+          token: app.globalData.token,
           count: 1,
           deviceId: deviceId,
         },
@@ -109,6 +115,7 @@ Page({
             })
           } else {
             wx.showModal({
+              showCancel: false,
               title: res.data.codeMsg
             })
           }
@@ -126,12 +133,13 @@ Page({
     if (val > num) {
       var count = val - num
       wx.request({
-        url: that.data.domain + '/zaylt/c/procurement/shoppingcart/add',
+        url: app.globalData.url + '/c/procurement/shoppingcart/add',
         header: {
           "Content-Type": "application/x-www-form-urlencoded",
+          'cookie': app.globalData.cookie
         },
         data: {
-          token: that.data.token,
+          token: app.globalData.token,
           count: count,
           deviceId: deviceId,
         },
@@ -149,6 +157,7 @@ Page({
             })
           } else {
             wx.showModal({
+              showCancel: false,
               title: res.data.codeMsg
             })
           }
@@ -157,12 +166,13 @@ Page({
     } else if (val < num && val > 0) {
       var count = num - val
       wx.request({
-        url: that.data.domain + '/zaylt/c/procurement/shoppingcart/sub',
+        url: app.globalData.url + '/c/procurement/shoppingcart/sub',
         header: {
           "Content-Type": "application/x-www-form-urlencoded",
+          'cookie': app.globalData.cookie
         },
         data: {
-          token: that.data.token,
+          token: app.globalData.token,
           count: count,
           deviceId: deviceId,
         },
@@ -180,6 +190,7 @@ Page({
             })
           } else {
             wx.showModal({
+              showCancel: false,
               title: res.data.codeMsg
             })
           }
@@ -187,12 +198,13 @@ Page({
       });
     } else if (val == 0) {
       wx.request({
-        url: that.data.domain + '/zaylt/c/procurement/shoppingcart/remove',
+        url: app.globalData.url + '/c/procurement/shoppingcart/remove',
         header: {
           "Content-Type": "application/x-www-form-urlencoded",
+          'cookie': app.globalData.cookie
         },
         data: {
-          token: that.data.token,
+          token: app.globalData.token,
           deviceId: deviceId,
         },
         method: 'post',
@@ -202,6 +214,7 @@ Page({
             that.listNum();
           } else {
             wx.showModal({
+              showCancel: false,
               title: res.data.codeMsg
             })
           }
@@ -215,12 +228,13 @@ Page({
   listNum: function () {
     var that = this
     wx.request({
-      url: that.data.domain + '/zaylt/c/procurement/shoppingcart/list',
+      url: app.globalData.url + '/c/procurement/shoppingcart/list',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
+        'cookie': app.globalData.cookie
       },
       data: {
-        token: that.data.token,
+        token: app.globalData.token,
         pn: 1,
         ps: 100,
       },
@@ -228,11 +242,17 @@ Page({
       success: function (res) {
         wx.hideToast()
         if (res.data.code == 0) {
+          for(var i=0;i<res.data.data.items.length;i++){
+            if (res.data.data.items[i].deviceCover.slice(0,1)!='h'){
+              res.data.data.items[i].deviceCover = app.globalData.url+res.data.data.items[i].deviceCover
+            }
+          }
           that.setData({
             showList: res.data.data.items,
           })
         } else {
           wx.showModal({
+            showCancel: false,
             title: res.data.codeMsg
           })
         }
@@ -249,17 +269,18 @@ Page({
     })
     that.listNum();
 
-  
+
   },
-  submit:function(e){
-    var that=this
+  submit: function (e) {
+    var that = this
     wx.request({
-      url: that.data.domain + '/zaylt/c/procurement/orderconfirmforall',
+      url: app.globalData.url + '/c/procurement/orderconfirmforall',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
+        'cookie': app.globalData.cookie
       },
       data: {
-        token: that.data.token
+        token: app.globalData.token
       },
       method: 'post',
       success: function (res) {
@@ -267,13 +288,14 @@ Page({
         if (res.data.code == 0) {
           var receiverId = res.data.data.receiver.receiverId
           wx.request({
-            url: that.data.domain + '/zaylt/c/procurement/orderforall',
+            url: app.globalData.url + '/c/procurement/orderforall',
             header: {
               "Content-Type": "application/x-www-form-urlencoded",
+              'cookie': app.globalData.cookie
             },
             data: {
-              token: that.data.token,
-              param: "{receiverId:" + receiverId+"}"
+              token: app.globalData.token,
+              param: "{receiverId:" + receiverId + "}"
             },
             method: 'post',
             success: function (res) {
@@ -282,13 +304,14 @@ Page({
                 wx.showLoading({
                   title: '下单成功',
                 })
-                  setTimeout(function(){
-                    wx.navigateBack({
-                      delta: 1,
-                    })
-                  },1000)
+                setTimeout(function () {
+                  wx.navigateBack({
+                    delta: 1,
+                  })
+                }, 1000)
               } else {
                 wx.showModal({
+                  showCancel: false,
                   title: res.data.codeMsg
                 })
               }
@@ -296,6 +319,7 @@ Page({
           });
         } else {
           wx.showModal({
+            showCancel: false,
             title: res.data.codeMsg
           })
         }
@@ -307,13 +331,9 @@ Page({
    */
   onReady: function () {
 
-    const vm = this
-    vm.setData({
-      statusBarHeight: getApp().globalData.statusBarHeight,
-      titleBarHeight: getApp().globalData.titleBarHeight
-    })
+    
 
-     
+
   },
 
   backHistory: function (e) {
@@ -325,14 +345,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that=this
+    var that = this
     wx.request({
-      url: that.data.domain + '/zaylt/c/procurement/receivers',
+      url: app.globalData.url + '/c/procurement/receivers',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
+        'cookie': app.globalData.cookie
       },
       data: {
-        token: that.data.token,
+        token: app.globalData.token,
         pn: 1,
         ps: 1,
       },
@@ -355,6 +376,7 @@ Page({
           }
         } else {
           wx.showModal({
+            showCancel: false,
             title: res.data.codeMsg
           })
         }
@@ -380,7 +402,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    wx.stopPullDownRefresh()
   },
 
   /**
@@ -394,6 +416,19 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    if (app.globalData.lastClient == 1) {
+      var path = '/pages/index/index'
+    } else {
+      var path = '/pages/out/index/index'
+    }
+    return {
+      title: '欢迎使用共享医联体小程序', //分享内容
+      path: path, //分享地址
+      imageUrl: 'https://zaylt.njshangka.com/favicon.ico', //分享图片
+      success: function (res) {
+      },
+      fail: function (res) {
+      }
+    }
   }
 })

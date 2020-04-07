@@ -1,0 +1,28 @@
+/* pages/out/eventAnnouncement/eventAnnouncement.wxss */
+@import '../../common/common.wxss';
+page{
+  width: 100%;
+  background: #f2f2f2;
+}
+.kong{
+  width: 312rpx;
+  height: 198rpx;
+  margin: 232rpx 219rpx 54rpx;
+  vertical-align: bottom;
+}
+.noAction{
+height:33rpx;
+font-size:24rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(153,153,153,1);
+line-height:33rpx;
+text-align: center;
+width: 100%;
+display: inline-block;
+}
+.action{
+  width: 702rpx;
+  height: 352rpx;
+  margin: 24rpx 24rpx 0;
+}

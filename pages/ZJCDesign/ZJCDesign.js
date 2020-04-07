@@ -1,4 +1,5 @@
 // pages/ZJCDesign/ZJCDesign.js
+var app=getApp()
 Page({
 
   /**
@@ -6,26 +7,26 @@ Page({
    */
   data: {
     navtitle: '设置',
-    statusBarHeight: '',
-    titleBarHeight: '',
+    statusBarHeight: getApp().globalData.statusBarHeight,
+    titleBarHeight: getApp().globalData.titleBarHeight,
+    Version:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var Version = app.globalData.Version
+    this.setData({
+      Version: Version
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    const vm = this
-    vm.setData({
-      statusBarHeight: getApp().globalData.statusBarHeight,
-      titleBarHeight: getApp().globalData.titleBarHeight
-    })
+    
 
   },
   backHistory: function (e) {
@@ -76,6 +77,19 @@ loginout:function(e){
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    if (app.globalData.lastClient == 1) {
+      var path = '/pages/index/index'
+    } else {
+      var path = '/pages/out/index/index'
+    }
+    return {
+      title: '欢迎使用共享医联体小程序', //分享内容
+      path: path, //分享地址
+      imageUrl: 'https://zaylt.njshangka.com/favicon.ico', //分享图片
+      success: function (res) {
+      },
+      fail: function (res) {
+      }
+    }
   }
 })

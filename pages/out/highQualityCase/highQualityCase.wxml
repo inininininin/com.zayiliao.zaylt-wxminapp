@@ -1,0 +1,18 @@
+<view>
+  <include src="../../common/common.wxml" />
+</view>
+<view wx:for='{{schemeList}}'>
+<!-- {{item.url}} -->
+  <navigator url='../highQualityCaseDetail/highQualityCaseDetail?id={{item.itemId}}&contentBtId={{item.contentBtId}}'>
+    <view class='highBox'>
+      <view >
+        <text>{{item.name}}</text>
+        <view><image src='../../img/time@2x.png'></image><text>{{item.addTime}}</text></view>
+      </view>
+      <view class='image' style='background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;'>
+
+        </view>
+      <!-- <image src='{{item.cover}}'></image> -->
+  </view>
+  </navigator>
+</view>

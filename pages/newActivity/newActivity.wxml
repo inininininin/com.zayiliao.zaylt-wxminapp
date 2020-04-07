@@ -1,0 +1,130 @@
+<view wx:if='{{type}}'>
+  <!--pages/newActivity/newActivity.wxml-->
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view>
+        <image wx:if='{{lookThis}}' class="image" bindtap='backHistory' style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;' src='../img/shape@2x.png'></image>
+        <image wx:if='{{!lookThis}}' class="image" bindtap='backHistoryOnly' style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;' src='../img/shape@2x.png'></image>
+        <text wx:if='{{lookThis}}' class="save" bindtap="save" style=" margin-left: 95rpx !important;background:{{bgColor}};color:{{color}},">预览</text>
+        <text wx:if='{{!lookThis}}' class="save" bindtap="supply" style=" margin-left: 95rpx !important">发布</text>
+        <text class="text" style="margin-left:-195rpx !important">{{navtitle}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view wx:if='{{lookThis}}'>
+  <view class="topImg" style="background:url({{topImg}}) no-repeat;background-size:cover;background-position: center;">
+    <view bindtap="addPic">
+      <image src="../img/replace@2x.png"></image>
+      <text>选择背景</text>
+    </view>
+  </view>
+
+  <view>
+    <input bindinput="title" value="{{title}}" placeholder="标题" type='text' placeholder-class="inputPlc"></input>
+  </view>
+  <view>
+    <input bindinput="brief" value="{{brief}}" placeholder="副标题" type='text' placeholder-class="inputPlc"></input>
+  </view>
+  <view>
+    <input bindinput="tel" value="{{tel}}" placeholder="联系电话" type="number" placeholder-class="inputPlc"></input>
+  </view>
+  <view>
+    <picker mask-style="color:rgba(216, 216, 216, 1);" mode="date" value="{{date}}" end="{{date2}}" bindchange="bindDateChange">
+      <view class="picker">
+        {{date}}
+      </view>
+    </picker>
+    <!-- <input placeholder="活动起始时间" placeholder-class="inputPlc"></input> -->
+  </view>
+  <view>
+    <picker mode="date" value="{{date2}}" start="{{date}}" end="2050-01-01" bindchange="bindDateChange2">
+      <view class="picker">
+        {{date2}}
+      </view>
+    </picker>
+    <!-- <input placeholder="活动终止时间" type='text'  placeholder-class="inputPlc"></input> -->
+  </view>
+  <view>
+    <input bindinput="address" value="{{address}}" placeholder="活动地址" type='text' placeholder-class="inputPlc"></input>
+  </view>
+  <view>
+    <textarea bindinput="content" value="{{content}}" placeholder="活动说明" placeholder-class="inputPlc">
+
+    </textarea>
+  </view>
+</view>
+
+<view wx:if='{{!lookThis}}'>
+ <view bindtap="imgItem " style="background:url({{topImg}}) no-repeat;background-size:cover;background-position: center;" class="imgBox content">
+    <view>
+    <text>{{title}}</text>
+    <text>{{date}}</text>
+    </view>
+  </view>
+</view>
+</view>
+
+
+<view wx:if='{{!type}}'>
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view>
+        <image class="image" bindtap='backHistory' style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;' src='../img/shape@2x.png'></image>
+        <text class="text" style="margin-left:0 !important">{{navtitle}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view>
+  <view class="topImg" style="background:url({{topImg}}) no-repeat;background-size:cover;background-position: center;">
+  </view>
+
+  <view>
+    <input bindinput="title" disabled="disabled" value="{{title}}" placeholder="标题" type='text' placeholder-class="inputPlc"></input>
+  </view>
+  <view>
+    <input bindinput="brief" disabled="disabled" value="{{brief}}" placeholder="副标题" type='text' placeholder-class="inputPlc"></input>
+  </view>
+  <view>
+    <input bindinput="tel" disabled="disabled" value="{{tel}}" placeholder="联系电话" type="number" placeholder-class="inputPlc"></input>
+  </view>
+  <view>
+    <picker mask-style="color:rgba(216, 216, 216, 1);" disabled="disabled" mode="date" value="{{date}}" end="{{date2}}" bindchange="bindDateChange">
+      <view class="picker">
+        {{date}}
+      </view>
+    </picker>
+    <!-- <input placeholder="活动起始时间" placeholder-class="inputPlc"></input> -->
+  </view>
+  <view>
+    <picker mode="date" value="{{date2}}" disabled="disabled" start="{{date}}" end="2050-01-01" bindchange="bindDateChange2">
+      <view class="picker">
+        {{date2}}
+      </view>
+    </picker>
+    <!-- <input placeholder="活动终止时间" type='text'  placeholder-class="inputPlc"></input> -->
+  </view>
+  <view>
+    <input bindinput="address" value="{{address}}" disabled="disabled" placeholder="活动地址" type='text' placeholder-class="inputPlc"></input>
+  </view>
+  <!-- <view>
+    <textarea bindinput="content" value="{{content}}" disabled="disabled" placeholder="活动说明" placeholder-class="inputPlc">
+
+    </textarea>
+  </view> -->
+  <import src="../../wxParse/wxParse.wxml"/>
+  <view class="wxParse"  wx:if='{{contentBf==""}}'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+  <view class="wxParse" wx:if='{{contentBf!=""}}'>{{contentBf}}</view>
+</view>
+
+
+</view>

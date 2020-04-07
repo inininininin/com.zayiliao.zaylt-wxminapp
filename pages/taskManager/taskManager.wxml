@@ -1,0 +1,78 @@
+<view wx:if='{{showIs}}'>
+
+  <view class="container" style="height:{{157+statusBarHeight}}px;padding-top:{{statusBarHeight+titleBarHeight}}px">
+    <view class='indexTopBg' style='height:{{157+statusBarHeight}}px'>
+      <view class="header">
+        <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+        <view class="title-bar" style="height:{{titleBarHeight}}px">
+          <view>
+            <image class="image" bindtap='backHistory' style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../img/shape@2x.png'></image>
+            <text>{{navtitle}}</text>
+          </view>
+        </view>
+      </view>
+      <image class='topImg' src='../img/Illustration@2x.png'></image>
+      <!-- <text class='pointIntro' bindtap='look'>积分说明</text> -->
+    </view>
+  </view>
+  <view style="width:100%;background:#f2f2f2">
+  <text class='incomeTitle'>首次收益</text>
+  </view>
+  <view class='firstTimeIncome'>
+    <view wx:for='{{list1}}' bindtap="firstIncome" data-id='{{item.taskId}}' data-name='{{item.name}}'>
+      <image catchtap="selectThis" data-id='{{item.taskId}}' data-issueis='{{item.issueIs}}' class="sel" wx:if='{{item.issueIs==1}}' src="../img/Select@2x.png"></image>
+      <image catchtap="selectThis" data-id='{{item.taskId}}' data-issueis='{{item.issueIs}}' class="sel" wx:if='{{item.issueIs==0}}' src="../img/Not_selected@2x.png"></image>
+      <text>{{item.name||''}}</text>
+      <image class="right" src="../img/back.png"></image>
+    </view>
+  </view>
+<view style="width:100%;background:#f2f2f2">
+  <text class='incomeTitle'>每日收益</text>
+  </view>
+  <view class='firstTimeIncome'>
+    <view wx:for='{{list2}}' bindtap="secondIncome"   data-id='{{item.taskId}}' data-name='{{item.name}}'>
+      <image catchtap="selectThis1" data-id='{{item.taskId}}' data-issueis='{{item.issueIs}}' class="sel" wx:if='{{item.issueIs==1}}' src="../img/Select@2x.png"></image>
+      <image catchtap="selectThis1" data-id='{{item.taskId}}' data-issueis='{{item.issueIs}}' class="sel" wx:if='{{item.issueIs==0}}' src="../img/Not_selected@2x.png"></image>
+      <text>{{item.name||''}}</text>
+      <image class="right" src="../img/back.png"></image>
+    </view>
+  </view>
+
+
+</view>
+
+<view wx:if='{{!showIs}}'>
+  <view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+    <view class="header">
+      <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+      <view class="title-bar" style="height:{{titleBarHeight}}px">
+        <view style="position:relative">
+          <view  class='backHis'>
+            <image class="saveBack" catchtap='saveBack' style='display:inline-block;left:30rpx;position:absolute;' src='../img/shape@2x.png'></image>
+          </view>
+          <text class='titleText' style="position:absolute;left:0 !important">{{navtitle1}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="editPoint">
+    <view>
+      <text>名称</text>
+      <text>{{title}}</text>
+    </view>
+    <view>
+      <text>简介</text>
+      <input placeholder-class="inputPla" bindinput="intro" value="{{intro}}" placeholder="请输入简介"></input>
+    </view>
+    <view>
+      <text>积分</text>
+      <text class="text">分</text>
+      <input placeholder-class="inputPla" bindinput="exchangePoint" value="{{exchangePoint}}"></input>
+    </view>
+    <view wx:if='{{showPerIs}}'>
+      <text>上限</text>
+      <text class="text">分</text>
+      <input placeholder-class="inputPla" bindinput="exchangePointUpperPerDay" value="{{exchangePointUpperPerDay}}"></input>
+    </view>
+  </view>
+</view>

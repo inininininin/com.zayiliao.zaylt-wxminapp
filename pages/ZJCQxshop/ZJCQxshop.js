@@ -1,4 +1,5 @@
 // pages/ZJCQxshop/ZJCQxshop.js
+var app=getApp()
 Page({
 
   /**
@@ -9,18 +10,24 @@ Page({
     showList: [],
     token: '',
     navtitle: '器械采购',
-    statusBarHeight: '',
-    titleBarHeight: '',
+    statusBarHeight: getApp().globalData.statusBarHeight,
+    titleBarHeight: getApp().globalData.titleBarHeight,
+    scrollHeight:'',
     movies: [
-      'https://img02.tooopen.com/images/20141231/sy_78327074576.jpg',
-      'https://img02.tooopen.com/images/20141231/sy_78327074576.jpg',
-      'https://img02.tooopen.com/images/20141231/sy_78327074576.jpg'
+      // 'https://img02.tooopen.com/images/20141231/sy_78327074576.jpg',
+      // 'https://img02.tooopen.com/images/20141231/sy_78327074576.jpg',
+      // 'https://img02.tooopen.com/images/20141231/sy_78327074576.jpg'
     ],
     swiperCurrent: 0,
     leftborder: '',
     rootcateList: '',
+    showIs:false,
   },
-
+  searchBox(e){
+    wx.navigateTo({
+      url: '../ZJCQxshopSearch/ZJCQxshopSearch',
+    })
+  },
   swiperChange: function(e) {
     this.setData({
       swiperCurrent: e.detail.current
@@ -29,13 +36,14 @@ Page({
   lastpage: function() {
     var that = this
     wx.request({
-      url: that.data.domain + '/zaylt/c/procurement/devicetypes',
-      // url: that.data.domain +'/zasellaid/adminarea/provinces',
+      url: app.globalData.url + '/c/procurement/devicetypes',
+      // url: app.globalData.url +'/zasellaid/adminarea/provinces',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
+        'cookie': app.globalData.cookie
       },
       data: {
-        token: that.data.token,
+        token: app.globalData.token,
         pn:1,
         ps:1000,
       },
@@ -60,25 +68,33 @@ Page({
           })
           var name = res.data.data.items[0].name;
           wx.request({
-            url: that.data.domain + '/zaylt/c/procurement/devicelist',
+            url: app.globalData.url + '/c/procurement/devicelist',
             header: {
               "Content-Type": "application/x-www-form-urlencoded",
+              'cookie': app.globalData.cookie
             },
             data: {
-              token: that.data.token,
+              token: app.globalData.token,
               pn: 1,
-              ps: 100,
+              ps: 1000,
               typeName: name,
             },
             method: 'post',
             success: function(res) {
               wx.hideToast()
               if (res.data.code == 0) {
+                for (var i = 0; i < res.data.data.items.length; i++) {
+                  if (res.data.data.items[i].cover.slice(0, 1) != 'h') {
+                    res.data.data.items[i].cover = app.globalData.url + res.data.data.items[i].cover
+                  }
+                }
                 that.setData({
                   showList: res.data.data.items,
                 })
+                var showList = that.data.showList
               } else {
                 wx.showModal({
+                  showCancel: false,
                   title: res.data.codeMsg
                 })
               }
@@ -104,13 +120,14 @@ Page({
   listNum: function() {
     var that = this
     wx.request({
-      url: that.data.domain + '/zaylt/c/procurement/shoppingcart/list',
-      // url: that.data.domain +'/zasellaid/adminarea/provinces',
+      url: app.globalData.url + '/c/procurement/shoppingcart/list',
+      // url: app.globalData.url +'/zasellaid/adminarea/provinces',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
+        'cookie': app.globalData.cookie
       },
       data: {
-        token: that.data.token,
+        token: app.globalData.token,
         pn: 1,
         ps: 1000,
       },
@@ -123,6 +140,7 @@ Page({
           })
         } else {
           wx.showModal({
+            showCancel: false,
             title: res.data.codeMsg
           })
         }
@@ -134,6 +152,7 @@ Page({
    */
   onLoad: function(options) {
     var that = this;
+    
     // wx.setStorageSync('token', '220703828955')
     var domain = 'https://www.njshangka.com'
     var token = wx.getStorageSync('token')
@@ -143,23 +162,31 @@ Page({
     })
     wx.setStorageSync('domain', domain)
     wx.request({
-      url: that.data.domain + '/zaylt/c/procurement/entpg',
-      // url: that.data.domain +'/zasellaid/adminarea/provinces',
+      url: app.globalData.url + '/c/procurement/entpg',
+      // url: app.globalData.url +'/zasellaid/adminarea/provinces',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
+        'cookie': app.globalData.cookie
       },
       data: {
-        token: that.data.token,
+        token: app.globalData.token,
       },
       method: 'post',
       success: function (res) {
         wx.hideToast()
         if (res.data.code == 0) {
+          for (var i = 0; i < res.data.data.ads.length; i++) {
+            if (res.data.data.ads[i].cover.slice(0, 1) != 'h') {
+              res.data.data.ads[i].cover = app.globalData.url + res.data.data.ads[i].cover
+              
+            }
+          }
           that.setData({
             movies: res.data.data.ads
           })
         } else {
           wx.showModal({
+            showCancel: false,
             title: res.data.codeMsg
           })
         }
@@ -189,25 +216,33 @@ Page({
       rootcateList: rootcateList,
     })
     wx.request({
-      url: that.data.domain + '/zaylt/c/procurement/devicelist',
+      url: app.globalData.url + '/c/procurement/devicelist',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
+        'cookie': app.globalData.cookie
       },
       data: {
-        token: that.data.token,
+        token: app.globalData.token,
         pn: 1,
-        ps: 100,
+        ps: 1000,
         typeName: name,
       },
       method: 'post',
       success: function(res) {
         wx.hideToast()
         if (res.data.code == 0) {
+          for (var i = 0; i < res.data.data.items.length;i++){
+            if (res.data.data.items[i].cover.slice(0,1)!='h'){
+              res.data.data.items[i].cover = app.globalData.url+res.data.data.items[i].cover
+            }
+          }
           that.setData({
             showList: res.data.data.items,
           })
+          var showList = that.data.showList
         } else {
           wx.showModal({
+            showCancel: false,
             title: res.data.codeMsg
           })
         }
@@ -226,12 +261,13 @@ Page({
     var deviceId = e.currentTarget.dataset.id;
     num++;
     wx.request({
-      url: that.data.domain + '/zaylt/c/procurement/shoppingcart/move',
+      url: app.globalData.url + '/c/procurement/shoppingcart/move',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
+        'cookie': app.globalData.cookie
       },
       data: {
-        token: that.data.token,
+        token: app.globalData.token,
         count: 1,
         deviceId: deviceId,
       },
@@ -249,6 +285,7 @@ Page({
           })
         } else {
           wx.showModal({
+            showCancel: false,
             title: res.data.codeMsg
           })
         }
@@ -264,12 +301,13 @@ Page({
     num--;
     if (num == 0) {
       wx.request({
-        url: that.data.domain + '/zaylt/c/procurement/shoppingcart/remove',
+        url: app.globalData.url + '/c/procurement/shoppingcart/remove',
         header: {
           "Content-Type": "application/x-www-form-urlencoded",
+          'cookie': app.globalData.cookie
         },
         data: {
-          token: that.data.token,
+          token: app.globalData.token,
           deviceId: deviceId,
         },
         method: 'post',
@@ -287,6 +325,7 @@ Page({
             })
           } else {
             wx.showModal({
+              showCancel: false,
               title: res.data.codeMsg
             })
           }
@@ -294,12 +333,13 @@ Page({
       });
     } else {
       wx.request({
-        url: that.data.domain + '/zaylt/c/procurement/shoppingcart/sub',
+        url: app.globalData.url + '/c/procurement/shoppingcart/sub',
         header: {
           "Content-Type": "application/x-www-form-urlencoded",
+          'cookie': app.globalData.cookie
         },
         data: {
-          token: that.data.token,
+          token: app.globalData.token,
           count: 1,
           deviceId: deviceId,
         },
@@ -317,6 +357,7 @@ Page({
             })
           } else {
             wx.showModal({
+              showCancel: false,
               title: res.data.codeMsg
             })
           }
@@ -334,12 +375,13 @@ Page({
     if (val > num) {
       var count = val - num
       wx.request({
-        url: that.data.domain + '/zaylt/c/procurement/shoppingcart/add',
+        url: app.globalData.url + '/c/procurement/shoppingcart/add',
         header: {
           "Content-Type": "application/x-www-form-urlencoded",
+          'cookie': app.globalData.cookie
         },
         data: {
-          token: that.data.token,
+          token: app.globalData.token,
           count: count,
           deviceId: deviceId,
         },
@@ -357,6 +399,7 @@ Page({
             })
           } else {
             wx.showModal({
+              showCancel: false,
               title: res.data.codeMsg
             })
           }
@@ -365,12 +408,13 @@ Page({
     } else if (val < num && val > 0) {
       var count = num - val
       wx.request({
-        url: that.data.domain + '/zaylt/c/procurement/shoppingcart/sub',
+        url: app.globalData.url + '/c/procurement/shoppingcart/sub',
         header: {
           "Content-Type": "application/x-www-form-urlencoded",
+          'cookie': app.globalData.cookie
         },
         data: {
-          token: that.data.token,
+          token: app.globalData.token,
           count: count,
           deviceId: deviceId,
         },
@@ -388,6 +432,7 @@ Page({
             })
           } else {
             wx.showModal({
+              showCancel: false,
               title: res.data.codeMsg
             })
           }
@@ -395,12 +440,13 @@ Page({
       });
     } else if (val == 0) {
       wx.request({
-        url: that.data.domain + '/zaylt/c/procurement/shoppingcart/remove',
+        url: app.globalData.url + '/c/procurement/shoppingcart/remove',
         header: {
           "Content-Type": "application/x-www-form-urlencoded",
+          'cookie': app.globalData.cookie
         },
         data: {
-          token: that.data.token,
+          token: app.globalData.token,
           deviceId: deviceId,
         },
         method: 'post',
@@ -418,6 +464,7 @@ Page({
             })
           } else {
             wx.showModal({
+              showCancel: false,
               title: res.data.codeMsg
             })
           }
@@ -436,7 +483,9 @@ Page({
   onReady: function() {
 
     const vm = this
+    // console.log(wx.getSystemInfoSync().windowHeight - getApp().globalData.statusBarHeight - getApp().globalData.titleBarHeight-150)
     vm.setData({
+      scrollHeight: wx.getSystemInfoSync().windowHeight - getApp().globalData.statusBarHeight - getApp().globalData.titleBarHeight - 150,
       statusBarHeight: getApp().globalData.statusBarHeight,
       titleBarHeight: getApp().globalData.titleBarHeight
     })
@@ -487,13 +536,26 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-
+    
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    if (app.globalData.lastClient == 1) {
+      var path = '/pages/index/index'
+    } else {
+      var path = '/pages/out/index/index'
+    }
+    return {
+      title: '欢迎使用共享医联体小程序', //分享内容
+      path: path, //分享地址
+      imageUrl: 'https://zaylt.njshangka.com/favicon.ico', //分享图片
+      success: function (res) {
+      },
+      fail: function (res) {
+      }
+    }
   }
 })

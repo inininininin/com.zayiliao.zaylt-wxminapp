@@ -1,0 +1,41 @@
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+    <view>
+    <image bindtap='backHistory' style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;'  src='../../img/back-white@2x.png'></image>
+    
+    <view class='save' style='left:460rpx;'>保存<image src='../../img/save@2x.png' style='margin-left:10rpx;width:30rpx;height:40rpx;'></image></view>
+    <text class='titleText'>{{navtitle}}</text>
+    </view>
+    </view>
+  </view>
+</view>
+
+<view class='required'>
+  <view>
+  <image src='../../img/bitian@2x.png'></image>
+  <text>必填项</text>
+  </view>
+
+
+  <view class='input'>
+      <text>病患姓名</text><input type='text' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+  <view class='input'>
+      <text>联系方式</text><input type='number' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+  <view class='input'>
+      <text>身份证号码</text><input type='idcard' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+
+
+  <view class='selectIntro'>
+  <image  src='../../img/xuantian@2x.png'></image>
+  <text>选填项</text>
+  </view>
+
+  <view class='input'>
+      <text>备注</text><input type='text'  placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+</view>

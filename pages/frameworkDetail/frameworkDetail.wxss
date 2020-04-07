@@ -1,0 +1,122 @@
+/* pages/frameworkDetail/frameworkDetail.wxss */
+page{
+  background: #fff;
+}
+.containers {
+  box-sizing: border-box;
+  /* height: 100%; */
+  background: #fff;
+  position: relative;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* color: #333; *//* background: #fff; */
+  background: #fff;
+  z-index: 888;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.status-bar {
+  /* background: rgba(255, 0, 0, 0.1); */
+}
+
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title-bar>view{
+  width: 100%;
+}
+.header .image {
+  /* float: left; */
+ position: absolute;
+  width: 24rpx;
+  height: 40rpx;
+  z-index: 999;
+}
+.header text{
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
+.edit{
+  width:88rpx;
+  height: 88rpx;
+  position: fixed;
+  bottom: 33rpx;
+  right: 33rpx;
+  z-index: 3; 
+}
+.listItem,.listItems{
+  width: 718rpx;
+  height: 154rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  margin-left: 36rpx;
+}
+.listItem>view{
+  width: 540rpx;
+  margin: 0;
+  display: inline-block;
+}
+.listItem .imageItem{
+  width: 94rpx;
+  height: 94rpx;
+  border-radius: 8rpx;
+  float: right;
+  margin: 27rpx 36rpx 26rpx 40rpx;
+}
+.listItem .imageItem image,.listItem .imageItem video{
+  width: 94rpx;
+  height: 94rpx;
+  border-radius: 8rpx;
+}
+.listItem>view>view:nth-child(1),.listItems>view>view:nth-child(1){
+  width: 100%;
+  font-size: 34rpx;
+  color: rgb(51,51,51);
+  line-height: 50rpx;
+  padding-top: 27rpx;
+}
+.listItem>view>view:nth-child(1) text,.listItems>view>view:nth-child(1) text{
+  color: rgb(43,119,239);
+}
+.listItem>view>view:nth-child(2){
+  width: 540rpx;
+  height: 40rpx;
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+  line-height: 40rpx;
+}
+/* .listItem>view>view:nth-child(2)>text{
+  float: left;
+} */
+.listItem>view>view:nth-child(2)>text:nth-child(2){
+  display: inline-block;
+  float: right;
+  width: 250rpx;
+}
+.listItem>view>view:nth-child(2)>text:nth-child(2),.listItems>view>view:nth-child(2)>text:nth-child(2){
+  color: rgb(153,153,153);
+  margin-left: 30rpx;
+}
+.listItems>view{
+  width: 100%;
+  /* display: inline-block; */
+}
+.listItems>view>view:nth-child(2){
+  width: 676rpx;
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+  line-height: 40rpx;
+}
+
+.lineOne {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

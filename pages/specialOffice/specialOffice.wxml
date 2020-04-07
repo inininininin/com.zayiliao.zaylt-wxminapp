@@ -1,0 +1,82 @@
+<view>
+  <include src="../common/common.wxml" />
+</view>
+
+<view class="doctor">
+  <view class="title">
+    <text></text>科室医生</view>
+  <scroll-view class="doctorList" scroll-x="true" style=" white-space: nowrap; display: flex">
+    <view class="doctorItem" bindtap="lookDoctor" data-id='{{item.itemId}}' wx:for='{{items}}'>
+      <view  style='background:url({{item.headimg}}) no-repeat;background-size:cover;background-position: center;'>
+        <!-- <image  src="{{item.headimg}}"></image> -->
+      </view>
+      <view>
+        <text>{{item.name}}</text>
+        <!-- 主任医师 -->
+      </view>
+      <text>{{item.hosptialName}}</text>
+
+      <text class="doctorText"></text>
+    </view>
+
+
+  </scroll-view>
+</view>
+<view class="line"></view>
+<view class="bgC">
+  <view class="title">
+    <text></text>科室简介</view>
+  <view class="content">
+    {{detail.content||''}}
+    <image bindtap="previewImage" wx:for='{{imgList}}' data-src="{{item}}" mode="aspectFill"  src="{{item}}"></image>
+  </view>
+</view>
+<view class="line"></view>
+<view class="bgC">
+  <view class="title">
+    <text></text>适应症状</view>
+  <view class="content">
+    <text wx:for='{{shiYingZheng}}'>{{item}}</text>
+  </view>
+</view>
+<view class="line"></view>
+<view class="bgC">
+  <view class="title">
+    <text></text>诊疗技术</view>
+  <view class="content">{{detail.zhenLiaoJiShu||''}}</view>
+</view>
+<view class="line"></view>
+<view class="bgC">
+  <view class="title">
+    <text></text>诊疗特色</view>
+  <view class="content">{{detail.teSe||''}}</view>
+</view>
+<view class="line"></view>
+<view class="bgC">
+  <view class="title">
+    <text></text>科室优势</view>
+  <view class="content">{{detail.youShi||''}}</view>
+</view>
+
+
+
+<view wx:if='{{showIs}}' class="page-section page-section-spacing swiper">
+  <swiper indicator-dots="{{indicatorDots}}" current='{{current}}' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{items}}" wx:key="*this">
+      <swiper-item> 
+        <view class="swiper-item {{item}}">
+          <image class="book" src="../img/Bookmark@2x.png"></image>
+
+          <image class="avator" src="{{item.headimg}}"></image>
+          <view class="hosTitle">
+            <text>{{item.name||''}}</text>
+            <text>{{item.jobTitles||''}}</text>
+          </view>
+          <view class="hosName">{{item.hosptialName||''}}</view>
+          <text class="hosIntro">{{item.intro||''}}</text>
+        </view>
+        <image class="close" bindtap="closeSwiper" src="../img/close2.png"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

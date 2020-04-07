@@ -1,0 +1,51 @@
+<!--pages/promoter/clinicDetail/clinicDetail.wxml-->
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view>
+        <image class="image" bindtap='backHistory' style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;' src='../../img/backArrow.png'></image>
+        <view class="save">
+          <!-- <text>保存</text> -->
+          <image bindtap="edit" src="../../img/Preview.png"></image>
+        </view>
+        <text class="text">{{navtitle}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="addPatientBox">
+  <view class="addPatient" bindtap="addPatient">
+  <image src="../../img/xinzeng@2x.png"></image>
+  <text>新增病源</text>
+</view>
+</view>
+<view class="navbarBox">
+  <view class="navbar">
+  <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">
+    <text>{{item.name}}</text>
+    <text>{{item.count}}</text>
+  </view>
+</view>
+</view>
+<view style="margin-top:280rpx">
+     <view class='indexbox' wx:for='{{list1}}' >
+      <navigator url='{{item.status==4?"../../editPatient/editPatient?id=":"../../out/seeAdoctor/seeAdoctor?id="}}{{item.itemId}}'>
+        <view class="box">
+            <image wx:if='{{item.status==1}}' src="../img/orange@2x.png"></image>
+            <image wx:if='{{item.status==4}}' src="../img/blue@2x.png"></image>
+            <view>
+              <view>{{item.realname}}<image wx:if='{{item.status==1}}' src="../img/red-up@2x.png" style="margin-left:10rpx;"></image></view>
+              <text>推送：{{item.pushTime}}</text>
+              <text>所属门诊：{{item.clinicName}}</text>
+            </view>
+            <view  wx:if='{{item.status==1}}'  data-id="{{item.itemId}}" catchtap="makesure" style="z-index:999"   class="makesure">确认就诊</view>
+            <view  wx:if='{{item.status==4}}'  class="nosure">已就诊</view>
+        </view>
+      </navigator>
+    </view>
+<view class="withoutNum" wx:if='{{totalCount==0}}'>
+    <image src="../../img/wushuju.png"></image>
+    <text>暂无数据</text>
+  </view>
+</view>

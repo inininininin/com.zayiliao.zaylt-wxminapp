@@ -1,0 +1,71 @@
+.progresspages{
+  width: 100%;
+  height:96rpx;
+  background: rgba(255,255,255,0.8);
+  display: inline-block;
+  line-height: 96rpx;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  left: 0;
+}
+.page__bd{
+  width:  518rpx;
+  display: inline-block;
+  height: 96rpx;
+  line-height: 96rpx;
+  float: left;
+  margin-top: 10rpx;
+}
+.asmall{
+  font-size: 24rpx;
+  color: rgb(51,51,51);
+  margin: 0 40rpx 0 40rpx;
+  display: inline-block;
+  float: left;
+}
+.abig{
+   font-size: 38rpx;
+  color: rgb(51,51,51);
+  margin: 0 40rpx 0 40rpx;
+  display: inline-block;
+  float: left;
+}
+
+.font34{
+  font-size: 34rpx;
+}
+.font28{
+  font-size: 28rpx;
+}
+.left60{
+   margin-left: 60rpx;
+}
+.absolute{
+  position: absolute;
+}
+.relative{
+  position: relative;
+}
+.col302{
+  color: rgb(30,202,198)
+}
+.col131{
+  color: rgb(136,136,136)
+}
+.col431{
+  color: rgb(43,119,239)
+}
+.pad70{
+padding-bottom: 70rpx;
+}
+.Inline{
+  display: inline-block；
+}
+.lineMoreOne{
+  
+display:-webkit-box;
+-webkit-line-clamp:1;
+-webkit-box-orient:vertical;
+overflow:hidden;
+}

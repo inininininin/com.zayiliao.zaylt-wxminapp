@@ -1,0 +1,56 @@
+<!--pages/frameworkDate/frameworkDate.wxml-->
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view>
+        <image bindtap='backHistory' class="image" style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;padding:12px 10px;' src='../img/back-white@2x.png'></image>
+        <text class="text">{{navtitle}}年</text>
+      </view>
+    </view>
+  </view>
+  <view class="month" style="position:fixed;top:{{statusBarHeight+titleBarHeight}}px;left:0;">
+    <view class="swiper-container">
+      <swiper bindchange="swiperChange" current="{{swiperCurrent}}" class="swiper" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{dataList}}" wx:key="*this">
+          <swiper-item data-current='{{item.year}}'>
+            <text wx:for='{{item.month}}' bindtap="year" data-month="{{items.month}}" data-year="{{item.year}}" class="{{items.active}}" wx:for-item="items">{{items.month}}月</text>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+</view>
+<view class="listItem">
+  <view wx:for='{{dateItems}}'  wx:for-key='index'>
+    <text>{{index}}</text>
+    <view>
+      <view class="listItemLf">
+      </view>
+      <view class="listItemRt"  wx:for='{{item}}'  >
+        <text>{{item.time}}</text>
+        <view>{{item.hospitalUserName||item.managerUserName||''}}上传了
+          <text>{{item.operatingManualSectionName||''}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <view>
+    <text>1月20日</text>
+    <view>
+      <view class="listItemLf"></view>
+      <view class="listItemRt">
+        <text>12:23</text>
+        <view>高雯雯上传了
+          <text>服务内容</text>
+        </view>
+      </view>
+       <view class="listItemRt">
+        <text>12:23</text>
+        <view>高雯雯上传了
+          <text>服务内容</text>
+        </view>
+      </view>
+    </view>
+  </view> -->
+</view>

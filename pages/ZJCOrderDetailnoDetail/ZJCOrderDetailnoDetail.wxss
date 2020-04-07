@@ -1,0 +1,272 @@
+@import '../common/common.wxss';
+page{
+  background: #f5f5f5;
+}
+.orderId{
+  background: #fff;
+  margin: 24rpx 0;
+  width: 718rpx;
+  padding-left: 32rpx;
+  /* height: 104rpx; */
+  font-size: 34rpx;
+  color: rgb(51, 51, 51);
+  line-height: 104rpx;
+}
+/* 地址栏 */
+.address {
+  width: 100%;
+  height: 160rpx;
+  background: #fff;
+  margin-top: 20rpx;
+  /* line-height: 160rpx; */
+}
+
+.address image:first-child {
+  width: 36rpx;
+  height: 46rpx;
+  float: left;
+  /* display: inline-block; *//* vertical-align: middle; */
+  line-height: 160rpx;
+  margin: 57rpx 32rpx;
+}
+
+.address image:last-child {
+  width: 18rpx;
+  height: 32rpx;
+  display: inline-block;
+  /* vertical-align: middle; */
+  line-height: 160rpx;
+  float: right;
+  margin: 64rpx 32rpx;
+}
+
+.address view {
+  float: left;
+  /* display: inline-block; */
+  width: 550rpx;
+  height: 160rpx;
+}
+
+.address view .view1 {
+  font-size: 34rpx;
+  line-height: 34rpx;
+  margin: 30rpx auto 32rpx 0;
+  display: block;
+  color: rgb(51, 51, 51);
+}
+
+.address view .view2 {
+  font-size: 32rpx;
+  line-height: 32rpx;
+  color: rgb(187, 187, 187);
+  margin: 30rpx auto 32rpx 0;
+  display: block;
+}
+
+.address view .name {
+  font-size: 34rpx;
+  line-height: 34rpx !important;
+  width: auto;
+  margin: 30rpx auto 32rpx 0;
+  display: inline-block;
+  color: rgb(51, 51, 51);
+}
+
+.address view .num {
+  font-size: 30rpx;
+  line-height: 34rpx !important;
+  margin: 30rpx auto 32rpx 30rpx;
+  display: inline-block;
+  color: rgb(187, 187, 187);
+}
+
+.address view .addressDv {
+  font-size: 32rpx;
+  line-height: 32rpx !important;
+  margin: 0 auto 32rpx 0;
+  display: block;
+  color: rgb(51, 51, 51);
+   overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.list{
+  width: 100%;
+  height: auto;
+  background: #fff;
+  margin-top: 24rpx;
+  margin-bottom: 144rpx;
+}
+.listItem{
+  height: 196rpx;
+  width: 718rpx;
+  margin-left: 32rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.listItem image{
+  width: 132rpx;
+  height: 132rpx;
+  /* border-radius: 66rpx; */
+  margin: 32rpx 30rpx 32rpx 0;
+   float: left;
+}
+.listItem .listDetail{
+  width: 400rpx;
+  float: left
+}
+.listName{
+  margin: 32rpx auto 10rpx 0;
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+  line-height: 30rpx;
+  display: block;
+}
+.listIntro{
+  font-size: 26rpx;
+  color: rgb(153,153,153);
+  display:-webkit-box;
+-webkit-line-clamp:2;
+-webkit-box-orient:vertical;
+overflow:hidden;
+}
+.listNum{
+  width: 138rpx;
+  float: right;
+  margin-top: 138rpx;
+  line-height: 30rpx;
+}
+.listNum text:first-child{
+font-size: 26rpx;
+color: rgb(153,153,153);
+ display: inline-block;
+  /* float: right; */
+}
+.listNum text:last-child{
+  width: 78rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+  display: inline-block;
+  /* float: right; */
+}
+
+
+.bottom{
+  width: 750rpx;
+  height: 144rpx;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.bottom .bottomlf{
+  float: left;
+  margin-left: 32rpx;
+}
+.bottom .bottomlf text:first-child{
+  display: block;
+  margin: 34rpx 0 14rpx;
+  font-size: 28rpx;
+  color: rgb(51, 51, 51)
+}
+.bottom .bottomlf text:last-child{
+  display: block;
+  font-size: 34rpx;
+  color: rgb(51, 51, 51)
+}
+.bottom .bottomrt{
+  float: right;margin-right: 32rpx;
+}
+.bottom .bottomrt text:first-child{
+  display: block;
+  margin: 34rpx 0 24rpx;
+  font-size: 24rpx;
+  color: rgb(102, 102, 102);
+  text-align: right;
+}
+.bottom .bottomrt text:last-child{
+  display: block;
+  font-size: 32rpx;
+  color: rgb(102, 102, 102);
+  text-align: right;
+}
+
+.bottoms{
+  width: 750rpx;
+  height: 98rpx;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.bottoms .bottomlf{
+  float: left;
+  width: 320rpx;
+  background: #fff;
+  height: 100%;
+  text-align: center;
+}
+.bottoms .bottomlf image{
+  width: 28rpx;
+  height: 30rpx;
+  float: left;
+  margin: 14rpx 146rpx 10rpx;
+}
+.bottoms .bottomlf text{
+  display: block;
+  font-size: 30rpx;
+}
+.bottoms .bottomrt{
+  float: right;
+  width: 430rpx;
+  background: rgb(0,219,248);
+  font-size: 36rpx;
+  text-align: center;
+  color: #fff;
+  line-height: 98rpx;
+}
+
+.listTitle{
+  height:104rpx;
+  width: 718rpx;
+  margin-left: 32rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  line-height: 104rpx;
+}
+.listTitleName{
+  font-size: 34rpx;
+  color: rgb(51,51,51);
+  margin-right: 26rpx;
+  float: left;
+}
+.money{
+  color: rgb(255,163,58);
+  float: left;
+}
+.listTitleNames{
+   font-size: 34rpx;
+  color: rgb(51,51,51);
+  margin-right: 26rpx;
+  float: right;
+}
+.jifen{
+  float: right;
+  margin-right: 32rpx;
+  color: rgb(0,183,283);
+}
+
+.submit{
+  width: 686rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  background: rgb(0,183,238);
+  color: #fff;
+  font-size: 36rpx;
+  text-align: center;line-height: 80rpx;
+  position: fixed;
+  bottom: 24rpx;
+  left: 32rpx;
+}

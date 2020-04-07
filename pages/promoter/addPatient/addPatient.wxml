@@ -1,0 +1,49 @@
+<!--pages/promoter/addPatient/addPatient.wxml-->
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header" style='background:#2b77ef;color:#fff'>
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view>
+        <view bindtap='backHistory' class='backHis'>
+          <image style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../../img/back-white@2x.png'></image>
+        </view>
+        <text class='titleText'>{{navtitle}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='required'>
+  <view>
+    <image src='../../img/bitian@2x.png'></image>
+    <text>必填项</text>
+  </view>
+
+
+  <view class='input'>
+    <text>病患姓名</text>
+    <input bindinput='name' value='{{name}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+  <view class='input'>
+    <text>联系方式</text>
+    <input bindinput='phone' value='{{phone}}' type='number' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+  <view class='input'>
+    <text>身份证号码</text>
+    <input bindinput='idCard' value='{{idCard}}' type='idcard' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+
+
+  <view class='selectIntro'>
+    <image src='../../img/xuantian@2x.png'></image>
+    <text>选填项</text>
+  </view>
+
+  <view class='input'>
+    <text>备注</text>
+    <input bindinput='remark' value='{{remark}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+
+
+  <view bindtap='save' class='save' style='left:460rpx;'>
+    保存</view>
+</view>

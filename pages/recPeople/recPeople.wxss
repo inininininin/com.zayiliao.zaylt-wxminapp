@@ -1,0 +1,157 @@
+page {
+  height: 100%;
+  background: #f2f2f2;
+}
+.container {
+  box-sizing: border-box;
+  /* height: 100%; */
+  background: #fff;
+}
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 999
+}
+.status-bar {
+  /* background: rgba(255, 0, 0, 0.1); */
+}
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title-bar>view>.backHis{
+  width: 100rpx;
+  height: 88rpx;
+  float: left;
+}
+/* .title-bar view text{
+  margin-left: -100rpx !important;
+} */
+.header image {
+  /* float: left; */
+  position: absolute;
+  width: 24rpx;
+  height: 40rpx;
+}
+.title-bar view{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+   /* justify-content: space-between; */
+    align-items: center;
+}
+.title-bar view text{
+  display: inline-block;text-align: center;
+  width: 100%;
+  margin: 0  0 0 -100rpx!important;
+}
+.titleText{
+  font-size: 36rpx;
+}
+.title-bar>view>image{
+  width: 44rpx;
+  height: 44rpx;
+  padding: 22rpx;
+}
+.title-bar>view>.search{
+  margin-left:  100rpx;
+}
+.title-bar>view>.add{
+  margin-left: 460rpx;
+}
+
+.item{
+  width:702rpx;
+height:101rpx;
+background:rgba(255,255,255,1);
+border-radius:6rpx;
+margin: 24rpx auto 0;
+}
+.item>image:nth-child(1){
+  width: 36rpx;
+  height: 36rpx;
+  float: left;
+  margin: 32rpx 20rpx 32rpx 30rpx;
+}
+.item>text:nth-child(2){
+  font-size:30rpx;
+font-family:PingFangSC-Medium,PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+line-height:101rpx;
+}
+.item>image:nth-child(3){
+  float: right;
+  width: 13rpx;
+  height: 24rpx;
+  margin: 37rpx 20rpx 37rpx 0;
+}
+.item>text:nth-child(4){
+  font-size:26rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(102,102,102,1);
+line-height:101rpx;
+margin-right: 43rpx;
+width: 180rpx;
+float: right;
+text-align: right;
+}
+
+.itemBox{
+  width:686rpx;
+height:90rpx;
+background:rgba(255,255,255,1);
+border-radius:4rpx;
+border:1rpx solid rgba(216,216,216,1);
+margin: 20rpx auto 0;
+}
+.itemBox>text{
+  font-size:30rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(51,51,51,1);
+line-height:90rpx;
+margin: 0 20rpx 0 30rpx;
+}
+.itemBox>input{
+  font-size:30rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(43,119,239,1);
+line-height:90rpx;
+text-align: right;
+float: right;
+width: 400rpx;
+outline: none;
+border: none;
+height: 90rpx;
+margin-right: 30rpx;
+}
+.inputClass{
+  font-size:30rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(153,153,153,1);
+line-height:90rpx;
+}
+.save{
+  width: 482rpx !important;
+  height: 80rpx !important;
+  background: #2b77ef;
+  border-radius: 44rpx;
+  /* margin: 181rpx auto 0; */
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: #fff;
+  fill: linear;
+  box-shadow:  -2rpx 8rpx 10px #56aff8;
+  position: absolute;
+  bottom: 260rpx;
+  left: 134rpx;
+}

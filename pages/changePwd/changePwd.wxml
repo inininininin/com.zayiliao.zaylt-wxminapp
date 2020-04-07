@@ -1,0 +1,10 @@
+<view>
+  <include src="../common/common.wxml" />
+</view>
+<view>
+  <input placeholder='手机号' bindinput='phone' placeholder-class='inputPl'></input>
+  <input placeholder='旧密码' type='password' bindinput='oldpwd' placeholder-class='inputPl'></input>
+  <input placeholder='新密码' type='password'  bindinput='newpwd' placeholder-class='inputPl'></input>
+
+  <view class='makesure' bindtap='makesure'>确定</view>
+</view>

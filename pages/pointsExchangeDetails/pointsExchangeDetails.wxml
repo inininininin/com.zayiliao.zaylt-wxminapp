@@ -1,0 +1,63 @@
+<view class="container">
+
+  <swiper class="swiper" indicator-dots="true" autoplay="true" indicator-active-color='rgb(0,183,238)' interval="5000" duration="1000">
+    <block wx:for="{{movies}}" wx:for-index="index">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view>
+        <image bindtap='backHistory' style='left:10rpx;padding:20rpx;border-radius:6rpx;display:inline-block' src='../img/back-white@2x.png'></image>
+        <text>{{navtitle}}</text>
+      </view>
+    </view>
+  </view>
+
+</view>
+<view class='details'>
+  <text class='title'>{{title}}</text>
+  <view>{{intro}}</view>
+  <!-- <import src="../../wxParse/wxParse.wxml" />
+  <template is="wxParse" data="{{wxParseData:info.nodes}}" /> -->
+</view>
+
+<view class='bottomBtn'>
+  <view class='bottomBtnLf'>
+    <!-- <image src='../img/jicai-hei@2x.png'></image> -->总计：
+    <text>{{payExchangepoint}}</text>积分
+  </view>
+  <!-- bindtap='addCg' -->
+  <navigator url='../exchangeNow/exchangeNow?id={{commodityId}}'>
+  <view class='bottomBtnRt' >
+    立即兑换
+  </view>
+  </navigator>
+  
+</view>
+<!-- 弹窗 -->
+<view class='bgblack' bindtap='close' wx:if='{{pop==1}}'>
+</view>
+<view class='popwindow' wx:if='{{pop==1}}'>
+  <view class='topView'>
+    <image src='https://www.njshangka.com/oss/zaylt/20181212151130574920504.png'></image>
+    <view>
+      <text class='poptitle'>{{qxData.name}}</text>
+      <text class='popdetail'>{{qxData.brief}}</text>
+    </view>
+  </view>
+  <view class='midView'>
+      <text>选择数量</text>
+           <view class='adddel'>
+            <image data-id="{{ qxData.deviceId }}" bindtap='del' data-num='{{qxData.count}}' wx:if='{{qxData.count!=0}}' src='../img/jian@2x.png'></image>
+            <input bindblur='inputVal' data-num='{{qxData.count}}' data-id="{{ qxData.deviceId }}" wx:if='{{qxData.count!=0}}' value='{{qxData.count}}'></input>
+            <image data-id="{{ qxData.deviceId }}" bindtap='add' style='float:right' data-num='{{qxData.count}}' src='../img/jia@2x.png'></image>
+          </view>
+  </view>
+  <view class='sureBtn' bindtap='makesureAdd' data-num='{{qxData.count}}'>确认加入</view>
+</view>

@@ -1,0 +1,32 @@
+<!--pages/framework/framework.wxml-->
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view>
+       <image bindtap='backHistory' class="image" style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;padding:12px 10px;'  src='../img/black-backnew.png'></image>
+        <view class="save">
+          <!-- <text>保存</text> -->
+          <image bindtap="edit" src="../img/jilu@2x.png"></image>
+        </view>
+        <text class="text">{{navtitle}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view>
+  <view class="lineOne" bindtap="showIsThis" data-id='{{item.operatingManualId}}' wx:for='{{list}}'>  
+    <view class="lineOneNext">
+    <image src="../img/shouce.png"></image>
+      <text>{{item.name}}</text>
+      <view><text>{{item.doneSectionCount}}</text>/{{item.number||0}}</view>
+    </view>
+    <!-- <view wx:if='{{item.showIsThis}}' data-name='{{items.name}}' data-count='{{items.doneLowerCount}}' data-id='{{item.operatingManualId}}' class="lineTwo" catchtap="nextPage"  wx:for='{{item.listNext}}' wx:for-item="items" data-sectionid='{{items.operatingManualSectionId}}' data-lowercount='{{items.lowerCount}}'>
+      <view>                              
+        <text>{{items.name}}</text>
+        <image src="../img/rightS@2x.png"></image>
+        <text wx:if='{{items.done==1}}' class="finish">已完成</text>
+      </view>
+    </view> -->
+  </view>
+</view>

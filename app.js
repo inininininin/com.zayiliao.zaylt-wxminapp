@@ -1,7 +1,9 @@
 //app.js
 App({
   onLaunch: function () {
+    this.globalData.usrBaseInfo = '123'
   
+   
 
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -35,7 +37,7 @@ App({
       }
     })
 
-
+   
     const vm = this
     wx.getSystemInfo({
       success: function (res) {
@@ -53,8 +55,80 @@ App({
         vm.globalData.titleBarHeight = 0
       }
     })
+    wx.getLocation({
+      type: 'wgs84',
+      isHighAccuracy: true,
+      highAccuracyExpireTime:'3000',
+      success: function (res) {
+        vm.globalData.longitude = res.longitude
+        vm.globalData.latitude = res.latitude
+        vm.globalData.speed = res.speed
+      }
+    })
+  },
+  getUsrInfo: function (cb) {
+    var that = this
+    if (this.globalData.usrDesInfo) {
+      typeof cb == "function" && cb(this.globalData.usrBaseInfo)
+    } else {
+      /*wx.redirectTo({
+        url: '登录页面',
+      })*/
+      wx.login({
+        success: function () {
+          wx.getUserInfo({
+            success: function (res) {
+              that.globalData.usrBaseInfo = res.userInfo
+              typeof cb == "function" && cb(that.globalData.usrBaseInfo)
+            }
+          })
+        }
+      })
+    }
+  },
+  getUsrDes: function (cb) {
+    var that = this
+    if (this.globalData.usrDesInfo) {
+      typeof cb == "function" && cb(this.globalData.usrBaseInfo)
+    } else {
+      wx.redirectTo({
+        url: 'String',
+      })
+    }
+  },
+  dateChange: function (data) {
+    var date = new Date(data)
+    var Y = date.getFullYear() + '/';
+    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '/';
+    var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+    return (Y + M + D)
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    usrBaseInfo: null,
+    usrDesInfo: null,
+    list: [], //存放tabBar的数据
+    url: 'https://zaylt.njshangka.com',
+    token: '',//'1984750073886',
+    userToken:'',
+    clinicId:'',
+    clinicName:'',
+    hospitalId: '',
+    hospitalName:'',
+    managerName:'',
+    managerId:'',
+    phone: '',
+    userId: '',
+    clinicaddress:'',
+    hospitaladdress:'',
+    license: '',
+    cover: '',
+    authenticationIs: '',
+    src:'', 
+    Version:'6.0.2',
+    lastClient:'',
+    longitude:'',
+    latitude: '',
+    speed: '',
   }
 })

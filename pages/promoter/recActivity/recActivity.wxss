@@ -1,0 +1,57 @@
+/* pages/promoter/recActivity/recActivity.wxss */
+@import '../../common/common.wxss';
+.activity{
+  width:702rpx;
+height:360rpx;
+margin: 24rpx 24rpx 0 24rpx;
+}
+.activity>view{
+  width:702rpx;
+height:180rpx;
+float: left;
+margin-top: 180rpx;
+background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+}
+.activity>view text:nth-child(1){
+font-size:38rpx;
+font-family:PingFangSC-Medium,PingFang SC;
+font-weight:500;
+color:rgba(255,255,255,1);
+line-height:53rpx;
+ display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    width: 622rpx;
+    margin: 49rpx 40rpx 0 40rpx;
+}
+.activity>view text:nth-child(2){
+font-size:28rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(234,242,255,1);
+line-height:40rpx;
+ display: -webkit-box;
+     width: 622rpx;
+     margin-left: 40rpx;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.withoutNum{
+  width: 700rpx !important;
+  text-align: center;
+}
+.withoutNum image{
+  width: 169rpx;
+  height: 165rpx;
+  margin: 150rpx 265rpx 20rpx;
+}
+.withoutNum text{
+  width: 700rpx !important;
+  display: block;
+  font-size:30rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(51,51,51,1) !important;
+}

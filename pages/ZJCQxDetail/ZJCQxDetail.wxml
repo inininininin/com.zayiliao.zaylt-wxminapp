@@ -3,7 +3,7 @@
   <swiper class="swiper" indicator-dots="true" autoplay="true" indicator-active-color='rgb(0,183,238)' interval="5000" duration="1000">
     <block wx:for="{{movies}}" wx:for-index="index">
       <swiper-item>
-        <image src="https://www.njshangka.com{{item}}" class="slide-image" mode="aspectFill" />
+        <image src="{{item}}" class="slide-image" mode="aspectFill" />
       </swiper-item>
     </block>
   </swiper>
@@ -27,7 +27,7 @@
 </view>
 
 <view class='bottomBtn'>
-  <view class='bottomBtnLf'>
+  <view class='bottomBtnLf' bindtap='shoppingCartList'>
     <image src='../img/jicai-hei@2x.png'></image>
     <text>{{totalCountInShoppingcart}}</text>
   </view>

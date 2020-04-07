@@ -1,0 +1,59 @@
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px;position:relative">
+    <view class='backHistory' bindtap='backHistory'><image src='../../img/black-backnew.png'></image></view>
+      <view class='search'>
+        <image style='display:inline-block;left:120rpx;' src='../../img/sousuo@2x.png'></image>
+        <input bindinput='input' placeholder-style='color:#999' placeholder='搜索门诊'></input>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class='connectClinicTitle'>
+  <view>
+    <text>合作门诊</text>
+    <text>{{connectNum}}</text>
+  </view>
+  <view>
+    <picker bindchange="bindCasPickerChange" value="{{casIndex}}" range="{{casArray}}">
+      <view>
+        <text>{{casArray[casIndex]}}</text>
+        <image src='../../img/paixu-blue@2x.png'></image>
+      </view>
+    </picker>
+    <!-- <text>排序</text>
+    <image src='../../img/paixu-blue@2x.png'></image> -->
+  </view>
+</view>
+
+<view class='clinicList'>
+
+  <view  class='withoutIs' wx:if='{{number==0}}' >咦~，还没有数据呢~</view>
+ <!-- <image class='without' wx:if='{{number==0}}' src='../../img/without1.png'></image> -->
+  <navigator wx:for='{{hosList}}' url='../clinicDetail/clinicDetail?id={{item.itemId}}'>
+    <view class='clinicItem'>
+      <text>{{item.name||""}}</text>  
+      <text>推送人数</text>
+      <text>{{item.pushCount||0}}</text>
+    </view>
+    <!-- <text>所属：{{item.hospital||""}}</text> -->
+  </navigator>
+</view>
+<!-- <view class='bottomBth'>
+  <view bindtap='index'>
+    <image class='bottomBthimg1' src='../../img/shouye@2x.png'></image>
+    <text>医院</text>
+  </view>
+  <view>
+    <image class='bottomBthimg2' src='../../img/Hospital-blue@2x.png'></image>
+    <text class='selectBtn'>门诊</text>
+  </view>
+
+  <view bindtap='mine'>
+    <image class='bottomBthimg3' src='../../img/wode@2x.png'></image>
+    <text>我的</text>
+  </view>
+</view> -->

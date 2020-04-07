@@ -1,0 +1,30 @@
+<!--pages/pushNotification/pushNotification.wxml-->
+<view>
+  <include src="../common/common.wxml" />
+</view>
+<view wx:for='{{schemeList}}'>
+  <view class="newN" bindtap="clinicDetail" data-id="{{item.itemId}}" wx:if='{{item.status==1}}'>
+    <view>
+      <image src="../img/red-up@2x.png"></image>
+      <text>{{item.realname}}</text>
+    </view>
+    <view>
+      <text>所属：{{item.clinicName}}</text>
+      <text>去联系</text>
+    </view>
+    <view>
+      <text>时间：{{item.pushTime}}</text>
+    </view>
+  </view>
+  <view class="newY" bindtap="clinicDetail" data-id="{{item.itemId}}"  wx:if='{{item.status==4}}'>
+    <view>
+      <text>{{item.realname}}</text>
+    </view>
+    <view>
+      <text>所属：{{item.clinicName}}</text>
+    </view>
+    <view>
+      <text>时间：{{item.pushTime}}</text>
+    </view>
+  </view>
+</view>

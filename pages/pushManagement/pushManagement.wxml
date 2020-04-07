@@ -1,0 +1,15 @@
+<view><include src="../common/common.wxml"/></view>
+<view class="sendRec" bindtap="sendRecs">
+  <image src="../img/jia.png"></image>
+  <text>{{newMsg}}</text>
+</view>
+
+<view class="recItem" wx:for='{{list}}'>
+  <view>
+    {{item.content||''}}
+  </view>
+  <view>
+    <text>{{item.addTime||''}}</text>
+    <text>{{newItem}}</text>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+<!--pages/newRec/newRec.wxml-->
+<view><include src="../common/common.wxml"/></view>
+<view class="textarea">
+  <textarea bindinput="spanish" maxlength="100" placeholder="请输入发布内容" placeholder-class="placeholderIntro">
+
+  </textarea>
+  <text class="spanish">{{spanish}}/100</text>
+  <view>
+    <text wx:if='{{!isShow}}'>人群</text>
+    <text wx:if='{{isShow}}'>人数：{{num}}</text>
+    <view bindtap="by" wx:if='{{isShow}}'>
+      <image   wx:if="{{!selectAgree}}" src="../img/Not_selected@2x.png"></image>
+      <image   wx:if="{{selectAgree}}" src="../img/Select@2x.png"></image>
+      <text>病源</text>
+    </view>
+    <view bindtap="mz">
+      <image  wx:if="{{selectAgree1}}" src="../img/Select@2x.png"></image>
+      <image  wx:if="{{!selectAgree1}}" src="../img/Not_selected@2x.png"></image>
+      <text>门诊</text>
+    </view>
+    
+  </view>
+</view>
+<!-- <view>每日一次，今日剩余新建推送：1</view> -->
+<view class="remark" wx:if='{{isShow}}'> 
+  <view>短信扣除钱包 0.01元/条</view>
+  <view>
+  <text>总价：￥</text>
+  <text>{{price}}</text>
+  </view>
+ </view>
+ <view class="remark" wx:if='{{!isShow}}'> 
+  <view>今日1次,今日剩余新建推送：{{tsNum}}</view>
+ </view>
+
+ <view bindtap='save' class='save' style='left:460rpx;'>发布</view>

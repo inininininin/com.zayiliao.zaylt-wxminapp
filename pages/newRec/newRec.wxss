@@ -1,0 +1,85 @@
+/* pages/newRec/newRec.wxss */
+@import '../common/common.wxss';
+page{
+  background: #f2f2f2;
+}
+.textarea{
+   width: 702rpx;
+  height: 482rpx;
+  background: #fff;
+  border-radius: 5rpx;
+  margin: 24rpx;
+  position: relative;
+}
+.textarea>textarea{
+  width: 642rpx;
+  height: 321rpx;
+  padding: 30rpx;
+  color: #333;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.placeholderIntro{
+  font-size: 28rpx;
+  color: rgb(153,153,153);
+}
+.textarea>view{
+  height: 100rpx;
+  width: 100%;
+  line-height: 100rpx;
+}
+.textarea>view>text{
+  float: left;
+  margin-left: 30rpx;
+  font-size: 30rpx;
+  color: rgb(118,136,146);
+}
+.textarea>view>view{
+  float: right;
+  width: 150rpx;
+  font-size: 30rpx;
+  color: rgb(43,119,239);
+}
+.textarea>view>view image{
+  width: 36rpx;
+  height: 36rpx;
+  margin: 32rpx 20rpx 32rpx 0;
+  float: left;
+}
+.remark{
+  width: 678rpx;
+  margin: 22rpx auto;
+  font-size: 24rpx;
+  color: rgb(102,102,102) 
+}
+.remark view:nth-child(1){
+  float: left;
+}
+.remark view:nth-child(2){
+  float: right;
+}
+.remark view:nth-child(2) text:nth-child(2){
+  color: rgb(245,106,0);
+}
+
+.save{
+  width: 482rpx !important;
+  height: 80rpx !important;
+  background: #2b77ef;
+  border-radius: 44rpx;
+  margin: 131rpx auto 0;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: #fff;
+  fill: linear;
+  box-shadow:  -2rpx 8rpx 10px #56aff8;
+}
+.spanish{
+  position: absolute;
+  bottom: 124rpx;
+  right: 30rpx;
+  font-size: 24rpx;
+  color: rgb(153,153,153);
+}
+

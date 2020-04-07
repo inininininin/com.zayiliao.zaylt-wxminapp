@@ -12,6 +12,7 @@ page {
   top: 0;
   width: 100%;
   background: #fff;
+  z-index: 999
 }
 .status-bar {
   /* background: rgba(255, 0, 0, 0.1); */
@@ -21,8 +22,17 @@ page {
   justify-content: space-between;
   align-items: center;
 }
-.header image {
+.title-bar>view>.backHis{
+  width: 100rpx;
+  height: 88rpx;
   float: left;
+}
+/* .title-bar view text{
+  margin-left: -100rpx !important;
+} */
+.header image {
+  /* float: left; */
+  position: absolute;
   width: 24rpx;
   height: 40rpx;
 }
@@ -36,6 +46,9 @@ page {
 }
 .title-bar view text{
   display: inline-block;text-align: center;
-  width: 87.2%;
-  margin: 0 !important;
+  width: 100%;
+  margin: 0  0 0 -100rpx!important;
+}
+.titleText{
+  font-size: 36rpx;
 }

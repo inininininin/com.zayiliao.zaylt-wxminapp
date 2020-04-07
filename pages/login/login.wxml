@@ -1,29 +1,62 @@
-<!--pages/login/login.wxml-->
-<!-- <text>pages/login/login.wxml</text> -->
-<!-- <image src='../img/bg1.png'></image> -->
-<!-- <view class='viewBox'  style="background-image:url('http://zasellaid.njshangka.com/bg1.png') ">
-    <view class='inputBox lf'>
-      <input bindinput="loginPhone"  type='number' placeholder='请输入手机号码' placeholder-style='color:#ccc;font-size:32rpx'></input>
-      <input bindinput="loginPassward"  type='password' placeholder='请输入密码' placeholder-style='color:#ccc;font-size:32rpx'></input>
-
-      <button bindtap='loginBtn' class='loginBtn'>登录</button>
+<view wx:if='{{loginChange}}'>
+  <view class="top1">
+    <image src="https://zaylt.njshangka.com/resource/img/name@2x.png"></image>
+    <view class="navbar">
+      <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}} </view>
     </view>
-</view> -->
-<view class='mainbox'>
-    <image class='topimg' src='../img/hospital_img7@2x.png'></image>
- 
-    <view class='phone'>
-      <image class='tou' src='../img/hospital_icon5@2x.png'></image>
-      <input bindinput='loginPhone' placeholder-class='inputs' placeholder='输入账号'></input>
+    <!-- <text>门诊端</text> -->
+  </view>
+  <view>
+    <view class="lines">
+      <image src="../img/iphone@2x.png"></image>
+      <input type="number" value='{{key}}'  bindinput="loginPhone" placeholder-class="placeholder" placeholder="输入手机号"></input>
+      <image src="../img/delete.png" wx:if="{{key}}" bindtap="eliminate"></image>
     </view>
-    <view class='pwd'>
-      <image class='tou' src='../img/hospital_icon6@2x.png'></image>
-      <input bindinput='loginPassward' placeholder-class='inputs' placeholder='输入密码'></input>
+    <view class="lines_b">
+      <image src="../img/mima@2x.png"></image>
+      <input bindinput='loginPassward' value='{{password}}' password='{{isShowPassword}}' placeholder-class="placeholder" placeholder="输入密码"></input>
+      <image class="delete" src="../img/delete.png" wx:if="{{password}}" bindtap="eliminate1"></image>
+      <image class="eye" bindtap="toggleShowPassword" src="../img/close-eye@2x.png" wx:if='{{isShowPassword}}'></image>
+      <image class="eye" bindtap="toggleShowPassword" src="../img/open-eye@2x.png" wx:if='{{!isShowPassword}}'></image>
+    </view>
+    <view class="registerXy">
+      <image bindtap="selectIcon" wx:if="{{selectAgree}}" src="../img/select1@2x.png"></image>
+      <image bindtap="selectIcon" wx:if="{{!selectAgree}}" src="../img/Not-selected1@2x.png"></image>
+      <view>我已经阅读并同意
+        <text style="color:rgb(0,181,252);" bindtap="loginXy">《用户协议与隐私政策》</text>
+      </view>
+    </view>
+  </view>
+  <view bindtap="loginBtn" class="loginBtn">登录</view>
+  <view class="forgotpwd" bindtap="forgotpwd">
+    <text>忘记密码</text>
+    <image src="../img/wangji@2x.png"></image>
+  </view>
+</view>
+
+<view wx:if='{{!loginChange}}'>
+  <view class="top2">
+    <image bindtap="forgotpwd" src="../img/back-white@2x.png"></image>
+    <text>修改密码</text>
+  </view>
+  <view class="lines">
+      <image src="../img/iphone@2x.png"></image>
+      <input type="number" value='{{key}}' bindinput="loginPhone" placeholder-class="placeholder" placeholder="输入手机号"></input>
+      <image src="../img/delete.png" wx:if="{{key}}" bindtap="eliminate"></image>
+  </view>
+  <view class="lines_yzm">
+      <image src="../img/yanzhengma@2x.png"></image>
+      <input type="number" value='{{code}}' bindinput="loginCode" placeholder-class="placeholder" placeholder="输入验证码"></input>
+      <!-- <image src="../img/delete.png" wx:if="{{key}}" bindtap="eliminate"></image> -->
+      <text bindtap='smsvcodeGet'>{{times}}</text>
+  </view>
+  <view class="lines_b">
+      <image src="../img/mima@2x.png"></image>
+      <input bindinput='loginPassward' value='{{password}}' password='{{isShowPassword}}' placeholder-class="placeholder" placeholder="输入新密码"></input>
+      <image class="delete" src="../img/delete.png" wx:if="{{password}}" bindtap="eliminate1"></image>
+      <image class="eye" bindtap="toggleShowPassword" src="../img/close-eye@2x.png" wx:if='{{isShowPassword}}'></image>
+      <image class="eye" bindtap="toggleShowPassword" src="../img/open-eye@2x.png" wx:if='{{!isShowPassword}}'></image>
     </view>
 
-
-    <button class='loginBtn' bindtap='loginBtn'>登录</button>
-    <text class='admintit'>仅支持管理员分配的账号</text>
-    <image class='imgbottom' src='../img/hospital_img8@2x.png'></image>
-    <view class='bottomtit' bindtap='loginXx'>登录及同意<view class='userXy' bindtap='loginXy'>共享医连体用户协议</view></view>
+    <view bindtap="makeSure" class="loginBtn">确认</view>
 </view>

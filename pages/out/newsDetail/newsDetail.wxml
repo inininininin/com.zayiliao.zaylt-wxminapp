@@ -1,0 +1,48 @@
+<!--pages/out/newsDetail/newsDetail.wxml-->
+<view>
+  <include src="../../common/common.wxml" />
+</view>
+<image class='topImg' src='https://zaylt.njshangka.com/resource/img/banner@2x.png'></image>
+<text class='title'>身体有这些症状，说明你可能感染了幽门螺旋杆菌</text>
+<view class='hospitalName'>
+<image src='../../img/logo@2x.png'></image>
+<view>
+  <text>北京第二中医院</text>
+  <text>2019-02-19 12:39</text>
+</view>
+</view>
+
+
+<view class='detail' bindtap='share' style='font-size:{{fontSize}}px !important'>
+  <text>
+    这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里
+  </text>
+  <text>
+    这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文
+  </text>
+</view>
+
+
+
+<view class='popwindow' style='display:{{close}}'>
+    <view>
+      <view>
+        <view class='title'>请选择分享平台</view>
+        <view class='shareteam'>
+            <view>
+              <image class='wx' src='../../img/weixin@2x.png'></image>
+              <text>分享到微信</text>
+            </view>
+            <view>
+              <image class='pyq' src='../../img/pengyouquan@2x.png'></image>
+              <text>分享到朋友圈</text>
+            </view>
+            <view>
+              <image class='wb' src='../../img/weibo@2x.png'></image>
+              <text>分享到微博</text>
+            </view>
+        </view>
+      </view>
+      <view bindtap='close'>取消</view>
+    </view>
+</view>

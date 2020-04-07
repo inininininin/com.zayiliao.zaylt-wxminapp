@@ -1,0 +1,62 @@
+<view wx:if='{{showIs}}'>
+  <view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+    <view class="header">
+      <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+      <view class="title-bar" style="height:{{titleBarHeight}}px">
+        <view>
+          <view bindtap='backHistory' class='backHis'>
+            <image style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../img/shape@2x.png'></image>
+          </view>
+          <image class="search" catchtap="search" src="../img/search1.png"></image>
+          <text class='titleText'>{{navtitle}}</text>
+          <image class="add" catchtap="changeAdd" src="../img/tianjia@2x.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="item" bindtap="lookDetail" data-id='{{item.hospitalUserId}}' wx:for='{{schemeList}}'>
+      <image src="../img/ren@2x.png"></image>
+      <text>{{item.name}}</text>
+      <image src="../img/back.png"></image>
+      <text>门诊数：{{item.clinicCount}}</text>
+    </view>
+  </view>
+</view>
+<view wx:if='{{!showIs}}' style="background:#fff;height:100%;width:100%;">
+  <view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px;">
+    <view class="header" style="background:#2B77EF !important">
+      <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+      <view class="title-bar" style="height:{{titleBarHeight}}px">
+        <view>
+          <view bindtap='changeAdd' class='backHis'>
+            <image style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../img/back-white@2x.png'></image>
+          </view>
+          <text class='titleText' style="color:#fff;">新增人员</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="itemBox">
+    <text>姓名</text>
+    <input placeholder="请输入" bindinput="name" placeholder-class="inputClass" value="{{name}}"></input>
+  </view>
+  <view class="itemBox">
+    <text>号码</text>
+    <input placeholder="请输入" type='number' bindinput="phone" placeholder-class="inputClass" value="{{phone}}"></input>
+  </view>
+  <view class="itemBox">
+    <text>密码</text>
+    <input placeholder="请输入" type="password" bindinput="password" placeholder-class="inputClass" value="{{password}}"></input>
+  </view>
+   <view class="itemBox">
+    <text>再次确认密码</text>
+    <input placeholder="请输入" type="password" bindinput="passwordConfirm" placeholder-class="inputClass" value="{{passwordConfirm}}"></input>
+  </view>
+   <view class="itemBox">
+    <text>备注</text>
+    <input placeholder="请输入" bindinput="remark" placeholder-class="inputClass" value="{{remark}}"></input>
+  </view>
+
+   <view bindtap='save' class='save'>保存</view>
+</view>

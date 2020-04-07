@@ -1,0 +1,16 @@
+
+<view>
+  <include src="../../common/common.wxml" />
+</view>
+<view class='newList' wx:for='{{list}}'>
+  <navigator url='../newsRecDetail/newsRecDetail?id={{item.messageId}}'>
+  <view>
+    <view><text>通知</text>
+    <text class='point' wx:if='{{item.lookIs==0}}'></text>
+    </view>
+    <view><text>{{item.addTime}}</text></view>
+    <view><text>{{item.message}}</text></view>
+  </view>
+  </navigator>
+
+</view>

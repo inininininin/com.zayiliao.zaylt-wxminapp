@@ -1,0 +1,122 @@
+<!--pages/Third/index/index.wxml-->
+<view class="page" bindtouchend='touchend' bindtouchstart='touchstart'>
+  <!-- 侧滑栏 -->
+  <view class="page_tab" style='display:{{display}}'>
+    <view style="margin-top:{{35+statusBarHeight}}px;">
+      <text class='state'>状态</text>
+      <view class='seeAdoctor'>
+        <text bindtap='seeAd' style='background:{{color5}}'>全部医院</text>
+        <text bindtap='noseeAd' style='background:{{color6}}'>我的医院</text>
+      </view>
+
+      <text class='state'>排序</text>
+      <view class='seeAdoctor'>
+        <text bindtap='status1' style='background:{{color}}'>门诊数量最多</text>
+        <text bindtap='status2' style='background:{{color2}}'>病源数量最多</text>
+        <text bindtap='status3' style='background:{{color3}}'>创建时间最近</text>
+        <text bindtap='status4' style='background:{{color4}}'>医院名称A-Z</text>
+      </view>
+
+
+
+
+      <view class='page_tab_btn'>
+        <text bindtap='again' bindtap='again'>重选</text>
+        <text bindtap='sure' bindtap='sure'>确定</text>
+      </view>
+    </view>
+  </view>
+  <view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+
+  <view class="home" style="{{translate}}；">
+    <view class="container" style="height:{{titleBarHeight+statusBarHeight}}px;padding-top:{{statusBarHeight+titleBarHeight}}px">
+      <view class='indexTopBg' style='height:{{titleBarHeight+statusBarHeight}}px'>
+        <view class="header">
+          <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+          <view class="title-bar" style="height:{{titleBarHeight}}px">
+            <view>
+
+
+              <view class='search' bindtap='search'>
+                <image src='../../img/search1.png'></image>
+                <!-- 搜索 -->
+              </view>
+              <view class='select' bindtap='showview'>
+                <!-- 筛选 -->
+                <image src='../../img/screen1.png'></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='hosTitle'>
+      <view class='connecctHos'>
+        <text wx:if='{{url=="/clientend2/manageend/hospitals"}}'>合作医院 <text>{{connectNum}}</text></text>
+         <text wx:if='{{url=="/clientend2/manageend/allhospitals"}}'>全部医院 <text>{{connectNum}}</text></text>
+      </view>
+      <view class='addHos'>
+        <navigator url='../addHos/addHos'>
+          <text>新增医院</text>
+        </navigator>
+        <image src='../../img/back.png'></image>
+      </view>
+    </view>
+    <view class='hosList'>
+    <view  class='withoutIs' wx:if='{{number==0}}' >咦~，还没有数据呢~</view>
+      <!-- <image class='without' wx:if='{{number==0}}' src='../../img/without1.png'></image> -->
+      <navigator  wx:for='{{hosList}}' url='../hosIndex/hosIndex?id={{item.hospitalId}}'>
+        <view class='hos'>
+          <view class='hostop'>
+            <view>
+              <image src='{{item.cover}}'></image>
+              <text>{{item.hospitalName}}</text>
+            </view>
+            <image wx:if='{{item.authStatus==0}}' src='../../img/weirenzheng@2x.png'></image>
+            <image wx:if='{{item.authStatus==1}}' src='../../img/yirenzheng@2x.png'></image>
+          </view>
+          <view class='hosIntro'>
+            <text>创建时间：{{item.addTime}}</text>
+            <text>门诊数：{{item.clinicCount}}</text>
+            <text>病源数：{{item.patientCount}}</text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+    <view class='indexbox' wx:for='{{list1}}'>
+      <navigator url='../seeAdoctor/seeAdoctor?id={{item.itemId}}'>
+        <view>
+          <view>
+            <text>{{item.realname}}</text>
+            <view class='viewRt'>
+              <image src='../img/weijiuzhen@2x.png'></image>
+              <text>未就诊</text>
+            </view>
+          </view>
+          <view>创建时间：{{item.pushTime}}</view>
+        </view>
+      </navigator>
+    </view>
+
+
+  </view>
+</view>
+<view class='bottomBth'>
+  <view>
+    <image class='bottomBthimg1' src='../../img/shouye-blue@2x.png'></image>
+    <text class='selectBtn'>医院</text>
+  </view>
+  <!-- <navigator url='../clinic/clinic'> -->
+  <view bindtap='clinic'>
+    <image class='bottomBthimg2' src='../../img/Hospital@2x.png'></image>
+    <text>门诊</text>
+  </view>
+  <!-- </navigator> -->
+ <!-- <navigator url='../mine/mine'> -->
+  <view  bindtap='mine'>
+    <image class='bottomBthimg3' src='../../img/wode@2x.png'></image>
+    <text>我的</text>
+  </view>
+ <!-- </navigator> -->
+</view>

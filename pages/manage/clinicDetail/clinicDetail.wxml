@@ -1,0 +1,89 @@
+<!--pages/manage/clinicDetail/clinicDetail.wxml-->
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view>
+
+       <view bindtap='backHistory' class='backHis'>
+              <image  style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../../img/shape@2x.png'></image>
+              </view>
+        <text class='titleText'>{{navtitle}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='navbars' style='background:{{navBg}}'>
+  <view class="navbar" style='background:{{navBg}}'>
+    <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</view>
+  </view>
+</view>
+
+
+<view class='required' hidden="{{currentTab!==0}}">
+<view  class='withoutIs' wx:if='{{number==0}}' >咦~，还没有数据呢~</view>
+ <!-- <image class='without' wx:if='{{number==0}}' src='../../img/without1.png'></image> -->
+  <view class='patientList hos' wx:for='{{list}}'>
+    <!-- <navigator url='../seeAdoctor/seeAdoctor?id={{item.itemId}}'> -->
+      <view class='hostop'>
+        <text>{{item.realname}}</text>
+        <view wx:if='{{item.status==1}}'>
+          <image src='../../img/weijiuzhen@2x.png'></image>
+          <text>未就诊</text>
+        </view>
+        <view wx:if='{{item.status==4}}'>
+          <image src='../../img/yes@2x.png'></image>
+          <text>已就诊</text>
+        </view>
+      </view>
+      <view class='hosIntro1'>
+        <text>推送时间：{{item.pushTime||""}}</text>
+        <text>电话：{{item.tel||""}}</text>
+        <text>所属：{{item.clinicName||""}}</text>
+      </view>
+    <!-- </navigator> -->
+  </view>
+</view>
+
+<view class='required' style='background:#fff;height:{{height-statusBarHeight-titleBarHeight-59}}px' hidden="{{currentTab!==1}}">
+  <view class='lines'>
+    <text>创建时间</text>
+    <text>{{detail.addTime||""}}</text>
+  </view>
+  <view class='lines'>
+    <text>分配账号</text>
+    <text>{{detail.contactTel||""}}</text>
+  </view>
+  <!-- <view class='lines'>
+    <text>分配密码</text><text>******</text>
+  </view> -->
+  <view class='lines'>
+    <text>负责人</text>
+    <text>{{detail.headmanName||""}}</text>
+  </view>
+  <view class='lines'>
+    <text>联系方式</text>
+    <text>{{detail.contactTel||""}}</text>
+  </view>
+  <view class='lines'>
+    <text>门诊地址</text>
+    <text>{{detail.address||""}}</text>
+  </view>
+  <view class='lines'>
+    <text>备注</text>
+    <text>{{detail.remark||""}}</text>
+  </view>
+
+  <view class='lineYy'>
+    <text>营业执照</text>
+    <view>
+      <view wx:for="{{imgalist}}" wx:for-item="image" class="previewimg">
+        <image bindtap='previewImage' src="{{image}}" data-src="{{image}}"></image>
+        <!-- <image src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image> -->
+      </view>
+
+      <image src='../../img/back.png'></image>
+    </view>
+  </view>
+</view>

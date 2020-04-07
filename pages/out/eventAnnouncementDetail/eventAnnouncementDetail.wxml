@@ -1,0 +1,70 @@
+<!--pages/out/newsDetail/newsDetail.wxml-->
+<view>
+  <include src="../../common/common" />
+</view>
+<view class='topView'>
+<image class='topImg' src='{{list.cover}}'></image>
+<text class='toptext'>{{list.addTime}}</text>
+</view>
+<view class='activity'>活动说明</view>
+<!-- <text class='title'>{{list.title}}</text> -->
+<!-- <view class='hospitalName'> -->
+<!-- <image src='{{list.hospitalCover}}'></image> -->
+
+<!-- <view>
+  <text>{{list.hosptialName}}</text>
+  <text>{{list.addTime}}</text>
+</view> -->
+<!-- </view> -->
+
+
+<view class='detail'style='font-size:{{fontSize}}rpx !important'>
+  <text>{{res}}</text>
+</view>
+
+
+
+<view class='popwindow' style='display:{{close}}'>
+    <view>
+      <view>
+        <view class='title'>请选择分享平台</view>
+        <view class='shareteam'>
+           <button  open-type='share' style='margin-left:25% !important'>
+              <image bindtap='sharewx' class='wx' src='../../img/weixin@2x.png'></image>
+              <text>分享到微信</text>
+            </button>
+            <!-- bindtap='sharepyq' -->
+            <!-- <button  bindtap='shareIs'>
+              <image class='pyq' src='../../img/pengyouquan@2x.png'></image>
+              <text>分享到朋友圈</text>
+            </button> -->
+        </view>
+      </view>
+      <view bindtap='close'>取消</view>
+    </view>
+</view>
+
+
+<view class='shareFont'>
+<view>
+<image class='share'  bindtap='share'  src='../../img/share.png'></image>
+</view>
+    <view>
+<image class='font'  bindtap='changefont'  src='../../img/ziti.png'></image>
+</view>
+</view>
+
+<view bindtap='closeFont' style='display:{{display}};width:100%;height:100%;position:fixed;top:0;left:0'>
+<view class="progresspages" style='display:{{display}};top:{{44+statusBarHeight}}px'>
+    <text class='asmall'>A</text>
+    <view class="page__bd">
+      
+        <view class="section section_gap">
+            <view class="body-view">
+                <slider bindchanging="slider4change" block-color='rgb(43,119,239)' color='rgb(175,175,175)' activeColor='rgb(175,175,175)' block-size='14' value='24' step='2' min="24" max="38" />
+            </view>
+        </view>
+    </view>
+    <text class='abig'>A</text>
+   </view>
+   </view>

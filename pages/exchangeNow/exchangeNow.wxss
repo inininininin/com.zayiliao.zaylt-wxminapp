@@ -1,0 +1,187 @@
+/* pages/ZJCOrder/ZJCOrder.wxss */
+@import '../common/common.wxss';
+
+page {
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+}
+
+.container {
+  background: #fff;
+}
+
+.address {
+  width: 100%;
+  height: 160rpx;
+  background: #fff;
+  margin-top: 20rpx;
+  /* line-height: 160rpx; */
+}
+
+.address image:first-child {
+  width: 36rpx;
+  height: 46rpx;
+  float: left;
+  /* display: inline-block; *//* vertical-align: middle; */
+  line-height: 160rpx;
+  margin: 57rpx 32rpx;
+}
+
+.address image:last-child {
+  width: 18rpx;
+  height: 32rpx;
+  display: inline-block;
+  /* vertical-align: middle; */
+  line-height: 160rpx;
+  float: right;
+  margin: 64rpx 32rpx;
+}
+
+.address view {
+  float: left;
+  /* display: inline-block; */
+  width: 550rpx;
+  height: 160rpx;
+}
+
+.address view .view1 {
+  font-size: 34rpx;
+  line-height: 34rpx;
+  margin: 30rpx auto 32rpx 0;
+  display: block;
+  color: rgb(51, 51, 51);
+}
+
+.address view .view2 {
+  font-size: 32rpx;
+  line-height: 32rpx;
+  color: rgb(187, 187, 187);
+  margin: 30rpx auto 32rpx 0;
+  display: block;
+}
+
+.address view .name {
+  font-size: 34rpx;
+  line-height: 34rpx !important;
+  width: auto;
+  margin: 30rpx auto 32rpx 0;
+  display: inline-block;
+  color: rgb(51, 51, 51);
+}
+
+.address view .num {
+  font-size: 30rpx;
+  line-height: 34rpx !important;
+  margin: 30rpx auto 32rpx 30rpx;
+  display: inline-block;
+  color: rgb(187, 187, 187);
+}
+
+.address view .addressDv {
+  font-size: 32rpx;
+  line-height: 32rpx !important;
+  margin: 0 auto 32rpx 0;
+  display: block;
+  color: rgb(51, 51, 51);
+   overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.children {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  margin-top: 20rpx;
+  margin-bottom: 128rpx;
+}
+
+.children_item {
+  height: 196rpx;
+  width: 718rpx;
+  margin-left: 32rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.children_item>image {
+  width: 132rpx;
+  height: 132rpx;
+  float: left;
+  margin: 32rpx 30rpx 32rpx 0;
+}
+
+.children_item .child_name {
+  float: left;
+  width: 556rpx;
+}
+
+.children_item .child_name .child_name_1 {
+  font-size: 30rpx;
+  color: rgb(51, 51, 51);
+  margin-top: 32rpx;
+  margin-bottom: 10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+   width: 485rpx;
+}
+
+.children_item .child_name .child_name_2 {
+  font-size: 26rpx;
+  color: rgb(153, 153, 153);
+  margin-bottom: 16rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+   width: 485rpx;
+}
+
+.children_item .child_name image {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.adddel {
+  width: 148rpx;
+  float: right;
+  margin-right: 32rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+}
+
+.adddel image {
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 50%;
+  float: left;
+  margin-right: 0;
+}
+
+.adddel input {
+  display: inline-block;
+  width: 60rpx;
+  height: 44rpx;
+  padding: 0;
+  border: 0;
+  text-align: center;
+  float: left;
+}
+.submit{
+  width: 686rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  background: rgb(0,183,238);
+  color: #fff;
+  font-size: 36rpx;
+  text-align: center;line-height: 80rpx;
+  position: fixed;
+  bottom: 24rpx;
+  left: 32rpx;
+}

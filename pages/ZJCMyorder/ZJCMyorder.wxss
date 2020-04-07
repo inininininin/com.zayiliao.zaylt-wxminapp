@@ -53,6 +53,23 @@ swiper{
   width: 490rpx;
   float: left;
 }
+.line1>.line1Mid view,.line2>.line1Mid view {
+  font-size: 30rpx;
+  color: rgb(51, 51, 51);
+  /* display: inline-block; */
+  width: 100%;
+  margin: 40rpx 0 14rpx;
+  line-height: 30rpx;
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  height: 30rpx;
+  word-break:break-all;
+}
+
 
 .line1>.line1Mid text:first-child,.line2>.line1Mid text:first-child {
   font-size: 30rpx;
@@ -67,6 +84,7 @@ swiper{
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+  height: 30rpx;
 }
 
 .line1>.line1Mid text:last-child,.line2>.line1Mid text:last-child {

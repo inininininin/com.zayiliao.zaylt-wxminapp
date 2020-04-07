@@ -1,0 +1,82 @@
+<view class="page" bindtouchend='touchend' bindtouchstart='touchstart'>
+  <!-- 侧滑栏 -->
+  <view class="page_tab">
+    <block wx:if="{{user_name ===''}}">
+      <navigator url='../login/login'>
+        <image class='user_head' src='../../image/user_head.png'></image>
+        <view class='user_name'>未登录</view>
+      </navigator>
+    </block>
+    <block wx:else>
+      <image class='user_head' src='{{user_head}}'></image>
+      <view class='user_name'>{{user_name}}</view>
+    </block>
+    <view class="page_tab_content">
+      <navigator url='../order/order'>
+        <view class="wc">
+          <image src='../../image/indent.png'></image>
+          <text>订单记录</text>
+        </view>
+      </navigator>
+      <view class="wc">
+        <image src='../../image/my_profile.png'></image>
+        <text bindtap='tosat'>我的资料</text>
+      </view>
+      <view class="wc">
+        <view style='position:absolute;opacity: 0;   top: 10px; '>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+        </view>
+        <image src='../../image/customer_service.png'></image>
+        <text>客服中心</text>
+      </view>
+      <navigator url='../news/news'>
+        <view class="wc">
+          <image src='../../image/platform_consulting.png'></image>
+          <text>平台资讯</text>
+        </view>
+      </navigator>
+      <navigator url='../to_my/to_my'>
+        <view class="wc">
+          <image src='../../image/platform_consulting.png'></image>
+          <text>关于我们</text>
+        </view>
+      </navigator>
+      <navigator url='my_dz/my_dz'>
+        <view class="wc">
+          <image src='../../image/my_address.png'></image>
+          <text>我的地址</text>
+        </view>
+      </navigator>
+      <button wx:if="{{btn_val != '登录'}}" catchtap='register'>{{btn_val}}</button>
+      <button wx:else catchtap='register'>{{btn_val}}</button>
+    </view>
+  </view>
+  <view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+  <!-- 主页 -->
+  <view class="home" style="{{translate}}">
+    <image class='icon_user' bindtap='showview' src="../../image/icon_user.png"></image>
+    <image class='icon_cart' id='1' src="../../image/cart.png"></image>
+    <!-- <text> 运输机械</text> -->
+    <text> 我的机型</text>
+    <!-- 主页tab -->
+    <view class='home_tab' style='margin-top: 20rpx;'>
+      <view class='page_row'>
+        <block wx:for="{{k1}}" wx:key="index">
+          <view class='title {{home_tab ==index?"on":""}}' catchtap='home_tab_click' data-id='{{item.id}}' data-on='{{index}}'>{{item.title}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

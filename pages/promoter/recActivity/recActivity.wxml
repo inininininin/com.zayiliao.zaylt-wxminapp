@@ -1,0 +1,26 @@
+<!--pages/promoter/recActivity/recActivity.wxml-->
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header" style="position:fixed;top:0;">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view>
+        <view bindtap='backHistory' class='backHis'>
+          <image style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../../img/shape@2x.png'></image>
+        </view>
+        <text class='titleText'>{{navtitle}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view>
+  <view  class="activity" bindtap="activity" data-id='{{item.itemId}}' wx:for='{{schemeList2}}' style='background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;'>
+    <view>
+      <text>{{item.title}}</text>
+    <text>{{item.addTime}}</text>
+    </view>
+  </view>
+  <view class="withoutNum" wx:if='{{clinicNumber==0}}'>
+    <image src="../../img/wushuju.png"></image>
+    <text>暂无数据</text>
+  </view>
+</view>

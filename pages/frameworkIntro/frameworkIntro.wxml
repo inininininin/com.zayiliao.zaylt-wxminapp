@@ -1,0 +1,20 @@
+<!--pages/frameworkIntro/frameworkIntro.wxml-->
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view>
+        <image bindtap='backHistory' class="image" style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;padding:12px 10px;'  src='../img/black-backnew.png'></image>
+        <text class="text">{{navtitle}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="detail">
+  <view>编辑者：<text>{{detail.managerUserName||detail.hospitalUserName||''}}</text></view>
+  <view>{{detail.content||''}}</view>
+  <view wx:for='{{detail.imgArr}}'>
+    <image wx:if='{{item.type==1}}' mode="widthFix" src="{{item.src}}"></image>
+     <video  wx:if='{{item.type==2}}' id="myVideo" src="{{item.src}}"  controls></video>
+  </view>
+</view>

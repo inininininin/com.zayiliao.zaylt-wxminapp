@@ -1,0 +1,60 @@
+@import '../common/common.wxss';
+page{
+  background: #f2f2f2;
+}
+.sendRec{
+  width: 702rpx;
+  height: 98rpx;
+  border-radius: 5rpx;
+  text-align: center;
+  line-height: 98rpx;
+  font-size: 30rpx;
+  color: rgb(43,119,239);
+  background: #fff;
+  margin: 24rpx;
+}
+.sendRec text{
+  float: right;
+  margin-right: 266rpx;
+}
+.sendRec image{
+  float: left;
+  margin-left: 266rpx;
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 34rpx;
+  /* margin-right: 16rpx; */
+  /* vertical-align: middle; */
+}
+.recItem{
+  width: 702rpx;
+  margin:0 auto 24rpx;
+  border-radius: 5rpx;
+  background: #fff;
+}
+.recItem>view:nth-child(1){
+  color: rgb(51,51,51);
+  font-weight: bold;
+  font-size: 30rpx;
+  padding: 36rpx 30rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.recItem>view:nth-child(2){
+  height: 98rpx;
+  line-height: 98rpx;
+}
+.recItem>view:nth-child(2) text:nth-child(1){
+  font-size: 30rpx;
+  color: rgb(118,136,146);
+  margin-left: 30rpx;
+  float: left;
+}
+.recItem>view:nth-child(2) text:nth-child(2){
+  font-size: 26rpx;
+  color: rgb(43,119,239);
+  margin-right: 30rpx;
+  float: right;
+}
+.titleText  view>text{
+  margin: 0 !important;
+}

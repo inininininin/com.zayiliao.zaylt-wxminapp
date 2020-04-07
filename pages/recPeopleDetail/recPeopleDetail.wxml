@@ -1,0 +1,84 @@
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header" style="position:fixed;top:0;">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view>
+        <view bindtap='backHistory' class='backHis'>
+          <image style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../img/shape@2x.png'></image>
+        </view>
+        <image class="search" catchtap="editThis" src="../img/bianji@2x.png"></image>
+        <!-- <text class='titleText'>{{navtitle}}</text> -->
+        <image class="add" catchtap="delete" src="../img/shanchu@2x.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="topIndex" style="position:fixed;top:{{statusBarHeight+titleBarHeight}}px">
+  <view>
+    <image mode="aspectFill" src="{{detail.cover||''}}"></image>
+    <text>长按可分享和保存</text>
+  </view>
+  <view>
+    <text>{{name||''}}</text>
+    <view>
+      <text>号码：</text>
+      <text>{{phone||''}}</text>
+    </view>
+    <view>
+      <text>备注：</text>
+      <text>{{remark||''}}</text>
+    </view>
+  </view>
+</view>
+<view class="lineChange" style="position:fixed;top:{{statusBarHeight+titleBarHeight}}px">
+<text>总共：{{clinicNum}}个门诊</text>
+  <text bindtap="changeAll">全部转移</text>
+</view>
+
+<view style="margin-top:406rpx">
+  <view wx:if='{{clinicNum!=0}}' class="clinicItem" bindtap="clinicDetail" data-id='{{item.hospitalClinicId}}' wx:for='{{schemeList}}'>
+    <view>
+      <text>{{item.name||''}}</text>
+      <image catchtap="changeClinic" data-id="{{item.hospitalClinicId}}" data-name="{{item.name}}" src="../img/zhuanyi@2x.png"></image>
+    </view>
+  </view>
+  <view class="withoutNum" wx:if='{{clinicNum==0}}'>
+    <image src="../img/wushuju.png"></image>
+    <text>暂无数据</text>
+  </view>
+</view>
+
+
+<view class="bgColor" bindtap="edit" wx:if='{{showIs}}'></view>
+<view class="changeThis" wx:if='{{showIsOne}}'>
+  <view class="title">
+    <text>编辑</text>
+    <image bindtap="close" src="../img/close@2x.png"></image>
+  </view>
+  <text>姓名：</text>
+  <input bindinput="name" value="{{name||''}}"></input>
+  <text>号码：</text>
+  <input bindinput="phone" value="{{phone||''}}"></input>
+  <text>密码：</text>
+  <input bindinput="pwd" value="{{pwd||''}}"></input>
+  <text>备注：</text>
+  <input bindinput="remark" value="{{remark||''}}"></input>
+  <view bindtap='useNow' class='useNow'>立即使用</view>
+</view>
+<view class="changeThisClinic" wx:if='{{showIsTwo}}'>
+  <view class="title">
+    <text>移交门诊</text>
+    <image bindtap="close" src="../img/close@2x.png"></image>
+  </view>
+  <view>将
+    <text>{{changeClinicName}}</text>
+  </view>
+  <text>移交给：</text>
+  <picker mode='selector' data-id='{{array[index].hospitalUserId}}' bindchange="bindPickerChange" value="{{index.name}}" range-key="{{'name'}}" range="{{array}}">
+    <view class="picker" style="text-align:right;color:#2b77ef;">
+      {{array[index].name}}
+    </view>
+    <image class="downIcon" src="../img/down@2x.png"></image>
+  </picker>
+  <view bindtap='makeSure' class='useNow'>确定</view>
+</view>

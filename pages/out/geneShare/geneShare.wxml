@@ -1,0 +1,37 @@
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view>
+        <text bindtap='backHistory' class='refuse' style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;'>取消</text>
+        <!-- <image bindtap='backHistory' style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;'  src='../img/shape@2x.png'></image> -->
+        <text class='titleText'>{{navtitle}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+<view class='selectView'>
+  <view class='viewEve'>
+    <text>编号</text>
+    <image src='../../img/down@2x.png'></image>
+    <picker class='col431' bindchange="bindCasPickerChange" value="{{casIndex1}}" range="{{casArray}}">
+      <view>
+        <text class='lineMoreOne'>{{casArray[casIndex]}}</text>
+      </view>
+    </picker>
+  </view>
+</view>
+<view class='selectView'>
+  <view class='viewEve'>
+    <text>分配给</text>
+    <image src='../../img/down@2x.png'></image>
+    <picker class='col431' bindchange="bindCasPickerChange1" value="{{Index1}}" range="{{Array}}">
+      <view>
+        <text class='lineMoreOne'>{{Array[Index]}}</text>
+      </view>
+    </picker>
+  </view>
+</view>

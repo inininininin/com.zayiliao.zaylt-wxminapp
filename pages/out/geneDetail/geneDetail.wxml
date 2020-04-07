@@ -1,0 +1,151 @@
+<!--pages/out/geneDetail/geneDetail.wxml-->
+<view>
+  <include src="../../common/common.wxml" />
+</view>
+<view class='numbering'>
+  <text>编号：{{detail.no}}</text>
+</view>
+<view class='line1 relative' wx:if='{{line1==1}}'>
+  <view class='font34 left60'>分配检测盒</view>
+  <view class='font28 left60 col131'>分配给
+    <text class='col302'>{{detail.clinic||''}}</text>
+  </view>
+  <image class='finish absolute' src='../../img/finish@2x.png'></image>
+</view>
+<view class='line1 lineN relative' wx:if='{{line1==2}}'>
+  <view class='font34 left60 pad70 marginBottom0'>分配检测盒</view>
+  <text class='nofinish absolute'></text>
+  <!-- <image class='finish absolute' src='../../img/finish@2x.png'></image> -->
+</view>
+<view class='line2 relative' wx:if='{{detail.freight2Is==1}}'>
+  <view class='font34 left60'>寄给门诊 </view>
+  <view class='ydh col131 font28 left60'>运单号：{{detail.freight2No||""}}</view>
+  <view class='font28 col431 left60 lookWl'>
+    <navigator url='../checkLogistics/checkLogistics?id={{detail.freight2No||""}}&type={{detail.freight2CoId}}'>查看物流</navigator>
+  </view>
+  <image class='finish absolute' src='../../img/finish@2x.png'></image>
+</view>
+<view class='line2  lineN relative' wx:if='{{detail.freight2Is==0}}'>
+  <view class='font34 left60  pad70 marginBottom0'>寄给门诊 </view>
+  <text class='nofinish absolute'></text>
+</view>
+<view class='line3 relative' wx:if='{{luru==1}}'>
+  <view class='font34 left60'>录入样本数据
+  
+    <image class='edit'  bindtap='enterData' src='../../img/revise@2x.png'></image>
+  </view>
+  <view class='font28 left60 col131'>
+    <text>姓名：</text>
+    <text  class=' Inline col302'>{{detail.sampleRealname||''}}</text>
+  </view>
+  <view class='font28 left60 col131'>
+    <text>电话：</text>
+    <text  class=' Inline col302'>{{detail.sampleTel||''}}</text>
+  </view>
+  <view class='font28 left60 pad70 col131'>
+    <text>检测项目：</text>
+    <text class=' Inline col302'>{{detail.testItem||''}}</text>
+  </view>
+  <image class='finish absolute' src='../../img/finish@2x.png'></image>
+</view>
+<view class='line3  lineN relative' wx:if='{{luru==0}}'>
+  <view class='font34 left60  pad70 marginBottom0'>录入样本数据
+    <image class='edit' bindtap='enterData' src='../../img/revise@2x.png'></image>
+  </view>
+  <text class='nofinish absolute'></text>
+</view>
+<view class='line5 relative' wx:if='{{detail.freight3Is==1}}'>
+  <view class='font34 left60'>寄回医院
+    <image class='edit' bindtap='backHos' src='../../img/revise@2x.png'></image>
+  </view>
+  <view class='ydh col131 font28 left60'>
+    <text class='inputText'>运单号：</text>
+    <text class=' Inline col13'>{{detail.freight3No||""}}</text>
+    <!-- <input class=' Inline col131' value='{{detail.freight3No||""}}'></input> -->
+  </view>
+  <view class='font28 col431 left60 lookWl'>
+    <navigator url='../checkLogistics/checkLogistics?id={{detail.freight3No||""}}&type={{detail.freight3CoId}}'>查看物流</navigator>
+  </view>
+  <image class='finish absolute' src='../../img/finish@2x.png'></image>
+</view>
+<view class='line5  lineN relative' wx:if='{{detail.freight3Is==0}}'>
+  <view class='font34 left60  pad70 marginBottom0'>寄回医院
+    <image class='edit' bindtap='backHos' src='../../img/revise@2x.png'></image>
+  </view>
+  <text class='nofinish absolute'></text>
+</view>
+<view class='line4 relative' wx:if='{{detail.freight4Is==1}}'>
+  <view class='font34 left60'>寄给忠安医疗</view>
+  <view class='ydh col131 font28 left60'>运单号：{{detail.freight4No||""}}</view>
+  <view class='font28 col431 left60 lookWl'>
+    <navigator url='../checkLogistics/checkLogistics?id={{detail.freight4No||""}}&type={{detail.freight4CoId}}'>查看物流</navigator>
+  </view>
+  <image class='finish absolute' src='../../img/finish@2x.png'></image>
+</view>
+<view class='line4  lineN relative' wx:if='{{detail.freight4Is==0}}'>
+  <view class='font34 left60  pad70 marginBottom0'>寄给忠安医疗 </view>
+  <text class='nofinish absolute'></text>
+</view>
+
+<view class='line6 relative' wx:if='{{detail.status==3||detail.status==2||detail.status==1}}'>
+  <view class='font34 left60'>检测报告</view>
+  <view wx:if='{{detail.status==2||detail.status==1}}' class='font28 left60 pad70 col131'>状态：未出报告</view>
+  <view wx:if='{{detail.status==3}}' class='font28 left60 pad70 col131'>状态：已出报告</view>
+  <image class='finish absolute' src='../../img/finish@2x.png'></image>
+</view>
+<view class='line6   relative' wx:if='{{detail.status==0}}'>
+  <view class='font34 left60  pad70 marginBottom0'>检测报告 </view>
+  <text class='nofinish absolute'></text>
+</view>
+
+
+<view class='page1' wx:if='{{show1==2}}'>
+  <view class='pageNo'>
+    <view class='title'>录入样本数据
+      <image  bindtap='close'  src='../../img/close@2x.png'></image>
+    </view>
+    <view class='name'>
+      <text>姓名：</text>
+      <input bindinput='name' value='{{detail.sampleRealname||""}}'></input>
+    </view>
+    <view class='tel'>
+      <text>电话：</text>
+      <input  bindinput='tel' value='{{detail.sampleTel||""}}'></input>
+    </view>
+    <view class='inspection'>
+      <text>检查项目：</text>
+      <picker bindchange="bindCasPickerChange" value="{{casIndex1}}" range="{{casArray}}">
+        <view>
+          <!-- <text wx:if='{{pickselect1==1}}'>{{detail.testItem||''}}</text> -->
+          <text>{{casArray[casIndex]}}</text>
+        </view>
+      </picker>
+      <image src='../../img/down@2x.png'></image>
+    </view>
+    <view class='save' bindtap='saveData'>保存</view>
+  </view>
+</view>
+<view class='page1' wx:if='{{show1==1}}'>
+<view class='pageNo'>
+    <view class='title'>寄给门诊
+      <image bindtap='close' src='../../img/close@2x.png'></image>
+    </view>
+    <view class='postNo'>
+      <text>运单号：</text>
+      <input bindinput='postNo' value='{{detail.freight3No||""}}'></input>
+    </view>
+   <view class='freightCoId'>
+      <text>快递公司：</text>
+      <picker bindchange="bindCasPickerChange1" data-id='{{casArray2[casIndex2].freightCoId}}'  value="{{casIndex2}}" range="{{casArray3}}">
+        <view>
+          <!-- <text wx:if='{{pickselect1==1}}'>{{detail.testItem||''}}</text> -->
+          <text >{{casArray2[casIndex2].name}}</text>
+        </view>
+      </picker>
+      <image src='../../img/down@2x.png'></image>
+    </view>
+    <view class='save1' bindtap='saveData1'>保存</view>
+  </view>
+</view>
+
+

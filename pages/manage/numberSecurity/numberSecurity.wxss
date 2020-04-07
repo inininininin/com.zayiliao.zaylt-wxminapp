@@ -1,0 +1,40 @@
+/* pages/ZJCDesign/ZJCDesign.wxss */
+@import '../../common/common.wxss';
+page{
+  background: #f2f2f2;
+}
+.container{
+  background: #fff;
+}
+.line{
+  width: 750rpx;
+  background: #fff;
+}
+.line view{
+  height: 110rpx;
+  width: 690rpx;
+  margin-left: 60rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  font-size: 30rpx;
+  line-height: 110rpx;
+  
+}
+.line image{
+  width: 18rpx;
+  height: 32rpx;
+  float: right;
+  margin-right: 30rpx;
+  margin-top: 39rpx;
+}
+.loginout{
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 750rpx;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: rgb(0, 183,238);
+  font-size: 30rpx;
+  text-align: center;
+}

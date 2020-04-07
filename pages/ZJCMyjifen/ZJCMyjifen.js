@@ -1,14 +1,15 @@
 // pages/ZJCMyjifen/ZJCMyjifen.js
 var utils=require('../../utils/util.js');
+var app=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    navtitle: '我的积分',
-    statusBarHeight: '',
-    titleBarHeight: '',
+    navtitle: '',
+    statusBarHeight: getApp().globalData.statusBarHeight,
+    titleBarHeight: getApp().globalData.titleBarHeight,
     token: '',
     domain: '',
     schemeList:[],
@@ -21,13 +22,16 @@ Page({
 lastPage:function(toPageNo){
   var that=this
   toPageNo++
+  
   wx.request({
-    url: that.data.domain + '/zaylt/c/bonuspoint/bills',
+    url: app.globalData.url + '/clientend2/clinicend/pointexchange/exchangepointdetails',
     header: {
       "Content-Type": "application/x-www-form-urlencoded",
+      'token': app.globalData.token,
+      'cookie': app.globalData.cookie
     },
     data: {
-      token: that.data.token,
+      token: app.globalData.token,
       pn: toPageNo,
       ps: 10,
     },
@@ -35,6 +39,12 @@ lastPage:function(toPageNo){
     success: function (res) {
       wx.hideToast()
       if (res.data.code == 0) {
+        var addTime
+        for (var i = 0; i < res.data.data.items.length; i++) {
+          addTime = res.data.data.items[i].addTime
+          // that.data.schemeList[i].addTime = that.dateChange(addTime) 
+          res.data.data.items[i].addTime = utils.formatTime(addTime / 1000, 'Y-M-D h:m');
+        }
         var schemeListArr = that.data.schemeList;
         var newSchemeListArr = schemeListArr.concat(res.data.data.items)
         if (res.data.data.items.length == 0) {
@@ -54,17 +64,14 @@ lastPage:function(toPageNo){
         }
 
 
-        var addTime
-        for (var i = 0; i < that.data.schemeList.length; i++) {
-          addTime = that.data.schemeList[i].addTime
-          that.data.schemeList[i].addTimes = utils.formatTime(addTime/1000,'Y-M-D h:m');
-        }
+       
         that.setData({
           bonusPoint: res.data.data.bonusPoint,
           schemeList: that.data.schemeList,
         })
       } else {
         wx.showModal({
+          showCancel: false,
           title: res.data.codeMsg
         })
       }
@@ -90,11 +97,7 @@ lastPage:function(toPageNo){
    */
   onReady: function () {
 
-    const vm = this
-    vm.setData({
-      statusBarHeight: getApp().globalData.statusBarHeight,
-      titleBarHeight: getApp().globalData.titleBarHeight
-    })
+    
   },
 
     backHistory: function(e) {
@@ -148,7 +151,20 @@ lastPage:function(toPageNo){
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    if (app.globalData.lastClient == 1) {
+      var path = '/pages/index/index'
+    } else {
+      var path = '/pages/out/index/index'
+    }
+    return {
+      title: '欢迎使用共享医联体小程序', //分享内容
+      path: path, //分享地址
+      imageUrl: 'https://zaylt.njshangka.com/favicon.ico', //分享图片
+      success: function (res) {
+      },
+      fail: function (res) {
+      }
+    }
   },
   dateChange: function (data) {
     var date = new Date(data)

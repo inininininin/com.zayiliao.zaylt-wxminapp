@@ -1,0 +1,221 @@
+/* pages/manage/mine/mine.wxss */
+page {
+  height: 100%;
+}
+.container {
+  box-sizing: border-box;
+  /* height: 100%; */
+  background: #fff;
+}
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+}
+.status-bar {
+  /* background: rgba(255, 0, 0, 0.1); */
+}
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header image {
+  /* float: left; */
+  position: absolute;
+  width: 28rpx;
+  height: 31rpx;
+}
+.title-bar .search{
+  height: 100%;
+  width: 100%;
+  /* text-align: center; */
+  display: flex;
+   /* justify-content: space-between; */
+    align-items: center;
+}
+.title-bar view text{
+  display: inline-block;
+  width: 100%;
+  margin: 0 !important;
+}
+.titleText{
+  font-size: 36rpx;
+}
+.search input{
+  width: 440rpx;
+  color: #000;
+}
+.search{
+  width: 440rpx !important;
+  padding-left: 30rpx;
+  margin-left: 30rpx;
+  height: 70rpx !important;
+  background: rgba(0,0,0,0.05);
+  border-radius:70rpx  !important;
+  font-size:30rpx;
+  color: rgb(153,153,153);
+  text-align: left !important;
+  /* padding-left:80rpx; */
+}
+
+.bottomBth{
+  height: 100rpx;
+  width:750rpx;
+  position: fixed !important;
+  bottom: 0;
+  left: 0;
+  background: #fff !important;
+  z-index: 10000;
+  border-top: 1px solid #e5e5e5;
+}
+.bottomBth navigator{
+    width: 250rpx;
+  text-align: center;
+  display: inline-block;
+  font-size: 30rpx;
+  color: #9c9c9c;
+}
+.bottomBth view{
+  width: 250rpx;
+  text-align: center;
+  display: inline-block;
+  font-size: 30rpx;
+  color: #9c9c9c;
+}
+.selectBtn{
+  color: #2a79f0 !important;
+}
+.bottomBth view>.bottomBthimg1{
+  width: 42rpx;
+  height: 44rpx;
+  display: block;
+  margin: 10rpx 104rpx 0;
+}
+.bottomBth view>.bottomBthimg2{
+  width: 46rpx;
+  height: 44rpx;
+  display: block;
+  margin: 10rpx 104rpx 0;
+}
+.bottomBth view>.bottomBthimg3{
+  width: 44rpx;
+  height: 44rpx;
+  display: block;
+  margin: 10rpx 104rpx 0;
+}
+.connectClinicTitle{
+  height:126rpx;
+  width: 100%;
+  position: fixed;
+  background: #fff;
+}
+.connectClinicTitle>view:first-child{
+  font-size: 38rpx;
+  height: 38rpx;
+  margin:48rpx auto 40rpx 36rpx;
+  float: left;
+}
+.connectClinicTitle>view:first-child>text:last-child{
+  font-size: 26rpx;
+  margin-left: 15rpx;
+}
+.connectClinicTitle>view:last-child{
+  font-size: 30rpx;
+  color: rgb(43,119,239);
+  float: right;
+    margin-top:48rpx;
+    margin-right: 24rpx; 
+}
+.connectClinicTitle>view:last-child image{
+  width: 24rpx;
+  height: 28rpx;
+  margin-left: 15rpx;
+  float: right;
+  margin-top:11rpx; 
+}
+.clinicList{
+  width: 704rpx;
+  margin: 126rpx 23rpx 0;
+  padding-bottom: 20rpx;
+  /* padding-bottom: 102rpx; */
+  float: left;
+}
+.clinicItem{
+  float: left;
+  width: 340rpx;
+  height: 220rpx;
+  /* background: rgb(255,248,243); */
+  margin: 0 6rpx 12rpx;
+  text-align: center;
+}
+.clinicItem text:nth-child(1){
+  font-size: 32rpx;
+  color: rgb(51,51,51);
+  margin-top: 40rpx;
+  height: 32rpx;
+  width: 100%;
+  float: left;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 32rpx;
+}
+.clinicItem text:nth-child(2){
+font-size: 24rpx;
+color: rgb(153,153,153);
+ margin-top: 18rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+  width: 100%;
+  float: left;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.clinicItem text:nth-child(3){
+  font-size: 28rpx;
+color: rgb(255,149,27);
+ margin-top: 18rpx;
+ margin-left: 95rpx;
+  height: 44rpx;
+  border-radius: 22rpx;
+  border: 1px solid rgb(255,149,27);
+  width: 150rpx;
+  line-height: 44rpx;
+  float: left;
+  display: block;
+}
+
+.without{
+  width: 250rpx;
+  height: 250rpx;
+  margin: 150rpx 250rpx;
+}
+.withoutIs{
+  width: 100%;
+  text-align: center;
+  margin-top: 350rpx;
+  font-size: 30rpx;
+  color: #9c9c9c
+}
+
+
+.backHistory{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 88rpx !important;
+  height: 100% !important;
+}
+.backHistory image{
+  width: 18rpx;
+  height: 32rpx;
+  margin-top: 28rpx;
+  margin-left: 26rpx;
+}

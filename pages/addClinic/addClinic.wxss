@@ -1,0 +1,126 @@
+/* pages/manage/addHos/addHos.wxss */
+@import '../common/common.wxss';
+.required{
+  padding: 44rpx 32rpx;
+  width: 686rpx;
+  /* float: left; */
+  /* margin: 44rpx auto; */
+  background: #fff;
+}
+
+.required image{
+  width: 34rpx;
+  height: 36rpx;
+  margin: 0 10rpx 0 0;
+   float: left;
+}
+.required text{
+  color: rgb(255,149,27);
+  font-size: 30rpx;
+  display: inline-block;
+  float: left;
+}
+.required>view:first-child{
+  height: 40rpx;
+}
+.required>.input{
+    font-size: 30rpx;
+  width: 100%;
+  height: 90rpx;
+  border: 1rpx solid #e5e5e5;
+  border-radius: 4rpx;
+  margin-top: 24rpx;
+  line-height: 90rpx;
+}
+.input text{
+  color: rgb(51,51,51);
+  margin-left: 32rpx;
+}
+.input input{
+  height: 90rpx;
+  line-height: 90rpx;
+   margin-right: 32rpx;
+   width: 400rpx;
+   float: right;
+   text-align: right;
+   color: #2b77ef;
+}
+.input .inputPla{
+  text-align: right;
+  line-height: 90rpx;
+  height: 90rpx;
+  float: right;
+ 
+  font-size: 30rpx;
+  color: rgb(153,153,153)
+}
+.selectIntro{
+  margin: 44rpx 0 28rpx;
+  height: 38rpx;
+}
+
+.save{
+  width: 482rpx !important;
+  height: 80rpx !important;
+  background: #2b77ef;
+  border-radius: 44rpx;
+  margin: 50rpx auto 0;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: #fff;
+  fill: linear;
+  box-shadow:  -2rpx 8rpx 10px #56aff8;
+}
+.save image{
+  margin-top: 24rpx;
+  margin-left: 95rpx;
+}
+.inputs{
+   width: 100%;
+  height:  148rpx;
+  border: 1rpx solid #e5e5e5;
+  border-radius: 4rpx;
+  margin-top: 24rpx;
+  line-height: 148rpx;
+  position: relative;
+}
+.inputs>text{
+  color: rgb(51,51,51) !important;
+   margin-left: 32rpx;
+}
+.inputs .yyzzimg{
+  position: absolute;
+ width: 108rpx !important;
+  height: 108rpx !important;
+  border-radius: 8rpx;
+  top: 20rpx;
+  right: 55rpx;
+}
+.inputs .back{
+  width: 13rpx;
+  height: 24rpx;
+  position: absolute;
+  top: 62rpx;
+  right: 32rpx;
+}
+picker{
+  width: 300rpx;
+  height: 90rpx;
+  float: right;
+  display: inline-block;
+}
+.picker{
+  width: 230rpx;
+  height: 90rpx;
+  display: inline-block;
+}
+.picker::selection{
+  color: #2B77EF
+}
+.downIcon{
+  width: 24rpx !important;
+  height: 14rpx !important;
+  float: right !important;
+  margin: 39rpx 30rpx 33rpx 10rpx !important;
+}

@@ -1,0 +1,18 @@
+<!--pages/putInPrecisionActivities/putInPrecisionActivities.wxml-->
+<view style="z-index:999">
+  <include src="../common/common.wxml" />
+</view>
+<view class="sendRec" bindtap="sendRec">
+  <image src="../img/jia.png"></image>
+  <text>发布文章</text>
+</view>
+<view bindtap="imgItem" data-id='{{item.itemId}}' data-contentBtid='{{item.contentBtId}}' class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="">
+  <view class="imgBox content">
+    <view>
+    <text>{{item.title}}</text>
+    <text>{{item.addTime}}</text>
+    </view>
+    <view class='boxImg' style="background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;" ></view>
+  </view>
+  <view class="del" data-id='{{item.itemId}}' catchtap="del" data-index="{{index}}">删除</view>
+</view>

@@ -1,0 +1,62 @@
+<!--pages/promoter/index/index.wxml-->
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+    <view>
+    <!-- <image bindtap='backHistory' style='display:inline-block;top:{{2+statusBarHeight}}px;left:10rpx;padding:20rpx;'  src='../../img/black-backnew.png'></image> -->
+    <text>{{navtitle}}</text>
+    </view>
+    </view>
+  </view>
+</view>
+
+<view class='ownDetail' bindtap='yyzz'>
+  <view class='avaterBox'>
+    <image src='../../img/logo@2x.png'></image>
+    <!-- <image wx:if="{{src==''}}" src="{{src}}" bindtap='bindChooiceProduct' class='avater' src='../../img/logo@2x.png'></image> -->
+    <text class='yirenzheng' wx:if='{{display==1}}'>已认证</text>
+    <text class='weirenzheng' wx:if='{{display==0}}'>未认证</text>
+    <text class='weirenzheng' wx:if='{{display==2}}'>未通过</text>
+  </view>
+
+  <view class='title'>
+    <view>
+      <text>{{name||''}}</text>
+      <text>{{phone||''}}</text>
+      <!-- <text>{{address||''}}</text> -->
+    </view>
+  </view>
+</view>
+
+<view class='list' style="margin-top:20rpx;">
+  <navigator url='../peopleDetail/peopleDetail?id={{hospitalId}}'>
+    <view>
+      <text>门诊列表</text>
+      <image src='../../img/ChevronCopy2@2x.png'></image>
+    </view>
+  </navigator>
+  <navigator url='../../login/login'>
+    <view>
+      <text>退出登录</text>
+      <image src='../../img/ChevronCopy2@2x.png'></image>
+    </view>
+  </navigator>
+</view>
+
+
+
+<view class='tabbarBtn'>
+  <view bindtap="index">
+    <image class='bottomBthimg1' src='../../img/shouye@2x.png'></image>
+    <text>首页</text>
+  </view>
+  <view bindtap='clinic'>
+    <image class='bottomBthimg2' src='../../img/Hospital@2x.png'></image>
+    <text>门诊</text>
+  </view>
+  <view  bindtap='mine'>
+    <image class='bottomBthimg3' src='../../img/wode-blue@2x.png'></image>
+    <text  class='active'>我的</text>
+  </view>
+</view>

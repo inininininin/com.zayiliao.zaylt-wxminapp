@@ -1,0 +1,21 @@
+<!--pages/frameworkEdit/frameworkEdit.wxml-->
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view>
+        <image bindtap='backHistory' class="image" style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;padding:12px 10px;'  src='../img/black-backnew.png'></image>
+        <text class="text" bindtap="saveThis">{{navtitle}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<image class="video" bindtap="video" src="../img/camera2.png"></image>
+<image class="camera" bindtap="camera" src="../img/camera@2x.png"></image>
+<image class="delete" bindtap="backHistory" src="../img/delete@2x.png"></image>
+  <textarea bindblur="bindTextAreaBlur" maxlength="-1" auto-height placeholder="请输入详情" />
+<view class="fileAll"  wx:for='{{fileAllShow}}' wx:for='{{fileAllShow}}'>
+<image class="delThis" bindtap="delThis" data-src='{{item.src}}' src="../img/close2.png"></image>
+    <image class="image" wx:if='{{item.type==1}}' mode="widthFix" src="{{item.src}}"></image>
+    <video  wx:if='{{item.type==2}}' id="myVideo" src="{{item.src}}"  controls></video>
+</view>

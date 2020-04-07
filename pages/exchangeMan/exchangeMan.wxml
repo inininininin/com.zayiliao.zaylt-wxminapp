@@ -1,0 +1,101 @@
+<view wx:if='{{showIs==1}}'>
+  <view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+    <view class="header">
+      <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+      <view class="title-bar" style="height:{{titleBarHeight}}px">
+        <view>
+          <!-- <view bindtap='backHistory' class='backHis'> -->
+          <image catchtap='backHistory' style='display:inline-block;top:{{2+statusBarHeight}}px;left:10rpx;padding:20rpx;' src='../img/shape@2x.png'></image>
+          <!-- </view> -->
+          <!-- <image catchtap="listIndex" class="listIndex" style="display:inline-block;top:{{2+statusBarHeight}}px;left:90rpx;padding:20rpx;" src="../img/liebiao.png"></image> -->
+          <text class='titleText'>{{navtitle}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="titleGood">
+    <text>已有商品</text>
+    <view bindtap="addNew">
+      <text>新增</text>
+      <image src="../img/xinzeng@2x.png"></image>
+    </view>
+  </view>
+  <view>
+    <view wx:for='{{list}}' data-id='{{item.itemId}}' data-name='{{item.name}}' data-point='{{item.payExchangepoint}}' data-intro='{{item.intro}}' data-stock='{{item.stock}}' bindtap="exchangeItem" class="exchangeItem">
+      <image  data-id='{{item.itemId}}' data-src="{{item.cover}}" src="{{item.cover}}" mode="aspectFill" catchtap="imageModify"></image>
+      <view>
+        <view>{{item.name}}</view>
+        <view>
+          <text>{{item.payExchangepoint}}</text>
+          <text>积分</text>
+        </view>
+        <view>
+          <text>数量</text>
+          <text>{{item.stock}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view wx:if='{{showIs==2}}' style="width:100%;height:100%;background:#fff;">
+  <view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+    <view class="header">
+      <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+      <view class="title-bar" style="height:{{titleBarHeight}}px">
+        <view>
+          <!-- <view bindtap='backHistory' class='backHis'> -->
+          <image catchtap='backHistory2' style='display:inline-block;top:{{2+statusBarHeight}}px;left:10rpx;padding:20rpx;' src='../img/shape@2x.png'></image>
+          <!-- </view> -->
+          <view wx:if='{{type==1}}' catchtap='nextPage' class="nextPage">下一步</view>
+          <view wx:if='{{type==2}}' catchtap='modify' class="nextPage">修改</view>
+          <!-- <image catchtap="listIndex" class="listIndex" style="display:inline-block;top:{{2+statusBarHeight}}px;left:90rpx;padding:20rpx;" src="../img/liebiao.png"></image> -->
+          <text wx:if='{{type==1}}' class='titleText' style="width:366rpx;">上传信息</text>
+          <text wx:if='{{type==2}}' class='titleText' style="width:366rpx;">修改信息</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="editItem">
+    <text>商品名称</text>
+    <input bindinput="name" placeholder-class="placeClass" placeholder="请输入商品名称" value="{{name}}"></input>
+  </view>
+  <view class="editItem">
+    <text>单个积分</text>
+    <text>分</text>
+    <input bindinput="payExchangepoint" type="number" style="margin-right:5rpx;" placeholder-class="placeClass" placeholder="请输入商品单个积分称" value="{{payExchangepoint}}"></input>
+  </view>
+  <view class="editItem">
+    <text>总数量</text>
+    <text>个</text>
+    <input bindinput="stock"  type="number" style="margin-right:5rpx;" placeholder-class="placeClass" placeholder="请输入商品总数量" value="{{stock}}"></input>
+    
+  </view>
+  <view class="editText">
+    <text>简介</text>
+    <textarea bindinput="intro" placeholder-class="placeClass" maxlength="10000" placeholder="请输入商品简介" value="{{intro}}"></textarea>
+  </view>
+</view>
+
+<view wx:if='{{showIs==3}}'  style="width:100%;height:100%;background:#fff;overflow: hidden">
+   <view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+    <view class="header">
+      <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+      <view class="title-bar" style="height:{{titleBarHeight}}px">
+        <view>
+          <image wx:if='{{imgType!=2}}'  catchtap='backHistory3' style='display:inline-block;top:{{2+statusBarHeight}}px;left:10rpx;padding:20rpx;' src='../img/shape@2x.png'></image>
+          <image wx:if='{{imgType==2}}'  catchtap='backHistory2' style='display:inline-block;top:{{2+statusBarHeight}}px;left:10rpx;padding:20rpx;' src='../img/shape@2x.png'></image>
+          <view wx:if='{{imgType!=2}}'   catchtap="supply" data-color='{{color}}' style="background:{{bgColor}};color:{{color}}" class="supply">完成</view>
+          <view wx:if='{{imgType==2}}' catchtap="save" class="supply">保存</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if='{{imgUrl==""}}'  class="addPic"  bindtap="addPic" >
+    <image src="../img/append@2x.png"></image>
+    <text>请点击添加照片</text>
+  </view>
+  <view wx:if='{{imgUrl!=""}}'  class="addPic"  bindtap="addPic" >
+    <image style="width:500rpx;height:500rpx;" mode="aspectFill" src="{{imgUrl}}"></image>
+  </view>
+</view>

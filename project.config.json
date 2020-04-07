@@ -1,18 +1,26 @@
 {
-	"description": "项目配置文件。",
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
 	"setting": {
 		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"uglifyFileName": true
+		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.91",
+	"libVersion": "2.10.0",
 	"appid": "wx54247d10ddce788b",
-	"projectname": "%E5%85%B1%E4%BA%AB%E5%8C%BB%E8%BF%9E%E4%BD%93",
+	"projectname": "tabBar",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

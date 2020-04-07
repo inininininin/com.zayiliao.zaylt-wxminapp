@@ -1,14 +1,6 @@
 <!--pages/ZJCMyorder/ZJCMyorder.wxml-->
-<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
-  <view class="header">
-    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
-    <view class="title-bar" style="height:{{titleBarHeight}}px">
-      <view>
-        <image bindtap='backHistory' style='margin-left:30rpx;border-radius:6rpx;display:inline-block' src='../img/backArrow.png'></image>
-        <text>{{navtitle}}</text>
-      </view>
-    </view>
-  </view>
+<view style="z-index:999">
+  <include src="../common/common.wxml" />
 </view>
 
 <view class='toplineTop' style='padding-top:132rpx'>
@@ -26,11 +18,11 @@
 
 
 <view class='list' wx:for="{{schemeList}}" wx:for-item="item" wx:key="index" wx:if="{{currentTab==0}}">
-  <navigator url='../ZJCOrderDetailno/ZJCOrderDetailno?id={{item.orderId}}&overIf=0'>
+  <navigator url='../ZJCOrderDetailnoDetail/ZJCOrderDetailnoDetail?id={{item.orderId}}&overIf=0'>
     <view class='line1'>
-      <image src='../img/blue@2x.png'></image>
+      <image src='../img/blue1@2x.png'></image>
       <view class='line1Mid'>
-        <text>订单编号：{{item.orderId}}</text>
+        <view>订单编号：{{item.orderId}}</view>
         <text>{{item.addTimes}}</text>
       </view>
       <view class='line1Det'>详情
@@ -40,11 +32,11 @@
   </navigator>
 </view>
 <view class='list' wx:for="{{schemeList}}" wx:for-item="item" wx:key="index" wx:if="{{currentTab==1}}">
-  <navigator url='../ZJCOrderDetailno/ZJCOrderDetailno?id={{item.orderId}}&overIf=1'>
+  <navigator url='../ZJCOrderDetailnoDetail/ZJCOrderDetailnoDetail?id={{item.orderId}}&overIf=1'>
     <view class='line1'>
-      <image src='../img/orange@2x.png'></image>
+      <image src='../img/orange1@2x.png'></image>
       <view class='line1Mid'>
-        <text>订单编号：{{item.orderId}}</text>
+        <view>订单编号：{{item.orderId}}</view>
         <text>{{item.addTimes}}</text>
       </view>
       <view class='line1Det'>详情
@@ -54,12 +46,12 @@
   </navigator>
 </view>
 <view class='list' wx:for="{{schemeList}}" wx:for-item="item" wx:key="index" wx:if="{{currentTab==2}}">
-  <navigator url='../ZJCOrderDetail/ZJCOrderDetail?id={{item.orderId}}'>
+  <navigator url='../ZJCOrderDetail1/ZJCOrderDetail1?id={{item.orderId}}'>
     <view class='finishLine'>
       <view class='line2'>
-        <image src='../img/green@2x.png'></image>
+        <image src='../img/green1@2x.png'></image>
         <view class='line1Mid'>
-          <text>订单编号：{{item.orderId}}</text>
+          <view>订单编号：{{item.orderId}}</view>
           <text>{{item.addTimes}}</text>
         </view>
         <view class='line1Det'>详情

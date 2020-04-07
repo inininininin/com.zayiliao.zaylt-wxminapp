@@ -1,0 +1,32 @@
+
+
+<view>
+  <include src="../../common/common.wxml" />
+</view>
+<view class='popularExchange'>
+  <!-- <view class='hottitle'>
+    <text>热门兑换</text>
+    <image src='../../img/Chevron Copy 2@2x.png'></image>
+    <text class='more'>更多</text>
+  </view> -->
+
+
+  <view class='goodsList'>
+
+    <navigator  wx:for='{{list1}}'  url='../../pointsExchangeDetails/pointsExchangeDetails?id={{item.commodityId}}'>
+      <view class='good'>
+        <image src='{{item.cover}}'></image>
+        <view>
+          <text>{{item.name}}</text>
+          <view>
+            <text>{{item.stock}}</text>
+            <text>积分</text>
+          </view>
+          <text>立即兑换</text>
+        </view>
+      </view>
+    </navigator>
+
+
+  </view>
+</view>

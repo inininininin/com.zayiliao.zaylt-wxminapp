@@ -5,4 +5,6 @@
 </navigator>
 
 <view class='line'><view><text>关于我们</text><image src='../img/back.png'></image></view></view>
+
+<view class='line'><view><text>版本号</text><text style='float:right;margin-right:30rpx'>{{Version}}</text></view></view>
 <view class='loginout' bindtap='loginout'>退出登录</view>

@@ -1,0 +1,145 @@
+<!--pages/promoter/addClinicRec/addClinicRec.wxml-->
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header" style='background:#2b77ef;color:#fff'>
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view>
+        <view bindtap='backHistory' class='backHis'>
+          <image style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../../img/back-white@2x.png'></image>
+        </view>
+        <text class='titleText'>{{navtitle}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='required' wx:if='{{showIs}}'>
+  <view>
+    <image src='../../img/bitian@2x.png'></image>
+    <text>必填项</text>
+  </view>
+
+
+  <view class='input'>
+    <text>门诊名称</text>
+    <input bindinput='name' value='{{name}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+  <!-- <view class='input'>
+    <text>推广人</text>
+    <picker mode='selector' data-id='{{array[index].clinicPromoterId}}' bindchange="bindPickerChange" value="{{index.name}}" range-key="{{'name'}}" range="{{array}}">
+      <view class="picker" style="text-align:right;color:#2b77ef;">
+        {{array[index].name}}
+      </view>
+      <image class="downIcon" src="../../img/down@2x.png"></image>
+    </picker>
+  </view> -->
+  <view class='input'>
+    <text>分配账号</text>
+    <input bindinput='phone' value='{{phone}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+  <view class='input'>
+    <text>分配密码</text>
+    <input bindinput='pwd' value='{{pwd}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+  <view class='input'>
+    <text>确认密码</text>
+    <input bindinput='clinicUserPasswordConfirm' value='{{clinicUserPasswordConfirm}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+  <view class='input'>
+    <text>负责人</text>
+    <input bindinput='headmanName' value='{{headmanName}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+  <view class='input'>
+    <text>联系方式</text>
+    <input bindinput='tel' value='{{tel}}' type='number' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+  <view class='input'>
+    <text>门诊地址</text>
+    <input bindinput='address' value='{{address}}' type='idcard' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+
+
+  <view class='selectIntro'>
+    <image src='../../img/xuantian@2x.png'></image>
+    <text>选填项</text>
+  </view>
+
+  <view class='input'>
+    <text>备注</text>
+    <input bindinput='remark' value='{{remark}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+
+  <view class=' inputs'>
+    <text>营业执照</text>
+
+    <image class='back' src='../../img/back.png'></image>
+    <image bindtap='yyzzimg' class='yyzzimg' src='{{yyzzimg}}'></image>
+  </view>
+
+
+  <view bindtap='save' class='save' style='left:460rpx;'>
+    保存</view>
+</view>
+
+<view class='required' wx:if='{{!showIs}}'>
+  <view>
+    <image src='../../img/bitian@2x.png'></image>
+    <text>必填项1</text>
+  </view>
+
+
+  <view class='input'>
+    <text>门诊名称</text>
+    <input bindinput='name' value='{{name}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+  <!-- <view class='input'>
+    <text>推广人</text>
+    <picker mode='selector' data-id='{{array[index].clinicPromoterId}}' bindchange="bindPickerChange" value="{{index.name}}" range-key="{{'name'}}" range="{{array}}">
+      <view class="picker" style="text-align:right;color:#2b77ef;">
+        {{array[index].name}}
+      </view>
+      <image class="downIcon" src="../../img/down@2x.png"></image>
+    </picker>
+  </view> -->
+  <view class='input'>
+    <text>分配账号</text>
+    <input bindinput='phone' value='{{phone}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+  <view class='input'>
+    <text>分配密码</text>
+    <input bindinput='pwd' value='{{pwd}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+  <view class='input'>
+    <text>负责人</text>
+    <input bindinput='headmanName' value='{{headmanName}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+  <view class='input'>
+    <text>联系方式</text>
+    <input bindinput='tel' value='{{tel}}' type='number' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+  <view class='input'>
+    <text>门诊地址</text>
+    <input bindinput='address' value='{{address}}' type='idcard' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+
+
+  <view class='selectIntro'>
+    <image src='../../img/xuantian@2x.png'></image>
+    <text>选填项</text>
+  </view>
+
+  <view class='input'>
+    <text>备注</text>
+    <input bindinput='remark' value='{{remark}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
+
+  <view class=' inputs'>
+    <text>营业执照</text>
+
+    <image class='back' src='../../img/back.png'></image>
+    <image bindtap='yyzzimg' class='yyzzimg' src='{{yyzzimg}}'></image>
+  </view>
+
+
+  <view bindtap='saveThis' class='save' style='left:460rpx;'>
+    保存</view>
+</view>

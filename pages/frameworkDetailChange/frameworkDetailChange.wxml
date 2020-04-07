@@ -1,0 +1,60 @@
+<!--pages/frameworkDetail/frameworkDetail.wxml-->
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view>
+        <image bindtap='backHistory' class="image" style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;padding:12px 10px;' src='../img/black-backnew.png'></image>
+        <text class="text">{{navtitle}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<image class="edit" bindtap="edit" src="../img/add@1.png"></image>
+<view wx:for='{{list}}' bindtap='details' data-item='{{item}}'>
+  <view class="listItem"  wx:if='{{!item.video&&!item.image}}'>
+    <!-- <view class="imgBox {{item.lineOne}}">
+      <view wx:for='{{item.imgArr}}' wx:for-item='items'>
+        <image wx:if='{{items.type==1}}' mode="aspectFill" src="{{items.src}}"></image>
+        <video wx:if='{{items.type==2}}' id="myVideo" src="{{items.src}}" controls></video>
+      </view>
+    </view> -->
+    <view class="intro">
+      <view class="{{item.lineOne}}">
+        <text>{{item.content||''}}</text>
+      </view>
+      <view>
+        <text>{{item.addTime}}</text>
+        <text>{{item.managerUserName||item.hospitalUserName||''}}</text>
+        <image data-lineone='{{item.lineOne}}' data-secid='{{item.operatingManualSectionTrackId}}' catchtap="slideUp" class="slideUp" wx:if='{{item.lineOne=="lineOne"}}' src="../img/downO@2x.png"></image>
+        <image data-lineone='{{item.lineOne}}' data-secid='{{item.operatingManualSectionTrackId}}' catchtap="slideUp" class="slideUp" wx:if='{{item.lineOne==""}}' src="../img/Chevron@2x.png"></image>
+      </view>
+
+    </view>
+  </view>
+  <view class="listItem"  wx:else>
+    <view class="imgBox {{item.lineOne}}">
+      <view wx:for='{{item.imgArr}}'   wx:for-item='items'>
+        <image class="image" data-src="{{items.src}}" data-secid='{{item.operatingManualSectionTrackId}}' catchtap="previewImage"  wx:if='{{items.type==1}}' mode="aspectFill" src="{{items.src}}"></image>
+        <video class="image" disabled data-secid='{{item.operatingManualSectionTrackId}}' data-src="{{items.src}}" catchtap="previewVideo" wx:if='{{items.type==2}}' id="myVideo" src="{{items.src}}" controls='{{falseIs}}' showCenterPlayBtn='{{falseIs}}' show-fullscreen-btn='{{trueIs}}'></video>
+        <image catchtap="previewVideo" data-secid='{{item.operatingManualSectionTrackId}}' data-src="{{items.src}}"   wx:if='{{items.type==2}}' class="action" src="../img/action.png"></image>
+      </view>
+    </view>
+    <view class="intro">
+      <view class="{{item.lineOne}}">
+        <text>{{item.content||''}}</text>
+      </view>
+      <view>
+        <text>{{item.addTime}}</text>
+        <text>{{item.managerUserName||item.hospitalUserName||''}}</text>
+        <image data-lineone='{{item.lineOne}}' data-secid='{{item.operatingManualSectionTrackId}}' catchtap="slideUp" class="slideUp" wx:if='{{item.lineOne=="lineOne"}}' src="../img/downO@2x.png"></image>
+        <image data-lineone='{{item.lineOne}}' data-secid='{{item.operatingManualSectionTrackId}}' catchtap="slideUp" class="slideUp" wx:if='{{item.lineOne==""}}' src="../img/Chevron@2x.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view bindtap="myVideoSrcClose" class="myVideoSrcClose"  wx:if='{{myVideoSrcIs}}'>
+   <video catchtap="myVideoSrc" id="myVideoAction" src="{{myVideoSrc}}" controls  ></video>
+</view>

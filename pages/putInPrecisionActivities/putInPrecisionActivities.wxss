@@ -1,0 +1,98 @@
+/* pages/putInPrecisionActivities/putInPrecisionActivities.wxss */
+@import '../common/common.wxss';
+page{
+  background: #f2f2f2;
+}
+.sendRec{
+  width: 702rpx;
+  height: 98rpx;
+  border-radius: 5rpx;
+  text-align: center;
+  line-height: 98rpx;
+  font-size: 30rpx;
+  color: rgb(43,119,239);
+  background: #fff;
+  margin: 24rpx;
+}
+.sendRec text{
+  float: right;
+  margin-right: 266rpx;
+}
+.sendRec image{
+  float: left;
+  margin-left: 266rpx;
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 34rpx;
+  /* margin-right: 16rpx; */
+  /* vertical-align: middle; */
+}
+.imgBox{
+  width: 702rpx;
+  height: 360rpx;
+  margin: 0 24rpx;
+}
+.imgBox>view{
+  width: 100%;
+  height: 180rpx;
+  background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+  margin-top: 180rpx;
+}
+.imgBox>view>text:nth-child(1){
+  margin: 71rpx 0 0 32rpx;
+  font-size:38rpx;
+font-family:PingFangSC-Medium,PingFang SC;
+font-weight:500;
+color:rgba(255,255,255,1);
+line-height:38rpx;
+display: inline-block;
+}
+.imgBox>view>text:nth-child(2){
+  margin: 16rpx 0 0 32rpx;
+height:28rpx;
+font-size:28rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(234,242,255,1);
+line-height:28rpx;
+display: block;
+}
+
+.touch-item {
+ /* font-size: 14px; */
+ display: flex;
+ justify-content: space-between;
+ /* border-bottom:1px solid #ccc; */
+ width: 100%;
+ overflow: hidden;
+ margin-bottom:24rpx;
+}
+.content {
+ width: 702rpx;
+ /* padding: 10px; */
+ /* line-height: 22px; */
+ margin-right:0;
+ -webkit-transition: all 0.4s;
+ transition: all 0.4s;
+ -webkit-transform: translateX(90px);
+ transform: translateX(90px);
+ margin-left: -157rpx;
+}
+.del {
+ background-color: orangered;
+ width: 90px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ color: #fff;
+ -webkit-transform: translateX(90px);
+ transform: translateX(90px);
+ -webkit-transition: all 0.4s;
+ transition: all 0.4s;
+}
+.touch-move-active .content,
+.touch-move-active .del {
+ -webkit-transform: translateX(0);
+ transform: translateX(0);
+}

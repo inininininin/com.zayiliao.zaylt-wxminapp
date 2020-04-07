@@ -1,0 +1,47 @@
+<!--pages/promoter/index/index.wxml-->
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view class='search' bindtap="searchClinic">
+        <image bindtap='backHistory' style='display:inline-block;top:{{15+statusBarHeight}}px;left:62rpx;' src='../../img/sousuo@2x.png'></image>
+        <input  bindinput='input' placeholder-style='color:#999' placeholder='搜索门诊名'></input>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='connectClinic'>
+  <text class='title'>合作门诊({{clinicNumber}})</text>
+  <view bindtap="addNew">
+    <image src='../../img/xinzeng@2x.png'></image>
+    <text>新增</text>
+  </view>
+</view>
+<view class='clinicList'>
+  <view wx:for='{{schemeList}}' data-id='{{item.hospitalClinicId}}' data-name='{{item.name}}' bindtap="clinicItem" hover-class='hoverClass' class='clinicItem'>
+    <text class="name">{{item.name}}</text>
+    <text wx:if='{{item.hospitalUserName}}' class="clinicPromoterName">推广人：{{item.hospitalUserName}}</text>
+    <text wx:else class="clinicPromoterName" style="color:#fff"> - </text>
+    <text class="pushCount">{{item.patientCount}}人</text>
+  </view>
+<view class="withoutNum" wx:if='{{clinicNumber==0}}'>
+    <image src="../../img/wushuju.png"></image>
+    <text>暂无数据</text>
+  </view>
+</view>
+
+
+<view class='tabbarBtn'>
+  <view bindtap='index'>
+    <image class='bottomBthimg1' src='../../img/shouye@2x.png'></image>
+    <text>首页</text>
+  </view>
+  <view bindtap='clinic'>
+    <image class='bottomBthimg2' src='../../img/Hospital-blue@2x.png'></image>
+    <text class='active'>门诊</text>
+  </view>
+  <view bindtap='mine'>
+    <image class='bottomBthimg3' src='../../img/wode@2x.png'></image>
+    <text>我的</text>
+  </view>
+</view>

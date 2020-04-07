@@ -3,8 +3,12 @@
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
       <view>
-        <image bindtap='backHistory' style='margin-left:30rpx;border-radius:6rpx;display:inline-block' src='../img/backArrow.png'></image>
-        <text>{{navtitle}}</text>
+        <image bindtap='backHistory' style='margin-left:10rpx;border-radius:6rpx;display:inline-block;padding:20rpx;' src='../img/backArrow.png'></image>
+        
+        <view class="searchBox" bindtap="searchBox">
+          <image src="../img/search1.png"></image>
+          <text>{{navtitle}}</text>
+        </view>
       </view>
     </view>
   </view>
@@ -14,10 +18,13 @@
     <block wx:for="{{movies}}">
       <swiper-item>
         <navigator wx:if='{{item.type==4}}' url='../ZJCQxDetail/ZJCQxDetail?deviceId={{item.link}}'>
-        <image src="https://www.njshangka.com{{item.cover}}" class="slide-image" mode="aspectFill" />
+        <image src="{{item.cover}}" class="slide-image" mode="aspectFill" />
         </navigator>
         <navigator wx:if='{{item.type==1}}' url='../webview/webview?href={{item.link}}'>
-        <image src="https://www.njshangka.com{{item.cover}}" class="slide-image" mode="aspectFill" />
+        <image src="{{item.cover}}" class="slide-image" mode="aspectFill" />
+        </navigator>
+        <navigator wx:if='{{item.type==0}}' url=''>
+        <image src="{{item.cover}}" class="slide-image" mode="aspectFill" />
         </navigator>
       </swiper-item>
     </block>
@@ -36,16 +43,16 @@
       {{ item.name }}
     </view>
   </scroll-view>
-  <scroll-view class="classify_detail _44f602a" scroll-y scroll-with-animation="true">
+  <scroll-view class="classify_detail _44f602a" style="height:{{scrollHeight}}px" scroll-y scroll-with-animation="true">
     <view class="children _44f602a" class="children_item _44f602a" wx:for="{{ showList }}" wx:for-item="item" wx:key="index">
       <view hover-class="none">
         <navigator class='navigator1' url='../ZJCQxDetail/ZJCQxDetail?deviceId={{item.deviceId}}&count={{item.countInShoppingcart}}'>
-          <image src='https://www.njshangka.com{{item.cover}}'></image>
+          <image src='{{item.cover}}'></image>
         </navigator>
         <view class="child_name _44f602a" data-name='{{item.name}}' bindtap='selectOver'>
           <navigator class='navigator2' url='../ZJCQxDetail/ZJCQxDetail?deviceId={{item.deviceId}}&count={{item.countInShoppingcart}}'>
             <view class='child_name_1'>{{ item.name }}</view>
-            <view class='child_name_2'>{{ item.name }}</view>
+            <view class='child_name_2'>{{ item.brief }}</view>
           </navigator>
           <view class='adddel'>
             <image data-id="{{ item.deviceId }}" bindtap='del' data-num='{{item.countInShoppingcart}}' wx:if='{{item.countInShoppingcart!=0}}' src='../img/jian@2x.png'></image>

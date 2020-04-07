@@ -1,5 +1,6 @@
 <view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
-  <view class="header">
+  
+  <view class="header" >
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
     <view>
@@ -7,4 +8,6 @@
     <text>{{navtitle}}</text></view>
     </view>
   </view>
+  
+ 
 </view>

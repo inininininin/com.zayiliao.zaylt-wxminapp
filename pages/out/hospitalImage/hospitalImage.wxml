@@ -1,0 +1,41 @@
+<view class="container" style="height:{{243+statusBarHeight}}px;padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class='indexTopBg' style='height:{{243+statusBarHeight}}px;background:url("{{detail.cover}}");background-size:100% 100%;'>
+    <view class="header">
+      <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+      <view class="title-bar" style="height:{{titleBarHeight}}px">
+        <view>
+          <image bindtap='backHistory' style='display:inline-block;top:{{statusBarHeight}}px;' src='../../img/back-white@2x.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="navbar">
+<view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</view>
+ 
+</view>
+
+<view class='required' hidden="{{currentTab!==0}}">
+    <text class='basicInformation'>基本信息</text>
+    <view class='basicLine'>
+      <text>医院名称</text><text>{{detail.name||''}}</text>
+    </view>
+    <view class='basicLine'>
+      <text>联系方式</text><text bindtap='phone'>{{detail.tel||''}}</text>
+    </view>
+    <view class='basicLine disLineNone'>
+      <text>地址</text><text>{{detail.address||''}}</text>
+    </view>
+<text class='basicInformation·'>医院简介</text>
+<view class='hosIntro'>
+{{detail.intro||''}}
+</view>
+
+</view>
+<view class='required specialDepartment' hidden="{{currentTab!==1}}">
+    <view wx:for='{{list}}' bindtap="specialOffice" data-id='{{item.itemId}}'>
+      <image src='{{item.cover}}'></image>
+      <text>{{item.name}}</text>
+    </view>
+</view>

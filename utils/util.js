@@ -16,13 +16,9 @@ module.exports = {
 
 function formatTime(number, format) {
 
-
-
   var formateArr = ['Y', 'M', 'D', 'h', 'm', 's'];
 
   var returnArr = [];
-
-
 
   var date = new Date(number * 1000);
 
@@ -32,15 +28,11 @@ function formatTime(number, format) {
 
   returnArr.push(formatNumber(date.getDate()));
 
-
-
   returnArr.push(formatNumber(date.getHours()));
 
   returnArr.push(formatNumber(date.getMinutes()));
 
   returnArr.push(formatNumber(date.getSeconds()));
-
-
 
   for (var i in returnArr) {
 

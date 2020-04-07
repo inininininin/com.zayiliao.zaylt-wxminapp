@@ -1,6 +1,6 @@
 <!--pages/webview/webview.wxml-->
-
+<!-- 
 <view>
   <include src="../common/common.wxml" />
-</view>
+</view> -->
 <web-view src="{{href}}"></web-view>

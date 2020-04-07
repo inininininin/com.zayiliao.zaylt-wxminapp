@@ -1,0 +1,14 @@
+<view>
+  <include src="../../common/common.wxml" />
+</view>
+<view class='newList'>
+  <view>
+    <view>
+    <text wx:if='{{list.source==1}}'>医院消息</text>
+    <text wx:if='{{list.source==2}}'>系统消息</text>
+    </view>
+    <view><text>{{list.addTime}}</text></view>
+    <view><text>{{list.message}}</text></view>
+  </view>
+
+</view>

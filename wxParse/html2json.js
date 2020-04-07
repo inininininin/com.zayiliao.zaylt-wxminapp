@@ -75,11 +75,12 @@ function html2json(html, bindName) {
         start: function start(tag, attrs, unary) {
             //debug(tag, attrs, unary);
             // node for this element
+        
             var node = {
                 node: 'element',
                 tag: tag
             };
-
+          
             if (bufArray.length === 0) {
                 node.index = index.toString();
                 index += 1;
@@ -100,6 +101,7 @@ function html2json(html, bindName) {
             }
 
             if (attrs.length !== 0) {
+             
                 node.attr = attrs.reduce(function (pre, attr) {
                     var name = attr.name;
                     var value = attr.value;

@@ -1,0 +1,25 @@
+@import '../common/common.wxss';
+input{
+  font-size: 32rpx;
+  line-height: 100rpx;
+  height: 100rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  width: 660rpx;
+  margin: 0 45rpx;
+  color: #000;
+}
+.inputPl{
+  color: #999;
+}
+.makesure{
+  position: absolute;
+  width: 750rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: rgb(43, 193, 239);
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;  
+}

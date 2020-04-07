@@ -1,0 +1,26 @@
+/* pages/out/checkLogistics/checkLogistics.wxss */
+@import '../../common/common.wxss';
+.list{
+  width: 702rpx;
+  margin: 24rpx;
+}
+.time text:first-child{
+  font-size: 28rpx;
+  color: rgb(51,51,51);
+  margin-right: 30rpx;
+  line-height: 40rpx;
+  display:inline-block;
+}
+.time text:last-child{
+  font-size: 26rpx;
+  color: rgb(51,51,51);
+  margin-right: 30rpx;
+  line-height: 40rpx;
+  display:inline-block;
+}
+.content{
+  font-size: 26rpx;
+  color: rgb(51,51,51);
+  margin-right: 30rpx;
+  line-height: 40rpx;
+}

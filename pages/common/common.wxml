@@ -3,8 +3,10 @@
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
     <view>
-    <image bindtap='backHistory' style='margin-left:30rpx;border-radius:6rpx;display:inline-block'  src='../img/backArrow.png'></image>
-    <text>{{navtitle}}</text>
+     <view bindtap='backHistory' class='backHis'>
+    <image  style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;'  src='../img/shape@2x.png'></image>
+    </view>
+    <text class='titleText'>{{navtitle}}</text>
     </view>
     </view>
   </view>

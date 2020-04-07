@@ -1,0 +1,189 @@
+/* pages/common/common.wxss */
+page {
+  height: 100%;
+  background: #e5e5e5;
+}
+.container {
+  box-sizing: border-box;
+  /* height: 100%; */
+    background: #fff;
+}
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+   background: #fff;
+}
+.status-bar {
+  /* background: rgba(255, 0, 0, 0.1); */
+}
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header image {
+  float: left;
+  width: 44rpx;
+  height: 40rpx;
+}
+.title-bar view{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+   /* justify-content: space-between; */
+    align-items: center;
+}
+.title-bar view text{
+  display: inline-block;
+  text-align: center;
+  width: 82.9%;
+}
+.ownDetail{
+  width: 638rpx;
+  height: 150rpx;
+  padding: 30rpx 56rpx;
+  background: #fff;
+}
+.ownDetail .avaterBox{
+  width: 150rpx;
+  height: 150rpx;
+  position: relative;
+  display: inline-block;
+  float: left;
+  border-radius: 150rpx;
+}
+
+.ownDetail>view>image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 150rpx;
+}
+.ownDetail .avaterBox .yirenzheng{
+  position: absolute;
+  bottom: 0;
+  right: -22rpx;
+  width: 106rpx;
+  height: 40rpx;
+  border-radius: 40rpx;
+  font-size: 22rpx;
+  color: rgb(255,255,255);
+  background:url('https://zaylt.njshangka.com/resource/img/Gradual_change.png');
+  background-size: 100% 100%;
+  text-align: center;
+  line-height: 40rpx;
+}
+.ownDetail .avaterBox .weirenzheng{
+  position: absolute;
+  bottom: 0;
+  right: -22rpx;
+  width: 106rpx;
+  height: 40rpx;
+  border-radius: 40rpx;
+  font-size: 22rpx;
+  color: rgb(255,255,255);
+  background:rgb(220,220,220);
+  background-size: 100% 100%;
+  text-align: center;
+  line-height: 40rpx;
+}
+.title{
+  float: left;
+  width: 216rpx;
+  height: 150rpx;
+  display: inline-block;
+  margin: 0 auto 0 60rpx;
+}
+.title text:nth-child(1){
+  display: block;
+  width:216rpx;
+height:34rpx;
+font-size:34rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(51,51,51,1);
+line-height:34rpx;
+display:-webkit-box;
+-webkit-line-clamp:1;
+-webkit-box-orient:vertical;
+overflow:hidden;
+margin-top: 10rpx;
+}
+.title text:nth-child(2){
+  display: block;
+  width:300rpx;
+height:40rpx;
+font-size:30rpx;
+font-family:PingFangSC-Medium;
+font-weight:500;
+color:rgba(51,51,51,1);
+line-height:40rpx;
+margin: 12rpx 0 12rpx 0;
+display:-webkit-box;
+-webkit-line-clamp:1;
+-webkit-box-orient:vertical;
+overflow:hidden;
+
+}
+.title text:nth-child(3){
+  display: block;
+  width:216rpx;
+height:33rpx;
+font-size:30rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(102,102,102,1);
+line-height:33rpx;
+/* display:-webkit-box;
+-webkit-line-clamp:1;
+-webkit-box-orient:vertical;
+overflow:hidden; */
+}
+.yyzz{
+  float: right;
+  height: 26rpx;
+  margin-top: 63rpx;
+}
+.yyzz text{
+  width:96rpx;
+height:24rpx;
+font-size:24rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(153,153,153,1);
+line-height:24rpx;
+margin-right: 16rpx;
+display: inline-block;
+float: right;
+}
+.yyzz image{
+  float: right;
+  /* margin-top: 40rpx; */
+  width:16rpx !important;
+  height:26rpx !important;
+}
+.list{
+  margin-top: 24rpx;
+  width: 100%;
+  height: auto;
+  background: #fff;
+}
+.list navigator>view{
+  width: 714rpx;
+  margin: 0 auto 0 36rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  height: 104rpx;
+}
+.list navigator>view text{
+  font-size: 34rpx;
+  color: rgba(51,51,51,1);
+  line-height: 104rpx;
+}
+.list navigator>view image{
+  float: right;
+  margin-right: 36rpx;
+  width:16rpx !important;
+  height:26rpx !important;
+  margin-top: 39rpx;
+}

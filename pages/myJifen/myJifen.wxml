@@ -1,0 +1,41 @@
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class='indexTopBg' style='height:{{176+statusBarHeight}}px'>
+    <view class="header">
+      <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+      <view class="title-bar" style="height:{{titleBarHeight}}px">
+        <view>
+          <image bindtap='backHistory' style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../img/back-white@2x.png'></image>
+          <text>{{navtitle}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='point' style='height:{{132}}px'>
+    <!-- <text>{{exchangePoint}}</text> -->
+
+    <view>
+      <image src="../img/data.png"></image>
+      <text>{{points||0}}</text>
+      <!-- <navigator url='../../ZJCMyjifen/ZJCMyjifen'><text>积分明细</text></navigator>
+      
+     <navigator url='../../ZJCOrderDetailno/ZJCOrderDetailno'><text>兑换记录</text></navigator> -->
+    </view>
+  </view>
+</view>
+<view class="pointsEx">
+  <view class='lineTop'>
+    <image src='../img/lishijilu@2x.png'></image>
+    <text>积分使用明细</text>
+  </view>
+
+  <view class='linelist'>
+    <view class='line' wx:for="{{ schemeList }}" wx:for-item="item" wx:key="index">
+      <view class='lineone'>
+        <text>{{item.note}}</text>
+        <text>{{item.addTime}}</text>
+      </view>
+      <view class='linetwo'>{{item.amount}}</view>
+    </view>
+  </view>
+  <view bindtap='useNow' class='useNow' >立即使用</view>
+</view>

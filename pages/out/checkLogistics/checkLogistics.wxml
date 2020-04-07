@@ -1,0 +1,12 @@
+<!--pages/out/checkLogistics/checkLogistics.wxml-->
+
+<view>
+  <include src="../../common/common.wxml" />
+</view>
+
+<view wx:for='{{list}}' class='list'>
+      <view class='time'>
+      <text>{{item.ftime}}</text><text>{{item.ftime}}</text>
+      </view>
+      <text class='content'>{{item.context}}</text>
+</view>

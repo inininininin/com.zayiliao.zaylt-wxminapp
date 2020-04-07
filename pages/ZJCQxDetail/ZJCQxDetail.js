@@ -1,5 +1,6 @@
 // pages/ZJCQxDetail/ZJCQxDetail.js
 var WxParse = require('../../wxParse/wxParse.js');
+var app=getApp()
 Page({
 
   /**
@@ -7,26 +8,26 @@ Page({
    */
   data: {
     navtitle: '',
-    statusBarHeight: '',
-    titleBarHeight: '',
-    totalCountInShoppingcart:'',
-    movies: [
-      'https://www.njshangka.com/oss/zaylt/20181212151130574920504.png',
-      'https://www.njshangka.com/oss/zaylt/20181212151130574920504.png',
-      'https://www.njshangka.com/oss/zaylt/20181212151130574920504.png',
-      'https://www.njshangka.com/oss/zaylt/20181212151130574920504.png'
-    ],
+    statusBarHeight: getApp().globalData.statusBarHeight,
+    titleBarHeight: getApp().globalData.titleBarHeight,
+    totalCountInShoppingcart: '',
+    movies: [],
     token: '',
     domain: '',
-    title:'',
-    qxdetails:'',
-    pop:0,
-    qxData:[],
-    count:0,
+    title: '',
+    qxdetails: '',
+    pop: 0,
+    qxData: [],
+    count: 0,
   },
-  addCg:function(e){
+  shoppingCartList: function (e) {
+    wx.navigateTo({
+      url: '../ZJCOrder/ZJCOrder',
+    })
+  },
+  addCg: function (e) {
     this.setData({
-      pop:1,
+      pop: 1,
     })
   },
   close: function (e) {
@@ -37,7 +38,7 @@ Page({
   add: function (e) {
     var that = this
     var num = e.currentTarget.dataset.num;
-   
+
     var deviceId = e.currentTarget.dataset.id;
     num++;
     that.data.qxData.count++
@@ -80,27 +81,28 @@ Page({
       })
     }
   },
-  makesureAdd:function(e){
+  makesureAdd: function (e) {
 
-    var that=this
-   var num = e.currentTarget.dataset.num;
+    var that = this
+    var num = e.currentTarget.dataset.num;
     var count = that.data.count;
     console.log(num)
-    if (count <=num){
-      if(count==0){
+    if (count <= num) {
+      if (count == 0) {
         that.setData({
           count: num,
           totalCountInShoppingcart: that.data.totalCountInShoppingcart + 1
         })
       }
-      var val=num-count
+      var val = num - count
       wx.request({
-        url: that.data.domain + '/zaylt/c/procurement/shoppingcart/move',
+        url: app.globalData.url  + '/c/procurement/shoppingcart/move',
         header: {
           "Content-Type": "application/x-www-form-urlencoded",
+          'cookie': app.globalData.cookie
         },
         data: {
-          token: that.data.token,
+          token: app.globalData.token,
           count: val,
           deviceId: that.data.qxData.deviceId,
         },
@@ -108,24 +110,26 @@ Page({
         success: function (res) {
           wx.hideToast()
           if (res.data.code == 0) {
-          
+
           } else {
             wx.showModal({
+              showCancel: false,
               title: res.data.codeMsg
             })
           }
         }
       });
-    }else if(count==0&&num==0){
-    }else if(count!=0&&num<count){
-      if(num!=0){
+    } else if (count == 0 && num == 0) {
+    } else if (count != 0 && num < count) {
+      if (num != 0) {
         wx.request({
-          url: that.data.domain + '/zaylt/c/procurement/shoppingcart/sub',
+          url: app.globalData.url  + '/c/procurement/shoppingcart/sub',
           header: {
             "Content-Type": "application/x-www-form-urlencoded",
+            'cookie': app.globalData.cookie
           },
           data: {
-            token: that.data.token,
+            token: app.globalData.token,
             count: val,
             deviceId: that.data.qxData.deviceId,
           },
@@ -135,19 +139,21 @@ Page({
             if (res.data.code == 0) {
             } else {
               wx.showModal({
+                showCancel: false,
                 title: res.data.codeMsg
               })
             }
           }
         });
-      }else{
+      } else {
         wx.request({
-          url: that.data.domain + '/zaylt/c/procurement/shoppingcart/remove',
+          url: app.globalData.url  + '/c/procurement/shoppingcart/remove',
           header: {
             "Content-Type": "application/x-www-form-urlencoded",
+            'cookie': app.globalData.cookie
           },
           data: {
-            token: that.data.token,
+            token: app.globalData.token,
             deviceId: that.data.qxData.deviceId,
           },
           method: 'post',
@@ -155,11 +161,12 @@ Page({
             wx.hideToast()
             if (res.data.code == 0) {
               that.setData({
-                count:0,
+                count: 0,
                 totalCountInShoppingcart: that.data.totalCountInShoppingcart - 1
               })
             } else {
               wx.showModal({
+                showCancel: false,
                 title: res.data.codeMsg
               })
             }
@@ -168,58 +175,66 @@ Page({
       }
     }
     that.setData({
-      pop:0,
+      pop: 0,
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var count=options.count;
+    var count = options.count;
     var that = this;
     var deviceId = options.deviceId
     var token = wx.getStorageSync('token')
     var domain = wx.getStorageSync('domain')
     console.log(domain)
-    
+
     that.setData({
       token: token,
       domain: domain,
       count: count,
     })
     wx.request({
-      url: that.data.domain + '/zaylt/c/procurement/deviceinfo',
+      url: app.globalData.url  + '/c/procurement/deviceinfo',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
+        'cookie': app.globalData.cookie
       },
       data: {
-        token: that.data.token,
+        token: app.globalData.token,
         deviceId: deviceId,
-      }, 
-      async:true,
+      },
+      async: true,
       method: 'post',
       success: function (res) {
         wx.hideToast()
         if (res.data.code == 0) {
           var detailBdId = res.data.data.detailBdId
-          res.data.data.count=count
+          res.data.data.count = count
+          var picBlob = res.data.data.leadPics.split(',')
+          for (var i = 0; i < picBlob.length;i++){
+            if (picBlob[i].slice(0,1)!='h'){
+              picBlob[i] = app.globalData.url + picBlob[i]
+            }           
+          }
           that.setData({
-            qxData:res.data.data,
+            qxData: res.data.data,
             title: res.data.data.name,
-            movies: res.data.data.leadPics.split(','),
+            movies: picBlob,
             totalCountInShoppingcart: res.data.data.totalCountInShoppingcart
           })
           wx.request({
-            url: that.data.domain + '/zaylt/other/bigdata/' + detailBdId + '/' + detailBdId,
+            url: app.globalData.url + '/other/bigtxt/' + detailBdId + '/' + detailBdId,
             header: {
               "Content-Type": "application/x-www-form-urlencoded",
+              'cookie': app.globalData.cookie
             },
             data: {
-              token: that.data.token,
+              token: app.globalData.token,
               deviceId: deviceId,
             },
             async: true,
-            method: 'post',
+            method: 'get',
             success: function (res) {
               console.log(res.data)
               // that.setData({
@@ -231,11 +246,12 @@ Page({
           });
         } else {
           wx.showModal({
+            showCancel: false,
             title: res.data.codeMsg
           })
         }
       }
-    });  
+    });
   },
 
   /**
@@ -243,11 +259,7 @@ Page({
    */
   onReady: function () {
 
-    const vm = this
-    vm.setData({
-      statusBarHeight: getApp().globalData.statusBarHeight,
-      titleBarHeight: getApp().globalData.titleBarHeight
-    })
+    
   },
 
   backHistory: function (e) {
@@ -295,6 +307,19 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    if (app.globalData.lastClient == 1) {
+      var path = '/pages/index/index'
+    } else {
+      var path = '/pages/out/index/index'
+    }
+    return {
+      title: '欢迎使用共享医联体小程序', //分享内容
+      path: path, //分享地址
+      imageUrl: 'https://zaylt.njshangka.com/favicon.ico', //分享图片
+      success: function (res) {
+      },
+      fail: function (res) {
+      }
+    }
   }
 })

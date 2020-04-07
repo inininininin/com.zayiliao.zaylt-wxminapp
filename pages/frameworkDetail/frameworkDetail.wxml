@@ -1,0 +1,35 @@
+<!--pages/frameworkDetail/frameworkDetail.wxml-->
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view>
+       <image bindtap='backHistory' class="image" style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;padding:12px 10px;'  src='../img/black-backnew.png'></image>
+        <text class="text">{{navtitle}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<image class="edit" bindtap="edit" src="../img/edit@2x.png"></image>
+<view wx:for='{{list}}'bindtap='detail' data-item='{{item}}'>
+   <view class="listItem" wx:if='{{item.video!=""&&item.video!=null&&item.video!=undefined}}'>
+     <view>
+      <view class="lineOne">编辑者：<text>{{item.managerUserName||item.hospitalUserName||''}}</text></view>
+      <view class="lineOne"><text>{{item.addTime}}</text><text class="lineOne">{{item.content||''}}</text></view>
+    </view>
+    <view class="imageItem"  type='{{item.imgArr[0].type}}'>
+    <image  wx:if='{{item.imgArr[0].type==1}}' mode="aspectFill" src="{{item.imgArr[0].src}}"></image>
+    <video  wx:if='{{item.imgArr[0].type==2}}' id="myVideo" src="{{item.imgArr[0].src}}" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video>
+    
+    </view>
+    
+   </view>
+   <view  wx:else class="listItems">
+     <view>
+      <view class="lineOne">编辑者：<text>{{item.managerUserName||item.hospitalUserName||''}}</text></view>
+      <view class="lineOne"><text>{{item.addTime}}</text><text>{{item.content||''}}</text></view>
+    </view>
+   </view>
+</view>
+
+

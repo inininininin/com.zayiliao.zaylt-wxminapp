@@ -1,0 +1,109 @@
+/* pages/out/newsDetail/newsDetail.wxss */
+@import '../../common/common.wxss';
+.topImg{
+  width: 750rpx;
+  height: 350rpx;
+  vertical-align: bottom;
+}
+.title{
+  display: inline-block;
+  line-height: 50rpx;
+  font-size: 34rpx;
+  color: rgb(51,51,51);
+  width: 686rpx;
+  margin: 40rpx 32rpx 22rpx;
+}
+.hospitalName image{
+  width: 66rpx;
+  height: 66rpx;
+  margin: 0 20rpx 0 32rpx;
+}
+.hospitalName view{
+  display: inline-block;
+}
+.hospitalName view text{
+  display: block;
+}
+.hospitalName view text:nth-child(1){
+  font-size: 24rpx;
+  color: rgb(51,51,51);
+}
+.hospitalName view text:nth-child(2){
+  font-size: 24rpx;
+  color: rgb(153,153,153);
+}
+.detail{
+  width: 686rpx;
+  margin: 40rpx 32rpx;
+  /* line-height: 36rpx !important; */
+  font-size: 24rpx !important;
+  color: rgb(51,51,51) !important;
+}
+
+.popwindow{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  background: rgba(0,0,0,0.5);
+ 
+}
+.popwindow>view{
+  position: absolute;bottom: 0;
+  left: 0;
+  width: 750rpx;
+  height: 380rpx;
+  background: rgb(231,231,237);
+}
+.popwindow>view>view:nth-child(1){
+  width: 750rpx;
+  height: 270rpx;
+  background: #fff;
+}
+.popwindow>view>view:nth-child(2){
+  height: 100rpx;
+  margin-top: 10rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #000;
+  font-size: 36rpx;
+  background: #fff;
+}
+.popwindow .title{
+  margin: 0;
+  font-size: 28rpx;
+  color: rgb(51,51,51);
+  line-height: 120rpx;
+  text-align: center;
+}
+.shareteam>view{
+  width: 250rpx;
+  text-align: center;
+  display: inline-block;
+}
+.shareteam>view text{
+   display: block; 
+   font-size: 24rpx;
+   font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(51,51,51,1);
+line-height:33rpx;
+margin-top: 26rpx;
+}
+.wx{
+  width: 44rpx;
+  height: 40rpx;
+  vertical-align: bottom;
+}
+.pyq{
+  width: 42rpx;
+  height: 44rpx;
+  vertical-align: bottom;
+}
+.wb{
+  width: 52rpx;
+  height: 44rpx;
+  vertical-align: bottom;
+}

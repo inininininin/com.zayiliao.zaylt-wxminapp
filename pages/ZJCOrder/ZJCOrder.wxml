@@ -24,7 +24,7 @@
 
  <view class="children _44f602a">
       <view hover-class="none" class="children_item _44f602a" wx:for="{{ showList }}" wx:for-item="item" wx:key="index" >
-      <image src='https://www.njshangka.com{{item.deviceCover}}'></image>
+      <image src='{{item.deviceCover}}'></image>
         <view class="child_name _44f602a" data-name='{{item.deviceName}}' bindtap='selectOver'>
           <view class='child_name_1'>{{ item.deviceName }}</view>
           <view class='child_name_2'>{{ item.brief }}</view>

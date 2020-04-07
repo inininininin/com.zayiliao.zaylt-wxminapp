@@ -1,17 +1,18 @@
 // pages/ZJCMyorder/ZJCMyorder.js
 var utils = require('../../utils/util.js');
+var app=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    statusBarHeight: '',
-    titleBarHeight: '',
+    statusBarHeight: getApp().globalData.statusBarHeight,
+    titleBarHeight: getApp().globalData.titleBarHeight,
     toPageNo:0,
     navtitle: '我的订单',
-    statusBarHeight: '',
-    titleBarHeight: '',
+    statusBarHeight: getApp().globalData.statusBarHeight,
+    titleBarHeight: getApp().globalData.titleBarHeight,
     currentTab: 0,
     status: 0,
     schemeList:[],
@@ -57,12 +58,14 @@ Page({
     var that = this
     toPageNo++
     wx.request({
-      url: that.data.domain + '/zaylt/c/procurement/orders',
+      url:  app.globalData.url + '/c/procurement/orders',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
+        'token': app.globalData.token,
+        'cookie': app.globalData.cookie
       },
       data: {
-        token: that.data.token,
+        token:  app.globalData.token,
         pn: toPageNo,
         ps: 10,
         statuses:status,
@@ -97,11 +100,12 @@ Page({
           }
           console.log(that.data.schemeList)
           that.setData({
-            bonusPoint: res.data.data.bonusPoint,
+            // bonusPoint: res.data.data.bonusPoint,
             schemeList: that.data.schemeList,
           })
         } else {
           wx.showModal({
+            showCancel: false,
             title: res.data.codeMsg
           })
         }
@@ -127,11 +131,7 @@ Page({
    */
   onReady: function() {
 
-    const vm = this
-    vm.setData({
-      statusBarHeight: getApp().globalData.statusBarHeight,
-      titleBarHeight: getApp().globalData.titleBarHeight
-    })
+    
   },
 
   backHistory: function(e) {
@@ -187,6 +187,19 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    if (app.globalData.lastClient == 1) {
+      var path = '/pages/index/index'
+    } else {
+      var path = '/pages/out/index/index'
+    }
+    return {
+      title: '欢迎使用共享医联体小程序', //分享内容
+      path: path, //分享地址
+      imageUrl: 'https://zaylt.njshangka.com/favicon.ico', //分享图片
+      success: function (res) {
+      },
+      fail: function (res) {
+      }
+    }
   }
 })

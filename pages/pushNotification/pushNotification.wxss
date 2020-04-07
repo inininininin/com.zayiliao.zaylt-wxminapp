@@ -1,0 +1,91 @@
+/* pages/pushNotification/pushNotification.wxss */
+@import '../common/common.wxss';
+.newN {
+  width: 686rpx;
+  height: 190rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 16rpx;
+  border: 1rpx solid rgba(255, 26, 46, 1);
+  margin: 24rpx 31rpx 0 31rpx;
+}
+.newN>view:nth-child(1) {
+  width: 686rpx;
+  height: 42rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: rgba(13, 14, 16, 1);
+  line-height: 42rpx;
+}
+.newN>view:nth-child(1)>image {
+  width: 26rpx;
+  height: 16rpx;
+  margin: 46rpx 24rpx 0 45rpx;
+}
+.newN>view:nth-child(2) {
+  margin: 25rpx 0 0 0;
+  height: 37rpx;
+}
+.newN>view:nth-child(2) text:nth-child(1),.newY>view:nth-child(2) text {
+  display: inline-block;
+  width: 460rpx;
+  height: 37rpx;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(13, 14, 16, 1);
+  line-height: 37rpx;
+  margin-left: 96rpx;
+}
+.newN>view:nth-child(2) text:nth-child(2) {
+  display: inline-block;
+  width: 90rpx;
+  height: 37rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 26, 46, 1);
+  line-height: 37rpx;
+  margin-right: 40rpx;
+  text-align: center;
+}
+.newN>view:nth-child(3) ,.newY>view:nth-child(3){
+  height: 37rpx;
+  margin-top: 8rpx;
+}
+.newN>view:nth-child(3) text ,.newY>view:nth-child(3) text{
+  display: inline-block;
+  width: 380rpx;
+  height: 37rpx;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(13, 14, 16, 1);
+  line-height: 37rpx;
+  margin-left: 96rpx;
+}
+.newY {
+  width: 686rpx;
+  height: 190rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 16rpx;
+  border: 1rpx solid rgba(43, 119, 239, 1);
+  margin: 24rpx 31rpx 0 31rpx;
+}
+.newY>view:nth-child(1) {
+  margin-top: 20rpx;
+  height: 30rpx;
+}
+.newY>view:nth-child(1) text {
+  font-size: 30rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: rgba(13, 14, 16, 1);
+  line-height: 30rpx;
+  margin: 0 0 0 96rpx;
+  height: 30rpx;
+}
+.newY>view:nth-child(2){
+  height: 37rpx;
+  margin-top: 16rpx;
+}

@@ -1,0 +1,178 @@
+<view class="container" style="height:{{157+statusBarHeight}}px;padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class='indexTopBg' style='height:{{157+statusBarHeight}}px'>
+    <view class="header">
+      <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+      <view class="title-bar" style="height:{{titleBarHeight}}px">
+        <view>
+          <image bindtap='backHistory' style='display:inline-block;top:{{2+statusBarHeight}}px;left:10rpx;padding:20rpx;' src='../img/shape@2x.png'></image>
+          <text>{{navtitle}}</text>
+        </view>
+      </view>
+    </view>
+    <image class='topImg' src='../../img/Illustration@2x.png'></image>
+    <text class='pointIntro' bindtap='look'>积分说明</text>
+  </view>
+</view>
+<view class='firstTimeIncome'>
+  <text class='incomeTitle'>首次收益</text>
+  <view class='list' wx:for='{{list1}}'>
+  
+  <view class='firstIncomeItem'>
+    <view>
+      <view>{{item.name||''}}
+        <text>+{{item.exchangePointUpperPerDay||''}}</text>
+      </view>
+      <view>{{item.intro||''}}</view>
+    </view>
+    <text wx:if='{{item.doneIs==0}}' class='nofinish' bindtap='gofinish' data-url='{{item.taskId}}'>去完成</text>
+    <text wx:if='{{item.doneIs==1}}' class='finish'>已完成</text>
+  </view>
+  <!-- <view class='firstIncomeItem'>
+    <view>
+      <view>首次确认就诊
+        <text>+2000</text>
+      </view>
+      <view>给上级医院输送的病源首次确认就诊</view>
+    </view>
+    <text class='nofinish'>去完成</text>
+  </view>
+  <view class='firstIncomeItem'>
+    <view>
+      <view>首次浏览文章
+        <text>+2000</text>
+      </view>
+      <view>首次完整阅读一篇文章</view>
+    </view>
+    <text class='finish'>已完成</text>
+  </view>
+  <view class='firstIncomeItem' style='border-bottom:0;'>
+    <view>
+      <view>首次分享文章
+        <text>+2000</text>
+      </view>
+      <view>首次分享一篇新文章</view>
+    </view>
+    <text class='nofinish'>去完成</text>
+  </view> -->
+  </view>
+</view>
+
+
+<view class='firstTimeIncome'>
+  <text class='incomeTitle'>每日收益</text>
+  <view class='list' wx:for='{{list2}}'>
+  
+  <view class='firstIncomeItem'>
+    <view>
+      <view>{{item.name||''}}
+        <text>+{{item.exchangePoint||''}}</text>
+        <text class='incomeintro'>/{{item.intro||''}}</text>
+      </view>
+      <view class='progressBar'>
+        <view>
+          <text style='width:{{item.percent}}'></text>
+        </view>
+        <text>已获{{item.gotExchangePointToday||''}}分/上限{{item.exchangePointUpperPerDay||''}}分</text>
+      </view>
+    </view>
+    <text  wx:if='{{item.doneIs==0}}' class='nofinish' bindtap='gofinish' data-url='{{item.taskId}}'  class='nofinish'>去完成</text>
+    <text  wx:if='{{item.doneIs==1}}'  class='finish'>已完成</text>
+  </view>
+  </view>
+  <!-- <view class='firstIncomeItem'>
+    <view>
+      <view>上传病源
+        <text>+20</text>
+        <text class='incomeintro'>/一位</text>
+      </view>
+      <view class='progressBar'>
+        <view>
+          <text style='width:50%'></text>
+        </view>
+        <text>已获100分/上限200分</text>
+      </view>
+    </view>
+    <text class='nofinish'>去完成</text>
+  </view>
+  <view class='firstIncomeItem'>
+    <view>
+      <view>浏览文章
+        <text>+5</text>
+        <text class='incomeintro'>/完整阅读一篇新的文章</text>
+      </view>
+      <view class='progressBar'>
+        <view>
+          <text style='width:0%'></text>
+        </view>
+        <text>已获0分/上限10分</text>
+      </view>
+    </view>
+    <text class='nofinish'>去完成</text>
+  </view>
+  <view class='firstIncomeItem'>
+    <view>
+      <view>分享文章
+        <text>+5</text>
+        <text class='incomeintro'>/分享一篇新的文章</text>
+      </view>
+      <view class='progressBar'>
+        <view>
+          <text style='width:0%'></text>
+        </view>
+        <text>已获0分/上限10分</text>
+      </view>
+    </view>
+    <text class='nofinish'>去完成</text>
+  </view>
+  <view class='firstIncomeItem'>
+    <view>
+      <view>确认就诊
+        <text>+20</text>
+        <text class='incomeintro'>/一位</text>
+      </view>
+      <view class='progressBar'>
+        <view>
+          <text style='width:50%'></text>
+        </view>
+        <text>已获100分/上限200分</text>
+      </view>
+    </view>
+    <text class='nofinish'>去完成</text>
+  </view>
+  <view class='firstIncomeItem'>
+    <view>
+      <view>文章推广
+        <text>+2</text>
+        <text class='incomeintro'>/分享后的点击次数</text>
+      </view>
+      <view class='progressBar'>
+        <view>
+          <text style='width:50%'></text>
+        </view>
+        <text>已获10分/上限20分</text>
+      </view>
+    </view>
+    <text class='nofinish'>去完成</text>
+  </view> -->
+</view>
+
+
+<view class='popwindow' style='display:{{dis}}'>
+  <view class='popwhite'>
+    <view class='poptitle'>
+      <text>积分说明</text>
+      <image bindtap='close' class='delete' src='../../img/delete.png'></image>
+    </view>
+    <view class='popindex'>
+      <text>完成指定的任务可以获得相应的积分，积分规则如下：</text>
+      <text>1.首次收益为第一次的任务收益：每个用户仅可领取一次。首次上传病源可一次领取20000积分；首次确认就诊即给上级医院输送的病源首次被确认就诊，用户可得20000积分；首次浏览文章可获得20000积分；首次分享文章获得20000积分。</text>
+      <text>2.每日收益为每天都可以做的任务，每天都可领取到的积分。每日首次登录获得1分；上传病源每位20分，上限200分；浏览文章5分，上限10分；分享文章5分，上限10分；上级医院确认就诊20分一位，上限200分；文章推广即分享出去的文章获得的点击量，2分一个，上限20分。</text>
+      <image src='../../img/Leaves@2x.png'></image>
+    </view>
+  </view>
+</view>
+
+
+<view class='shareFont'>
+  <navigator url='../pointsExchange/pointsExchange'>我要兑换</navigator>
+</view>

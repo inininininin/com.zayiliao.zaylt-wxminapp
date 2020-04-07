@@ -1,0 +1,180 @@
+<!--pages/Third/index/index.wxml-->
+<view class="page" bindtouchend='touchend' bindtouchstart='touchstart'>
+  <!-- 侧滑栏 -->
+  <view class="page_tab" style='display:{{display}}'>
+    <view style="margin-top:{{35+statusBarHeight}}px;">
+      <text class='state'>状态</text>
+      <view class='seeAdoctor'>
+        <text bindtap='seeAd' style='background:{{color5}}'>未就诊</text>
+        <text bindtap='noseeAd' style='background:{{color6}}'>已就诊</text>
+      </view>
+
+      <text class='state'>确认就诊时间</text>
+      <view class='seeAdoctor'>
+        <view class="picker_group">
+          <picker mode="date" value="{{date}}" style='background:{{color}}' end="{{date2}}" bindchange="bindDateChange">
+            <view class="picker">
+              {{date}}
+            </view>
+          </picker>
+          —
+          <picker mode="date" value="{{date2}}" style='background:{{color2}}' start="{{date}}" end="2050-01-01" bindchange="bindDateChange2">
+            <view class="picker">
+              {{date2}}
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <text class='state'>门诊推送时间</text>
+      <view class='seeAdoctor'>
+        <view class="picker_group">
+          <picker mode="date" value="{{date3}}" style='background:{{color3}}' end="{{date4}}" bindchange="bindDateChange3">
+            <view class="picker">
+              {{date3}}
+            </view>
+          </picker>
+          —
+          <picker mode="date" value="{{date4}}" style='background:{{color4}}' start="{{date3}}" end="2050-01-01" bindchange="bindDateChange4">
+            <view class="picker">
+              {{date4}}
+            </view>
+          </picker>
+        </view>
+      </view>
+
+
+      <view class='page_tab_btn'>
+        <text bindtap='again' bindtap='again'>重选</text>
+        <text bindtap='sure' bindtap='sure'>确定</text>
+      </view>
+    </view>
+  </view>
+  <view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+
+  <view class="home" style="{{translate}}；">
+    <view class="container" style="height:{{85+statusBarHeight}}px;padding-top:{{statusBarHeight+titleBarHeight}}px">
+      <view class='indexTopBg' style='height:{{85+statusBarHeight}}px'>
+        <view class="header">
+          <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+          <view class="title-bar" style="height:{{titleBarHeight}}px">
+            <view>
+
+
+              <view class='search' bindtap='search'>
+                <image  src='../../img/search.png'></image>
+                <!-- 搜索 -->
+              </view>
+              <view class='select' bindtap='showview'>
+                <!-- 筛选 -->
+                <image  src='../../img/screen.png'></image>
+              </view>
+              <view class='newsBox'  bindtap='news'>
+                <image class='news' style='margin-left:30rpx;border-radius:6rpx;display:inline-block' src='../img/xiaoxi@2x.png'></image>
+                <text style='top:{{7+statusBarHeight}}px;left:505rpx;'>{{num}}</text>
+              </view>
+
+            </view>
+          </view>
+        </view>
+      </view>
+
+
+      <view class="navbar">
+        <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</view>
+
+      </view>
+
+    </view>
+
+
+    <!-- <view class='indexbox' hidden="{{currentTab!==0}}"> -->
+    <view class='required' hidden="{{currentTab!==0}}">
+      <view>
+        <image src='../../img/bitian@2x.png'></image>
+        <text>必填项</text>
+      </view>
+
+
+      <view class='input'>
+        <text>病患姓名</text>
+        <input bindinput='name' value='{{name}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input>
+      </view>
+      <view class='input'>
+        <text>联系方式</text>
+        <input bindinput='phone' value='{{phone}}' type='number' placeholder-class='inputPla' placeholder='请填写'></input>
+      </view>
+      <view class='input'>
+        <text>身份证号码</text>
+        <input bindinput='idCard' value='{{idCard}}' type='idcard' placeholder-class='inputPla' placeholder='请填写'></input>
+      </view>
+
+
+      <view class='selectIntro'>
+        <image src='../../img/xuantian@2x.png'></image>
+        <text>选填项</text>
+      </view>
+
+      <view class='input'>
+        <text>备注</text>
+        <input bindinput='remark' value='{{remark}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input>
+      </view>
+
+
+      <view bindtap='save' class='save' style='left:460rpx;'>
+        <!-- <image src='../../img/save@2x.png' style='width:30rpx;height:40rpx;'></image> -->
+        保存</view>
+    </view>
+
+
+    <!-- <navigator url='../addpatient/addpatient'>
+<view class='addOutPatient' bindtap='addOutPatient'>
+<image src='../img/xinzeng@2x.png'></image>
+<text>新增病源</text>
+</view>
+</navigator>
+
+
+  
+   
+  <view>
+      <view><text>何夫迪</text><input value='待上传'></input></view>
+      <view>创建时间：2019-02-17 10:84</view>
+  </view> -->
+    <!-- </view> -->
+    <view>
+      
+    </view>
+
+    <view class='indexbox' wx:for='{{list1}}' hidden="{{currentTab!==1}}">
+      <navigator url='../seeAdoctor/seeAdoctor?id={{item.itemId}}'>
+        <view>
+          <view>
+            <text>{{item.realname}}</text>
+            <view class='viewRt'>
+              <image src='../img/weijiuzhen@2x.png'></image>
+              <text>未就诊</text>
+            </view>
+          </view>
+          <view>创建时间：{{item.pushTime}}</view>
+        </view>
+      </navigator>
+    </view>
+    <view class='indexbox' wx:for='{{list2}}' hidden="{{currentTab!==2}}">
+      <navigator url='../seeAdoctor/seeAdoctor?id={{item.itemId}}'>
+        <view>
+          <view>
+            <text>{{item.realname}}</text>
+            <view class='viewRt1'>
+              <image src='../img/yijiuzhen@2x.png'></image>
+              <text>已就诊</text>
+            </view>
+          </view>
+          <view>创建时间：{{item.pushTime}}</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+

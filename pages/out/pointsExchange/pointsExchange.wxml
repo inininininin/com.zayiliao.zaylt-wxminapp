@@ -1,0 +1,64 @@
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class='indexTopBg' style='height:{{176+statusBarHeight}}px'>
+    <view class="header">
+      <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+      <view class="title-bar" style="height:{{titleBarHeight}}px">
+        <view>
+        <image bindtap='backHistory' style='display:inline-block;top:{{2+statusBarHeight}}px;left:10rpx;padding:20rpx;' src='../../img/back-white@2x.png'></image>
+          <text>{{navtitle}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='point' style='height:{{132}}px'>
+    <text>{{exchangePoint}}</text>
+
+    <view>
+    <navigator url='../../ZJCMyjifen/ZJCMyjifen'><text>积分明细</text></navigator>
+      
+     <navigator url='../../ZJCOrderDetailno/ZJCOrderDetailno'><text>兑换记录</text></navigator>
+    </view>
+  </view>
+</view>
+<swiper style="position: fixed;top: {{titleBarHeight+statusBarHeight+131}}px;" class="swiper luckdogList" vertical='false' circular='false' autoplay="true" interval="3000" duration="1000">
+  <block wx:for="{{news}}" wx:for-index="index">
+    <swiper-item>
+
+      <view class='luckdog'>
+        <image src='../../img/horn@2x.png'></image>
+        <text>{{item.str1}}<text>{{item.str2}} </text>{{item.str3}} </text>
+      </view>
+
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class='popularExchange' style="margin-top:{{titleBarHeight+statusBarHeight+180}}px">
+  <view class='hottitle'>
+    <text>热门兑换</text>
+    <image src='../../img/Chevron Copy 2@2x.png'></image>
+    <navigator url='../pointExchangeAll/pointExchangeAll'><text class='more'>更多</text></navigator>
+    
+  </view>
+
+
+  <view class='goodsList'>
+
+    <navigator  wx:for='{{list1}}'  url='../../pointsExchangeDetails/pointsExchangeDetails?id={{item.commodityId}}'>
+      <view class='good'>
+      <view class='goodimg' style="background: url({{item.cover}}) no-repeat; background-size:cover;background-position: center;"></view>
+        <!-- <image src='{{item.cover}}'></image> -->
+        <view>
+          <text>{{item.name}}</text>
+          <view>
+            <text>{{item.payExchangepoint}}</text>
+            <text>积分</text>
+          </view>
+          <text>立即兑换</text>
+        </view>
+      </view>
+    </navigator>
+
+
+  </view>
+</view>
