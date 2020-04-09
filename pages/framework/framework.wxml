@@ -19,7 +19,7 @@
     <view class="lineOneNext">
     <image src="../img/shouce.png"></image>
       <text>{{item.name}}</text>
-      <view><text>{{item.doneSectionCount}}</text>/{{item.number||0}}</view>
+      <!-- <view><text>{{item.doneSectionCount}}</text>/{{item.number||0}}</view> -->
     </view>
     <!-- <view wx:if='{{item.showIsThis}}' data-name='{{items.name}}' data-count='{{items.doneLowerCount}}' data-id='{{item.operatingManualId}}' class="lineTwo" catchtap="nextPage"  wx:for='{{item.listNext}}' wx:for-item="items" data-sectionid='{{items.operatingManualSectionId}}' data-lowercount='{{items.lowerCount}}'>
       <view>                              

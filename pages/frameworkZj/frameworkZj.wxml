@@ -12,7 +12,7 @@
 </view>
 <view>
 	<view class="lineOne" bindtap="showIsThis" data-id='{{item.operatingManualSectionId}}'>
-		<view class="lineOneNext">
+		<!-- <view class="lineOneNext">
 			<text>{{name}}</text>
 			<image wx:if='{{!showIsThis}}' src="../img/downO@2x.png"></image>
 			<image wx:if='{{showIsThis}}' src="../img/Chevron@2x.png"></image>
@@ -25,22 +25,22 @@
 				<image class="rightIcon" src="../img/back.png"></image>
 				<text wx:if='{{items.done==1}}' class="finish">已完成</text>
 			</view>
-		</view>
-		<view wx:if='{{showIsThis&&items.lowerCount!=0}}' class="lineTwo" catchtap="nextPage" wx:for='{{list}}' wx:for-item="items" data-id='{{items.operatingManualSectionId}}' data-lowercount='{{items.lowerCount}}'>
+		</view> -->
+		<view  class="lineTwo" catchtap="nextPage"  data-name='{{items.name}}'   data-count='{{items.count}}'  wx:for='{{list}}' wx:for-item="items" data-id='{{items.operatingManualSectionId}}' data-lowercount='{{items.lowerCount}}'>
 			<view>
 				<text>{{items.name}}</text>
-				<image wx:if='{{!items.showIsThis}}' src="../img/downO@2x.png"></image>
-				<image wx:if='{{items.showIsThis}}' src="../img/Chevron@2x.png"></image>
-				<text wx:if='{{items.done==1}}' class="finish">已完成</text>
+				<!-- <image wx:if='{{!items.showIsThis}}' src="../img/downO@2x.png"></image> -->
+				<image  class="rightIcon" src="../img/back.png"></image>
+				<!-- <text wx:if='{{items.done==1}}' class="finish">已完成</text> -->
 			</view>
-			<view wx:if='{{items.showIsThis&&item.lowerCount==0}}' class="lineThree" catchtap="nextPageNone" data-allid='{{operatingManualId}}' wx:for='{{listOne}}' wx:for-item="item" data-id='{{item.operatingManualSectionId}}' data-lowercount='{{item.lowerCount}}'>
+			<!-- <view  class="lineThree" catchtap="nextPageNone" data-allid='{{operatingManualId}}' wx:for='{{listOne}}' wx:for-item="item" data-id='{{item.operatingManualSectionId}}' data-lowercount='{{item.lowerCount}}'>
 				<view>
 					<text class="title">{{item.name}}</text>
 					<image class="rightIcon" src="../img/back.png"></image>
 					<text wx:if='{{item.done==1}}' class="finish">已完成</text>
 				</view>
-			</view>
-			<view wx:if='{{items.showIsThis&&item.lowerCount!=0}}' class="lineThree" catchtap="nextPageThis" wx:for='{{listOne}}' wx:for-item="item" data-id='{{item.operatingManualSectionId}}' data-lowercount='{{item.lowerCount}}'>
+			</view> -->
+			<!-- <view wx:if='{{items.showIsThis&&item.lowerCount!=0}}' class="lineThree" catchtap="nextPageThis" wx:for='{{listOne}}' wx:for-item="item" data-id='{{item.operatingManualSectionId}}' data-lowercount='{{item.lowerCount}}'>
 				<view>
 					<text class="title">{{item.name}}</text>
 					<image wx:if='{{!item.showIsThis}}' src="../img/downO@2x.png"></image>
@@ -62,7 +62,7 @@
 						<text wx:if='{{items.done==1}}' class="finish">已完成</text>
 					</view>
 				</view>
-			</view>
+			</view> -->
 		</view>
 
 	</view>

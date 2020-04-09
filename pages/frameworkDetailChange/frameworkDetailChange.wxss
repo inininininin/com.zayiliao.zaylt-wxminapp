@@ -116,7 +116,7 @@ page{
 .imgBox{
   width: 682rpx;
   height: auto;
-  float: left;
+  /* float: left; */
   margin-top: 25rpx;
 }
 .imgBox>view{

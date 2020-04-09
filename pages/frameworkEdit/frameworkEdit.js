@@ -14,9 +14,24 @@ Page({
     picBlob:'',
     fileAll:'',
     audioAll:'',
-    fileAllShow:[],
+    videoBlobShow:[],
     content:'',
+	picBlobShow:[],
+	falseIs:false,
+	trueIs:true
   },
+  myVideoSrcClose(){
+      this.setData({
+        myVideoSrcIs: false,
+        myVideoSrc: '',
+      })
+    },
+  previewVideo(e){
+     this.setData({
+       myVideoSrcIs:true,
+       myVideoSrc:e.currentTarget.dataset.src,
+     })  
+   },
   saveThis(e){
     var that=this
     wx.request({
@@ -82,9 +97,9 @@ Page({
       camera: 'back',
       success(res) {
         var tempFilePath = res.tempFilePath
-        var fileAll = that.data.fileAll
+        
         var videoBlob = that.data.videoBlob
-        var fileAllShow = that.data.fileAllShow
+        var videoBlobShow = that.data.videoBlobShow
           wx.uploadFile({
             url: app.globalData.url + '/other/fileupload?cover&duration', //仅为示例，非真实的接口地址
             filePath: tempFilePath,
@@ -99,18 +114,19 @@ Page({
                   duration: 2000
                 })
                 videoBlob = videoBlob+','+ url
-                fileAll = fileAll + ',' + url
+                // fileAll = fileAll + ',' + url
                 if (videoBlob.slice(0,1)==','){
                   videoBlob = videoBlob.slice(1, videoBlob.length)
                 }
-                if (fileAll.slice(0, 1) == ',') {
-                  fileAll = fileAll.slice(1, fileAll.length )
-                }
-                fileAllShow.push({ 'type': 2, 'src': app.globalData.url +url })
+                // if (fileAll.slice(0, 1) == ',') {
+                //   fileAll = fileAll.slice(1, fileAll.length )
+                // }
+				videoBlobShow.push({'src': app.globalData.url +url})
+                // fileAllShow.push({ 'type': 2, 'src': app.globalData.url +url })
+				console.log(videoBlobShow)
                 that.setData({
                   videoBlob: videoBlob,
-                  fileAll: fileAll,
-                  fileAllShow: fileAllShow,
+				  videoBlobShow:videoBlobShow
                 })
               }
             },
@@ -129,8 +145,7 @@ Page({
       sourceType: ['album', 'camera'],
       success(res) {
         const tempFilePaths = res.tempFilePaths
-        var fileAll = that.data.fileAll
-        var fileAllShow = that.data.fileAllShow
+        var picBlobShow = that.data.picBlobShow
         var picBlob = that.data.picBlob
         for (var i in tempFilePaths) {
           wx.uploadFile({
@@ -148,18 +163,14 @@ Page({
                   duration: 2000
                 })
                 picBlob = picBlob + ',' + url
-                fileAll = fileAll + ',' + url
                 if (picBlob.slice(0, 1) == ',') {
                   picBlob = picBlob.slice(1, picBlob.length )
                 }
-                if (fileAll.slice(0, 1) == ',') {
-                  fileAll = fileAll.slice(1, fileAll.length )
-                }
-                fileAllShow.push({ 'type': 1,'src': app.globalData.url + url })
+                picBlobShow.push({ 'src': app.globalData.url + url })
+				console.log(picBlobShow)
                 that.setData({
                   picBlob: picBlob,
-                  fileAll: fileAll,
-                  fileAllShow: fileAllShow,
+                  picBlobShow: picBlobShow,
                 })
               }
             },

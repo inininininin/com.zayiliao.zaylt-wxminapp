@@ -44,7 +44,7 @@ Page({
     } else {
       // + e.currentTarget.dataset.id 
       wx.navigateTo({
-        url: '../frameworkZj/frameworkZj?sectionid=' + e.currentTarget.dataset.sectionid + '&id=' + e.currentTarget.dataset.id + '&name=' + e.currentTarget.dataset.name + '&count=' + e.currentTarget.dataset.count + '&lowercount=' + e.currentTarget.dataset.lowercount,
+        url: '../frameworkZj/frameworkZj?sectionid=' + (e.currentTarget.dataset.sectionid||'') + '&id=' + e.currentTarget.dataset.id + '&name=' + e.currentTarget.dataset.name + '&count=' + e.currentTarget.dataset.count + '&lowercount=' + e.currentTarget.dataset.lowercount,
       })
     }
   },
@@ -52,6 +52,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    
     var that = this
     wx.request({
       url: app.globalData.url + '/'+app.globalData.yyType+'/operating-manuals',

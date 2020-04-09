@@ -19,6 +19,7 @@ Page({
     interval: 2000,
     duration: 500,
     dateItems:{},
+	myVideoSrcIs:false,
   },
   swiperChange(e){
     for (var i in this.data.dataList){
@@ -31,6 +32,7 @@ Page({
       navtitle: navtitle,
     })
   },
+ 
   /**
    * 生命周期函数--监听页面加载
    */
@@ -80,6 +82,11 @@ Page({
     })
     var addTimeFrom = Date.parse(new Date(thisYear + '/' + thisMonth + '/01 00:00:00'))
     var addTimeTo = Date.parse(new Date(thisYear + '/' + (parseInt(thisMonth) + 1) + '/01 00:00:00'))-1
+	console.log(addTimeFrom)
+	this.setData({
+		addTimeFrom:addTimeFrom,
+		addTimeTo:addTimeTo
+	})
     this.lastPage(0, addTimeFrom, addTimeTo)
   },
   year(e){
@@ -142,7 +149,7 @@ Page({
           for (var i in res.data.data.rows) {
             addTime = res.data.data.rows[i].addTime
             res.data.data.rows[i].addTime = utils.formatTime(addTime / 1000, 'M月D日');
-            res.data.data.rows[i].time = utils.formatTime(addTime / 1000, 'm:s');
+            res.data.data.rows[i].time = utils.formatTime(addTime / 1000, 'h:m');
             var date = res.data.data.rows[i].addTime
             if (!dateItems[date])
               dateItems[date]=[];

@@ -11,10 +11,10 @@ Page({
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
     list:[],
-    listOne:[],
-    listTwo:[],
-    listThree:[],
-    showIsThis:false,
+    // listOne:[],
+    // listTwo:[],
+    // listThree:[],
+    // showIsThis:false,
   },
   nextPageNone(e){
     wx.navigateTo({
@@ -29,47 +29,64 @@ Page({
     })
   },
   nextPage(e) {
-    var that = this
-    wx.request({
-      url: app.globalData.url + '/'+app.globalData.yyType+'/operating-manual-sections',
-      method: 'get',
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        'cookie': app.globalData.cookie
-      },
-      data: {
-        operatingManualId: that.data.operatingManualId,
-        pn: 1,
-        ps: 30,
-        upperId: e.currentTarget.dataset.id,
-      },
-      success: function (res) {
-        wx.hideToast()
-        if (res.data.code == 0) {
-          var listNext = res.data.data.rows
-          for (var i in listNext) {
-            listNext[i].showIsThis = false
-          }
-          for (var i in that.data.list) {
-            if (e.currentTarget.dataset.id == that.data.list[i].operatingManualSectionId) {
-              that.data.list[i].showIsThis = !that.data.list[i].showIsThis
-              that.data.list[i].showIsThis = that.data.list[i].showIsThis
-            } else {
-              that.data.list[i].showIsThis = false
-            }
-          }
-          that.setData({
-            list: that.data.list,
-            listOne: listNext
-          })
-        } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
-          })
-        }
-      }
-    })
+	  if (e.currentTarget.dataset.lowercount == 0) {
+	    wx.navigateTo({
+	      url: '../frameworkDetailChange/frameworkDetailChange?sectionid=' + e.currentTarget.dataset.sectionid + '&id=' + e.currentTarget.dataset.id,
+	    })
+	  } else {
+	    // + e.currentTarget.dataset.id 
+	    wx.navigateTo({
+	      url: '../frameworkZj/frameworkZj?sectionid=' + e.currentTarget.dataset.id + '&id=' + this.data.operatingManualId + '&name=' + e.currentTarget.dataset.name + '&count=' + e.currentTarget.dataset.count + '&lowercount=' + e.currentTarget.dataset.lowercount,
+	    })
+	  }
+	  
+	  // if(e.currentTarget.dataset.lowercount!=0){
+		 // wx.navigateTo({
+		 //   url: '../frameworkZj/frameworkZj?sectionid=' + e.currentTarget.dataset.id + '&id=' + e.currentTarget.dataset.allid + '&name=' + e.currentTarget.dataset.name + '&count=' + e.currentTarget.dataset.count + '&lowercount=' + e.currentTarget.dataset.lowercount,
+		 // }) 
+	  // }
+	
+    // var that = this
+    // wx.request({
+    //   url: app.globalData.url + '/'+app.globalData.yyType+'/operating-manual-sections',
+    //   method: 'get',
+    //   header: {
+    //     "Content-Type": "application/x-www-form-urlencoded",
+    //     'cookie': app.globalData.cookie
+    //   },
+    //   data: {
+    //     operatingManualId: that.data.operatingManualId,
+    //     pn: 1,
+    //     ps: 30,
+    //     upperId: e.currentTarget.dataset.id,
+    //   },
+    //   success: function (res) {
+    //     wx.hideToast()
+    //     if (res.data.code == 0) {
+    //       var listNext = res.data.data.rows
+    //       for (var i in listNext) {
+    //         listNext[i].showIsThis = false
+    //       }
+    //       for (var i in that.data.list) {
+    //         if (e.currentTarget.dataset.id == that.data.list[i].operatingManualSectionId) {
+    //           that.data.list[i].showIsThis = !that.data.list[i].showIsThis
+    //           that.data.list[i].showIsThis = that.data.list[i].showIsThis
+    //         } else {
+    //           that.data.list[i].showIsThis = false
+    //         }
+    //       }
+    //       that.setData({
+    //         list: that.data.list,
+    //         listOne: listNext
+    //       })
+    //     } else {
+    //       wx.showModal({
+    //         showCancel: false,
+    //         title: res.data.codeMsg
+    //       })
+    //     }
+    //   }
+    // })
   },
   nextPageThis(e) {
     var that = this
@@ -118,6 +135,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(12312)
     var that = this
     var operatingManualId=options.id
     var upperId=options.sectionid
@@ -152,9 +170,9 @@ Page({
           that.setData({
             list:list
           })
-          for (var i in list) {
-            list[i].showIsThis = false
-          }
+          // for (var i in list) {
+          //   list[i].showIsThis = false
+          // }
           console.log(that.data.list)
         } else {
           wx.showModal({

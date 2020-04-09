@@ -69,9 +69,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options.sectionid,options.id)
     this.setData({
       operatingManualId: options.id,
-      operatingManualSectionId: options.sectionid
+      operatingManualSectionId: options.id
     })
     this.lastPage(0)
   },
@@ -86,8 +87,8 @@ Page({
       data: {
         pn: toPageNo,
         ps: pageSize,
-        operatingManualId: that.data.operatingManualId,
-        operatingManualSectionId: that.data.operatingManualSectionId,
+        operatingManualSectionId: that.data.operatingManualId,
+        // operatingManualSectionId: that.data.operatingManualSectionId,
       },
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
