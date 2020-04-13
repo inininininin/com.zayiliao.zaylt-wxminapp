@@ -17,7 +17,7 @@
 <view class="imageBox">
 	<view class="fileAll"  wx:for='{{picBlobShow}}' >
 		<image class="delThis" bindtap="delThis" data-src='{{item.src}}' src="../img/close2.png"></image>
-	    <image class="image" mode="aspectFit" src="{{item.src}}"></image>
+	    <image class="image" mode="aspectFit" catchtap='previewImage' data-src='{{item.src}}' src="{{item.src}}"></image>
 	    <!-- <video  wx:if='{{item.type==2}}' id="myVideo" src="{{item.src}}"  controls></video> -->
 	</view>
 	
@@ -25,7 +25,7 @@
 
 <view class="videoBox">
 	<view class="fileAll"  wx:for='{{videoBlobShow}}' >
-		<image class="delThis" bindtap="delThis" data-src='{{item.src}}' src="../img/close2.png"></image>
+		<image class="delThis" bindtap="delThisVideo" data-src='{{item.src}}' src="../img/close2.png"></image>
 	    <!-- <image class="image" wx:if='{{item.type==1}}' mode="widthFix" src="{{item.src}}"></image> -->
 	    <!-- <video  mode='aspectFit' id="myVideo" class="myVideo" src="{{item.src}}"  controls></video> -->
 		<video class="image" disabled data-src="{{item.src}}" catchtap="previewVideo" class="myVideo"  id="myVideo" src="{{items.src}}" controls='{{falseIs}}' showCenterPlayBtn='{{falseIs}}' show-fullscreen-btn='{{trueIs}}'></video>

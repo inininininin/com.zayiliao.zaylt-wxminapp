@@ -36,6 +36,7 @@ Page({
         imageBlob = this.data.list[i].imageBlob
       }   
     }  
+
     wx.previewImage({
       current: current, // 当前显示图片的http链接
       urls: imageBlob // 需要预览的图片http链接列表
@@ -69,7 +70,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.sectionid,options.id)
     this.setData({
       operatingManualId: options.id,
       operatingManualSectionId: options.id
@@ -163,7 +163,6 @@ Page({
               toPageNo: String(toPageNo)
             });
           }
-          console.log(that.data.list)
         } else if (res.data.code == 20 || res.data.code == 26) {
           wx.hideToast()
           wx.navigateTo({

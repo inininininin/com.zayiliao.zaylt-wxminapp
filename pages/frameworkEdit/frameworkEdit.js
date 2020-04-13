@@ -26,6 +26,17 @@ Page({
         myVideoSrc: '',
       })
     },
+	  previewImage: function (e) {
+	    var current = e.currentTarget.dataset.src;
+	    var imageBlob=[]
+	    for (var i in this.data.picBlobShow){
+	        imageBlob .push(this.data.picBlobShow[i].src)
+	    }  
+	    wx.previewImage({
+	      current: current, // 当前显示图片的http链接
+	      urls: imageBlob // 需要预览的图片http链接列表
+	    })
+	  },
   previewVideo(e){
      this.setData({
        myVideoSrcIs:true,
@@ -77,15 +88,29 @@ Page({
   delThis(e){
     var src=e.currentTarget.dataset.src
     var srcIs = src.split(app.globalData.url)[1]
-    var fileAll = this.data.fileAll.split(srcIs)[0] + this.data.fileAll.split(srcIs)[1].slice(1, this.data.fileAll.split(srcIs)[1].length)
-    for(var i in this.data.fileAllShow){
-      if(src==this.data.fileAllShow[i].src){
-        this.data.fileAllShow.splice(i, 1)
+    var picBlob = this.data.picBlob.split(srcIs)[0] + this.data.picBlob.split(srcIs)[1].slice(1, this.data.picBlob.split(srcIs)[1].length)
+    for(var i in this.data.picBlobShow){
+      if(src==this.data.picBlobShow[i].src){
+        this.data.picBlobShow.splice(i, 1)
       }
     }
     this.setData({
-      fileAllShow:this.data.fileAllShow,
-      fileAll: fileAll
+      picBlobShow:this.data.picBlobShow,
+      picBlob: picBlob
+    })
+  },
+  delThisVideo(e){
+    var src=e.currentTarget.dataset.src
+    var srcIs = src.split(app.globalData.url)[1]
+    var videoBlob = this.data.videoBlob.split(srcIs)[0] + this.data.videoBlob.split(srcIs)[1].slice(1, this.data.videoBlob.split(srcIs)[1].length)
+    for(var i in this.data.videoBlobShow){
+      if(src==this.data.videoBlobShow[i].src){
+        this.data.videoBlobShow.splice(i, 1)
+      }
+    }
+    this.setData({
+      videoBlobShow:this.data.videoBlobShow,
+      videoBlob: videoBlob
     })
   },
   video(e){
@@ -114,16 +139,10 @@ Page({
                   duration: 2000
                 })
                 videoBlob = videoBlob+','+ url
-                // fileAll = fileAll + ',' + url
                 if (videoBlob.slice(0,1)==','){
                   videoBlob = videoBlob.slice(1, videoBlob.length)
                 }
-                // if (fileAll.slice(0, 1) == ',') {
-                //   fileAll = fileAll.slice(1, fileAll.length )
-                // }
 				videoBlobShow.push({'src': app.globalData.url +url})
-                // fileAllShow.push({ 'type': 2, 'src': app.globalData.url +url })
-				console.log(videoBlobShow)
                 that.setData({
                   videoBlob: videoBlob,
 				  videoBlobShow:videoBlobShow
@@ -167,7 +186,6 @@ Page({
                   picBlob = picBlob.slice(1, picBlob.length )
                 }
                 picBlobShow.push({ 'src': app.globalData.url + url })
-				console.log(picBlobShow)
                 that.setData({
                   picBlob: picBlob,
                   picBlobShow: picBlobShow,

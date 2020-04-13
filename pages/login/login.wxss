@@ -155,7 +155,8 @@
   width: 620rpx;
   height: 90rpx;
   border-radius: 45rpx;
-  background: rgb(43,119,239);
+  /* background: rgb(43,119,239); */
+  background-image: linear-gradient(270deg,#f75178,#ed2828);
   color: #fff;
   font-size: 32rpx;
   line-height: 90rpx;
@@ -164,10 +165,12 @@
   margin: 160rpx 65rpx 0;
 }
 .forgotpwd{
-  margin: 26rpx 0 0 76rpx;
+  margin: 16rpx 0 0 56rpx;
   font-size: 30rpx;
-  color: rgb(43,119,239);
+  color: #2b77ef;
   line-height: 30rpx;
+  float: left;
+  padding: 10rpx 20rpx;
 }
 .forgotpwd>text{
    float: left;
@@ -178,11 +181,18 @@
   float: left;
   margin-left: 10rpx;
 }
+.selectEnter{
+		margin: 16rpx 56rpx 0 0;
+		float: right;
+		font-size: 30rpx;
+		 color: #2b77ef;
+		 padding: 10rpx 20rpx;
+	}
 /* 修改密码 */
 .top2{
-  height: 290rpx;
+  height: 350rpx;
   width: 750rpx;
-   background: url('https://zaylt.njshangka.com/resource/img/BJ-change@2x.png');
+   /* background: url('https://zaylt.njshangka.com/resource/img/BJ-change@2x.png'); */
   background-size: 100% 100%;
   position: relative;
 }
@@ -190,13 +200,22 @@
   width:18rpx;
   height: 30rpx;
   padding:80rpx 30rpx 30rpx 30rpx ;
+  margin-top:20px ;
 }
-.top2>text{
+.top2>text:nth-child(2){
   position: absolute;
-  bottom: 30rpx;
+  bottom: 70rpx;
   left: 76rpx;
   font-size: 40rpx;
-  color: #fff;
+  color: #000;
+  font-weight: bold;
+}
+.top2>text:nth-child(3){
+  position: absolute;
+  bottom: 25rpx;
+  left: 76rpx;
+  font-size: 28rpx;
+  color: #666;
 }
 .lines_yzm>image:nth-child(1){
   float: left;
@@ -228,4 +247,24 @@
   font-size: 32rpx;
   text-align: center;
   color:  rgb(255,169,0);
+}
+
+
+
+/* new */
+.bgView{
+	width: 750rpx;
+	height: 413rpx;
+	background: url(https://test.zaylt.njshangka.com/wap/assets/img/beijing.fbbe7df.png) no-repeat ;
+	background-size: contain;
+	box-sizing: border-box;
+}
+.bgView text{
+	display: block;
+	font-size: 40rpx;
+	color: #fff;
+	padding-top: 275rpx;
+	text-align: center;
+	width: 100%;
+	font-weight: bold;
 }
