@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/login/login",
     "pages/logs/logs",
+    "pages/selectRole/selectRole",
+    "pages/login/login",
     "pages/index/index",
     "pages/manage/index/index",
     "pages/manage/clinicDetail/clinicDetail",
@@ -13,18 +14,13 @@
     "pages/out/geneShare/geneShare",
     "pages/out/geneDetail/geneDetail",
     "pages/out/index/index",
-    "pages/canvas/canvas",
-
     "pages/registerXy/registerXy",
     "pages/webview/webview",
     "pages/ZJCMyorder/ZJCMyorder",
     "pages/ZJCOrderDetail1/ZJCOrderDetail1",
     "pages/ZJCOrderDetailnoDetail/ZJCOrderDetailnoDetail",
-    "pages/changePwd/changePwd",
-
     "pages/out/mine/mine",
     "pages/out/highQualityCaseDetail/highQualityCaseDetail",
-
     "pages/out/taskCenter/taskCenter",
     "pages/ZJCOrderDetailno/ZJCOrderDetailno",
     "pages/ZJCMyjifen/ZJCMyjifen",
@@ -100,7 +96,9 @@
     "pages/frameworkDate/frameworkDate",
     "pages/manage/managepatient/managepatient",
     "pages/frameworkDetailChange/frameworkDetailChange",
-    "pages/frameworkIndex/frameworkIndex"
+    "pages/frameworkIndex/frameworkIndex",
+    "pages/loginClinic/loginClinic",
+    "pages/loginManage/loginManage"
   ],
   "window": {
     "backgroundTextStyle": "light",

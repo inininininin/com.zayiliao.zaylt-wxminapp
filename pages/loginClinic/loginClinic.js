@@ -284,18 +284,18 @@ Page({
     } else {
       app.globalData.url = 'https://zaylt.njshangka.com'
     }
-    
-    if (that.data.currentTab == 0) {
-      that.changeHos(key,that.data.code, password)
-    } else if (that.data.currentTab == 1) {
-      that.changeCli(key, that.data.code, password)
-    } else {
-      // that.changeMan(key, password)
-      wx.showToast({
-        title: '维护中',
-        duration: 2000,
-      })
-    }
+     that.changeCli(key, that.data.code, password)
+    // if (that.data.currentTab == 0) {
+    //   that.changeHos(key,that.data.code, password)
+    // } else if (that.data.currentTab == 1) {
+    //   that.changeCli(key, that.data.code, password)
+    // } else {
+    //   // that.changeMan(key, password)
+    //   wx.showToast({
+    //     title: '维护中',
+    //     duration: 2000,
+    //   })
+    // }
     // setTimeout(function () {
     //   if (that.data.currentTab == 0) {
     //     that.changeHos(key, password)
@@ -325,7 +325,6 @@ Page({
       var password = that.data.password;
       var keyPrev = key.slice(0, 4)
       var keyLast = key.slice(key.length - 4, key.length)
-      console.log(key,keyPrev, keyLast)
       if (keyPrev == 'test' && keyLast == 'test') {
         app.globalData.url ='https://test.zaylt.njshangka.com'
         var lengths = that.data.key.length-4
@@ -345,16 +344,9 @@ Page({
         success: function (res) {
           wx.hideToast()
           if (res.data.code == 0) {
-            console.log(res.data.data.hospitalUser,res.data.data.maintainUser)
-              if (res.data.data.hospitalUser == 1 || res.data.data.maintainUser==1){
-                app.globalData.lastClient = 1
-                that.loginHos(key, password)
-              }else{
-                wx.showToast({
-                  title: '账号不是医院号',
-                })
-              }
-           
+			  app.globalData.lastClient = 2
+			  that.loginCli(key, password)
+            
           } else {
             wx.showModal({
               showCancel: false,

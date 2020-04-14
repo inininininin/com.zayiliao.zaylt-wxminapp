@@ -42,7 +42,7 @@ Page({
   },
   loginout: function (e) {
     wx.redirectTo({
-      url: '../../login/login',
+      url: '../../loginManage/loginManage',
     })
   },
   /**

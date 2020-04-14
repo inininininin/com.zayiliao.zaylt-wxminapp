@@ -1,26 +1,30 @@
 <!--pages/selectRole/selectRole.wxml-->
 <!-- <text>pages/selectRole/selectRole.wxml</text> -->
-<view class='selectNo' bindtap='selectNo'>切换账号</view>
+<!-- <view class='selectNo' bindtap='selectNo'>切换账号</view> -->
+<text class="selectRole">您有以下端口</text>
+<text class="enter">请选择进入</text>
 <view class='boxBoom'>
-  <view class='box lf' bindtap='hospital'>
-    <view class='boxTop'>
-      <image src='../img/out.png'></image>
-    </view>
-    <view class='boxBottom'>医院
-    </view>
-  </view>
-  <view class='box lf' bindtap='outpatient'>
-    <view class='boxTop'>
-      <image src='../img/hos.png'></image>
-    </view>
-    <view class='boxBottom'>门诊
+  <view class='box hospital {{active1}}' bindtap='hospital'>
+    <image src="../img/yy.png"></image>
+    <view>
+      <text>Hospital</text>
+      <text>医院端</text>
     </view>
   </view>
-  <view class='box lf' bindtap='patient'>
-    <view class='boxTop'>
-      <image src='../img/pat.png'></image>
-    </view>
-    <view class='boxBottom'>病源
+  <view class='box clinic {{active2}}' bindtap='outpatient'>
+    <image src="../img/mz.png"></image>
+    <view>
+      <text>Outpatient</text>
+      <text>门诊端</text>
     </view>
   </view>
+  <view class='box manage {{active3}}' bindtap='manage'>
+    <image src="../img/yying.png"></image>
+    <view>
+      <text>Operation</text>
+      <text>运营端</text>
+    </view>
+  </view>
+
+  <image class="goEnter" bindtap="goEnter" src="../img/go.png"></image>
 </view>

@@ -237,7 +237,7 @@ Page({
           that.lastPageNum();
         } else if (res.data.code == 20) {
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../../loginClinic/loginClinic',
           })
         } else {
           wx.showToast({
@@ -295,7 +295,7 @@ Page({
                             } else if (res.data.code == 20 || res.data.code == 26) {
                 wx.hideToast()
                 wx.navigateTo({
-                  url: '../../login/login',
+                  url: '../../loginClinic/loginClinic',
                 })
               }
             }
@@ -303,7 +303,7 @@ Page({
         } else if (res.data.code == 20 || res.data.code == 26) {
           wx.hideToast()
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../../loginClinic/loginClinic',
           })
         }
       }
@@ -430,7 +430,7 @@ Page({
         } else if (res.data.code == 20 || res.data.code == 26) {
           wx.hideToast()
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../../loginClinic/loginClinic',
           })
         }
 
@@ -472,7 +472,7 @@ Page({
       success: function (res) {
         if (res.data.code == 20 || res.data.code ==26) {
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../../loginClinic/loginClinic',
           })
         }
       }
@@ -510,7 +510,7 @@ Page({
         } else if (res.data.code == 20 || res.data.code == 26) {
           wx.hideToast()
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../../loginClinic/loginClinic',
           })
         }
       }

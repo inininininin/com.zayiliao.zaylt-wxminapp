@@ -65,7 +65,7 @@
     </view>
   </navigator>
 
-  <navigator url='../../login/login'>
+  <navigator url='../../loginClinic/loginClinic'>
     <view>
       <text>退出登录</text>
       <image src='../../img/ChevronCopy2@2x.png'></image>

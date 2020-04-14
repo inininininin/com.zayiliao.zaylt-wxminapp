@@ -6,43 +6,67 @@ Page({
    */
   data: {
     userToken:'',
+    // active1:'active',
+    // role:1,
+    active1:'',
+    role:'',
+    active2:'',
+    active3:'',
   },
   hospital: function () {
-    buttonDisabled: true,
-    wx.navigateTo({
-      url: '../hospitalList/hospitalList',
+    buttonDisabled: true
+    this.setData({
+      active1:'active',
+      active2:'',
+      active3:'',
+      role:1,
     })
   },
   outpatient: function () {
-    buttonDisabled: true,
-      wx.navigateTo({
-      url: '../outpatientList/outpatientList',
-      })
-  },
-  patient: function () {
-    buttonDisabled: true,
-      wx.navigateTo({
-      url: '../KpatientsList/KpatientsList',
-      })
-  },
-  selectNo:function(){
-    var that = this
-    wx.request({
-      url: 'https://www.njshangka.com/zaylt/c/useraction/logout',
-      header: {
-        'Content-type': 'application/json'
-      },
-      data: {
-        token: that.data.userToken,
-      },
-      success: function (res) {
-        if(res.data.code==0){
-          wx.navigateTo({
-            url: '../login/login',
-          })
-        }
-      }
+    buttonDisabled: true
+    this.setData({
+      active1:'',
+      active2:'active',
+      active3:'',
+      role:2,
     })
+  },
+  manage: function () {
+    this.setData({
+      active1:'',
+      active2:'',
+      active3:'active',
+      role:3,
+    })
+  },
+  goEnter:function(){
+    // var that = this
+    console.log(this.data.role)
+    if(this.data.role==1){
+      // if (res.data.data.type == 1) {
+      //   wx.navigateTo({
+      //     url: '../promoter/index/index',
+      //   })
+      // } else {
+        wx.navigateTo({
+          url: '../index/index',
+        })
+      // }
+    }else if(this.data.role==2){
+      wx.switchTab({
+        url: '../out/index/index',
+      })
+    }else if(this.data.role==3){
+      wx.navigateTo({
+        url: '../manage/index/index',
+      })
+    }else{
+      wx.showToast({
+        title: '请选择登录端',
+        icon:"none"
+      })
+    }
+    
   },
   /**
    * 生命周期函数--监听页面加载

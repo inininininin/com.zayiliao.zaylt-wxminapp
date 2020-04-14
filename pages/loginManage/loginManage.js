@@ -285,17 +285,9 @@ Page({
       app.globalData.url = 'https://zaylt.njshangka.com'
     }
     
-    if (that.data.currentTab == 0) {
-      that.changeHos(key,that.data.code, password)
-    } else if (that.data.currentTab == 1) {
-      that.changeCli(key, that.data.code, password)
-    } else {
-      // that.changeMan(key, password)
-      wx.showToast({
-        title: '维护中',
-        duration: 2000,
-      })
-    }
+   
+      that.changeMan(key, that.data.code, password)
+     
     // setTimeout(function () {
     //   if (that.data.currentTab == 0) {
     //     that.changeHos(key, password)
@@ -345,16 +337,15 @@ Page({
         success: function (res) {
           wx.hideToast()
           if (res.data.code == 0) {
-            console.log(res.data.data.hospitalUser,res.data.data.maintainUser)
-              if (res.data.data.hospitalUser == 1 || res.data.data.maintainUser==1){
-                app.globalData.lastClient = 1
-                that.loginHos(key, password)
-              }else{
-                wx.showToast({
-                  title: '账号不是医院号',
-                })
-              }
-           
+            console.log(res.data.data.managerUser)
+            if (res.data.data.managerUser == 1) {
+              app.globalData.lastClient = 3
+              that.loginMan(key, password)
+            } else {
+              wx.showToast({
+                title: '账号不是运营号',
+              })
+            }
           } else {
             wx.showModal({
               showCancel: false,

@@ -271,10 +271,16 @@ Page({
           }
         }
         else if (res.data.code == 20 || res.data.code == 26) {
-          wx.hideToast()
-          wx.navigateTo({
-            url: '../login/login',
+          wx.showToast({
+            title: '请登录',
+            icon:"none"
           })
+         setTimeout(function(){
+          wx.navigateTo({
+            url: '../../loginManage/loginManage',
+          })
+         },1000)
+          
         }
       }
     })

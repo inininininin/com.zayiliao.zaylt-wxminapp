@@ -77,7 +77,7 @@ Page({
         url: '../../cropper/cropper',
       })
     }
-   
+
   },
  
   bindChooiceProduct: function () {
