@@ -108,7 +108,7 @@ App({
     usrBaseInfo: null,
     usrDesInfo: null,
     list: [], //存放tabBar的数据
-    url: 'https://zaylt.njshangka.com',
+    url:'https://zaylt.njshangka.com',
     token: '',//'1984750073886',
     userToken:'',
     clinicId:'',

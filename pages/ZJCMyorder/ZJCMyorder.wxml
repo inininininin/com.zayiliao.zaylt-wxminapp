@@ -20,13 +20,13 @@
 <view class='list' wx:for="{{schemeList}}" wx:for-item="item" wx:key="index" wx:if="{{currentTab==0}}">
   <navigator url='../ZJCOrderDetailnoDetail/ZJCOrderDetailnoDetail?id={{item.orderId}}&overIf=0'>
     <view class='line1'>
-      <image src='../img/blue1@2x.png'></image>
+      <image  mode="aspectFill"  src='../img/blue1@2x.png'></image>
       <view class='line1Mid'>
         <view>订单编号：{{item.orderId}}</view>
         <text>{{item.addTimes}}</text>
       </view>
       <view class='line1Det'>详情
-        <image src='../img/back.png'></image>
+        <image  mode="aspectFill"  src='../img/back.png'></image>
       </view>
     </view>
   </navigator>
@@ -34,13 +34,13 @@
 <view class='list' wx:for="{{schemeList}}" wx:for-item="item" wx:key="index" wx:if="{{currentTab==1}}">
   <navigator url='../ZJCOrderDetailnoDetail/ZJCOrderDetailnoDetail?id={{item.orderId}}&overIf=1'>
     <view class='line1'>
-      <image src='../img/orange1@2x.png'></image>
+      <image  mode="aspectFill"  src='../img/orange1@2x.png'></image>
       <view class='line1Mid'>
         <view>订单编号：{{item.orderId}}</view>
         <text>{{item.addTimes}}</text>
       </view>
       <view class='line1Det'>详情
-        <image src='../img/back.png'></image>
+        <image  mode="aspectFill"  src='../img/back.png'></image>
       </view>
     </view>
   </navigator>
@@ -49,13 +49,13 @@
   <navigator url='../ZJCOrderDetail1/ZJCOrderDetail1?id={{item.orderId}}'>
     <view class='finishLine'>
       <view class='line2'>
-        <image src='../img/green1@2x.png'></image>
+        <image  mode="aspectFill"  src='../img/green1@2x.png'></image>
         <view class='line1Mid'>
           <view>订单编号：{{item.orderId}}</view>
           <text>{{item.addTimes}}</text>
         </view>
         <view class='line1Det'>详情
-          <image src='../img/back.png'></image>
+          <image  mode="aspectFill"  src='../img/back.png'></image>
         </view>
       </view>
       <view wx:if="{{item.status==4}}" class='shixiao'>订单已失效</view>

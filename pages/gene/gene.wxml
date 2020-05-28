@@ -3,13 +3,13 @@
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
       <view>
-        <!-- <image bindtap='userIndex' class='search' style='margin-left:30rpx;' src='../img/sousuo@2x.png'></image> -->
+        <!-- <image  mode="aspectFill"  bindtap='userIndex' class='search' style='margin-left:30rpx;' src='../img/sousuo@2x.png'></image> -->
 
         <!-- <picker bindchange="bindPickerChange" value="{{areaIndex}}" range="{{area}}">
           <view class="picker">
             {{area[areaIndex]}}
           </view>
-          <image class='arror' src='{{arrImg}}'></image>
+          <image  mode="aspectFill"  class='arror' src='{{arrImg}}'></image>
         </picker> -->
         <view class='fenlei'>
           <!-- <text>地址</text> -->
@@ -17,8 +17,8 @@
           <view class='select_box'>
             <view class='select' catchtap='selectTaps'>
               <text class='select_text'>{{selectDatas[indexs]}}</text>
-              <!-- <image class='words_img' src='../../images/sanjiao.png'></image> -->
-              <image class='select_img {{shows&&"select_img_rotate"}}' src='../img/material-icon@2x.png'></image>
+              <!-- <image  mode="aspectFill"  class='words_img' src='../../images/sanjiao.png'></image> -->
+              <image  mode="aspectFill"  class='select_img {{shows&&"select_img_rotate"}}' src='../img/material-icon@2x.png'></image>
             </view>
             <view class='option_box' style='height:{{shows?(selectDatas.length>5?300:selectDatas.length*70):0}}rpx;'>
               <text class='option' style='{{indexs==selectDatas.length-1&&"border:0;"}}' wx:for='{{selectDatas}}' wx:key='this' data-index='{{index}}' catchtap='optionTaps'>{{item}}</text>
@@ -34,27 +34,27 @@
 <!-- <navigator url='../geneShare/geneShare'>
   <view class='shareJch'>
     <text>分配监测盒</text>
-    <image src='../img/ChevronCopy2@2x.png'></image>
+    <image  mode="aspectFill"  src='../img/ChevronCopy2@2x.png'></image>
     <text>剩余20个</text>
   </view>
 </navigator> -->
 
 <view class='tabulate' style='margin-bottom:100rpx;'>
-  <navigator  wx:for='{{schemeList}}' url='../geneDetail/geneDetail?geneTestSamplePackId={{item.geneTestSamplePackId}}'>
+  <navigator  wx:for='{{schemeList}}' url='../out/geneDetail/geneDetail?geneTestSamplePackId={{item.geneTestSamplePackId}}'>
     <view class='outpatient'>
       <view class='outLine1'>
-        <image class='hosimg' src='../img/small-logo@2x.png'></image>
+        <image  mode="aspectFill"  class='hosimg' src='../img/small-logo@2x.png'></image>
         <text class='hosname'>{{item.hospital||''}}</text>
         <view wx:if='{{item.status==1||item.status==2}}'>
-          <image src='../img/wait@2x.png'></image>
+          <image  mode="aspectFill"  src='../img/wait@2x.png'></image>
           <text style='color:rgb(30,202,198)'>未出报告</text>
         </view>
         <view wx:if='{{item.status==3}}'>
-          <image src='../img/yes@2x.png'></image>
+          <image  mode="aspectFill"  src='../img/yes@2x.png'></image>
           <text style='color:rgb(255,149,27)'>已出报告</text>
         </view>
         <view wx:if='{{item.status==0}}'>
-          <image src='../img/no@2x.png'></image>
+          <image  mode="aspectFill"  src='../img/no@2x.png'></image>
           <text style='color:rgb(43,119,239)'>未采样本</text>
         </view>
       </view>
@@ -73,19 +73,19 @@
 
 <view class='tabbarBtn'>
   <view bindtap='index'>
-    <image class='bottomBthimg1' src='../img/shouye@2x.png'></image>
+    <image  mode="aspectFill"  class='bottomBthimg1' src='../img/shouye@2x.png'></image>
     <text>首页</text>
   </view>
   <view bindtap='clinic'>
-    <image class='bottomBthimg2' src='../img/Hospital@2x.png'></image>
+    <image  mode="aspectFill"  class='bottomBthimg2' src='../img/Hospital@2x.png'></image>
     <text>门诊</text>
   </view>
   <view bindtap='gene'>
-    <image class='bottomBthimg2' src='../img/jiyin-blue@2x.png'></image>
+    <image  mode="aspectFill"  class='bottomBthimg2' src='../img/jiyin-blue@2x.png'></image>
     <text  class='active'>集采</text>
   </view>
   <view  bindtap='mine'>
-    <image class='bottomBthimg3' src='../img/wode@2x.png'></image>
+    <image  mode="aspectFill"  class='bottomBthimg3' src='../img/wode@2x.png'></image>
     <text >我的</text>
   </view>
 </view>

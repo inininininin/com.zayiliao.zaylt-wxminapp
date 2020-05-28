@@ -7,7 +7,7 @@
         <text class='outpatientName'>门诊名称：{{name}}</text>
         <text class='patient'>病源{{patientCount}}个</text>
       </view>
-      <image class='rt back' src='../img/back.png'></image>
+      <image  mode="aspectFill"  class='rt back' src='../img/back.png'></image>
     </view>
   </navigator>
 </template>

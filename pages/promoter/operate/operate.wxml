@@ -5,7 +5,7 @@
     <view class="title-bar" style="height:{{titleBarHeight}}px">
       <view>
         <view bindtap='backHistory' class='backHis'>
-          <image style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../../img/shape@2x.png'></image>
+          <image  mode="aspectFill"  style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../../img/shape@2x.png'></image>
         </view>
         <text class='titleText'>{{navtitle}}</text>
       </view>
@@ -20,7 +20,7 @@
         <view>
           <text>{{item.title}}</text>
           <view>
-            <image src='../../img/time@2x.png'></image>
+            <image  mode="aspectFill"  src='../../img/time@2x.png'></image>
             <text style='color:rgb(153,153,153)'>{{item.addTime}}</text>
           </view>
         </view>
@@ -30,7 +30,7 @@
     </navigator>
   </view>
   <view class="withoutNum" wx:if='{{clinicNumber==0}}'>
-    <image src="../../img/wushuju.png"></image>
+    <image  mode="aspectFill"  src="../../img/wushuju.png"></image>
     <text>暂无数据</text>
   </view>
 </view>

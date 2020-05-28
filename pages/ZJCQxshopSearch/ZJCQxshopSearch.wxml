@@ -2,9 +2,9 @@
   <view class="header">
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
-      <image bindtap='backHistory' class="backHistory" style='margin-left:10rpx;padding: 20rpx 20rpx;border-radius:6rpx;display:inline-block' src='../img/backArrow.png'></image>
+      <image  mode="aspectFill"  bindtap='backHistory' class="backHistory" style='margin-left:10rpx;padding: 20rpx 20rpx;border-radius:6rpx;display:inline-block' src='../img/backArrow.png'></image>
       <view class='search'>
-        <image style='display:inline-block;top:{{15+statusBarHeight}}px;left:95rpx;width:31rpx;' src='../img/sousuo@2x.png'></image>
+        <image  mode="aspectFill"  style='display:inline-block;top:{{15+statusBarHeight}}px;left:95rpx;width:31rpx;' src='../img/sousuo@2x.png'></image>
         <input bindinput='input' placeholder-style='color:#999' placeholder='搜索门诊名'></input>
       </view>
     </view>
@@ -14,7 +14,7 @@
   <view class="children _44f602a" class="children_item _44f602a" wx:for="{{ showList }}" wx:for-item="item" wx:key="index">
     <view hover-class="none">
       <view bindtap='navigator1' data-url='../ZJCQxDetail/ZJCQxDetail?deviceId={{item.deviceId}}&count={{item.countInShoppingcart}}'>
-        <image src='{{item.cover}}'></image>
+        <image  mode="aspectFill"  src='{{item.cover}}'></image>
         <!-- </navigator> -->
         <view class="child_name _44f602a" data-name='{{item.name}}' bindtap='selectOver'>
           <!-- <navigator class='navigator2' url='../ZJCQxDetail/ZJCQxDetail?deviceId={{item.deviceId}}&count={{item.countInShoppingcart}}'> -->
@@ -22,9 +22,9 @@
           <view class='child_name_2'>{{ item.brief }}</view>
           <!-- </navigator> -->
           <view class='adddel' catchtap="cool">
-            <image data-id="{{ item.deviceId }}" catchtap='del' data-num='{{item.countInShoppingcart}}' wx:if='{{item.countInShoppingcart!=0}}' src='../img/jian@2x.png'></image>
+            <image  mode="aspectFill"  data-id="{{ item.deviceId }}" catchtap='del' data-num='{{item.countInShoppingcart}}' wx:if='{{item.countInShoppingcart!=0}}' src='../img/jian@2x.png'></image>
             <input bindblur='inputVal' data-num='{{item.countInShoppingcart}}' data-id="{{ item.deviceId }}" wx:if='{{item.countInShoppingcart!=0}}' value='{{item.countInShoppingcart}}'></input>
-            <image data-id="{{ item.deviceId }}" catchtap='add' style='float:right' data-num='{{item.countInShoppingcart}}' src='../img/jia@2x.png'></image>
+            <image  mode="aspectFill"  data-id="{{ item.deviceId }}" catchtap='add' style='float:right' data-num='{{item.countInShoppingcart}}' src='../img/jia@2x.png'></image>
           </view>
         </view>
       </view>

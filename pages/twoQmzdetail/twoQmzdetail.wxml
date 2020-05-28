@@ -2,7 +2,7 @@
 <view>
   <include src="../common/common.wxml" />
 </view>
-<image class='topimg' src='../img/he.png'></image>
+<image  mode="aspectFill"  class='topimg' src='../img/he.png'></image>
 <view class='mz'>
   <text class='mztitle'>{{schemeList.name}}</text>
   <text class='mzdoc'>{{schemeList.headmanName}}</text>
@@ -36,7 +36,7 @@
 <navigator url='../twoMzbylist/twoMzbylist?id={{clinicId}}'>
   <view class='lookmore' wx:if='{{long==1}}'>
   <text>查看更多</text>
-  <image src='../img/back.png'></image>
+  <image  mode="aspectFill"  src='../img/back.png'></image>
 </view>
 </navigator>
 

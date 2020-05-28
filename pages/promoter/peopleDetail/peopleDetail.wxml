@@ -5,18 +5,18 @@
     <view class="title-bar" style="height:{{titleBarHeight}}px">
       <view>
         <view bindtap='backHistory' class='backHis'>
-          <image style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../../img/shape@2x.png'></image>
+          <image  mode="aspectFill"  style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../../img/shape@2x.png'></image>
         </view>
-        <!-- <image class="search" catchtap="edit" src="../../img/bianji@2x.png"></image> -->
+        <!-- <image  mode="aspectFill"  class="search" catchtap="edit" src="../../img/bianji@2x.png"></image> -->
         <!-- <text class='titleText'>{{navtitle}}</text> -->
-        <!-- <image class="add" catchtap="delete" src="../../img/shanchu@2x.png"></image> -->
+        <!-- <image  mode="aspectFill"  class="add" catchtap="delete" src="../../img/shanchu@2x.png"></image> -->
       </view>
     </view>
   </view>
 </view>
 <view class="topIndex" style="position:fixed;top:{{statusBarHeight+titleBarHeight}}px">
   <view>
-    <image mode="aspectFill" src="{{detail.cover||''}}"></image>
+    <image  mode="aspectFill"  mode="aspectFill" src="{{detail.cover||''}}"></image>
     <text>长按可分享和保存</text>
   </view>
   <view>
@@ -40,11 +40,11 @@
   <view wx:if='{{clinicNum!=0}}' class="clinicItem" bindtap="clinicDetail" data-id='{{item.hospitalClinicId}}' wx:for='{{schemeList}}'>
     <view>
       <text>{{item.name||''}}</text>
-      <!-- <image catchtap="changeClinic" data-id="{{item.hospitalClinicId}}" data-name="{{item.name}}" src="../../img/zhuanyi@2x.png"></image> -->
+      <!-- <image  mode="aspectFill"  catchtap="changeClinic" data-id="{{item.hospitalClinicId}}" data-name="{{item.name}}" src="../../img/zhuanyi@2x.png"></image> -->
     </view>
   </view>
   <view class="withoutNum" wx:if='{{clinicNum==0}}'>
-    <image src="../../img/wushuju.png"></image>
+    <image  mode="aspectFill"  src="../../img/wushuju.png"></image>
     <text>暂无数据</text>
   </view>
 </view>
@@ -54,7 +54,7 @@
 <view class="changeThis" wx:if='{{showIsOne}}'>
   <view class="title">
     <text>编辑</text>
-    <image bindtap="close" src="../../img/close@2x.png"></image>
+    <image  mode="aspectFill"  bindtap="close" src="../../img/close@2x.png"></image>
   </view>
   <text>姓名：</text>
   <input bindinput="name" value="{{name||''}}"></input>
@@ -67,7 +67,7 @@
 <view class="changeThisClinic" wx:if='{{showIsTwo}}'>
   <view class="title">
     <text>移交门诊</text>
-    <image bindtap="close" src="../../img/close@2x.png"></image>
+    <image  mode="aspectFill"  bindtap="close" src="../../img/close@2x.png"></image>
   </view>
   <view>将
     <text>{{changeClinicName}}</text>
@@ -77,7 +77,7 @@
     <view class="picker" style="text-align:right;color:#2b77ef;">
       {{array[index].name}}
     </view>
-    <image class="downIcon" src="../../img/down@2x.png"></image>
+    <image  mode="aspectFill"  class="downIcon" src="../../img/down@2x.png"></image>
   </picker>
   <view bindtap='makeSure' class='useNow'>确定</view>
 </view>

@@ -4,14 +4,14 @@
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
     <view>
-    <image bindtap='backHistory' style='display:inline-block;top:{{2+statusBarHeight}}px;left:10rpx;padding:20rpx;'  src='../img/backArrow.png'></image>
+    <image  mode="aspectFill"  bindtap='backHistory' style='display:inline-block;top:{{2+statusBarHeight}}px;left:10rpx;padding:20rpx;'  src='../img/backArrow.png'></image>
     <text>{{navtitle}}</text>
     </view>
     </view>
   </view>
 </view>
 <view class='lineTop'>
-  <image src='../img/lishijilu@2x.png'></image>
+  <image  mode="aspectFill"  src='../img/lishijilu@2x.png'></image>
   <text>兑换历史明细</text>
 </view>
 <view style='clear:both'></view>
@@ -21,7 +21,7 @@
 
 <view  wx:for="{{list}}" wx:for-item="item" wx:key="index" >
 <view class='listItem'>
-      <image src='{{item.details[0].cover}}'></image>
+      <image  mode="aspectFill"  src='{{item.details[0].cover}}'></image>
       <view class='listDetail'>
         <text class='listName'>{{item.details[0].name||""}}</text>
         <text class='listIntro'>{{item.details[0].unitExchangepoint||""}}   积分/个</text>

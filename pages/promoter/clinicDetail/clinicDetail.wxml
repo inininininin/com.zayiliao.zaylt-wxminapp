@@ -4,10 +4,10 @@
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
       <view>
-        <image class="image" bindtap='backHistory' style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;' src='../../img/backArrow.png'></image>
+        <image  mode="aspectFill"  class="image" bindtap='backHistory' style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;' src='../../img/backArrow.png'></image>
         <view class="save">
           <!-- <text>保存</text> -->
-          <image bindtap="edit" src="../../img/Preview.png"></image>
+          <image  mode="aspectFill"  bindtap="edit" src="../../img/Preview.png"></image>
         </view>
         <text class="text">{{navtitle}}</text>
       </view>
@@ -16,7 +16,7 @@
 </view>
 <view class="addPatientBox">
   <view class="addPatient" bindtap="addPatient">
-  <image src="../../img/xinzeng@2x.png"></image>
+  <image  mode="aspectFill"  src="../../img/xinzeng@2x.png"></image>
   <text>新增病源</text>
 </view>
 </view>
@@ -32,10 +32,10 @@
      <view class='indexbox' wx:for='{{list1}}' >
       <navigator url='{{item.status==4?"../../editPatient/editPatient?id=":"../../out/seeAdoctor/seeAdoctor?id="}}{{item.itemId}}'>
         <view class="box">
-            <image wx:if='{{item.status==1}}' src="../img/orange@2x.png"></image>
-            <image wx:if='{{item.status==4}}' src="../img/blue@2x.png"></image>
+            <image  mode="aspectFill"  wx:if='{{item.status==1}}' src="../img/orange@2x.png"></image>
+            <image  mode="aspectFill"  wx:if='{{item.status==4}}' src="../img/blue@2x.png"></image>
             <view>
-              <view>{{item.realname}}<image wx:if='{{item.status==1}}' src="../img/red-up@2x.png" style="margin-left:10rpx;"></image></view>
+              <view>{{item.realname}}<image  mode="aspectFill"  wx:if='{{item.status==1}}' src="../img/red-up@2x.png" style="margin-left:10rpx;"></image></view>
               <text>推送：{{item.pushTime}}</text>
               <text>所属门诊：{{item.clinicName}}</text>
             </view>
@@ -45,7 +45,7 @@
       </navigator>
     </view>
 <view class="withoutNum" wx:if='{{totalCount==0}}'>
-    <image src="../../img/wushuju.png"></image>
+    <image  mode="aspectFill"  src="../../img/wushuju.png"></image>
     <text>暂无数据</text>
   </view>
 </view>

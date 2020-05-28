@@ -3,10 +3,10 @@
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
       <view>
-        <image bindtap='backHistory' style='margin-left:10rpx;border-radius:6rpx;display:inline-block;padding:20rpx;' src='../img/backArrow.png'></image>
+        <image  mode="aspectFill"  bindtap='backHistory' style='margin-left:10rpx;border-radius:6rpx;display:inline-block;padding:20rpx;' src='../img/backArrow.png'></image>
         
         <view class="searchBox" bindtap="searchBox">
-          <image src="../img/search1.png"></image>
+          <image  mode="aspectFill"  src="../img/search1.png"></image>
           <text>{{navtitle}}</text>
         </view>
       </view>
@@ -18,13 +18,13 @@
     <block wx:for="{{movies}}">
       <swiper-item>
         <navigator wx:if='{{item.type==4}}' url='../ZJCQxDetail/ZJCQxDetail?deviceId={{item.link}}'>
-        <image src="{{item.cover}}" class="slide-image" mode="aspectFill" />
+        <image  mode="aspectFill"  src="{{item.cover}}" class="slide-image" mode="aspectFill" />
         </navigator>
         <navigator wx:if='{{item.type==1}}' url='../webview/webview?href={{item.link}}'>
-        <image src="{{item.cover}}" class="slide-image" mode="aspectFill" />
+        <image  mode="aspectFill"  src="{{item.cover}}" class="slide-image" mode="aspectFill" />
         </navigator>
         <navigator wx:if='{{item.type==0}}' url=''>
-        <image src="{{item.cover}}" class="slide-image" mode="aspectFill" />
+        <image  mode="aspectFill"  src="{{item.cover}}" class="slide-image" mode="aspectFill" />
         </navigator>
       </swiper-item>
     </block>
@@ -47,7 +47,7 @@
     <view class="children _44f602a" class="children_item _44f602a" wx:for="{{ showList }}" wx:for-item="item" wx:key="index">
       <view hover-class="none">
         <navigator class='navigator1' url='../ZJCQxDetail/ZJCQxDetail?deviceId={{item.deviceId}}&count={{item.countInShoppingcart}}'>
-          <image src='{{item.cover}}'></image>
+          <image  mode="aspectFill"  src='{{item.cover}}'></image>
         </navigator>
         <view class="child_name _44f602a" data-name='{{item.name}}' bindtap='selectOver'>
           <navigator class='navigator2' url='../ZJCQxDetail/ZJCQxDetail?deviceId={{item.deviceId}}&count={{item.countInShoppingcart}}'>
@@ -55,9 +55,9 @@
             <view class='child_name_2'>{{ item.brief }}</view>
           </navigator>
           <view class='adddel'>
-            <image data-id="{{ item.deviceId }}" bindtap='del' data-num='{{item.countInShoppingcart}}' wx:if='{{item.countInShoppingcart!=0}}' src='../img/jian@2x.png'></image>
+            <image  mode="aspectFill"  data-id="{{ item.deviceId }}" bindtap='del' data-num='{{item.countInShoppingcart}}' wx:if='{{item.countInShoppingcart!=0}}' src='../img/jian@2x.png'></image>
             <input bindblur='inputVal' data-num='{{item.countInShoppingcart}}' data-id="{{ item.deviceId }}" wx:if='{{item.countInShoppingcart!=0}}' value='{{item.countInShoppingcart}}'></input>
-            <image data-id="{{ item.deviceId }}" bindtap='add' style='float:right' data-num='{{item.countInShoppingcart}}' src='../img/jia@2x.png'></image>
+            <image  mode="aspectFill"  data-id="{{ item.deviceId }}" bindtap='add' style='float:right' data-num='{{item.countInShoppingcart}}' src='../img/jia@2x.png'></image>
           </view>
         </view>
       </view>
@@ -66,6 +66,6 @@
 </view>
 
 <view class='shoppingCartList' bindtap='shoppingCartList'>
-  <image src='../img/jicai-cheng@2x.png'></image>
+  <image  mode="aspectFill"  src='../img/jicai-cheng@2x.png'></image>
   <text>{{qixienum}}</text>
 </view>

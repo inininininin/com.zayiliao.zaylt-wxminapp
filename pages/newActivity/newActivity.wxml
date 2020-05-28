@@ -5,8 +5,8 @@
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
       <view>
-        <image wx:if='{{lookThis}}' class="image" bindtap='backHistory' style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;' src='../img/shape@2x.png'></image>
-        <image wx:if='{{!lookThis}}' class="image" bindtap='backHistoryOnly' style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;' src='../img/shape@2x.png'></image>
+        <image  mode="aspectFill"  wx:if='{{lookThis}}' class="image" bindtap='backHistory' style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;' src='../img/shape@2x.png'></image>
+        <image  mode="aspectFill"  wx:if='{{!lookThis}}' class="image" bindtap='backHistoryOnly' style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;' src='../img/shape@2x.png'></image>
         <text wx:if='{{lookThis}}' class="save" bindtap="save" style=" margin-left: 95rpx !important;background:{{bgColor}};color:{{color}},">预览</text>
         <text wx:if='{{!lookThis}}' class="save" bindtap="supply" style=" margin-left: 95rpx !important">发布</text>
         <text class="text" style="margin-left:-195rpx !important">{{navtitle}}</text>
@@ -18,7 +18,7 @@
 <view wx:if='{{lookThis}}'>
   <view class="topImg" style="background:url({{topImg}}) no-repeat;background-size:cover;background-position: center;">
     <view bindtap="addPic">
-      <image src="../img/replace@2x.png"></image>
+      <image  mode="aspectFill"  src="../img/replace@2x.png"></image>
       <text>选择背景</text>
     </view>
   </view>
@@ -75,7 +75,7 @@
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
       <view>
-        <image class="image" bindtap='backHistory' style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;' src='../img/shape@2x.png'></image>
+        <image  mode="aspectFill"  class="image" bindtap='backHistory' style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;' src='../img/shape@2x.png'></image>
         <text class="text" style="margin-left:0 !important">{{navtitle}}</text>
       </view>
     </view>

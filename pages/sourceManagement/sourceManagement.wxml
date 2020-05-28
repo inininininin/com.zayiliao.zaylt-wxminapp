@@ -60,20 +60,20 @@
           <view class="title-bar" style="height:{{titleBarHeight}}px">
             <view>
               <view class='backHistory' bindtap="backHistory">
-                <image class='back' style='margin-left:30rpx;border-radius:6rpx;display:inline-block' src='../img/back-white@2x.png'></image>
+                <image  mode="aspectFill"  class='back' style='margin-left:30rpx;border-radius:6rpx;display:inline-block' src='../img/back-white@2x.png'></image>
               </view>
 
               <view class='search' >                
-                <image  src='../img/search1.png'></image>
+                <image  mode="aspectFill"   src='../img/search1.png'></image>
                 <input bindinput="search" placeholder="搜索病源" placeholder-class="placeholderSs"></input>
                 <!-- 搜索 -->
               </view>
               <view class='select' bindtap='showview'>
                 <!-- 筛选 -->
-                <image  src='../img/screen.png'></image>
+                <image  mode="aspectFill"   src='../img/screen.png'></image>
               </view>
               <!-- <view class='newsBox'>
-                <image bindtap='news' class='news' style='margin-left:30rpx;border-radius:6rpx;display:inline-block' src='../img/xiaoxi@2x.png'></image>
+                <image  mode="aspectFill"  bindtap='news' class='news' style='margin-left:30rpx;border-radius:6rpx;display:inline-block' src='../img/xiaoxi@2x.png'></image>
                 <text style='top:{{7+statusBarHeight}}px;left:505rpx;'>{{num}}</text>
               </view> -->
 
@@ -98,12 +98,12 @@
 <view class='indexbox' wx:for='{{list0}}' hidden="{{currentTab!==0}}">
       <navigator url='{{item.status==4?"../editPatient/editPatient?id=":"../out/seeAdoctor/seeAdoctor?id="}}{{item.itemId}}'>
         <view class="box">
-            <image wx:if='{{item.status==1}}' src="../img/orange@2x.png"></image>
-            <image wx:if='{{item.status==4}}' src="../img/blue@2x.png"></image>
+            <image  mode="aspectFill"  wx:if='{{item.status==1}}' src="../img/orange@2x.png"></image>
+            <image  mode="aspectFill"  wx:if='{{item.status==4}}' src="../img/blue@2x.png"></image>
             <view>
-              <view>{{item.realname}} <image wx:if='{{item.status==1}}' src="../img/red-up@2x.png" style="margin-left:10rpx;"></image></view>
-              <text>推送：{{item.pushTime}}</text>
-              <text>所属门诊：{{item.clinicName}}</text>
+              <view>{{item.realname||''}} <image  mode="aspectFill"  wx:if='{{item.status==1}}' src="../img/red-up@2x.png" style="margin-left:10rpx;"></image></view>
+              <text>推送：{{item.pushTime||''}}</text>
+              <text>所属门诊：{{item.clinicName||''}}</text>
             </view>
             <view catchtap="makesure" data-id="{{item.itemId}}" style="z-index:999"  wx:if='{{item.status==1}}'  class="makesure">确认就诊</view>
             <view  wx:if='{{item.status==4}}'  class="nosure">已就诊</view>
@@ -119,12 +119,12 @@
     <view class='indexbox' wx:for='{{list1}}' hidden="{{currentTab!==1}}">
       <navigator url='{{item.status==4?"../editPatient/editPatient?id=":"../out/seeAdoctor/seeAdoctor?id="}}{{item.itemId}}'>
         <view class="box">
-            <image wx:if='{{item.status==1}}' src="../img/orange@2x.png"></image>
-            <image wx:if='{{item.status==4}}' src="../img/blue@2x.png"></image>
+            <image  mode="aspectFill"  wx:if='{{item.status==1}}' src="../img/orange@2x.png"></image>
+            <image  mode="aspectFill"  wx:if='{{item.status==4}}' src="../img/blue@2x.png"></image>
             <view>
-              <view>{{item.realname}}<image wx:if='{{item.status==1}}' src="../img/red-up@2x.png" style="margin-left:10rpx;"></image></view>
-              <text>推送：{{item.pushTime}}</text>
-              <text>所属门诊：{{item.clinicName}}</text>
+              <view>{{item.realname||''}}<image  mode="aspectFill"  wx:if='{{item.status==1}}' src="../img/red-up@2x.png" style="margin-left:10rpx;"></image></view>
+              <text>推送：{{item.pushTime||''}}</text>
+              <text>所属门诊：{{item.clinicName||''}}</text>
             </view>
             <view  wx:if='{{item.status==1}}'  data-id="{{item.itemId}}" catchtap="makesure" style="z-index:999"   class="makesure">确认就诊</view>
             <view  wx:if='{{item.status==4}}'  class="nosure">已就诊</view>
@@ -134,12 +134,12 @@
     <view class='indexbox' wx:for='{{list2}}' hidden="{{currentTab!==2}}">
       <navigator url='{{item.status==4?"../editPatient/editPatient?id=":"../out/seeAdoctor/seeAdoctor?id="}}{{item.itemId}}'>
         <view class="box">
-            <image wx:if='{{item.status==1}}' src="../img/orange@2x.png"></image>
-            <image wx:if='{{item.status==4}}' src="../img/blue@2x.png"></image>
+            <image  mode="aspectFill"  wx:if='{{item.status==1}}' src="../img/orange@2x.png"></image>
+            <image  mode="aspectFill"  wx:if='{{item.status==4}}' src="../img/blue@2x.png"></image>
             <view>
-              <view>{{item.realname}} <image wx:if='{{item.status==1}}' src="../img/red-up@2x.png" style="margin-left:10rpx;"></image></view>
-              <text>推送：{{item.pushTime}}</text>
-              <text>所属门诊：{{item.clinicName}}</text>
+              <view>{{item.realname||''}} <image  mode="aspectFill"  wx:if='{{item.status==1}}' src="../img/red-up@2x.png" style="margin-left:10rpx;"></image></view>
+              <text>推送：{{item.pushTime||''}}</text>
+              <text>所属门诊：{{item.clinicName||''}}</text>
             </view>
             <view  wx:if='{{item.status==1}}'  data-id="{{item.itemId}}"  catchtap="makesure" style="z-index:999"  class="makesure">确认就诊</view>
             <view  wx:if='{{item.status==4}}'  class="nosure">已就诊</view>

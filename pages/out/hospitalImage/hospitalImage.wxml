@@ -4,7 +4,7 @@
       <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
       <view class="title-bar" style="height:{{titleBarHeight}}px">
         <view>
-          <image bindtap='backHistory' style='display:inline-block;top:{{statusBarHeight}}px;' src='../../img/back-white@2x.png'></image>
+          <image  mode="aspectFill"  bindtap='backHistory' style='display:inline-block;top:{{statusBarHeight}}px;' src='../../img/back-white@2x.png'></image>
         </view>
       </view>
     </view>
@@ -35,7 +35,7 @@
 </view>
 <view class='required specialDepartment' hidden="{{currentTab!==1}}">
     <view wx:for='{{list}}' bindtap="specialOffice" data-id='{{item.itemId}}'>
-      <image src='{{item.cover}}'></image>
+      <image  mode="aspectFill"  src='{{item.cover}}'></image>
       <text>{{item.name}}</text>
     </view>
 </view>

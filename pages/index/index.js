@@ -15,6 +15,29 @@ Page({
     kw: '',
     schemeList: [],
     cover:[],
+    zindexThis:0,
+    bgColorThis:'',
+    colorThis:'#fff',
+    bgSizeThis:''
+  },
+  onPageScroll: function (e) {
+    // console.log(e.scrollTop)
+    var heightThis=this.data.titleBarHeight+this.data.statusBarHeight
+    if(e.scrollTop>0){
+      this.setData({
+        zindexThis:1000,
+        bgColorThis:'url(https://zaylt.njshangka.com/resource/img/bj@2x.png)',
+        bgSizeThis:'cover',
+        // colorThis:'#333'
+      })
+    }else{
+      this.setData({
+        zindexThis:0,
+        bgColorThis:'',
+        bgSizeThis:''
+    // colorThis:'#fff'
+      })
+    }
   },
   qdmz:function(e){
       wx.navigateTo({

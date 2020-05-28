@@ -6,7 +6,7 @@
 <view class='topImg' style='background:url({{list.cover}}) no-repeat;background-size:cover;background-position: center;'></view>
 <text class='title'>{{list.title}}</text>
 <view class='hospitalName'>
-  <image src='../../img/logo@2x.png'></image>
+  <image  mode="aspectFill"  src='../../img/logo@2x.png'></image>
   <view>
     <text>{{list.hosptialName}}</text>
     <text>{{list.addTime}}</text>
@@ -26,12 +26,12 @@
       <view class='title'>请选择分享平台</view>
       <view class='shareteam'>
         <button open-type='share' style='margin-left:25% !important'>
-          <image bindtap='sharewx' class='wx' src='../../img/weixin@2x.png'></image>
+          <image  mode="aspectFill"  bindtap='sharewx' class='wx' src='../../img/weixin@2x.png'></image>
           <text>分享到微信</text>
         </button>
         <!-- bindtap='sharepyq' -->
         <!-- <button  bindtap='shareIs'>
-              <image class='pyq' src='../../img/pengyouquan@2x.png'></image>
+              <image  mode="aspectFill"  class='pyq' src='../../img/pengyouquan@2x.png'></image>
               <text>分享到朋友圈</text>
             </button> -->
       </view>
@@ -41,10 +41,10 @@
 </view>
 <!-- <view class='shareFont'>
   <view>
-    <image class='share' bindtap='share' src='../../img/share.png'></image>
+    <image  mode="aspectFill"  class='share' bindtap='share' src='../../img/share.png'></image>
   </view>
   <view>
-    <image class='font' bindtap='changefont' src='../../img/ziti.png'></image>
+    <image  mode="aspectFill"  class='font' bindtap='changefont' src='../../img/ziti.png'></image>
   </view>
 </view> -->
 <view bindtap='closeFont' style='display:{{display}};width:100%;height:100%;position:fixed;top:0;left:0'>

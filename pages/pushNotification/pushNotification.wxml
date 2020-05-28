@@ -5,11 +5,11 @@
 <view wx:for='{{schemeList}}'>
   <view class="newN" bindtap="clinicDetail" data-id="{{item.itemId}}" wx:if='{{item.status==1}}'>
     <view>
-      <image src="../img/red-up@2x.png"></image>
+      <image  mode="aspectFill"  src="../img/red-up@2x.png"></image>
       <text>{{item.realname}}</text>
     </view>
     <view>
-      <text>所属：{{item.clinicName}}</text>
+      <text>所属：{{item.clinicName||''}}</text>
       <text>去联系</text>
     </view>
     <view>

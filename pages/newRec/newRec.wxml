@@ -9,13 +9,13 @@
     <text wx:if='{{!isShow}}'>人群</text>
     <text wx:if='{{isShow}}'>人数：{{num}}</text>
     <view bindtap="by" wx:if='{{isShow}}'>
-      <image   wx:if="{{!selectAgree}}" src="../img/Not_selected@2x.png"></image>
-      <image   wx:if="{{selectAgree}}" src="../img/Select@2x.png"></image>
+      <image  mode="aspectFill"    wx:if="{{!selectAgree}}" src="../img/Not_selected@2x.png"></image>
+      <image  mode="aspectFill"    wx:if="{{selectAgree}}" src="../img/Select@2x.png"></image>
       <text>病源</text>
     </view>
     <view bindtap="mz">
-      <image  wx:if="{{selectAgree1}}" src="../img/Select@2x.png"></image>
-      <image  wx:if="{{!selectAgree1}}" src="../img/Not_selected@2x.png"></image>
+      <image  mode="aspectFill"   wx:if="{{selectAgree1}}" src="../img/Select@2x.png"></image>
+      <image  mode="aspectFill"   wx:if="{{!selectAgree1}}" src="../img/Not_selected@2x.png"></image>
       <text>门诊</text>
     </view>
     

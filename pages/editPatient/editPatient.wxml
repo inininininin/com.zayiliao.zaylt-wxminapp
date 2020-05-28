@@ -3,10 +3,10 @@
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
     <view>
-    <image class="image" bindtap='backHistory' style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;'  src='../img/back-white@2x.png'></image>
+    <image  mode="aspectFill"  class="image" bindtap='backHistory' style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;'  src='../img/back-white@2x.png'></image>
     <view class="save" bindtap="save">
       <text>保存</text>
-      <image src="../img/save@2x.png"></image>
+      <image  mode="aspectFill"  src="../img/save@2x.png"></image>
     </view>
     <text class="text">{{navtitle}}</text>
     </view>
@@ -63,11 +63,11 @@
 </view>
 <view class='invoicePhoto' >
   <view bindtap="addPic">
-    <image src="../img/orange_add@2x.png"></image>
+    <image  mode="aspectFill"  src="../img/orange_add@2x.png"></image>
   </view>
   <view class="imageItem"  wx:for='{{imglist}}'>
-    <image data-src="{{item}}"  mode="aspectFill" bindtap="previewImage" src='{{item}}'></image>
-    <image class="deletThis" bindtap="deletThis" data-src='{{item}}' src="../img/deleteC.png"></image>
+    <image  mode="aspectFill"  data-src="{{item}}"  mode="aspectFill" bindtap="previewImage" src='{{item}}'></image>
+    <image  mode="aspectFill"  class="deletThis" bindtap="deletThis" data-src='{{item}}' src="../img/deleteC.png"></image>
     <!-- <icon type="clear" size="20"/> -->
   </view>
 </view>

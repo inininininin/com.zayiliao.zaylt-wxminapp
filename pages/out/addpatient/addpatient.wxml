@@ -3,9 +3,9 @@
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
     <view>
-    <image bindtap='backHistory' style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;'  src='../../img/back-white@2x.png'></image>
+    <image  mode="aspectFill"  bindtap='backHistory' style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;'  src='../../img/back-white@2x.png'></image>
     
-    <view class='save' style='left:460rpx;'>保存<image src='../../img/save@2x.png' style='margin-left:10rpx;width:30rpx;height:40rpx;'></image></view>
+    <view class='save' style='left:460rpx;'>保存<image  mode="aspectFill"  src='../../img/save@2x.png' style='margin-left:10rpx;width:30rpx;height:40rpx;'></image></view>
     <text class='titleText'>{{navtitle}}</text>
     </view>
     </view>
@@ -14,7 +14,7 @@
 
 <view class='required'>
   <view>
-  <image src='../../img/bitian@2x.png'></image>
+  <image  mode="aspectFill"  src='../../img/bitian@2x.png'></image>
   <text>必填项</text>
   </view>
 
@@ -31,7 +31,7 @@
 
 
   <view class='selectIntro'>
-  <image  src='../../img/xuantian@2x.png'></image>
+  <image  mode="aspectFill"   src='../../img/xuantian@2x.png'></image>
   <text>选填项</text>
   </view>
 

@@ -1,6 +1,6 @@
 <!--pages/MZdetails.wxml-->
 <!-- <text>pages/MZdetails.wxml</text> -->
-<image style='width:750rpx' src='../img/topImg.png'></image>
+<image  mode="aspectFill"  style='width:750rpx' src='../img/topImg.png'></image>
 <view class='details'>
   <text class='title'>门诊名称：{{name}}</text>
   <text>负责人：{{headmanName}}</text>

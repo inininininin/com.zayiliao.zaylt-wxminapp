@@ -34,7 +34,7 @@
 <view class='belongHos lf' bindtap='clickHos' data-src='{{iconSrc}}'>
   <text class='lf'>所属医院</text>
  <text class='lf'>{{hospitalname}}</text>
-  <image class='rt'  src='{{iconSrc}}'></image>
+  <image  mode="aspectFill"  class='rt'  src='{{iconSrc}}'></image>
 </view>
 
 <view class='hospitaiList'>

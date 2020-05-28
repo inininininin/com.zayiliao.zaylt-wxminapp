@@ -6,12 +6,12 @@
         <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
         <view class="title-bar" style="height:{{titleBarHeight}}px">
           <view>
-            <image class="image" bindtap='backHistory' style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../img/shape@2x.png'></image>
+            <image  mode="aspectFill"  class="image" bindtap='backHistory' style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../img/shape@2x.png'></image>
             <text>{{navtitle}}</text>
           </view>
         </view>
       </view>
-      <image class='topImg' src='../img/Illustration@2x.png'></image>
+      <image  mode="aspectFill"  class='topImg' src='../img/Illustration@2x.png'></image>
       <!-- <text class='pointIntro' bindtap='look'>积分说明</text> -->
     </view>
   </view>
@@ -20,10 +20,10 @@
   </view>
   <view class='firstTimeIncome'>
     <view wx:for='{{list1}}' bindtap="firstIncome" data-id='{{item.taskId}}' data-name='{{item.name}}'>
-      <image catchtap="selectThis" data-id='{{item.taskId}}' data-issueis='{{item.issueIs}}' class="sel" wx:if='{{item.issueIs==1}}' src="../img/Select@2x.png"></image>
-      <image catchtap="selectThis" data-id='{{item.taskId}}' data-issueis='{{item.issueIs}}' class="sel" wx:if='{{item.issueIs==0}}' src="../img/Not_selected@2x.png"></image>
+      <image  mode="aspectFill"  catchtap="selectThis" data-id='{{item.taskId}}' data-issueis='{{item.issueIs}}' class="sel" wx:if='{{item.issueIs==1}}' src="../img/Select@2x.png"></image>
+      <image  mode="aspectFill"  catchtap="selectThis" data-id='{{item.taskId}}' data-issueis='{{item.issueIs}}' class="sel" wx:if='{{item.issueIs==0}}' src="../img/Not_selected@2x.png"></image>
       <text>{{item.name||''}}</text>
-      <image class="right" src="../img/back.png"></image>
+      <image  mode="aspectFill"  class="right" src="../img/back.png"></image>
     </view>
   </view>
 <view style="width:100%;background:#f2f2f2">
@@ -31,10 +31,10 @@
   </view>
   <view class='firstTimeIncome'>
     <view wx:for='{{list2}}' bindtap="secondIncome"   data-id='{{item.taskId}}' data-name='{{item.name}}'>
-      <image catchtap="selectThis1" data-id='{{item.taskId}}' data-issueis='{{item.issueIs}}' class="sel" wx:if='{{item.issueIs==1}}' src="../img/Select@2x.png"></image>
-      <image catchtap="selectThis1" data-id='{{item.taskId}}' data-issueis='{{item.issueIs}}' class="sel" wx:if='{{item.issueIs==0}}' src="../img/Not_selected@2x.png"></image>
+      <image  mode="aspectFill"  catchtap="selectThis1" data-id='{{item.taskId}}' data-issueis='{{item.issueIs}}' class="sel" wx:if='{{item.issueIs==1}}' src="../img/Select@2x.png"></image>
+      <image  mode="aspectFill"  catchtap="selectThis1" data-id='{{item.taskId}}' data-issueis='{{item.issueIs}}' class="sel" wx:if='{{item.issueIs==0}}' src="../img/Not_selected@2x.png"></image>
       <text>{{item.name||''}}</text>
-      <image class="right" src="../img/back.png"></image>
+      <image  mode="aspectFill"  class="right" src="../img/back.png"></image>
     </view>
   </view>
 
@@ -48,7 +48,7 @@
       <view class="title-bar" style="height:{{titleBarHeight}}px">
         <view style="position:relative">
           <view  class='backHis'>
-            <image class="saveBack" catchtap='saveBack' style='display:inline-block;left:30rpx;position:absolute;' src='../img/shape@2x.png'></image>
+            <image  mode="aspectFill"  class="saveBack" catchtap='saveBack' style='display:inline-block;left:30rpx;position:absolute;' src='../img/shape@2x.png'></image>
           </view>
           <text class='titleText' style="position:absolute;left:0 !important">{{navtitle1}}</text>
         </view>

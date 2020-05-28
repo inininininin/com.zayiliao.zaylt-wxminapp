@@ -3,7 +3,7 @@
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
       <view class='search'>
-        <image bindtap='backHistory' style='display:inline-block;top:{{15+statusBarHeight}}px;left:62rpx;' src='../../img/sousuo@2x.png'></image>
+        <image  mode="aspectFill"  bindtap='backHistory' style='display:inline-block;top:{{15+statusBarHeight}}px;left:62rpx;' src='../../img/sousuo@2x.png'></image>
         <input bindinput='input' placeholder-style='color:#999' placeholder='输入文章关键字'></input>
       </view>
     </view>
@@ -15,25 +15,25 @@
     <view class='hosList'>
       <navigator url='../hospitalImage/hospitalImage'>
         <view>
-          <image src='../../img/yiyuanxingxiang@2x.png'></image>
+          <image  mode="aspectFill"  src='../../img/yiyuanxingxiang@2x.png'></image>
           <text>医院形象</text>
         </view>
       </navigator>
       <navigator url='../highQualityCase/highQualityCase'>
         <view>
-          <image src='../../img/youzhianli@2x.png'></image>
+          <image  mode="aspectFill"  src='../../img/youzhianli@2x.png'></image>
           <text>优质案例</text>
         </view>
       </navigator>
       <navigator url='../expertIntroduction/expertIntroduction'>
         <view>
-          <image src='../../img/zhuanjia@2x.png'></image>
+          <image  mode="aspectFill"  src='../../img/zhuanjia@2x.png'></image>
           <text>专家介绍</text>
         </view>
       </navigator>
       <navigator url='../eventAnnouncement/eventAnnouncement'>
         <view>
-          <image src='../../img/huodongfabu@2x.png'></image>
+          <image  mode="aspectFill"  src='../../img/huodongfabu@2x.png'></image>
           <text>活动列表</text>
         </view>
       </navigator>
@@ -47,14 +47,14 @@
         <view>
           <text class='articleTitle'>{{item.title}}</text>
           <view class='time'>
-            <image src='../../img/time@2x.png'></image>
+            <image  mode="aspectFill"  src='../../img/time@2x.png'></image>
             <text>{{item.addTime}}</text>
           </view>
         </view>
         <view class='image' style='background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;'>
 
         </view>
-        <!-- <image src='{{item.cover}}'></image> -->
+        <!-- <image  mode="aspectFill"  src='{{item.cover}}'></image> -->
       </view>
     </navigator>
   </view>
@@ -66,14 +66,14 @@
         <view>
           <text class='articleTitle'>{{item.title}}</text>
           <view class='time'>
-            <image src='../../img/time@2x.png'></image>
+            <image  mode="aspectFill"  src='../../img/time@2x.png'></image>
             <text>{{item.addTime}}</text>
           </view>
         </view>
         <view class='image' style='background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;'>
 
         </view>
-        <!-- <image src='{{item.cover}}'></image> -->
+        <!-- <image  mode="aspectFill"  src='{{item.cover}}'></image> -->
       </view>
     </navigator>
   </view>

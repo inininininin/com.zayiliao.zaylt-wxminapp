@@ -1,6 +1,6 @@
 <view wx:if='{{loginChange}}'>
   <!-- <view class="top1">
-    <image src="https://zaylt.njshangka.com/resource/img/name@2x.png"></image>
+    <image  mode="aspectFill"  src="https://zaylt.njshangka.com/resource/img/name@2x.png"></image>
     <view class="navbar">
       <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}} </view>
     </view>
@@ -10,20 +10,20 @@
   </view>
   <view>
     <view class="lines">
-      <image src="../img/iphone@2x.png"></image>
+      <image  mode="aspectFill"  src="../img/iphone@2x.png"></image>
       <input type="number" value='{{key}}'  bindinput="loginPhone" placeholder-class="placeholder" placeholder="输入手机号"></input>
-      <image src="../img/delete.png" wx:if="{{key}}" bindtap="eliminate"></image>
+      <image  mode="aspectFill"  src="../img/delete.png" wx:if="{{key}}" bindtap="eliminate"></image>
     </view>
     <view class="lines_b">
-      <image src="../img/mima@2x.png"></image>
+      <image  mode="aspectFill"  src="../img/mima@2x.png"></image>
       <input bindinput='loginPassward' value='{{password}}' password='{{isShowPassword}}' placeholder-class="placeholder" placeholder="输入密码"></input>
-      <image class="delete" src="../img/delete.png" wx:if="{{password}}" bindtap="eliminate1"></image>
-      <image class="eye" bindtap="toggleShowPassword" src="../img/close-eye@2x.png" wx:if='{{isShowPassword}}'></image>
-      <image class="eye" bindtap="toggleShowPassword" src="../img/open-eye@2x.png" wx:if='{{!isShowPassword}}'></image>
+      <image  mode="aspectFill"  class="delete" src="../img/delete.png" wx:if="{{password}}" bindtap="eliminate1"></image>
+      <image  mode="aspectFill"  class="eye" bindtap="toggleShowPassword" src="../img/close-eye@2x.png" wx:if='{{isShowPassword}}'></image>
+      <image  mode="aspectFill"  class="eye" bindtap="toggleShowPassword" src="../img/open-eye@2x.png" wx:if='{{!isShowPassword}}'></image>
     </view>
     <view class="registerXy">
-      <image bindtap="selectIcon" wx:if="{{selectAgree}}" src="../img/select1@2x.png"></image>
-      <image bindtap="selectIcon" wx:if="{{!selectAgree}}" src="../img/Not-selected1@2x.png"></image>
+      <image  mode="aspectFill"  bindtap="selectIcon" wx:if="{{selectAgree}}" src="../img/select1@2x.png"></image>
+      <image  mode="aspectFill"  bindtap="selectIcon" wx:if="{{!selectAgree}}" src="../img/Not-selected1@2x.png"></image>
       <view>我已经阅读并同意
         <text style="color:#5ab5fc;" bindtap="loginXy">《用户协议与隐私政策》</text>
       </view>
@@ -33,7 +33,7 @@
  <view>
 	 <view class="forgotpwd" bindtap="forgotpwd">
 	   <text>忘记密码</text>
-	   <image src="../img/wangji@2x.png"></image>
+	   <image  mode="aspectFill"  src="../img/wangji@2x.png"></image>
 	 </view>
 	 <view class="selectEnter" bindtap="selectEnter">
 	   <text>选择入口</text>
@@ -45,27 +45,27 @@
 
 <view wx:if='{{!loginChange}}'>
   <view class="top2">
-    <image bindtap="forgotpwd" src="../img/black-backnew.png"></image>
+    <image  mode="aspectFill"  bindtap="forgotpwd" src="../img/black-backnew.png"></image>
     <text>修改密码</text>
 	<text>修改后的新密码将替换原密码</text>
   </view>
   <view class="lines">
-      <image src="../img/iphone@2x.png"></image>
+      <image  mode="aspectFill"  src="../img/iphone@2x.png"></image>
       <input type="number" value='{{key}}' bindinput="loginPhone" placeholder-class="placeholder" placeholder="输入手机号"></input>
-      <image src="../img/delete.png" wx:if="{{key}}" bindtap="eliminate"></image>
+      <image  mode="aspectFill"  src="../img/delete.png" wx:if="{{key}}" bindtap="eliminate"></image>
   </view>
   <view class="lines_yzm">
-      <image src="../img/yanzhengma@2x.png"></image>
+      <image  mode="aspectFill"  src="../img/yanzhengma@2x.png"></image>
       <input type="number" value='{{code}}' bindinput="loginCode" placeholder-class="placeholder" placeholder="输入验证码"></input>
-      <!-- <image src="../img/delete.png" wx:if="{{key}}" bindtap="eliminate"></image> -->
+      <!-- <image  mode="aspectFill"  src="../img/delete.png" wx:if="{{key}}" bindtap="eliminate"></image> -->
       <text bindtap='smsvcodeGet'>{{times}}</text>
   </view>
   <view class="lines_b">
-      <image src="../img/mima@2x.png"></image>
+      <image  mode="aspectFill"  src="../img/mima@2x.png"></image>
       <input bindinput='loginPassward' value='{{password}}' password='{{isShowPassword}}' placeholder-class="placeholder" placeholder="输入新密码"></input>
-      <image class="delete" src="../img/delete.png" wx:if="{{password}}" bindtap="eliminate1"></image>
-      <image class="eye" bindtap="toggleShowPassword" src="../img/close-eye@2x.png" wx:if='{{isShowPassword}}'></image>
-      <image class="eye" bindtap="toggleShowPassword" src="../img/open-eye@2x.png" wx:if='{{!isShowPassword}}'></image>
+      <image  mode="aspectFill"  class="delete" src="../img/delete.png" wx:if="{{password}}" bindtap="eliminate1"></image>
+      <image  mode="aspectFill"  class="eye" bindtap="toggleShowPassword" src="../img/close-eye@2x.png" wx:if='{{isShowPassword}}'></image>
+      <image  mode="aspectFill"  class="eye" bindtap="toggleShowPassword" src="../img/open-eye@2x.png" wx:if='{{!isShowPassword}}'></image>
     </view>
 
     <view bindtap="makeSure" class="loginBtn">确认</view>

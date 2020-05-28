@@ -5,9 +5,9 @@
     <view class="title-bar" style="height:{{titleBarHeight}}px">
       <view class='search'>
        <view bindtap='backHistory' class='backHis'>
-      <image class='back' style='display:inline-block;left:42rpx;' src='../../img/backArrow.png'></image>
+      <image  mode="aspectFill"  class='back' style='display:inline-block;left:42rpx;' src='../../img/backArrow.png'></image>
       </view>
-        <image class='searchIcon' style='display:inline-block;top:{{15+statusBarHeight}}px;left:112rpx;' src='../../img/sousuo@2x.png'></image>
+        <image  mode="aspectFill"  class='searchIcon' style='display:inline-block;top:{{15+statusBarHeight}}px;left:112rpx;' src='../../img/sousuo@2x.png'></image>
         <input bindinput='input'  focus='false' placeholder-style='color:#999' placeholder='输入关键字'></input>
       </view>
     </view>
@@ -21,11 +21,11 @@
           <view>
             <text>{{item.realname}}</text>
             <view class='viewRt' wx:if='{{item.status==1}}'>
-              <image src='../img/weijiuzhen@2x.png'></image>
+              <image  mode="aspectFill"  src='../img/weijiuzhen@2x.png'></image>
               <text>未就诊</text>
             </view>
             <view class='viewRt' wx:if='{{item.status==4}}'>
-              <image src='../img/yijiuzhen@2x.png'></image>
+              <image  mode="aspectFill"  src='../img/yijiuzhen@2x.png'></image>
               <text>已就诊</text>
             </view>
           </view>

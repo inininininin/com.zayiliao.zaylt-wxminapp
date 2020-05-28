@@ -3,7 +3,7 @@
   <include src="../../common/common.wxml" />
 </view>
 <view wx:if='{{picBlob==""}}'>
-<image class='kong' src='../../img/kong@2x.png'></image>
+<image  mode="aspectFill"  class='kong' src='../../img/kong@2x.png'></image>
 <text class='noAction'>暂无活动 敬请期待</text>
 </view>
 <view wx:if='{{schemeList!=""}}'>
@@ -11,7 +11,7 @@
 <!-- <navigator  url='../eventAnnouncementDetail/eventAnnouncementDetail?id={{item.itemId}}&contentBtId={{item.contentBtId}}'> -->
 <navigator  url='../../newActivity/newActivity?type={{item.itemId}}'>
 <view class='action' style='background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;'></view>
-<!-- <image class='action' src='{{item.cover}}'></image> -->
+<!-- <image  mode="aspectFill"  class='action' src='{{item.cover}}'></image> -->
 </navigator>
   
 

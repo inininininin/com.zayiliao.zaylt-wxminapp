@@ -6,7 +6,7 @@
   <template name="schemeItem">
    <navigator style='display:inline-block' url='../twoKfXmDetail/twoKfXmDetail?id={{id}}'>
      <view class='xm' data-id='{{id}}'>
-      <image src='https://www.njshangka.com{{cover}}'></image>
+      <image  mode="aspectFill"  src='https://www.njshangka.com{{cover}}'></image>
       <text>{{name}}</text>
     </view>
    </navigator>

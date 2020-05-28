@@ -6,7 +6,7 @@
   <template name="schemeItem">
   <navigator url='../twoYyDocDetail/twoYyDocDetail?id={{id}}'>
     <view class='docitem'>
-      <image  src='https://www.njshangka.com{{headimg}}'></image>
+      <image  mode="aspectFill"   src='https://www.njshangka.com{{headimg}}'></image>
 
       <view class='docdetail'>
         <view class='docd1'>
