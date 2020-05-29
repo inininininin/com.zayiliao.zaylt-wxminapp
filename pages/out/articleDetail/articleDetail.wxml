@@ -81,7 +81,7 @@
 
 <!-- 画布大小按需定制 这里我按照背景图的尺寸定的  -->
 <view class="canvasShow" wx-if='{{canvasShow}}'   style="opacity:1" bindtap="closeCanvas">
-<canvas canvas-id='canvas'   style='width:{{windowW}}px;height:{{windowW}}px;margin-top:{{windowTop}}px;border:1rpx solid #e5e5e5' catchlongtap="saveCanvas"></canvas>
+<canvas canvas-id='canvas'   style='width:{{windowW}}px;height:{{windowW}}px;margin-top:{{windowTop}}px;border:2rpx solid #e5e5e5' catchlongtap="saveCanvas"></canvas>
 	<button type='primary' size='mini' bindtap='saveIs'>保存分享图</button>
 </view>
 

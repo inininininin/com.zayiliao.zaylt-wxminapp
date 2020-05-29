@@ -125,7 +125,7 @@ App({
     cover: '',
     authenticationIs: '',
     src:'', 
-    Version:'6.0.2',
+    Version:'6.2.0',
     lastClient:'',
     longitude:'',
     latitude: '',

@@ -247,12 +247,15 @@ padding: 0;
   width:750rpx;
   height:100%;
   z-index: 999;
-  background: rgba(0,0,0,1);
+  background: #fff;
+  /* background: rgba(0,0,0,1); */
   /* opacity:1 */
 }
 canvas{
   z-index: 1000;
-  opacity:1
+  opacity:1;
+  border-top:1rpx solid #e5e5e5;
+  border-bottom: 1rpx solid #e5e5e5;
 }
 .canvasShow>button{
   padding: 0 !important;
@@ -264,5 +267,7 @@ canvas{
   font-size: 30rpx !important;
   line-height: 80rpx !important;
   text-align: center !important;
-  margin: 30rpx 325rpx 0 !important;
+  margin: 30rpx 275rpx 0 !important;
+  background:#1890FF !important;
+  color: #fff !important;
 }
