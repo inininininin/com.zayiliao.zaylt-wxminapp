@@ -280,7 +280,7 @@ line-height:33rpx;
 }
 .clinicList>view .pushCount{
   font-size: 28rpx;
-  line-height: 50rpx;
+  line-height: 48rpx;
   width: 170rpx;
   height: 50rpx;
   border-radius: 50rpx;
@@ -289,6 +289,7 @@ line-height:33rpx;
   text-align: center;
   margin-top: 18rpx;
   display: block;margin-left: 85rpx;
+  box-sizing: border-box;
 }
 .hoverClass{
   background: rgb(255,248,243)

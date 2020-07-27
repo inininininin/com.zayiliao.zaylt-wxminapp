@@ -11,7 +11,7 @@
 
 <view class='ownDetail' bindtap='yyzz'>
   <view class='avaterBox'>
-    <image  mode="aspectFill"  src='../img/logo@2x.png'></image>
+    <image  mode="aspectFill"  src='{{src}}'></image>
     <!-- <image  mode="aspectFill"  wx:if="{{src==''}}" src="{{src}}" bindtap='bindChooiceProduct' class='avater' src='../../img/logo@2x.png'></image> -->
     <text class='yirenzheng' wx:if='{{display==1}}'>已认证</text>
     <text class='weirenzheng' wx:if='{{display==0}}'>未认证</text>
@@ -66,7 +66,7 @@
     </view>
   </navigator>
 
-  <navigator url='../login/login'>
+  <navigator bindtap="loginout" >
     <view>
       <text>退出登录</text>
       <image  mode="aspectFill"  src='../img/ChevronCopy2@2x.png'></image>
@@ -86,7 +86,7 @@
   </view>
   <view bindtap='gene'>
     <image  mode="aspectFill"  class='bottomBthimg2' src='../img/jiyin-gray@2x.png'></image>
-    <text>集采</text>
+    <text>基因</text>
   </view>
   <view  bindtap='mine'>
     <image  mode="aspectFill"  class='bottomBthimg3' src='../img/wode-blue@2x.png'></image>

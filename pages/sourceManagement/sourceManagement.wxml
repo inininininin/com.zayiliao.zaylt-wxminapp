@@ -65,7 +65,7 @@
 
               <view class='search' >                
                 <image  mode="aspectFill"   src='../img/search1.png'></image>
-                <input bindinput="search" placeholder="搜索病源" placeholder-class="placeholderSs"></input>
+                <input bindinput="search" placeholder="搜索病员" placeholder-class="placeholderSs"></input>
                 <!-- 搜索 -->
               </view>
               <view class='select' bindtap='showview'>

@@ -220,7 +220,7 @@ swiper-item image {
   color: rgb(51, 51, 51);
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
+  /* display: -webkit-box; */
   -webkit-line-clamp: 1;
   white-space: nowrap;
   line-height: 30rpx;
@@ -239,7 +239,7 @@ swiper-item image {
   /* display: block; */
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
+  /* display: -webkit-box; */
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   line-height: 26rpx;

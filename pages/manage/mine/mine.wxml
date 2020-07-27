@@ -24,7 +24,7 @@
 <image  mode="aspectFill"  src='../../img/back.png'></image>
 <!-- </navigator> -->
 </view>
-
+<!-- <button open-type="contact" bindcontact="handleContact">客服</button> -->
 <view class='bottomBth'>
 <!-- <navigator  hover-class='none' url='../index/index'> -->
   <view bindtap='index'>

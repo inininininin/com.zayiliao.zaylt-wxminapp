@@ -1,4 +1,5 @@
 <!--pages/Third/index/index.wxml-->
+
 <view class="page" bindtouchend='touchend' bindtouchstart='touchstart'>
   <!-- 侧滑栏 -->
   <view class="page_tab" style='display:{{display}}'>
@@ -12,7 +13,7 @@
       <text class='state'>排序</text>
       <view class='seeAdoctor'>
         <text bindtap='status1' style='background:{{color}}'>门诊数量最多</text>
-        <text bindtap='status2' style='background:{{color2}}'>病源数量最多</text>
+        <text bindtap='status2' style='background:{{color2}}'>病员数量最多</text>
         <text bindtap='status3' style='background:{{color3}}'>创建时间最近</text>
         <text bindtap='status4' style='background:{{color4}}'>医院名称A-Z</text>
       </view>
@@ -78,7 +79,7 @@
           <view class='hosIntro'>
             <text>创建时间：{{item.addTime}}</text>
             <text>门诊数：{{item.clinicCount}}</text>
-            <text>病源数：{{item.patientCount}}</text>
+            <text>病员数：{{item.patientCount}}</text>
           </view>
         </view>
       </navigator>

@@ -2,7 +2,10 @@
 @import '../../common/common.wxss';
 @import '../../../all/all.wxss';
 page{
-  overflow-y: scroll !important;
+  /* overflow-y: scroll !important; */
+  overflow: scroll !important;
+  -webkit-overflow-scrolling: touch;
+  /* min-height: 120%; */
 }
 .topImg{
   width: 750rpx;
@@ -39,6 +42,7 @@ page{
 .detail{
   width: 686rpx;
   margin: 40rpx 32rpx;
+  height: auto;
   /* line-height: 36rpx !important; */
   font-size: 24rpx !important;
   color: rgb(51,51,51) !important;
@@ -50,7 +54,7 @@ page{
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1111;
+  z-index: 3;
   background: rgba(0,0,0,0.5);
  
 }
@@ -146,7 +150,7 @@ margin-top: 26rpx;
   position: fixed;
   right: 30rpx;
   bottom: 30rpx;
-  z-index: 1000;
+  z-index: 2;
   background: #fff;
   box-shadow: 2rpx 4rpx 12rpx #e5e5e5;
 }
@@ -194,26 +198,14 @@ padding: 0;
 
 
 
-     canvas{
-  position: fixed;
-  top: 0;
-  left: 400px;
-}
-.shareIs{
-  position: absolute;
-  bottom: 100rpx;
-  width: 70%;
-  left: 15%;
-  height: 100rpx;
-  line-height: 100rpx;
-}
+
 .preview {
   width: 100%;
   height: 100%;
   /* background: rgba(0,0,0,.9); */
   background: #fff;
   position: absolute;
-  z-index: 2000;
+  z-index: 3;
   top: 0;
   left: 0
 }
@@ -222,7 +214,7 @@ padding: 0;
   position: absolute;
   top: 10%;
   left: 5%;
-  z-index: 2003;
+  z-index: 4;
   border: 1px solid #ccc;
   /* box-shadow: 100 10 10 rgba(0,0,0,0.8) */
 }
@@ -232,4 +224,45 @@ padding: 0;
   bottom: 150rpx;
   left: 30%;
   
+}
+.canvasShow{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:750rpx;
+  height:100%;
+  z-index: 5;
+  background: #fff;
+  /* background: rgba(0,0,0,1); */
+  /* opacity:1 */
+}
+canvas{
+  z-index: 6;
+  opacity:1;
+  border-top:1rpx solid #e5e5e5;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.canvasShow>button{
+  padding: 0 !important;
+  width: 200rpx !important;
+  height: 80rpx !important;
+  border-radius: 5rpx !important;
+  background: #fff !important;
+  color: #333 !important;
+  font-size: 30rpx !important;
+  line-height: 80rpx !important;
+  text-align: center !important;
+  margin: 30rpx 275rpx 0 !important;
+  background:#1890FF !important;
+  color: #fff !important;
+}
+.readShare{
+  line-height: 40rpx;
+  font-size: 28rpx;
+  margin: 15rpx 32rpx;
+  color: #999999;
+}
+.readShare text:last-child{
+  display: inline-block;
+  margin-left: 40rpx;
 }

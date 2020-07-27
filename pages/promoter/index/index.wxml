@@ -13,7 +13,7 @@
 
 <view class="clinicPatient" bindtap>
   <view bindtap="qdmz" >渠道门诊</view>
-  <view bindtap="bygl" >病源管理</view>
+  <view bindtap="bygl" >病员管理</view>
 </view>
 
 

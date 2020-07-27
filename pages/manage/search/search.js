@@ -7,13 +7,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navtitle: '病源搜索',
+    navtitle: '病员搜索',
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
     hosList: [],
     kw: '',
     toPageNo: '0',
-    url:'/clientend2/manageend/allhospitals',
+    url:'',
   },
   lastPageHos: function (toPageNo, kw, url) {
     var that = this;
@@ -74,6 +74,11 @@ Page({
           wx.navigateTo({
             url: '../login/login',
           })
+        }else{
+          wx.showToast({
+            title: res.data.codeMsg,
+            icon:'none'
+          })
         }
       }
     })
@@ -84,9 +89,9 @@ Page({
   onLoad: function (options) {
     let that=this
     var url=options.url
-    // that.setData({
-    //   url: url
-    // })
+    that.setData({
+      url: url
+    })
     console.log(url)
     that.lastPageHos(0, that.data.kw, that.data.url)
   },

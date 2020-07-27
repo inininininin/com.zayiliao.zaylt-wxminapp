@@ -22,16 +22,16 @@
       <view class='hos'>
         <view class='hostop'>
           <view>
-            <image  mode="aspectFill"  src='{{item.cover}}'></image>
+            <image  mode="aspectFill"  src='{{item.cover||"../../img/logo@2x.png"}}'></image>
             <text>{{item.hospitalName}}</text>
           </view>
-          <image  mode="aspectFill"  wx:if='{{item.authenticationPassIs==0}}' src='../../img/weirenzheng@2x.png'></image>
-          <image  mode="aspectFill"  wx:if='{{item.authenticationPassIs==1}}' src='../../img/yirenzheng@2x.png'></image>
+          <image  mode="aspectFill"  wx:if='{{item.authStatus==0}}' src='../../img/weirenzheng@2x.png'></image>
+          <image  mode="aspectFill"  wx:if='{{item.authStatus==1}}' src='../../img/yirenzheng@2x.png'></image>
         </view>
         <view class='hosIntro'>
           <text>创建时间：{{item.addTime}}</text>
           <text>门诊数：{{item.clinicCount}}</text>
-          <text>病源数：{{item.patientCount}}</text>
+          <text>病员数：{{item.patientCount}}</text>
         </view>
       </view>
     </navigator>

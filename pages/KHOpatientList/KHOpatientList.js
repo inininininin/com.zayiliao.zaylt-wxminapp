@@ -6,7 +6,7 @@ Page({
    */
   data: {
 
-    navtitle: '病源信息',
+    navtitle: '病员信息',
     statusBarHeight: '',
     titleBarHeight: '',
     toPageNo: '',

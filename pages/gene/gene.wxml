@@ -82,7 +82,7 @@
   </view>
   <view bindtap='gene'>
     <image  mode="aspectFill"  class='bottomBthimg2' src='../img/jiyin-blue@2x.png'></image>
-    <text  class='active'>集采</text>
+    <text  class='active'>基因</text>
   </view>
   <view  bindtap='mine'>
     <image  mode="aspectFill"  class='bottomBthimg3' src='../img/wode@2x.png'></image>

@@ -4,7 +4,7 @@
   <include src="../common/common.wxml" />
 </view>
 <view>
-  <text class='title'>拥有病源信息</text>
+  <text class='title'>拥有病员信息</text>
 </view>
 <view class='bylist'>
   <template name="hospitalSchemeItem">

@@ -13,7 +13,7 @@
 <view class='hosdetail'  bindtap='bingyuan'>
   <image  mode="aspectFill"  class='lf' src='../img/hospital_icon4@2x.png'></image>
   <view class='tit lf'>
-    <text class='tit1'>病源信息</text>
+    <text class='tit1'>病员信息</text>
     <text class='tit2'>门诊底下所有病员信息</text>
   </view>
 </view>

@@ -14,10 +14,10 @@
   </view>
 </view>
 <view class="topIndex" style="position:fixed;top:{{statusBarHeight+titleBarHeight}}px">
-  <view>
+  <!-- <view>
     <image  mode="aspectFill"  mode="aspectFill" src="{{detail.cover||''}}"></image>
     <text>长按可分享和保存</text>
-  </view>
+  </view> -->
   <view>
     <text>{{name||''}}</text>
     <view>

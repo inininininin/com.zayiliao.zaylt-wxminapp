@@ -15,7 +15,7 @@
 <text class='bzdetail'>{{schemeList.remark}}</text>
 <view style='height:20rpx;width:750rpx;background:#f2f2f2'></view>
 <view class='bydetail'>
-  <view class='byxx'>病源信息</view>
+  <view class='byxx'>病员信息</view>
   <template name="schemeItem">
     <view class='byxxde'>
       <view class='byxxde1'>

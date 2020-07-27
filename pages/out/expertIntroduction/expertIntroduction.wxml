@@ -4,7 +4,7 @@
 
 <view wx:for='{{schemeList}}'>
   <!-- <navigator url='../docDetail/docDetail'> -->
-  <view class='docBox  '>
+  <view class='docBox' bindtap="linkDetail"  data-detail='{{item}}'>
     <image  mode="aspectFill"  class='avator' mode="aspectFill" src='{{item.headimg}}'></image>
     <view>
       <text class='name'>{{item.name}}</text>
@@ -13,9 +13,9 @@
       </view>
       <text class='intro {{item.class}}'>{{item.intro}}</text>    
     </view>
-    <view bindtap='look' class='look' data-classed='{{item.class}}' data-id='{{item.itemId}}' data-intro='{{item.intro}}' >
+    <!-- <view bindtap='look' class='look' data-classed='{{item.class}}' data-id='{{item.itemId}}' data-intro='{{item.intro}}' >
     <image  mode="aspectFill"  class='down' src='{{item.icon}}'></image>
-    </view>
+    </view> -->
     
   </view>
   <!-- </navigator> -->

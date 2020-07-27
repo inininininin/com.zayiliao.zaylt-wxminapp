@@ -11,7 +11,7 @@
 </view>
 <view wx:if='{{addressIf!=0}}'>
   <input placeholder='收货人：' bindinput='name' value='{{name}}' placeholder-class='placeholder'></input>
-  <input value='{{tel}}' bindinput='tel' placeholder='手机：' placeholder-class='placeholder'></input>
+  <input value='{{tel}}' bindinput='tel'  placeholder='手机：' placeholder-class='placeholder'></input>
   <input value='{{address1}}' bindinput='address1' placeholder='省市区：' placeholder-class='placeholder'></input>
   <textarea value='{{address2}}' bindinput='address2' placeholder='详细地址：' class='addressDetail' placeholder-class='placeholder'></textarea>
 

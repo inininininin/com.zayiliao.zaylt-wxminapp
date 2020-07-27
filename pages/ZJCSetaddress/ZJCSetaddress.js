@@ -36,7 +36,7 @@ Page({
         'cookie': app.globalData.cookie
       },
       data: {
-        token: app.globalData.token,
+        // token: app.globalData.token,
         pn: 1,
         ps: 1,
       },

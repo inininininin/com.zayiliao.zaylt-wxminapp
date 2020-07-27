@@ -8,7 +8,7 @@
   </view>
   <view class='box lf' bindtap='patient'>
     <image  mode="aspectFill"  src='../img/patient.png'></image>
-    <text>病源信息</text>
+    <text>病员信息</text>
   </view>
   <view class='box lf' bindtap='outpatient'>
     <image  mode="aspectFill"  src='../img/outpatient .png'></image>

@@ -15,7 +15,31 @@ Page({
     name: '',
     address: '',
     display: '2',
-    src: '../../img/logo@2x.png',
+    src: '../img/logo@2x.png',
+  },
+  // license(e){
+
+  // },
+  loginout(e) {
+ 
+    var that = this
+    wx.showModal({
+      title: '退出',
+         content: '确定要退出登录？',
+         success: function (res) {
+            if (res.cancel) {
+               //点击取消,默认隐藏弹框
+            } else {
+               //点击确定
+               wx.reLaunch({
+                url: '../login/login',
+              })
+            }
+         },
+         fail: function (res) { }, 
+         complete: function (res) { },
+    })
+    
   },
   index(e) {
     wx.redirectTo({
@@ -33,6 +57,7 @@ Page({
     })
   },
   yyzz(e) {
+    console.log(app.globalData.src)
     if (app.globalData.src == '' || app.globalData.src == null || app.globalData.src == undefined) {
 
       var that = this
@@ -89,7 +114,7 @@ Page({
       })
     } else {
       wx.navigateTo({
-        url: '../../cropper/cropper',
+        url: '../cropper/cropper',
       })
     }
 
@@ -154,7 +179,11 @@ Page({
         display: 1
       })
     }
-
+    if(app.globalData.src){
+      this.setData({
+        src: app.globalData.src
+      })
+    }
   },
 
   /**

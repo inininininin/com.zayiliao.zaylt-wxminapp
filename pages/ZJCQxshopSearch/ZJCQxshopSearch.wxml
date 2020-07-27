@@ -5,7 +5,7 @@
       <image  mode="aspectFill"  bindtap='backHistory' class="backHistory" style='margin-left:10rpx;padding: 20rpx 20rpx;border-radius:6rpx;display:inline-block' src='../img/backArrow.png'></image>
       <view class='search'>
         <image  mode="aspectFill"  style='display:inline-block;top:{{15+statusBarHeight}}px;left:95rpx;width:31rpx;' src='../img/sousuo@2x.png'></image>
-        <input bindinput='input' placeholder-style='color:#999' placeholder='搜索门诊名'></input>
+        <input bindinput='input' placeholder-style='color:#999' placeholder='搜索器械名'></input>
       </view>
     </view>
   </view>

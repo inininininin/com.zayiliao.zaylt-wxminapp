@@ -22,16 +22,19 @@
       <text>选择背景</text>
     </view>
   </view>
-
+  <!-- <text class="titleN">标题：</text> -->
   <view>
     <input bindinput="title" value="{{title}}" placeholder="标题" type='text' placeholder-class="inputPlc"></input>
   </view>
+  <!-- <text class="titleN">副标题：</text> -->
   <view>
     <input bindinput="brief" value="{{brief}}" placeholder="副标题" type='text' placeholder-class="inputPlc"></input>
   </view>
+  <!-- <text class="titleN">联系电话：</text> -->
   <view>
     <input bindinput="tel" value="{{tel}}" placeholder="联系电话" type="number" placeholder-class="inputPlc"></input>
   </view>
+  <!-- <text class="titleN">活动起始时间：</text> -->
   <view>
     <picker mask-style="color:rgba(216, 216, 216, 1);" mode="date" value="{{date}}" end="{{date2}}" bindchange="bindDateChange">
       <view class="picker">
@@ -40,6 +43,7 @@
     </picker>
     <!-- <input placeholder="活动起始时间" placeholder-class="inputPlc"></input> -->
   </view>
+  <!-- <text class="titleN">活动终止时间：</text> -->
   <view>
     <picker mode="date" value="{{date2}}" start="{{date}}" end="2050-01-01" bindchange="bindDateChange2">
       <view class="picker">
@@ -48,9 +52,11 @@
     </picker>
     <!-- <input placeholder="活动终止时间" type='text'  placeholder-class="inputPlc"></input> -->
   </view>
+  <!-- <text class="titleN">活动地址：</text> -->
   <view>
     <input bindinput="address" value="{{address}}" placeholder="活动地址" type='text' placeholder-class="inputPlc"></input>
   </view>
+  <!-- <text class="titleN">活动说明：</text> -->
   <view>
     <textarea bindinput="content" value="{{content}}" placeholder="活动说明" placeholder-class="inputPlc">
 
@@ -85,6 +91,11 @@
 <view>
   <view class="topImg" style="background:url({{topImg}}) no-repeat;background-size:cover;background-position: center;">
   </view>
+
+ <view class="readShare">
+	<text>浏览量：{{viewCount||0}}</text>
+	<text>分享数：{{shareCount||0}}</text>
+</view>
 
   <view>
     <input bindinput="title" disabled="disabled" value="{{title}}" placeholder="标题" type='text' placeholder-class="inputPlc"></input>

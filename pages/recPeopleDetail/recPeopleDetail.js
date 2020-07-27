@@ -71,6 +71,7 @@ Page({
                 schemeList: [],
               })
               that.lastPage(0)
+              that.lastPageNo(0)
             }, 500)
           } else {
             wx.showModal({
@@ -111,6 +112,7 @@ Page({
                       schemeList: [],
                     })
                     that.lastPage(0)
+                    that.lastPageNo(0)
                   }, 500)
                 } else {
                   wx.showModal({
@@ -340,31 +342,8 @@ Page({
       hospitalUserId:options.id
     })
     that.lastPage(0)
+    that.lastPageNo()
     
-    wx.request({
-      url: app.globalData.url + '/hospital/super-admin/hospital-clinics-sum',
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        'cookie': app.globalData.cookie
-      },
-      data: {
-         hospitalUserId: options.id
-      },
-      method: 'get',
-      success: function (res) {
-        wx.hideToast()
-        if (res.data.code == 0) {
-          that.setData({
-            clinicNum: res.data.data.rowCount,
-          })
-        } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
-          })
-        }
-      }
-    });
     wx.request({
       url: app.globalData.url + '/hospital/def/hospital-operator-user/' + options.id,
       header: {
@@ -384,6 +363,33 @@ Page({
               phone: res.data.data.phone,
               remark: res.data.data.remark,
             })
+        } else {
+          wx.showModal({
+            showCancel: false,
+            title: res.data.codeMsg
+          })
+        }
+      }
+    });
+  },
+  lastPageNo:function(){
+    var that=this
+    wx.request({
+      url: app.globalData.url + '/hospital/super-admin/hospital-clinics-sum',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        'cookie': app.globalData.cookie
+      },
+      data: {
+         hospitalUserId: that.data.hospitalUserId
+      },
+      method: 'get',
+      success: function (res) {
+        wx.hideToast()
+        if (res.data.code == 0) {
+          that.setData({
+            clinicNum: res.data.data.rowCount,
+          })
         } else {
           wx.showModal({
             showCancel: false,

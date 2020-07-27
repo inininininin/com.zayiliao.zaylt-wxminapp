@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navtitle: '新增病源',
+    navtitle: '新增病员',
     statusBarHeight: '',
     titleBarHeight: '',
     name: '',

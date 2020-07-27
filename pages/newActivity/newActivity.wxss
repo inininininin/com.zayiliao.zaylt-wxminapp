@@ -130,3 +130,23 @@ color:rgba(234,242,255,1);
 line-height:28rpx;
 display: block;
 }
+
+.readShare{
+  line-height: 40rpx;
+  font-size: 28rpx;
+  margin: 15rpx 32rpx;
+  color: #999999;
+}
+.readShare text:last-child{
+  display: inline-block;
+  margin-left: 40rpx;
+}
+
+/* houjia */
+.titleN{
+  font-size: 28rpx;
+  margin-left: 36rpx;
+  line-height: 35rpx;
+  margin-top: 20rpx;
+  display: block;
+}

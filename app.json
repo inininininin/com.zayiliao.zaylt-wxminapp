@@ -98,7 +98,9 @@
     "pages/frameworkDetailChange/frameworkDetailChange",
     "pages/frameworkIndex/frameworkIndex",
     "pages/loginClinic/loginClinic",
-    "pages/loginManage/loginManage"
+    "pages/loginManage/loginManage",
+    "pages/out/expertDetails/expertDetails",
+    "pages/cropper/cropper"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -130,7 +132,7 @@
         "pagePath": "pages/out/geneDetection/geneDetection",
         "iconPath": "pages/img/jiyin-gray@2x.png",
         "selectedIconPath": "pages/img/jiyin-blue@2x.png",
-        "text": "采样"
+        "text": "基因"
       },
       {
         "pagePath": "pages/out/mine/mine",

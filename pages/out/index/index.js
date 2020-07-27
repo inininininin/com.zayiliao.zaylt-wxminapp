@@ -14,7 +14,7 @@ Page({
     num: '0',
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
-    navbar: ['新病源', '未就诊', '已就诊'],
+    navbar: ['新病员', '未就诊', '已就诊'],
     currentTab: 0,
     list2: [],
     list1: [],
@@ -289,7 +289,7 @@ Page({
             success: function (res) {
               if (res.data.code == 0) {
                 that.setData({
-                  navbar: ['新病源', '未就诊(' + that.data.num1+')', '已就诊(' + res.data.data.sum.totalCount+')'],
+                  navbar: ['新病员', '未就诊(' + that.data.num1+')', '已就诊(' + res.data.data.sum.totalCount+')'],
                   num2: res.data.data.sum.totalCount,
                 })
                             } else if (res.data.code == 20 || res.data.code == 26) {

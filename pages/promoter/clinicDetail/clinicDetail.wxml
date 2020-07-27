@@ -17,7 +17,7 @@
 <view class="addPatientBox">
   <view class="addPatient" bindtap="addPatient">
   <image  mode="aspectFill"  src="../../img/xinzeng@2x.png"></image>
-  <text>新增病源</text>
+  <text>新增病员</text>
 </view>
 </view>
 <view class="navbarBox">

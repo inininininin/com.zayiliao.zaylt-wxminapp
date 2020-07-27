@@ -11,7 +11,7 @@ Page({
     navtitle: '',
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
-    navbar: ['推送病源', '门诊简介'],
+    navbar: ['推送病员', '门诊简介'],
     currentTab: 0,
     navBg:"#f2f2f2",
     imgalist: [],

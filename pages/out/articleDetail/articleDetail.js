@@ -278,7 +278,10 @@ Page({
   sharepyq(e) {
     var that = this
     if(that.data.imglist){
-    
+      wx.showToast({
+        title: '请稍等',
+        icon:'none'
+      })
       wx.request({
         url: app.globalData.url +'/c2/share?articleId=' + that.data.id,
         method: 'get',
@@ -305,8 +308,33 @@ Page({
     
     }else{
       wx.showToast({
-        title: '维护中',
+        title: '请稍等',
+        icon:'none'
       })
+      setTimeout(function(){
+        if(that.data.imglist){
+          wx.request({
+            url: app.globalData.url +'/c2/share?articleId=' + that.data.id,
+            method: 'get',
+            header: {
+              "Content-Type": "application/x-www-form-urlencoded",
+              'cookie': app.globalData.cookie
+            },
+            success: function (res) {
+              wx.hideToast({})
+            }
+          })
+            that.setData({
+              canvasShow:true
+            })
+            that.lookCode()
+        }else{
+          wx.showToast({
+            title: '生成失败,请稍后重试',
+            icon:'none'
+          })
+        }
+      },1500)
     }
    
     // var param = encodeURIComponent('pages/evaNowShare/evaNowShare?type=' + app.globalData.userInfoDetail.type + '&isfrom=1&id=' + (app.globalData.userInfoDetail.type1DoctorId || app.globalData.userInfoDetail.type2NurseId)+'&hospitalid='+(wx.getStorageSync('loginHospitalId')||''))
@@ -500,24 +528,26 @@ sys: function () {
   })
 },
 getImageInfo() {
+  var  that=this
   wx.getImageInfo({
     src: this.data.avatorShare,
     complete: (res) => {
       console.log(res)
-      var windowW = this.data.windowW;
+      var windowW = that.data.windowW;
       var nbei=res.width/windowW
-      this.setData({
-        avatorShareHeight:res.height/nbei,
+      var avatorShareHeight=parseInt(res.height/nbei)
+      that.setData({
+        avatorShareHeight:avatorShareHeight,
         avatorShareWidth: windowW
       })
-    
+      console.log(that.data.avatorShareHeight)
     }
   })
 },
   canvasdraw: function (canvas) {
     var that = this;
    
-    console.log(that.data.testImg)
+    // console.log(that.data.testImg)
     that.setData({
       canvasShow:true
     })
@@ -532,38 +562,56 @@ getImageInfo() {
         var windowW = that.data.windowW;
         var windowH = that.data.windowH;
         console.log(windowW,windowH)
-        that.getImageInfo()
-        canvas.drawImage('../../img/fang.png', 0, 0, windowW, windowW);
-        canvas.drawImage(that.data.avatorShare, 0, 0, windowW, that.data.avatorShareHeight,0, 0, windowW, 200);
-        canvas.drawImage(that.data.imglist[0], leftW,230, 120, 120);
-        // canvas.setFontSize(50)
-        canvas.font="18px Georgia";
-        canvas.width=windowW-100
-        // if(that.data.detail.type2NurseName){
-        //   canvas.fillText('护士：'+that.data.detail.type1DoctorName, 70, 50)
-        // }else if(that.data.detail.type1DoctorName){
-          if(that.data.list.title.length>16){
-            var titles=that.data.list.title.substring(0,16)+'...'
-          }else{
-            var titles=that.data.list.title
+        // that.getImageInfo()
+        wx.getImageInfo({
+          src: that.data.avatorShare,
+          complete: (res) => {
+            console.log(res)
+            var windowW = that.data.windowW;
+            var nbei=res.height/200
+            var avatorShareHeight=parseInt(windowW/nbei)
+
+            that.setData({
+              avatorShareHeight:res.height,
+              avatorShareWidth: res.width
+            })
+            console.log(that.data.avatorShareHeight)
+            console.log(windowW,that.data.avatorShareHeight)
+            canvas.drawImage('../../img/fang.png', 0, 0, windowW, windowW);
+            canvas.drawImage(that.data.avatorShare, 0, 0,  that.data.avatorShareWidth, that.data.avatorShareHeight,0, 0, windowW, 200);
+            canvas.drawImage(that.data.imglist[0], leftW,230, 120, 120);
+            // canvas.setFontSize(50)
+            canvas.font="18px Georgia";
+            canvas.width=windowW-100
+            // if(that.data.detail.type2NurseName){
+            //   canvas.fillText('护士：'+that.data.detail.type1DoctorName, 70, 50)
+            // }else if(that.data.detail.type1DoctorName){
+              if(that.data.list.title.length>16){
+                var titles=that.data.list.title.substring(0,16)+'...'
+              }else{
+                var titles=that.data.list.title
+              }
+              console.log(titles)
+              canvas.fillText(titles, 20, 230,200)
+            // }
+            canvas.font="16px Georgia";
+            canvas.fillText( that.data.list.hosptialName, 20, 260)
+            canvas.font="14px Georgia";
+            canvas.fillText('浏览量：'+ that.data.list.viewCount, 20, 290)
+            canvas.font="14px Georgia";
+            canvas.fillText('分享数：'+ that.data.list.shareCount, 20, 320)
+            canvas.draw(true,setTimeout(function(){
+              
+              that.saveCanvas()
+             
+              // setTimeout(function(){
+                
+              // },200)
+            },100));
+
           }
-          console.log(titles)
-          canvas.fillText(titles, 20, 230,200)
-        // }
-        canvas.font="16px Georgia";
-        canvas.fillText( that.data.list.hosptialName, 20, 260)
-        canvas.font="14px Georgia";
-        canvas.fillText('浏览量：'+ that.data.list.viewCount, 20, 290)
-        canvas.font="14px Georgia";
-        canvas.fillText('分享数：'+ that.data.list.shareCount, 20, 320)
-        canvas.draw(true,setTimeout(function(){
-          
-          that.saveCanvas()
-         
-          // setTimeout(function(){
-            
-          // },200)
-        },100));
+        })
+        
       }
     })
    
@@ -593,6 +641,7 @@ getImageInfo() {
       destHeight: windowW,
       canvasId: 'canvas',
       success: function (res) {
+        wx.hideToast({})
         console.log(res.tempFilePath)
         that.setData({
           // canvasShow:false

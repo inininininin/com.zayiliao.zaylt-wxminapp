@@ -14,7 +14,7 @@ Page({
     num: '4',
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
-    navbar: ['新病源', '未就诊', '已就诊'],
+    navbar: ['新病员', '未就诊', '已就诊'],
     currentTab: 0,
     list2: [],
     list1: [],
@@ -145,6 +145,7 @@ Page({
     })
   },
   search(e) {
+    console.log(this.data.url)
     wx.navigateTo({
       url: '../search/search?url=' + this.data.url,
     })

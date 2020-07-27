@@ -16,7 +16,7 @@
  
 </view>
 
-<view class='required' hidden="{{currentTab!==0}}">
+<view class='required' hidden="{{currentTab==1}}">
     <text class='basicInformation'>基本信息</text>
     <view class='basicLine'>
       <text>医院名称</text><text>{{detail.name||''}}</text>
@@ -33,7 +33,7 @@
 </view>
 
 </view>
-<view class='required specialDepartment' hidden="{{currentTab!==1}}">
+<view class='required specialDepartment' hidden="{{currentTab==0}}">
     <view wx:for='{{list}}' bindtap="specialOffice" data-id='{{item.itemId}}'>
       <image  mode="aspectFill"  src='{{item.cover}}'></image>
       <text>{{item.name}}</text>

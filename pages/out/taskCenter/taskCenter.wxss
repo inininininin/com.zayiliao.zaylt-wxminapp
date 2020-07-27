@@ -60,6 +60,7 @@ page {
   text-align: center;
   width: 100%;
   margin: 0 !important;
+  z-index: 9999;
 }
 
 .titleText {

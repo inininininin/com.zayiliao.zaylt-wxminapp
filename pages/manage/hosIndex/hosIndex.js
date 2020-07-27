@@ -204,7 +204,7 @@ Page({
             });
             if (toPageNo == 1) {
               wx.showToast({
-                title: '没有相关类型文章',
+                title: '没有相关文章',
                 // icon: 'loading',
                 // duration: 1500
               })

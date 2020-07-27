@@ -4,7 +4,7 @@
 <view class='line'><view><text>地址管理</text><image  mode="aspectFill"  src='../img/back.png'></image></view></view>
 </navigator>
 
-<view class='line'><view><text>关于我们</text><image  mode="aspectFill"  src='../img/back.png'></image></view></view>
+<!-- <view class='line'><view><text>关于我们</text><image  mode="aspectFill"  src='../img/back.png'></image></view></view> -->
 
-<view class='line'><view><text>版本号</text><text style='float:right;margin-right:30rpx'>{{Version}}</text></view></view>
+<view class='line'><view><text>版本号</text><text style='float:right;margin-right:30rpx' bindtap="version">{{Version}}</text></view></view>
 <view class='loginout' bindtap='loginout'>退出登录</view>

@@ -12,6 +12,10 @@
     <text>{{list.addTime}}</text>
   </view>
 </view>
+ <view class="readShare">
+	<text>浏览量：{{list.viewCount||0}}</text>
+	<text>分享数：{{list.shareCount||0}}</text>
+</view>
 <view class='detail' style='font-size:{{fontSize}}rpx !important'>
   <!-- <text>
     {{res}}
@@ -25,28 +29,28 @@
     <view>
       <view class='title'>请选择分享平台</view>
       <view class='shareteam'>
-        <button open-type='share' style='margin-left:25% !important'>
+        <button open-type='share' >
           <image  mode="aspectFill"  bindtap='sharewx' class='wx' src='../../img/weixin@2x.png'></image>
           <text>分享到微信</text>
         </button>
-        <!-- bindtap='sharepyq' -->
-        <!-- <button  bindtap='shareIs'>
+        
+        <button  bindtap='sharepyq'>
               <image  mode="aspectFill"  class='pyq' src='../../img/pengyouquan@2x.png'></image>
               <text>分享到朋友圈</text>
-            </button> -->
+            </button> 
       </view>
     </view>
     <view bindtap='close'>取消</view>
   </view>
 </view>
-<!-- <view class='shareFont'>
+<view class='shareFont'>
   <view>
     <image  mode="aspectFill"  class='share' bindtap='share' src='../../img/share.png'></image>
   </view>
   <view>
     <image  mode="aspectFill"  class='font' bindtap='changefont' src='../../img/ziti.png'></image>
   </view>
-</view> -->
+</view>
 <view bindtap='closeFont' style='display:{{display}};width:100%;height:100%;position:fixed;top:0;left:0'>
   <view class="progresspages" style='top:{{44+statusBarHeight}}px'>
     <text class='asmall'>A</text>
@@ -59,4 +63,10 @@
     </view>
     <text class='abig'>A</text>
   </view>
+</view>
+
+<!-- 画布大小按需定制 这里我按照背景图的尺寸定的  -->
+<view class="canvasShow" wx-if='{{canvasShow}}'   style="opacity:1" bindtap="closeCanvas">
+<canvas canvas-id='canvas'   style='width:{{windowW}}px;height:{{windowW}}px;margin-top:{{windowTop}}px;border:2rpx solid #e5e5e5' catchlongtap="saveCanvas"></canvas>
+	<button type='primary' size='mini' bindtap='saveIs'>保存分享图</button>
 </view>

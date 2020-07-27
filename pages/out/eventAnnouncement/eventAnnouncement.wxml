@@ -10,7 +10,11 @@
 <view wx:for='{{schemeList}}' >
 <!-- <navigator  url='../eventAnnouncementDetail/eventAnnouncementDetail?id={{item.itemId}}&contentBtId={{item.contentBtId}}'> -->
 <navigator  url='../../newActivity/newActivity?type={{item.itemId}}'>
-<view class='action' style='background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;'></view>
+<view class='action imgBox content' style='background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;'><view>
+    <text>{{item.title}}</text>
+    <text>{{item.addTime}}</text>
+    </view></view>
+    
 <!-- <image  mode="aspectFill"  class='action' src='{{item.cover}}'></image> -->
 </navigator>
   

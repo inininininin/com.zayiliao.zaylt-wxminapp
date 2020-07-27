@@ -98,8 +98,8 @@ App({
   },
   dateChange: function (data) {
     var date = new Date(data)
-    var Y = date.getFullYear() + '/';
-    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '/';
+    var Y = date.getFullYear() + '-';
+    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
     var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
     return (Y + M + D)
   },
@@ -125,7 +125,8 @@ App({
     cover: '',
     authenticationIs: '',
     src:'', 
-    Version:'6.2.0',
+    Version:'20.0710.1045',
+    versionIntro: '修复了部分BUG\n优化了部分体验',
     lastClient:'',
     longitude:'',
     latitude: '',

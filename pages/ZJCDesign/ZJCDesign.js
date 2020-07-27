@@ -11,7 +11,22 @@ Page({
     titleBarHeight: getApp().globalData.titleBarHeight,
     Version:''
   },
-
+  version(e){
+    wx.showModal({
+      title: 'ver: '+app.globalData.Version,
+      content: app.globalData.versionIntro ? app.globalData.versionIntro : "",
+      showCancel: false,
+      cancelText: "取消111",
+      cancelColor: "#000",
+      confirmText: "确定",
+      confirmColor: "#0f0",
+      success: function (res) {
+        if (res.confirm) {
+    
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -37,14 +52,40 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
+
   onShow: function () {
 
   },
-loginout:function(e){
-  wx.navigateTo({
-    url: '../login/login',
-  })
-},
+  loginout(e) {
+//  console.log(app.globalData.lastClient)
+    var that = this
+    wx.showModal({
+        title: '退出',
+        content: '确定要退出登录？',
+        success: function (res) {
+            if (res.cancel) {
+               //点击取消,默认隐藏弹框
+            } else {
+               //点击确定
+               console.log(app.globalData.lastClient)
+               if(app.globalData.lastClient==2){
+                wx.reLaunch({
+                  url: '../loginClinic/loginClinic',
+                })
+               }else  if(app.globalData.lastClient==1){
+                wx.reLaunch({
+                  url: '../login/login',
+                })
+               }
+              
+            }
+         },
+         fail: function (res) { }, 
+         complete: function (res) { },
+    })
+    
+  },
+
   /**
    * 生命周期函数--监听页面隐藏
    */

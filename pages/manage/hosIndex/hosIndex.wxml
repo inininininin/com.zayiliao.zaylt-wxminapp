@@ -18,7 +18,7 @@
     <swiper bindchange="swiperChange" class="swiper" current="{{swiperCurrent}}" autoplay="false" interval="5000" duration="1000">
       <block wx:for="{{cover}}" wx:for-index="index">
         <swiper-item>
-         <navigator wx:if='{{item.jump==0}}' url=''>
+         <navigator wx:if='{{item.jump==0}}' >
             <!-- <image  mode="aspectFill"  src="{{item}}" class="slide-image" mode="aspectFill" /> -->
             <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
           </navigator>
@@ -65,7 +65,7 @@
     </view>
     <view bindtap='bygl'>
       <image  mode="aspectFill"  src='../../img/bingyuanguanli@2x.png'></image>
-      <text>病源管理</text>
+      <text>病员管理</text>
     </view>
     <view bindtap='qxjc'>
       <image  mode="aspectFill"  src='../../img/qixiejicai@2x.png'></image>

@@ -83,7 +83,7 @@
         <!-- <image  mode="aspectFill"  src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image> -->
       </view>
 
-      <image  mode="aspectFill"  src='../../img/back.png'></image>
+      <!-- <image  mode="aspectFill"  src='../../img/back.png'></image> -->
     </view>
   </view>
 </view>

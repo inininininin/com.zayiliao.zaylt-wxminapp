@@ -1,20 +1,37 @@
-// pages/out/addpatient/addpatient.js
+// pages/out/expertIntroduction/expertIntroduction.js
+var app = getApp()
+var utils = require('../../../utils/util.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    navtitle: '新增病员',
+    navtitle: '专家介绍',
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
   },
+  backHistory: function (e) {
+    wx.navigateBack({
 
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var jobTitles=JSON.parse(options.detail).jobTitles
+    // if (jobTitles != '' && jobTitles != null && jobTitles!=undefined){
+    //   console.log(jobTitles)
+    //    jobTitles = jobTitles.split('，')
+    // }else{
+    //   jobTitles =[]
+    // }
+    this.setData({
+      detail: JSON.parse(options.detail),
+      alterTime:utils.formatTime(JSON.parse(options.detail).alterTime / 1000, 'Y-M-D h:m'),
+      jobTitles:jobTitles,
+    })
   },
 
   /**
@@ -22,12 +39,6 @@ Page({
    */
   onReady: function () {
 
-    
-  },
-  backHistory: function (e) {
-    wx.navigateBack({
-
-    })
   },
 
   /**
@@ -69,19 +80,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    if (app.globalData.lastClient == 1) {
-      var path = '/pages/index/index'
-    } else {
-      var path = '/pages/out/index/index'
-    }
-    return {
-      title: '欢迎使用共享医联体小程序', //分享内容
-      path: path, //分享地址
-      imageUrl: 'https://zaylt.njshangka.com/favicon.ico', //分享图片
-      success: function (res) {
-      },
-      fail: function (res) {
-      }
-    }
+
   }
 })

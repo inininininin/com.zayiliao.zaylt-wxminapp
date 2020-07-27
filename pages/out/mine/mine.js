@@ -186,7 +186,27 @@ Page({
       tel: tel,
     })
   },
-
+  loginout(e) {
+ 
+    var that = this
+    wx.showModal({
+      title: '退出',
+         content: '确定要退出登录？',
+         success: function (res) {
+            if (res.cancel) {
+               //点击取消,默认隐藏弹框
+            } else {
+               //点击确定
+               wx.reLaunch({
+                url: '../../loginClinic/loginClinic',
+              })
+            }
+         },
+         fail: function (res) { }, 
+         complete: function (res) { },
+    })
+    
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

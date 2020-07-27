@@ -195,7 +195,8 @@ page {
   color: rgb(51,51,51);
 }
 .indexbox navigator>view>view:nth-child(2) text{
-  display: inline-block;
+  /* display: inline-block; */
+  display: block;
   margin: 10rpx 0 0 0;
 }
 .indexbox navigator>view>view:nth-child(2)>view{

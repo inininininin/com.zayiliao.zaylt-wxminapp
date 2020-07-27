@@ -17,7 +17,7 @@
         <view class='mzlf'>
           <view class='mzname'>{{name}}</view>
           <view class='mznum'>
-            <image  mode="aspectFill"  src='../img/hospital_icon12@2x.png'></image>病源{{patientCount}}个</view>
+            <image  mode="aspectFill"  src='../img/hospital_icon12@2x.png'></image>病员{{patientCount}}个</view>
           <view class='mzdoc'>
             <text class='mzdocname'>{{headmanName}}</text>
             <text class='mzdocnum'>{{contactTel}}</text>

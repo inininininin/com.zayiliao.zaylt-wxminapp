@@ -38,7 +38,7 @@
   </view>
 </view>
 <view class="byList" >
-  <text>病源列表</text>
+  <text>病员列表</text>
 
   <!-- 下拉框 -->
   <view class='select_box'>

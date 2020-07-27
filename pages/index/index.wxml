@@ -17,28 +17,28 @@
             <!-- <image  mode="aspectFill"  src="{{item}}" class="slide-image" mode="aspectFill" /> -->
             <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
           </navigator>
-          <navigator wx:if='{{item.type==1}}' url='../webview/webview?href={{item.jump1Url}}'>
+          <navigator wx:if='{{item.type==1}}' url='../webview/webview?href={{item.type1Url}}'>
             <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
           </navigator>
-          <navigator wx:if='{{item.type==2}}' url='../out/articleDetail/articleDetail?id={{item.jump2ArticleId}}'>
+          <navigator wx:if='{{item.type==2}}' url='../out/articleDetail/articleDetail?id={{item.type2ArticleId}}'>
             <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
           </navigator>
-          <navigator wx:if='{{item.type==3}}' url='../out/expertIntroduction/expertIntroduction?id={{item.jump3DoctorId}}'>
+          <navigator wx:if='{{item.type==3}}' url='../out/expertIntroduction/expertIntroduction?id={{item.type3DoctorId}}'>
             <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
           </navigator>
-          <navigator wx:if='{{item.type==4}}' url='../out/highQualityCaseDetail/highQualityCaseDetail?id={{item.jump4ProjectId}}'>
+          <navigator wx:if='{{item.type==4}}' url='../out/highQualityCaseDetail/highQualityCaseDetail?id={{item.type4ProjectId}}'>
             <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
           </navigator>
-          <navigator wx:if='{{item.type==5}}' url='../out/eventAnnouncementDetail/eventAnnouncementDetail?id={{item.jump5ActivityId}}'>
+          <navigator wx:if='{{item.type==5}}' url='../out/eventAnnouncementDetail/eventAnnouncementDetail?id={{item.type5ActivityId}}'>
             <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
           </navigator>
           <navigator wx:if='{{item.type==6}}' url='../out/hospitalImage/hospitalImage?id={{item.hospitalMaincarouselId}}'>
             <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
           </navigator>
-          <navigator wx:if='{{item.type==7}}' url='../out/expertIntroduction/expertIntroduction?id={{item.hospitalMaincarouselId}}'>
+          <navigator wx:if='{{item.type==7}}' url='../out/expertIntroduction/expertIntroduction?id={{item.hospitalAdId}}'>
             <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
           </navigator>
-          <navigator wx:if='{{item.type==8}}' url='../out/expertIntroduction/expertIntroduction?id={{item.hospitalMaincarouselId}}'>
+          <navigator wx:if='{{item.type==8}}' url='../out/hospitalImage/hospitalImage?id={{item.hospitalAdId}}&currentTab=1'>
             <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
           </navigator>
         </swiper-item>
@@ -60,7 +60,7 @@
     </view>
     <view bindtap='bygl'>
       <image  mode="aspectFill"  src='../img/bingyuanguanli@2x.png'></image>
-      <text>病源管理</text>
+      <text>病员管理</text>
     </view>
     <view bindtap='qxjc'>
       <image  mode="aspectFill"  src='../img/qixiejicai@2x.png'></image>
@@ -129,7 +129,7 @@
   </view>
   <view bindtap='gene'>
     <image  mode="aspectFill"  class='bottomBthimg2' src='../img/jiyin-gray@2x.png'></image>
-    <text>集采</text>
+    <text>基因</text>
   </view>
   <view bindtap='mine'>
     <image  mode="aspectFill"  class='bottomBthimg3' src='../img/wode@2x.png'></image>

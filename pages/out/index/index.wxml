@@ -106,7 +106,7 @@
       </view>
       <view class='input'>
         <text>身份证号码</text>
-        <input bindinput='idCard' value='{{idCard}}' type='idcard' placeholder-class='inputPla' placeholder='请填写'></input>
+        <input bindinput='idCard' value='{{idCard}}' type='idcard' placeholder-class='inputPla' maxlength="18" placeholder='请填写'></input>
       </view>
 
 
@@ -130,7 +130,7 @@
     <!-- <navigator url='../addpatient/addpatient'>
 <view class='addOutPatient' bindtap='addOutPatient'>
 <image  mode="aspectFill"  src='../img/xinzeng@2x.png'></image>
-<text>新增病源</text>
+<text>新增病员</text>
 </view>
 </navigator>
 

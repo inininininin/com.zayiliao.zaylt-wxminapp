@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navtitle: '病源列表',
+    navtitle: '病员列表',
     statusBarHeight: '',
     titleBarHeight: '',
     toPageNo: '',

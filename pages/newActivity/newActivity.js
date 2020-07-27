@@ -45,6 +45,8 @@ Page({
         tel: that.data.tel,
         brief: that.data.brief,
         address: that.data.address,
+        shareCount: that.data.shareCount,
+        viewCount: that.data.viewCount,
         hospitalId: app.globalData.hospitalId,
       },
       method: 'post',

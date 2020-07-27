@@ -11,7 +11,22 @@ Page({
     titleBarHeight: getApp().globalData.titleBarHeight,
     Version: ''
   },
-
+  version(e){
+    wx.showModal({
+      title: 'ver: '+app.globalData.Version,
+      content: app.globalData.versionIntro ? app.globalData.versionIntro : "",
+      showCancel: false,
+      cancelText: "取消111",
+      cancelColor: "#000",
+      confirmText: "确定",
+      confirmColor: "#0f0",
+      success: function (res) {
+        if (res.confirm) {
+    
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -41,9 +56,26 @@ Page({
 
   },
   loginout: function (e) {
-    wx.redirectTo({
-      url: '../../loginManage/loginManage',
+    var that = this
+    wx.showModal({
+      title: '退出',
+         content: '确定要退出登录？',
+         success: function (res) {
+            if (res.cancel) {
+               //点击取消,默认隐藏弹框
+            } else {
+               //点击确定
+              //  console.log(111)
+              wx.reLaunch({
+                url: '../../loginManage/loginManage',
+              })
+            }
+         },
+         fail: function (res) { }, 
+         complete: function (res) { },
     })
+    
+   
   },
   /**
    * 生命周期函数--监听页面隐藏

@@ -11,6 +11,11 @@ Page({
     titleBarHeight: getApp().globalData.titleBarHeight,
     headimg:'../../img/touxiang@2x.png'
   },
+  handleContact (e) {
+    console.log(e)
+    console.log(e.detail.path)
+    console.log(e.detail.query)
+},
   userIndex: function (e) {
     wx.navigateTo({
       url: '../ZJCDesign/ZJCDesign',

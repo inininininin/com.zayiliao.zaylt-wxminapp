@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navtitle: '病源搜索',
+    navtitle: '病员搜索',
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
     list:[],
