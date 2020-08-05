@@ -40,21 +40,24 @@ App({
    
     const vm = this
     wx.getSystemInfo({
-      success: function (res) {
-        let totalTopHeight = 68
-        if (res.model.indexOf('iPhone X') !== -1) {
-          totalTopHeight = 88
-        } else if (res.model.indexOf('iPhone') !== -1) {
-          totalTopHeight = 64
+      success: function(res) {
+        let titleBarHeight = 0
+        if (res.model.indexOf('iPhone') !== -1) {
+          titleBarHeight = 44
+        } else {
+          titleBarHeight = 48
         }
-        vm.globalData.statusBarHeight = res.statusBarHeight
-        vm.globalData.titleBarHeight = totalTopHeight - res.statusBarHeight
+        // that.setData({
+          vm.globalData.statusBarHeight= res.statusBarHeight,
+          vm.globalData.titleBarHeight= titleBarHeight
+        // });
       },
       failure() {
-        vm.globalData.statusBarHeight = 0
-        vm.globalData.titleBarHeight = 0
+        vm.globalData.statusBarHeight= res.statusBarHeight,
+          vm.globalData.titleBarHeight= titleBarHeight
       }
     })
+    
     wx.getLocation({
       type: 'wgs84',
       isHighAccuracy: true,
@@ -125,7 +128,7 @@ App({
     cover: '',
     authenticationIs: '',
     src:'', 
-    Version:'20.0710.1045',
+    Version:'20.0805.0912',
     versionIntro: '修复了部分BUG\n优化了部分体验',
     lastClient:'',
     longitude:'',

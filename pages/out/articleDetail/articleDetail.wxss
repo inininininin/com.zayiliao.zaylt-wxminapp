@@ -271,6 +271,7 @@ canvas{
   background:#1890FF !important;
   color: #fff !important;
 }
+
 .readShare{
   line-height: 40rpx;
   font-size: 28rpx;

@@ -95,6 +95,13 @@ Page({
         })
       }
       var val = num - count
+      if(val==0){
+        wx.showToast({
+          title: '请选择采购数量',
+          icon:'none',
+        })
+        return
+      }
       wx.request({
         url: app.globalData.url  + '/c/procurement/shoppingcart/move',
         header: {
@@ -188,7 +195,7 @@ Page({
     var token = wx.getStorageSync('token')
     var domain = wx.getStorageSync('domain')
     console.log(domain)
-
+    
     that.setData({
       token: token,
       domain: domain,

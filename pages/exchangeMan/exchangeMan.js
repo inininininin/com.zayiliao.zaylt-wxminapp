@@ -132,10 +132,22 @@ Page({
                 that.data.list[i].intro = that.data.intro
             }
           }
-          that.setData({
-            showIs: 1,
-            list: that.data.list
+          wx.showToast({
+            title: '修改成功',
+            icon: 'none',
+            duration: 2000,
+            mask: true,
+            complete: function complete(res) {
+              setTimeout(function () {
+                that.setData({
+                  showIs: 1,
+                  list: that.data.list
+                })
+              }, 500);
+            }
           })
+
+          
         }
       }
     })

@@ -29,7 +29,7 @@
           <view class='child_name_1'>{{ item.deviceName }}</view>
           <view class='child_name_2'>{{ item.brief }}</view>
           <view class='adddel'><image  mode="aspectFill"  data-id="{{ item.deviceId }}" bindtap='del' data-num='{{item.count}}' wx:if='{{item.count!=0}}'  src='../img/jian@2x.png'></image>
-          <input bindblur='inputVal'data-num='{{item.count}}' data-id="{{ item.deviceId }}" wx:if='{{item.count!=0}}' value='{{item.count}}'></input>
+          <input bindblur='inputVal'data-num='{{item.count}}' type='number' data-id="{{ item.deviceId }}" wx:if='{{item.count!=0}}' value='{{item.count}}'></input>
           <image  mode="aspectFill"  data-id="{{ item.deviceId }}" bindtap='add' style='float:right' data-num='{{item.count}}' src='../img/jia@2x.png'></image></view>
         </view>
       </view>

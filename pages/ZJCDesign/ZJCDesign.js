@@ -67,6 +67,7 @@ Page({
                //点击取消,默认隐藏弹框
             } else {
                //点击确定
+               app.globalData.cookie=''
                console.log(app.globalData.lastClient)
                if(app.globalData.lastClient==2){
                 wx.reLaunch({

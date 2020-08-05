@@ -31,6 +31,7 @@ Page({
                //点击取消,默认隐藏弹框
             } else {
                //点击确定
+               app.globalData.cookie=''
                wx.reLaunch({
                 url: '../login/login',
               })

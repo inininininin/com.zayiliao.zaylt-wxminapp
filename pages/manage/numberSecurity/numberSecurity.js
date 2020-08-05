@@ -66,6 +66,7 @@ Page({
             } else {
                //点击确定
               //  console.log(111)
+              app.globalData.cookie=''
               wx.reLaunch({
                 url: '../../loginManage/loginManage',
               })

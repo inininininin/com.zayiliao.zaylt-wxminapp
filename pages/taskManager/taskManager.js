@@ -131,11 +131,37 @@ Page({
       confirmColor: "rgb(43,119,239)",
       success: function (res) {
         if (res.confirm) {
-          that.modify(that.data.modifytype)         
-        }      
-        that.setData({
-          showIs: true,
-        })
+          that.modify(that.data.modifytype)     
+          wx.showToast({
+            title: '修改成功',
+            icon: 'none',
+            duration: 2000,
+            mask: true,
+            complete: function complete(res) {
+              setTimeout(function () {
+                that.setData({
+                  showIs: true,
+                })
+              }, 500);
+            }
+          })    
+        } else{
+          wx.showToast({
+            title: '已取消',
+            icon: 'none',
+            duration: 2000,
+            mask: true,
+            complete: function complete(res) {
+              setTimeout(function () {
+                that.setData({
+                  showIs: true,
+                })
+              }, 500);
+            }
+          })
+        }     
+        
+       
       }
     })
    

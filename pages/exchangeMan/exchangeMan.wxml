@@ -63,7 +63,7 @@
   <view class="editItem">
     <text>单个积分</text>
     <text>分</text>
-    <input bindinput="payExchangepoint" type="number" style="margin-right:5rpx;" placeholder-class="placeClass" placeholder="请输入商品单个积分称" value="{{payExchangepoint}}"></input>
+    <input bindinput="payExchangepoint" type="number" style="margin-right:5rpx;" placeholder-class="placeClass" placeholder="请输入商品单个积分" value="{{payExchangepoint}}"></input>
   </view>
   <view class="editItem">
     <text>总数量</text>

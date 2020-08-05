@@ -147,6 +147,12 @@ Page({
         wx.hideToast()
         if (res.data.code == 0) {
           var array = res.data.data.rows
+          for(var i in array){
+            if(array[i].hospitalUserId==that.data.hospitalUserId){
+              array.splice(i, 1);
+            }
+            console.log(array)
+          }
           that.setData({
             array: array,
             hospitalUserIdNew: that.data.hospitalUserId

@@ -445,6 +445,7 @@ Page({
   saveIs: function() {
     var that = this
     //生产环境时 记得这里要加入获取相册授权的代码
+    console.log( that.data.urls)
     wx.saveImageToPhotosAlbum({
       filePath: that.data.urls,
       success(res) {

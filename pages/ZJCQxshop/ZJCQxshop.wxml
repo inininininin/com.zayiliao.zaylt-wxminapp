@@ -56,7 +56,7 @@
           </navigator>
           <view class='adddel'>
             <image  mode="aspectFill"  data-id="{{ item.deviceId }}" bindtap='del' data-num='{{item.countInShoppingcart}}' wx:if='{{item.countInShoppingcart!=0}}' src='../img/jian@2x.png'></image>
-            <input bindblur='inputVal' data-num='{{item.countInShoppingcart}}' data-id="{{ item.deviceId }}" wx:if='{{item.countInShoppingcart!=0}}' value='{{item.countInShoppingcart}}'></input>
+            <input bindblur='inputVal' type='number' data-num='{{item.countInShoppingcart}}' data-id="{{ item.deviceId }}" wx:if='{{item.countInShoppingcart!=0}}' value='{{item.countInShoppingcart}}'></input>
             <image  mode="aspectFill"  data-id="{{ item.deviceId }}" bindtap='add' style='float:right' data-num='{{item.countInShoppingcart}}' src='../img/jia@2x.png'></image>
           </view>
         </view>

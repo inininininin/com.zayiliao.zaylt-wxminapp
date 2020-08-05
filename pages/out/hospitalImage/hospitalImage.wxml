@@ -1,22 +1,22 @@
-<view class="container" style="height:{{243+statusBarHeight}}px;padding-top:{{statusBarHeight+titleBarHeight}}px">
+<view class="container" style="height:{{243+statusBarHeight}}px;padding-top:{{statusBarHeight+titleBarHeight}}px;position:fixed;top:0;">
   <view class='indexTopBg' style='height:{{243+statusBarHeight}}px;background:url("{{detail.cover}}");background-size:100% 100%;'>
     <view class="header">
       <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
       <view class="title-bar" style="height:{{titleBarHeight}}px">
         <view>
-          <image  mode="aspectFill"  bindtap='backHistory' style='display:inline-block;top:{{statusBarHeight}}px;' src='../../img/back-white@2x.png'></image>
+          <image  mode="aspectFill"  bindtap='backHistory' style='display:inline-block;top:{{statusBarHeight}}px;' src='../img/shape@2x.png'></image>
         </view>
       </view>
     </view>
   </view>
 </view>
 
-<view class="navbar">
+<view class="navbar" style="position:fixed;top:{{243+statusBarHeight}}px;">
 <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</view>
  
 </view>
 
-<view class='required' hidden="{{currentTab==1}}">
+<view class='required' hidden="{{currentTab==1}}" style="margin-top:{{243+statusBarHeight}}px">
     <text class='basicInformation'>基本信息</text>
     <view class='basicLine'>
       <text>医院名称</text><text>{{detail.name||''}}</text>

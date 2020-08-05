@@ -29,7 +29,7 @@
           <navigator wx:if='{{item.type==4}}' url='../out/highQualityCaseDetail/highQualityCaseDetail?id={{item.type4ProjectId}}'>
             <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
           </navigator>
-          <navigator wx:if='{{item.type==5}}' url='../out/eventAnnouncementDetail/eventAnnouncementDetail?id={{item.type5ActivityId}}'>
+          <navigator wx:if='{{item.type==5}}' url='../newActivity/newActivity?type={{item.type5ActivityId}}'>
             <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
           </navigator>
           <navigator wx:if='{{item.type==6}}' url='../out/hospitalImage/hospitalImage?id={{item.hospitalMaincarouselId}}'>

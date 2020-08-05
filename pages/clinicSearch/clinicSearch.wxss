@@ -254,7 +254,7 @@ line-height:33rpx;
 }
 .clinicList>view .pushCount{
   font-size: 28rpx;
-  line-height: 50rpx;
+  line-height: 48rpx;
   width: 170rpx;
   height: 50rpx;
   border-radius: 50rpx;

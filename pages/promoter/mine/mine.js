@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navtitle: '我的',
+    navtitle: '',
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
     display:0,
