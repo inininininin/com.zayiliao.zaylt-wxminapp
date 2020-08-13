@@ -430,6 +430,11 @@ Page({
                        } else {
                          app.globalData.src = app.globalData.url + res.data.data.hospital.license
                        }
+                       if (res.data.data.hospital.cover == '' || res.data.data.hospital.cover == null || res.data.data.hospital.cover == undefined) {
+                        app.globalData.srcCover = ''
+                      } else {
+                        app.globalData.srcCover = app.globalData.url + res.data.data.hospital.cover
+                      }
                        if (res.data.data.type == 1) {
                          wx.navigateTo({
                            url: '../promoter/index/index',
@@ -524,7 +529,11 @@ Page({
                       } else {
                         app.globalData.src = app.globalData.url + res.data.data.clinic.license
                       }
-
+                      if (res.data.data.clinic.cover == '' || res.data.data.clinic.cover == null || res.data.data.clinic.cover == undefined) {
+                        app.globalData.src = ''
+                      } else {
+                        app.globalData.srcCover = app.globalData.url + res.data.data.clinic.cover
+                      }
                       wx.switchTab({
                         url: '../out/index/index',
                       })

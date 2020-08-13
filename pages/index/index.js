@@ -137,6 +137,23 @@ Page({
           wx.navigateTo({
             url: '../login/login',
           })
+        }else if (res.data.code == 0 ){
+          app.globalData.phone = res.data.data.phone;
+                       app.globalData.userId = res.data.data.userId;
+                       app.globalData.hospitalId = res.data.data.hospital.hospitalId;
+                       app.globalData.hospitalName = res.data.data.hospital.name;
+                       app.globalData.hospitaladdress = res.data.data.hospital.address;
+                       app.globalData.authenticationIs = res.data.data.hospital.authStatus;
+                       if (res.data.data.hospital.license == '' || res.data.data.hospital.license == null || res.data.data.hospital.license == undefined) {
+                         app.globalData.src = ''
+                       } else {
+                         app.globalData.src = app.globalData.url + res.data.data.hospital.license
+                       }
+                       if (res.data.data.hospital.cover == '' || res.data.data.hospital.cover == null || res.data.data.hospital.cover == undefined) {
+                        app.globalData.srcCover = ''
+                      } else {
+                        app.globalData.srcCover = app.globalData.url + res.data.data.hospital.cover
+                      }
         }
       }
     })

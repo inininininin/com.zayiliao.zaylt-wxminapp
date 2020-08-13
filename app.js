@@ -128,7 +128,7 @@ App({
     cover: '',
     authenticationIs: '',
     src:'', 
-    Version:'20.0805.0912',
+    Version:'1.0.2008130951',
     versionIntro: '修复了部分BUG\n优化了部分体验',
     lastClient:'',
     longitude:'',

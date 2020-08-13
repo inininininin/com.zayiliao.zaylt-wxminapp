@@ -22,7 +22,10 @@ Page({
     time:60
   },
   selectEnter(){
-    wx.navigateTo({
+    // wx.navigateTo({
+    //   url: '../selectRole/selectRole',
+    // })
+    wx.redirectTo({
       url: '../selectRole/selectRole',
     })
   },
@@ -438,14 +441,26 @@ Page({
                        } else {
                          app.globalData.src = app.globalData.url + res.data.data.hospital.license
                        }
+                       if (res.data.data.hospital.cover == '' || res.data.data.hospital.cover == null || res.data.data.hospital.cover == undefined) {
+                        app.globalData.srcCover = ''
+                      } else {
+                        app.globalData.srcCover = app.globalData.url + res.data.data.hospital.cover
+                      }
+                       
                        if (res.data.data.type == 1) {
-                         wx.navigateTo({
-                           url: '../promoter/index/index',
+                         wx.redirectTo({
+                          url: '../promoter/index/index',
                          })
+                        //  wx.navigateTo({
+                        //    url: '../promoter/index/index',
+                        //  })
                        } else {
-                         wx.navigateTo({
+                         wx.redirectTo({
                            url: '../index/index',
                          })
+                        //  wx.navigateTo({
+                        //    url: '../index/index',
+                        //  })
                        }
                      }else{
                        wx.showModal({
@@ -532,7 +547,12 @@ Page({
                       } else {
                         app.globalData.src = app.globalData.url + res.data.data.clinic.license
                       }
-
+                      if (res.data.data.clinic.cover == '' || res.data.data.clinic.cover == null || res.data.data.clinic.cover == undefined) {
+                        app.globalData.srcCover = ''
+                      } else {
+                        app.globalData.srcCover = app.globalData.url + res.data.data.clinic.cover
+                      }
+                      
                       wx.switchTab({
                         url: '../out/index/index',
                       })
@@ -610,10 +630,12 @@ Page({
                         app.globalData.phone = res.data.data.phone;
                         app.globalData.userId = res.data.data.userId;
                        
-                          wx.navigateTo({
+                          // wx.navigateTo({
+                          //   url: '../manage/index/index',
+                          // })
+                          wx.redirectTo({
                             url: '../manage/index/index',
                           })
-                       
                       } else {
                         wx.showModal({
                           title: '提示',

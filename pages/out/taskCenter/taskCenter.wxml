@@ -2,10 +2,10 @@
   <view class='indexTopBg' style='height:{{157+statusBarHeight}}px'>
     <view class="header">
       <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
-      <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view class="title-bar" style="height:{{titleBarHeight}}px;line-height:{{titleBarHeight}}px">
         <view>
           <image  mode="aspectFill"  bindtap='backHistory' style='display:inline-block;top:{{2+statusBarHeight}}px;left:10rpx;padding:20rpx;' src='../img/shape@2x.png'></image>
-          <!-- <text>{{navtitle}}</text> -->
+          <text>{{navtitle}}</text>
         </view>
       </view>
     </view>
@@ -13,7 +13,7 @@
     <text class='pointIntro' bindtap='look'>积分说明</text>
   </view>
 </view>
-<view class='firstTimeIncome'>
+<view class='firstTimeIncome' style="margin-top:{{167+statusBarHeight}}px">
   <text class='incomeTitle'>首次收益</text>
   <view class='list' wx:for='{{list1}}'>
   

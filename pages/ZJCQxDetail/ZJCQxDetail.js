@@ -230,6 +230,7 @@ Page({
             movies: picBlob,
             totalCountInShoppingcart: res.data.data.totalCountInShoppingcart
           })
+        
           wx.request({
             url: app.globalData.url + '/other/bigtxt/' + detailBdId + '/' + detailBdId,
             header: {

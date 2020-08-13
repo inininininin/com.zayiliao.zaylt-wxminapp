@@ -13,7 +13,7 @@
 
 <view class='ownDetail' bindtap='yyzz'>
   <view class='avaterBox'>
-    <image  mode="aspectFill"  src='../../img/logo@2x.png'></image>
+    <image  mode="aspectFill" bindtap="lookcover"  src='{{srcCover}}'></image>
     <!-- <image  mode="aspectFill"  wx:if="{{src==''}}" src="{{src}}" bindtap='bindChooiceProduct' class='avater' src='../../img/logo@2x.png'></image> -->
     <text class='yirenzheng' wx:if='{{display==1}}'>已认证</text>
     <text class='weirenzheng' wx:if='{{display==0}}'>未认证</text>

@@ -11,6 +11,7 @@ Page({
     titleBarHeight: getApp().globalData.titleBarHeight,
     display:0,
     hospitalId:'',
+    srcCover:'../../img/logo@2x.png'
   },
 
   /**
@@ -61,11 +62,22 @@ Page({
   onReady: function () {
     
   },
+  lookcover(e){
+    wx.previewImage({
+      current: app.globalData.srcCover, // 当前显示图片的http链接
+      urls: [app.globalData.srcCover] // 需要预览的图片http链接列表
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if(app.globalData.srcCover){
+      console.log(app.globalData.srcCover)
+      this.setData({
+        srcCover: app.globalData.srcCover
+      })
+    }
   },
 
   /**

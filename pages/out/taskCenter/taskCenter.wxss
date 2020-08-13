@@ -8,14 +8,17 @@ page {
   box-sizing: border-box;
   /* height: 100%; */
   background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #fff;
-  z-index: 888;
+  /* background: #fff; */
+  /* z-index: 1000; */
 }
 
 .status-bar {
@@ -23,9 +26,9 @@ page {
 }
 
 .title-bar {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
 }
 
 .indexTopBg {
@@ -50,9 +53,9 @@ page {
   height: 100%;
   width: 100%;
   text-align: center;
-  display: flex;
+  /* display: flex; */
   /* justify-content: space-between; */
-  align-items: center;
+  /* align-items: center; */
 }
 
 .title-bar view text {
@@ -71,8 +74,8 @@ page {
   width: 370rpx;
   height: 260rpx;
   margin: 70rpx 190rpx 0;
-  position: absolute;
-  z-index: 999;
+  /* position: absolute;
+  z-index: 999; */
 }
 
 page {
@@ -276,18 +279,19 @@ page {
 }
 .shareFont{
   width: 260rpx;
-  height: 80rpx;
-  border-radius: 40rpx;
-  position: fixed;
-  right: 30rpx;
-  bottom: 30rpx;
-  z-index: 1000;
-  background: #fff;
-  text-align: center;
-  font-size: 32rpx;
-  line-height:80rpx; 
-  color: #2B77EF;
-  box-shadow: 2rpx 4rpx 12rpx #e5e5e5;
+height: 80rpx;
+border-radius: 40rpx;
+position: fixed;
+left: 15px;
+top: 125px;
+z-index: 1000;
+background: #fff;
+text-align: center;
+font-size: 32rpx;
+line-height: 80rpx;
+color: #2B77EF;
+box-shadow: 2rpx 4rpx 12rpx #e5e5e5;
+
 }
 .share{
   width: 38rpx;

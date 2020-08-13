@@ -103,6 +103,7 @@ Page({
           });
 
           var contentBtId = res.data.data.contentBtId
+
           wx.request({
             url: app.globalData.url + '/other/bigtxt/' + contentBtId + '/' + contentBtId,
             method: 'get',
@@ -115,6 +116,7 @@ Page({
             },
             success: function(res) {
               var article = res.data
+
               WxParse.wxParse('article', 'html', article, that, 5);
 
               // that.setData({

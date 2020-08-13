@@ -252,7 +252,8 @@ line-height:33rpx;
 }
 .clinicList{
   width: 700rpx;
-  margin: 0 25rpx 100rpx;
+  margin: 0 25rpx 140rpx;
+  padding-bottom: 100rpx;
   height: auto;
 }
 .clinicList>view{

@@ -9,6 +9,7 @@
       </view>
     </view>
   </view>
+  
   <view class="swiper-container" style='top:{{45+statusBarHeight}}px'>
     <swiper bindchange="swiperChange" class="swiper" current="{{swiperCurrent}}" autoplay="false" interval="2000" duration="500">
       <block wx:for="{{cover}}" >
@@ -51,7 +52,6 @@
     </view>
   </view>
 </view>
-
 <view class='mainBox'>
   <view>
     <view bindtap='qdmz'>

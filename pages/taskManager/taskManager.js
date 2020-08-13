@@ -128,7 +128,7 @@ Page({
       cancelText: "取消",
       cancelColor: "#000",
       confirmText: "保存",
-      confirmColor: "rgb(43,119,239)",
+      confirmColor: "#2B77EF",
       success: function (res) {
         if (res.confirm) {
           that.modify(that.data.modifytype)     

@@ -16,6 +16,13 @@ Page({
     address:'',
     display:'',
     src:'../../img/logo@2x.png',
+    srcCover:'../img/logo@2x.png',
+  },
+  lookcover(e){
+    wx.previewImage({
+      current: app.globalData.srcCover, // 当前显示图片的http链接
+      urls: [app.globalData.srcCover] // 需要预览的图片http链接列表
+    })
   },
   yyzz(e){
     if (app.globalData.src == '' || app.globalData.src == null || app.globalData.src==undefined){
@@ -164,6 +171,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    if(app.globalData.srcCover){
+      console.log(app.globalData.srcCover)
+      this.setData({
+        srcCover: app.globalData.srcCover
+      })
+    }
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({

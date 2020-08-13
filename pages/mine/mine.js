@@ -16,6 +16,7 @@ Page({
     address: '',
     display: '2',
     src: '../img/logo@2x.png',
+    srcCover:'../img/logo@2x.png',
   },
   // license(e){
 
@@ -55,6 +56,12 @@ Page({
   gene(e) {
     wx.redirectTo({
       url: '../gene/gene',
+    })
+  },
+  lookcover(e){
+    wx.previewImage({
+      current: app.globalData.srcCover, // 当前显示图片的http链接
+      urls: [app.globalData.srcCover] // 需要预览的图片http链接列表
     })
   },
   yyzz(e) {
@@ -180,11 +187,7 @@ Page({
         display: 1
       })
     }
-    if(app.globalData.src){
-      this.setData({
-        src: app.globalData.src
-      })
-    }
+    
   },
 
   /**
@@ -203,6 +206,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    if(app.globalData.srcCover){
+      console.log(app.globalData.srcCover)
+      this.setData({
+        srcCover: app.globalData.srcCover
+      })
+    }
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({
