@@ -102,6 +102,7 @@ phone(e){
           that.setData({
             list: res.data.data.items,
           })
+          console.log(that.data.list)
         } else if (res.data.code == 20) {
           wx.navigateTo({
             url: '../../login/login',
