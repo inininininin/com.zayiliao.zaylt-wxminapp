@@ -149,6 +149,10 @@ function html2json(html, bindName) {
                 }
                 imgUrl = wxDiscode.urlToHttpUrl(imgUrl, __placeImgeUrlHttps);
                 node.attr.src = imgUrl.replace(/[\r\n]/g, '');
+                if(node.attr.src&&node.attr.src.split('../..')){
+                    node.attr.src=node.attr.src.split('../..')[1]
+                }
+                // console.log(node.attr.src)
                 node.from = bindName;
                 results.images.push(node);
                 results.imageUrls.push(imgUrl);
