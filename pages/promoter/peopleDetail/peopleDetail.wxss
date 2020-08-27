@@ -73,7 +73,7 @@ page {
 }
 .topIndex>view:nth-child(1){
   float: left;
-  width: 180rpx;
+  width: 580rpx;
   height: 210rpx;
   text-align: left;
 font-size:22rpx;

@@ -63,7 +63,9 @@ Page({
   onHide: function () {
 
   },
-
+  onPullDownRefresh(){
+    wx.stopPullDownRefresh()
+  },
   /**
    * 生命周期函数--监听页面卸载
    */

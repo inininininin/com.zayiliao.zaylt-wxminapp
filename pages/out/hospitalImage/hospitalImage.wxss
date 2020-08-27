@@ -19,7 +19,7 @@
   color: #fff;
   font-size: 36rpx;
   font-family: PingFangSC-Medium;
-  /* background: #fff; */
+  background: #fff;
 }
 .status-bar {
   /* background: rgba(255, 0, 0, 0.1); */

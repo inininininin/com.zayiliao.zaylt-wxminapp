@@ -30,7 +30,7 @@
 		<text class='incomeTitle'>每日收益</text>
 	</view>
 	<view class='firstTimeIncome'>
-		<view wx:for='{{list2}}' bindtap="secondIncome" data-id='{{item.taskId}}' data-name='{{item.name}}'>
+		<view wx:for='{{list2}}' wx:if='{{item.taskId!=9}}' bindtap="secondIncome" data-id='{{item.taskId}}' data-name='{{item.name}}'>
 			<image mode="aspectFill" catchtap="selectThis1" data-id='{{item.taskId}}' data-issueis='{{item.issueIs}}' class="sel" wx:if='{{item.issueIs==1}}' src="../img/Select@2x.png"></image>
 			<image mode="aspectFill" catchtap="selectThis1" data-id='{{item.taskId}}' data-issueis='{{item.issueIs}}' class="sel" wx:if='{{item.issueIs==0}}' src="../img/Not_selected@2x.png"></image>
 			<text>{{item.name||''}}</text>

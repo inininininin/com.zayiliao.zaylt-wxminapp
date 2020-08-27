@@ -43,6 +43,7 @@ page{
   width: 686rpx;
   margin: 40rpx 32rpx;
   height: auto;
+  padding-bottom: 80rpx;
   /* line-height: 36rpx !important; */
   font-size: 24rpx !important;
   color: rgb(51,51,51) !important;
@@ -265,4 +266,31 @@ canvas{
 .readShare text:last-child{
   display: inline-block;
   margin-left: 40rpx;
+}
+.shareFontNew{
+  width: 750rpx;
+  height: 88rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  border-top: 1rpx solid #e5e5e5;
+  line-height: 88rpx;
+}
+.shareFontNew>view{
+  width: 374rpx;
+  height: 88rpx;
+  float: left;
+  font-size: 30rpx;
+  color: #2b77ef;
+  text-align: center;
+}
+.shareFontNew>text{
+  display: inline-block;
+  float: left;
+  line-height: 60rpx;
+  width: 1rpx;
+  height: 60rpx;
+  margin-top: 14rpx;
+  background:#2b77ef ;
 }
