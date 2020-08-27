@@ -1,5 +1,5 @@
-<view class="container" style="height:{{243+statusBarHeight}}px;padding-top:{{statusBarHeight+titleBarHeight}}px;position:fixed;top:0;">
-  <view class='indexTopBg' style='height:{{243+statusBarHeight}}px;'>
+<view class="container" style="height:{{199+statusBarHeight+titleBarHeight}}px;padding-top:{{statusBarHeight+titleBarHeight}}px;position:fixed;top:0;">
+  <view class='indexTopBg' style='height:{{199+statusBarHeight+titleBarHeight}}px;'>
     <view class="header">
       <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
       <view class="title-bar" style="height:{{titleBarHeight}}px">
@@ -8,18 +8,18 @@
         </view>
       </view>
     </view>
-    <view style="margin-top:{{statusBarHeight+titleBarHeight}}px;width:100%;height:318rpx;background:url('{{detail.cover}}') no-repeat;background-size:cover;background-position: center;">
+    <view style="margin-top:{{statusBarHeight+titleBarHeight}}px;width:100%;height:199px;background:url('{{detail.cover}}') no-repeat;background-size:cover;background-position: center;">
     
     </view>
   </view>
 </view>
 
-<view class="navbar" style="position:fixed;top:{{243+statusBarHeight}}px;">
+<view class="navbar" style="position:fixed;top:{{199+statusBarHeight+titleBarHeight}}px;">
 <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</view>
  
 </view>
 
-<view class='required' hidden="{{currentTab==1}}" style="margin-top:{{243+statusBarHeight}}px">
+<view class='required' hidden="{{currentTab==1}}" style="margin-top:{{239+statusBarHeight+titleBarHeight}}px">
     <text class='basicInformation'>基本信息</text>
     <view class='basicLine'>
       <text>医院名称</text><text>{{detail.name||''}}</text>
@@ -36,7 +36,7 @@
 </view>
 
 </view>
-<view class='required specialDepartment' hidden="{{currentTab==0}}"  style="margin-top:{{243+statusBarHeight}}px">
+<view class='required specialDepartment' hidden="{{currentTab==0}}"  style="margin-top:{{239+statusBarHeight+titleBarHeight}}px">
     <view wx:for='{{list}}' bindtap="specialOffice" data-id='{{item.itemId}}'>
       <image  mode="aspectFill"  src='{{item.cover}}'></image>
       <text>{{item.name}}</text>
