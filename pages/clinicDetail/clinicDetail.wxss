@@ -376,3 +376,93 @@ font-family:PingFangSC-Regular,PingFang SC;
 font-weight:400;
 color:rgba(51,51,51,1) !important;
 }
+
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  .progress_box {
+    width: 100%;
+    height: 260rpx;
+    left: 0;
+  }
+  .progress_bg {
+    width: 100%;
+    height: 260rpx;
+  }
+  .progress_canvas {
+    height: 260rpx;
+  }
+  .progress_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 116rpx;
+    left: 183rpx;
+    text-align: center;
+    width: 190rpx;
+  }
+    
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .progress_text {
+    align-items: center;
+    justify-content: center;
+    top: 98rpx;
+    left: 144rpx;
+    text-align: center;
+    width: 190rpx;
+  }
+}
+@media only screen and (min-device-width: 360px) and (max-device-width: 667px) {
+  .progress_text {
+    align-items: center;
+    justify-content: center;
+    top: 102rpx;
+    left: 156rpx;
+    text-align: center;
+    width: 190rpx;
+  }    
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .progress_text {
+    align-items: center;
+    justify-content: center;
+    top: 98rpx;
+    left: 144rpx;
+    text-align: center;
+    width: 190rpx;
+  }    
+}
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-device-pixel-ratio: 3) {
+  .progress_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 89rpx;
+    left: 124rpx;
+    text-align: center;
+    width: 190rpx;
+  }
+}
+@media only screen and (min-device-width: 411px) and (max-device-width: 732px){
+  .progress_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 89rpx;
+    left: 124rpx;
+    text-align: center;
+    width: 190rpx;
+  }
+}
+@media only screen and (min-device-width: 414px) and (max-device-width: 896px){
+  .progress_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 89rpx;
+    left: 124rpx;
+    text-align: center;
+    width: 190rpx;
+  }
+}

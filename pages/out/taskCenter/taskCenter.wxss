@@ -284,7 +284,7 @@ border-radius: 40rpx;
 position: fixed;
 left: 15px;
 top: 125px;
-z-index: 1000;
+z-index: 100;
 background: #fff;
 text-align: center;
 font-size: 32rpx;
