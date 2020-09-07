@@ -8,7 +8,7 @@
         </view>
       </view>
     </view>
-    <view style="margin-top:{{statusBarHeight+titleBarHeight}}px;width:100%;height:199px;background:url('{{detail.cover}}') no-repeat;background-size:cover;background-position: center;">
+    <view style="margin-top:{{statusBarHeight+titleBarHeight}}px;width:100%;height:199px;background:url('{{detail.cover}}') no-repeat;background-size:contain;background-position: center;">
     
     </view>
   </view>
