@@ -237,7 +237,7 @@ Page({
           that.lastPageNum();
         } else if (res.data.code == 20) {
           wx.navigateTo({
-            url: '../../loginClinic/loginClinic',
+            url: '../../newLogin/newLogin',
           })
         } else {
           wx.showToast({
@@ -295,7 +295,7 @@ Page({
                             } else if (res.data.code == 20 || res.data.code == 26) {
                 wx.hideToast()
                 wx.navigateTo({
-                  url: '../../loginClinic/loginClinic',
+                  url: '../../newLogin/newLogin',
                 })
               }
             }
@@ -303,7 +303,7 @@ Page({
         } else if (res.data.code == 20 || res.data.code == 26) {
           wx.hideToast()
           wx.navigateTo({
-            url: '../../loginClinic/loginClinic',
+            url: '../../newLogin/newLogin',
           })
         }
       }
@@ -430,7 +430,7 @@ Page({
         } else if (res.data.code == 20 || res.data.code == 26) {
           wx.hideToast()
           wx.navigateTo({
-            url: '../../loginClinic/loginClinic',
+            url: '../../newLogin/newLogin',
           })
         }
 
@@ -463,7 +463,7 @@ Page({
   onShow: function (options) {
     this.lastPageNum();
     wx.request({
-      url: app.globalData.url + '/clinic/login-refresh',
+      url: app.globalData.url + '/login-refresh',
       header: {
         'Content-type': 'application/x-www-form-urlencoded',
         'cookie': app.globalData.cookie
@@ -472,27 +472,27 @@ Page({
       success: function (res) {
         if (res.data.code == 20 || res.data.code ==26) {
           wx.navigateTo({
-            url: '../../loginClinic/loginClinic',
+            url: '../../newLogin/newLogin',
           })
         }else if (res.data.code == 0 ){
           app.globalData.phone = res.data.data.phone;
           app.globalData.userId = res.data.data.userId;
-          app.globalData.clinicId = res.data.data.clinic.clinicId;
-          app.globalData.hospitalId = res.data.data.hospital.hospitalId;
-          app.globalData.hospitalName = res.data.data.hospital.name;
+          app.globalData.clinicId = res.data.data.clinicId;
+          app.globalData.hospitalId = res.data.data.hospitalId;
+          app.globalData.hospitalName = res.data.data.hospitalName;
           app.globalData.clinicName = res.data.data.clinic.name;
-          app.globalData.clinicaddress = res.data.data.clinic.address;
-          app.globalData.authenticationIs = res.data.data.clinic.authenticationIs;
-          if (res.data.data.clinic.license == '' || res.data.data.clinic.license == null || res.data.data.clinic.license == undefined) {
-            app.globalData.src = ''
-          } else {
-            app.globalData.src = app.globalData.url + res.data.data.clinic.license
-          }
-          if (res.data.data.clinic.cover == '' || res.data.data.clinic.cover == null || res.data.data.clinic.cover == undefined) {
-            app.globalData.src = ''
-          } else {
-            app.globalData.srcCover = app.globalData.url + res.data.data.clinic.cover
-          }
+          // app.globalData.clinicaddress = res.data.data.clinic.address;
+          // app.globalData.authenticationIs = res.data.data.clinic.authenticationIs;
+          // if (res.data.data.clinic.license == '' || res.data.data.clinic.license == null || res.data.data.clinic.license == undefined) {
+          //   app.globalData.src = ''
+          // } else {
+          //   app.globalData.src = app.globalData.url + res.data.data.clinic.license
+          // }
+          // if (res.data.data.clinic.cover == '' || res.data.data.clinic.cover == null || res.data.data.clinic.cover == undefined) {
+          //   app.globalData.src = ''
+          // } else {
+          //   app.globalData.srcCover = app.globalData.url + res.data.data.clinic.cover
+          // }
         }
       }
     })
@@ -529,7 +529,7 @@ Page({
         } else if (res.data.code == 20 || res.data.code == 26) {
           wx.hideToast()
           wx.navigateTo({
-            url: '../../loginClinic/loginClinic',
+            url: '../../newLogin/newLogin',
           })
         }
       }

@@ -68,7 +68,7 @@ Page({
               //  console.log(111)
               app.globalData.cookie=''
               wx.reLaunch({
-                url: '../../loginManage/loginManage',
+                url: '../../newLogin/newLogin',
               })
             }
          },

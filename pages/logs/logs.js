@@ -27,75 +27,148 @@ Page({
           jscode: res.code,
         })
         wx.request({
-          url: app.globalData.url + '/c/useraction/logincheck',
-          method: "POST",
+          url: app.globalData.url + '/login-refresh',
           header: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            'Content-type': 'application/x-www-form-urlencoded',
+            'cookie': app.globalData.cookie
           },
-          success: function(res) {         
-            if (res.data.data.loginIs == 0) {
-              wx.request({
-                url: app.globalData.url + '/wxminapp-get-openid',
-                method: "POST",
-                header: {
-                  "Content-Type": "application/x-www-form-urlencoded",
-                },
-                data: {
-                  jscode: jscode,
-                },
-                success: function(res) {
-                  if (res.data.code == 0) {
-                    that.setData({
-                      openid: res.data.data.openid
-                    })
-                    wx.setStorageSync('openid', res.data.data.openid)
-                    var lastClient=res.data.data.lastClient                   
-                    if (lastClient==1){
-                      app.globalData.lastClient = 1
-                      that.loginHos(res.data.data.openid)
-                    } else if (lastClient==2){
-                      app.globalData.lastClient = 2
-                      that.loginCli(res.data.data.openid)
-                    } else if (lastClient==3){
-                      app.globalData.lastClient = 3
-                      that.loginMan(res.data.data.openid)
-                    }else{
-                      wx.navigateTo({
-                        url: '../login/login?openid=' + res.data.data.openid,
-                      })
-                    }
-                   
-                   
-                  } else {
-                    // that.setData({
-                    //   openid: res.data.data.openid
-                    // })
-                   
-                  }
-                }
-              })
-            } else {
+          method: 'post',
+          success: function (res) {
+            if(res.data.code==0){
+              // wx.redirectTo({
+              //   url: '../selectRole/selectRole',
+              // })
+              if(app.globalData){
+                app.globalData.phone = res.data.data.phone;
+                app.globalData.userId = res.data.data.userId;
+                app.globalData.hospitalId = res.data.data.hospitalId;
+                app.globalData.hospitalName = res.data.data.hospitalName;
+                // app.globalData.hospitaladdress = res.data.data.hospital.address;
+                // app.globalData.authenticationIs = res.data.data.hospital.authStatus;
+                // if (res.data.data.hospital.license == '' || res.data.data.hospital.license == null || res.data.data.hospital.license == undefined) {
+                //   app.globalData.src = ''
+                // } else {
+                //   app.globalData.src = app.globalData.url + res.data.data.hospital.license
+                // }
+                // if (res.data.data.hospital.cover == '' || res.data.data.hospital.cover == null || res.data.data.hospital.cover == undefined) {
+                //   app.globalData.srcCover = ''
+                // } else {
+                //   app.globalData.srcCover = app.globalData.url + res.data.data.hospital.cover
+                // }
+              }
+              app.loginRefresh = res.data.data;
+              // console.log(res.data.data.phone)
+              if(!res.data.data.phone){
+                that.setData({
+                  showPhone: true
+                })
+              }
+              // res.data.data.hospitalAdminIs = "1";
+              // res.data.data.clinicIs = "1";
+              let _num = parseInt(res.data.data.hospitalIs)+parseInt(res.data.data.clinicIs)+parseInt(res.data.data.hospitalOperateIs)+parseInt(res.data.data.hospitalAdminIs)
+              if(_num>1){
+                wx.navigateTo({ url: '../selectRole/selectRole'})
+                return ''
+              }
+              if(res.data.data.hospitalIs){
+                // 医院端
+                wx.navigateTo({ url: '../index/index',})
+                return ''
+              }
+              if(res.data.data.clinicIs){
+                // 门诊端
+                wx.switchTab({url: '../out/index/index',})
+                return ''
+              }
+              if(res.data.data.hospitalOperateIs){
+                // 推广人端
+                wx.navigateTo({url: '../promoter/index/index',})
+                return ''
+              }
+              if(res.data.data.hospitalAdminIs){
+                // 运营端
+                wx.navigateTo({url: '../manage/index/index',})
+                return ''
+              }
+              
+            }else{
               wx.navigateTo({
-                url: '../login/login',
+                url: '../newLogin/newLogin',
               })
-
+              
             }
-          },
-          fail: function(err) {
-            wx.showModal({
-              title: err,
-              content: '',
-              showCancel: false,
-            })
-          }, //请求失败
-          complete: function() {
-            // wx.showModal({
-            //   title: '111',
-            //   content: '',
-            // })
-          }, //请求失败
-          //  }//请求完成后执行的函数
+          }
         })
+        // wx.request({
+        //   url: app.globalData.url + '/c/useraction/logincheck',
+        //   method: "POST",
+        //   header: {
+        //     "Content-Type": "application/x-www-form-urlencoded",
+        //   },
+        //   success: function(res) {         
+        //     if (res.data.data.loginIs == 0) {
+        //       wx.request({
+        //         url: app.globalData.url + '/wxminapp-get-openid',
+        //         method: "POST",
+        //         header: {
+        //           "Content-Type": "application/x-www-form-urlencoded",
+        //         },
+        //         data: {
+        //           jscode: jscode,
+        //         },
+        //         success: function(res) {
+        //           if (res.data.code == 0) {
+        //             that.setData({
+        //               openid: res.data.data.openid
+        //             })
+        //             wx.setStorageSync('openid', res.data.data.openid)
+        //             var lastClient=res.data.data.lastClient                   
+        //             if (lastClient==1){
+        //               app.globalData.lastClient = 1
+        //               that.loginHos(res.data.data.openid)
+        //             } else if (lastClient==2){
+        //               app.globalData.lastClient = 2
+        //               that.loginCli(res.data.data.openid)
+        //             } else if (lastClient==3){
+        //               app.globalData.lastClient = 3
+        //               that.loginMan(res.data.data.openid)
+        //             }else{
+        //               wx.navigateTo({
+        //                 url: '../login/login?openid=' + res.data.data.openid,
+        //               })
+        //             }
+                   
+                   
+        //           } else {
+        //             // that.setData({
+        //             //   openid: res.data.data.openid
+        //             // })
+                   
+        //           }
+        //         }
+        //       })
+        //     } else {
+        //       wx.navigateTo({
+        //         url: '../login/login',
+        //       })
+
+        //     }
+        //   },
+        //   fail: function(err) {
+        //     wx.showModal({
+        //       title: err,
+        //       content: '',
+        //       showCancel: false,
+        //     })
+        //   }, //请求失败
+        //   complete: function() {
+        //     // wx.showModal({
+        //     //   title: '111',
+        //     //   content: '',
+        //     // })
+        //   }, //请求失败
+        //   //  }//请求完成后执行的函数
+        // })
 
 
       }

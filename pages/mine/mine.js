@@ -34,7 +34,7 @@ Page({
                //点击确定
                app.globalData.cookie=''
                wx.reLaunch({
-                url: '../login/login',
+                url: '../newLogin/newLogin',
               })
             }
          },

@@ -1,4 +1,5 @@
 // pages/selectRole/selectRole.js
+var app = getApp()
 Page({
 
   /**
@@ -20,6 +21,10 @@ Page({
       active2:'',
       active3:'',
       role:1,
+      hospitalIs:0,
+      clinicIs:0,
+      hospitalOperateIs:0,
+      hospitalAdminIs:0
     })
   },
   outpatient: function () {
@@ -48,9 +53,11 @@ Page({
       //     url: '../promoter/index/index',
       //   })
       // } else {
-        wx.navigateTo({
-          url: '../index/index',
-        })
+        if(app.loginRefresh.hospitalOperateIs){
+          wx.navigateTo({url: '../promoter/index/index',})
+        }else if(app.loginRefresh.hospitalIs){
+          wx.navigateTo({url: '../index/index', })
+        }
       // }
     }else if(this.data.role==2){
       wx.switchTab({
@@ -89,7 +96,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    let that = this
+    console.log(app.loginRefresh)
+    that.setData({
+      hospitalIs : app.loginRefresh.hospitalIs,
+      clinicIs : app.loginRefresh.clinicIs,
+      hospitalOperateIs : app.loginRefresh.hospitalOperateIs,
+      hospitalAdminIs : app.loginRefresh.hospitalAdminIs,
+    })
+    that.hospitalIs = app.loginRefresh.hospitalIs;
+    that.clinicIs = app.loginRefresh.clinicIs;
+    that.hospitalOperateIs = app.loginRefresh.hospitalOperateIs;
+    that.hospitalAdminIs = app.loginRefresh.hospitalAdminIs;
+    console.log("sss")
   },
 
   /**

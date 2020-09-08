@@ -23,7 +23,7 @@ Page({
       hospitalId: app.globalData.hospitalId,
     })
     wx.request({
-      url: app.globalData.url + '/hospital/login-refresh',
+      url: app.globalData.url + '/login-refresh',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
         'cookie': app.globalData.cookie
@@ -33,9 +33,9 @@ Page({
         wx.hideToast()
         if (res.data.code == 0) {
           that.setData({
-            name: res.data.data.hospital.name,
+            name: res.data.data.hospitalName,
             phone: res.data.data.phone,
-            hospitalId: res.data.data.hospital.hospitalId
+            hospitalId: res.data.data.hospitalId
           })
         } else {
           wx.showModal({

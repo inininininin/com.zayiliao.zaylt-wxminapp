@@ -134,5 +134,6 @@ App({
     longitude:'',
     latitude: '',
     speed: '',
-  }
+  },
+  loginRefresh:{}
 })

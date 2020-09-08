@@ -278,7 +278,7 @@ Page({
           })
          setTimeout(function(){
           wx.navigateTo({
-            url: '../../loginManage/loginManage',
+            url: '../../newLogin/newLogin',
           })
          },1000)
           

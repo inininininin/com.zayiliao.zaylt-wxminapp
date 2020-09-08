@@ -326,7 +326,7 @@ Page({
       }
     });
     wx.request({
-      url: app.globalData.url + '/hospital/login-refresh',
+      url: app.globalData.url + '/login-refresh',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
         'cookie': app.globalData.cookie
@@ -340,7 +340,7 @@ Page({
           }
           that.setData({
             detail: res.data.data,
-            name: res.data.data.name,
+            name: res.data.data.nickname,
             phone: res.data.data.phone,
             remark: res.data.data.remark,
           })

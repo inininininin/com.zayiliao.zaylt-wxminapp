@@ -1,0 +1,338 @@
+.top1{
+  height: 414rpx;
+  width: 750rpx;
+  background: rgb(43,119,239);
+}
+.top1>image{
+  width: 392rpx;
+  height: 74rpx;
+  margin:144rpx 179rpx 0;
+}
+
+.navbar{
+  width: 100%;
+  flex: none;
+  display: flex;
+  /* background: #fff; */
+    height: 44rpx;
+    margin-top: 120rpx;
+    position: fixed;
+}
+.navbar .item{
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 30rpx;
+  color: rgba(255,255,255,0.6);
+  font-size: 30rpx;
+  font-family: PingFamhSc-Regular;
+}
+.navbar .item.active{
+  color: #fff;
+  font-size: 60rpx;
+}
+.navbar .item.active:after{
+  content: "";
+  display: block;
+  position: absolute;
+  /* bottom: 0; */
+  width: 228rpx;
+  top: 57rpx;
+  left: 45rpx;
+  right: 345rpx;
+  height: 10rpx;
+  border-radius: 6rpx;
+  background: #fff;
+}
+.clear{
+  clear: both;
+}
+.lf{
+  float: left;
+}
+.rt{
+  float: right;
+}
+.lines,.lines_b,.lines_yzm{
+  width: 620rpx;
+  height: 90rpx;
+  margin: 96rpx 65rpx 40rpx;
+  border: 1rpx solid #e5e5e5;
+  border-radius:45rpx;
+}
+.lines_yzm{
+   margin: 0 65rpx 40rpx;
+  position: relative;
+}
+.lines_b{
+  margin: 0 65rpx ;
+  position: relative;
+}
+.lines>image:nth-child(1){
+  float: left;
+  width: 26rpx;
+  height: 42rpx;
+  display: inline-block;
+  margin: 24rpx 30rpx 24rpx 30rpx;
+}
+.lines>image:nth-child(3){
+  width: 20rpx;
+  height: 20rpx;
+  display: inline-block;
+  float: right;
+  padding: 35rpx 20rpx 35rpx 20rpx;
+}
+.lines>input{
+  float: left;
+  width: 420rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 32rpx;
+  color: #333;
+  outline: none;
+  /* float: left; */
+  border: none;
+  display: inline-block;
+}
+.lines_b>image:nth-child(1){
+  width: 38rpx;
+  height: 36rpx;
+  display: inline-block;
+  margin: 27rpx 26rpx 27rpx 26rpx;
+  float: left;
+}
+.lines_b>input{
+  width: 420rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  float: left;
+  outline: none;
+  border: none;
+  display: inline-block;
+  font-size: 32rpx;
+  color: #333;
+}
+.lines_b .delete{
+  width: 20rpx;
+  height: 20rpx;
+  display: inline-block;
+  float: right;
+  padding: 35rpx 20rpx 35rpx 10rpx;
+}
+.lines_b .eye{
+  position: absolute;
+  right: 50rpx;
+  /* top: 10rpx; */
+  width: 30rpx;
+  height: 22rpx;
+  display: inline-block;
+  float: right;
+  /* margin: 35rpx 20rpx 35rpx 0rpx; */
+  padding: 35rpx 10rpx 35rpx 20rpx;
+}
+.placeholder{
+  font-size: 32rpx;
+  line-height: 88rpx;
+  color: rgb(153,153,153);
+}
+.registerXy{
+  width: 620rpx;
+  margin:40rpx 65rpx 0;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  height: 34rpx;
+}
+.registerXy>image{
+  width: 34rpx;
+  height: 34rpx;
+  float: left;
+}
+.registerXy>view{
+ float: left;
+ margin-left: 20rpx;
+}
+.loginBtn{
+  width: 620rpx;
+  height: 90rpx;
+  border-radius: 45rpx;
+  /* background: rgb(43,119,239); */
+  background-image: linear-gradient(270deg,#f75178,#ed2828);
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 90rpx;
+  text-align: center;
+  display: block;
+  margin: 160rpx 65rpx 0;
+}
+.wxLogin{
+  font-size: 15px;
+  background-color: transparent;
+  color: #2b77ef;
+  padding: 0;
+  line-height: normal;
+}
+.wxLogin::after {
+  border: none
+}
+.wxLoginColor{
+  color: #fff;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.forgotpwd{
+  margin: 16rpx 0 0 56rpx;
+  font-size: 30rpx;
+  color: #2b77ef;
+  line-height: 30rpx;
+  float: left;
+  padding: 10rpx 20rpx;
+}
+.forgotpwd>text{
+   float: left;
+}
+.forgotpwd>image{
+  width: 30rpx;
+  height: 30rpx;
+  float: left;
+  margin-left: 10rpx;
+}
+.selectEnter{
+		margin: 16rpx 56rpx 0 0;
+		float: right;
+		font-size: 30rpx;
+		 color: #2b77ef;
+		 padding: 10rpx 20rpx;
+	}
+/* 修改密码 */
+.top2{
+  height: 350rpx;
+  width: 750rpx;
+   /* background: url('https://zaylt.njshangka.com/resource/img/BJ-change@2x.png'); */
+  background-size: 100% 100%;
+  position: relative;
+}
+.top2>image{
+  width:18rpx;
+  height: 30rpx;
+  padding:80rpx 30rpx 30rpx 30rpx ;
+  margin-top:20px ;
+}
+.top2>text:nth-child(2){
+  position: absolute;
+  bottom: 70rpx;
+  left: 76rpx;
+  font-size: 40rpx;
+  color: #000;
+  font-weight: bold;
+}
+.top2>text:nth-child(3){
+  position: absolute;
+  bottom: 25rpx;
+  left: 76rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+.lines_yzm>image:nth-child(1){
+  float: left;
+  width: 30rpx;
+  height: 36rpx;
+  display: inline-block;
+  margin: 27rpx 28rpx 27rpx 28rpx;
+}
+.lines_yzm>input{
+  float: left;
+  width: 300rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 32rpx;
+  color: #333;
+  outline: none;
+  /* float: left; */
+  border: none;
+  display: inline-block;
+}
+.lines_yzm>text{
+  display: inline-block;
+  width: 232rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  float: right;
+  border-left: 1rpx solid rgb(255,169,0);
+  margin-top: 29rpx;
+  font-size: 32rpx;
+  text-align: center;
+  color:  rgb(255,169,0);
+}
+
+
+
+/* new */
+.bgView{
+	width: 750rpx;
+	height: 413rpx;
+	background: url(https://zaylt.njshangka.com//wxminapp/head.png) no-repeat ;
+	background-size: contain;
+	box-sizing: border-box;
+}
+.bgView text{
+	display: block;
+	font-size: 40rpx;
+	color: #fff;
+	padding-top: 275rpx;
+	text-align: center;
+	width: 100%;
+	font-weight: bold;
+}
+.popWindow{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.2);
+  top: 0;
+  left: 0;
+}
+.getPhoneBox{
+  width: 640rpx;
+  background: #fFF;
+  position: absolute;
+  height: 310rpx;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 20rpx;
+
+}
+.getPhoneBoxTitle{
+  text-align: center;
+  font-size: 18px;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #f1eeee;
+}
+.getPhoneBoxCenter{
+  text-align: center;
+  font-size: 17px;
+  height: 130rpx;
+  line-height: 130rpx;
+}
+.getPhoneBoxButton{
+  width: 100%;
+  height: 80rpx;
+}
+.getPhoneBoxButton>button{
+  display: inline-block;
+  width: 50%;
+  background-color: #FFFF;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.getPhoneBoxButton>button::after{
+  border: none;
+}
+.getPhoneBoxButton>button:first-child::after{
+  border-right: 1rpx solid #c6c7c9;
+}
+
