@@ -1,6 +1,6 @@
 //logs.js
 const util = require('../../utils/util.js')
-var app = getApp()
+var app = getApp() 
 Page({
   data: {
     logs: [],
