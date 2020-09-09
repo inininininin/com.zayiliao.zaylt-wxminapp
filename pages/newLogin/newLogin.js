@@ -398,7 +398,7 @@ Page({
   getPhoneNumber(_value){
     that.setData({
       showPhone: false
-    })
+    }) 
     let that = this;
     wx.request({
       url: app.globalData.url + '/update-my-phone',
