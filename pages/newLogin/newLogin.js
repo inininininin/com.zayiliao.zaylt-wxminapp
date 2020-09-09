@@ -400,45 +400,39 @@ Page({
       showPhone: false
     })
     let that = this;
-    wx.login({
-      success(res) {
-        let code = res.code
-        wx.request({
-          url: app.globalData.url + '/update-my-phone',
-          header: {
-            'Content-type': 'application/x-www-form-urlencoded',
-            'cookie': app.globalData.cookie
-          },
-          method: 'post',
-          data:{
-            jscode:code,
-            wxMinAppEncryptedDataOfPhoneNumber:_value.detail.encryptedData,
-            wxMinappIv:_value.detail.iv
-          },
-          success: function (res) {
-            console.log(app.loginRefresh)
-            if(app.loginRefresh.hospitalIs){
-              // 医院端
-              wx.navigateTo({ url: '../index/index',})
-              return ''
-            }
-            if(app.loginRefresh.clinicIs){
-              // 门诊端
-              wx.switchTab({url: '../out/index/index',})
-              return ''
-            }
-            if(app.loginRefresh.hospitalOperateIs){
-               // 推广人端
-              wx.navigateTo({url: '../promoter/index/index',})
-              return ''
-            }
-            if(app.loginRefresh.hospitalAdminIs){
-              // 运营端
-              wx.navigateTo({url: '../manage/index/index',})
-              return ''
-            }
-          }
-        })
+    wx.request({
+      url: app.globalData.url + '/update-my-phone',
+      header: {
+        'Content-type': 'application/x-www-form-urlencoded',
+        'cookie': app.globalData.cookie
+      },
+      method: 'post',
+      data:{
+        wxMinAppEncryptedDataOfPhoneNumber:_value.detail.encryptedData,
+        wxMinappIv:_value.detail.iv
+      },
+      success: function (res) {
+        console.log(app.loginRefresh)
+        if(app.loginRefresh.hospitalIs){
+          // 医院端
+          wx.navigateTo({ url: '../index/index',})
+          return ''
+        }
+        if(app.loginRefresh.clinicIs){
+          // 门诊端
+          wx.switchTab({url: '../out/index/index',})
+          return ''
+        }
+        if(app.loginRefresh.hospitalOperateIs){
+           // 推广人端
+          wx.navigateTo({url: '../promoter/index/index',})
+          return ''
+        }
+        if(app.loginRefresh.hospitalAdminIs){
+          // 运营端
+          wx.navigateTo({url: '../manage/index/index',})
+          return ''
+        }
       }
     })
     
