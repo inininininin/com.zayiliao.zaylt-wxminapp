@@ -13,7 +13,7 @@ Page({
     show: 2,
     kw: '',
     schemeList: [],
-    clinicNumber:0,
+    clinicNumber:'',
   },
   addNew(e){
     wx.navigateTo({
@@ -63,7 +63,7 @@ Page({
         'cookie': app.globalData.cookie
       },
       data: {
-        hospitalUserId: options.id
+        // hospitalUserId: app.globalData.hospitalId//options.id
       },
       method: 'get',
       success: function (res) {
