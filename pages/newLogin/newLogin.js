@@ -384,7 +384,32 @@ Page({
         wx.hideToast()
         if (resData.data.code == 0) {
           app.globalData.cookie = resData.header['Set-Cookie']
-          that.loginRefresh()
+          wx.login({
+            complete: (res) => {
+              wx.request({
+                url: app.globalData.url + '/bind-wx-mapp',
+                header: {
+                  'Content-type': 'application/x-www-form-urlencoded',
+                  'cookie': app.globalData.cookie
+                },
+                method: "post",
+                data:{
+                  jscode: res.code,
+                },
+                success: function (resData) {
+                  wx.hideToast()
+                  if (resData.data.code == 0) {
+                    that.loginRefresh()
+                  } else {
+                    wx.showModal({
+                      showCancel: false,
+                      title: resData.data.codeMsg
+                    })
+                  }
+                }
+              })
+            },
+          })
         } else {
           wx.showModal({
             showCancel: false,
@@ -406,7 +431,7 @@ Page({
     }) 
     
     wx.request({
-      url: app.globalData.url + '/update-my-phone',
+      url: app.globalData.url + '/bind-phone',
       header: {
         'Content-type': 'application/x-www-form-urlencoded',
         'cookie': app.globalData.cookie
@@ -503,12 +528,12 @@ Page({
         }
         app.loginRefresh = res.data.data;
         // console.log(res.data.data.phone)
-        if(!res.data.data.phone){
-          that.setData({
-            showPhone: true
-          })
-          return ''
-        }
+        // if(!res.data.data.phone){
+        //   that.setData({
+        //     showPhone: true
+        //   })
+        //   return ''
+        // }
         // res.data.data.hospitalAdminIs = "1";
         // res.data.data.clinicIs = "1";
         let _num = parseInt(res.data.data.hospitalIs)+parseInt(res.data.data.clinicIs)+parseInt(res.data.data.hospitalOperateIs)+parseInt(res.data.data.hospitalAdminIs)

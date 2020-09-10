@@ -63,7 +63,7 @@ Page({
         'cookie': app.globalData.cookie
       },
       data: {
-        hospitalUserId: options.id
+        hospitalUserId: options.id||""
       },
       method: 'get',
       success: function (res) {

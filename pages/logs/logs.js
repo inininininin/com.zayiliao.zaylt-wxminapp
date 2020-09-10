@@ -240,12 +240,12 @@ Page({
         }
         app.loginRefresh = res.data.data;
         // console.log(res.data.data.phone)
-        if(!res.data.data.phone){
-          that.setData({
-            showPhone: true
-          })
-          return ''
-        }
+        // if(!res.data.data.phone){
+        //   that.setData({
+        //     showPhone: true
+        //   })
+        //   return ''
+        // }
         // res.data.data.hospitalAdminIs = "1";
         // res.data.data.clinicIs = "1";
         let _num = parseInt(res.data.data.hospitalIs)+parseInt(res.data.data.clinicIs)+parseInt(res.data.data.hospitalOperateIs)+parseInt(res.data.data.hospitalAdminIs)
