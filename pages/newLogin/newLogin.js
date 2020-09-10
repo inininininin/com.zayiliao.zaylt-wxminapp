@@ -297,11 +297,13 @@ Page({
     var keyLast = key.slice(key.length-4,key.length)
     console.log(keyPrev, keyLast)
     if (keyPrev == 'test' || keyLast == 'test') {
-      app.globalData.url = 'https://zaylt.njshangka.com'
+      // app.globalData.url = 'https://zaylt.njshangka.com'
       // var lengths = that.data.key.length - 4
       // var key = that.data.key.slice(4, lengths);
+      app.globalData.url = 'http://192.168.2.45/zaylt'
     } else {
-      app.globalData.url = 'https://zaylt.njshangka.com'
+      app.globalData.url = 'http://192.168.2.45/zaylt'
+      // app.globalData.url = 'https://zaylt.njshangka.com'
     }
     
     if (that.data.currentTab == 0) {
@@ -346,11 +348,13 @@ Page({
       var keyLast = key.slice(key.length - 4, key.length)
       console.log(key,keyPrev, keyLast)
       if (keyPrev == 'test' && keyLast == 'test') {
-        app.globalData.url ='https://zaylt.njshangka.com'
+        // app.globalData.url ='https://zaylt.njshangka.com'
+        app.globalData.url = 'http://192.168.2.45/zaylt'
         // var lengths = that.data.key.length-4
         // var key = that.data.key.slice(4, lengths);
       }else{
-        app.globalData.url = 'https://zaylt.njshangka.com'
+        // app.globalData.url = 'https://zaylt.njshangka.com'
+        app.globalData.url = 'http://192.168.2.45/zaylt'
       }
       that.loginHos(key, password)
       buttonDisabled: true
@@ -396,10 +400,11 @@ Page({
     })
   },
   getPhoneNumber(_value){
+    let that = this;
     that.setData({
       showPhone: false
     }) 
-    let that = this;
+    
     wx.request({
       url: app.globalData.url + '/update-my-phone',
       header: {
@@ -502,6 +507,7 @@ Page({
           that.setData({
             showPhone: true
           })
+          return ''
         }
         // res.data.data.hospitalAdminIs = "1";
         // res.data.data.clinicIs = "1";
