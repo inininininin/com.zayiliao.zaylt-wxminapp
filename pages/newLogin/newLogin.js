@@ -300,9 +300,9 @@ Page({
       // app.globalData.url = 'https://zaylt.njshangka.com'
       // var lengths = that.data.key.length - 4
       // var key = that.data.key.slice(4, lengths);
-      app.globalData.url = 'http://192.168.2.45/zaylt'
+      app.globalData.url = 'https://dev.inininininin.com/ylt'
     } else {
-      app.globalData.url = 'http://192.168.2.45/zaylt'
+      app.globalData.url = 'https://dev.inininininin.com/ylt'
       // app.globalData.url = 'https://zaylt.njshangka.com'
     }
     
@@ -349,12 +349,12 @@ Page({
       console.log(key,keyPrev, keyLast)
       if (keyPrev == 'test' && keyLast == 'test') {
         // app.globalData.url ='https://zaylt.njshangka.com'
-        app.globalData.url = 'http://192.168.2.45/zaylt'
+        app.globalData.url = 'https://dev.inininininin.com/ylt'
         // var lengths = that.data.key.length-4
         // var key = that.data.key.slice(4, lengths);
       }else{
         // app.globalData.url = 'https://zaylt.njshangka.com'
-        app.globalData.url = 'http://192.168.2.45/zaylt'
+        app.globalData.url = 'https://dev.inininininin.com/ylt'
       }
       that.loginHos(key, password)
       buttonDisabled: true

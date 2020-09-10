@@ -91,6 +91,38 @@ Page({
                 return ''
               }
               
+            }else if(res.data.code==20){
+              wx.request({
+                url: app.globalData.url + '/login-by-wxminapp',
+                header: {
+                  'Content-type': 'application/x-www-form-urlencoded'
+                },
+                method: 'post',
+                data: {
+                  jscode: jscode,
+                },
+                success: function (res) {
+                 if(res.data.code==0){
+                  app.globalData.cookie = res.header['Set-Cookie']
+                  that.loginRefresh()
+                 }else if(res.data.code==10001){
+                   wx.showToast({
+                    title: '当前小程序未绑定账号，请用账号密码登录',
+                    icon: 'none',
+                    duration: 2000,
+                    mask: true,
+                    complete: function complete(res) {
+                      setTimeout(function () {
+                        wx.navigateTo({
+                          url: '../newLogin/newLogin',
+                        })
+                      }, 1000);
+                    }
+                   })
+                   
+                 }
+                }
+              })
             }else{
               wx.navigateTo({
                 url: '../newLogin/newLogin',
@@ -171,6 +203,86 @@ Page({
         // })
 
 
+      }
+    })
+  },
+  loginRefresh:function(_value){
+    let that = this;
+    wx.request({
+      url: app.globalData.url + '/login-refresh',
+      header: {
+        'Content-type': 'application/x-www-form-urlencoded',
+        'cookie': app.globalData.cookie
+      },
+      method: 'post',
+      success: function (res) {
+       if(res.data.code==0){
+        // wx.redirectTo({
+        //   url: '../selectRole/selectRole',
+        // })
+        if(app.globalData){
+          app.globalData.phone = res.data.data.phone;
+          app.globalData.userId = res.data.data.userId;
+          app.globalData.hospitalId = res.data.data.hospitalId;
+          app.globalData.hospitalName = res.data.data.hospitalName;
+          // app.globalData.hospitaladdress = res.data.data.hospital.address;
+          // app.globalData.authenticationIs = res.data.data.hospital.authStatus;
+          // if (res.data.data.hospital.license == '' || res.data.data.hospital.license == null || res.data.data.hospital.license == undefined) {
+          //   app.globalData.src = ''
+          // } else {
+          //   app.globalData.src = app.globalData.url + res.data.data.hospital.license
+          // }
+          // if (res.data.data.hospital.cover == '' || res.data.data.hospital.cover == null || res.data.data.hospital.cover == undefined) {
+          //   app.globalData.srcCover = ''
+          // } else {
+          //   app.globalData.srcCover = app.globalData.url + res.data.data.hospital.cover
+          // }
+        }
+        app.loginRefresh = res.data.data;
+        // console.log(res.data.data.phone)
+        if(!res.data.data.phone){
+          that.setData({
+            showPhone: true
+          })
+          return ''
+        }
+        // res.data.data.hospitalAdminIs = "1";
+        // res.data.data.clinicIs = "1";
+        let _num = parseInt(res.data.data.hospitalIs)+parseInt(res.data.data.clinicIs)+parseInt(res.data.data.hospitalOperateIs)+parseInt(res.data.data.hospitalAdminIs)
+        if(_num>1){
+          wx.navigateTo({ url: '../selectRole/selectRole'})
+          return ''
+        }
+        if(res.data.data.hospitalIs){
+          // 医院端
+          wx.navigateTo({ url: '../index/index',})
+          return ''
+        }
+        if(res.data.data.clinicIs){
+          // 门诊端
+          wx.switchTab({url: '../out/index/index',})
+          return ''
+        }
+        if(res.data.data.hospitalOperateIs){
+           // 推广人端
+          wx.navigateTo({url: '../promoter/index/index',})
+          return ''
+        }
+        if(res.data.data.hospitalAdminIs){
+          // 运营端
+          wx.navigateTo({url: '../manage/index/index',})
+          return ''
+        }
+        
+       }else{
+         if(!_value){
+          wx.showModal({
+            title: '',
+            content: res.data.codeMsg,
+          })
+         }
+         
+       }
       }
     })
   },

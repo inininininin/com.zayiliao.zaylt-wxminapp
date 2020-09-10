@@ -112,7 +112,8 @@ App({
     usrDesInfo: null,
     list: [], //存放tabBar的数据
     // url:'https://zaylt.njshangka.com',
-    url:'http://192.168.2.45/zaylt',
+    url:'https://dev.inininininin.com/ylt',
+    // url:'http://192.168.2.45/zaylt',
     token: '',//'1984750073886',
     userToken:'',
     clinicId:'',
