@@ -191,12 +191,12 @@ Page({
    */
   onUnload: function () {
 
-    var that = this
-    that.setData({
-      list: [],
-    })
-    that.lastPage(0)
-    wx.stopPullDownRefresh()
+    // var that = this
+    // that.setData({
+    //   list: [],
+    // })
+    // that.lastPage(0)
+    // wx.stopPullDownRefresh()
   },
   sendRec(e){
     wx.showToast({

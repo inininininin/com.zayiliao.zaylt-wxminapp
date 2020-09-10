@@ -138,7 +138,7 @@ Page({
     console.log(options)
     var that = this
     var operatingManualId=options.id
-    var upperId=options.sectionid
+    var upperId=options.sectionid||''
     var name = options.name
     var count = options.count
     var lowercount = options.lowercount

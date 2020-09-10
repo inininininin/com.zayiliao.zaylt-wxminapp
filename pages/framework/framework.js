@@ -21,7 +21,7 @@ Page({
   },
   showIsThis(e) {
     wx.navigateTo({
-      url: '../frameworkZj/frameworkZj?sectionid=' + e.currentTarget.dataset.sectionid + '&id=' + e.currentTarget.dataset.id + '&name=' + e.currentTarget.dataset.name + '&count=' + e.currentTarget.dataset.count + '&lowercount=' + e.currentTarget.dataset.lowercount,
+      url: '../frameworkZj/frameworkZj?sectionid=&id=' + e.currentTarget.dataset.id,// + '&name=' + e.currentTarget.dataset.name + '&count=' + e.currentTarget.dataset.count + '&lowercount=' + e.currentTarget.dataset.lowercount,
     })
     // var that = this
     // for (var i in that.data.list) {
