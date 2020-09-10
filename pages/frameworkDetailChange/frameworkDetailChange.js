@@ -82,7 +82,7 @@ Page({
     var pageSize = 15;
     var toPageNo = parseInt(toPageNo) + 1
     wx.request({
-      url: app.globalData.url + '/' + app.globalData.yyType + '/operating-manual-section-tracks',
+      url: app.globalData.url + '/operating-manual/section-tracks',
       method: 'get',
       data: {
         pn: toPageNo,
@@ -123,18 +123,18 @@ Page({
               var image = res.data.data.rows[i].fileAll.split(',')
               for (var r in image) {
                 if (image[r].slice(0, 1) != 'h') {
-                  if (image[r].split('.')[1] == 'jpg' || image[r].split('.')[1] == 'png' || image[r].split('.')[1] == 'gif' || image[r].split('.')[1] == 'jpeg') {
+                  if (image[r].split('.')[1] == 'jpg' || image[r].split('.')[1] == 'png' || image[r].split('.')[1] == 'gif' || image[r].split('.')[1] == 'jpeg'||image[r].split('.')[1] == 'JPG'|| image[r].split('.')[1] == 'PNG' || image[r].split('.')[1] == 'GIF' || image[r].split('.')[1] == 'JPEG') {
                     imgArr.push({
-                      'src': app.globalData.url + image[r],
+                      'src': app.globalData.domain + image[r],
                       'type': '1'
                     })
-                    imageBlob.push(app.globalData.url + image[r])
+                    imageBlob.push(app.globalData.domain + image[r])
                   } else {
                     imgArr.push({
-                      'src': app.globalData.url + image[r],
+                      'src': app.globalData.domain + image[r],
                       'type': '2'
                     })
-                    videoBlob.push(app.globalData.url + image[r])
+                    videoBlob.push(app.globalData.domain + image[r])
                   }
                 } else {
                   imgArr.push(image[r])

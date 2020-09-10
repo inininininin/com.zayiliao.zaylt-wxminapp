@@ -13,7 +13,7 @@
 <image  mode="aspectFill"  class="video" bindtap="video" src="../img/camera2.png"></image>
 <image  mode="aspectFill"  class="camera" bindtap="camera" src="../img/camera@2x.png"></image>
 <image  mode="aspectFill"  class="delete" bindtap="backHistory" src="../img/delete@2x.png"></image>
-  <textarea bindblur="bindTextAreaBlur" maxlength="-1" auto-height placeholder="请输入详情" />
+  <textarea bindinput="bindTextAreaBlur" maxlength="-1" auto-height placeholder="请输入详情" />
 <view class="imageBox">
 	<view class="fileAll"  wx:for='{{picBlobShow}}' >
 		<image  mode="aspectFill"  class="delThis" bindtap="delThis" data-src='{{item.src}}' src="../img/close2.png"></image>

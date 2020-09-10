@@ -131,11 +131,7 @@ Page({
           var license = res.data.data.license
           if (license != null && license != undefined && license!=''){
             license = license.split(',')[0]
-            if (license.slice(0, 1) != 'h') {
-              res.data.data.license = app.globalData.url + license
-            } else {
-              res.data.data.license = license
-            }
+            res.data.data.license=app.cover(license) 
             var imgalist = []
             imgalist.push(res.data.data.license)
           }else{

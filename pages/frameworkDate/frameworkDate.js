@@ -126,7 +126,7 @@ Page({
     var pageSize = 15;
     var toPageNo = parseInt(toPageNo) + 1
     wx.request({
-      url: app.globalData.url + '/'+app.globalData.yyType+'/operating-manual-section-tracks',
+      url: app.globalData.url + '/operating-manual/section-tracks',
       method: 'get',
       data: {
         pn: toPageNo,

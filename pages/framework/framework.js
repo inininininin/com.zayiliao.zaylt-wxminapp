@@ -55,7 +55,7 @@ Page({
     
     var that = this
     wx.request({
-      url: app.globalData.url + '/'+app.globalData.yyType+'/operating-manuals',
+      url: app.globalData.url + '/operating-manual/items',
       method: 'get',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -95,7 +95,7 @@ Page({
     for (var i = 0; i < value; i++) {
       result[i] = function(num) {
           wx.request({
-            url: app.globalData.url + '/'+app.globalData.yyType+'/operating-manual-sections',
+            url: app.globalData.url + '/operating-manual/sections',
             method: 'get',
             header: {
               "Content-Type": "application/x-www-form-urlencoded",

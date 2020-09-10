@@ -46,18 +46,18 @@ Page({
   saveThis(e){
     var that=this
     wx.request({
-      url: app.globalData.url + '/'+app.globalData.yyType+'/operating-manual-section-track-add',
+      url: app.globalData.url + '/operating-manual/section-track-add',
       method: 'post',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
         'cookie': app.globalData.cookie
       },
       data: {
-        operatingManualSectionId: this.data.operatingManualSectionId,
-        image: this.data.picBlob,
-        video: this.data.videoBlob,
-        audio: this.data.audioAll,
-        content: this.data.content,
+        operatingManualSectionId: that.data.operatingManualSectionId,
+        image: that.data.picBlob,
+        video: that.data.videoBlob,
+        audio: that.data.audioAll,
+        content: that.data.content,
       },
       success: function (res) {
         wx.hideToast()
@@ -126,10 +126,11 @@ Page({
         var videoBlob = that.data.videoBlob
         var videoBlobShow = that.data.videoBlobShow
           wx.uploadFile({
-            url: app.globalData.url + '/other/fileupload?cover&duration', //仅为示例，非真实的接口地址
+            url: app.globalData.url + '/upload-file?cover&duration', //仅为示例，非真实的接口地址
             filePath: tempFilePath,
             name: 'file',
             success: function (res) {
+              console.log(res)
               var data = JSON.parse(res.data);
               var url = data.data.url
               if (data.code == 0) {
@@ -142,7 +143,7 @@ Page({
                 if (videoBlob.slice(0,1)==','){
                   videoBlob = videoBlob.slice(1, videoBlob.length)
                 }
-				videoBlobShow.push({'src': app.globalData.url +url})
+				videoBlobShow.push({'src': app.globalData.domain +url})
                 that.setData({
                   videoBlob: videoBlob,
 				  videoBlobShow:videoBlobShow
@@ -168,10 +169,11 @@ Page({
         var picBlob = that.data.picBlob
         for (var i in tempFilePaths) {
           wx.uploadFile({
-            url: app.globalData.url + '/other/fileupload?cover&duration', //仅为示例，非真实的接口地址
+            url: app.globalData.url + '/upload-file?cover&duration', //仅为示例，非真实的接口地址
             filePath: tempFilePaths[i],
             name: 'file',
             success: function (res) {
+              console.log(res)
               var data = JSON.parse(res.data);
               var url = data.data.url
              
@@ -185,7 +187,7 @@ Page({
                 if (picBlob.slice(0, 1) == ',') {
                   picBlob = picBlob.slice(1, picBlob.length )
                 }
-                picBlobShow.push({ 'src': app.globalData.url + url })
+                picBlobShow.push({ 'src': app.globalData.domain + url })
                 that.setData({
                   picBlob: picBlob,
                   picBlobShow: picBlobShow,

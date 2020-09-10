@@ -238,10 +238,11 @@ Page({
         var picBlob = that.data.picBlob
         for (var i in tempFilePaths) {
           wx.uploadFile({
-            url: app.globalData.url + '/other/fileupload?cover&duration', //仅为示例，非真实的接口地址
+            url: app.globalData.url + '/upload-file?cover&duration', //仅为示例，非真实的接口地址
             filePath: tempFilePaths[i],
             name: 'file',
             success: function (res) {
+              console.log(res)
               var data = JSON.parse(res.data);
               if (data.code == 0) {
                 wx.showToast({
@@ -252,7 +253,7 @@ Page({
               
                 var cover = data.data.url
                 if (data.data.url && data.data.url.slice(0,1)!='h'){
-                  data.data.url = app.globalData.url + data.data.url
+                  data.data.url = app.globalData.domain + data.data.url
                 }
                 that.setData({
                   imgUrl: data.data.url,
@@ -296,9 +297,7 @@ Page({
       success: function (res) {
         if (res.data.code == 0) {
           for (var i in res.data.data.items) {
-            if (res.data.data.items[i].cover && res.data.data.items[i].cover.slice(0, 1) != 'h') {
-              res.data.data.items[i].cover = app.globalData.url + res.data.data.items[i].cover
-            }
+            res.data.data.items[i].cover=app.cover( res.data.data.items[i].cover)
           }
           var list = that.data.list;
           var newlist = list.concat(res.data.data.items)

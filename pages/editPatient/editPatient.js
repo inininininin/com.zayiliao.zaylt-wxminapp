@@ -181,7 +181,7 @@ Page({
         for (var i in tempFilePaths) {
 
           wx.uploadFile({
-            url: app.globalData.url + '/other/fileupload?cover&duration', //仅为示例，非真实的接口地址
+            url: app.globalData.url + '/upload-file?cover&duration', //仅为示例，非真实的接口地址
             filePath: tempFilePaths[i],
             name: 'file',
             success: function (res) {
@@ -200,7 +200,7 @@ Page({
                   var imgBlob = that.data.imgBlob + ',' + url
                 }
                 console.log(imgBlob)
-                imglist.push('https://zaylt.njshangka.com' + url)
+                imglist.push(app.globalData.domain + url)
                 that.setData({
                   imglist: imglist,
                   imgBlob: imgBlob

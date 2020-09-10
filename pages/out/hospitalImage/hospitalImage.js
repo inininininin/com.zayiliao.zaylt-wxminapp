@@ -53,15 +53,11 @@ phone(e){
       },
       success: function (res) {
         if (res.data.code == 0) {
-          if (res.data.data.cover&&res.data.data.cover.slice(0,1)!='h'){
-            res.data.data.cover = app.globalData.url + res.data.data.cover
-          }
+          res.data.data.cover=app.cover(res.data.data.cover)
           if (res.data.data.license){
             var license = res.data.data.license.split(',')
             for (var i = 0; i < license.length; i++) {
-              if (license[i].slice(0, 1) != 'h') {
-                license[i] = app.globalData.url + license[i]
-              }
+              license[i]=app.cover(license[i])
             }
           }
         
@@ -93,9 +89,7 @@ phone(e){
       success: function (res) {
         if (res.data.code == 0) {
           for(var i=0;i<res.data.data.items.length;i++){
-            if (res.data.data.items[i].cover&&res.data.data.items[i].cover.slice(0, 1) != 'h') {
-              res.data.data.items[i].cover = app.globalData.url + res.data.data.items[i].cover
-            }
+            res.data.data.items[i].cover=app.cover(res.data.data.items[i].cover)
           }
           
          

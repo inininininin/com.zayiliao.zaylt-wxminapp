@@ -81,10 +81,8 @@ Page({
               res.data.data.items[i].jobTitles = jobTitles
             }
             
-            if (res.data.data.items[i].headimg&&res.data.data.items[i].headimg.slice(0, 1) != 'h') {
-              res.data.data.items[i].headimg = app.globalData.url + res.data.data.items[i].headimg
-            }
-
+            res.data.data.items[i].headimg=app.cover(res.data.data.items[i].headimg)
+            
             res.data.data.items[i].icon ='../../img/down@2x.png'
             res.data.data.items[i].class='line2'
           }

@@ -186,11 +186,8 @@ Page({
         },
         success: function (res) {
           if (res.data.code == 0) {
-            if (res.data.data.license && res.data.data.license.slice(0, 1) != 'h') {
-              var yyzzimg = app.globalData.url + res.data.data.license
-            } else {
-              var yyzzimg = res.data.data.license
-            }
+           
+            yyzzimg=app.cover(res.data.data.license) 
             // var clinicPromoterName = res.data.data.clinicPromoterName
             // for (var i in array) {
             //   console.log(array[i].name, i, clinicPromoterName)
@@ -232,7 +229,7 @@ Page({
           const src = res.tempFilePaths[0]
           var avatar = res.tempFilePaths[0]
           wx.uploadFile({
-            url: app.globalData.url + '/other/fileupload?cover&duration', //仅为示例，非真实的接口地址
+            url: app.globalData.url + '/upload-file?cover&duration', //仅为示例，非真实的接口地址
             filePath: avatar,
             name: 'file',
             success: function (res) {
@@ -245,7 +242,7 @@ Page({
                   duration: 2000
                 })
                 if (url.slice(0, 1) != 'h') {
-                  url = app.globalData.url + url
+                  url = app.globalData.domain + url
                 }
                 that.setData({
                   license: data.data.url,

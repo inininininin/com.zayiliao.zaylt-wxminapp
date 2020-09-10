@@ -36,7 +36,7 @@ Page({
           const src = res.tempFilePaths[0]
           var avatar = res.tempFilePaths[0]
           wx.uploadFile({
-            url: app.globalData.url + '/other/fileupload?cover&duration', //仅为示例，非真实的接口地址
+            url: app.globalData.url + '/upload-file?cover&duration', //仅为示例，非真实的接口地址
             filePath: avatar,
             name: 'file',
             success: function (res) {
@@ -62,7 +62,7 @@ Page({
                   success: function (res) {
     
                     if (url.slice(0, 1) != 'h') {
-                      url = app.globalData.url + url
+                      url = app.globalData.domain + url
                     }
                     app.globalData.src = url
                     that.setData({
@@ -103,7 +103,7 @@ Page({
         })
         console.log(tempFilePaths[0])
         wx.uploadFile({
-          url: app.globalData.url +'/other/fileupload?cover&duration', //仅为示例，非真实的接口地址
+          url: app.globalData.url +'/upload-file?cover&duration', //仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
           name: 'file',
           success: function (res) {

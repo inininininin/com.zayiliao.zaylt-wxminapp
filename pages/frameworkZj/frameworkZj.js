@@ -48,7 +48,7 @@ Page({
 	
     // var that = this
     // wx.request({
-    //   url: app.globalData.url + '/'+app.globalData.yyType+'/operating-manual-sections',
+    //   url: app.globalData.url + '/operating-manual/sections',
     //   method: 'get',
     //   header: {
     //     "Content-Type": "application/x-www-form-urlencoded",
@@ -91,7 +91,7 @@ Page({
   nextPageThis(e) {
     var that = this
     wx.request({
-      url: app.globalData.url + '/'+app.globalData.yyType+'/operating-manual-sections',
+      url: app.globalData.url + '/operating-manual/sections',
       method: 'get',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -150,7 +150,7 @@ Page({
       lowercount: lowercount,
     })
     wx.request({
-      url: app.globalData.url + '/'+app.globalData.yyType+'/operating-manual-sections',
+      url: app.globalData.url + '/operating-manual/sections',
       method: 'get',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",

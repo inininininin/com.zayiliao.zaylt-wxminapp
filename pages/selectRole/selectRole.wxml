@@ -4,7 +4,8 @@
 <text class="selectRole">您有以下端口</text>
 <text class="enter">请选择进入</text>
 <view class='boxBoom'>
-  <view class='box hospital {{active1}}' bindtap='hospital' wx:if='{{hospitalIs||hospitalOperateIs}}'>
+ 
+  <view class='box hospital {{active1}}' bindtap='hospital' wx:if='{{hospitalIs}}'>
     <image  mode="aspectFill"  src="../img/yy.png"></image>
     <view>
       <text>Hospital</text>
@@ -18,11 +19,18 @@
       <text>门诊端</text>
     </view>
   </view>
-  <view class='box manage {{active3}}' bindtap='manage' wx:if='{{hospitalAdminIs}}'>
+  <view class='box manage {{active3}}' bindtap='manage' wx:if='{{operateIs}}'>
     <image  mode="aspectFill"  src="../img/yying.png"></image>
     <view>
       <text>Operation</text>
       <text>运营端</text>
+    </view>
+  </view>
+  <view class='box hospital {{active4}}' bindtap='hosmanage' wx:if='{{hospitalOperateIs}}'>
+    <image  mode="aspectFill"  src="../img/yy.png"></image>
+    <view>
+      <text>HospitalOpe</text>
+      <text>医院运营端</text>
     </view>
   </view>
 

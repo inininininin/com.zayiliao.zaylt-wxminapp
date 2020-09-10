@@ -424,11 +424,8 @@ Page({
                        app.globalData.hospitalName = res.data.data.hospital.name;
                        app.globalData.hospitaladdress = res.data.data.hospital.address;
                        app.globalData.authenticationIs = res.data.data.hospital.authStatus;
-                       if (res.data.data.hospital.license == '' || res.data.data.hospital.license == null || res.data.data.hospital.license == undefined) {
-                         app.globalData.src = ''
-                       } else {
-                         app.globalData.src = app.globalData.url + res.data.data.hospital.license
-                       }
+                       app.globalData.src=app.cover(res.data.data.hospital.license) 
+                       
                        if (res.data.data.type == 1) {
                          wx.navigateTo({
                            url: '../promoter/index/index',
@@ -518,12 +515,7 @@ Page({
                       app.globalData.clinicName = res.data.data.clinic.name;
                       app.globalData.clinicaddress = res.data.data.clinic.address;
                       app.globalData.authenticationIs = res.data.data.clinic.authenticationIs;
-                      if (res.data.data.clinic.license == '' || res.data.data.clinic.license == null || res.data.data.clinic.license == undefined) {
-                        app.globalData.src = ''
-                      } else {
-                        app.globalData.src = app.globalData.url + res.data.data.clinic.license
-                      }
-
+                      app.globalData.src=app.cover(res.data.data.clinic.license) 
                       wx.switchTab({
                         url: '../out/index/index',
                       })

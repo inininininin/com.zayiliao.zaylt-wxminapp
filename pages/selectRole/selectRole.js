@@ -13,6 +13,7 @@ Page({
     role:'',
     active2:'',
     active3:'',
+    active4:'',
   },
   hospital: function () {
     buttonDisabled: true
@@ -20,11 +21,12 @@ Page({
       active1:'active',
       active2:'',
       active3:'',
+      active4:'',
       role:1,
-      hospitalIs:0,
-      clinicIs:0,
-      hospitalOperateIs:0,
-      hospitalAdminIs:0
+      // hospitalIs:0,
+      // clinicIs:0,
+      // hospitalOperateIs:0,
+      // operateIs:0
     })
   },
   outpatient: function () {
@@ -33,6 +35,7 @@ Page({
       active1:'',
       active2:'active',
       active3:'',
+      active4:'',
       role:2,
     })
   },
@@ -41,7 +44,17 @@ Page({
       active1:'',
       active2:'',
       active3:'active',
+      active4:'',
       role:3,
+    })
+  },
+  hosmanage: function () {
+    this.setData({
+      active1:'',
+      active2:'',
+      active3:'',
+      active4:'active',
+      role:4,
     })
   },
   goEnter:function(){
@@ -53,11 +66,7 @@ Page({
       //     url: '../promoter/index/index',
       //   })
       // } else {
-        if(app.loginRefresh.hospitalOperateIs){
-          wx.navigateTo({url: '../promoter/index/index',})
-        }else if(app.loginRefresh.hospitalIs){
           wx.navigateTo({url: '../index/index', })
-        }
       // }
     }else if(this.data.role==2){
       wx.switchTab({
@@ -67,6 +76,8 @@ Page({
       wx.navigateTo({
         url: '../manage/index/index',
       })
+    }else if(this.data.role==4){
+      wx.navigateTo({url: '../promoter/index/index',})
     }else{
       wx.showToast({
         title: '请选择登录端',
@@ -102,12 +113,12 @@ Page({
       hospitalIs : app.loginRefresh.hospitalIs,
       clinicIs : app.loginRefresh.clinicIs,
       hospitalOperateIs : app.loginRefresh.hospitalOperateIs,
-      hospitalAdminIs : app.loginRefresh.hospitalAdminIs,
+      operateIs : app.loginRefresh.operateIs,
     })
     that.hospitalIs = app.loginRefresh.hospitalIs;
     that.clinicIs = app.loginRefresh.clinicIs;
     that.hospitalOperateIs = app.loginRefresh.hospitalOperateIs;
-    that.hospitalAdminIs = app.loginRefresh.hospitalAdminIs;
+    that.operateIs = app.loginRefresh.operateIs;
     console.log("sss")
   },
 

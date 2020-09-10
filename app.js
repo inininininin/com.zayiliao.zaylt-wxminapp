@@ -106,6 +106,13 @@ App({
     var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
     return (Y + M + D)
   },
+  cover(_cover) {
+    var that = this
+    if (_cover && _cover.slice(0, 1) != 'h') {
+      _cover = this.globalData.domain + _cover
+    }
+    return _cover
+  },
   globalData: {
     userInfo: null,
     usrBaseInfo: null,
@@ -113,6 +120,7 @@ App({
     list: [], //存放tabBar的数据
     // url:'https://zaylt.njshangka.com',
     url:'https://dev.inininininin.com/ylt',
+    domain:'https://dev.inininininin.com',
     // url:'http://192.168.2.45/zaylt',
     token: '',//'1984750073886',
     userToken:'',

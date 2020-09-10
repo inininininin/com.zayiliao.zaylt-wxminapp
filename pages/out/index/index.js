@@ -480,7 +480,7 @@ Page({
           app.globalData.clinicId = res.data.data.clinicId;
           app.globalData.hospitalId = res.data.data.hospitalId;
           app.globalData.hospitalName = res.data.data.hospitalName;
-          app.globalData.clinicName = res.data.data.clinic.name;
+          app.globalData.clinicName = res.data.data.clinicName;
           // app.globalData.clinicaddress = res.data.data.clinic.address;
           // app.globalData.authenticationIs = res.data.data.clinic.authenticationIs;
           // if (res.data.data.clinic.license == '' || res.data.data.clinic.license == null || res.data.data.clinic.license == undefined) {

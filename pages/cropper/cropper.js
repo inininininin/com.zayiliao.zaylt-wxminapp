@@ -22,7 +22,7 @@ Page({
     //     const src = res.tempFilePaths[0]
     //     var avatar = res.tempFilePaths[0]
     //     wx.uploadFile({
-    //       url: app.globalData.url + '/zaylt/other/fileupload?cover&duration', //仅为示例，非真实的接口地址
+    //       url: app.globalData.url + '/zaylt/upload-file?cover&duration', //仅为示例，非真实的接口地址
     //       filePath: avatar,
     //       name: 'file',
     //       success: function (res) {
@@ -47,7 +47,7 @@ Page({
     //             },
     //             success: function (res) {
     //               that.setData({
-    //                 src: app.globalData.url + url
+    //                 src: app.globalData.domain + url
     //               })
     //             }
     //           })
