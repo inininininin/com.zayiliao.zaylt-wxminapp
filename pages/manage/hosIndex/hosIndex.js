@@ -123,15 +123,16 @@ Page({
         // } else {
         //   cover = res.data.data.cover.split(',')
         // }
-        for (var i in res.data.data.items) {
-          if (res.data.data.items[i].cover&&res.data.data.items[i].cover.slice(0, 1) != 'h') {
-            res.data.data.items[i].cover = app.globalData.url + res.data.data.items[i].cover
+        if(res.data.code==0){
+          for (var i in res.data.data.items) {
+            res.data.data.items[i].cover=app.cover(res.data.data.items[i].cover)
           }
+          that.setData({
+            cover: res.data.data.items
+          })
         }
 
-        that.setData({
-          cover: res.data.data.items
-        })
+      
       }
     })
     // wx.request({

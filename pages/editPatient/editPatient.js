@@ -53,10 +53,7 @@ Page({
             picBlob = res.data.data.invoices.split(',')
             var imgBlob = res.data.data.invoices.split(',')
             for (var r = 0; r < picBlob.length; r++) {
-              if (picBlob[r].slice(0, 1) != 'h') {
-                picBlob[r] = app.globalData.url + picBlob[r]
-                // arr.push({ 'pic': picBlob[r] })
-              }
+              picBlob[r]=app.cover(picBlob[r])
             }
             that.setData({
               show: 1,

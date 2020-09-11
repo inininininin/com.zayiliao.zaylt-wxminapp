@@ -187,7 +187,7 @@ Page({
         success: function (res) {
           if (res.data.code == 0) {
            
-            yyzzimg=app.cover(res.data.data.license) 
+           let yyzzimg=app.cover(res.data.data.license) 
             // var clinicPromoterName = res.data.data.clinicPromoterName
             // for (var i in array) {
             //   console.log(array[i].name, i, clinicPromoterName)

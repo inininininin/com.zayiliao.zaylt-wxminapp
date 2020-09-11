@@ -11,7 +11,7 @@
   <view>
     <view class="lines">
       <image  mode="aspectFill"  src="../img/iphone@2x.png"></image>
-      <input type="number" value='{{key}}'  bindinput="loginPhone" placeholder-class="placeholder" placeholder="输入手机号"></input>
+      <input type="text" value='{{key}}'  bindinput="loginPhone" placeholder-class="placeholder" placeholder="输入帐号"></input>
       <image  mode="aspectFill"  src="../img/delete.png" wx:if="{{key}}" bindtap="eliminate"></image>
     </view>
     <view class="lines_b">

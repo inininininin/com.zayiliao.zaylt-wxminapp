@@ -35,6 +35,7 @@ Page({
           method: 'post',
           success: function (res) {
             if(res.data.code==0){
+              console.log(1)
               // wx.redirectTo({
               //   url: '../selectRole/selectRole',
               // })
@@ -92,6 +93,7 @@ Page({
               }
               
             }else if(res.data.code==20){
+              console.log(2)
               wx.request({
                 url: app.globalData.url + '/login-by-wxminapp',
                 header: {

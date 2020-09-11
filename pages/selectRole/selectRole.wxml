@@ -23,7 +23,7 @@
     <image  mode="aspectFill"  src="../img/yying.png"></image>
     <view>
       <text>Operation</text>
-      <text>运营端</text>
+      <text>经理端</text>
     </view>
   </view>
   <view class='box hospital {{active4}}' bindtap='hosmanage' wx:if='{{hospitalOperateIs}}'>

@@ -87,8 +87,11 @@ Page({
   },
   delThis(e){
     var src=e.currentTarget.dataset.src
+    console.log(src)
     var srcIs = src.split(app.globalData.url)[1]
+    console.log(srcIs)
     var picBlob = this.data.picBlob.split(srcIs)[0] + this.data.picBlob.split(srcIs)[1].slice(1, this.data.picBlob.split(srcIs)[1].length)
+    console.log(picBlob)
     for(var i in this.data.picBlobShow){
       if(src==this.data.picBlobShow[i].src){
         this.data.picBlobShow.splice(i, 1)

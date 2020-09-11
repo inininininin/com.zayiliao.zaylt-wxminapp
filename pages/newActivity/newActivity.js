@@ -29,7 +29,7 @@ Page({
     var that=this
     var startTime = Date.parse(that.data.date)
     var endTime = Date.parse(that.data.date2)
-    var topImg = that.data.topImg.split('https://zaylt.njshangka.com')[1]
+    var topImg = that.data.topImg.split(app.globalData.domain)[1]
     wx.request({
       url: app.globalData.url + '/c2/activity/itemadd',
       header: {
@@ -45,8 +45,8 @@ Page({
         tel: that.data.tel,
         brief: that.data.brief,
         address: that.data.address,
-        shareCount: that.data.shareCount,
-        viewCount: that.data.viewCount,
+        // shareCount: that.data.shareCount,
+        // viewCount: that.data.viewCount,
         hospitalId: app.globalData.hospitalId,
       },
       method: 'post',

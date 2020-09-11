@@ -1,5 +1,5 @@
 // pages/promoter/clinicDetail/clinicDetail.js
-var app=getApp()
+var app = getApp()
 var utils = require('../../../utils/util.js');
 Page({
 
@@ -12,20 +12,20 @@ Page({
     titleBarHeight: getApp().globalData.titleBarHeight,
     navbar: ['全部', '未就诊', '已就诊'],
     currentTab: 0,
-    list1:[],
-    status:'',
-    clinicId:'',
-    changeIs:'',
+    list1: [],
+    status: '',
+    clinicId: '',
+    changeIs: '',
   },
   edit(e) {
     wx.navigateTo({
       url: '../addClinicRec/addClinicRec?typesName=修改门诊&id=' + this.data.clinicId,
     })
   },
- 
-  addPatient(e){
+
+  addPatient(e) {
     wx.navigateTo({
-      url: '../addPatient/addPatient?clinicId='+this.data.clinicId,
+      url: '../addPatient/addPatient?clinicId=' + this.data.clinicId,
     })
   },
   lastPage: function (toPageNo, status, clinicId) {
@@ -41,7 +41,7 @@ Page({
         ps: pageSize,
         status: status,
         clinicId: clinicId,
-       },
+      },
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
         'cookie': app.globalData.cookie
@@ -110,7 +110,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this
+    var that = this
     console.log(options.id)
     that.setData({
       clinicId: options.id
@@ -123,7 +123,7 @@ Page({
         ps: 15,
         status: '',
         clinicId: that.data.clinicId,
-       },
+      },
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
         'cookie': app.globalData.cookie
@@ -159,7 +159,7 @@ Page({
               ps: 15,
               status: 4,
               clinicId: that.data.clinicId,
-             },
+            },
             header: {
               "Content-Type": "application/x-www-form-urlencoded",
               'cookie': app.globalData.cookie
@@ -210,7 +210,7 @@ Page({
             method: 'post',
             data: {
               patientId: id,
-             },
+            },
             header: {
               "Content-Type": "application/x-www-form-urlencoded",
               'cookie': app.globalData.cookie
@@ -243,7 +243,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
   backHistory: function (e) {
     wx.navigateBack({
@@ -254,10 +254,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that=this
-    if(that.data.changeIs==1){
+    var that = this
+    if (that.data.changeIs == 1) {
       that.setData({
-        list1:[]
+        list1: []
       })
       wx.request({
         url: app.globalData.url + '/c2/patient/items',
@@ -267,7 +267,7 @@ Page({
           ps: 15,
           status: '',
           clinicId: that.data.clinicId,
-         },
+        },
         header: {
           "Content-Type": "application/x-www-form-urlencoded",
           'cookie': app.globalData.cookie
@@ -303,7 +303,7 @@ Page({
                 ps: 15,
                 status: 4,
                 clinicId: that.data.clinicId,
-               },
+              },
               header: {
                 "Content-Type": "application/x-www-form-urlencoded",
                 'cookie': app.globalData.cookie
@@ -367,6 +367,87 @@ Page({
       list1: [],
     })
     this.lastPage(0, that.data.status, that.data.clinicId)
+    wx.request({
+      url: app.globalData.url + '/c2/patient/items',
+      method: 'post',
+      data: {
+        pn: 1,
+        ps: 15,
+        status: '',
+        clinicId: that.data.clinicId,
+      },
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        'cookie': app.globalData.cookie
+      },
+      success: function (res) {
+        if (res.data.code == 0) {
+          that.setData({
+            totalCount: res.data.data.sum.totalCount
+          })
+          var totalCount = res.data.data.sum.totalCount
+          var list1 = that.data.list1;
+          var newlist1 = list1.concat(res.data.data.items)
+          if (res.data.data.items.length == 0) {
+            that.setData({
+              list1: list1,
+              // toPageNo: String(toPageNo)
+            });
+            wx.showToast({
+              title: '数据已全部加载',
+              // icon: 'loading',
+              // duration: 1500
+            })
+          } else {
+            that.setData({
+              list1: newlist1,
+            });
+          }
+          wx.request({
+            url: app.globalData.url + '/c2/patient/items',
+            method: 'post',
+            data: {
+              pn: 1,
+              ps: 15,
+              status: 4,
+              clinicId: that.data.clinicId,
+            },
+            header: {
+              "Content-Type": "application/x-www-form-urlencoded",
+              'cookie': app.globalData.cookie
+            },
+            success: function (res) {
+              if (res.data.code == 0) {
+                var totalCount1 = parseInt(res.data.data.sum.totalCount)
+                that.setData({
+                  totalCount1: res.data.data.sum.totalCount,
+                  totalCount2: parseInt(that.data.totalCount) - parseInt(res.data.data.sum.totalCount),
+                  navbar: [{ 'name': '全部', 'count': that.data.totalCount }, { 'name': '已就诊', 'count': totalCount1 }, { 'name': '未就诊', 'count': parseInt(that.data.totalCount) - parseInt(res.data.data.sum.totalCount) }],
+                })
+              } else if (res.data.code == 20 || res.data.code == 26) {
+                wx.hideToast()
+                wx.navigateTo({
+                  url: '../../login/login',
+                })
+              }
+            }
+          })
+        } else if (res.data.code == 20 || res.data.code == 26) {
+          wx.hideToast()
+          wx.navigateTo({
+            url: '../../login/login',
+          })
+        }
+        var pushTime
+        for (var i = 0; i < that.data.list1.length; i++) {
+          pushTime = that.data.list1[i].pushTime
+          that.data.list1[i].pushTime = app.dateChange(pushTime)
+        }
+        that.setData({
+          list1: that.data.list1,
+        })
+      }
+    })
     wx.stopPullDownRefresh()
   },
 
