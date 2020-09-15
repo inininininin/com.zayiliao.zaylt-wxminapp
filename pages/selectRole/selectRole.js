@@ -23,11 +23,8 @@ Page({
       active3:'',
       active4:'',
       role:1,
-      // hospitalIs:0,
-      // clinicIs:0,
-      // hospitalOperateIs:0,
-      // operateIs:0
     })
+    wx.navigateTo({url: '../index/index', })
   },
   outpatient: function () {
     buttonDisabled: true
@@ -38,6 +35,9 @@ Page({
       active4:'',
       role:2,
     })
+    wx.switchTab({
+      url: '../out/index/index',
+    })
   },
   manage: function () {
     this.setData({
@@ -46,6 +46,9 @@ Page({
       active3:'active',
       active4:'',
       role:3,
+    })
+    wx.navigateTo({
+      url: '../manage/index/index',
     })
   },
   hosmanage: function () {
@@ -56,6 +59,7 @@ Page({
       active4:'active',
       role:4,
     })
+    wx.navigateTo({url: '../promoter/index/index',})
   },
   goEnter:function(){
     // var that = this

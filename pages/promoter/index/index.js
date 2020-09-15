@@ -60,9 +60,7 @@ Page({
           for (var i = 0; i < res.data.data.items.length; i++) {
             addTime = res.data.data.items[i].addTime
             res.data.data.items[i].addTime = utils.formatTime(addTime / 1000, 'Y-M-D h:m');
-            if (res.data.data.items[i].cover && res.data.data.items[i].cover.slice(0, 1) != 'h') {
-              res.data.data.items[i].cover = app.globalData.url + res.data.data.items[i].cover
-            }
+            res.data.data.items[i].cover=app.cover(res.data.data.items[i].cover)
           }
           var schemeListArr = that.data.schemeList;
           var newSchemeListArr = schemeListArr.concat(res.data.data.items)
@@ -170,9 +168,7 @@ Page({
           for (var i = 0; i < res.data.data.items.length; i++) {
             addTime = res.data.data.items[i].addTime
             res.data.data.items[i].addTime = utils.formatTime(addTime / 1000, 'Y-M-D h:m');
-            if (res.data.data.items[i].cover && res.data.data.items[i].cover.slice(0, 1) != 'h') {
-              res.data.data.items[i].cover = app.globalData.url + res.data.data.items[i].cover
-            }
+            res.data.data.items[i].cover=app.cover(res.data.data.items[i].cover)
           }
           var schemeListArr = that.data.schemeList3;
           var newSchemeListArr = schemeListArr.concat(res.data.data.items)
@@ -220,9 +216,7 @@ Page({
           for (var i = 0; i < res.data.data.items.length; i++) {
             addTime = res.data.data.items[i].addTime
             res.data.data.items[i].addTime = utils.formatTime(addTime / 1000, 'Y-M-D h:m');
-            if (res.data.data.items[i].cover && res.data.data.items[i].cover.slice(0, 1) != 'h') {
-              res.data.data.items[i].cover = app.globalData.url + res.data.data.items[i].cover
-            }
+            res.data.data.items[i].cover=app.cover(res.data.data.items[i].cover)
           }
           var schemeListArr = that.data.schemeList2;
           var newSchemeListArr = schemeListArr.concat(res.data.data.items)

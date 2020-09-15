@@ -31,31 +31,50 @@ Page({
     var endTime = Date.parse(that.data.date2)
     var topImg = that.data.topImg.split(app.globalData.domain)[1]
     wx.request({
-      url: app.globalData.url + '/c2/activity/itemadd',
+      url: app.globalData.url + '/upload-stream?ext=html',
       header: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        // "Content-Type": "application/x-www-form-urlencoded",
         'cookie': app.globalData.cookie
       },
-      data: {
-         content: that.data.content,
-        startTime: startTime, 
-        endTime: endTime,
-        cover: topImg,
-        title: that.data.title,
-        tel: that.data.tel,
-        brief: that.data.brief,
-        address: that.data.address,
-        // shareCount: that.data.shareCount,
-        // viewCount: that.data.viewCount,
-        hospitalId: app.globalData.hospitalId,
-      },
+      data: that.data.content,
       method: 'post',
       success: function (res) {
         wx.hideToast()
         if (res.data.code == 0) {
-          wx.navigateBack({
-            
-          })
+          wx.request({
+            url: app.globalData.url + '/c2/activity/itemadd',
+            header: {
+              "Content-Type": "application/x-www-form-urlencoded",
+              'cookie': app.globalData.cookie
+            },
+            data: {
+               contentBtId: res.data.data.url,
+              startTime: startTime, 
+              endTime: endTime,
+              cover: topImg,
+              title: that.data.title,
+              tel: that.data.tel,
+              brief: that.data.brief,
+              address: that.data.address,
+              // shareCount: that.data.shareCount,
+              // viewCount: that.data.viewCount,
+              hospitalId: app.globalData.hospitalId,
+            },
+            method: 'post',
+            success: function (res) {
+              wx.hideToast()
+              if (res.data.code == 0) {
+                wx.navigateBack({
+                  delta:1
+                })
+              } else {
+                wx.showModal({
+                  showCancel: false,
+                  title: res.data.codeMsg
+                })
+              }
+            }
+          });
         } else {
           wx.showModal({
             showCancel: false,
@@ -64,6 +83,7 @@ Page({
         }
       }
     });
+    
   },
 
   save(){
@@ -214,7 +234,7 @@ Page({
               // content: res.data.data.content,
             })
             wx.request({
-              url: app.globalData.url + '/other/bigtxt/' + contentBtId + '/' + contentBtId,
+              url: app.globalData.domain + contentBtId,//'/other/bigtxt/' + contentBtId + '/' + contentBtId,
               method: 'get',
               header: {
                 "Content-Type": "application/x-www-form-urlencoded",

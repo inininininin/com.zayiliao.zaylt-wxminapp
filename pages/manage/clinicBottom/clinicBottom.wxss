@@ -137,7 +137,7 @@ page {
 }
 .clinicList{
   width: 704rpx;
-  margin: 126rpx 23rpx 0;
+  margin: 126rpx 23rpx ;
   padding-bottom: 20rpx;
   /* padding-bottom: 102rpx; */
   float: left;
