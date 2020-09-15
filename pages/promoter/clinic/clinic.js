@@ -172,6 +172,30 @@ Page({
     that.setData({
       schemeList: [],
     })
+    wx.request({
+      url: app.globalData.url + '/hospital/operator/hospital-clinics-sum',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        'cookie': app.globalData.cookie
+      },
+      data: {
+        //  hospitalUserId: options.id
+      },
+      method: 'get',
+      success: function (res) {
+        wx.hideToast()
+        if (res.data.code == 0) {
+          that.setData({
+            clinicNumber: res.data.data.rowCount,
+          })
+        } else {
+          wx.showModal({
+            showCancel: false,
+            title: res.data.codeMsg
+          })
+        }
+      }
+    });
     that.lastPage(0, that.data.kw)
     wx.stopPullDownRefresh()
   },

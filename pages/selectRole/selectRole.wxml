@@ -20,14 +20,14 @@
     </view>
   </view>
   <view class='box manage {{active3}}' bindtap='manage' wx:if='{{operateIs}}'>
-    <image  mode="aspectFill"  src="../img/yying.png"></image>
+    <image  mode="aspectFill"  src="../img/tgr.png"></image>
     <view>
       <text>Operation</text>
       <text>经理端</text>
     </view>
   </view>
   <view class='box hospital {{active4}}' bindtap='hosmanage' wx:if='{{hospitalOperateIs}}'>
-    <image  mode="aspectFill"  src="../img/yy.png"></image>
+    <image  mode="aspectFill"  src="../img/yying.png"></image>
     <view>
       <text>HospitalOpe</text>
       <text>医院运营端</text>

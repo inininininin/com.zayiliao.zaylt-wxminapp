@@ -336,3 +336,59 @@
   border-right: 1rpx solid #c6c7c9;
 }
 
+
+.bindlongtap{
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  top: 0;
+  left: 50%;
+}
+.caozuoBox{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.3);
+}
+.caozuoBox .boxIndex{
+  width: 540rpx;
+  height: 365rpx;
+  margin: 457rpx 105rpx 0;
+  background: #ffffff;
+  border-radius: 14rpx;
+}
+.boxIndex .title{
+  padding-top: 42rpx;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 36rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #666;
+  line-height: 42rpx;
+}
+.boxIndex .input{
+  box-sizing: border-box;
+  width: 480rpx;
+  height: 100rpx;
+  padding: 15rpx;
+  border: 1rpx solid #f2f2f2;
+  border-radius: 5rpx;
+  margin: 50rpx 30rpx 0;
+}
+.makesureThis{
+  width: 100%;
+height: 98rpx !important;
+font-size: 36rpx;
+font-family: PingFangSC, PingFangSC-Regular;
+font-weight: 400;
+text-align: center;
+color: #108ee9;
+line-height: 98rpx !important;
+margin-top: 30rpx;
+}

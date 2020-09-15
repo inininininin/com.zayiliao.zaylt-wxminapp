@@ -36,7 +36,7 @@
       <image  mode="aspectFill"  src='../../img/ChevronCopy2@2x.png'></image>
     </view>
   </navigator>
-  <navigator url='../../newLogin/newLogin'>
+  <navigator bindtap='loginout'>
     <view>
       <text>退出登录</text>
       <image  mode="aspectFill"  src='../../img/ChevronCopy2@2x.png'></image>

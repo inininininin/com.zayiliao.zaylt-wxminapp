@@ -19,7 +19,7 @@
         <view>
           <text>{{item.name}}</text>
           <view>
-            <text>{{item.stock}}</text>
+            <text>{{item.payExchangepoint}}</text>
             <text>积分</text>
           </view>
           <text>立即兑换</text>

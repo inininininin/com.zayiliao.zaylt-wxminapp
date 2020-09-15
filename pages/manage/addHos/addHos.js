@@ -54,14 +54,14 @@ Page({
       url: app.globalData.url + '/clientend2/manageend/hospitaladd', //仅为示例，非真实的接口地址
       method: 'post',
       data: {
-        license: that.data.license,
-        headmanName: that.data.headmanName,
-        name: that.data.name,
-        pwd: that.data.pwd,
-        phone: that.data.phone,
-        tel: that.data.tel,
-        address: that.data.address,
-        remark: that.data.remark,
+        license: that.data.license||'',
+        headmanName: that.data.headmanName||'',
+        name: that.data.name||'',
+        pwd: that.data.pwd||'',
+        phone: that.data.phone||'',
+        tel: that.data.tel||'',
+        address: that.data.address||'',
+        remark: that.data.remark||'',
       },
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -86,6 +86,7 @@ Page({
         }else{
           wx.showToast({
             title: res.data.codeMsg,
+            icon:'none'
           })
         }
       }

@@ -57,7 +57,7 @@ Page({
   },
   save(e) {
     var that = this
-    if (that.data.name == '' || that.data.phone == '' || that.data.password == '' || that.data.remark == '' || that.data.passwordConfirm == '') {
+    if (that.data.name == '' || that.data.phone == '' || that.data.password == '' || that.data.passwordConfirm == '') {
       wx.showToast({
         title: '请填写完整表格',
         icon: 'loading'
@@ -79,7 +79,7 @@ Page({
           password: that.data.password,
           name: that.data.name,
           phone: that.data.phone,
-          remark: that.data.remark,
+          // remark: that.data.remark,
           passwordConfirm: that.data.passwordConfirm
         },
         method: 'post',

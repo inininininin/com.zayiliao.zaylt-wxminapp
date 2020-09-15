@@ -22,6 +22,65 @@ Page({
     time:60,
     loginRefresh:'',
     showPhone:false,
+    bindlongtap1:false,
+    bindlongtap2:false,
+    inputYzm:'',//域名修改前的验证码
+    inputYm:'',//域名
+  },
+  eve(e){
+    console.log('取消点击')
+  },
+ 
+  bindlongtap(e){
+    this.setData({
+      bindlongtap1:true
+    })
+  },
+  caozuoBox(e){
+    this.setData({
+      bindlongtap1:false,
+      bindlongtap2:false,
+    })
+  },
+  inputYzm(e){
+    this.setData({
+      inputYzm:e.detail.value
+    })
+  },
+  inputYm(e){
+    this.setData({
+      inputYm:e.detail.value
+    })
+  },
+  makesureThis(e){
+    if(this.data.inputYzm=='cmwl2020'){
+      this.setData({
+        bindlongtap2:true,
+        bindlongtap1:false,
+      })
+    }else{
+      wx.showToast({
+        title: '验证码输入错误',
+        icon:'none'
+      })
+    }
+  },
+  makesureThisYm(e){
+    console.log(this.data.inputYm.slice(0,1),this.data.inputYm.slice(this.data.inputYm.length-1,this.data.inputYm.length))
+    if(this.data.inputYm!=''&&this.data.inputYm.slice(this.data.inputYm.length-1,this.data.inputYm.length)=='m'&&this.data.inputYm.slice(0,1)=='h'){
+      app.globalData.url=this.data.inputYm+'/ylt',
+      app.globalData.domain=this.data.inputYm
+      console.log(app.globalData.url)
+      this.setData({
+        bindlongtap2:false,
+        bindlongtap1:false,
+      })
+    }else{
+      wx.showToast({
+        title: '请输入正确的测试域名',
+        icon:'none'
+      })
+    }
   },
   getPerson:function(_value){
     let that = this
@@ -293,18 +352,18 @@ Page({
     var key = that.data.key;
     var password = that.data.password;
     var code = that.data.code;
-    var keyPrev = key.slice(0,4)
-    var keyLast = key.slice(key.length-4,key.length)
-    console.log(keyPrev, keyLast)
-    if (keyPrev == 'test' || keyLast == 'test') {
-      // app.globalData.url = 'https://zaylt.njshangka.com'
-      // var lengths = that.data.key.length - 4
-      // var key = that.data.key.slice(4, lengths);
-      app.globalData.url = 'https://dev.inininininin.com/ylt'
-    } else {
-      app.globalData.url = 'https://dev.inininininin.com/ylt'
-      // app.globalData.url = 'https://zaylt.njshangka.com'
-    }
+    // var keyPrev = key.slice(0,4)
+    // var keyLast = key.slice(key.length-4,key.length)
+    // console.log(keyPrev, keyLast)
+    // if (keyPrev == 'test' || keyLast == 'test') {
+    //   // app.globalData.url = 'https://zaylt.njshangka.com'
+    //   // var lengths = that.data.key.length - 4
+    //   // var key = that.data.key.slice(4, lengths);
+    //   app.globalData.url = 'https://dev.inininininin.com/ylt'
+    // } else {
+    //   app.globalData.url = 'https://dev.inininininin.com/ylt'
+    //   // app.globalData.url = 'https://zaylt.njshangka.com'
+    // }
     
     if (that.data.currentTab == 0) {
       that.changeHos(key,that.data.code, password)
@@ -344,18 +403,18 @@ Page({
     }else{
       var key = that.data.key;
       var password = that.data.password;
-      var keyPrev = key.slice(0, 4)
-      var keyLast = key.slice(key.length - 4, key.length)
-      console.log(key,keyPrev, keyLast)
-      if (keyPrev == 'test' && keyLast == 'test') {
-        // app.globalData.url ='https://zaylt.njshangka.com'
-        app.globalData.url = 'https://dev.inininininin.com/ylt'
-        // var lengths = that.data.key.length-4
-        // var key = that.data.key.slice(4, lengths);
-      }else{
-        // app.globalData.url = 'https://zaylt.njshangka.com'
-        app.globalData.url = 'https://dev.inininininin.com/ylt'
-      }
+      // var keyPrev = key.slice(0, 4)
+      // var keyLast = key.slice(key.length - 4, key.length)
+      // console.log(key,keyPrev, keyLast)
+      // if (keyPrev == 'test' && keyLast == 'test') {
+      //   // app.globalData.url ='https://zaylt.njshangka.com'
+      //   app.globalData.url = 'https://dev.inininininin.com/ylt'
+      //   // var lengths = that.data.key.length-4
+      //   // var key = that.data.key.slice(4, lengths);
+      // }else{
+      //   // app.globalData.url = 'https://zaylt.njshangka.com'
+      //   app.globalData.url = 'https://dev.inininininin.com/ylt'
+      // }
       that.loginHos(key, password)
       buttonDisabled: true
       wx.showToast({

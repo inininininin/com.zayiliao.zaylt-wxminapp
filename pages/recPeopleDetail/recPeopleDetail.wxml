@@ -24,10 +24,10 @@
       <text>号码：</text>
       <text>{{phone||''}}</text>
     </view>
-    <view>
+    <!-- <view>
       <text>备注：</text>
       <text>{{remark||''}}</text>
-    </view>
+    </view> -->
   </view>
 </view>
 <view class="lineChange" style="position:fixed;top:{{statusBarHeight+titleBarHeight}}px">
@@ -61,8 +61,8 @@
   <input bindinput="phone" value="{{phone||''}}"></input>
   <text>密码：</text>
   <input bindinput="pwd" value="{{pwd||''}}"></input>
-  <text>备注：</text>
-  <input bindinput="remark" value="{{remark||''}}"></input>
+  <!-- <tepuxt>备注：</text>
+  <int bindinput="remark" value="{{remark||''}}"></input> -->
   <view bindtap='useNow' class='useNow'>立即使用</view>
 </view>
 <view class="changeThisClinic" wx:if='{{showIsTwo}}'>

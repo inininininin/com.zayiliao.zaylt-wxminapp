@@ -212,7 +212,7 @@ Page({
                //点击确定
                app.globalData.cookie=''
                wx.reLaunch({
-                url: '../../loginClinic/loginClinic',
+                url: '../../newLogin/newLogin',
               })
             }
          },

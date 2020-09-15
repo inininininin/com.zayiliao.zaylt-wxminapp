@@ -1,5 +1,5 @@
 // pages/promoter/mine/mine.js
-var app=getApp()
+var app = getApp()
 Page({
 
   /**
@@ -9,16 +9,36 @@ Page({
     navtitle: '',
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
-    display:0,
-    hospitalId:'',
-    srcCover:'../../img/logo@2x.png'
+    display: 0,
+    hospitalId: '',
+    srcCover: '../../img/logo@2x.png'
   },
+  loginout(e) {
+    var that = this
+    wx.showModal({
+      title: '退出',
+      content: '确定要退出登录？',
+      success: function (res) {
+        if (res.cancel) {
+          //点击取消,默认隐藏弹框
+        } else {
+          //点击确定
+          app.globalData.cookie = ''
+          wx.reLaunch({
+            url: '../../newLogin/newLogin',
+          })
+        }
+      },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
 
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this
+    var that = this
     that.setData({
       hospitalId: app.globalData.hospitalId,
     })
@@ -60,9 +80,9 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
-  lookcover(e){
+  lookcover(e) {
     wx.previewImage({
       current: app.globalData.srcCover, // 当前显示图片的http链接
       urls: [app.globalData.srcCover] // 需要预览的图片http链接列表
@@ -72,7 +92,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if(app.globalData.srcCover){
+    if (app.globalData.srcCover) {
       console.log(app.globalData.srcCover)
       this.setData({
         srcCover: app.globalData.srcCover

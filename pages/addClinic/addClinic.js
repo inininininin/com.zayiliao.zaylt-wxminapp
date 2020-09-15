@@ -144,6 +144,7 @@ Page({
         remark: that.data.remark,
         hospitalId: app.globalData.hospitalId,
         license: that.data.license,
+        hospitalUserId: that.data.clinicPromoterId,
       },
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -162,6 +163,7 @@ Page({
         } else {
           wx.showToast({
             title: res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -210,7 +212,7 @@ Page({
               },
               success: function (res) {
                 if (res.data.code == 0) {
-                  yyzzimg=app.cover(res.data.data.license)
+                 let yyzzimg=app.cover(res.data.data.license)
                   
                   var clinicPromoterName = res.data.data.hospitalUserName
                   for (var i in array) {

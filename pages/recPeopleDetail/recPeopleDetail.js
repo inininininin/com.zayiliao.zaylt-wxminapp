@@ -210,7 +210,7 @@ Page({
   },
   useNow(e){
     var that = this
-    if (that.data.name == '' || that.data.phone == '' || that.data.remark == '' ) {
+    if (that.data.name == '' || that.data.phone == ''  ) {
       wx.showToast({
         title: '请填写完整表格',
         icon: 'loading'
@@ -226,7 +226,7 @@ Page({
            type: 1,
           name: that.data.name,
           phone: that.data.phone,
-          remark: that.data.remark,
+          // remark: that.data.remark,
           hospitalUserId: that.data.hospitalUserId,
           password: that.data.pwd,
           passwordConfirm:that.data.pwd,
@@ -367,7 +367,7 @@ Page({
               detail:res.data.data,
               name: res.data.data.name,
               phone: res.data.data.phone,
-              remark: res.data.data.remark,
+              // remark: res.data.data.remark,
             })
         } else {
           wx.showModal({

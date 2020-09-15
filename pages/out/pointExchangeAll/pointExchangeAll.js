@@ -54,9 +54,7 @@ Page({
       success: function (res) {
         if (res.data.code == 0) {
           for (var i = 0; i < res.data.data.items.length; i++) {
-            if (res.data.data.items[i].cover.slice(0, 1) != 'h') {
-              res.data.data.items[i].cover = app.globalData.url + res.data.data.items[i].cover
-            }
+            res.data.data.items[i].cover=app.cover(res.data.data.items[i].cover)
           }
 
           var list1 = that.data.list1;
