@@ -1,95 +1,101 @@
 <view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
-  <view class="header">
-    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
-    <view class="title-bar" style="height:{{titleBarHeight}}px">
-      <view>
-        <image  mode="aspectFill"  bindtap='userIndex' style='margin-left:30rpx;' src='../img/set_up@2x.png'></image>
-      </view>
-    </view>
-  </view>
+	<view class="header">
+		<view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+		<view class="title-bar" style="height:{{titleBarHeight}}px">
+			<view>
+				<image mode="aspectFill" bindtap='userIndex' style='margin-left:30rpx;' src='../img/set_up@2x.png'></image>
+			</view>
+		</view>
+	</view>
 </view>
 
-<view class='ownDetail' >
-  <view class='avaterBox'>
-    <image  mode="aspectFill" bindtap="lookcover"  src='{{srcCover}}'></image>
-    <!-- <image  mode="aspectFill"  wx:if="{{src==''}}" src="{{src}}" bindtap='bindChooiceProduct' class='avater' src='../../img/logo@2x.png'></image> -->
-    <text class='yirenzheng' wx:if='{{display==1}}'>已认证</text>
-    <text class='weirenzheng' wx:if='{{display==0}}'>未认证</text>
-    <text class='weirenzheng' wx:if='{{display==2}}'>未通过</text>
-  </view>
+<view class='ownDetail'>
+	<view class='avaterBox'>
+		<image mode="aspectFill" bindtap="lookcover" src='{{srcCover}}'></image>
+		<!-- <image  mode="aspectFill"  wx:if="{{src==''}}" src="{{src}}" bindtap='bindChooiceProduct' class='avater' src='../../img/logo@2x.png'></image> -->
+		<text class='yirenzheng' wx:if='{{display==1}}'>已认证</text>
+		<text class='weirenzheng' wx:if='{{display==0}}'>未认证</text>
+		<text class='weirenzheng' wx:if='{{display==2}}'>未通过</text>
+	</view>
 
-  <view class='title'>
-    <view>
-      <text>{{name||''}}</text>
-      <text>账号：{{tel||''}}</text>
-      <!-- <text>{{address||''}}</text> -->
-    </view>
-  </view>
+	<view class='title'>
+		<view>
+			<text>{{name||''}}</text>
+			<text>账号：{{tel||''}}</text>
+			<!-- <text>{{address||''}}</text> -->
+		</view>
+	</view>
 
-  <view class='yyzz'  bindtap='yyzz'>
-    <image  mode="aspectFill"  src='../img/ChevronCopy2@2x.png'></image>
-    <text>营业执照</text>
-  </view>
+	<view class='yyzz' bindtap='yyzz'>
+		<image mode="aspectFill" src='../img/ChevronCopy2@2x.png'></image>
+		<text>营业执照</text>
+	</view>
 </view>
 
 
 <view class='list'>
-  <navigator url='../taskManager/taskManager'>
-    <view>
-      <text>任务管理</text>
-      <image  mode="aspectFill"  src='../img/ChevronCopy2@2x.png'></image>
-    </view>
-  </navigator>
-  
-  <navigator url='../exchangeMan/exchangeMan'>
-    <view>
-      <text>兑换管理</text>
-      <image  mode="aspectFill"  src='../img/ChevronCopy2@2x.png'></image>
-    </view>
-  </navigator>
-  <navigator url='../ZJCMyorder/ZJCMyorder'>
-    <view>
-      <text>集采订单</text>
-      <image  mode="aspectFill"  src='../img/ChevronCopy2@2x.png'></image>
-    </view>
-  </navigator>
-  <navigator url='../myJifen/myJifen'>
-    <view>
-      <text>集采积分</text>
-      <image  mode="aspectFill"  src='../img/ChevronCopy2@2x.png'></image>
-    </view>
-  </navigator>
-  <navigator url='../recPeople/recPeople'>
-    <view>
-      <text>推广渠道人</text>
-      <image  mode="aspectFill"  src='../img/ChevronCopy2@2x.png'></image>
-    </view>
-  </navigator>
+	<navigator bindtap="bindWxmApp" wx:if='{{wxOpenId}}'>
+		<view>
+			<text>绑定微信</text>
+			<image mode="aspectFill" src='../img/ChevronCopy2@2x.png'></image>
+		</view>
+	</navigator>
+	<navigator url='../taskManager/taskManager'>
+		<view>
+			<text>任务管理</text>
+			<image mode="aspectFill" src='../img/ChevronCopy2@2x.png'></image>
+		</view>
+	</navigator>
 
-  <navigator bindtap="loginout" >
-    <view>
-      <text>退出登录</text>
-      <image  mode="aspectFill"  src='../img/ChevronCopy2@2x.png'></image>
-    </view>
-  </navigator>
+	<navigator url='../exchangeMan/exchangeMan'>
+		<view>
+			<text>兑换管理</text>
+			<image mode="aspectFill" src='../img/ChevronCopy2@2x.png'></image>
+		</view>
+	</navigator>
+	<navigator url='../ZJCMyorder/ZJCMyorder'>
+		<view>
+			<text>集采订单</text>
+			<image mode="aspectFill" src='../img/ChevronCopy2@2x.png'></image>
+		</view>
+	</navigator>
+	<navigator url='../myJifen/myJifen'>
+		<view>
+			<text>集采积分</text>
+			<image mode="aspectFill" src='../img/ChevronCopy2@2x.png'></image>
+		</view>
+	</navigator>
+	<navigator url='../recPeople/recPeople'>
+		<view>
+			<text>推广渠道人</text>
+			<image mode="aspectFill" src='../img/ChevronCopy2@2x.png'></image>
+		</view>
+	</navigator>
+
+	<navigator bindtap="loginout">
+		<view>
+			<text>退出登录</text>
+			<image mode="aspectFill" src='../img/ChevronCopy2@2x.png'></image>
+		</view>
+	</navigator>
 </view>
 
 
 <view class='tabbarBtn'>
-  <view bindtap='index'>
-    <image  mode="aspectFill"  class='bottomBthimg1'  src='../img/shouye@2x.png'></image>
-    <text >首页</text>
-  </view>
-  <view bindtap='clinic'>
-    <image  mode="aspectFill"  class='bottomBthimg2' src='../img/Hospital@2x.png'></image>
-    <text>门诊</text>
-  </view>
-  <view bindtap='gene'>
-    <image  mode="aspectFill"  class='bottomBthimg2' src='../img/jiyin-gray@2x.png'></image>
-    <text>基因</text>
-  </view>
-  <view  bindtap='mine'>
-    <image  mode="aspectFill"  class='bottomBthimg3' src='../img/wode-blue@2x.png'></image>
-    <text class='active '>我的</text>
-  </view>
+	<view bindtap='index'>
+		<image mode="aspectFill" class='bottomBthimg1' src='../img/shouye@2x.png'></image>
+		<text >首页</text>
+	</view>
+	<view bindtap='clinic'>
+		<image mode="aspectFill" class='bottomBthimg2' src='../img/Hospital@2x.png'></image>
+		<text>门诊</text>
+	</view>
+	<view bindtap='gene'>
+		<image mode="aspectFill" class='bottomBthimg2' src='../img/jiyin-gray@2x.png'></image>
+		<text>基因</text>
+	</view>
+	<view bindtap='mine'>
+		<image mode="aspectFill" class='bottomBthimg3' src='../img/wode-blue@2x.png'></image>
+		<text class='active '>我的</text>
+	</view>
 </view>

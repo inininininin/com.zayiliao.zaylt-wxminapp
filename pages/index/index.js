@@ -1,5 +1,5 @@
 // pages/Third/index/index.js
-var app=getApp()
+var app = getApp()
 var utils = require('../../utils/util.js');
 Page({
 
@@ -14,42 +14,43 @@ Page({
     swiperCurrent: 0,
     kw: '',
     schemeList: [],
-    cover:[],
-    zindexThis:0,
-    bgColorThis:'',
-    colorThis:'#fff',
-    bgSizeThis:''
+    cover: [],
+    zindexThis: 1000,
+    // bgColorThis: 'url(https://zaylt.njshangka.com/resource/img/bj@2x.png)',
+    // bgColorThisEve:'url(https://zaylt.njshangka.com/resource/img/88-1@2x.png)',
+    bgSizeThis: 'cover',
+    colorThis: '#fff',
   },
   onPageScroll: function (e) {
     // console.log(e.scrollTop)
-    var heightThis=this.data.titleBarHeight+this.data.statusBarHeight
-    if(e.scrollTop>0){
+    var heightThis = this.data.titleBarHeight + this.data.statusBarHeight
+    if (e.scrollTop > 0) {
       this.setData({
-        zindexThis:1000,
-        bgColorThis:'url(https://zaylt.njshangka.com/resource/img/bj@2x.png)',
-        bgSizeThis:'cover',
+        zindexThis: 1000,
+        bgColorThis: 'url(https://zaylt.njshangka.com/resource/img/bj@2x.png)',
+        bgSizeThis: 'cover',
         // colorThis:'#333'
       })
-    }else{
+    } else {
       this.setData({
-        zindexThis:0,
-        bgColorThis:'',
-        bgSizeThis:''
-    // colorThis:'#fff'
+        zindexThis: 1000,
+        bgColorThis: 'url(https://zaylt.njshangka.com/resource/img/bj@2x.png)',
+        bgSizeThis: 'cover',
+        // colorThis:'#fff'
       })
     }
   },
-  qdmz:function(e){
-      wx.navigateTo({
-        url: '../clinicSearch/clinicSearch?type=1',
-      })
+  qdmz: function (e) {
+    wx.navigateTo({
+      url: '../clinicSearch/clinicSearch?type=1',
+    })
   },
   bygl: function (e) {
     wx.navigateTo({
       url: '../sourceManagement/sourceManagement',
     })
   },
-  qxjc:function(){
+  qxjc: function () {
     wx.navigateTo({
       url: '../ZJCQxshop/ZJCQxshop',
     })
@@ -59,7 +60,7 @@ Page({
       url: '../operationsCenter/operationsCenter?type=1',
     })
   },
-  jyjc:function(){
+  jyjc: function () {
     wx.redirectTo({
       url: '../gene/gene',
     })
@@ -69,10 +70,10 @@ Page({
       url: '../putInPrecisionActivities/putInPrecisionActivities',
     })
   },
-  ylzy(e){
+  ylzy(e) {
     wx.showToast({
       title: '暂未开通',
-      icon:'loading'
+      icon: 'loading'
     })
   },
   qtxm(e) {
@@ -86,7 +87,7 @@ Page({
       swiperCurrent: e.detail.current
     })
   },
-  mine(e){
+  mine(e) {
     wx.redirectTo({
       url: '../mine/mine',
     })
@@ -111,16 +112,16 @@ Page({
       titleBarHeight: getApp().globalData.titleBarHeight
     })
     var id = options.id
-    
-    if (options.isShare&&options.isShare==1){
+
+    if (options.isShare && options.isShare == 1) {
       wx.navigateTo({
-        url: '../out/articleDetail/articleDetail?id=' + options.shareId ,
+        url: '../out/articleDetail/articleDetail?id=' + options.shareId,
       })
-    } else if (options.isShare&&options.isShare == 2) {
+    } else if (options.isShare && options.isShare == 2) {
       wx.navigateTo({
         url: '../out/highQualityCaseDetail/highQualityCaseDetail?id=' + options.shareId,
       })
-    } else if (options.isShare&&options.isShare == 3) {
+    } else if (options.isShare && options.isShare == 3) {
       wx.navigateTo({
         url: '../newActivity/newActivity?type=' + options.shareId,
       })
@@ -133,27 +134,27 @@ Page({
       },
       method: 'post',
       success: function (res) {
-        if (res.data.code == 20 || res.data.code == 26){
+        if (res.data.code == 20 || res.data.code == 26) {
           wx.navigateTo({
             url: '../newLogin/newLogin',
           })
-        }else if (res.data.code == 0 ){
+        } else if (res.data.code == 0) {
           app.globalData.phone = res.data.data.phone;
-                       app.globalData.userId = res.data.data.userId;
-                       app.globalData.hospitalId = res.data.data.hospitalId;
-                       app.globalData.hospitalName = res.data.data.hospitalName;
-                      //  app.globalData.hospitaladdress = res.data.data.hospital.address;
-                      //  app.globalData.authenticationIs = res.data.data.hospital.authStatus;
-                      //  if (res.data.data.hospital.license == '' || res.data.data.hospital.license == null || res.data.data.hospital.license == undefined) {
-                      //    app.globalData.src = ''
-                      //  } else {
-                      //    app.globalData.src = app.globalData.url + res.data.data.hospital.license
-                      //  }
-                      //  if (res.data.data.hospital.cover == '' || res.data.data.hospital.cover == null || res.data.data.hospital.cover == undefined) {
-                      //   app.globalData.srcCover = ''
-                      // } else {
-                      //   app.globalData.srcCover = app.globalData.url + res.data.data.hospital.cover
-                      // }
+          app.globalData.userId = res.data.data.userId;
+          app.globalData.hospitalId = res.data.data.hospitalId;
+          app.globalData.hospitalName = res.data.data.hospitalName;
+          //  app.globalData.hospitaladdress = res.data.data.hospital.address;
+          //  app.globalData.authenticationIs = res.data.data.hospital.authStatus;
+          //  if (res.data.data.hospital.license == '' || res.data.data.hospital.license == null || res.data.data.hospital.license == undefined) {
+          //    app.globalData.src = ''
+          //  } else {
+          //    app.globalData.src = app.globalData.url + res.data.data.hospital.license
+          //  }
+          //  if (res.data.data.hospital.cover == '' || res.data.data.hospital.cover == null || res.data.data.hospital.cover == undefined) {
+          //   app.globalData.srcCover = ''
+          // } else {
+          //   app.globalData.srcCover = app.globalData.url + res.data.data.hospital.cover
+          // }
         }
       }
     })
@@ -165,7 +166,7 @@ Page({
       },
       method: 'get',
       data: {
-        place:0
+        place: 0
       },
       success: function (res) {
         var cover = res.data.data.rows
@@ -175,7 +176,7 @@ Page({
           cover = res.data.data.rows
         }
         for (var i = 0; i < cover.length; i++) {
-          if (cover[i].cover&&cover[i].cover.slice(0, 1) != 'h') {
+          if (cover[i].cover && cover[i].cover.slice(0, 1) != 'h') {
             cover[i].cover = app.globalData.url + cover[i].cover
           }
         }
@@ -215,7 +216,7 @@ Page({
     //     // })
     //   }
     // })
-    that.lastPage(0,'')
+    that.lastPage(0, '')
   },
   lastPage: function (toPageNo, kw) {
     var that = this
@@ -243,7 +244,7 @@ Page({
           for (var i = 0; i < res.data.data.items.length; i++) {
             addTime = res.data.data.items[i].addTime
             res.data.data.items[i].addTime = utils.formatTime(addTime / 1000, 'Y-M-D h:m');
-            if (res.data.data.items[i].cover&&res.data.data.items[i].cover.slice(0, 1) != 'h') {
+            if (res.data.data.items[i].cover && res.data.data.items[i].cover.slice(0, 1) != 'h') {
               res.data.data.items[i].cover = app.globalData.url + res.data.data.items[i].cover
             }
           }
@@ -286,14 +287,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-   
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({
@@ -324,7 +325,7 @@ Page({
     that.setData({
       schemeList: [],
     })
-    that.lastPage(0,'')
+    that.lastPage(0, '')
     wx.stopPullDownRefresh()
   },
   backHistory: function (e) {
@@ -338,7 +339,7 @@ Page({
   onReachBottom: function () {
     var that = this
     var toPageNo = that.data.toPageNo
-    that.lastPage(toPageNo,'')
+    that.lastPage(toPageNo, '')
   },
 
   /**

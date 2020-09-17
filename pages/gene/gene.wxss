@@ -77,6 +77,7 @@
 }
 
 .fenlei text {
+  /* font-size: 18px; */
   font-size: 30rpx;
   color: #000;
   /* margin-left: 15rpx; */
@@ -129,7 +130,7 @@
 
 .option_box {
   position: absolute;
-  top: 88rpx;
+  /* top: 88rpx; */
   width: 300rpx;
   /* border-top: 0; */
   border-bottom: 0;

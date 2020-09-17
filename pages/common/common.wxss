@@ -50,5 +50,6 @@ page {
   margin: 0  0 0 -100rpx!important;
 }
 .titleText{
-  font-size: 36rpx;
+  font-size: 18px;
+  /* font-size: 36rpx; */
 }

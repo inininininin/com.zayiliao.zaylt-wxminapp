@@ -24,7 +24,7 @@ Page({
       active4:'',
       role:1,
     })
-    wx.navigateTo({url: '../index/index', })
+    // wx.navigateTo({url: '../index/index', })
   },
   outpatient: function () {
     buttonDisabled: true
@@ -35,9 +35,9 @@ Page({
       active4:'',
       role:2,
     })
-    wx.switchTab({
-      url: '../out/index/index',
-    })
+    // wx.switchTab({
+    //   url: '../out/index/index',
+    // })
   },
   manage: function () {
     this.setData({
@@ -47,9 +47,9 @@ Page({
       active4:'',
       role:3,
     })
-    wx.navigateTo({
-      url: '../manage/index/index',
-    })
+    // wx.navigateTo({
+    //   url: '../manage/index/index',
+    // })
   },
   hosmanage: function () {
     this.setData({
@@ -59,7 +59,7 @@ Page({
       active4:'active',
       role:4,
     })
-    wx.navigateTo({url: '../promoter/index/index',})
+    // wx.navigateTo({url: '../promoter/index/index',})
   },
   goEnter:function(){
     // var that = this

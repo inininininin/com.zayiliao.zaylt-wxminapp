@@ -13,6 +13,37 @@ Page({
     hospitalId: '',
     srcCover: '../../img/logo@2x.png'
   },
+  bindWxmApp(e){
+    wx.login({
+      complete: (res) => {
+        wx.request({
+          url: app.globalData.url + '/bind-wx-mapp',
+          header: {
+            'Content-type': 'application/x-www-form-urlencoded',
+            'cookie': app.globalData.cookie
+          },
+          method: "post",
+          data:{
+            jscode: res.code,
+          },
+          success: function (resData) {
+            wx.hideToast()
+            if (resData.data.code == 0) {
+              that.setData({
+                wxOpenId:false
+              })
+              that.loginRefresh()
+            } else {
+              wx.showModal({
+                showCancel: false,
+                title: resData.data.codeMsg
+              })
+            }
+          }
+        })
+      },
+    })
+  },
   loginout(e) {
     var that = this
     wx.showModal({
@@ -39,6 +70,15 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+    if(app.loginRefresh.wxOpenId){
+      that.setData({
+        wxOpenId:false
+      })
+    }else{
+      that.setData({
+        wxOpenId:true
+      })
+    }
     that.setData({
       hospitalId: app.globalData.hospitalId,
     })
@@ -133,5 +173,52 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  loginRefresh:function(_value){
+    let that = this;
+    wx.request({
+      url: app.globalData.url + '/login-refresh',
+      header: {
+        'Content-type': 'application/x-www-form-urlencoded',
+        'cookie': app.globalData.cookie
+      },
+      method: 'post',
+      success: function (res) {
+       if(res.data.code==0){
+        // wx.redirectTo({
+        //   url: '../selectRole/selectRole',
+        // })
+        if(app.globalData){
+          app.globalData.phone = res.data.data.phone;
+          app.globalData.userId = res.data.data.userId;
+          app.globalData.hospitalId = res.data.data.hospitalId;
+          app.globalData.hospitalName = res.data.data.hospitalName;
+          // app.globalData.hospitaladdress = res.data.data.hospital.address;
+          // app.globalData.authenticationIs = res.data.data.hospital.authStatus;
+          // if (res.data.data.hospital.license == '' || res.data.data.hospital.license == null || res.data.data.hospital.license == undefined) {
+          //   app.globalData.src = ''
+          // } else {
+          //   app.globalData.src = app.globalData.url + res.data.data.hospital.license
+          // }
+          // if (res.data.data.hospital.cover == '' || res.data.data.hospital.cover == null || res.data.data.hospital.cover == undefined) {
+          //   app.globalData.srcCover = ''
+          // } else {
+          //   app.globalData.srcCover = app.globalData.url + res.data.data.hospital.cover
+          // }
+        }
+        app.loginRefresh = res.data.data;
+        
+        
+       }else{
+         if(!_value){
+          wx.showModal({
+            title: '',
+            content: res.data.codeMsg,
+          })
+         }
+         
+       }
+      }
+    })
+  },
 })

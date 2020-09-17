@@ -4,8 +4,7 @@
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
     <view>
-    <!-- <image  mode="aspectFill"  bindtap='backHistory' style='display:inline-block;top:{{2+statusBarHeight}}px;left:10rpx;padding:20rpx;'  src='../../img/black-backnew.png'></image> -->
-    <text>{{navtitle}}</text>
+    <text class="titleText">{{navtitle}}</text>
     </view>
     </view>
   </view>

@@ -7,8 +7,20 @@
   justify-content: space-between;
   /* padding: 200rpx 0; */
   box-sizing: border-box;
-} 
+}
 
-page{
+page {
   overflow-y: scroll !important;
+}
+
+.container .header{
+  font-size: 18px !important;
+}
+
+.container .title-bar {
+  font-size: 18px !important;
+}
+
+.titleText {
+  font-size: 18px !important;
 }

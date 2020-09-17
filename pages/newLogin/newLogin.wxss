@@ -270,7 +270,7 @@
 .bgView{
 	width: 750rpx;
 	height: 413rpx;
-	background: url(https://zaylt.njshangka.com//wxminapp/head.png) no-repeat ;
+	background: url(https://zaylt.njshangka.com/wxminapp/head.png) no-repeat ;
 	background-size: contain;
 	box-sizing: border-box;
 }

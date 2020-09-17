@@ -34,5 +34,5 @@
     </view>
   </view>
 
-  <!-- <image  mode="aspectFill"  class="goEnter" bindtap="goEnter" src="../img/go.png"></image> -->
+  <image  mode="aspectFill"  class="goEnter" bindtap="goEnter" src="../img/go.png"></image>
 </view>
