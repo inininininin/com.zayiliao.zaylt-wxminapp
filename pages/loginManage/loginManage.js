@@ -22,7 +22,7 @@ Page({
     time:60
   },
   selectEnter(){
-    wx.navigateTo({
+    wx.reLaunch({
       url: '../selectRole/selectRole',
     })
   },

@@ -25,7 +25,7 @@ Page({
     // wx.navigateTo({
     //   url: '../selectRole/selectRole',
     // })
-    wx.redirectTo({
+    wx.reLaunch({
       url: '../selectRole/selectRole',
     })
   },
@@ -448,14 +448,14 @@ Page({
                       }
                        
                        if (res.data.data.type == 1) {
-                         wx.redirectTo({
+                         wx.reLaunch({
                           url: '../promoter/index/index',
                          })
                         //  wx.navigateTo({
                         //    url: '../promoter/index/index',
                         //  })
                        } else {
-                         wx.redirectTo({
+                         wx.reLaunch({
                            url: '../index/index',
                          })
                         //  wx.navigateTo({

@@ -22,7 +22,7 @@ Page({
     time:60
   },
   selectEnter(){
-    wx.navigateTo({
+    wx.reLaunch({
       url: '../selectRole/selectRole',
     })
   },
@@ -436,11 +436,11 @@ Page({
                         app.globalData.srcCover = app.globalData.url + res.data.data.hospital.cover
                       }
                        if (res.data.data.type == 1) {
-                         wx.navigateTo({
+                         wx.reLaunch({
                            url: '../promoter/index/index',
                          })
                        } else {
-                         wx.navigateTo({
+                         wx.reLaunch({
                            url: '../index/index',
                          })
                        }
@@ -534,7 +534,7 @@ Page({
                       } else {
                         app.globalData.srcCover = app.globalData.url + res.data.data.clinic.cover
                       }
-                      wx.switchTab({
+                      wx.reLaunch({
                         url: '../out/index/index',
                       })
 
@@ -611,7 +611,7 @@ Page({
                         app.globalData.phone = res.data.data.phone;
                         app.globalData.userId = res.data.data.userId;
                        
-                          wx.navigateTo({
+                          wx.reLaunch({
                             url: '../manage/index/index',
                           })
                        

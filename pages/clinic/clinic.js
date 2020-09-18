@@ -36,18 +36,18 @@ Page({
     })
   },
   index(e) {
-    wx.redirectTo({
+    wx.reLaunch({
       url: '../index/index',
     })
   },
   mine(e) {
-    wx.redirectTo({
+    wx.reLaunch({
       url: '../mine/mine',
     })
   },
 
   gene(e) {
-    wx.redirectTo({
+    wx.reLaunch({
       url: '../gene/gene',
     })
   },

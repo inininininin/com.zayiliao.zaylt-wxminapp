@@ -48,16 +48,16 @@ Page({
       //     url: '../promoter/index/index',
       //   })
       // } else {
-        wx.navigateTo({
+        wx.reLaunch({
           url: '../index/index',
         })
       // }
     }else if(this.data.role==2){
-      wx.switchTab({
+      wx.reLaunch({
         url: '../out/index/index',
       })
     }else if(this.data.role==3){
-      wx.navigateTo({
+      wx.reLaunch({
         url: '../manage/index/index',
       })
     }else{

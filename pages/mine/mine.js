@@ -44,17 +44,17 @@ Page({
     
   },
   index(e) {
-    wx.redirectTo({
+    wx.reLaunch({
       url: '../index/index',
     })
   },
   clinic(e) {
-    wx.redirectTo({
+    wx.reLaunch({
       url: '../clinic/clinic',
     })
   },
   gene(e) {
-    wx.redirectTo({
+    wx.reLaunch({
       url: '../gene/gene',
     })
   },

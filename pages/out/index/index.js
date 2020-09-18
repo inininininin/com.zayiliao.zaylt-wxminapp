@@ -201,6 +201,7 @@ Page({
     })
   },
   news: function(e) {
+    this.ifLogin()
     wx.navigateTo({
       url: '../news/news',
     })
@@ -456,11 +457,27 @@ Page({
   onReady: function() {
     
   },
-
+  ifLogin(){
+    if(app.globalData.cookie==''){
+      wx.showToast({
+        title: '请登录',
+        icon: 'none',
+        duration: 1000,
+        mask: true,
+        complete: function complete(res) {
+            wx.reLaunch({
+              url: '../login/login',
+            })
+            return
+        }
+      });
+    }
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function (options) {
+    this.ifLogin()
     this.lastPageNum();
     wx.request({
       url: app.globalData.url + '/clinic/login-refresh',

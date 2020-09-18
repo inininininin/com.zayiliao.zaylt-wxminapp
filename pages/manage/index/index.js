@@ -48,14 +48,48 @@ Page({
     changeIs:''
   },
   clinic(e){
-    wx.redirectTo({
-      url: '../clinicBottom/clinicBottom',
-    })
+    if(app.globalData.cookie==''){
+      wx.showToast({
+        title: '请登录',
+        icon: 'none',
+        duration: 1000,
+        mask: true,
+        complete: function complete(res) {
+          setTimeout(function () {
+            wx.navigateTo({
+              url: '../../loginManage/loginManage',
+            })
+          }, 1000);
+        }
+      });
+    }else{
+      wx.reLaunch({
+        url: '../clinicBottom/clinicBottom',
+      })
+    }
+   
   },
   mine(e) {
-    wx.redirectTo({
-      url: '../mine/mine',
-    })
+    if(app.globalData.cookie==''){
+      wx.showToast({
+        title: '请登录',
+        icon: 'none',
+        duration: 1000,
+        mask: true,
+        complete: function complete(res) {
+          setTimeout(function () {
+            wx.navigateTo({
+              url: '../../loginManage/loginManage',
+            })
+          }, 1000);
+        }
+      });
+    }else{
+      wx.reLaunch({
+        url: '../mine/mine',
+      })
+    }
+   
   },
   slider1change(e) {
 
@@ -272,15 +306,15 @@ Page({
           }
         }
         else if (res.data.code == 20 || res.data.code == 26) {
-          wx.showToast({
-            title: '请登录',
-            icon:"none"
-          })
-         setTimeout(function(){
-          wx.navigateTo({
-            url: '../../loginManage/loginManage',
-          })
-         },1000)
+        //   wx.showToast({
+        //     title: '请登录',
+        //     icon:"none"
+        //   })
+        //  setTimeout(function(){
+        //   wx.navigateTo({
+        //     url: '../../loginManage/loginManage',
+        //   })
+        //  },1000)
           
         }
       }
@@ -298,11 +332,28 @@ Page({
   onReady: function () {
     
   },
-
+  ifLogin(){
+    if(app.globalData.cookie==''){
+      wx.showToast({
+        title: '请登录',
+        icon: 'none',
+        duration: 1000,
+        mask: true,
+        complete: function complete(res) {
+          setTimeout(function () {
+            wx.navigateTo({
+              url: '../../loginManage/loginManage',
+            })
+          }, 1000);
+        }
+      });
+    }
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+   this.ifLogin()
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({

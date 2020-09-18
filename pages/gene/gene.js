@@ -19,18 +19,18 @@ Page({
     kw: '',
   },
   index(e) {
-    wx.redirectTo({
+    wx.reLaunch({
       url: '../index/index',
     })
   },
   mine(e) {
-    wx.redirectTo({
+    wx.reLaunch({
       url: '../mine/mine',
     })
   },
 
   clinic(e) {
-    wx.redirectTo({
+    wx.reLaunch({
       url: '../clinic/clinic',
     })
   },

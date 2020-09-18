@@ -150,7 +150,7 @@ App({
     cover: '',
     authenticationIs: '',
     src:'', 
-    Version:'1.0.2008310843',
+    Version:'1.0.2009181228',
     versionIntro: '修复了部分BUG\n优化了部分体验',
     lastClient:'',
     longitude:'',

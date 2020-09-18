@@ -40,42 +40,50 @@ Page({
     }
   },
   qdmz:function(e){
+    this.ifLogin()
       wx.navigateTo({
         url: '../clinicSearch/clinicSearch?type=1',
       })
   },
   bygl: function (e) {
+    this.ifLogin()
     wx.navigateTo({
       url: '../sourceManagement/sourceManagement',
     })
   },
   qxjc:function(){
+    this.ifLogin()
     wx.navigateTo({
       url: '../ZJCQxshop/ZJCQxshop',
     })
   },
   yyzx: function () {
+    this.ifLogin()
     wx.navigateTo({
       url: '../operationsCenter/operationsCenter?type=1',
     })
   },
   jyjc:function(){
-    wx.redirectTo({
+    this.ifLogin()
+    wx.reLaunch({
       url: '../gene/gene',
     })
   },
   yyhd: function () {
+    this.ifLogin()
     wx.navigateTo({
       url: '../putInPrecisionActivities/putInPrecisionActivities',
     })
   },
   ylzy(e){
+    this.ifLogin()
     wx.showToast({
       title: '暂未开通',
       icon:'loading'
     })
   },
   qtxm(e) {
+    this.ifLogin()
     wx.showToast({
       title: '暂未开通',
       icon: 'loading'
@@ -87,17 +95,20 @@ Page({
     })
   },
   mine(e){
-    wx.redirectTo({
+    this.ifLogin()
+    wx.reLaunch({
       url: '../mine/mine',
     })
   },
   clinic(e) {
-    wx.redirectTo({
+    this.ifLogin()
+    wx.reLaunch({
       url: '../clinic/clinic',
     })
   },
   gene(e) {
-    wx.redirectTo({
+    this.ifLogin()
+    wx.reLaunch({
       url: '../gene/gene',
     })
   },
@@ -288,12 +299,27 @@ Page({
   onReady: function () {
    
   },
-
+  ifLogin(){
+    if(app.globalData.cookie==''){
+      wx.showToast({
+        title: '请登录',
+        icon: 'none',
+        duration: 1000,
+        mask: true,
+        complete: function complete(res) {
+            wx.reLaunch({
+              url: '../login/login',
+            })
+            return
+        }
+      });
+    }
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    this.ifLogin()
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({
