@@ -68,16 +68,18 @@ Page({
             } else {
                //点击确定
                app.globalData.cookie=''
-               console.log(app.globalData.lastClient)
-               if(app.globalData.lastClient==2){
-                wx.reLaunch({
-                  url: '../loginClinic/loginClinic',
-                })
-               }else  if(app.globalData.lastClient==1){
-                wx.reLaunch({
-                  url: '../login/login',
-                })
-               }
+               wx.reLaunch({
+                url: '../newLogin/newLogin',
+              })
+              //  if(app.globalData.lastClient==2){
+              //   wx.reLaunch({
+              //     url: '../newLogin/newLogin',
+              //   })
+              //  }else  if(app.globalData.lastClient==1){
+              //   wx.reLaunch({
+              //     url: '../login/login',
+              //   })
+              //  }
               
             }
          },

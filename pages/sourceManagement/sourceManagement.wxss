@@ -3,7 +3,6 @@
   /* height: 100%; */
   /* background: #fff; */
 }
-
 .indexTopBg {
   position: absolute;
   top: 0;

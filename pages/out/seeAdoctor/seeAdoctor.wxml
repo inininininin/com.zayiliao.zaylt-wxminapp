@@ -15,7 +15,7 @@
   <text>病员姓名</text><text>{{detail.realname||''}}</text>
   </view>
     <view>
-  <text>联系方式</text><text  data-phone='{{detail.tel||""}}' bindtap="phoneThis">{{detail.tel||''}}</text>
+  <text>联系方式</text><text  data-phone='{{detail.tel||""}}' bindtap="phoneThis" style="color:#2B77EF">{{detail.tel||''}}</text>
   </view>
     <view>
   <text>证件号码</text><text>{{detail.idcardNo||''}}</text>

@@ -33,11 +33,11 @@ page {
 }
 
 .indexTopBg {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 750rpx;
-  height: 392rpx;
+  height: 350rpx;
   background: #fff;
   /* background: url('https://zaylt.njshangka.com/resource/img/bj1.png'); */
   background-size: 100% 100%;

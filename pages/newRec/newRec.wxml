@@ -1,5 +1,5 @@
 <!--pages/newRec/newRec.wxml-->
-<view><include src="../common/common.wxml"/></view>
+<!-- <view><include src="../common/common.wxml"/></view> -->
 <view class="textarea">
   <textarea bindinput="spanish" maxlength="100" placeholder="请输入发布内容" placeholder-class="placeholderIntro">
 

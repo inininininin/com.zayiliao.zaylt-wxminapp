@@ -1,8 +1,8 @@
 
 
-<view>
+<!-- <view>
   <include src="../../common/common.wxml" />
-</view>
+</view> -->
 <view class='popularExchange'>
   <!-- <view class='hottitle'>
     <text>热门兑换</text>

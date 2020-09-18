@@ -9,8 +9,8 @@
   left: 0;
   width: 750rpx;
   height: 360rpx;
-  background: url('https://zaylt.njshangka.com/resource/img/BJ-blue@2x.png');
-  background-size: 100% 100%;
+  background: linear-gradient(to bottom, #55AEF8, #469AF4);
+  /* background-size: 100% 100%; */
   position: fixed;
 }
 .header {
@@ -98,9 +98,12 @@
   flex: none;
   display: flex;
   /* background: #fff; */
-    height: 44rpx;
-    margin-top: 15rpx;
-    position: fixed;
+  box-sizing: border-box;
+  height: 80rpx;
+  line-height: 44rpx;
+  padding-top: 15rpx;
+  position: fixed;
+  background: linear-gradient(to bottom, #469AF4, #2B78EF);
 }
 .navbar .item{
   position: relative;

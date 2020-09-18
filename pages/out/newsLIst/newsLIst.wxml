@@ -1,7 +1,7 @@
 
-<view>
+<!-- <view>
   <include src="../../common/common.wxml" />
-</view>
+</view> -->
 <view class='newList' wx:for='{{list}}'>
   <navigator url='../newsRecDetail/newsRecDetail?id={{item.messageId}}'>
   <view>

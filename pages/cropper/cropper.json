@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "剪切头像"
+  "usingComponents": {},
+  "navigationBarTitleText": "营业执照",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#FFFFFF"
 }

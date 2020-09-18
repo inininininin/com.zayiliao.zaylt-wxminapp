@@ -1,5 +1,6 @@
 {
-  "usingComponents": {
-    "painter": "/../components/painter/painter"
-  }
+  "usingComponents": {},
+  "navigationBarTitleText": "详情",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#FFFFFF"
 }

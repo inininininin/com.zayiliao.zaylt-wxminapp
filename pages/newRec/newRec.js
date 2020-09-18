@@ -65,9 +65,19 @@ Page({
       },
       success: function (res) {
         if (res.data.code == 0) {
-          wx.navigateBack({
+          wx.showToast({
+            title: '发送成功',
+            icon:'none',
+            duration:2000,
+            success:function(res){
+              setTimeout(function(){
+                wx.navigateBack({
             
+                })
+              },500)
+            }
           })
+          
         } else {
           wx.showToast({
             title: res.data.codeMsg,

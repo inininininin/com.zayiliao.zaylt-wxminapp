@@ -36,7 +36,7 @@ Page({
 	  } else {
 	    // + e.currentTarget.dataset.id 
 	    wx.navigateTo({
-	      url: '../frameworkZj/frameworkZj?sectionid=' + e.currentTarget.dataset.id + '&id=' + this.data.operatingManualId + '&name=' + e.currentTarget.dataset.name + '&count=' + e.currentTarget.dataset.count + '&lowercount=' + e.currentTarget.dataset.lowercount,
+	      url: '../frameworkZj/frameworkZj?sectionid=' + e.currentTarget.dataset.id + '&id=' + this.data.operatingManualId+ '&name=' + e.currentTarget.dataset.name + '&titlename=' + e.currentTarget.dataset.name + '&count=' + e.currentTarget.dataset.count + '&lowercount=' + e.currentTarget.dataset.lowercount,
 	    })
 	  }
 	  
@@ -136,6 +136,9 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
+    wx.setNavigationBarTitle({
+      title: options.titlename,
+    })
     var that = this
     var operatingManualId=options.id
     var upperId=options.sectionid||''

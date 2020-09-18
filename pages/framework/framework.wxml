@@ -4,7 +4,7 @@
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
       <view>
-       <image  mode="aspectFill"  bindtap='backHistory' class="image" style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;padding:12px 10px;'  src='../img/black-backnew.png'></image>
+       <image  mode="aspectFill"  bindtap='backHistory' class="image" style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;padding:12px 10px;'  src='../img/f1.svg'></image>
         <view class="save">
           <!-- <text>保存</text> -->
           <image  mode="aspectFill"  bindtap="edit" src="../img/jilu@2x.png"></image>
@@ -15,7 +15,7 @@
   </view>
 </view>
 <view>
-  <view class="lineOne" bindtap="showIsThis" data-id='{{item.operatingManualId}}' wx:for='{{list}}'>  
+  <view class="lineOne" bindtap="showIsThis" data-id='{{item.operatingManualId}}'  data-name='{{item.name}}'  wx:for='{{list}}'>  
     <view class="lineOneNext">
     <image  mode="aspectFill"  src="../img/shouce.png"></image>
       <text>{{item.name}}</text>

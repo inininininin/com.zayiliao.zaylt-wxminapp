@@ -1,10 +1,10 @@
 <!--pages/ZJCMyorder/ZJCMyorder.wxml-->
-<view style="z-index:999">
+<!-- <view style="z-index:999">
   <include src="../common/common.wxml" />
-</view>
+</view> -->
 
-<view class='toplineTop' style='padding-top:132rpx'>
-  <view class='topline' style='top:{{statusBarHeight+titleBarHeight}}px'>
+<view class='toplineTop'>
+  <view class='topline'>
     <view style='height:24rpx;width:100%;background:#f5f5f5;'></view>
     <view>
       <text class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav" style=''>审核中</text>

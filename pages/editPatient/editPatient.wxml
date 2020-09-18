@@ -27,7 +27,7 @@
   <text>病员姓名</text><text>{{detail.realname||''}}</text>
   </view>
     <view>
-  <text>联系方式</text><text data-phone='{{detail.tel||""}}' bindtap="phoneThis">{{detail.tel||''}}</text>
+  <text>联系方式</text><text data-phone='{{detail.tel||""}}' bindtap="phoneThis" style="color:#2B77EF">{{detail.tel||''}}</text>
   </view>
     <view>
   <text>证件号码</text><text>{{detail.idcardNo||''}}</text>
@@ -53,12 +53,12 @@
 <view class='box'> -->
   <view>
   <text>病种</text>
-  <input placeholder="请输入" bindinput="sickness" placeholder-style="color:rgb(43,119,219);color:rgb(43,119,219)" value="{{sickness||''}}"></input>
+  <input style="color:#2B77EF" placeholder="请输入" bindinput="sickness" placeholder-style="color:rgb(43,119,219);color:rgb(43,119,219)" value="{{sickness||''}}"></input>
   <!-- <text>{{detail.sickness||''}}</text> -->
   </view>
     <view>
   <text>备注</text>
-  <input placeholder="请输入" bindinput="remark" placeholder-style="color:rgb(43,119,219);color:rgb(43,119,219)" value="{{remark||''}}"></input>
+  <input style="color:#2B77EF" placeholder="请输入" bindinput="remark" placeholder-style="color:rgb(43,119,219);color:rgb(43,119,219)" value="{{remark||''}}"></input>
   <!-- <text>{{detail.remark||''}}</text> -->
   </view> 
 </view>

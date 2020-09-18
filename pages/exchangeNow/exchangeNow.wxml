@@ -1,5 +1,5 @@
 <!--pages/ZJCOrder/ZJCOrder.wxml-->
-<view><include src="../common/common.wxml"/></view>
+<!-- <view><include src="../common/common.wxml"/></view> -->
 <navigator url='../ZJCSetaddress/ZJCSetaddress'>
 <view wx:if='{{addressIf==0}}' class='address' bindtap='address'>
   <image  mode="aspectFill"  src='../img/dingweiweizhi@2x.png'></image>

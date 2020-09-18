@@ -1,1 +1,6 @@
-{}
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "兑换列表",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#FFFFFF"
+}

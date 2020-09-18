@@ -1,5 +1,5 @@
 <!--pages/frameworkDetail/frameworkDetail.wxml-->
-<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+<!-- <view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
   <view class="header">
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
@@ -9,7 +9,7 @@
       </view>
     </view>
   </view>
-</view>
+</view> -->
 <image  mode="aspectFill"  class="edit" bindtap="edit" src="../img/add@1.png"></image>
 <view wx:for='{{list}}' bindtap='details' data-item='{{item}}'>
   <view class="listItem"  wx:if='{{!item.video&&!item.image}}'>

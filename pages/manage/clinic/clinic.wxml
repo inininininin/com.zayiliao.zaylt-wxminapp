@@ -2,7 +2,7 @@
   <view class="header">
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px;position:relative">
-    <view class='backHistory' bindtap='backHistory'><image  mode="aspectFill"  src='../../img/black-backnew.png'></image></view>
+    <view class='backHistory' bindtap='backHistory'><image  mode="aspectFill"  src='../../img/f1.svg'></image></view>
       <view class='search'>
         <image  mode="aspectFill"  style='display:inline-block;left:120rpx;' src='../../img/sousuo@2x.png'></image>
         <input bindinput='input' placeholder-style='color:#999' placeholder='搜索门诊'></input>

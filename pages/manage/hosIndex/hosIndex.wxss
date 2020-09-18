@@ -5,13 +5,20 @@
   background: #fff;
 }
 .indexTopBg{
-  position: absolute;
+  position: fixed;
+  z-index: 1000;
   top: 0;
   left: 0;
   width: 750rpx;
   height: 360rpx;
-  background: url('https://zaylt.njshangka.com/resource/img/bj@2x.png');
-  background-size: 100% 100%;
+  background: linear-gradient(to bottom,#F76D1D,#F89C3B);
+}
+.swiper-container-bg{
+  width: 100%;
+  height: 220rpx;
+  background: linear-gradient(to bottom,#F89C3B,#FAD45E);
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
 }
 .header {
   position: fixed;
@@ -49,9 +56,13 @@
   margin: 0 !important;
 }
 swiper {
-  width: 100%;
+  margin:0 32rpx 0;
+  width: 686rpx;
+  /* width: 100%; */
   height: 100%;
   box-shadow:2px 8px 16px 0px #e5e5e5;
+  position: absolute;
+  top: 0;
 }
 
 swiper-item image {
@@ -61,12 +72,8 @@ swiper-item image {
 }
 
 .swiper-container {
-  /* position: relative; */
-  
-  position: absolute;
-  /* top: 130rpx; */
-  left: 32rpx;
-  width: 686rpx;
+  position: relative;
+  width: 100%;
   height: 360rpx;
   z-index: 999;
 }

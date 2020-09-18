@@ -1,1 +1,6 @@
-{}
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "采购清单表",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#FFFFFF"
+}

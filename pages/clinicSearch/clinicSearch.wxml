@@ -2,7 +2,7 @@
   <view class="header">
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
-      <image  mode="aspectFill"  bindtap='backHistory' class="backHistory" style='padding:20rpx;margin-left:10rpx;border-radius:6rpx;display:inline-block' src='../img/backArrow.png'></image>
+      <image  mode="aspectFill"  bindtap='backHistory' class="backHistory" style='padding:20rpx;margin-left:10rpx;border-radius:6rpx;display:inline-block' src='../img/f1.svg'></image>
       <view class='search'>
         <image  mode="aspectFill"  style='display:inline-block;top:{{15+statusBarHeight}}px;left:102rpx;' src='../img/sousuo@2x.png'></image>
         <input bindinput='input' placeholder-style='color:#999' placeholder='搜索门诊名'></input>

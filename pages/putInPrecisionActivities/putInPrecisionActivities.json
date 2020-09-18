@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarTitleText": "投放精准活动",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#ffffff"
 }

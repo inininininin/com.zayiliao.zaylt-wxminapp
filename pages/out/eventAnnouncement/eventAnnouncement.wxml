@@ -1,7 +1,7 @@
 <!--pages/out/eventAnnouncement/eventAnnouncement.wxml-->
-<view>
+<!-- <view>
   <include src="../../common/common.wxml" />
-</view>
+</view> -->
 <view wx:if='{{picBlob==""}}'>
 <image  mode="aspectFill"  class='kong' src='../../img/kong@2x.png'></image>
 <text class='noAction'>暂无活动 敬请期待</text>

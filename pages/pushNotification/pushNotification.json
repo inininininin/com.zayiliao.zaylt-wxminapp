@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarTitleText": "推送通知",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#ffffff"
 }

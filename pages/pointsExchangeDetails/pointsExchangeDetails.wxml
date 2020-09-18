@@ -13,7 +13,7 @@
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
       <view>
-        <image  mode="aspectFill"  bindtap='backHistory' style='left:10rpx;padding:20rpx;border-radius:6rpx;display:inline-block' src='../img/backArrow.png'></image>
+        <image  mode="aspectFill"  bindtap='backHistory' style='left:10rpx;padding:20rpx;border-radius:6rpx;display:inline-block' src='../img/f2.svg'></image>
         <text>{{navtitle}}</text>
       </view>
     </view>

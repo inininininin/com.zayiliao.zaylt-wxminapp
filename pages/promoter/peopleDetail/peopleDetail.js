@@ -29,7 +29,7 @@ Page({
     hospitalUserIdNew: '',
     changeClinicId: '',
     typeIs: '',
-    clinicNum:0,
+    clinicNum: 0,
   },
   bindPickerChange: function (e) {
     var hospitalUserIdNew = ''
@@ -53,7 +53,7 @@ Page({
           "Content-Type": "application/x-www-form-urlencoded",
           'cookie': app.globalData.cookie
         },
-        data: { 
+        data: {
           hospitalUserIdNew: that.data.hospitalUserIdNew,
         },
         method: 'post',
@@ -73,7 +73,7 @@ Page({
             }, 500)
           } else {
             wx.showModal({
-              showCancel:false,
+              showCancel: false,
               title: res.data.codeMsg
             })
           }
@@ -92,7 +92,7 @@ Page({
                 "Content-Type": "application/x-www-form-urlencoded",
                 'cookie': app.globalData.cookie
               },
-              data: {   
+              data: {
                 hospitalUserIdNew: that.data.hospitalUserIdNew,
               },
               method: 'post',
@@ -134,7 +134,7 @@ Page({
         'cookie': app.globalData.cookie
       },
       data: {
-         pn: 1,
+        pn: 1,
         ps: 150,
         type: 1
       },
@@ -163,7 +163,7 @@ Page({
       }
     });
   },
-  
+
   name(e) {
     this.setData({
       name: e.detail.value
@@ -199,7 +199,7 @@ Page({
           'cookie': app.globalData.cookie
         },
         data: {
-           type: 1,
+          type: 1,
           name: that.data.name,
           phone: that.data.phone,
           remark: that.data.remark,
@@ -241,7 +241,7 @@ Page({
               'cookie': app.globalData.cookie
             },
             data: {
-               del: 1,
+              del: 1,
               hospitalUserId: that.data.hospitalUserId,
             },
             method: 'post',
@@ -289,7 +289,7 @@ Page({
       showIsTwo: false,
     })
   },
-  
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -308,7 +308,7 @@ Page({
         'cookie': app.globalData.cookie
       },
       data: {
-         hospitalUserId: options.id
+        hospitalUserId: options.id
       },
       method: 'get',
       success: function (res) {
@@ -363,7 +363,7 @@ Page({
         'cookie': app.globalData.cookie
       },
       data: {
-         pn: toPageNo,
+        pn: toPageNo,
         ps: 15,
         hospitalUserId: that.data.hospitalUserId,
         type: 1
@@ -404,7 +404,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   backHistory: function (e) {

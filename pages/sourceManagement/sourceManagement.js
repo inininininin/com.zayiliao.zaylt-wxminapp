@@ -91,7 +91,7 @@ Page({
               } else {
                 wx.showToast({
                   title: res.data.codeMsg,
-                  icon:'none'
+                  icon: 'none'
                 })
               }
             }
@@ -436,14 +436,14 @@ Page({
       },
       success: function (res) {
         if (res.data.code == 0) {
-          if(toPageNo==1){
+          if (toPageNo == 1) {
             that.setData({
               totalCount: res.data.data.sum.totalCount
             })
           }
-          
+
           if (that.data.currentTab == 1) {
-            
+
             var list1 = that.data.list1;
             var newlist1 = list1.concat(res.data.data.items)
             if (res.data.data.items.length == 0) {
@@ -453,7 +453,7 @@ Page({
               });
               wx.showToast({
                 title: '数据已全部加载',
-                icon:'none'
+                icon: 'none'
                 // icon: 'loading',
                 // duration: 1500
               })
@@ -473,7 +473,7 @@ Page({
               });
               wx.showToast({
                 title: '数据已全部加载',
-                icon:'none'
+                icon: 'none'
                 // icon: 'loading',
                 // duration: 1500
               })
@@ -493,7 +493,7 @@ Page({
               });
               wx.showToast({
                 title: '数据已全部加载',
-                icon:'none'
+                icon: 'none'
                 // icon: 'loading',
                 // duration: 1500
               })

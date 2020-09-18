@@ -203,7 +203,8 @@ Page({
          var coverBlob=cover.split(',');
           for(var i=0;i<coverBlob.length;i++){
             if (coverBlob[i].slice(0,1)!='h'){
-              coverBlob[i] = app.globalData.url+coverBlob[i]
+              // coverBlob[i] = app.globalData.url+coverBlob[i]
+              coverBlob[i]=app.cover(coverBlob[i])
             }
           }
           that.setData({

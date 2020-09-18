@@ -182,6 +182,9 @@ Page({
       navtitle: options.typesName,
       hospitalClinicId: id
     })
+    wx.setNavigationBarTitle({
+      title: options.typesName,
+    })
     wx.request({
       url: app.globalData.url + '/hospital/def/hospital-operator-users', //仅为示例，非真实的接口地址
       method: 'get',

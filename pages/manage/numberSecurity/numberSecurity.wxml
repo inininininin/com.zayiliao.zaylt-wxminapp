@@ -1,5 +1,5 @@
 <!--pages/ZJCDesign/ZJCDesign.wxml-->
-<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+<!-- <view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
   <view class="header">
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
@@ -11,7 +11,7 @@
     </view>
     </view>
   </view>
-</view>
+</view> -->
 <navigator url='../registerXy/registerXy'>
 <!-- <view class='line'><view><text>关于我们</text><image  mode="aspectFill"  src='../img/back.png'></image></view></view> -->
 <!-- <view class='line'><view><text>地址管理</text><image  mode="aspectFill"  src='../img/back.png'></image></view></view> -->

@@ -1,8 +1,8 @@
 <!--pages/out/newsDetail/newsDetail.wxml-->
-<import src="../../../wxParse/wxParse.wxml" />
+<!-- <import src="../../../wxParse/wxParse.wxml" />
 <view>
 	<include src="../../common/common" />
-</view>
+</view> -->
 <view class='topImg' style='background:url({{list.cover}}) no-repeat;background-size:cover;background-position: center;'></view>
 <!-- <image  mode="aspectFill"  class='topImg' src='{{list.cover}}'></image> -->
 <text class='title'>{{list.title}}</text>

@@ -5,7 +5,7 @@
     <view class="title-bar" style="height:{{titleBarHeight}}px">
       <view class='search'>
        <view bindtap='backHistory' class='backHis'>
-      <image  mode="aspectFill"  class='back' style='display:inline-block;left:42rpx;' src='../../img/backArrow.png'></image>
+      <image  mode="aspectFill"  class='back' style='display:inline-block;left:42rpx;' src='../../img/f1.svg'></image>
       </view>
         <image  mode="aspectFill"  class='searchIcon' style='display:inline-block;top:{{15+statusBarHeight}}px;left:112rpx;' src='../../img/sousuo@2x.png'></image>
         <input bindinput='input' placeholder-style='color:#999' placeholder='输入关键字'></input>

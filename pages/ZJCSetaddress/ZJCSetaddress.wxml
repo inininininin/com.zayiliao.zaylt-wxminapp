@@ -1,7 +1,7 @@
 <!--pages/ZJCSetaddress/ZJCSetaddress.wxml-->
-<view>
+<!-- <view>
   <include src="../common/common.wxml" />
-</view>
+</view> -->
 <view wx:if='{{addressIf==0}}'>
   <input placeholder='收货人：' bindinput='name'  placeholder-class='placeholder'></input>
   <input  bindinput='tel' placeholder='手机：' placeholder-class='placeholder'></input>

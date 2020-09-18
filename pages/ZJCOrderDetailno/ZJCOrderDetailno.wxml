@@ -1,5 +1,5 @@
 <!--pages/ZJCOrderDetail/ZJCOrderDetail.wxml-->
-<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+<!-- <view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
   <view class="header">
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
@@ -9,7 +9,7 @@
     </view>
     </view>
   </view>
-</view>
+</view> -->
 <view class='lineTop'>
   <image  mode="aspectFill"  src='../img/lishijilu@2x.png'></image>
   <text>兑换历史明细</text>

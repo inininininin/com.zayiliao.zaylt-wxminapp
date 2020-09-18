@@ -13,7 +13,7 @@ Page({
     kw: '',
     schemeList: [],
     toPageNo: '',
-    clinicNumber:''
+    clinicNumber: ''
 
   },
   lastPage: function (toPageNo) {
@@ -27,7 +27,7 @@ Page({
         'cookie': app.globalData.cookie
       },
       data: {
-         hospitalId: app.globalData.hospitalId,
+        hospitalId: app.globalData.hospitalId,
         pn: toPageNo,
         ps: 15,
         sorts: 'addTime',
@@ -93,7 +93,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
   backHistory: function (e) {
     wx.navigateBack({

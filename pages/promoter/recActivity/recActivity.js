@@ -12,16 +12,16 @@ Page({
     titleBarHeight: getApp().globalData.titleBarHeight,
     kw: '',
     schemeList2: [],
-    toPageNo:'',
+    toPageNo: '',
   },
 
-  activity(e){
+  activity(e) {
     console.log(12312)
     wx.navigateTo({
-      url: '../../newActivity/newActivity?type='+e.currentTarget.dataset.id,
+      url: '../../newActivity/newActivity?type=' + e.currentTarget.dataset.id,
     })
   },
-  lastPage(toPageNo){
+  lastPage(toPageNo) {
     var that = this
     toPageNo++
     wx.request({
@@ -31,7 +31,7 @@ Page({
         'cookie': app.globalData.cookie
       },
       data: {
-         pn: toPageNo,
+        pn: toPageNo,
         ps: 15,
         hospitalId: app.globalData.hospitalId,
         sorts: 'addTime',
@@ -45,7 +45,7 @@ Page({
           for (var i = 0; i < res.data.data.items.length; i++) {
             addTime = res.data.data.items[i].addTime
             res.data.data.items[i].addTime = utils.formatTime(addTime / 1000, 'Y-M-D h:m');
-            res.data.data.items[i].cover=app.cover(res.data.data.items[i].cover)
+            res.data.data.items[i].cover = app.cover(res.data.data.items[i].cover)
           }
           var schemeListArr = that.data.schemeList2;
           var newSchemeListArr = schemeListArr.concat(res.data.data.items)
@@ -86,7 +86,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
   backHistory: function (e) {
     wx.navigateBack({

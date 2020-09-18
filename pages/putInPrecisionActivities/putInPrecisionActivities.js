@@ -11,7 +11,8 @@ Page({
     titleBarHeight: getApp().globalData.titleBarHeight,
     items: [],
     startX: 0, //开始坐标
-    startY: 0
+    startY: 0,
+    change:0,
   },
   sendRecs(e){
     wx.navigateTo({
@@ -184,7 +185,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if(this.data.change==1){
+      this.setData({
+        change:0,
+        items:[]
+      })
+      this.lastPage(0)
+    }
   },
 
   /**

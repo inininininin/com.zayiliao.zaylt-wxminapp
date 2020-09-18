@@ -74,6 +74,15 @@ Page({
     this.setData({
       source: type
     })
+    if(options.type==1){
+      wx.setNavigationBarTitle({
+        title: '医院消息',
+      })
+    }else{
+      wx.setNavigationBarTitle({
+        title: '系统消息',
+      })
+    }
     this.lastPage(0, type)
   },
 

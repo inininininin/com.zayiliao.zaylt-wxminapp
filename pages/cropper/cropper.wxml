@@ -1,7 +1,7 @@
 <!--pages/cropper/cropper.wxml-->
-<view>
+<!-- <view>
   <include src="../common/common.wxml" />
-</view>
+</view> -->
 <view class="container flex">
     <view>
         <image src="{{src}}"  bindload="imageLoad"  

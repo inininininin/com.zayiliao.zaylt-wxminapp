@@ -8,50 +8,53 @@ Page({
    */
   data: {
     navtitle: '推送管理',
-    newMsg:'新建推送',
-    newItem:'已推送',
+    newMsg: '新建推送',
+    newItem: '已推送',
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
-    list:[],
-    url:'',
+    list: [],
+    url: '',
   },
-  sendRecs(e){
-    if (this.data.newMsg=='新建推送'){
+  sendRecs(e) {
+    if (this.data.newMsg == '新建推送') {
       wx.navigateTo({
         url: '../newRec/newRec?type=1',
       })
-    }else{
+    } else {
       wx.navigateTo({
         url: '../newRec/newRec?type=2',
       })
     }
-    
+
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
     console.log(options.type)
-    var url=''
-    if(options.type==1){
-      url ='/c2/hospitalpush/items'
-     var navtitle= '推送管理'
-      var newMsg='新建推送'
+    var url = ''
+    if (options.type == 1) {
+      url = '/c2/hospitalpush/items'
+      var navtitle = '推送管理'
+      var newMsg = '新建推送'
       var newItem = '已推送'
-    } else if (options.type == 2){
+    } else if (options.type == 2) {
       url = '/c2/hospitalsms/items'
       var navtitle = '短信管理'
       var newMsg = '新建短信'
-      var newItem='已发送'
+      var newItem = '已发送'
     }
     this.setData({
       url: url,
       navtitle: navtitle,
-      newMsg:newMsg,
+      newMsg: newMsg,
       newItem: newItem,
     })
-    this.lastPage(0)
+    wx.setNavigationBarTitle({
+      title: navtitle,
+    })
+  
     // /zaylt/c2 / hospitalpush / items
   },
   lastPage: function (toPageNo) {
@@ -66,32 +69,32 @@ Page({
         pn: toPageNo,
         ps: pageSize,
         hospitalId: app.globalData.hospitalId,
-       },
+      },
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
         'cookie': app.globalData.cookie
       },
       success: function (res) {
         if (res.data.code == 0) {
-        
+
           var list = that.data.list;
           var newlist = list.concat(res.data.data.items)
-            if (res.data.data.items.length == 0) {
-              that.setData({
-                list: list,
-                // toPageNo: String(toPageNo)
-              });
-              wx.showToast({
-                title: '数据已全部加载',
-                // icon: 'loading',
-                // duration: 1500
-              })
-            } else {
-              that.setData({
-                list: newlist,
-                toPageNo: String(toPageNo)
-              });
-            }
+          if (res.data.data.items.length == 0) {
+            that.setData({
+              list: list,
+              // toPageNo: String(toPageNo)
+            });
+            wx.showToast({
+              title: '数据已全部加载',
+              // icon: 'loading',
+              // duration: 1500
+            })
+          } else {
+            that.setData({
+              list: newlist,
+              toPageNo: String(toPageNo)
+            });
+          }
         } else if (res.data.code == 20 || res.data.code == 26) {
           wx.hideToast()
           wx.navigateTo({
@@ -114,7 +117,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
 
   },
   backHistory: function (e) {
@@ -126,7 +129,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      list:[]
+    })
+    this.lastPage(0)
   },
 
   /**
@@ -151,7 +157,7 @@ Page({
     that.setData({
       list: [],
     })
-      that.lastPage(0)
+    that.lastPage(0)
     wx.stopPullDownRefresh()
   },
 
@@ -161,7 +167,7 @@ Page({
   onReachBottom: function () {
     var that = this
     var toPageNo = that.data.toPageNo
-      that.lastPage(toPageNo)
+    that.lastPage(toPageNo)
   },
 
   /**

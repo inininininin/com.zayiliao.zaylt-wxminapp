@@ -1,4 +1,4 @@
-<view><include src="../common/common.wxml"/></view>
+<!-- <view><include src="../common/common.wxml"/></view> -->
 <view class="sendRec" bindtap="sendRecs">
   <image  mode="aspectFill"  src="../img/jia.png"></image>
   <text>{{newMsg}}</text>

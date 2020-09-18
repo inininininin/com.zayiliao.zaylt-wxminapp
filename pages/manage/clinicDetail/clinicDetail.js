@@ -126,6 +126,9 @@ Page({
       },
       success:function(res){
         if(res.data.code==0){
+          wx.setNavigationBarTitle({
+            title: res.data.data.name,
+          })
           var addTime = res.data.data.addTime
           res.data.data.addTime = app.dateChange(addTime)
           var license = res.data.data.license

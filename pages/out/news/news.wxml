@@ -1,6 +1,6 @@
-<view>
+<!-- <view>
   <include src="../../common/common.wxml" />
-</view>
+</view> -->
 <view class='news'>
   <navigator url='../newsLIst/newsLIst?type=1'>
   <view>

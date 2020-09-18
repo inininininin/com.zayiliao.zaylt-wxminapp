@@ -118,7 +118,7 @@ Page({
                   duration: 2000
                 })
                 wx.request({
-                  url: app.globalData.url + '/c2/clinic/itemalter', //仅为示例，非真实的接口地址
+                  url: app.globalData.url + '/c2/hospital/itemalter', //仅为示例，非真实的接口地址
                   method: 'post',
                   data: {
                     license: url,
@@ -129,7 +129,13 @@ Page({
                     'cookie': app.globalData.cookie
                   },
                   success: function (res) {
-
+                    if(res.data.codeMsg){
+                      wx.showToast({
+                        title:res.data.codeMsg ,
+                        icon:'none'
+                      })
+                    }
+                   if(res.data.code==0){
                     if (url.slice(0, 1) != 'h') {
                       url = app.globalData.domain + url
                     }
@@ -138,6 +144,7 @@ Page({
                       src: url
                     })
 
+                   }
                   }
                 })
               }

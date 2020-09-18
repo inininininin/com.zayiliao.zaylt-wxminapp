@@ -1,7 +1,7 @@
 <!--pages/pushNotification/pushNotification.wxml-->
-<view>
+<!-- <view>
   <include src="../common/common.wxml" />
-</view>
+</view> -->
 <view wx:for='{{schemeList}}'>
   <view class="newN" bindtap="clinicDetail" data-id="{{item.itemId}}" wx:if='{{item.status==1}}'>
     <view>

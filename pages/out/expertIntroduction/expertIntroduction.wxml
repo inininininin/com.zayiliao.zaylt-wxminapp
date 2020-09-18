@@ -1,6 +1,6 @@
-<view>
+<!-- <view>
   <include src="../../common/common.wxml" />
-</view>
+</view> -->
 
 <view wx:for='{{schemeList}}'>
   <!-- <navigator url='../docDetail/docDetail'> -->

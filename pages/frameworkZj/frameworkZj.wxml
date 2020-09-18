@@ -1,15 +1,14 @@
 <!--pages/frameworkZj/frameworkZj.wxml-->
-<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+<!-- <view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
 	<view class="header">
 		<view class="status-bar" style="height:{{statusBarHeight}}px"></view>
 		<view class="title-bar" style="height:{{titleBarHeight}}px">
 			<view>
 				<image  mode="aspectFill"  bindtap='backHistory' class="image" style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;padding:12px 10px;' src='../img/black-backnew.png'></image>
-				<!-- <text class="text">{{navtitle}}</text> -->
 			</view>
 		</view>
 	</view>
-</view>
+</view> -->
 <view>
 	<view class="lineOne" bindtap="showIsThis" data-id='{{item.operatingManualSectionId}}'>
 		<!-- <view class="lineOneNext">

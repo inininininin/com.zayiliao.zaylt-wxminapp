@@ -1,44 +1,44 @@
-<view class="container" style="height:{{199+statusBarHeight+titleBarHeight}}px;padding-top:{{statusBarHeight+titleBarHeight}}px;position:fixed;top:0;">
-  <view class='indexTopBg' style='height:{{199+statusBarHeight+titleBarHeight}}px;'>
-    <view class="header">
-      <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
-      <view class="title-bar" style="height:{{titleBarHeight}}px">
-        <view>
-          <image  mode="aspectFill"  bindtap='backHistory' style='display:inline-block;top:{{statusBarHeight}}px;' src='../img/shape@2x.png'></image>
-        </view>
-      </view>
-    </view>
-    <view style="margin-top:{{statusBarHeight+titleBarHeight}}px;width:100%;height:199px;background:url('{{detail.cover}}') no-repeat;background-size:contain;background-position: center;">
-    
-    </view>
-  </view>
+<!-- <view class="container" style="height:{{199+statusBarHeight+titleBarHeight}}px;padding-top:{{statusBarHeight+titleBarHeight}}px;position:fixed;top:0;">
+	<view class='indexTopBg' style='height:{{199+statusBarHeight+titleBarHeight}}px;'>
+		<view class="header">
+			<view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+			<view class="title-bar" style="height:{{titleBarHeight}}px">
+				<view>
+					<image mode="aspectFill" bindtap='backHistory' style='display:inline-block;top:{{statusBarHeight}}px;' src='../img/shape@2x.png'></image>
+				</view>
+			</view>
+		</view>
+		
+	</view>
+</view> -->
+<view style="width:100%;height:500rpx;background:#fff;position:fixed;top:0;left:0">
+  <image src="{{detail.cover}}" mode="aspectFill" style="width:100%;height:500rpx;"></image>
 </view>
-
-<view class="navbar" style="position:fixed;top:{{199+statusBarHeight+titleBarHeight}}px;">
-<view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</view>
- 
-</view>
-
-<view class='required' hidden="{{currentTab==1}}" style="margin-top:{{239+statusBarHeight+titleBarHeight}}px">
-    <text class='basicInformation'>基本信息</text>
-    <view class='basicLine'>
-      <text>医院名称</text><text>{{detail.name||''}}</text>
-    </view>
-    <view class='basicLine'>
-      <text>联系方式</text><text bindtap='phone'>{{detail.tel||''}}</text>
-    </view>
-    <view class='basicLine disLineNone'>
-      <text>地址</text><text>{{detail.address||''}}</text>
-    </view>
-<text class='basicInformation·'>医院简介</text>
-<view class='hosIntro'>
-{{detail.intro||''}}
-</view>
+<view class="navbar" style="position:fixed;top:500rpx;">
+	<view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</view>
 
 </view>
-<view class='required specialDepartment' hidden="{{currentTab==0}}"  style="margin-top:{{239+statusBarHeight+titleBarHeight}}px">
-    <view wx:for='{{list}}' bindtap="specialOffice" data-id='{{item.itemId}}'>
-      <image  mode="aspectFill"  src='{{item.cover}}'></image>
-      <text>{{item.name}}</text>
-    </view>
+
+<view class='required' hidden="{{currentTab==1}}" style="margin-top:540rpx">
+	<text class='basicInformation'>基本信息</text>
+	<view class='basicLine'>
+		<text>医院名称</text><text>{{detail.name||''}}</text>
+	</view>
+	<view class='basicLine'>
+		<text>联系方式</text><text bindtap='phone'>{{detail.tel||''}}</text>
+	</view>
+	<view class='basicLine disLineNone'>
+		<text>地址</text><text>{{detail.address||''}}</text>
+	</view>
+	<text class='basicInformation·'>医院简介</text>
+	<view class='hosIntro'>
+		{{detail.intro||''}}
+	</view>
+
+</view>
+<view class='required specialDepartment' hidden="{{currentTab==0}}" style="margin-top:540rpx">
+	<view wx:for='{{list}}' bindtap="specialOffice" data-id='{{item.itemId}}'>
+		<image mode="aspectFill" src='{{item.cover}}'></image>
+		<text>{{item.name}}</text>
+	</view>
 </view>

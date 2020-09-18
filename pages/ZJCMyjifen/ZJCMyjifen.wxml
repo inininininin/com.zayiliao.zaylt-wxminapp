@@ -1,4 +1,4 @@
-<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+<!-- <view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
   <view class="header">
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
@@ -8,7 +8,7 @@
     </view>
     </view>
   </view>
-</view>
+</view> -->
 <!-- <view style='width:100%;height:24rpx;background:#f2f2f2;'></view> -->
 <view class='lineTop'>
   <image  mode="aspectFill"  src='../img/lishijilu@2x.png'></image>

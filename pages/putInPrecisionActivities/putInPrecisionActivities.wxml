@@ -1,7 +1,7 @@
 <!--pages/putInPrecisionActivities/putInPrecisionActivities.wxml-->
-<view style="z-index:999">
+<!-- <view style="z-index:999">
   <include src="../common/common.wxml" />
-</view>
+</view> -->
 <view class="sendRec" bindtap="sendRecs">
   <image  mode="aspectFill"  src="../img/jia.png"></image>
   <text>新建活动</text>

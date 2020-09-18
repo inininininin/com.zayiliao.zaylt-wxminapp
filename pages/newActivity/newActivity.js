@@ -13,20 +13,20 @@ Page({
     titleBarHeight: getApp().globalData.titleBarHeight,
     date: '开始时间', //默认起始时间  
     date2: '结束时间', //默认结束时间 
-    topImg:'https://zaylt.njshangka.com/resource/img/Group.png',
-    bgColor:'rgba(229,229,229,1)',
-    color:'#E5E5E5',
-    content:'',
+    topImg: 'https://zaylt.njshangka.com/resource/img/Group.png',
+    bgColor: 'rgba(229,229,229,1)',
+    color: '#E5E5E5',
+    content: '',
     title: '',
     brief: '',
     address: '',
     tel: '',
-    lookThis:true,
-    contentBf:'',
+    lookThis: true,
+    contentBf: '',
   },
   // 发布
-  supply(){
-    var that=this
+  supply() {
+    var that = this
     var startTime = Date.parse(that.data.date)
     var endTime = Date.parse(that.data.date2)
     var topImg = that.data.topImg.split(app.globalData.domain)[1]
@@ -48,8 +48,8 @@ Page({
               'cookie': app.globalData.cookie
             },
             data: {
-               contentBtId: res.data.data.url,
-              startTime: startTime, 
+              contentBtId: res.data.data.url,
+              startTime: startTime,
               endTime: endTime,
               cover: topImg,
               title: that.data.title,
@@ -64,10 +64,25 @@ Page({
             success: function (res) {
               wx.hideToast()
               if (res.data.code == 0) {
-                wx.navigateBack({
-                  delta:1
+                wx.showToast({
+                  title: '发布成功',
+                  icon: 'none',
+                  duration: 2000,
+                  mask: true,
+                  complete: function complete(res) {
+                    let pages = getCurrentPages(); //获取当前页面js里面的pages里的所有信息。
+                    let prevPage = pages[pages.length - 2];
+                    //prevPage 是获取上一个页面的js里面的pages的所有信息。 -2 是上一个页面，-3是上上个页面以此类推。
+                    prevPage.setData({  // 将我们想要传递的参数在这里直接setData。上个页面就会执行这里的操作。
+                      change: 1,
+                    })
+                    wx.navigateBack({
+                      delta: 1
+                    })
+                  }
                 })
-              } else {
+                
+                } else {
                 wx.showModal({
                   showCancel: false,
                   title: res.data.codeMsg
@@ -83,23 +98,23 @@ Page({
         }
       }
     });
-    
+
   },
 
-  save(){
-    if (this.data.color =='#E5E5E5'){
+  save() {
+    if (this.data.color == '#E5E5E5') {
       wx.showToast({
         title: '填写完整信息',
       })
-    }else{
+    } else {
       this.setData({
-          lookThis: false,
-        navtitle:'预览'
+        lookThis: false,
+        navtitle: '预览'
       })
     }
   },
-  end:function(){
-    let that=this
+  end: function () {
+    let that = this
     if (that.data.date2 != '结束时间' && that.data.content != '' && that.data.title != ''
       && that.data.brief != '' && that.data.address != '' && that.data.tel != '' && that.data.date != '开始时间' && that.data.topImg != 'https://zaylt.njshangka.com/resource/img/Group.png') {
       that.setData({
@@ -118,37 +133,37 @@ Page({
     this.setData({
       date2: e.detail.value,
     })
-     this.end()
+    this.end()
   },
-  content(e){
+  content(e) {
     this.setData({
-      content:e.detail.value
+      content: e.detail.value
     })
-     this.end()
+    this.end()
   },
   title(e) {
     this.setData({
       title: e.detail.value
     })
-     this.end()
+    this.end()
   },
   brief(e) {
     this.setData({
       brief: e.detail.value
     })
-     this.end()
+    this.end()
   },
   address(e) {
     this.setData({
       address: e.detail.value
     })
-     this.end()
+    this.end()
   },
   tel(e) {
     this.setData({
       tel: e.detail.value
     })
-     this.end()
+    this.end()
   },
   addPic: function (e) {
     var that = this
@@ -193,19 +208,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var  that=this
+    var that = this
     var id = options.type
     this.setData({
       id: id
     })
-    if (options.type=='add'){
+    if (options.type == 'add') {
       that.setData({
-        type:true
+        type: true
       })
-    }else{
+    } else {
       that.setData({
         type: false,
-        navtitle:'活动详情'
+        navtitle: '活动详情'
       })
       wx.request({
         url: app.globalData.url + '/c2/activity/item',
@@ -214,14 +229,14 @@ Page({
           'cookie': app.globalData.cookie
         },
         data: {
-           itemId: that.data.id,
+          itemId: that.data.id,
         },
         method: 'post',
         success: function (res) {
           wx.hideToast()
           if (res.data.code == 0) {
-            res.data.data.cover=app.cover(res.data.data.cover)
-            
+            res.data.data.cover = app.cover(res.data.data.cover)
+
             var contentBtId = res.data.data.contentBtId
             that.setData({
               date: app.dateChange(res.data.data.startTime),
@@ -241,18 +256,18 @@ Page({
                 'cookie': app.globalData.cookie
               },
               success: function (res) {
-                if (typeof(res.data)=='number'){
+                if (typeof (res.data) == 'number') {
                   console.log(typeof (res.data), res.data)
                   that.setData({
                     contentBf: res.data
                   })
-                }else{
+                } else {
                   var article = res.data
                   WxParse.wxParse('article', 'html', article, that, 5);
                 }
               }
             })
-            } else {
+          } else {
             wx.showModal({
               showCancel: false,
               title: res.data.codeMsg
@@ -267,7 +282,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
 
   },
   backHistory: function (e) {
@@ -277,7 +292,7 @@ Page({
   },
   backHistoryOnly: function (e) {
     this.setData({
-      lookThis:true,
+      lookThis: true,
       navtitle: '编辑活动'
     })
   },
