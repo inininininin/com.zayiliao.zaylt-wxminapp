@@ -1,1 +1,6 @@
-{"navigationBarTitleText": "选择列表"}
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "选择列表",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#FFFFFF"
+}

@@ -1,152 +1,157 @@
 <!--pages/Third/index/index.wxml-->
 <view class="page" bindtouchend='touchend' bindtouchstart='touchstart'>
-  <!-- 侧滑栏 -->
-  <view class="page_tab" style='display:{{display}}'>
-    <view style="margin-top:{{35+statusBarHeight}}px;">
-      <!-- <text class='state'>状态</text>
+	<!-- 侧滑栏 -->
+	<view class="page_tab" style='display:{{display}}'>
+		<view style="margin-top:{{35+statusBarHeight}}px;">
+			<!-- <text class='state'>状态</text>
       <view class='seeAdoctor'>
         <text bindtap='seeAd' style='background:{{color5}}'>未就诊</text>
         <text bindtap='noseeAd' style='background:{{color6}}'>已就诊</text>
       </view> -->
 
-      <text class='state'>确认就诊时间</text>
-      <view class='seeAdoctor'>
-        <view class="picker_group">
-          <picker mode="date" value="{{date}}" style='background:{{color}}' end="{{date2}}" bindchange="bindDateChange">
-            <view class="picker">
-              {{date}}
-            </view>
-          </picker>
-          —
-          <picker mode="date" value="{{date2}}" style='background:{{color2}}' start="{{date}}" end="2050-01-01" bindchange="bindDateChange2">
-            <view class="picker">
-              {{date2}}
-            </view>
-          </picker>
-        </view>
-      </view>
+			<text class='state'>确认就诊时间</text>
+			<view class='seeAdoctor'>
+				<view class="picker_group">
+					<picker mode="date" value="{{date}}" style='background:{{color}}' end="{{date2}}" bindchange="bindDateChange">
+						<view class="picker">
+							{{date}}
+						</view>
+					</picker>
+					—
+					<picker mode="date" value="{{date2}}" style='background:{{color2}}' start="{{date}}" end="2050-01-01" bindchange="bindDateChange2">
+						<view class="picker">
+							{{date2}}
+						</view>
+					</picker>
+				</view>
+			</view>
 
-      <text class='state'>门诊推送时间</text>
-      <view class='seeAdoctor'>
-        <view class="picker_group">
-          <picker mode="date" value="{{date3}}" style='background:{{color3}}' end="{{date4}}" bindchange="bindDateChange3">
-            <view class="picker">
-              {{date3}}
-            </view>
-          </picker>
-          —
-          <picker mode="date" value="{{date4}}" style='background:{{color4}}' start="{{date3}}" end="2050-01-01" bindchange="bindDateChange4">
-            <view class="picker">
-              {{date4}}
-            </view>
-          </picker>
-        </view>
-      </view>
+			<text class='state'>门诊推送时间</text>
+			<view class='seeAdoctor'>
+				<view class="picker_group">
+					<picker mode="date" value="{{date3}}" style='background:{{color3}}' end="{{date4}}" bindchange="bindDateChange3">
+						<view class="picker">
+							{{date3}}
+						</view>
+					</picker>
+					—
+					<picker mode="date" value="{{date4}}" style='background:{{color4}}' start="{{date3}}" end="2050-01-01" bindchange="bindDateChange4">
+						<view class="picker">
+							{{date4}}
+						</view>
+					</picker>
+				</view>
+			</view>
 
 
-      <view class='page_tab_btn'>
-        <text bindtap='again' >重选</text>
-        <text bindtap='sure' >确定</text>
-      </view>
-    </view>
-  </view>
-  <view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+			<view class='page_tab_btn'>
+				<text bindtap='again' >重选</text>
+				<text bindtap='sure' >确定</text>
+			</view>
+		</view>
+	</view>
+	<view class="bg" bindtap='hideview' style='display:{{display}}'></view>
 
-  <view class="home" style="{{translate}}；">
-    <view class="container" style="height:{{85+statusBarHeight}}px;padding-top:{{statusBarHeight+titleBarHeight}}px">
-      <view class='indexTopBg' style='height:{{85+statusBarHeight}}px'>
-        <view class="header">
-          <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
-          <view class="title-bar" style="height:{{titleBarHeight}}px">
-            <view>
-              <view class='backHistory' bindtap="backHistory">
-                <image  mode="aspectFill"  class='back' style='margin-left:30rpx;border-radius:6rpx;display:inline-block' src='../img/back-white@2x.png'></image>
-              </view>
+	<view class="home" style="{{translate}}；">
+		<view class="container" style="height:{{statusBarHeight+titleBarHeight}}px;padding-top:{{statusBarHeight+titleBarHeight}}px">
+			<view class='indexTopBg' style='height:{{titleBarHeight+statusBarHeight}}px'>
+				<view class="header">
+					<view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+					<view class="title-bar" style="height:{{titleBarHeight}}px">
+						<view>
+							<view class='backHistory' bindtap="backHistory">
+								<image mode="aspectFill" class='back' style='margin-left:30rpx;border-radius:6rpx;display:inline-block' src='../img/back-white@2x.png'></image>
+							</view>
 
-              <view class='search' >                
-                <image  mode="aspectFill"   src='../img/search1.png'></image>
-                <input bindinput="search" placeholder="搜索病员" placeholder-class="placeholderSs"></input>
-                <!-- 搜索 -->
-              </view>
-              <view class='select' bindtap='showview'>
-                <!-- 筛选 -->
-                <image  mode="aspectFill"   src='../img/screen.png'></image>
-              </view>
-              <!-- <view class='newsBox'>
+							<view class='search' style="height:{{titleBarHeight}}px;line-height:{{titleBarHeight}}px">
+								<image mode="aspectFill" src='../img/search1.png'></image>
+								<input bindinput="search" style="height:{{titleBarHeight}}px;" placeholder="搜索病员" placeholder-class="placeholderSs"></input>
+								<!-- 搜索 -->
+							</view>
+							<view class='select' bindtap='showview'>
+								<!-- 筛选 -->
+								<image mode="aspectFill" src='../img/screen.png'></image>
+							</view>
+							<!-- <view class='newsBox'>
                 <image  mode="aspectFill"  bindtap='news' class='news' style='margin-left:30rpx;border-radius:6rpx;display:inline-block' src='../img/xiaoxi@2x.png'></image>
                 <text style='top:{{7+statusBarHeight}}px;left:505rpx;'>{{num}}</text>
               </view> -->
 
-            </view>
-          </view>
-        </view>
-      </view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="navbar" style="position:fixed;top:{{statusBarHeight+titleBarHeight}}px">
+			<view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</view>
 
-
-      <view class="navbar">
-        <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</view>
-
-      </view>
-
-    </view>
-
-
-    <!-- <view class='indexbox' hidden="{{currentTab!==0}}"> -->
-    <!-- <view class='required' hidden="{{currentTab!==0}}">
+		</view>
+		<view style="clear:both;height:80rpx"></view>
+		<!-- <view class='indexbox' hidden="{{currentTab!==0}}"> -->
+		<!-- <view class='required' hidden="{{currentTab!==0}}">
       
     </view> -->
-<view class='indexbox' wx:for='{{list0}}' hidden="{{currentTab!==0}}">
-      <navigator url='{{item.status==4?"../editPatient/editPatient?id=":"../out/seeAdoctor/seeAdoctor?id="}}{{item.itemId}}'>
-        <view class="box">
-            <image  mode="aspectFill"  wx:if='{{item.status==1}}' src="../img/orange@2x.png"></image>
-            <image  mode="aspectFill"  wx:if='{{item.status==4}}' src="../img/blue@2x.png"></image>
-            <view>
-              <view>{{item.realname||''}} <image  mode="aspectFill"  wx:if='{{item.status==1}}' src="../img/red-up@2x.png" style="margin-left:10rpx;"></image></view>
-              <text>推送：{{item.pushTime||''}}</text>
-              <text>所属门诊：{{item.clinicName||''}}</text>
-            </view>
-            <view catchtap="makesure" data-id="{{item.itemId}}" style="z-index:999"  wx:if='{{item.status==1}}'  class="makesure">确认就诊</view>
-            <view  wx:if='{{item.status==4}}'  class="nosure">已就诊</view>
-        </view>
-      </navigator>
-    </view>
+		<view class='indexbox' wx:for='{{list0}}' hidden="{{currentTab!==0}}">
+			<navigator url='{{item.status==4?"../editPatient/editPatient?id=":"../out/seeAdoctor/seeAdoctor?id="}}{{item.itemId}}'>
+				<view class="box">
+					<image mode="aspectFill" wx:if='{{item.status==1}}' src="../img/orange@2x.png"></image>
+					<image mode="aspectFill" wx:if='{{item.status==4}}' src="../img/blue@2x.png"></image>
+					<view>
+						<view>{{item.realname||''}}
+							<image mode="aspectFill" wx:if='{{item.status==1}}' src="../img/red-up@2x.png" style="margin-left:10rpx;"></image>
+						</view>
+						<text>推送：{{item.pushTime||''}}</text>
+						<text>所属门诊：{{item.clinicName||''}}</text>
+					</view>
+					<view catchtap="makesure" data-id="{{item.itemId}}" style="z-index:999" wx:if='{{item.status==1}}' class="makesure">确认就诊</view>
+					<view wx:if='{{item.status==4}}' class="nosure">已就诊</view>
+				</view>
+			</navigator>
+		</view>
 
-  
-    <view>
-      
-    </view>
 
-    <view class='indexbox' wx:for='{{list1}}' hidden="{{currentTab!==1}}">
-      <navigator url='{{item.status==4?"../editPatient/editPatient?id=":"../out/seeAdoctor/seeAdoctor?id="}}{{item.itemId}}'>
-        <view class="box">
-            <image  mode="aspectFill"  wx:if='{{item.status==1}}' src="../img/orange@2x.png"></image>
-            <image  mode="aspectFill"  wx:if='{{item.status==4}}' src="../img/blue@2x.png"></image>
-            <view>
-              <view>{{item.realname||''}}<image  mode="aspectFill"  wx:if='{{item.status==1}}' src="../img/red-up@2x.png" style="margin-left:10rpx;"></image></view>
-              <text>推送：{{item.pushTime||''}}</text>
-              <text>所属门诊：{{item.clinicName||''}}</text>
-            </view>
-            <view  wx:if='{{item.status==1}}'  data-id="{{item.itemId}}" catchtap="makesure" style="z-index:999"   class="makesure">确认就诊</view>
-            <view  wx:if='{{item.status==4}}'  class="nosure">已就诊</view>
-        </view>
-      </navigator>
-    </view>
-    <view class='indexbox' wx:for='{{list2}}' hidden="{{currentTab!==2}}">
-      <navigator url='{{item.status==4?"../editPatient/editPatient?id=":"../out/seeAdoctor/seeAdoctor?id="}}{{item.itemId}}'>
-        <view class="box">
-            <image  mode="aspectFill"  wx:if='{{item.status==1}}' src="../img/orange@2x.png"></image>
-            <image  mode="aspectFill"  wx:if='{{item.status==4}}' src="../img/blue@2x.png"></image>
-            <view>
-              <view>{{item.realname||''}} <image  mode="aspectFill"  wx:if='{{item.status==1}}' src="../img/red-up@2x.png" style="margin-left:10rpx;"></image></view>
-              <text>推送：{{item.pushTime||''}}</text>
-              <text>所属门诊：{{item.clinicName||''}}</text>
-            </view>
-            <view  wx:if='{{item.status==1}}'  data-id="{{item.itemId}}"  catchtap="makesure" style="z-index:999"  class="makesure">确认就诊</view>
-            <view  wx:if='{{item.status==4}}'  class="nosure">已就诊</view>
-        </view>
-      </navigator>
-    </view>
-  </view>
+		<view>
+
+		</view>
+
+		<view class='indexbox' wx:for='{{list1}}' hidden="{{currentTab!==1}}">
+			<navigator url='{{item.status==4?"../editPatient/editPatient?id=":"../out/seeAdoctor/seeAdoctor?id="}}{{item.itemId}}'>
+				<view class="box">
+					<image mode="aspectFill" wx:if='{{item.status==1}}' src="../img/orange@2x.png"></image>
+					<image mode="aspectFill" wx:if='{{item.status==4}}' src="../img/blue@2x.png"></image>
+					<view>
+						<view>{{item.realname||''}}
+							<image mode="aspectFill" wx:if='{{item.status==1}}' src="../img/red-up@2x.png" style="margin-left:10rpx;"></image>
+						</view>
+						<text>推送：{{item.pushTime||''}}</text>
+						<text>所属门诊：{{item.clinicName||''}}</text>
+					</view>
+					<view wx:if='{{item.status==1}}' data-id="{{item.itemId}}" catchtap="makesure" style="z-index:999" class="makesure">确认就诊</view>
+					<view wx:if='{{item.status==4}}' class="nosure">已就诊</view>
+				</view>
+			</navigator>
+		</view>
+		<view class='indexbox' wx:for='{{list2}}' hidden="{{currentTab!==2}}">
+			<navigator url='{{item.status==4?"../editPatient/editPatient?id=":"../out/seeAdoctor/seeAdoctor?id="}}{{item.itemId}}'>
+				<view class="box">
+					<image mode="aspectFill" wx:if='{{item.status==1}}' src="../img/orange@2x.png"></image>
+					<image mode="aspectFill" wx:if='{{item.status==4}}' src="../img/blue@2x.png"></image>
+					<view>
+						<view>{{item.realname||''}}
+							<image mode="aspectFill" wx:if='{{item.status==1}}' src="../img/red-up@2x.png" style="margin-left:10rpx;"></image>
+						</view>
+						<text>推送：{{item.pushTime||''}}</text>
+						<text>所属门诊：{{item.clinicName||''}}</text>
+					</view>
+					<view wx:if='{{item.status==1}}' data-id="{{item.itemId}}" catchtap="makesure" style="z-index:999" class="makesure">确认就诊</view>
+					<view wx:if='{{item.status==4}}' class="nosure">已就诊</view>
+				</view>
+			</navigator>
+		</view>
+	</view>
 </view>
 
-
+<view class="withoutNum" wx:if='{{totalCount==0}}'>
+	<image mode="aspectFill" src="../img/wushuju.png"></image>
+	<text>暂无数据</text>
+</view>

@@ -1,5 +1,5 @@
 <!--pages/promoter/peopleDetail/peopleDetail.wxml-->
-<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+<!-- <view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
   <view class="header" style="position:fixed;top:0;">
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
@@ -7,14 +7,11 @@
         <view bindtap='backHistory' class='backHis'>
           <image  mode="aspectFill"  style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../../img/shape@2x.png'></image>
         </view>
-        <!-- <image  mode="aspectFill"  class="search" catchtap="edit" src="../../img/bianji@2x.png"></image> -->
-        <!-- <text class='titleText'>{{navtitle}}</text> -->
-        <!-- <image  mode="aspectFill"  class="add" catchtap="delete" src="../../img/shanchu@2x.png"></image> -->
       </view>
     </view>
   </view>
-</view>
-<view class="topIndex" style="position:fixed;top:{{statusBarHeight+titleBarHeight}}px">
+</view> -->
+<view class="topIndex" style="position:fixed;top:0">
   <!-- <view>
     <image  mode="aspectFill"  mode="aspectFill" src="{{detail.cover||''}}"></image>
     <text>长按可分享和保存</text>
@@ -31,7 +28,7 @@
     </view>
   </view>
 </view>
-<view class="lineChange" style="position:fixed;top:{{statusBarHeight+titleBarHeight+150}}px">
+<view class="lineChange" style="position:fixed;top:299rpx">
 <text>总共：{{clinicNum}}个门诊</text>
   <!-- <text bindtap="changeAll">全部转移</text> -->
 </view>

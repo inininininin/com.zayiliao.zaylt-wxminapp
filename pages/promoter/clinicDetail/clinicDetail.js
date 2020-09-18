@@ -90,16 +90,21 @@ Page({
   },
   // 点击下拉列表
   navbarTap(e) {
-    var status
+    let status=''
+    let  totalCount=''
     let Indexs = e.currentTarget.dataset.idx; //获取点击的下拉列表的下标
     if (Indexs == 0) {
       status = ''
+      totalCount=this.data.totalCount
     } else if (Indexs == 1) {
       status = '4'
+      totalCount=this.data.totalCount1
     } else if (Indexs == 2) {
       status = '1'
+      totalCount=this.data.totalCount2
     }
     this.setData({
+      totalCount:totalCount,
       status: status,
       list1: [],
       currentTab: e.currentTarget.dataset.idx,
@@ -385,24 +390,24 @@ Page({
           that.setData({
             totalCount: res.data.data.sum.totalCount
           })
-          var totalCount = res.data.data.sum.totalCount
-          var list1 = that.data.list1;
-          var newlist1 = list1.concat(res.data.data.items)
-          if (res.data.data.items.length == 0) {
-            that.setData({
-              list1: list1,
-              // toPageNo: String(toPageNo)
-            });
-            wx.showToast({
-              title: '数据已全部加载',
-              // icon: 'loading',
-              // duration: 1500
-            })
-          } else {
-            that.setData({
-              list1: newlist1,
-            });
-          }
+          // var totalCount = res.data.data.sum.totalCount
+          // var list1 = that.data.list1;
+          // var newlist1 = list1.concat(res.data.data.items)
+          // if (res.data.data.items.length == 0) {
+          //   // that.setData({
+          //   //   list1: list1,
+          //   //   // toPageNo: String(toPageNo)
+          //   // });
+          //   wx.showToast({
+          //     title: '数据已全部加载',
+          //     // icon: 'loading',
+          //     // duration: 1500
+          //   })
+          // } else {
+          //   that.setData({
+          //     list1: newlist1,
+          //   });
+          // }
           wx.request({
             url: app.globalData.url + '/c2/patient/items',
             method: 'post',

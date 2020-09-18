@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarTitleText": "推广活动",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff"
 }

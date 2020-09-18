@@ -123,14 +123,15 @@ margin-bottom: 6rpx;
   margin-right: 0rpx;
 }
 .save{
+  float: right;
   width: 110rpx !important;
   height: 100% !important;
-  margin-left: 95rpx;
+  margin-right: 30rpx;
   z-index: 999;
 }
 .save text{
   font-size: 30rpx;
-  color: #fff;
+  color: #2B77EF;
   line-height: 90rpx;
   /* float: left; */
 }

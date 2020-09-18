@@ -32,10 +32,10 @@
      <view class='indexbox' wx:for='{{list1}}' >
       <navigator url='{{item.status==4?"../../editPatient/editPatient?id=":"../../out/seeAdoctor/seeAdoctor?id="}}{{item.itemId}}'>
         <view class="box">
-            <image  mode="aspectFill"  wx:if='{{item.status==1}}' src="../img/orange@2x.png"></image>
+            <image  mode="aspectFill"  wx:if='{{item.status==1}}' src="../../img/orange@2x.png"></image>
             <image  mode="aspectFill"  wx:if='{{item.status==4}}' src="../../img/blue@2x.png"></image>
             <view>
-              <view>{{item.realname}}<image  mode="aspectFill"  wx:if='{{item.status==1}}' src="../img/red-up@2x.png" style="margin-left:10rpx;"></image></view>
+              <view>{{item.realname}}<image  mode="aspectFill"  wx:if='{{item.status==1}}' src="../../img/red-up@2x.png" style="margin-left:10rpx;"></image></view>
               <text>推送：{{item.pushTime}}</text>
               <text>所属门诊：{{item.clinicName}}</text>
             </view>

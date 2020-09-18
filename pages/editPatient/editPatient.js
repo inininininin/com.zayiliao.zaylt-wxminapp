@@ -65,9 +65,15 @@ Page({
             that.setData({
               navtitle: '未就诊'
             })
+            wx.setNavigationBarTitle({
+              title: '未就诊',
+            })
           } else {
             that.setData({
               navtitle: '已就诊'
+            })
+             wx.setNavigationBarTitle({
+              title: '已就诊',
             })
           }
           if (res.data.data.hospitalConfirmTime == '' || res.data.data.hospitalConfirmTime == null || res.data.data.hospitalConfirmTime == undefined) {

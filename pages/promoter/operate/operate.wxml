@@ -1,36 +1,46 @@
 <!--pages/promoter/operate/operate.wxml-->
-<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
-  <view class="header" style="position:fixed;top:0;">
-    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
-    <view class="title-bar" style="height:{{titleBarHeight}}px">
-      <view>
-        <view bindtap='backHistory' class='backHis'>
-          <image  mode="aspectFill"  style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../../img/shape@2x.png'></image>
-        </view>
-        <text class='titleText'>{{navtitle}}</text>
-      </view>
-    </view>
-  </view>
-</view>
-<view>
+<!-- <view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+	<view class="header" style="position:fixed;top:0;">
+		<view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+		<view class="title-bar" style="height:{{titleBarHeight}}px">
+			<view>
+				<view bindtap='backHistory' class='backHis'>
+					<image mode="aspectFill" style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../../img/shape@2x.png'></image>
+				</view>
+				<text class='titleText'>{{navtitle}}</text>
+			</view>
+		</view>
+	</view>
+</view> -->
 
-   <view wx:for='{{schemeList}}'>
-    <navigator url='../../out/articleDetail/articleDetail?id={{item.itemId}}&contentBtId={{item.contentBtId}}'>
-      <view class='highBox'>
-        <view>
-          <text>{{item.title}}</text>
-          <view>
-            <image  mode="aspectFill"  src='../../img/time@2x.png'></image>
-            <text style='color:rgb(153,153,153)'>{{item.addTime}}</text>
-          </view>
-        </view>
-        <view class='image' style='background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;'>
-        </view>
-      </view>
-    </navigator>
-  </view>
-  <view class="withoutNum" wx:if='{{clinicNumber==0}}'>
-    <image  mode="aspectFill"  src="../../img/wushuju.png"></image>
-    <text>暂无数据</text>
-  </view>
+<view>
+	<view wx:for='{{schemeList}}'>
+		<navigator url='../../out/articleDetail/articleDetail?id={{item.itemId}}&contentBtId={{item.contentBtId}}'>
+			<view class='highBox' wx:if='{{item.cover}}'>
+				<view>
+					<text>{{item.title}}</text>
+					<view>
+						<image mode="aspectFill" src='../../img/time@2x.png'></image>
+						<text style='color:rgb(153,153,153)'>{{item.addTime}}</text>
+					</view>
+				</view>
+				<image class='image' src="{{item.cover}}" mode="aspectFill"></image>
+				<!-- <view class='image' style='background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;'>
+				</view> -->
+			</view>
+			<view class='highBox' wx:if='{{!item.cover}}'>
+				<view style="width:100%">
+					<text>{{item.title}}</text>
+					<view>
+						<image mode="aspectFill" src='../../img/time@2x.png'></image>
+						<text style='color:rgb(153,153,153)'>{{item.addTime}}</text>
+					</view>
+				</view>
+			</view>
+		</navigator>
+	</view>
+	<view class="withoutNum" wx:if='{{clinicNumber==0}}'>
+		<image mode="aspectFill" src="../../img/wushuju.png"></image>
+		<text>暂无数据</text>
+	</view>
 </view>

@@ -1,1 +1,6 @@
-{}
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "优质案例",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff"
+}

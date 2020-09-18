@@ -1,5 +1,37 @@
 //app.js
 App({
+  globalData: {
+    userInfo: null,
+    usrBaseInfo: null,
+    usrDesInfo: null,
+    list: [], //存放tabBar的数据
+    url:'https://dev.inininininin.com/ylt',
+    domain:'https://dev.inininininin.com',
+    // url:'https://zaylt.njshangka.com/zaylt',
+    // domain:'http://192.168.2.45',
+    token: '',//'1984750073886',
+    userToken:'',
+    clinicId:'',
+    clinicName:'',
+    hospitalId: '',
+    hospitalName:'',
+    managerName:'',
+    managerId:'',
+    phone: '',
+    userId: '',
+    clinicaddress:'',
+    hospitaladdress:'',
+    license: '',
+    cover: '',
+    authenticationIs: '',
+    src:'', 
+    Version:'1.0.2009181028',
+    versionIntro: '修复了部分BUG\n优化了部分体验',
+    lastClient:'',
+    longitude:'',
+    latitude: '',
+    speed: '',
+  },
   onLaunch: function () {
     this.globalData.usrBaseInfo = '123'
   
@@ -112,38 +144,6 @@ App({
       _cover = this.globalData.domain + _cover
     }
     return _cover
-  },
-  globalData: {
-    userInfo: null,
-    usrBaseInfo: null,
-    usrDesInfo: null,
-    list: [], //存放tabBar的数据
-    // url:'https://zaylt.njshangka.com',
-    url:'https://dev.inininininin.com/ylt',
-    domain:'https://dev.inininininin.com',
-    // url:'http://192.168.2.45/zaylt',
-    token: '',//'1984750073886',
-    userToken:'',
-    clinicId:'',
-    clinicName:'',
-    hospitalId: '',
-    hospitalName:'',
-    managerName:'',
-    managerId:'',
-    phone: '',
-    userId: '',
-    clinicaddress:'',
-    hospitaladdress:'',
-    license: '',
-    cover: '',
-    authenticationIs: '',
-    src:'', 
-    Version:'1.0.2008310843',
-    versionIntro: '修复了部分BUG\n优化了部分体验',
-    lastClient:'',
-    longitude:'',
-    latitude: '',
-    speed: '',
   },
   loginRefresh:{}
 })

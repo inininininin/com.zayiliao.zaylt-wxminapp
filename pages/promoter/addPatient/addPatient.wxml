@@ -1,5 +1,5 @@
 <!--pages/promoter/addPatient/addPatient.wxml-->
-<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+<!-- <view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
   <view class="header" style='background:#2b77ef;color:#fff'>
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
@@ -11,7 +11,7 @@
       </view>
     </view>
   </view>
-</view>
+</view> -->
 <view class='required'>
   <view>
     <image  mode="aspectFill"  src='../../img/bitian@2x.png'></image>

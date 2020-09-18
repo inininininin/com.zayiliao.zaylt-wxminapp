@@ -1,103 +1,119 @@
 <!--pages/promoter/index/index.wxml-->
 <view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
-  <view class="header">
-    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
-    <view class="title-bar" style="height:{{titleBarHeight}}px">
-    <view>
-    <text class="titleText">{{navtitle}}</text>
-    </view>
-    </view>
-  </view>
+	<view class="header">
+		<view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+		<view class="title-bar" style="height:{{titleBarHeight}}px">
+			<view>
+				<text class="titleText">{{navtitle}}</text>
+			</view>
+		</view>
+	</view>
 </view>
 
-<view class="clinicPatient" bindtap>
-  <view bindtap="qdmz" >渠道门诊</view>
-  <view bindtap="bygl" >病员管理</view>
+<view class="clinicPatient" style="border-top:6rpx solid #f5f5f5">
+	<view bindtap="qdmz">渠道门诊</view>
+	<view bindtap="bygl">病员管理</view>
 </view>
 
 
 <view class='operate'>
-  <view class='yyjx'>
-    <image  mode="aspectFill"  src='../../img/CombinedShape@2x.png'></image>
-    <text>运营精选</text>
-    <view bindtap="operate">
-      <text>查看更多</text>
-      <image  mode="aspectFill"  src="../../img/back.png"></image>
-    </view>
-  </view>
-  <view wx:for='{{schemeList}}'>
-    <navigator url='../../out/articleDetail/articleDetail?id={{item.itemId}}&contentBtId={{item.contentBtId}}'>
-      <view class='highBox'>
-        <view>
-          <text>{{item.title}}</text>
-          <view>
-            <image  mode="aspectFill"  src='../../img/time@2x.png'></image>
-            <text style='color:rgb(153,153,153)'>{{item.addTime}}</text>
-          </view>
-        </view>
-        <view class='image' style='background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;'>
-
-        </view>
-      </view>
-    </navigator>
-  </view>
+	<view class='yyjx'>
+		<image mode="aspectFill" src='../../img/CombinedShape@2x.png'></image>
+		<text>运营精选</text>
+		<view bindtap="operate">
+			<text>查看更多</text>
+			<image mode="aspectFill" src="../../img/back.png"></image>
+		</view>
+	</view>
+	<view wx:for='{{schemeList}}'>
+		<navigator url='../../out/articleDetail/articleDetail?id={{item.itemId}}&contentBtId={{item.contentBtId}}'>
+			<view class='highBox' wx:if='{{item.cover}}'>
+				<view>
+					<text>{{item.title}}</text>
+					<view>
+						<image mode="aspectFill" src='../../img/time@2x.png'></image>
+						<text style='color:rgb(153,153,153)'>{{item.addTime}}</text>
+					</view>
+				</view>
+				<image class='image' src="{{item.cover}}" mode="aspectFill"></image>
+				<!-- <view class='image' style='background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;'></view> -->
+			</view>
+			<view class='highBox' wx:if='{{!item.cover}}'>
+				<view style="width:100%">
+					<text>{{item.title}}</text>
+					<view>
+						<image mode="aspectFill" src='../../img/time@2x.png'></image>
+						<text style='color:rgb(153,153,153)'>{{item.addTime}}</text>
+					</view>
+				</view>
+			</view>
+		</navigator>
+	</view>
 </view>
 
 <view class='operate' style="padding-bottom:20rpx;">
-  <view class='yyjx'>
-    <image  mode="aspectFill"  src='../../img/huodong@2x.png' style='width:46rpx;height:44rpx;'></image>
-    <text>推广活动</text>
-    <view bindtap="recActivity">
-      <text>查看更多</text>
-      <image  mode="aspectFill"  src="../../img/back.png"></image>
-    </view>
-  </view>
-  <view class="activity" bindtap="activity" data-id='{{item.itemId}}' wx:for='{{schemeList2}}' style='background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;'>
-    <view>
-      <text>{{item.title}}</text>
-    <text>{{item.addTime}}</text>
-    </view>
-  </view>
+	<view class='yyjx'>
+		<image mode="aspectFill" src='../../img/huodong@2x.png' style='width:46rpx;height:44rpx;'></image>
+		<text>推广活动</text>
+		<view bindtap="recActivity">
+			<text>查看更多</text>
+			<image mode="aspectFill" src="../../img/back.png"></image>
+		</view>
+	</view>
+	<view class="activity" bindtap="activity" data-id='{{item.itemId}}' wx:for='{{schemeList2}}' style='background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;'>
+		<view>
+			<text>{{item.title}}</text>
+			<text>{{item.addTime}}</text>
+		</view>
+	</view>
 </view>
 
 <view class='operate' style="padding-bottom:120rpx;">
-  <view class='yyjx'>
-    <image  mode="aspectFill"  src='../../img/anli@2x.png' style="width:40rpx;height:44rpx;"></image>
-    <text>优质案例</text>
-    <view bindtap="lookMoreGood">
-      <text>查看更多</text>
-      <image  mode="aspectFill"  src="../../img/back.png"></image>
-    </view>
-  </view>
-  <view wx:for='{{schemeList3}}'>
-    <navigator url='../../out/highQualityCaseDetail/highQualityCaseDetail?id={{item.itemId}}&contentBtId={{item.contentBtId}}'>
-      <view class='highBox'>
-        <view>
-          <text>{{item.name}}</text>
-          <view>
-            <image  mode="aspectFill"  src='../../img/time@2x.png'></image>
-            <text style='color:rgb(153,153,153)'>{{item.addTime}}</text>
-          </view>
-        </view>
-        <view class='image' style='background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;'>
-
-        </view>
-      </view>
-    </navigator>
-  </view>
+	<view class='yyjx'>
+		<image mode="aspectFill" src='../../img/anli@2x.png' style="width:40rpx;height:44rpx;"></image>
+		<text>优质案例</text>
+		<view bindtap="lookMoreGood">
+			<text>查看更多</text>
+			<image mode="aspectFill" src="../../img/back.png"></image>
+		</view>
+	</view>
+	<view wx:for='{{schemeList3}}'>
+		<navigator url='../../out/highQualityCaseDetail/highQualityCaseDetail?id={{item.itemId}}&contentBtId={{item.contentBtId}}'>
+			<view class='highBox' wx:if='{{item.cover}}'>
+				<view>
+					<text>{{item.name}}</text>
+					<view>
+						<image mode="aspectFill" src='../../img/time@2x.png'></image>
+						<text style='color:rgb(153,153,153)'>{{item.addTime}}</text>
+					</view>
+				</view>
+				<image class='image' src="{{item.cover}}" mode="aspectFill"></image>
+				<!-- <view class='image' style='background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;'></view> -->
+			</view>
+			<view wx:if='{{!item.cover}}' class='highBox'>
+				<view style="width:100%">
+					<text>{{item.name}}</text>
+					<view>
+						<image mode="aspectFill" src='../../img/time@2x.png'></image>
+						<text style='color:rgb(153,153,153)'>{{item.addTime}}</text>
+					</view>
+				</view>
+			</view>
+		</navigator>
+	</view>
 </view>
 
 <view class='tabbarBtn'>
-  <view>
-    <image  mode="aspectFill"  class='bottomBthimg1' src='../../img/shouye-blue@2x.png'></image>
-    <text class='active'>首页</text>
-  </view>
-  <view bindtap='clinic'>
-    <image  mode="aspectFill"  class='bottomBthimg2' src='../../img/Hospital@2x.png'></image>
-    <text>门诊</text>
-  </view>
-  <view  bindtap='mine'>
-    <image  mode="aspectFill"  class='bottomBthimg3' src='../../img/wode@2x.png'></image>
-    <text>我的</text>
-  </view>
+	<view>
+		<image mode="aspectFill" class='bottomBthimg1' src='../../img/shouye-blue@2x.png'></image>
+		<text class='active'>首页</text>
+	</view>
+	<view bindtap='clinic'>
+		<image mode="aspectFill" class='bottomBthimg2' src='../../img/Hospital@2x.png'></image>
+		<text>门诊</text>
+	</view>
+	<view bindtap='mine'>
+		<image mode="aspectFill" class='bottomBthimg3' src='../../img/wode@2x.png'></image>
+		<text>我的</text>
+	</view>
 </view>

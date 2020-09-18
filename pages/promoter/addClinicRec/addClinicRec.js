@@ -176,6 +176,9 @@ Page({
       navtitle: options.typesName,
       id: options.id
     })
+    wx.setNavigationBarTitle({
+      title: options.typesName,
+    })
     if (options.id != '' && options.id != undefined && options.id != null) {
       wx.request({
         url: app.globalData.url + '/hospital/operator/hospital-clinic/' + id, //仅为示例，非真实的接口地址

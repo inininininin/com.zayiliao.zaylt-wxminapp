@@ -18,7 +18,7 @@ Page({
     currentTab: 0,
     list2: [],
     list1: [],
-    list0:[],
+    list0: [],
     idCard: '',
     name: '',
     remark: '',
@@ -39,29 +39,29 @@ Page({
     status: '',
     num1: '',
     num2: '',
-    kw:'',
+    kw: '',
   },
   makesure(e) {
-    var that=this
-    var id=e.currentTarget.dataset.id
+    var that = this
+    var id = e.currentTarget.dataset.id
     wx.showModal({
       title: '确认就诊',
       content: '请确认患者就诊',
-      success:function(res){
+      success: function (res) {
         if (res.confirm) {
           wx.request({
             url: app.globalData.url + '/c2/patient/confirmjiuzhen',
             method: 'post',
             data: {
-              patientId: id,      
-             },
+              patientId: id,
+            },
             header: {
               "Content-Type": "application/x-www-form-urlencoded",
               'cookie': app.globalData.cookie
             },
             success: function (res) {
               console.log(res)
-              if(res.data.code==0){
+              if (res.data.code == 0) {
                 console.log(1)
                 if (that.data.currentTab == 0) {
                   for (var i = 0; i < that.data.list0.length; i++) {
@@ -88,23 +88,24 @@ Page({
                   num1: parseInt(that.data.num1) - 1,
                   num2: parseInt(that.data.num2) + 1
                 })
-              }else{
+              } else {
                 wx.showToast({
                   title: res.data.codeMsg,
+                  icon:'none'
                 })
               }
             }
           })
 
-        
+
 
         }
       }
     })
   },
-  backHistory(e){
+  backHistory(e) {
     wx.navigateBack({
-      
+
     })
   },
   slider1change(e) {
@@ -176,21 +177,21 @@ Page({
       list2: [],
       list0: [],
     })
-    that.lastPageNum( that.data.date, that.data.date2, that.data.date3, that.data.date4)
-    if (that.data.currentTab==0){
+    that.lastPageNum(that.data.date, that.data.date2, that.data.date3, that.data.date4)
+    if (that.data.currentTab == 0) {
       that.lastPage(0, '', that.data.date, that.data.date2, that.data.date3, that.data.date4)
     } else if (that.data.currentTab == 1) {
       that.lastPage(0, 1, that.data.date, that.data.date2, that.data.date3, that.data.date4)
-    }else{
+    } else {
       that.lastPage(0, 4, that.data.date, that.data.date2, that.data.date3, that.data.date4)
     }
     that.setData({
       display: "none",
     })
-         
+
   },
   search(e) {
-    this.setData({     
+    this.setData({
       list1: [],
       list2: [],
       list0: [],
@@ -256,9 +257,10 @@ Page({
     })
     if (e.currentTarget.dataset.idx == 1) {
       this.lastPage(0, 1, this.data.date, this.data.date2, this.data.date3, this.data.date4)
+
     } else if (e.currentTarget.dataset.idx == 2) {
       this.lastPage(0, 4, this.data.date, this.data.date2, this.data.date3, this.data.date4)
-    }else{
+    } else {
       this.lastPage(0, '', this.data.date, this.data.date2, this.data.date3, this.data.date4)
     }
   },
@@ -287,7 +289,7 @@ Page({
       url: '../news/news',
     })
   },
- 
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -322,9 +324,9 @@ Page({
         pn: 1,
         ps: 15,
         status: 1,
-        kw:that.data.kw,
+        kw: that.data.kw,
         hospitalId: app.globalData.hospitalId,
-         pushTimeStart: pushTimeStart,
+        pushTimeStart: pushTimeStart,
         pushTimeEnd: pushTimeEnd,
         hospitalConfirmTimeStart: hospitalConfirmTimeStart,
         hospitalConfirmTimeEnd: hospitalConfirmTimeEnd,
@@ -348,7 +350,7 @@ Page({
               status: 4,
               hospitalId: app.globalData.hospitalId,
               kw: that.data.kw,
-               pushTimeStart: pushTimeStart,
+              pushTimeStart: pushTimeStart,
               pushTimeEnd: pushTimeEnd,
               hospitalConfirmTimeStart: hospitalConfirmTimeStart,
               hospitalConfirmTimeEnd: hospitalConfirmTimeEnd,
@@ -421,9 +423,9 @@ Page({
         pn: toPageNo,
         ps: pageSize,
         status: status,
-        kw:that.data.kw,
+        kw: that.data.kw,
         hospitalId: app.globalData.hospitalId,
-         pushTimeStart: pushTimeStart,
+        pushTimeStart: pushTimeStart,
         pushTimeEnd: pushTimeEnd,
         hospitalConfirmTimeStart: hospitalConfirmTimeStart,
         hospitalConfirmTimeEnd: hospitalConfirmTimeEnd,
@@ -434,10 +436,14 @@ Page({
       },
       success: function (res) {
         if (res.data.code == 0) {
+          if(toPageNo==1){
+            that.setData({
+              totalCount: res.data.data.sum.totalCount
+            })
+          }
+          
           if (that.data.currentTab == 1) {
-            // that.setData({
-            //   list1: res.data.data.items,
-            // })
+            
             var list1 = that.data.list1;
             var newlist1 = list1.concat(res.data.data.items)
             if (res.data.data.items.length == 0) {
@@ -447,6 +453,7 @@ Page({
               });
               wx.showToast({
                 title: '数据已全部加载',
+                icon:'none'
                 // icon: 'loading',
                 // duration: 1500
               })
@@ -466,6 +473,7 @@ Page({
               });
               wx.showToast({
                 title: '数据已全部加载',
+                icon:'none'
                 // icon: 'loading',
                 // duration: 1500
               })
@@ -475,7 +483,7 @@ Page({
                 toPageNo: String(toPageNo)
               });
             }
-          }else{
+          } else {
             var list0 = that.data.list0;
             var newlist0 = list0.concat(res.data.data.items)
             if (res.data.data.items.length == 0) {
@@ -485,6 +493,7 @@ Page({
               });
               wx.showToast({
                 title: '数据已全部加载',
+                icon:'none'
                 // icon: 'loading',
                 // duration: 1500
               })
@@ -532,7 +541,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
@@ -550,7 +559,7 @@ Page({
       url: app.globalData.url + '/clientend2/clinicend/messages',
       method: 'post',
       data: {
-         lookIs: 0,
+        lookIs: 0,
         source: '',
         pn: 1,
         ps: 30,
@@ -606,7 +615,7 @@ Page({
       that.lastPage(0, 1, that.data.date, that.data.date2, that.data.date3, that.data.date4)
     } else if (that.data.currentTab == 2) {
       that.lastPage(0, 4, that.data.date, that.data.date2, that.data.date3, that.data.date4)
-    }else{
+    } else {
       that.lastPage(0, '', that.data.date, that.data.date2, that.data.date3, that.data.date4)
     }
 
@@ -628,7 +637,7 @@ Page({
       that.lastPage(toPageNo, 1, that.data.date, that.data.date2, that.data.date3, that.data.date4)
     } else if (that.data.currentTab == 2) {
       that.lastPage(toPageNo, 4, that.data.date, that.data.date2, that.data.date3, that.data.date4)
-    } else  {
+    } else {
       that.lastPage(toPageNo, '', that.data.date, that.data.date2, that.data.date3, that.data.date4)
     }
   },

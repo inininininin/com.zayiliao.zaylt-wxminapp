@@ -1,18 +1,29 @@
-<view>
+<!-- <view>
   <include src="../../common/common.wxml" />
-</view>
+</view> -->
 <view wx:for='{{schemeList}}'>
-<!-- {{item.url}} -->
-  <navigator url='../highQualityCaseDetail/highQualityCaseDetail?id={{item.itemId}}&contentBtId={{item.contentBtId}}'>
-    <view class='highBox'>
-      <view >
-        <text>{{item.name}}</text>
-        <view><image  mode="aspectFill"  src='../../img/time@2x.png'></image><text>{{item.addTime}}</text></view>
-      </view>
-      <view class='image' style='background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;'>
+	<!-- {{item.url}} -->
+	<navigator url='../highQualityCaseDetail/highQualityCaseDetail?id={{item.itemId}}&contentBtId={{item.contentBtId}}'>
+		<view class='highBox' wx:if='{{item.cover}}'>
+			<view>
+				<text>{{item.name}}</text>
+				<view>
+					<image mode="aspectFill" src='../../img/time@2x.png'></image><text>{{item.addTime}}</text>
+				</view>
+			</view>
+			<!-- <view class='image' style='background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;'>
 
-        </view>
-      <!-- <image  mode="aspectFill"  src='{{item.cover}}'></image> -->
-  </view>
-  </navigator>
+			</view> -->
+			<image class='image'  mode="aspectFill"  src='{{item.cover}}'></image>
+		</view>
+    <view class='highBox' wx:if='{{!item.cover}}'>
+				<view style="width:100%">
+					<text>{{item.name}}</text>
+					<view>
+						<image mode="aspectFill" src='../../img/time@2x.png'></image>
+						<text style='color:rgb(153,153,153)'>{{item.addTime}}</text>
+					</view>
+				</view>
+			</view>
+	</navigator>
 </view>

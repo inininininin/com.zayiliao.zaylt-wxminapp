@@ -1,4 +1,4 @@
-<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+<!-- <view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
   <view class="header">
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
@@ -12,10 +12,15 @@
     </view>
     </view>
   </view>
-</view>
+</view> -->
 <view class="title">
   <text></text>
   基本信息
+
+  <view class="save" bindtap="save">
+      <text>保存</text>
+      <image  mode="aspectFill"  src="../img/save@2x.png"></image>
+    </view>
 </view>
 <view class='box' style="margin-top:0;">  
   <view>
