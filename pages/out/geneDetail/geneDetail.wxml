@@ -1,7 +1,7 @@
 <!--pages/out/geneDetail/geneDetail.wxml-->
-<view>
+<!-- <view>
   <include src="../../common/common.wxml" />
-</view>
+</view> -->
 <view class='numbering'>
   <text>编号：{{detail.no}}</text>
 </view>

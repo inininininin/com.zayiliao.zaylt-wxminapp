@@ -268,8 +268,8 @@ line-height:33rpx;
   background: rgb(255,248,243)
 }
 .backHistory{
-  width: 18rpx !important;
-  height: 32rpx !important;
+  width: 24rpx !important;
+  height: 40rpx !important;
 }
 
 .withoutNum{

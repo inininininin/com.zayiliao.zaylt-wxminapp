@@ -69,7 +69,7 @@ page {
   border-radius: 40rpx;
   font-size: 22rpx;
   color: rgb(255,255,255);
-  background:url('https://zaylt.njshangka.com/resource/img/Gradual_change.png');
+  background:url('https://zaylt.njshangka.com/ylt/resource/img/Gradual_change.png');
   background-size: 100% 100%;
   text-align: center;
   line-height: 40rpx;

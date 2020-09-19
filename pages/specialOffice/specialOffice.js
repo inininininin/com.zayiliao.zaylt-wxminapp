@@ -82,7 +82,7 @@ Page({
             
             for(var i in image){
               if (image[i].slice(0, 1) != 'h') {
-                imgList.push(app.globalData.url + image[i])
+                imgList.push(app.cover(image[i]))
               }else{
                 imgList.push( image[i])
               }              
@@ -94,6 +94,9 @@ Page({
             detail: res.data.data,
             // license: res.data.data.license,
             navtitle: res.data.data.name
+          })
+          wx.setNavigationBarTitle({
+            title: res.data.data.name,
           })
         } else if (res.data.code == 20) {
           wx.navigateTo({
@@ -122,7 +125,8 @@ Page({
             var items = res.data.data.items
             for (var i in items) {
               if (items[i].headimg&&items[i].headimg.slice(0, 1) != 'h') {
-                items[i].headimg = app.globalData.url + items[i].headimg
+                // items[i].headimg = app.globalData.url + items[i].headimg
+                items[i].headimg=app.cover(items[i].headimg)
               } 
             }
             that.setData({

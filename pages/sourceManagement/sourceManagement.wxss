@@ -10,7 +10,7 @@
   width: 750rpx;
   height: 360rpx;
   background: linear-gradient(to bottom, #55AEF8, #469AF4);
-  /* background: url('https://zaylt.njshangka.com/resource/img/BJ-blue@2x.png'); */
+  /* background: url('https://zaylt.njshangka.com/ylt/resource/img/BJ-blue@2x.png'); */
   /* background-size: 100% 100%; */
   position: fixed;
 }

@@ -192,7 +192,7 @@
 .top2{
   height: 350rpx;
   width: 750rpx;
-   /* background: url('https://zaylt.njshangka.com/resource/img/BJ-change@2x.png'); */
+   /* background: url('https://zaylt.njshangka.com/ylt/resource/img/BJ-change@2x.png'); */
   background-size: 100% 100%;
   position: relative;
 }

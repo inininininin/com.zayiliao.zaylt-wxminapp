@@ -94,6 +94,7 @@ page {
   bottom: 24rpx;
   right: 0;
 }
+
 .incomeTitle {
   border-left: 9rpx solid rgb(69, 154, 233);
   height: 24rpx;
@@ -102,10 +103,12 @@ page {
   display: inline-block;
   margin: 34rpx 0 34rpx 32rpx;
 }
-.firstTimeIncome{
+
+.firstTimeIncome {
   background: #fff;
 }
-.firstTimeIncome>view{
+
+.firstTimeIncome>view {
   height: 98rpx;
   line-height: 98rpx;
   font-size: 34rpx;
@@ -114,7 +117,8 @@ page {
   margin-left: 32rpx;
   border-bottom: 1rpx solid #e5e5e5;
 }
-.firstTimeIncome>view .sel{
+
+.firstTimeIncome>view .sel {
   width: 36rpx;
   height: 36rpx;
   float: left;
@@ -122,17 +126,18 @@ page {
   z-index: 999;
 }
 
-.firstTimeIncome>view .right{
+.firstTimeIncome>view .right {
   width: 13rpx;
   height: 24rpx;
   float: right;
   margin: 37rpx 32rpx;
 }
 
-.editPoint{
+.editPoint {
   width: 100%;
 }
-.editPoint>view{
+
+.editPoint>view {
   width: 686rpx;
   height: 90rpx;
   border: 1rpx solid #e5e5e5;
@@ -141,43 +146,67 @@ page {
   font-size: 30rpx;
   margin: 24rpx 32rpx 0;
 }
-.editPoint>view>text:nth-child(1){
+
+.editPoint>view>text:nth-child(1) {
   margin-left: 30rpx;
-  color: rgb(51,51,51);
+  color: rgb(51, 51, 51);
 }
-.editPoint>view>text:nth-child(2){
-   margin-right: 30rpx;
-   float: right;
-  color: rgb(102,102,102);
+
+.editPoint>view>text:nth-child(2) {
+  margin-right: 30rpx;
+  float: right;
+  color: rgb(102, 102, 102);
 }
-.editPoint>view:nth-child(2)>input{
+
+.editPoint>view:nth-child(2)>input {
   width: 500rpx;
   float: right;
   outline: none;
   height: 100%;
-  color: rgb(43,119,239);
+  color: rgb(43, 119, 239);
   text-align: right;
   margin-right: 30rpx;
 }
-.editPoint>view:nth-child(3)>input,.editPoint>view:nth-child(4)>input{
+
+.editPoint>view:nth-child(3)>input,
+.editPoint>view:nth-child(4)>input {
   width: 500rpx;
   float: right;
   outline: none;
   height: 100%;
-  color: rgb(43,119,239);
+  color: rgb(43, 119, 239);
   text-align: right;
   margin-right: 15rpx;
 }
-.editPoint>view:nth-child(3)>.text,.editPoint>view:nth-child(4)>.text{
+
+.editPoint>view:nth-child(3)>.text,
+.editPoint>view:nth-child(4)>.text {
   float: right;
   margin-right: 30rpx;
 }
-.inputPla{
-  color: rgb(43,119,239);
+
+.inputPla {
+  color: rgb(43, 119, 239);
 }
-.saveBack{
-   width: 24rpx;
+
+.saveBack {
+  width: 24rpx;
   height: 40rpx;
   padding: 20rpx;
   z-index: 1100;
+}
+
+.saveBackEve {
+  width: 482rpx !important;
+  height: 80rpx !important;
+  background: #2b77ef;
+  border-radius: 44rpx;
+  margin: 50rpx auto 0;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: #fff;
+  fill: linear;
+  box-shadow: -2rpx 8rpx 10px #56aff8;
+
 }

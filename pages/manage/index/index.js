@@ -228,6 +228,12 @@ Page({
         'cookie': app.globalData.cookie
       },
       success: function (res) {
+        if(res.data.codeMsg){
+          wx.showToast({
+            title: res.data.codeMsg,
+            icon:'none'
+          })
+        }
         if (res.data.code == 0) {
           if (toPageNo == 1 && res.data.data.items.length==0){
             that.setData({

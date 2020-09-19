@@ -14,18 +14,18 @@ Page({
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
     count: 0, // 设置 计数器 初始为0
-    countTimer: null ,// 设置 定时器 初始为null
+    countTimer: null,// 设置 定时器 初始为null
     shows: false, //控制下拉列表的显示隐藏，false隐藏、true显示
     selectDatas: ['全部', '未就诊', '已就诊'], //下拉列表的数据
     indexs: 0, //选择的下拉列 表下标,
     list1: [],
-    clinicId:'',
-    status:'',
-    totalCount:0,
-    totalCount1:0,
-    totalCount2:0
+    clinicId: '',
+    status: '',
+    totalCount: 0,
+    totalCount1: 0,
+    totalCount2: 0
   },
-  edit(e){
+  edit(e) {
     wx.navigateTo({
       url: '../addClinic/addClinic?typesName=修改门诊&id=' + this.data.clinicId,
     })
@@ -33,6 +33,67 @@ Page({
   makesure(e) {
     var that = this
     var id = e.currentTarget.dataset.id
+    wx.request({
+      url: app.globalData.url + '/c2/patient/items',
+      method: 'post',
+      data: {
+        pn: 1,
+        ps: 15,
+        status: '',
+        clinicId: that.data.clinicId,
+      },
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        'cookie': app.globalData.cookie
+      },
+      success: function (res) {
+        if (res.data.code == 0) {
+          that.setData({
+            totalCount: res.data.data.sum.totalCount,
+            clinicNumber: res.data.data.sum.totalCount
+          })
+          wx.request({
+            url: app.globalData.url + '/c2/patient/items',
+            method: 'post',
+            data: {
+              pn: 1,
+              ps: 15,
+              status: 4,
+              clinicId: that.data.clinicId,
+            },
+            header: {
+              "Content-Type": "application/x-www-form-urlencoded",
+              'cookie': app.globalData.cookie
+            },
+            success: function (res) {
+              if (res.data.code == 0) {
+                var totalCount1 = parseInt(res.data.data.sum.totalCount)
+                let totalCount2
+                that.setData({
+                  totalCount1: res.data.data.sum.totalCount,
+                  totalCount2: parseInt(that.data.totalCount) - parseInt(res.data.data.sum.totalCount)
+                })
+                if (totalCount1 == 0) {
+                  var time = 0
+                } else {
+                  var time = (totalCount1 / that.data.totalCount) * 2
+                }
+              } else if (res.data.code == 20 || res.data.code == 26) {
+                wx.hideToast()
+                wx.navigateTo({
+                  url: '../../login/login',
+                })
+              }
+            }
+          })
+        } else if (res.data.code == 20 || res.data.code == 26) {
+          wx.hideToast()
+          wx.navigateTo({
+            url: '../../login/login',
+          })
+        }
+      }
+    })
     wx.showModal({
       title: '确认就诊',
       content: '请确认患者就诊',
@@ -51,15 +112,15 @@ Page({
             success: function (res) {
               console.log(res)
               if (res.data.code == 0) {
-                  for (var i = 0; i < that.data.list1.length; i++) {
-                    if (that.data.list1[i].itemId == id) {
-                      console.log(that.data.list1[i].itemId)
-                      that.data.list1[i].status = 4
-                    }
+                for (var i = 0; i < that.data.list1.length; i++) {
+                  if (that.data.list1[i].itemId == id) {
+                    console.log(that.data.list1[i].itemId)
+                    that.data.list1[i].status = 4
                   }
-                  that.setData({
-                    list1: that.data.list1
-                  })                             
+                }
+                that.setData({
+                  list1: that.data.list1
+                })
               } else {
                 wx.showToast({
                   title: res.data.codeMsg,
@@ -87,16 +148,16 @@ Page({
       status = '1'
     } else if (Indexs == 2) {
       status = '4'
-    } 
+    }
     this.setData({
       indexs: Indexs,
       shows: !this.data.shows,
       status: status,
-      list1:[]
+      list1: []
     });
     this.lastPage(0, status, this.data.clinicId)
   },
-  countInterval: function() {
+  countInterval: function () {
     // 设置倒计时 定时器 每100毫秒执行一次，计数器count+1 ,耗时6秒绘一圈
     this.countTimer = setInterval(() => {
       if (this.data.count <= 60) {
@@ -118,13 +179,13 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-    var that=this
-    var toPageNo=0 
+  onLoad: function (options) {
+    var that = this
+    var toPageNo = 0
     that.setData({
       clinicId: options.clinicId,
       toPageNo: 1,
-      navtitle:options.name
+      navtitle: options.name
     })
     wx.request({
       url: app.globalData.url + '/c2/patient/items',
@@ -138,14 +199,14 @@ Page({
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
         'cookie': app.globalData.cookie
-              },
+      },
       success: function (res) {
         if (res.data.code == 0) {
-            that.setData({
-              totalCount: res.data.data.sum.totalCount,
-              clinicNumber: res.data.data.sum.totalCount
-            })
-          var totalCount= res.data.data.sum.totalCount
+          that.setData({
+            totalCount: res.data.data.sum.totalCount,
+            clinicNumber: res.data.data.sum.totalCount
+          })
+          var totalCount = res.data.data.sum.totalCount
           var list1 = that.data.list1;
           var newlist1 = list1.concat(res.data.data.items)
           if (res.data.data.items.length == 0) {
@@ -179,18 +240,19 @@ Page({
             success: function (res) {
               if (res.data.code == 0) {
                 console.log(that.data.totalCount, res.data.data.sum.totalCount)
-                var totalCount1 = parseInt(res.data.data.sum.totalCount) 
+                var totalCount1 = parseInt(res.data.data.sum.totalCount)
+                let totalCount2
                 that.setData({
                   totalCount1: res.data.data.sum.totalCount,
                   totalCount2: parseInt(that.data.totalCount) - parseInt(res.data.data.sum.totalCount)
                 })
                 console.log(totalCount1)
-                if (totalCount1==0){
-                  var time=0
-                }else{
-                  var time = (totalCount1 / totalCount) * 2
+                if (totalCount1 == 0) {
+                  var time = 0
+                } else {
+                  var time = (totalCount1 / that.data.totalCount) * 2
                 }
-                
+
                 console.log(time)
                 that.drawCircle(time)
               } else if (res.data.code == 20 || res.data.code == 26) {
@@ -219,9 +281,9 @@ Page({
       }
     })
     // that.lastPage(0,'', options.clinicId)
-  
+
   },
-  drawProgressbg: function() {
+  drawProgressbg: function () {
     // 使用 wx.createContext 获取绘图上下文 context
     var ctx = wx.createCanvasContext('canvasProgressbg')
     ctx.setLineWidth(9); // 设置圆环的宽度
@@ -233,12 +295,12 @@ Page({
     ctx.stroke(); //对当前路径进行描边
     ctx.draw();
   },
-  drawCircle: function(step) {
+  drawCircle: function (step) {
     var context = wx.createCanvasContext('canvasProgress');
     // 设置渐变
-    
+
     // var gradient = context.createLinearGradient(200, 100, 100, 200);
-    
+
     // gradient.addColorStop("0", "#2661DD");
     // gradient.addColorStop("0.5", "#40ED94");
     // gradient.addColorStop("1.0", "#5956CC");
@@ -274,29 +336,29 @@ Page({
       },
       success: function (res) {
         if (res.data.code == 0) {
-          if (status==''){
+          if (status == '') {
             that.setData({
               totalCount: res.data.data.sum.totalCount
             })
           }
-            var list1 = that.data.list1;
-            var newlist1 = list1.concat(res.data.data.items)
-            if (res.data.data.items.length == 0) {
-              that.setData({
-                list1: list1,
-                // toPageNo: String(toPageNo)
-              });
-              wx.showToast({
-                title: '数据已全部加载',
-                // icon: 'loading',
-                // duration: 1500
-              })
-            } else {
-              that.setData({
-                list1: newlist1,
-                toPageNo: String(toPageNo)
-              });
-            }
+          var list1 = that.data.list1;
+          var newlist1 = list1.concat(res.data.data.items)
+          if (res.data.data.items.length == 0) {
+            that.setData({
+              list1: list1,
+              // toPageNo: String(toPageNo)
+            });
+            wx.showToast({
+              title: '数据已全部加载',
+              // icon: 'loading',
+              // duration: 1500
+            })
+          } else {
+            that.setData({
+              list1: newlist1,
+              toPageNo: String(toPageNo)
+            });
+          }
         } else if (res.data.code == 20 || res.data.code == 26) {
           wx.hideToast()
           wx.navigateTo({
@@ -318,16 +380,16 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
-    var vm=this
+  onReady: function () {
+    var vm = this
 
     vm.drawProgressbg();
-    
+
 
     // vm.countInterval()
   },
 
-  backHistory: function(e) {
+  backHistory: function (e) {
     wx.navigateBack({
       delta: 1,
     })
@@ -336,29 +398,29 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
-    
+  onPullDownRefresh: function () {
+
     var that = this
     that.setData({
       list1: [],
@@ -379,7 +441,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
     if (app.globalData.lastClient == 1) {
       var path = '/pages/index/index'
     } else {

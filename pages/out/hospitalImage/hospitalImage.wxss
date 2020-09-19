@@ -9,7 +9,7 @@
   left: 0;
   width: 750rpx;
   height: 526rpx;
-  /* background: url('https://zaylt.njshangka.com/resource/img/BJ-blue@2x.png'); */
+  /* background: url('https://zaylt.njshangka.com/ylt/resource/img/BJ-blue@2x.png'); */
   background-size: 100% 100%;
   background: #fff;
 }

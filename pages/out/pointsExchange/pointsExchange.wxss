@@ -12,8 +12,8 @@
   left: 0;
   width: 750rpx;
   height: 392rpx;
-  background: url('https://zaylt.njshangka.com/resource/img/bg.png');
-  /* background: url('https://zaylt.njshangka.com/resource/img/bjs.png'); */
+  background: url('https://zaylt.njshangka.com/ylt/resource/img/bg.png');
+  /* background: url('https://zaylt.njshangka.com/ylt/resource/img/bjs.png'); */
   background-size: 100% 100%;
 }
 .header {

@@ -25,7 +25,7 @@ Page({
     if(e.scrollTop>0){
       this.setData({
         zindexThis:1000,
-        bgColorThis:'url(https://zaylt.njshangka.com/resource/img/bj@2x.png)',
+        bgColorThis:'url(https://zaylt.njshangka.com/ylt/resource/img/bj@2x.png)',
         bgSizeThis:'cover',
         // colorThis:'#333'
       })

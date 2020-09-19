@@ -60,7 +60,7 @@
 					<view class="title-bar" style="height:{{titleBarHeight}}px">
 						<view>
 							<view class='backHistory' bindtap="backHistory">
-								<image mode="aspectFill" class='back' style='margin-left:30rpx;border-radius:6rpx;display:inline-block' src='../img/back-white@2x.png'></image>
+								<image mode="aspectFill" class='back' style='margin-left:30rpx;border-radius:6rpx;display:inline-block' src='../img/f2.svg'></image>
 							</view>
 
 							<view class='search' style="height:{{titleBarHeight}}px;line-height:{{titleBarHeight}}px">

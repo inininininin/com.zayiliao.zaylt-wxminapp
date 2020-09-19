@@ -38,87 +38,93 @@ Page({
   },
   firstIncome(e){
     let that=this
-    that.setData({
-      showIs: false,
-      taskId:e.currentTarget.dataset.id,
-      modifytypes:1,
-      title:e.currentTarget.dataset.name,
-      showPerIs:false,
+    wx.navigateTo({
+      url: '../taskManagerSz/taskManagerSz?point='+e.currentTarget.dataset.point+'&id='+e.currentTarget.dataset.id+'&name='+e.currentTarget.dataset.name+'&intro='+e.currentTarget.dataset.intro+'&titles=设置首次任务',
     })
-    wx.request({
-      url: app.globalData.url + '/c2/task/tasks',
-      method: 'post',
-      data: {
-         hospitalId: app.globalData.hospitalId
-      },
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        'cookie': app.globalData.cookie
-      },
-      success: function (res) {
-        if (res.data.code == 0) {
-          for (var i = 0; i < res.data.data.items.length; i++) {
-            if (e.currentTarget.dataset.id == res.data.data.items[i].taskId){
-              that.setData({
-                intro: res.data.data.items[i].intro,
-                exchangePoint: res.data.data.items[i].exchangePoint,
-                exchangePointUpperPerDay: res.data.data.items[i].exchangePointUpperPerDay,
-              })
-            }
-          }
-        } else if (res.data.code == 20) {
-          wx.navigateTo({
-            url: '../../login/login',
-          })
-        } else {
-          wx.showToast({
-            title: res.data.codeMsg
-          })
-        }
-      }
-    })
+    // that.setData({
+    //   showIs: false,
+    //   taskId:e.currentTarget.dataset.id,
+    //   modifytypes:1,
+    //   title:e.currentTarget.dataset.name,
+    //   showPerIs:false,
+    // })
+    // wx.request({
+    //   url: app.globalData.url + '/c2/task/tasks',
+    //   method: 'post',
+    //   data: {
+    //      hospitalId: app.globalData.hospitalId
+    //   },
+    //   header: {
+    //     "Content-Type": "application/x-www-form-urlencoded",
+    //     'cookie': app.globalData.cookie
+    //   },
+    //   success: function (res) {
+    //     if (res.data.code == 0) {
+    //       for (var i = 0; i < res.data.data.items.length; i++) {
+    //         if (e.currentTarget.dataset.id == res.data.data.items[i].taskId){
+    //           that.setData({
+    //             intro: res.data.data.items[i].intro,
+    //             exchangePoint: res.data.data.items[i].exchangePoint,
+    //             exchangePointUpperPerDay: res.data.data.items[i].exchangePointUpperPerDay,
+    //           })
+    //         }
+    //       }
+    //     } else if (res.data.code == 20) {
+    //       wx.navigateTo({
+    //         url: '../../login/login',
+    //       })
+    //     } else {
+    //       wx.showToast({
+    //         title: res.data.codeMsg
+    //       })
+    //     }
+    //   }
+    // })
   },
   secondIncome(e) {
     let that = this
-    that.setData({
-      showIs: false,
-      taskId: e.currentTarget.dataset.id,
-      modifytypes:2,
-      title: e.currentTarget.dataset.name,
-      showPerIs:true,
+    wx.navigateTo({
+      url: '../taskManagerSz/taskManagerSz?point='+e.currentTarget.dataset.point+'&id='+e.currentTarget.dataset.id+'&name='+e.currentTarget.dataset.name+'&intro='+e.currentTarget.dataset.intro+'&titles=设置每日任务',
     })
-    wx.request({
-      url: app.globalData.url + '/c2/task/tasks',
-      method: 'post',
-      data: {
-         hospitalId: app.globalData.hospitalId
-      },
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        'cookie': app.globalData.cookie
-      },
-      success: function (res) {
-        if (res.data.code == 0) {
-          for (var i = 0; i < res.data.data.items.length; i++) {
-            if (e.currentTarget.dataset.id == res.data.data.items[i].taskId) {
-              that.setData({
-                intro: res.data.data.items[i].intro,
-                exchangePoint: res.data.data.items[i].exchangePoint,
-                exchangePointUpperPerDay: res.data.data.items[i].exchangePointUpperPerDay,
-              })
-            }
-          }
-        } else if (res.data.code == 20) {
-          wx.navigateTo({
-            url: '../../login/login',
-          })
-        } else {
-          wx.showToast({
-            title: res.data.codeMsg
-          })
-        }
-      }
-    })
+    // that.setData({
+    //   showIs: false,
+    //   taskId: e.currentTarget.dataset.id,
+    //   modifytypes:2,
+    //   title: e.currentTarget.dataset.name,
+    //   showPerIs:true,
+    // })
+    // wx.request({
+    //   url: app.globalData.url + '/c2/task/tasks',
+    //   method: 'post',
+    //   data: {
+    //      hospitalId: app.globalData.hospitalId
+    //   },
+    //   header: {
+    //     "Content-Type": "application/x-www-form-urlencoded",
+    //     'cookie': app.globalData.cookie
+    //   },
+    //   success: function (res) {
+    //     if (res.data.code == 0) {
+    //       for (var i = 0; i < res.data.data.items.length; i++) {
+    //         if (e.currentTarget.dataset.id == res.data.data.items[i].taskId) {
+    //           that.setData({
+    //             intro: res.data.data.items[i].intro,
+    //             exchangePoint: res.data.data.items[i].exchangePoint,
+    //             exchangePointUpperPerDay: res.data.data.items[i].exchangePointUpperPerDay,
+    //           })
+    //         }
+    //       }
+    //     } else if (res.data.code == 20) {
+    //       wx.navigateTo({
+    //         url: '../../login/login',
+    //       })
+    //     } else {
+    //       wx.showToast({
+    //         title: res.data.codeMsg
+    //       })
+    //     }
+    //   }
+    // })
   },
   saveBack(e){
     let that=this
@@ -211,61 +217,7 @@ Page({
       }
     })
   }, 
-  modify(modifytypes){
-    let that=this
-    if (modifytypes==1){
-      var params = ''
-    }else{
-      var params = '?exchangePointUpperPerDay=' + that.data.exchangePointUpperPerDay
-    }
-    wx.request({
-      url: app.globalData.url + '/c2/task/taskalter' + params,
-      method: 'post',
-      data: {
-         hospitalId: app.globalData.hospitalId,
-        taskId: that.data.taskId,
-        intro: that.data.intro,
-        exchangePoint: that.data.exchangePoint,
-      },
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        'cookie': app.globalData.cookie
-      },
-      success: function (res) {
-        if (res.data.code == 0) {
-          if (modifytypes == 1) {
-            for (var i in that.data.list1) {
-              if (that.data.taskId == that.data.list1[i].taskId) {
-                that.data.list1[i].exchangePoint = that.data.exchangePoint
-                that.data.list1[i].exchangePointUpperPerDay = that.data.exchangePointUpperPerDay
-                that.data.list1[i].intro = that.data.intro
-              }
-            }
-          } else {
-            for (var i in that.data.list2) {
-              if (that.data.taskId == that.data.list2[i].taskId) {
-                that.data.list1[i].exchangePoint = that.data.exchangePoint
-                that.data.list1[i].exchangePointUpperPerDay = that.data.exchangePointUpperPerDay
-                that.data.list1[i].intro = that.data.intro
-              }
-            }
-          }
-          that.setData({
-            list1: that.data.list1,
-            list2: that.data.list2,
-          })
-        } else if (res.data.code == 20) {
-          wx.navigateTo({
-            url: '../../login/login',
-          })
-        } else {
-          wx.showToast({
-            title: res.data.codeMsg
-          })
-        }
-      }
-    })
-  },
+  
   refuse(id,type) {
     let that=this
     wx.request({
@@ -355,7 +307,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    
+  },
+  backHistory: function (e) {
+    wx.navigateBack({
+
+    })
+  },
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     let that = this
+    that.setData({
+      list1: [],
+      list2: []
+    })
+    
     wx.request({
       url: app.globalData.url + '/c2/task/tasks',
       method: 'post',
@@ -399,24 +374,6 @@ Page({
         }
       }
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
-  },
-  backHistory: function (e) {
-    wx.navigateBack({
-
-    })
-  },
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
   },
 
   /**

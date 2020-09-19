@@ -16,8 +16,8 @@ Page({
     schemeList: [],
     cover: [],
     zindexThis: 1000,
-    // bgColorThis: 'url(https://zaylt.njshangka.com/resource/img/bj@2x.png)',
-    // bgColorThisEve:'url(https://zaylt.njshangka.com/resource/img/88-1@2x.png)',
+    // bgColorThis: 'url(https://zaylt.njshangka.com/ylt/resource/img/bj@2x.png)',
+    // bgColorThisEve:'url(https://zaylt.njshangka.com/ylt/resource/img/88-1@2x.png)',
     bgSizeThis: 'cover',
     colorThis: '#fff',
   },
@@ -27,14 +27,14 @@ Page({
     if (e.scrollTop > 0) {
       this.setData({
         zindexThis: 1000,
-        bgColorThis: 'url(https://zaylt.njshangka.com/resource/img/bj@2x.png)',
+        bgColorThis: 'url(https://zaylt.njshangka.com/ylt/resource/img/bj@2x.png)',
         bgSizeThis: 'cover',
         // colorThis:'#333'
       })
     } else {
       this.setData({
         zindexThis: 1000,
-        bgColorThis: 'url(https://zaylt.njshangka.com/resource/img/bj@2x.png)',
+        bgColorThis: 'url(https://zaylt.njshangka.com/ylt/resource/img/bj@2x.png)',
         bgSizeThis: 'cover',
         // colorThis:'#fff'
       })

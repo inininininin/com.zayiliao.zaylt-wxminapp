@@ -3,7 +3,7 @@
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
       <view>
-        <image  mode="aspectFill"  class="image" bindtap='backHistory' style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;' src='../img/backArrow.png'></image>
+        <image  mode="aspectFill"  class="image" bindtap='backHistory' style='display:inline-block;left:10rpx;' src='../img//f1.svg'></image>
         <view class="save">
           <!-- <text>保存</text> -->
           <image  mode="aspectFill"  bindtap="edit" src="../img/Preview.png"></image>

@@ -101,7 +101,8 @@
     "pages/loginClinic/loginClinic",
     "pages/loginManage/loginManage",
     "pages/out/expertDetails/expertDetails",
-    "pages/cropper/cropper"
+    "pages/cropper/cropper",
+    "pages/taskManagerSz/taskManagerSz"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -90,7 +90,7 @@ color:rgba(51,51,51,1);
 .clinicPatient>view:nth-child(1){
   width: 280rpx;
   height: 130rpx;
-  background: url('https://zaylt.njshangka.com/resource/img/qdmz.png') no-repeat;
+  background: url('https://zaylt.njshangka.com/ylt/resource/img/qdmz.png') no-repeat;
   background-size: cover;
   display: inline-block;
   margin: 0 32rpx 0 32rpx;
@@ -106,7 +106,7 @@ color:rgba(51,51,51,1);
 .clinicPatient>view:nth-child(2){
   width: 280rpx;
   height: 130rpx;
-  background: url('https://zaylt.njshangka.com/resource/img/bygl.png') no-repeat;
+  background: url('https://zaylt.njshangka.com/ylt/resource/img/bygl.png') no-repeat;
   background-size: cover;
   display: inline-block;
   font-size: 36rpx;

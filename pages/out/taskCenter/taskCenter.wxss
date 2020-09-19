@@ -39,7 +39,7 @@ page {
   height: 350rpx;
   background: #fff;
   
-  /* background: url('https://zaylt.njshangka.com/resource/img/bj1.png'); */
+  /* background: url('https://zaylt.njshangka.com/ylt/resource/img/bj1.png'); */
   background-size: 100% 100%;
 }
 

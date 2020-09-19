@@ -7,13 +7,13 @@ page {
 .container {
   box-sizing: border-box;
   height: 493rpx;
-  background: url(https://zaylt.njshangka.com/resource/img/bg11.png) no-repeat;
+  background: url(https://zaylt.njshangka.com/ylt/resource/img/bg11.png) no-repeat;
   background-size: cover;
 }
 .containers{
   box-sizing: border-box;
   height: 493rpx;
-  background: url(https://zaylt.njshangka.com/resource/img/bg22.png) no-repeat;
+  background: url(https://zaylt.njshangka.com/ylt/resource/img/bg22.png) no-repeat;
   background-size: cover;
 }
 .header {

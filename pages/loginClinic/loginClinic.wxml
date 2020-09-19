@@ -1,6 +1,6 @@
 <view wx:if='{{loginChange}}'>
   <!-- <view class="top1">
-    <image  mode="aspectFill"  src="https://zaylt.njshangka.com/resource/img/name@2x.png"></image>
+    <image  mode="aspectFill"  src="https://zaylt.njshangka.com/ylt/resource/img/name@2x.png"></image>
     <view class="navbar">
       <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}} </view>
     </view>

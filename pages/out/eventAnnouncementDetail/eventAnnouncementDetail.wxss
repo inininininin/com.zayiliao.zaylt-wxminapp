@@ -31,7 +31,7 @@
 .activity{
   width: 188rpx;
   height: 50rpx;
-  background: url('https://zaylt.njshangka.com/resource/img/biankuang@2x.png');
+  background: url('https://zaylt.njshangka.com/ylt/resource/img/biankuang@2x.png');
   background-size: 100% 100%;
   margin: 0 auto;
   font-size: 24rpx;

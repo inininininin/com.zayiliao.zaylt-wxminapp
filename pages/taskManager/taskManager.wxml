@@ -1,7 +1,7 @@
-<view wx:if='{{showIs}}'>
+<!-- <view wx:if='{{showIs}}'> -->
 
 	<!-- <view class="container" style="height:{{157+statusBarHeight}}px;padding-top:{{statusBarHeight+titleBarHeight}}px"> -->
-		<view class='indexTopBg' style='height:{{157+statusBarHeight}}px'>
+		<view class='indexTopBg'>
 			<!-- <view class="header">
 				<view class="status-bar" style="height:{{statusBarHeight}}px"></view>
 				<view class="title-bar" style="height:{{titleBarHeight}}px">
@@ -19,7 +19,7 @@
 		<text class='incomeTitle'>首次收益</text>
 	</view>
 	<view class='firstTimeIncome'>
-		<view wx:for='{{list1}}' bindtap="firstIncome" data-id='{{item.taskId}}' data-name='{{item.name}}'>
+		<view wx:for='{{list1}}' bindtap="firstIncome" data-id='{{item.taskId}}' data-name='{{item.name}}' data-intro='{{item.intro}}' data-point='{{item.exchangePoint}}'>
 			<image mode="aspectFill" catchtap="selectThis" data-id='{{item.taskId}}' data-issueis='{{item.issueIs}}' class="sel" wx:if='{{item.issueIs==1}}' src="../img/Select@2x.png"></image>
 			<image mode="aspectFill" catchtap="selectThis" data-id='{{item.taskId}}' data-issueis='{{item.issueIs}}' class="sel" wx:if='{{item.issueIs==0}}' src="../img/Not_selected@2x.png"></image>
 			<text>{{item.name||''}}</text>
@@ -30,7 +30,7 @@
 		<text class='incomeTitle'>每日收益</text>
 	</view>
 	<view class='firstTimeIncome'>
-		<view wx:for='{{list2}}' wx:if='{{item.taskId!=9}}' bindtap="secondIncome" data-id='{{item.taskId}}' data-name='{{item.name}}'>
+		<view wx:for='{{list2}}' wx:if='{{item.taskId!=9}}' bindtap="secondIncome" data-id='{{item.taskId}}' data-name='{{item.name}}'  data-intro='{{item.intro}}' data-point='{{item.exchangePoint}}'>
 			<image mode="aspectFill" catchtap="selectThis1" data-id='{{item.taskId}}' data-issueis='{{item.issueIs}}' class="sel" wx:if='{{item.issueIs==1}}' src="../img/Select@2x.png"></image>
 			<image mode="aspectFill" catchtap="selectThis1" data-id='{{item.taskId}}' data-issueis='{{item.issueIs}}' class="sel" wx:if='{{item.issueIs==0}}' src="../img/Not_selected@2x.png"></image>
 			<text>{{item.name||''}}</text>
@@ -39,8 +39,8 @@
 	</view>
 
 
-</view>
-
+<!-- </view> -->
+<!-- 
 <view wx:if='{{!showIs}}'>
 	<view class="container" style="height:{{statusBarHeight}}px;width:100%;padding-top:{{statusBarHeight+titleBarHeight}}px">
 		<view class="header">
@@ -75,4 +75,4 @@
 			<input placeholder-class="inputPla" bindinput="exchangePointUpperPerDay" value="{{exchangePointUpperPerDay}}"></input>
 		</view>
 	</view>
-</view>
+</view> -->

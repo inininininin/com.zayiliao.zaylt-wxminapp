@@ -9,7 +9,7 @@ Page({
     navtitle: '活动列表',
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
-    picBlob: ['https://zaylt.njshangka.com/resource/img/BJ-blue@2x.png', 'https://zaylt.njshangka.com/resource/img/BJ-blue@2x.png', 'https://zaylt.njshangka.com/resource/img/BJ-blue@2x.png'],
+    picBlob: ['https://zaylt.njshangka.com/ylt/resource/img/BJ-blue@2x.png', 'https://zaylt.njshangka.com/ylt/resource/img/BJ-blue@2x.png', 'https://zaylt.njshangka.com/ylt/resource/img/BJ-blue@2x.png'],
     schemeList:[],
   },
   lastPage: function (toPageNo) {

@@ -1,1 +1,6 @@
-{}
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "检测盒详情",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#ffffff"
+}
