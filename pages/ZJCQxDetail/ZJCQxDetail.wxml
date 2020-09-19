@@ -13,7 +13,7 @@
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
       <view>
-        <image  mode="aspectFill"  bindtap='backHistory' style='margin-left:30rpx;border-radius:6rpx;display:inline-block' src='../img/black-backnew.png'></image>
+        <image  mode="aspectFill"  bindtap='backHistory' style='margin-left:30rpx;border-radius:6rpx;display:inline-block' src='../img/f1.svg'></image>
         <text>{{navtitle}}</text>
       </view>
     </view>
@@ -40,7 +40,7 @@
 </view>
 <view class='popwindow' wx:if='{{pop==1}}'>
   <view class='topView'>
-    <image  mode="aspectFill"  src='https://www.njshangka.com/oss/zaylt/20181212151130574920504.png'></image>
+    <image  mode="aspectFill"  src='{{qxData.cover}}'></image>
     <view>
       <text class='poptitle'>{{qxData.name}}</text>
       <text class='popdetail'>{{qxData.brief}}</text>

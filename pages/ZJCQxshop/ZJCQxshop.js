@@ -85,7 +85,8 @@ Page({
               if (res.data.code == 0) {
                 for (var i = 0; i < res.data.data.items.length; i++) {
                   if (res.data.data.items[i].cover.slice(0, 1) != 'h') {
-                    res.data.data.items[i].cover = app.globalData.url + res.data.data.items[i].cover
+                    // res.data.data.items[i].cover = app.globalData.url + res.data.data.items[i].cover
+                    res.data.data.items[i].cover=app.cover(res.data.data.items[i].cover)
                   }
                 }
                 that.setData({
@@ -177,8 +178,8 @@ Page({
         if (res.data.code == 0) {
           for (var i = 0; i < res.data.data.ads.length; i++) {
             if (res.data.data.ads[i].cover.slice(0, 1) != 'h') {
-              res.data.data.ads[i].cover = app.globalData.url + res.data.data.ads[i].cover
-              
+              // res.data.data.ads[i].cover = app.globalData.url + res.data.data.ads[i].cover
+              res.data.data.ads[i].cover=app.cover(res.data.data.ads[i].cover)
             }
           }
           that.setData({
@@ -233,7 +234,8 @@ Page({
         if (res.data.code == 0) {
           for (var i = 0; i < res.data.data.items.length;i++){
             if (res.data.data.items[i].cover.slice(0,1)!='h'){
-              res.data.data.items[i].cover = app.globalData.url+res.data.data.items[i].cover
+              // res.data.data.items[i].cover = app.globalData.url+res.data.data.items[i].cover
+              res.data.data.items[i].cover=app.cover(res.data.data.items[i].cover)
             }
           }
           that.setData({

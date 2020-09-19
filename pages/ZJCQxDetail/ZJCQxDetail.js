@@ -218,11 +218,19 @@ Page({
         if (res.data.code == 0) {
           var detailBdId = res.data.data.detailBdId
           res.data.data.count = count
-          var picBlob = res.data.data.leadPics.split(',')
-          for (var i = 0; i < picBlob.length;i++){
-            if (picBlob[i].slice(0,1)!='h'){
-              picBlob[i] = app.globalData.url + picBlob[i]
-            }           
+          if(res.data.data.leadPics&&res.data.data.leadPics.split(',')){
+            var picBlob = res.data.data.leadPics.split(',')
+            for (var i = 0; i < picBlob.length;i++){
+              if (picBlob[i].slice(0,1)!='h'){
+                // picBlob[i] = app.globalData.url + picBlob[i]
+                picBlob[i]=app.cover( picBlob[i])
+              }           
+            }
+          }else{
+            var picBlob =[]
+          }
+          if(res.data.data.cover){
+            res.data.data.cover=app.cover( res.data.data.cover)
           }
           that.setData({
             qxData: res.data.data,
@@ -230,9 +238,8 @@ Page({
             movies: picBlob,
             totalCountInShoppingcart: res.data.data.totalCountInShoppingcart
           })
-        
           wx.request({
-            url: app.globalData.url + '/other/bigtxt/' + detailBdId + '/' + detailBdId,
+            url:detailBdId,// app.globalData.url + '/other/bigtxt/' + detailBdId + '/' + detailBdId,
             header: {
               "Content-Type": "application/x-www-form-urlencoded",
               'cookie': app.globalData.cookie

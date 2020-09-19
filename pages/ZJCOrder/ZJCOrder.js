@@ -243,9 +243,10 @@ Page({
         wx.hideToast()
         if (res.data.code == 0) {
           for(var i=0;i<res.data.data.items.length;i++){
-            if (res.data.data.items[i].deviceCover.slice(0,1)!='h'){
-              res.data.data.items[i].deviceCover = app.globalData.url+res.data.data.items[i].deviceCover
-            }
+            // if (res.data.data.items[i].deviceCover.slice(0,1)!='h'){
+            //   res.data.data.items[i].deviceCover = app.globalData.url+res.data.data.items[i].deviceCover
+            // }
+            res.data.data.items[i].deviceCover=app.cover(res.data.data.items[i].deviceCover)
           }
           that.setData({
             showList: res.data.data.items,

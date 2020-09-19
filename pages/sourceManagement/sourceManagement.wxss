@@ -561,8 +561,8 @@ page {
 }
 
 .back {
-  width: 18rpx;
-  height: 30rpx;
+  width: 24rpx;
+  height: 40rpx;
 }
 
 

@@ -596,7 +596,7 @@ Page({
         // }
         // res.data.data.hospitalAdminIs = "1";
         // res.data.data.clinicIs = "1";
-        let _num = parseInt(res.data.data.hospitalIs)+parseInt(res.data.data.clinicIs)+parseInt(res.data.data.hospitalOperateIs)+parseInt(res.data.data.hospitalAdminIs)
+        let _num = parseInt(res.data.data.hospitalIs)+parseInt(res.data.data.clinicIs)+parseInt(res.data.data.hospitalOperateIs)+parseInt(res.data.data.operateIs)
         if(_num>1){
           wx.navigateTo({ url: '../selectRole/selectRole'})
           return ''
@@ -616,7 +616,7 @@ Page({
           wx.navigateTo({url: '../promoter/index/index',})
           return ''
         }
-        if(res.data.data.hospitalAdminIs){
+        if(res.data.data.operateIs){
           // 运营端
           wx.navigateTo({url: '../manage/index/index',})
           return ''

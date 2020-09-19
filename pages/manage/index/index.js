@@ -250,9 +250,11 @@ Page({
             if (res.data.data.items[i].cover == null|| res.data.data.items[i].cover == '' || res.data.data.items[i].cover ==undefined){
               res.data.data.items[i].cover ='../../img/logo@2x.png'
             }else{
-              if (res.data.data.items[i].cover&&res.data.data.items[i].cover.slice(0, 1) != 'h') {
-                res.data.data.items[i].cover = app.globalData.url + res.data.data.items[i].cover
-              }
+              res.data.data.items[i].cover =app.cover(res.data.data.items[i].cover )
+              // if (res.data.data.items[i].cover&&res.data.data.items[i].cover.slice(0, 1) != 'h') {
+              //   res.data.data.items[i].cover = app.globalData.url + res.data.data.items[i].cover
+                
+              // }
             }
             
           }

@@ -1,7 +1,7 @@
 <!--pages/out/newsDetail/newsDetail.wxml-->
-<view>
+<!-- <view>
   <include src="../../common/common" />
-</view>
+</view> -->
 <view class='topView'>
 <image  mode="aspectFill"  class='topImg' src='{{list.cover}}'></image>
 <text class='toptext'>{{list.addTime}}</text>

@@ -2,7 +2,7 @@
   <view class="header">
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
-      <image  mode="aspectFill"  bindtap='backHistory' class="backHistory" style='margin-left:10rpx;padding: 20rpx 20rpx;border-radius:6rpx;display:inline-block' src='../img/backArrow.png'></image>
+      <image  mode="aspectFill"  bindtap='backHistory' class="backHistory" style='margin-left:10rpx;padding: 20rpx 20rpx;border-radius:6rpx;display:inline-block' src='../img/f1.svg'></image>
       <view class='search'>
         <image  mode="aspectFill"  style='display:inline-block;top:{{15+statusBarHeight}}px;left:95rpx;width:31rpx;' src='../img/sousuo@2x.png'></image>
         <input bindinput='input' placeholder-style='color:#999' placeholder='搜索器械名'></input>
