@@ -5,7 +5,7 @@
 			<view class="title-bar" style="height:{{titleBarHeight}}px">
 				<view>
 					<view bindtap='backHistory' class='backHis'>
-						<image mode="aspectFill" style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../img/shape@2x.png'></image>
+						<image mode="aspectFill" style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../img/f1.svg'></image>
 					</view>
 					<image mode="aspectFill" class="search" catchtap="search" src="../img/search1.png"></image>
 					<text class='titleText'>{{navtitle}}</text>

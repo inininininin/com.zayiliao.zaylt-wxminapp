@@ -88,6 +88,7 @@ Page({
       schemeList: [],
       kw: val
     }) 
+    that.lastpageNo(val)
     that.lastPage(0, val)
   },
   /**
@@ -106,6 +107,33 @@ Page({
    */
   onShow: function () {
 
+  },
+  lastpageNo(kw){
+    wx.request({
+      url: app.globalData.url + '/hospital/admin/hospital-clinics-sum',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        'cookie': app.globalData.cookie
+      },
+      data: {
+        kw: kw,
+        //  hospitalUserId: options.id
+      },
+      method: 'get',
+      success: function (res) {
+        wx.hideToast()
+        if (res.data.code == 0) {
+          that.setData({
+            clinicNumber: res.data.data.rowCount,
+          })
+        } else {
+          wx.showModal({
+            showCancel: false,
+            title: res.data.codeMsg
+          })
+        }
+      }
+    });
   },
   lastPage: function (toPageNo, kw) {
     var that = this
@@ -186,6 +214,7 @@ Page({
     that.setData({
       schemeList: [],
     })
+    that.lastpageNo(that.data.kw)
     that.lastPage(0, that.data.kw)
     wx.stopPullDownRefresh()
   },
