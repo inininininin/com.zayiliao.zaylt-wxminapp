@@ -10,20 +10,20 @@ Page({
     navtitle: '',
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
-    dataList:[],
-    swiperCurrent:0,
-    items:[],
+    dataList: [],
+    swiperCurrent: 0,
+    items: [],
     indicatorDots: true,
     vertical: false,
     autoplay: false,
     interval: 2000,
     duration: 500,
-    dateItems:{},
-	myVideoSrcIs:false,
+    dateItems: {},
+    myVideoSrcIs: false,
   },
-  swiperChange(e){
-    for (var i in this.data.dataList){
-      if (e.detail.current==i){
+  swiperChange(e) {
+    for (var i in this.data.dataList) {
+      if (e.detail.current == i) {
         var navtitle = this.data.dataList[i].year
       }
     }
@@ -31,52 +31,54 @@ Page({
       swiperCurrent: e.detail.current,
       navtitle: navtitle,
     })
+    // console.log(1)
     wx.setNavigationBarTitle({
-      title: navtitle,
+      title: ''+this.data.navtitle,
     })
   },
- 
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+   
     var dataList = this.data.dataList
     var timestamp = Date.parse(new Date());
     var date = new Date(timestamp);
     var thisYear = date.getFullYear();
     var thisMonth = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
-    for (var i = 24168; i < 24420;i=i+6){
-      var monthes = i % 12+1
-      var number = (i - 24168)/6
-      if ((i % 12)<=5){
-        var month=[]
-        for(var r=1;r<7;r++){
-          if (r == thisMonth && thisYear == parseInt(i / 12)){
-            month.push({ 'month': r, 'active': 'active' })
-            this.setData({
-              navtitle: thisYear,
-              swiperCurrent: number
-            })
-            wx.setNavigationBarTitle({
-              title: thisYear,
-            })
-          }else{
-            month.push({ 'month': r, 'active': 'noactive' })
-          }
-        }
-        dataList.push({ 'year': parseInt(i / 12), 'month': month})
-      }else{
+    console.log(thisYear)
+   
+    for (var i = 24168; i < 24420; i = i + 6) {
+      var monthes = i % 12 + 1
+      var number = (i - 24168) / 6
+
+      if ((i % 12) <= 5) {
         var month = []
-        for (var r= 7; r < 13; r++) {
+        for (var r = 1; r < 7; r++) {
           if (r == thisMonth && thisYear == parseInt(i / 12)) {
             month.push({ 'month': r, 'active': 'active' })
             this.setData({
               navtitle: thisYear,
               swiperCurrent: number
             })
-            wx.setNavigationBarTitle({
-              title: thisYear,
+            console.log(thisYear)
+
+          } else {
+            month.push({ 'month': r, 'active': 'noactive' })
+          }
+        }
+        dataList.push({ 'year': parseInt(i / 12), 'month': month })
+      } else {
+        var month = []
+        for (var r = 7; r < 13; r++) {
+          if (r == thisMonth && thisYear == parseInt(i / 12)) {
+            month.push({ 'month': r, 'active': 'active' })
+            this.setData({
+              navtitle: thisYear,
+              swiperCurrent: number
             })
+
           } else {
             month.push({ 'month': r, 'active': 'noactive' })
           }
@@ -89,25 +91,27 @@ Page({
       dataList: dataList,
       navtitle: thisYear,
     })
+    console.log(this.data.navtitle)
+    // debugger
     wx.setNavigationBarTitle({
-      title: thisYear,
+      title: ''+this.data.navtitle,
     })
     var addTimeFrom = Date.parse(new Date(thisYear + '/' + thisMonth + '/01 00:00:00'))
-    var addTimeTo = Date.parse(new Date(thisYear + '/' + (parseInt(thisMonth) + 1) + '/01 00:00:00'))-1
-	console.log(addTimeFrom)
-	this.setData({
-		addTimeFrom:addTimeFrom,
-		addTimeTo:addTimeTo
-	})
+    var addTimeTo = Date.parse(new Date(thisYear + '/' + (parseInt(thisMonth) + 1) + '/01 00:00:00')) - 1
+    console.log(addTimeFrom)
+    this.setData({
+      addTimeFrom: addTimeFrom,
+      addTimeTo: addTimeTo
+    })
     this.lastPage(0, addTimeFrom, addTimeTo)
   },
-  year(e){
-    var year=''
+  year(e) {
+    var year = ''
     this.setData({
       dateItems: {},
     })
-    for (var i in this.data.dataList){
-      if (this.data.dataList[i].year == e.currentTarget.dataset.year ){       
+    for (var i in this.data.dataList) {
+      if (this.data.dataList[i].year == e.currentTarget.dataset.year) {
         var months = this.data.dataList[i].month
         for (var r in months) {
           if (months[r].month == e.currentTarget.dataset.month) {
@@ -115,8 +119,8 @@ Page({
           } else {
             months[r].active = 'noactive'
           }
-        }       
-      }else{
+        }
+      } else {
         var months = this.data.dataList[i].month
         for (var r in months) {
           months[r].active = 'noactive'
@@ -124,7 +128,7 @@ Page({
       }
     }
     var addTimeFrom = Date.parse(new Date(e.currentTarget.dataset.year + '/' + e.currentTarget.dataset.month + '/01 00:00:00'))
-    var addTimeTo = Date.parse(new Date(e.currentTarget.dataset.year + '/' + (parseInt(e.currentTarget.dataset.month) + 1) + '/01 00:00:00'))-1
+    var addTimeTo = Date.parse(new Date(e.currentTarget.dataset.year + '/' + (parseInt(e.currentTarget.dataset.month) + 1) + '/01 00:00:00')) - 1
     this.setData({
       addTimeFrom: addTimeFrom,
       addTimeTo: addTimeTo,
@@ -156,7 +160,7 @@ Page({
           var items = that.data.items;
           var newlist = items.concat(res.data.data.rows)
           var addTime
-          var arr=[];
+          var arr = [];
           var dateItems = that.data.dateItems
           for (var i in res.data.data.rows) {
             addTime = res.data.data.rows[i].addTime
@@ -164,14 +168,14 @@ Page({
             res.data.data.rows[i].time = utils.formatTime(addTime / 1000, 'h:m');
             var date = res.data.data.rows[i].addTime
             if (!dateItems[date])
-              dateItems[date]=[];
+              dateItems[date] = [];
             dateItems[date].push(res.data.data.rows[i])
-          }        
-         that.setData({
-           items: newlist,
-           dateItems: dateItems
-         })
-    
+          }
+          that.setData({
+            items: newlist,
+            dateItems: dateItems
+          })
+
           if (res.data.data.rows.length == 0) {
             that.setData({
               items: items,
@@ -201,7 +205,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
   backHistory: function (e) {
     wx.navigateBack({
