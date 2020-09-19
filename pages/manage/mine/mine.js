@@ -12,6 +12,7 @@ Page({
     headimg:'../../img/touxiang@2x.png'
   },
   bindWxmApp(e){
+    let that=this
     wx.login({
       complete: (res) => {
         wx.request({

@@ -91,10 +91,12 @@ Page({
         if (res.data.code == 0) {
 
           if (res.data.data.cover != '' && res.data.data.cover != null && res.data.data.cover != undefined && res.data.data.cover.slice(0, 1) != 'h') {
-            res.data.data.cover = app.globalData.url + res.data.data.cover;
+            // res.data.data.cover = app.globalData.url + res.data.data.cover;
+            res.data.data.cover=app.cover(res.data.data.cover)
           }
           if (res.data.data.hospitalCover != '' && res.data.data.hospitalCover != null && res.data.data.hospitalCover != undefined && res.data.data.hospitalCover.slice(0, 1) != 'h') {
-            res.data.data.hospitalCover = app.globalData.url + res.data.data.hospitalCover;
+            // res.data.data.hospitalCover = app.globalData.url + res.data.data.hospitalCover;
+            res.data.data.hospitalCover=app.cover(res.data.data.hospitalCover)
           }
           res.data.data.addTime = utils.formatTime(res.data.data.addTime / 1000, 'Y-M-D h:m');
           that.setData({
@@ -105,7 +107,7 @@ Page({
           var contentBtId = res.data.data.contentBtId
 
           wx.request({
-            url: app.globalData.url + '/other/bigtxt/' + contentBtId + '/' + contentBtId,
+            url: contentBtId,
             method: 'get',
             data: {
               itemId: id,

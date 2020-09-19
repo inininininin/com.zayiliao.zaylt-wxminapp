@@ -249,7 +249,7 @@ Page({
               // content: res.data.data.content,
             })
             wx.request({
-              url: app.globalData.domain + contentBtId,//'/other/bigtxt/' + contentBtId + '/' + contentBtId,
+              url:  contentBtId,//'/other/bigtxt/' + contentBtId + '/' + contentBtId,
               method: 'get',
               header: {
                 "Content-Type": "application/x-www-form-urlencoded",

@@ -273,6 +273,7 @@ Page({
     var that = this
     that.setData({
       hospitalSchemeList: [],
+      schemeList:[],
     })
     that.lastPage(0,'')
     wx.stopPullDownRefresh()

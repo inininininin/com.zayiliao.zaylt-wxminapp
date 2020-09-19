@@ -66,7 +66,7 @@ Page({
           });
           var contentBtId = res.data.data.contentBtId
           wx.request({
-            url: app.globalData.url + '/other/bigtxt/' + contentBtId + '/' + contentBtId,
+            url:contentBtId,
             method: 'post',
             data: {
                itemId: id,

@@ -14,6 +14,7 @@ Page({
     srcCover: '../../img/logo@2x.png'
   },
   bindWxmApp(e){
+    let that=this
     wx.login({
       complete: (res) => {
         wx.request({

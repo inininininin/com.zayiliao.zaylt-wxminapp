@@ -62,7 +62,7 @@ page {
   width: 370rpx !important;
   /* padding-left: 30rpx; */
   margin-left: 90rpx;
-  height: 70rpx !important;
+  max-height: 70rpx !important;
   background: rgba(0, 0, 0, 0.05);
   border-radius: 70rpx !important;
   font-size: 30rpx;

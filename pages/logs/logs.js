@@ -20,6 +20,10 @@ Page({
   onShow: function() {
     var that = this
     var jscode;
+    wx.showToast({
+      title: '登陆中',
+      icon:'loading'
+    })
     wx.login({
       success: function(res) {
         jscode = res.code;
@@ -389,7 +393,7 @@ Page({
               app.globalData.clinicaddress = res.data.data.clinic.address;
               app.globalData.authenticationIs = res.data.data.clinic.authStatus;
               app.globalData.src=app.cover(res.data.data.clinic.license) 
-            wx.reLaunch({
+            wx.switchTab({
                 url: '../out/index/index',
               })
           }

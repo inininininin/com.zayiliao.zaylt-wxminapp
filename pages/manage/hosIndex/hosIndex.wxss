@@ -203,7 +203,7 @@ line-height:45rpx;
   position: absolute;
   left: 0;
   top: 0;
-  width: 88rpx;
+  width: 100rpx !important;
   height: 100%;
 }
 .backHistory image{
