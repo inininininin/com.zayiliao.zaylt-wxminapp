@@ -16,7 +16,7 @@
 	<swiper bindchange="swiperChange" class="swiper" current="{{swiperCurrent}}" autoplay="false" interval="2000" duration="500">
 		<block wx:for="{{cover}}">
 			<swiper-item>
-				<navigator wx:if='{{item.type==0}}' url=''>
+				<navigator wx:if='{{item.type==0}}' >
 					<!-- <image  mode="aspectFill"  src="{{item}}" class="slide-image" mode="aspectFill" /> -->
 					<view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
 				</navigator>

@@ -5,9 +5,9 @@
       <view class="title-bar" style="height:{{titleBarHeight}}px">
         <view>
           <!-- <view bindtap='backHistory' class='backHis'> -->
-          <image  mode="aspectFill"  catchtap='backHistory' style='display:inline-block;top:{{2+statusBarHeight}}px;left:10rpx;padding:20rpx;' src='../img/f1.svg'></image>
+          <image  mode="aspectFill"  catchtap='backHistory' style='display:inline-block;left:10rpx;padding:20rpx;' src='../img/f1.svg'></image>
           <!-- </view> -->
-          <!-- <image  mode="aspectFill"  catchtap="listIndex" class="listIndex" style="display:inline-block;top:{{2+statusBarHeight}}px;left:90rpx;padding:20rpx;" src="../img/liebiao.png"></image> -->
+          <!-- <image  mode="aspectFill"  catchtap="listIndex" class="listIndex" style="display:inline-block;left:90rpx;padding:20rpx;" src="../img/liebiao.png"></image> -->
           <text class='titleText'>{{navtitle}}</text>
         </view>
       </view>
@@ -45,13 +45,13 @@
       <view class="title-bar" style="height:{{titleBarHeight}}px">
         <view>
           <!-- <view bindtap='backHistory' class='backHis'> -->
-          <image  mode="aspectFill"  catchtap='backHistory2' style='display:inline-block;top:{{2+statusBarHeight}}px;left:10rpx;padding:20rpx;' src='../img/f1.svg'></image>
+          <image  mode="aspectFill"  catchtap='backHistory2' style='display:inline-block;left:10rpx;padding:20rpx;' src='../img/f1.svg'></image>
           <!-- </view> -->
           <view wx:if='{{type==1}}' catchtap='nextPage' class="nextPage">下一步</view>
           <view wx:if='{{type==2}}' catchtap='modify' class="nextPage">修改</view>
-          <!-- <image  mode="aspectFill"  catchtap="listIndex" class="listIndex" style="display:inline-block;top:{{2+statusBarHeight}}px;left:90rpx;padding:20rpx;" src="../img/liebiao.png"></image> -->
-          <text wx:if='{{type==1}}' class='titleText' style="width:366rpx;">上传信息</text>
-          <text wx:if='{{type==2}}' class='titleText' style="width:366rpx;">修改信息</text>
+          <!-- <image  mode="aspectFill"  catchtap="listIndex" class="listIndex" style="display:inline-block;left:90rpx;padding:20rpx;" src="../img/liebiao.png"></image> -->
+          <text wx:if='{{type==1}}' class='titleText' >上传信息</text>
+          <text wx:if='{{type==2}}' class='titleText' >修改信息</text>
         </view>
       </view>
     </view>
@@ -83,8 +83,8 @@
       <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
       <view class="title-bar" style="height:{{titleBarHeight}}px">
         <view>
-          <image  mode="aspectFill"  wx:if='{{imgType!=2}}'  catchtap='backHistory3' style='display:inline-block;top:{{2+statusBarHeight}}px;left:10rpx;padding:20rpx;' src='../img/f1.svg'></image>
-          <image  mode="aspectFill"  wx:if='{{imgType==2}}'  catchtap='backHistory2' style='display:inline-block;top:{{2+statusBarHeight}}px;left:10rpx;padding:20rpx;' src='../img/f1.svg'></image>
+          <image  mode="aspectFill"  wx:if='{{imgType!=2}}'  catchtap='backHistory3' style='display:inline-block;left:10rpx;padding:20rpx;' src='../img/f1.svg'></image>
+          <image  mode="aspectFill"  wx:if='{{imgType==2}}'  catchtap='backHistory2' style='display:inline-block;left:10rpx;padding:20rpx;' src='../img/f1.svg'></image>
           <view wx:if='{{imgType!=2}}'   catchtap="supply" data-color='{{color}}' style="background:{{bgColor}};color:{{color}}" class="supply">完成</view>
           <view wx:if='{{imgType==2}}' catchtap="save" class="supply">保存</view>
         </view>

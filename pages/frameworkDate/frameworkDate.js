@@ -31,6 +31,9 @@ Page({
       swiperCurrent: e.detail.current,
       navtitle: navtitle,
     })
+    wx.setNavigationBarTitle({
+      title: navtitle,
+    })
   },
  
   /**
@@ -54,6 +57,9 @@ Page({
               navtitle: thisYear,
               swiperCurrent: number
             })
+            wx.setNavigationBarTitle({
+              title: thisYear,
+            })
           }else{
             month.push({ 'month': r, 'active': 'noactive' })
           }
@@ -68,6 +74,9 @@ Page({
               navtitle: thisYear,
               swiperCurrent: number
             })
+            wx.setNavigationBarTitle({
+              title: thisYear,
+            })
           } else {
             month.push({ 'month': r, 'active': 'noactive' })
           }
@@ -79,6 +88,9 @@ Page({
     this.setData({
       dataList: dataList,
       navtitle: thisYear,
+    })
+    wx.setNavigationBarTitle({
+      title: thisYear,
     })
     var addTimeFrom = Date.parse(new Date(thisYear + '/' + thisMonth + '/01 00:00:00'))
     var addTimeTo = Date.parse(new Date(thisYear + '/' + (parseInt(thisMonth) + 1) + '/01 00:00:00'))-1

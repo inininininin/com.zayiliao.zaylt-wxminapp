@@ -32,8 +32,9 @@ page {
   margin-left: -100rpx !important;
 } */
 .header image {
+  z-index: 999;
   /* float: left; */
-  position: absolute;
+  /* position: absolute; */
   width: 24rpx;
   height: 40rpx;
 }
@@ -47,7 +48,9 @@ page {
 }
 .title-bar view text{
   display: inline-block;text-align: center;
-  width: 100%;
+  position: absolute;
+width: 100%;
+
   /* margin: 0  0 0 -100rpx!important; */
 }
 .titleText{
@@ -154,6 +157,7 @@ margin-top: 24rpx;
 }
 /* 新增 */
 .title-bar>view>view{
+  z-index: 999;
   width:112rpx;
 height:60rpx;
 background:rgba(43,119,239,1);
@@ -162,7 +166,7 @@ text-align: center;
 line-height: 60rpx;
 color: #fff;
 border: 0;
-margin-left: 80rpx;
+margin-left: 40rpx;
 font-size:26rpx;
 font-family:PingFangSC-Regular,PingFang SC;
 font-weight:400;

@@ -1,6 +1,6 @@
 <!--pages/frameworkDate/frameworkDate.wxml-->
-<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
-  <view class="header">
+<view class="container">
+  <!-- <view class="header">
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
       <view>
@@ -8,8 +8,8 @@
         <text class="text">{{navtitle}}年</text>
       </view>
     </view>
-  </view>
-  <view class="month" style="position:fixed;top:{{statusBarHeight+titleBarHeight}}px;left:0;">
+  </view> -->
+  <view class="month" style="position:fixed;top:0px;left:0;">
     <view class="swiper-container">
       <swiper bindchange="swiperChange" current="{{swiperCurrent}}" class="swiper" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
         <block wx:for="{{dataList}}" wx:key="*this">
