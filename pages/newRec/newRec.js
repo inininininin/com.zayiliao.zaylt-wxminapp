@@ -23,6 +23,7 @@ Page({
     tsNum:1,
     url:'',
     type:'',
+    showIs:true
   },
   spanish(e){
     this.setData({
@@ -32,7 +33,12 @@ Page({
   },
   save(e) {
     var that=this
-     
+     that.setData({
+      showIs:false
+     })
+     wx.showToast({
+       title: '已提交,请稍后',
+     })
     if (that.data.type==1){
       var params=''
     }else{
@@ -82,6 +88,9 @@ Page({
           wx.showToast({
             title: res.data.codeMsg,
           })
+          that.setData({
+            showIs:true
+           })
         }
       }
     })

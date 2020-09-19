@@ -109,6 +109,7 @@ Page({
 
   },
   lastpageNo(kw){
+    let that=this
     wx.request({
       url: app.globalData.url + '/hospital/admin/hospital-clinics-sum',
       header: {

@@ -33,4 +33,5 @@
   <view>今日1次,今日剩余新建推送：{{tsNum}}</view>
  </view>
 
- <view bindtap='save' class='save' style='left:460rpx;'>发布</view>
+ <view wx:if='{{showIs}}' bindtap='save' class='save' style='left:460rpx;'>发布</view>
+ <view wx:if='{{!showIs}}' class='save' style='left:460rpx;'>发布</view>

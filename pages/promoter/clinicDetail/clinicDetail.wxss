@@ -31,8 +31,8 @@ page {
 .header .image {
   /* float: left; */
   position: absolute;
-  width: 18rpx;
-  height: 30rpx;
+  width: 24rpx;
+  height: 40rpx;
   z-index: 999;
   padding: 27rpx 25rpx;
 }
@@ -58,7 +58,7 @@ page {
   width: 38rpx;
   height: 40rpx;
   padding: 20rpx;
-  margin-left: 90rpx;
+  margin-left: 80rpx;
   z-index: 999;
 }
 .addPatientBox{

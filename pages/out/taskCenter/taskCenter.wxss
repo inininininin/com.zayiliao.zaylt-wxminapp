@@ -257,7 +257,7 @@ page {
   width: 20rpx;
   height: 20rpx;
   float: right;
-  margin: 33rpx 32rpx;
+  padding: 33rpx 32rpx;
 }
 
 .popindex {
@@ -283,8 +283,8 @@ page {
 height: 80rpx;
 border-radius: 40rpx;
 position: fixed;
-left: 15px;
-top: 125px;
+left: 30rpx;
+top: 250rpx;
 z-index: 100;
 background: #fff;
 text-align: center;

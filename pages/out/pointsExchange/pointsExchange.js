@@ -203,7 +203,21 @@ Page({
     })
       that.lastPage(0)
   
-
+      wx.request({
+        url: app.globalData.url + '/clientend2/clinicend/pointexchange/main',
+        method: 'post',
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          'cookie': app.globalData.cookie
+        },
+        success: function(res) {
+          if (res.data.code == 0) {
+            that.setData({
+              exchangePoint: res.data.data.exchangePoint
+            })
+          }
+        }
+      })
     wx.stopPullDownRefresh()
   },
 

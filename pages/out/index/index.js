@@ -29,24 +29,24 @@ Page({
     date2: '结束时间', //默认结束时间 
     date3: '开始时间', //默认起始时间  
     date4: '结束时间', //默认结束时间 
-    color:'#f2f2f2',
+    color: '#f2f2f2',
     color2: '#f2f2f2',
     color3: '#f2f2f2',
     color4: '#f2f2f2',
     color5: '#f2f2f2',
     color6: '#f2f2f2',
     status: '',
-    num1:'',
-    num2:'',
+    num1: '',
+    num2: '',
   },
-  slider1change(e){
-    
+  slider1change(e) {
+
   },
   bindDateChange(e) {
     let that = this;
     that.setData({
       date: e.detail.value,
-      color:'rgb(255,255,190)'
+      color: 'rgb(255,255,190)'
     })
   },
   bindDateChange2(e) {
@@ -70,8 +70,8 @@ Page({
       color4: 'rgb(255, 255, 190)'
     })
   },
-  seeAd(e){
-    let that=this
+  seeAd(e) {
+    let that = this
     that.setData({
       color5: 'rgb(255, 255, 190)',
       color6: '#f2f2f2',
@@ -86,7 +86,7 @@ Page({
       status: '4',
     })
   },
-  again(e){
+  again(e) {
     this.setData({
       color: '#f2f2f2',
       color2: '#f2f2f2',
@@ -94,24 +94,24 @@ Page({
       color4: '#f2f2f2',
       color5: '#f2f2f2',
       color6: '#f2f2f2',
-      date:'开始时间',
+      date: '开始时间',
       date2: '结束时间',
       date3: '开始时间',
       date4: '结束时间',
-      status:'',
+      status: '',
     })
   },
-  sure(e){
-      let that=this
+  sure(e) {
+    let that = this
 
-    if(that.data.status==1){
+    if (that.data.status == 1) {
       that.setData({
         currentTab: 1,
         list1: [],
         list2: [],
       })
       that.lastPage(0, 1, that.data.date, that.data.date2, that.data.date3, that.data.date4)
-    }else{
+    } else {
       that.setData({
         currentTab: 2,
         list1: [],
@@ -125,17 +125,17 @@ Page({
       // translate: '',     
     })
   },
-  search(e){
+  search(e) {
     wx.navigateTo({
       url: '../search/search',
     })
   },
   // 滑动开始
-  touchstart: function(e) {
+  touchstart: function (e) {
     start_clientX = e.changedTouches[0].clientX
   },
   // 滑动结束
-  touchend: function(e) {
+  touchend: function (e) {
     end_clientX = e.changedTouches[0].clientX;
     if (start_clientX - end_clientX > 120) {
       this.setData({
@@ -150,7 +150,7 @@ Page({
     }
   },
   // 头像
-  showview: function() {
+  showview: function () {
     this.setData({
       display: "block",
       // translate: 'transform: translateX(-590rpx);'
@@ -158,13 +158,13 @@ Page({
     })
   },
   // 遮拦
-  hideview: function() {
+  hideview: function () {
     this.setData({
       display: "none",
       // translate: '',
     })
   },
-  navbarTap: function(e) {
+  navbarTap: function (e) {
     this.setData({
       currentTab: e.currentTarget.dataset.idx,
       list1: [],
@@ -180,33 +180,33 @@ Page({
       this.lastPage(0, 4, this.data.date, this.data.date2, this.data.date3, this.data.date4)
     }
   },
-  name: function(e) {
+  name: function (e) {
     this.setData({
       name: e.detail.value
     })
   },
-  phone: function(e) {
+  phone: function (e) {
     this.setData({
       phone: e.detail.value
     })
   },
-  idCard: function(e) {
+  idCard: function (e) {
     this.setData({
       idCard: e.detail.value
     })
   },
-  remark: function(e) {
+  remark: function (e) {
     this.setData({
       remark: e.detail.value
     })
   },
-  news: function(e) {
+  news: function (e) {
     wx.navigateTo({
       url: '../news/news',
     })
   },
   // /c2/patient/itemadd
-  save: function(e) {
+  save: function (e) {
     var that = this
     wx.request({
       url: app.globalData.url + '/c2/patient/itemadd',
@@ -223,11 +223,11 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded",
         'cookie': app.globalData.cookie
       },
-      success: function(res) {
+      success: function (res) {
         if (res.data.code == 0) {
           wx.showToast({
             title: '新增成功',
-            icon:'none'
+            icon: 'none'
           })
           that.setData({
             name: '',
@@ -243,7 +243,7 @@ Page({
         } else {
           wx.showToast({
             title: res.data.codeMsg,
-            icon:'none'
+            icon: 'none'
           })
         }
       }
@@ -254,7 +254,6 @@ Page({
    */
   lastPageNum: function () {
     var that = this;
-    
     wx.request({
       url: app.globalData.url + '/c2/patient/items',
       method: 'post',
@@ -264,16 +263,17 @@ Page({
         ps: 15,
         status: 1,
         clinicId: app.globalData.clinicId,
-       },
+      },
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
         'cookie': app.globalData.cookie
       },
       success: function (res) {
         if (res.data.code == 0) {
-            that.setData({
-              num1: res.data.data.sum.totalCount,
-            })
+          that.setData({
+            num1: res.data.data.sum.totalCount,
+          })
+          console.log(that.data.num1)
           wx.request({
             url: app.globalData.url + '/c2/patient/items',
             method: 'post',
@@ -283,7 +283,7 @@ Page({
               ps: 15,
               status: 4,
               clinicId: app.globalData.clinicId,
-             },
+            },
             header: {
               "Content-Type": "application/x-www-form-urlencoded",
               'cookie': app.globalData.cookie
@@ -291,10 +291,10 @@ Page({
             success: function (res) {
               if (res.data.code == 0) {
                 that.setData({
-                  navbar: ['新病员', '未就诊(' + that.data.num1+')', '已就诊(' + res.data.data.sum.totalCount+')'],
+                  navbar: ['新病员', '未就诊(' + that.data.num1 + ')', '已就诊(' + res.data.data.sum.totalCount + ')'],
                   num2: res.data.data.sum.totalCount,
                 })
-                            } else if (res.data.code == 20 || res.data.code == 26) {
+              } else if (res.data.code == 20 || res.data.code == 26) {
                 wx.hideToast()
                 wx.navigateTo({
                   url: '../../newLogin/newLogin',
@@ -310,11 +310,8 @@ Page({
         }
       }
     })
-
-   
-
   },
-  onLoad: function(options) {
+  onLoad: function (options) {
     if (options.isShare && options.isShare == 1) {
       wx.navigateTo({
         url: '../articleDetail/articleDetail?id=' + options.shareId,
@@ -330,32 +327,32 @@ Page({
     }
   },
 
-  
+
   // 
   lastPage: function (toPageNo, status, pushTimeStart, pushTimeEnd, hospitalConfirmTimeStart, hospitalConfirmTimeEnd) {
     var that = this;
     var userToken = wx.getStorageSync("userToken")
     var pageSize = 15;
     var toPageNo = parseInt(toPageNo) + 1
-    if (pushTimeStart=='开始时间'){
-      pushTimeStart=''    
-    }else{
+    if (pushTimeStart == '开始时间') {
+      pushTimeStart = ''
+    } else {
       pushTimeStart = Date.parse(new Date(that.data.date));
     }
     if (pushTimeEnd == '结束时间') {
       pushTimeEnd = ''
     } else {
-      pushTimeEnd = Date.parse(new Date(that.data.date2)) ;
+      pushTimeEnd = Date.parse(new Date(that.data.date2));
     }
     if (hospitalConfirmTimeStart == '开始时间') {
       hospitalConfirmTimeStart = ''
     } else {
-      hospitalConfirmTimeStart = Date.parse(new Date(that.data.date3)) ;
+      hospitalConfirmTimeStart = Date.parse(new Date(that.data.date3));
     }
     if (hospitalConfirmTimeEnd == '结束时间') {
       hospitalConfirmTimeEnd = ''
     } else {
-      hospitalConfirmTimeEnd = Date.parse(new Date(that.data.date4)) ;
+      hospitalConfirmTimeEnd = Date.parse(new Date(that.data.date4));
     }
 
 
@@ -377,7 +374,7 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded",
         'cookie': app.globalData.cookie
       },
-      success: function(res) {
+      success: function (res) {
         if (res.data.code == 0) {
           if (that.data.currentTab == 1) {
             // that.setData({
@@ -392,7 +389,7 @@ Page({
               });
               wx.showToast({
                 title: '数据已全部加载',
-                icon:'none'
+                icon: 'none'
                 // icon: 'loading',
                 // duration: 1500
               })
@@ -415,7 +412,7 @@ Page({
               });
               wx.showToast({
                 title: '数据已全部加载',
-                icon:'none'
+                icon: 'none'
                 // icon: 'loading',
                 // duration: 1500
               })
@@ -457,15 +454,15 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
-    
+  onReady: function () {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function (options) {
-    this.lastPageNum();
+
     wx.request({
       url: app.globalData.url + '/login-refresh',
       header: {
@@ -474,17 +471,19 @@ Page({
       },
       method: 'post',
       success: function (res) {
-        if (res.data.code == 20 || res.data.code ==26) {
+        if (res.data.code == 20 || res.data.code == 26) {
           wx.navigateTo({
             url: '../../newLogin/newLogin',
           })
-        }else if (res.data.code == 0 ){
+        } else if (res.data.code == 0) {
+        
           app.globalData.phone = res.data.data.phone;
           app.globalData.userId = res.data.data.userId;
           app.globalData.clinicId = res.data.data.clinicId;
           app.globalData.hospitalId = res.data.data.hospitalId;
           app.globalData.hospitalName = res.data.data.hospitalName;
           app.globalData.clinicName = res.data.data.clinicName;
+          that.lastPageNum();
           // app.globalData.clinicaddress = res.data.data.clinic.address;
           // app.globalData.authenticationIs = res.data.data.clinic.authenticationIs;
           // if (res.data.data.clinic.license == '' || res.data.data.clinic.license == null || res.data.data.clinic.license == undefined) {
@@ -507,12 +506,12 @@ Page({
       })
     }
     var that = this
-   
+
     wx.request({
       url: app.globalData.url + '/clientend2/clinicend/messages',
       method: 'post',
       data: {
-         lookIs: 0,
+        lookIs: 0,
         source: '',
         pn: 1,
         ps: 30,
@@ -523,7 +522,7 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded",
         'cookie': app.globalData.cookie
       },
-      success: function(res) {
+      success: function (res) {
         if (res.data.code == 0) {
           var num = res.data.data.sum.totalItemCount
           that.setData({
@@ -543,21 +542,21 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
     var that = this
     that.setData({
       list1: [],
@@ -580,7 +579,7 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
     var that = this
     var toPageNo = that.data.toPageNo
     if (that.data.currentTab == 1) {
@@ -594,7 +593,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
     if (app.globalData.lastClient == 1) {
       var path = '/pages/index/index'
     } else {

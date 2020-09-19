@@ -661,7 +661,7 @@ Page({
    */
   onShow: function() {
     let that = this;
-    that.loginRefresh(true);
+    // that.loginRefresh(true);
   },
 
   /**
