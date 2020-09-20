@@ -94,8 +94,8 @@ Page({
           //   // res.data.data.cover = app.globalData.url + res.data.data.cover;
           //   res.data.data.cover=app.cover(res.data.data.cover)
           // }
-          res.data.data.cover=app.cover(res.data.data.cover)
-          res.data.data.hospitalCover=app.cover(res.data.data.hospitalCover)
+          res.data.data.cover = app.cover(res.data.data.cover)
+          res.data.data.hospitalCover = app.cover(res.data.data.hospitalCover)
           // if (res.data.data.hospitalCover != '' && res.data.data.hospitalCover != null && res.data.data.hospitalCover != undefined && res.data.data.hospitalCover.slice(0, 1) != 'h') {
           //   // res.data.data.hospitalCover = app.globalData.url + res.data.data.hospitalCover;
           //   res.data.data.hospitalCover=app.cover(res.data.data.hospitalCover)
@@ -107,22 +107,18 @@ Page({
           });
 
           var contentBtId = res.data.data.contentBtId
-
+          console.log(contentBtId)
           wx.request({
-            url: contentBtId,
+            url: app.globalData.domain + contentBtId,//+'.html',
             method: 'get',
-            data: {
-              itemId: id,
-            },
             header: {
               "Content-Type": "application/x-www-form-urlencoded",
               'cookie': app.globalData.cookie
             },
             success: function (res) {
               var article = res.data
-
               WxParse.wxParse('article', 'html', article, that, 5);
-
+              console.log(article)
               // that.setData({
               //   res: res.data,
               // })
@@ -203,7 +199,7 @@ Page({
         } else if (res.data.code == 20 || res.data.code == 26) {
           wx.hideToast()
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../../newLogin/newLogin',
           })
         }
       }

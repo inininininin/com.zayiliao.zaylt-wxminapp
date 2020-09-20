@@ -168,6 +168,7 @@ swiper-item>view {
   background: #fff;
   margin-top: 10rpx;
   /* position: relative; */
+  overflow-y: scroll;
 }
 
 swiper-item>view .book {
@@ -240,6 +241,4 @@ swiper-item .close {
   overflow: hidden; */
   margin-top: 46rpx;
   height: auto;
-  max-height: 290rpx;
-  overflow-y: scroll;
 }

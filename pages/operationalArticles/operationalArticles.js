@@ -13,7 +13,7 @@ Page({
     startX: 0, //开始坐标
     startY: 0
   },
-  imgItem(e){
+  imgItem(e) {
     wx.navigateTo({
       url: '../out/articleDetail/articleDetail?id=' + e.currentTarget.dataset.id + '&contentBtId=' + e.currentTarget.dataset.contentBtid,
     })
@@ -30,7 +30,7 @@ Page({
         pn: toPageNo,
         ps: pageSize,
         hospitalId: app.globalData.hospitalId,
-       },
+      },
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
         'cookie': app.globalData.cookie
@@ -59,15 +59,17 @@ Page({
         } else if (res.data.code == 20 || res.data.code == 26) {
           wx.hideToast()
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../newLogin/newLogin',
           })
         }
 
         var addTime
         for (var i = 0; i < that.data.items.length; i++) {
-          if (that.data.items[i].cover&&that.data.items[i].cover.slice(0, 1) != 'h') {
-            that.data.items[i].cover = app.globalData.url + that.data.items[i].cover
-          }
+          // if (that.data.items[i].cover&&that.data.items[i].cover.slice(0, 1) != 'h') {
+          //   that.data.items[i].cover = app.globalData.url + that.data.items[i].cover
+          // }
+          that.data.items[i].cover = app.cover(that.data.items[i].cover)
+          console.log(that.data.items[i].cover)
           addTime = that.data.items[i].addTime
           that.data.items[i].addTime = app.dateChange(addTime)
         }
@@ -136,13 +138,13 @@ Page({
   },
   //删除事件
   del: function (e) {
-    var that=this
+    var that = this
     wx.request({
       url: app.globalData.url + '/c2/article/itemdel',
       method: 'post',
       data: {
         itemId: e.currentTarget.dataset.id,
-       },
+      },
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
         'cookie': app.globalData.cookie
@@ -156,14 +158,14 @@ Page({
         }
       }
     })
-    
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
 
   },
   backHistory: function (e) {
@@ -198,7 +200,7 @@ Page({
     // that.lastPage(0)
     // wx.stopPullDownRefresh()
   },
-  sendRec(e){
+  sendRec(e) {
     wx.showToast({
       title: '请至PC端发布',
     })

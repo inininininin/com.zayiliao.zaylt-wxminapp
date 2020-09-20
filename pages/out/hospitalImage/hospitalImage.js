@@ -67,7 +67,7 @@ phone(e){
           })
         } else if (res.data.code == 20) {
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../../newLogin/newLogin',
           })
         } else {
           wx.showToast({
@@ -99,7 +99,7 @@ phone(e){
           console.log(that.data.list)
         } else if (res.data.code == 20) {
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../../newLogin/newLogin',
           })
         } else {
           wx.showToast({

@@ -35,7 +35,7 @@ Page({
       success: function (res) {
         if (res.data.code == 0) {
           wx.navigateTo({
-            url: '../login/login',
+            url: '../newLogin/newLogin',
           })
         }
       }

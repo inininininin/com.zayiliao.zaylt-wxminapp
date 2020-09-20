@@ -104,9 +104,10 @@ Page({
       success: function (res) {
         wx.hideToast()
         if (res.data.code == 0) {
-          if (res.data.data.cover.slice(0,1)!='h'){
-            res.data.data.cover = app.globalData.url + res.data.data.cover
-          }
+          // if (res.data.data.cover.slice(0,1)!='h'){
+          //   res.data.data.cover = app.globalData.url + res.data.data.cover
+          // }
+          res.data.data.cover=app.cover(res.data.data.cover)
           that.setData({
             cover: res.data.data.cover,
             name: res.data.data.name,

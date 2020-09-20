@@ -54,9 +54,10 @@ Page({
           for (var i = 0; i < res.data.data.items.length; i++) {
 
             res.data.data.items[i].addTime = utils.formatTime(res.data.data.items[i].addTime / 1000, 'Y-M-D h:m');
-            if (res.data.data.items[i].details[0].cover.slice(0, 1) != 'h') {
-              res.data.data.items[i].details[0].cover = app.globalData.url + res.data.data.items[i].details[0].cover
-            }
+            // if (res.data.data.items[i].details[0].cover.slice(0, 1) != 'h') {
+            //   res.data.data.items[i].details[0].cover = app.globalData.url + res.data.data.items[i].details[0].cover
+            // }
+            res.data.data.items[i].details[0].cover=app.cover(res.data.data.items[i].details[0].cover)
           }
             var list = that.data.list;
             var newlist = list.concat(res.data.data.items)
@@ -82,7 +83,7 @@ Page({
         else if (res.data.code == 20 || res.data.code == 26) {
           wx.hideToast()
           wx.navigateTo({
-            url: '../login/login',
+            url: '../newLogin/newLogin',
           })
         }
 

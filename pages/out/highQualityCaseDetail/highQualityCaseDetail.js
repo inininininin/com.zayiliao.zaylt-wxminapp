@@ -79,10 +79,10 @@ Page({
       },
       success: function (res) {
         if (res.data.code == 0) {
-          if (res.data.data.cover&&res.data.data.cover.slice(0, 1) != 'h') {
+          // if (res.data.data.cover&&res.data.data.cover.slice(0, 1) != 'h') {
             // res.data.data.cover = app.globalData.url + res.data.data.cover;
             res.data.data.cover =app.cover(res.data.data.cover )
-          }
+          // }
     
           res.data.data.addTime = utils.formatTime(res.data.data.addTime / 1000, 'Y-M-D h:m');
           that.setData({
@@ -91,7 +91,7 @@ Page({
           });
           var contentBtId = res.data.data.contentBtId
           wx.request({
-            url: contentBtId,
+            url: app.globalData.domain+contentBtId,
             method: 'get',
             data: {
                itemId: id,
@@ -112,7 +112,7 @@ Page({
         } else if (res.data.code == 20 || res.data.code == 26) {
           wx.hideToast()
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../../newLogin/newLogin',
           })
         }
       }

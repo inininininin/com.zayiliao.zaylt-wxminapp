@@ -44,9 +44,10 @@ Page({
           }
           for (var i = 0; i < res.data.data.items.length; i++) {
             res.data.data.items[i].addTime = app.dateChange(res.data.data.items[i].addTime)
-            if (res.data.data.items[i].cover&&res.data.data.items[i].cover.slice(0, 1) != 'h') {
-              res.data.data.items[i].cover = app.globalData.url + res.data.data.items[i].cover
-            }
+            // if (res.data.data.items[i].cover&&res.data.data.items[i].cover.slice(0, 1) != 'h') {
+            //   res.data.data.items[i].cover = app.globalData.url + res.data.data.items[i].cover
+            // }
+            res.data.data.items[i].cover=app.cover(res.data.data.items[i].cover)
           }
           var hosList = that.data.hosList;
           var newhosList = hosList.concat(res.data.data.items)
@@ -72,7 +73,7 @@ Page({
         else if (res.data.code == 20 || res.data.code == 26) {
           wx.hideToast()
           wx.navigateTo({
-            url: '../login/login',
+            url: '../../newLogin/newLogin',
           })
         }else{
           wx.showToast({

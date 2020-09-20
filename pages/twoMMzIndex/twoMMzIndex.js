@@ -12,7 +12,7 @@ Page({
   },
   qhzh: function (e) {
     wx.navigateTo({
-      url: '../login/login',
+      url: '../newLogin/newLogin',
     })
   },
   bingyuan:function(e){

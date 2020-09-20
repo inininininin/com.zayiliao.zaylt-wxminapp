@@ -100,7 +100,7 @@ Page({
           })
         } else if (res.data.code == 20) {
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../newLogin/newLogin',
           })
         } else {
           wx.showToast({
@@ -134,7 +134,7 @@ Page({
             })
         } else if (res.data.code == 20) {
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../newLogin/newLogin',
           })
         } else {
           wx.showToast({

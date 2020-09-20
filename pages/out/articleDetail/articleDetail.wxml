@@ -1,8 +1,8 @@
 <!--pages/out/newsDetail/newsDetail.wxml-->
-<!-- <import src="../../../wxParse/wxParse.wxml" />
-<view>
+ <import src="../../../wxParse/wxParse.wxml" />
+<!-- <view>
 	<include src="../../common/common" />
-</view> -->
+</view>  -->
 <view class='topImg' style='background:url({{list.cover}}) no-repeat;background-size:cover;background-position: center;'></view>
 <!-- <image  mode="aspectFill"  class='topImg' src='{{list.cover}}'></image> -->
 <text class='title'>{{list.title}}</text>
@@ -11,13 +11,13 @@
 	<text>分享数：{{list.shareCount}}</text>
 </view>
 <view class='hospitalName'>
-	<image  mode="aspectFill"  src='{{list.hospitalCover}}'></image>
+	<image mode="aspectFill" src='{{list.hospitalCover}}'></image>
 	<view>
 		<text>{{list.hosptialName}}</text>
 		<text>{{list.addTime}}</text>
 	</view>
 </view>
-<view class='detail' >
+<view class='detail'>
 	<!-- <text> -->
 	<!-- {{res}} -->
 	<view class="wxParse" style='font-size:{{fontSize}}rpx !important'>
@@ -39,14 +39,14 @@
               <button open-type='share'>分享到微信</button>
             </view> -->
 				<button open-type='share'>
-					<image  mode="aspectFill"  bindtap='sharewx' class='wx' src='../../img/weixin@2x.png'></image>
+					<image mode="aspectFill" bindtap='sharewx' class='wx' src='../../img/weixin@2x.png'></image>
 					<text>分享到微信</text>
 				</button>
 				<!-- bindtap='shareIs' -->
-				<button  bindtap='sharepyq'>
-              <image  mode="aspectFill"  class='pyq' src='../../img/pengyouquan@2x.png'></image>
-              <text>分享到朋友圈</text>
-            </button>
+				<button bindtap='sharepyq'>
+					<image mode="aspectFill" class='pyq' src='../../img/pengyouquan@2x.png'></image>
+					<text>分享到朋友圈</text>
+				</button>
 
 				<!-- <button>
               <image  mode="aspectFill"  bindtap='shareWb' class='wb' src='../../img/weibo@2x.png'></image>
@@ -68,13 +68,13 @@
 </view> -->
 
 <view class='shareFontNew'>
-	<view  bindtap='changefont' >文字大小</view>
+	<view bindtap='changefont'>文字大小</view>
 	<text></text>
 	<view bindtap='share'>分享</view>
 </view>
 
 <view bindtap='closeFont' style='display:{{display}};width:100%;height:100%;position:fixed;top:0;left:0'>
-	<view class="progresspages" style='display:{{display}};top:{{44+statusBarHeight}}px'>
+	<view class="progresspages" style='display:{{display}};top:0'>
 		<text class='asmall'>A</text>
 		<view class="page__bd">
 
@@ -90,13 +90,13 @@
 
 
 <!-- 画布大小按需定制 这里我按照背景图的尺寸定的  -->
-<view class="canvasShow" wx-if='{{canvasShow}}'   style="opacity:1" bindtap="closeCanvas">
-<canvas canvas-id='canvas'   style='width:{{windowW}}px;height:{{windowW}}px;margin-top:{{windowTop}}px;border:2rpx solid #e5e5e5' catchlongtap="saveCanvas"></canvas>
+<view class="canvasShow" wx-if='{{canvasShow}}' style="opacity:1" bindtap="closeCanvas">
+	<canvas canvas-id='canvas' style='width:{{windowW}}px;height:{{windowW}}px;margin-top:{{windowTop}}px;border:2rpx solid #e5e5e5' catchlongtap="saveCanvas"></canvas>
 	<button type='primary' size='mini' bindtap='saveIs'>保存分享图</button>
 </view>
 
 <!-- 预览区域  -->
 <view hidden='{{hidden}}' class='preview'>
-	<image  mode="aspectFill"  src='{{prurl}}' mode='widthFix'></image>
+	<image mode="aspectFill" src='{{prurl}}' mode='widthFix'></image>
 	<button type='primary' size='mini' bindtap='saveIs'>保存分享图</button>
 </view>

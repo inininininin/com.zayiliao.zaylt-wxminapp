@@ -81,7 +81,7 @@ Page({
               } else if (res.data.code == 20 || res.data.code == 26) {
                 wx.hideToast()
                 wx.navigateTo({
-                  url: '../../login/login',
+                  url: '../newLogin/newLogin',
                 })
               }
             }
@@ -89,7 +89,7 @@ Page({
         } else if (res.data.code == 20 || res.data.code == 26) {
           wx.hideToast()
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../newLogin/newLogin',
           })
         }
       }
@@ -258,7 +258,7 @@ Page({
               } else if (res.data.code == 20 || res.data.code == 26) {
                 wx.hideToast()
                 wx.navigateTo({
-                  url: '../../login/login',
+                  url: '../newLogin/newLogin',
                 })
               }
             }
@@ -266,7 +266,7 @@ Page({
         } else if (res.data.code == 20 || res.data.code == 26) {
           wx.hideToast()
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../newLogin/newLogin',
           })
         }
 
@@ -362,7 +362,7 @@ Page({
         } else if (res.data.code == 20 || res.data.code == 26) {
           wx.hideToast()
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../newLogin/newLogin',
           })
         }
 

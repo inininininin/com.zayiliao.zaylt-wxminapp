@@ -107,7 +107,7 @@ Page({
             success(res) {
               if (res.confirm) {
                 wx.navigateTo({
-                  url: '../login/login',
+                  url: '../newLogin/newLogin',
                 })
               } else if (res.cancel) {
                 

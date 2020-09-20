@@ -67,7 +67,7 @@ Page({
           });
           var contentBtId = res.data.data.contentBtId
           wx.request({
-            url:contentBtId,
+            url: app.globalData.domain + contentBtId,
             method: 'post',
             data: {
                itemId: id,
@@ -86,7 +86,7 @@ Page({
         } else if (res.data.code == 20 || res.data.code == 26) {
           wx.hideToast()
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../../newLogin/newLogin',
           })
         }
       }

@@ -77,7 +77,7 @@ Page({
               //   })
               //  }else  if(app.globalData.lastClient==1){
               //   wx.reLaunch({
-              //     url: '../login/login',
+              //     url: '../newLogin/newLogin',
               //   })
               //  }
               

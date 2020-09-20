@@ -71,7 +71,7 @@ Page({
     //       }
     //     } else if (res.data.code == 20) {
     //       wx.navigateTo({
-    //         url: '../../login/login',
+    //         url: '../newLogin/newLogin',
     //       })
     //     } else {
     //       wx.showToast({
@@ -116,7 +116,7 @@ Page({
     //       }
     //     } else if (res.data.code == 20) {
     //       wx.navigateTo({
-    //         url: '../../login/login',
+    //         url: '../newLogin/newLogin',
     //       })
     //     } else {
     //       wx.showToast({
@@ -207,7 +207,7 @@ Page({
           })
         } else if (res.data.code == 20) {
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../newLogin/newLogin',
           })
         } else {
           wx.showToast({
@@ -253,7 +253,7 @@ Page({
           })
         } else if (res.data.code == 20) {
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../newLogin/newLogin',
           })
         } else {
           wx.showToast({
@@ -291,7 +291,7 @@ Page({
     var url = e.currentTarget.dataset.url
     if (url == 1 || url == 5) {
       wx.navigateTo({
-        url: '../../login/login',
+        url: '../newLogin/newLogin',
       })
     } else if (url == 3 || url == 4 || url == 7 || url == 8 || url == 10) {
       wx.switchTab({
@@ -365,7 +365,7 @@ Page({
           })
         } else if (res.data.code == 20) {
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../newLogin/newLogin',
           })
         } else {
           wx.showToast({
