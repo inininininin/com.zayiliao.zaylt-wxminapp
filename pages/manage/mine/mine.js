@@ -9,7 +9,7 @@ Page({
   data: {
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
-    headimg:'../../img/touxiang@2x.png'
+    headimg:'../../img/logo@2x.png'
   },
   bindWxmApp(e){
     let that=this
@@ -83,8 +83,10 @@ Page({
     var headimg = app.globalData.headimg
     var phone = app.globalData.phone
     var realname = app.globalData.realname
+    var nickname = app.loginRefresh.nickname
+    console.log(nickname)
     if (app.globalData.headimg == '' || app.globalData.headimg == null || app.globalData.headimg ==undefined){
-      headimg ='../../img/touxiang@2x.png'
+      headimg ='../../img/logo@2x.png'
     }
     if (app.globalData.phone == '') {
       phone = ''
@@ -97,6 +99,7 @@ Page({
       realname: realname,
       phone: phone,
       headimg: headimg,
+      nickname:nickname,
     })
   },
   numberSecurity(e){

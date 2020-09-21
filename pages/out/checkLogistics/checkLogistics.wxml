@@ -1,8 +1,8 @@
 <!--pages/out/checkLogistics/checkLogistics.wxml-->
 
-<view>
+<!-- <view>
   <include src="../../common/common.wxml" />
-</view>
+</view> -->
 
 <view wx:for='{{list}}' class='list'>
       <view class='time'>

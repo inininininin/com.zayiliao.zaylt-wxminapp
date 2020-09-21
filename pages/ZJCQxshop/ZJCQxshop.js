@@ -9,7 +9,7 @@ Page({
     qixienum: '0',
     showList: [],
     token: '',
-    navtitle: '器械采购',
+    navtitle: '器械名称',
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
     scrollHeight:'',

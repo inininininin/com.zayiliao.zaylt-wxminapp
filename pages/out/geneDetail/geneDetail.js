@@ -10,26 +10,26 @@ Page({
     navtitle: '检测盒详情',
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
-    line1:1,
+    line1: 1,
     line2: 2,
     line3: 2,
     line4: 2,
     line5: 2,
     line6: 2,
-    detail:'',
-    luru:'',
+    detail: '',
+    luru: '',
     casIndex: 0,
     casArray: [],
     casIndex2: 0,
-    casArray2: ["name:names,id:ids","name:names1,id:ids2"],
-    casArray3:[],
-    show1:0,
-    testItem:'',
+    casArray2: ["name:names,id:ids", "name:names1,id:ids2"],
+    casArray3: [],
+    show1: 0,
+    testItem: '',
     freightCoId: '',
     freightNo: '',
   },
-  backHos(e){
-    var that=this
+  backHos(e) {
+    var that = this
     wx.request({
       url: app.globalData.url + '/freightCos',
       header: {
@@ -37,13 +37,13 @@ Page({
         'cookie': app.globalData.cookie
       },
       data: {
-         pn: 1,
+        pn: 1,
         ps: 100,
       },
       method: 'post',
       success: function (res) {
         var casArray2 = [];
-        var casArray3=[];
+        var casArray3 = [];
         for (var i = 0; i < res.data.data.items.length; i++) {
           casArray3.push(res.data.data.items[i].name)
         }
@@ -57,12 +57,12 @@ Page({
       }
     });
   },
-  postNo(e){
+  postNo(e) {
     this.setData({
       freightNo: e.detail.value
     })
   },
-  saveData1(e){
+  saveData1(e) {
     var that = this
     wx.request({
       url: app.globalData.url + '/client2/geneTest/freight3',
@@ -71,7 +71,7 @@ Page({
         'cookie': app.globalData.cookie
       },
       data: {
-         geneTestSamplePackId: that.data.geneTestSamplePackId,
+        geneTestSamplePackId: that.data.geneTestSamplePackId,
         freightCoId: that.data.freightCoId,
         freightNo: that.data.freightNo,
       },
@@ -81,12 +81,12 @@ Page({
       }
     });
   },
-  close(e){
+  close(e) {
     this.setData({
-      show1:0
+      show1: 0
     })
   },
-  name(e){
+  name(e) {
     this.setData({
       detailName: e.detail.value
     })
@@ -96,8 +96,8 @@ Page({
       detailTel: e.detail.value
     })
   },
-  saveData(e){
-    var that=this
+  saveData(e) {
+    var that = this
     wx.request({
       url: app.globalData.url + '/client2/geneTest/sample',
       header: {
@@ -105,36 +105,36 @@ Page({
         'cookie': app.globalData.cookie
       },
       data: {
-         geneTestSamplePackId: that.data.geneTestSamplePackId,
+        geneTestSamplePackId: that.data.geneTestSamplePackId,
         sampleRealname: that.data.detailName,
         sampleTel: that.data.detailTel,
         testItem: that.data.testItem,
       },
       method: 'post',
       success: function (res) {
-        if(res.data.code==0){
+        if (res.data.code == 0) {
           that.detail(that.data.geneTestSamplePackId)
-        }else{
+        } else {
           wx.showToast({
             title: res.data.codeMsg,
           })
         }
-        
+
       }
     });
   },
-  enterData(e){
-    var  that=this
+  enterData(e) {
+    var that = this
     console.log(that.data.detail.status)
-    if (that.data.detail.status == 2 ){
+    if (that.data.detail.status == 2) {
       wx.showToast({
         title: '订单收样不可改',
       })
-    } else if (that.data.detail.status == 3){
+    } else if (that.data.detail.status == 3) {
       wx.showToast({
         title: '订单已检测完毕',
       })
-    }else{
+    } else {
       wx.request({
         url: app.globalData.url + '/client2/geneTest//testItems',
         header: {
@@ -142,24 +142,28 @@ Page({
           'cookie': app.globalData.cookie
         },
         data: {
-           pn: 1,
+          pn: 1,
           ps: 100,
         },
         method: 'post',
         success: function (res) {
           var casArray = []
-          for (var i = 0; i < res.data.data.items.length;i++){
+          let casIndex
+          for (var i = 0; i < res.data.data.items.length; i++) {
+            if (res.data.data.items[i].name == that.data.detail.testItem) {
+              casIndex = i
+            }
             casArray.push(res.data.data.items[i].name)
           }
           that.setData({
             show1: 2,
             luru: 1,
             casArray: casArray,
+            casIndex: casIndex
           })
         }
       });
     }
-
   },
   bindCasPickerChange: function (e) {
     console.log('乔丹选的是', this.data.casArray[e.detail.value])
@@ -170,24 +174,24 @@ Page({
     }
     this.setData({
       casIndex: e.detail.value,
-      testItem:this.data.casArray[e.detail.value],
-      
+      testItem: this.data.casArray[e.detail.value],
+
     })
-   
+
   },
-  bindCasPickerChange1(e){
-    var that=this
+  bindCasPickerChange1(e) {
+    var that = this
     var freightCoId = e.currentTarget.dataset.id
     this.setData({
       casIndex2: e.detail.value,
-      freightCoId:freightCoId,
+      freightCoId: freightCoId,
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  detail(geneTestSamplePackId){
-    var that=this
+  detail(geneTestSamplePackId) {
+    var that = this
     wx.request({
       url: app.globalData.url + '/client2/geneTest/samplePackInfo',
       header: {
@@ -195,7 +199,7 @@ Page({
         'cookie': app.globalData.cookie
       },
       data: {
-         geneTestSamplePackId: geneTestSamplePackId,
+        geneTestSamplePackId: geneTestSamplePackId,
       },
       method: 'post',
       success: function (res) {
@@ -230,7 +234,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
   backHistory: function (e) {
     wx.navigateBack({

@@ -1,66 +1,84 @@
 /* pages/out/geneDetail/geneDetail.wxss */
 @import '../../common/common.wxss';
 @import '../../../all/all.wxss';
-.numbering{
+
+.numbering {
   height: 102rpx;
   background: #f2f2f2;
   line-height: 102rpx;
-  color: rgb(51,51,51);
+  color: rgb(51, 51, 51);
   font-size: 30rpx;
 }
-.numbering text{
-    margin-left: 60rpx;
+
+.numbering text {
+  margin-left: 60rpx;
 }
-.line1{
+
+.line1 {
   margin: 44rpx 60rpx 0 80rpx;
-  border-left: 4rpx solid rgb(16,142,233);
+  border-left: 4rpx solid rgb(16, 142, 233);
 }
-.line1>view:first-child{
-  margin-bottom:20rpx;
+
+.line1>view:first-child {
+  margin-bottom: 20rpx;
   line-height: 34rpx;
 }
-.line1>view:nth-child(2){
+
+.line1>view:nth-child(2) {
   padding-bottom: 70rpx;
   line-height: 28rpx;
 }
-.finish{
+
+.finish {
   width: 40rpx;
   height: 42rpx;
   top: 0;
   left: -20rpx;
 }
-.line2,.line4,.line5{
+
+.line2,
+.line4,
+.line5 {
   margin: 0 60rpx 0 80rpx;
-  border-left: 4rpx solid rgb(16,142,233);
+  border-left: 4rpx solid rgb(16, 142, 233);
 }
-.edit{
+
+.edit {
   width: 24rpx;
   height: 28rpx;
   float: right;
   padding: 20rpx;
+  margin-top: -10rpx;
   /* margin-top: -20rpx;
   margin-right: -20rpx; */
 }
-.ydh{
+
+.ydh {
   margin: 20rpx 0 20rpx 60rpx;
   line-height: 28rpx;
 }
 
-.lookWl{
+.lookWl {
   padding-bottom: 70rpx;
 }
-.line3{
+
+.line3 {
   margin: 0 60rpx 0 80rpx;
-  border-left: 4rpx solid rgb(16,142,233);
+  border-left: 4rpx solid rgb(16, 142, 233);
 }
-.line3 .font28 ,.line5 .font28{
+
+.line3 .font28,
+.line5 .font28 {
   height: 52rpx;
   line-height: 52rpx;
 }
-.line3>view text,.inputText{
+
+.line3>view text,
+.inputText {
   float: left;
 }
-input{
+
+input {
   width: 350rpx;
   float: left;
   height: 52rpx !important;
@@ -70,109 +88,138 @@ input{
   /* font-size: 28rpx !important; */
 }
 
-.margint{
+.margint {
   margin-top: 20rpx;
 }
-.line5 .ydh{
-  margin:0 0 0  60rpx;
+
+.line5 .ydh {
+  margin: 20rpx 0 0 60rpx;
 }
-.line5 .lookWl{
+
+.line5 .lookWl {
   line-height: 28rpx !important;
   padding-bottom: 70rpx;
   height: 28rpx !important;
+  margin-top: 20rpx;
 }
-.line6{
-   margin: 0 60rpx 0 80rpx;
+
+.line6 {
+  margin: 0 60rpx 0 80rpx;
   /* border-left: 4rpx solid rgb(16,142,233); */
 }
 
-.lineN{
-  border-left: 4rpx solid rgb(204,204,204);
+.lineN {
+  border-left: 4rpx solid rgb(204, 204, 204);
 
 }
-.nofinish{
+
+.nofinish {
   width: 18rpx;
   height: 18rpx;
   top: 0;
   left: -9rpx;
   display: block;
-  background:  rgb(204,204,204);
+  background: rgb(204, 204, 204);
   border-radius: 9rpx;
 }
-.marginBottom0{
+
+.marginBottom0 {
   margin-bottom: 0 !Important;
 }
 
 
-picker{
+picker {
   width: 300rpx;
   float: left;
 }
- picker text{
+
+picker text {
   width: 300rpx;
   display: inline-block;
 }
-.viewEve{
+
+.viewEve {
   margin-left: 160rpx;
   width: 400rpx;
   height: 52rpx;
   line-height: 52rpx;
 }
-.viewEve image{
+
+.viewEve image {
   width: 12rpx;
   height: 24rpx;
   float: left;
   margin: 14rpx 0;
 }
-.page1{
+
+.page1 {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
 }
-.pageNo{
+
+.pageNo {
   width: 600rpx;
   height: 794rpx;
   border-radius: 10rpx;
-  background: rgb(255,255,255);
+  background: rgb(255, 255, 255);
   margin: 200rpx 75rpx;
   z-index: 999;
 }
-.title{
+
+.title {
   height: 94rpx;
   border-bottom: 1rpx solid #e5e5e5;
   width: 100%;
   text-align: center;
   font-size: 32rpx;
   line-height: 94rpx;
-  color: rgb(51,51,51);
+  color: rgb(51, 51, 51);
   position: relative
 }
-.title image{
+
+.title image {
   position: absolute;
   width: 24rpx;
   height: 22rpx;
   float: right;
-  top: 36rpx;
-  right: 36rpx;
+  /* top: 36rpx; */
+  right: 0;
+  /* right: 36rpx; */
+  padding: 36rpx;
+  /* margin-top: -20rpx; */
+  /* margin-right: -20rpx; */
 }
 
-.name,.tel,.inspection,.postNo,.freightCoId{
+.name,
+.tel,
+.inspection,
+.postNo,
+.freightCoId {
   width: 490rpx;
   margin: 0 55rpx;
   height: 122rpx;
 }
-.name text,.tel text,.inspection text,.postNo text,.freightCoId text{
+
+.name text,
+.tel text,
+.inspection text,
+.postNo text,
+.freightCoId text {
   font-size: 26rpx;
-  color: rgb(102,102,102);
+  color: rgb(102, 102, 102);
   display: block;
   height: 26rpx;
   line-height: 26rpx;
   margin: 40rpx 0 16rpx;
 }
-.name input,.tel input,.postNo input{
+
+.name input,
+.tel input,
+.postNo input {
   width: 490rpx;
   height: 80rpx !important;
   font-size: 30rpx;
@@ -181,10 +228,14 @@ picker{
   border: 1rpx solid #e5e5e5;
   text-align: center;
 }
-.inspection,.freightCoId{
+
+.inspection,
+.freightCoId {
   position: relative;
 }
-.inspection picker,.freightCoId picker{
+
+.inspection picker,
+.freightCoId picker {
   width: 490rpx;
   height: 80rpx !important;
   font-size: 30rpx;
@@ -193,21 +244,26 @@ picker{
   border: 1rpx solid #e5e5e5;
   text-align: center;
 }
-.inspection picker text,.freightCoId picker text{
+
+.inspection picker text,
+.freightCoId picker text {
   width: 100%;
   height: 100%;
   line-height: 80rpx;
   margin: 0;
 }
-.inspection image,.freightCoId image{
+
+.inspection image,
+.freightCoId image {
   width: 24rpx;
   height: 14rpx;
   position: absolute;
   right: 30rpx;
   bottom: 32rpx;
 }
-.save{
-   width: 490rpx !important;
+
+.save {
+  width: 490rpx !important;
   height: 80rpx !important;
   background: #2b77ef;
   border-radius: 44rpx;
@@ -217,10 +273,11 @@ picker{
   font-size: 32rpx;
   color: #fff;
   fill: linear;
-  box-shadow:  -2rpx 8rpx 10px #56aff8;
+  box-shadow: -2rpx 8rpx 10px #56aff8;
 }
-.save1{
-   width: 490rpx !important;
+
+.save1 {
+  width: 490rpx !important;
   height: 80rpx !important;
   background: #2b77ef;
   border-radius: 44rpx;
@@ -230,5 +287,5 @@ picker{
   font-size: 32rpx;
   color: #fff;
   fill: linear;
-  box-shadow:  -2rpx 8rpx 10px #56aff8;
+  box-shadow: -2rpx 8rpx 10px #56aff8;
 }

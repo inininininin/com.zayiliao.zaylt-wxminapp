@@ -70,18 +70,18 @@ Page({
       //     url: '../promoter/index/index',
       //   })
       // } else {
-          wx.navigateTo({url: '../index/index', })
+          wx.reLaunch({url: '../index/index', })
       // }
     }else if(this.data.role==2){
       wx.switchTab({
         url: '../out/index/index',
       })
     }else if(this.data.role==3){
-      wx.navigateTo({
+      wx.reLaunch({
         url: '../manage/index/index',
       })
     }else if(this.data.role==4){
-      wx.navigateTo({url: '../promoter/index/index',})
+      wx.reLaunch({url: '../promoter/index/index',})
     }else{
       wx.showToast({
         title: '请选择登录端',

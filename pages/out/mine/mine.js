@@ -52,8 +52,8 @@ Page({
   },
   lookcover(e){
     wx.previewImage({
-      current: app.globalData.srcCover, // 当前显示图片的http链接
-      urls: [app.globalData.srcCover] // 需要预览的图片http链接列表
+      current: this.data.srcCover, // 当前显示图片的http链接
+      urls: [ this.data.srcCover] // 需要预览的图片http链接列表
     })
   },
   yyzz(e){
@@ -212,11 +212,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if(app.globalData.srcCover){
-      console.log(app.globalData.srcCover)
+    if(app.loginRefresh.clinic&&app.loginRefresh.clinic.map.cover){
+      app.loginRefresh.clinic.map.cover=app.cover(app.loginRefresh.clinic.map.cover)
       this.setData({
-        srcCover: app.globalData.srcCover
+        srcCover: app.loginRefresh.clinic.map.cover
       })
+    }
+    if(app.loginRefresh.clinic&&app.loginRefresh.clinic.map.license){
+      app.loginRefresh.clinic.map.license=app.cover(app.loginRefresh.clinic.map.license)
+      app.globalData.src=app.cover(app.loginRefresh.clinic.map.license)
+      // this.setData({
+      //   srcLicense: app.loginRefresh.hospital.map.license
+      // })
     }
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {

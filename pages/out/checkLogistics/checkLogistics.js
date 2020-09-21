@@ -49,7 +49,12 @@ Page({
           },
           method: 'GET',
           success: function (res) {
-            
+            if(res.data.message){
+              wx.showToast({
+                title: res.data.message,
+                icon:'none'
+              })
+            }
             that.setData({
               list:res.data.data
             })

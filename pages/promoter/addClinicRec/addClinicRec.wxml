@@ -118,7 +118,7 @@
   </view>
   <view class='input'>
     <text>门诊地址</text>
-    <input bindinput='address' value='{{address}}' type='idcard' placeholder-class='inputPla' placeholder='请填写'></input>
+    <input bindinput='address' value='{{address}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input>
   </view>
 
 

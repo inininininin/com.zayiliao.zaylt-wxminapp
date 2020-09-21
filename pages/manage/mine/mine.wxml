@@ -14,8 +14,8 @@
 <view class='topline'>
 	<image mode="aspectFill" src='{{headimg}}'></image>
 	<view>
+		<text>{{nickname}}</text>
 		<text>{{phone}}</text>
-		<text>{{realname}}</text>
 	</view>
 </view>
 

@@ -125,18 +125,18 @@ Page({
   },
   lookcover(e) {
     wx.previewImage({
-      current: app.globalData.srcCover, // 当前显示图片的http链接
-      urls: [app.globalData.srcCover] // 需要预览的图片http链接列表
+      current: this.data.srcCover, // 当前显示图片的http链接
+      urls: [this.data.srcCover] // 需要预览的图片http链接列表
     })
   },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (app.globalData.srcCover) {
-      console.log(app.globalData.srcCover)
+    if(app.loginRefresh.hospital&&app.loginRefresh.hospital.map.cover){
+      app.loginRefresh.hospital.map.cover=app.cover(app.loginRefresh.hospital.map.cover)
       this.setData({
-        srcCover: app.globalData.srcCover
+        srcCover: app.loginRefresh.hospital.map.cover
       })
     }
   },
