@@ -208,6 +208,28 @@ Page({
   // /c2/patient/itemadd
   save: function (e) {
     var that = this
+    if(!that.data.name){
+      wx.showToast({
+        title: '请输入姓名',
+        icon:'none'
+      })
+      return
+    }
+    if(!that.data.phone){
+      wx.showToast({
+        title: '请输入联系方式',
+        icon:'none'
+      })
+      return
+    }
+    if(!that.data.idCard){
+      wx.showToast({
+        title: '请输入身份证号码',
+        icon:'none'
+      })
+      return
+    }
+   
     wx.request({
       url: app.globalData.url + '/c2/patient/itemadd',
       method: 'post',

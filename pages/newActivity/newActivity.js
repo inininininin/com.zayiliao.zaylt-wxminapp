@@ -81,8 +81,8 @@ Page({
                     })
                   }
                 })
-                
-                } else {
+
+              } else {
                 wx.showModal({
                   showCancel: false,
                   title: res.data.codeMsg
@@ -249,7 +249,7 @@ Page({
               // content: res.data.data.content,
             })
             wx.request({
-              url:  app.globalData.domain+contentBtId,//'/other/bigtxt/' + contentBtId + '/' + contentBtId,
+              url: app.globalData.domain + contentBtId,
               method: 'get',
               header: {
                 "Content-Type": "application/x-www-form-urlencoded",

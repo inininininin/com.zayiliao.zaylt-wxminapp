@@ -20,7 +20,7 @@
   <view class='firstIncomeItem'>
     <view>
       <view>{{item.name||''}}
-        <text>+{{item.exchangePointUpperPerDay||''}}</text>
+        <text>+{{item.exchangePoint||''}}</text>
       </view>
       <view>{{item.intro||''}}</view>
     </view>

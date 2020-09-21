@@ -2,11 +2,13 @@
 page {
   height: 100%;
 }
+
 .container {
   box-sizing: border-box;
   /* height: 100%; */
   background: #fff;
 }
+
 .header {
   position: fixed;
   top: 0;
@@ -15,26 +17,31 @@ page {
   /* background: #fff; */
   background: #fff;
 }
+
 .status-bar {
   /* background: rgba(255, 0, 0, 0.1); */
 }
+
 .title-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .header image {
   /* float: left; */
   position: absolute;
   width: 24rpx;
   height: 40rpx;
 }
+
 .header .search image {
   /* float: left; */
   position: absolute;
   width: 28rpx;
   height: 31rpx;
 }
+
 /* .title-bar view{
   height: 100%;
   width: 100%;
@@ -46,75 +53,89 @@ page {
   width: 100%;
   margin: 0 !important;
 } */
-.titleText{
+.titleText {
   font-size: 36rpx;
 }
-.search input{
+
+.search input {
   width: 360rpx;
   color: #000;
 }
-.search{
+
+.search {
   display: inline-block;
   width: 400rpx !important;
   /* padding-left: 30rpx; */
   margin-left: 32rpx;
-  height: 60rpx  !important;
-  background: rgba(0,0,0,0.05);
+  height: 60rpx !important;
+  background: rgba(0, 0, 0, 0.05);
   border-radius: 60rpx;
-  font-size:30rpx;
-  color: rgb(153,153,153);
+  font-size: 30rpx;
+  color: rgb(153, 153, 153);
   text-align: left !important;
-  padding-left:80rpx;
+  padding-left: 80rpx;
 }
 
-.title-bar view{
+.title-bar view {
   height: 100%;
   width: 100%;
   text-align: center;
   display: flex;
-   /* justify-content: space-between; */
-    align-items: center;
-}
-.title-bar view text{
-  display: inline-block;text-align: center;
-  width: 100%;
-  margin: 0 !important;
-  font-size:36rpx;
-font-family:PingFangSC-Medium,PingFang SC;
-font-weight:500;
-color:rgba(51,51,51,1);
+  /* justify-content: space-between; */
+  align-items: center;
 }
 
-.connectClinic{
+.title-bar view text {
+  display: inline-block;
+  text-align: center;
   width: 100%;
-  height:38rpx;
+  margin: 0 !important;
+  font-size: 36rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+}
+
+.connectClinic {
+  width: 100%;
+  height: 38rpx;
   font-size: 38rpx;
   line-height: 38rpx;
-  margin: 68rpx 0 58rpx 0;
+  padding: 68rpx 0 58rpx 0;
+  position: fixed;
+  background: #fff;
+
 }
-.connectClinic>text{
+
+.connectClinic>text {
   float: left;
   margin-left: 36rpx;
   font-weight: 600;
 }
-.connectClinic>view>text{
+
+.connectClinic>view>text {
   float: right;
   margin-right: 10rpx;
   font-size: 32rpx;
   line-height: 38rpx;
 }
-.connectClinic>view>image{
+
+.connectClinic>view>image {
   width: 38rpx;
   height: 38rpx;
   float: right;
   margin-right: 36rpx;
 }
-.clinicList{
+
+.clinicList {
   width: 700rpx;
   margin: 0 25rpx 100rpx;
   height: auto;
+  padding-top: 164rpx;
+  padding-bottom: 100rpx;
 }
-.clinicList>view{
+
+.clinicList>view {
   width: 340rpx;
   height: 220rpx;
   display: inline-block;
@@ -123,42 +144,47 @@ color:rgba(51,51,51,1);
   border-radius: 5rpx;
   /* float: left; */
 }
-.clinicList>view .name{
+
+.clinicList>view .name {
   font-size: 32rpx;
   line-height: 32rpx;
   margin-top: 18rpx;
   display: block;
-  color: rgba(51,51,51,1);
-   display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    height: 32rpx;
+  color: rgba(51, 51, 51, 1);
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 32rpx;
 }
-.clinicList>view .clinicPromoterName{
+
+.clinicList>view .clinicPromoterName {
   font-size: 28rpx;
   line-height: 28rpx;
   margin-top: 18rpx;
   display: block;
-  color: rgb(153,153,153);
+  color: rgb(153, 153, 153);
 }
-.clinicList>view .pushCount{
+
+.clinicList>view .pushCount {
   font-size: 28rpx;
   line-height: 50rpx;
   width: 170rpx;
   height: 50rpx;
   border-radius: 50rpx;
-  border: 1rpx solid rgb(255,149,27);
-  color: rgb(255,149,27);
+  border: 1rpx solid rgb(255, 149, 27);
+  color: rgb(255, 149, 27);
   text-align: center;
   margin-top: 18rpx;
-  display: block;margin-left: 85rpx;
-}
-.hoverClass{
-  background: rgb(255,248,243)
+  display: block;
+  margin-left: 85rpx;
 }
 
-.tabbarBtn{
+.hoverClass {
+  background: rgb(255, 248, 243)
+}
+
+.tabbarBtn {
   height: 100rpx;
   width: 100%;
   border-top: 1rpx solid #e5e5e5;
@@ -168,40 +194,47 @@ color:rgba(51,51,51,1);
   z-index: 3;
   background: #fff;
 }
-.tabbarBtn>view{
+
+.tabbarBtn>view {
   width: 250rpx;
   display: inline-block;
   font-size: 20rpx;
   text-align: center;
   line-height: 20rpx;
 }
-.tabbarBtn>view>image{
+
+.tabbarBtn>view>image {
   width: 42rpx;
   height: 44rpx;
   margin-top: 14rpx;
   margin-bottom: 6rpx;
 }
-.tabbarBtn>view>text{
+
+.tabbarBtn>view>text {
   display: block;
-  color: rgb(153,153,153)
+  color: rgb(153, 153, 153)
 }
-.tabbarBtn>view>.active{
-  color: rgb(43,119,239)
+
+.tabbarBtn>view>.active {
+  color: rgb(43, 119, 239)
 }
-.withoutNum{
+
+.withoutNum {
   width: 700rpx !important;
   text-align: center;
 }
-.withoutNum image{
+
+.withoutNum image {
   width: 169rpx;
   height: 165rpx;
   margin: 150rpx 265rpx 20rpx;
 }
-.withoutNum text{
+
+.withoutNum text {
   width: 700rpx !important;
   display: block;
-  font-size:30rpx;
-font-family:PingFangSC-Regular,PingFang SC;
-font-weight:400;
-color:rgba(51,51,51,1) !important;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1) !important;
 }

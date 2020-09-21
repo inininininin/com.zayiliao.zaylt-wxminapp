@@ -10,6 +10,10 @@ Page({
     navtitle: '新增门诊',
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
+    name:'',
+    phone:'',
+    idCard:'',
+    remark:'',
   },
 
   /**
@@ -55,16 +59,38 @@ Page({
   },
   save: function (e) {
     var that = this
+    if(!that.data.name){
+      wx.showToast({
+        title: '请输入姓名',
+        icon:'none'
+      })
+      return
+    }
+    if(!that.data.phone){
+      wx.showToast({
+        title: '请输入号码',
+        icon:'none'
+      })
+      return
+    }
+    if(!that.data.idCard){
+      wx.showToast({
+        title: '请输入身份证号码',
+        icon:'none'
+      })
+      return
+    }
+   
     wx.request({
       url: app.globalData.url + '/c2/patient/itemadd',
       method: 'post',
       data: {
-        clinicId: that.data.clinicId,
+        clinicId: that.data.clinicId || '',
         hospitalId: app.globalData.hospitalId || '',
-        realname: that.data.name,
-        tel: that.data.phone,
-        idcardNo: that.data.idCard,
-        remark: that.data.remark,
+        realname: that.data.name || '',
+        tel: that.data.phone || '',
+        idcardNo: that.data.idCard || '',
+        remark: that.data.remark || '',
       },
       header: {
         "Content-Type": "application/x-www-form-urlencoded",

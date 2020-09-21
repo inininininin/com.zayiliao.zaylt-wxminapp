@@ -75,6 +75,41 @@ Page({
 
   saveThis(e) {
     var that = this
+    if(!that.data.name){
+      wx.showToast({
+        title: '请输入门诊名称',
+        icon:'none'
+      })
+      return
+    }
+    if(!that.data.phone){
+      wx.showToast({
+        title: '请输入分配账号',
+        icon:'none'
+      })
+      return
+    }
+    if(!that.data.headmanName){
+      wx.showToast({
+        title: '请输入负责人',
+        icon:'none'
+      })
+      return
+    }
+    if(!that.data.tel){
+      wx.showToast({
+        title: '请输入联系方式',
+        icon:'none'
+      })
+      return
+    }
+    if(!that.data.address){
+      wx.showToast({
+        title: '请输入门诊地址',
+        icon:'none'
+      })
+      return
+    }
     // if (that.data.pwd == '' || that.data.pwd == undefined || that.data.pwd == null) {
     //   wx.showToast({
     //     title: '请填写密码',
@@ -84,16 +119,16 @@ Page({
         url: app.globalData.url + '/c2/clinic/itemalter', //仅为示例，非真实的接口地址
         method: 'post',
         data: {
-           headmanName: that.data.headmanName,
-          name: that.data.name,
+           headmanName: that.data.headmanName||'',
+          name: that.data.name||'',
           // pwd: that.data.pwd,
-          phone: that.data.phone,
-          contactTel: that.data.tel,
-          address: that.data.address,
-          remark: that.data.remark,
-          hospitalId: app.globalData.hospitalId,
-          license: that.data.license,
-          itemId: that.data.id,
+          phone: that.data.phone||'',
+          contactTel: that.data.tel||'',
+          address: that.data.address||'',
+          remark: that.data.remark||'',
+          hospitalId: app.globalData.hospitalId||'',
+          license: that.data.license||'',
+          itemId: that.data.id||'',
         },
         header: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -122,21 +157,71 @@ Page({
   },
   save(e) {
     var that = this
+    if(!that.data.name){
+      wx.showToast({
+        title: '请输入门诊名称',
+        icon:'none'
+      })
+      return
+    }
+    if(!that.data.phone){
+      wx.showToast({
+        title: '请输入分配账号',
+        icon:'none'
+      })
+      return
+    }
+    if(!that.data.pwd){
+      wx.showToast({
+        title: '请输入分配密码',
+        icon:'none'
+      })
+      return
+    }
+    if(!that.data.clinicUserPasswordConfirm){
+      wx.showToast({
+        title: '请输入确认密码',
+        icon:'none'
+      })
+      return
+    }
+    
+    if(!that.data.headmanName){
+      wx.showToast({
+        title: '请输入负责人',
+        icon:'none'
+      })
+      return
+    }
+    if(!that.data.tel){
+      wx.showToast({
+        title: '请输入联系方式',
+        icon:'none'
+      })
+      return
+    }
+    if(!that.data.address){
+      wx.showToast({
+        title: '请输入门诊地址',
+        icon:'none'
+      })
+      return
+    }
     if (that.data.clinicUserPasswordConfirm==that.data.pwd){
       wx.request({
         url: app.globalData.url + '/hospital/operator/hospital-clinic-add', //仅为示例，非真实的接口地址
         method: 'post',
         data: {
-           headmanName: that.data.headmanName,
-          name: that.data.name,
-          clinicUserPassword: that.data.pwd,
-          clinicUserPhone: that.data.phone,
-          contactTel: that.data.tel,
-          address: that.data.address,
-          remark: that.data.remark,
-          hospitalClinicId: app.globalData.hospitalId,
-          clinicUserPasswordConfirm: that.data.clinicUserPasswordConfirm,
-          license: that.data.license,
+           headmanName: that.data.headmanName||'',
+          name: that.data.name||'',
+          clinicUserPassword: that.data.pwd||'',
+          clinicUserPhone: that.data.phone||'',
+          contactTel: that.data.tel||'',
+          address: that.data.address||'',
+          remark: that.data.remark||'',
+          hospitalClinicId: app.globalData.hospitalId||'',
+          clinicUserPasswordConfirm: that.data.clinicUserPasswordConfirm||'',
+          license: that.data.license||'',
         },
         header: {
           "Content-Type": "application/x-www-form-urlencoded",

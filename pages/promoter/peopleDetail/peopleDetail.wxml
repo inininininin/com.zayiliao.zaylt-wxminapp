@@ -22,10 +22,10 @@
       <text>号码：</text>
       <text>{{phone||''}}</text>
     </view>
-    <view>
+    <!-- <view>
       <text>备注：</text>
       <text>{{remark||''}}</text>
-    </view>
+    </view> -->
   </view>
 </view>
 <view class="lineChange" style="position:fixed;top:299rpx">

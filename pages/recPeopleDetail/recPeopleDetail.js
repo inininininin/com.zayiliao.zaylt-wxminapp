@@ -45,6 +45,13 @@ Page({
   },
   makeSure(e){
     var that=this
+    if(that.data.hospitalUserIdNew==''||that.data.hospitalUserIdNew==that.data.hospitalUserId){
+      wx.showToast({
+        title: '请选择门诊转处',
+        icon:'none'
+      })
+      return
+    }
     if(that.data.typeIs==1){
       var param = '?hospitalClinicId=' + that.data.changeClinicId +'&expectedRowCount=1'
       wx.request({
@@ -146,11 +153,18 @@ Page({
       success: function (res) {
         wx.hideToast()
         if (res.data.code == 0) {
-          var array = res.data.data.rows
-          for(var i in array){
-            if(array[i].hospitalUserId==that.data.hospitalUserId){
-              array.splice(i, 1);
+          var array=[{'name':'请选择','hospitalUserId':''}]
+          // var array = res.data.data.rows
+          console.log(res.data.data.rows)
+          for(var i in res.data.data.rows){
+            
+            if(res.data.data.rows[i].hospitalUserId==that.data.hospitalUserId){
+              // res.data.data.rows.splice(i+1, 1);
+              res.data.data.rows.splice(i, 1);
+            }else{
+              array.push(res.data.data.rows[i])
             }
+            
             console.log(array)
           }
           that.setData({

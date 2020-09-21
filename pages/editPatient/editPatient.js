@@ -129,10 +129,10 @@ Page({
       url: app.globalData.url + '/c2/patient/itemalter', //仅为示例，非真实的接口地址
       method: 'post',
       data: {
-        invoices: that.data.imgBlob,
-        sickness: that.data.sickness,
-        remark: that.data.remark,
-        patientId: that.data.id,
+        invoices: that.data.imgBlob||'',
+        sickness: that.data.sickness||'',
+        remark: that.data.remark||'',
+        patientId: that.data.id||'',
       },
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
