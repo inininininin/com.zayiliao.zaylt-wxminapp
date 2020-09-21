@@ -25,7 +25,7 @@ App({
     cover: '',
     authenticationIs: '',
     src:'', 
-    Version:'1.0.2009211533',
+    Version:'1.0.2009211633',
     versionIntro: '修复了部分BUG\n优化了部分体验',
     lastClient:'',
     longitude:'',
@@ -89,7 +89,38 @@ App({
           vm.globalData.titleBarHeight= titleBarHeight
       }
     })
-    
+    const updateManager = wx.getUpdateManager()
+
+    updateManager.onCheckForUpdate(function (res) {
+      // 请求完新版本信息的回调
+      console.log(res.hasUpdate)
+    })
+    wx.setStorageSync('searchKeys', '')
+    updateManager.onUpdateReady(function () {
+      updateManager.applyUpdate()
+      // wx.showLoading({
+      //   title: '新版本已准备好,请稍等',//'版本已更新',
+      //   mask: true
+      // })
+      // //等待提示‘版本更新’完以后倒计时执行重启小程序
+      // setTimeout(function() {
+      //   updateManager.applyUpdate()
+      // }, 1500);
+      // wx.showModal({
+      //   title: '更新提示',
+      //   content: '新版本已准备好, 请重新进入.',
+      //   success: function (res) {
+      //     if (res.confirm) {
+      //       // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
+      //       updateManager.applyUpdate()
+      //     }
+      //   }
+      // })
+    })
+
+    updateManager.onUpdateFailed(function () {
+      // 新版本下载失败
+    })
     wx.getLocation({
       type: 'wgs84',
       isHighAccuracy: true,

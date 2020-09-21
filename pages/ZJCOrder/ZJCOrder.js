@@ -305,11 +305,9 @@ Page({
                 wx.showLoading({
                   title: '下单成功',
                 })
-                setTimeout(function () {
-                  wx.navigateBack({
-                    delta: 1,
-                  })
-                }, 1000)
+                wx.navigateBack({
+                  delta: 1,
+                })
               } else {
                 wx.showToast({
                   title: res.data.codeMsg,

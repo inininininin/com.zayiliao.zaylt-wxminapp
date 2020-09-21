@@ -518,7 +518,7 @@ Page({
           wx.navigateTo({url: '../promoter/index/index',})
           return ''
         }
-        if(app.loginRefresh.hospitalAdminIs){
+        if(app.loginRefresh.operateIs){
           // 运营端
           wx.navigateTo({url: '../manage/index/index',})
           return ''
@@ -594,7 +594,7 @@ Page({
         //   })
         //   return ''
         // }
-        // res.data.data.hospitalAdminIs = "1";
+        // res.data.data.operateIs = "1";
         // res.data.data.clinicIs = "1";
         let _num = parseInt(res.data.data.hospitalIs)+parseInt(res.data.data.clinicIs)+parseInt(res.data.data.hospitalOperateIs)+parseInt(res.data.data.operateIs)
         if(_num>1){

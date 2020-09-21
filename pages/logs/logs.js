@@ -68,9 +68,9 @@ Page({
                   showPhone: true
                 })
               }
-              // res.data.data.hospitalAdminIs = "1";
+              // res.data.data.operateIs = "1";
               // res.data.data.clinicIs = "1";
-              let _num = parseInt(res.data.data.hospitalIs)+parseInt(res.data.data.clinicIs)+parseInt(res.data.data.hospitalOperateIs)+parseInt(res.data.data.hospitalAdminIs)
+              let _num = parseInt(res.data.data.hospitalIs)+parseInt(res.data.data.clinicIs)+parseInt(res.data.data.hospitalOperateIs)+parseInt(res.data.data.operateIs)
               if(_num>1){
                 wx.navigateTo({ url: '../selectRole/selectRole'})
                 return ''
@@ -90,14 +90,13 @@ Page({
                 wx.navigateTo({url: '../promoter/index/index',})
                 return ''
               }
-              if(res.data.data.hospitalAdminIs){
+              if(res.data.data.operateIs){
                 // 运营端
                 wx.navigateTo({url: '../manage/index/index',})
                 return ''
               }
               
             }else if(res.data.code==20){
-              console.log(2)
               wx.request({
                 url: app.globalData.url + '/login-by-wxminapp',
                 header: {
@@ -226,6 +225,7 @@ Page({
         // wx.redirectTo({
         //   url: '../selectRole/selectRole',
         // })
+        console.log(1111)
         if(app.globalData){
           app.globalData.phone = res.data.data.phone;
           app.globalData.userId = res.data.data.userId;
@@ -252,9 +252,10 @@ Page({
         //   })
         //   return ''
         // }
-        // res.data.data.hospitalAdminIs = "1";
+        // res.data.data.operateIs = "1";
         // res.data.data.clinicIs = "1";
-        let _num = parseInt(res.data.data.hospitalIs)+parseInt(res.data.data.clinicIs)+parseInt(res.data.data.hospitalOperateIs)+parseInt(res.data.data.hospitalAdminIs)
+        let _num = parseInt(res.data.data.hospitalIs)+parseInt(res.data.data.clinicIs)+parseInt(res.data.data.hospitalOperateIs)+parseInt(res.data.data.operateIs)
+        console.log(_num)
         if(_num>1){
           wx.navigateTo({ url: '../selectRole/selectRole'})
           return ''
@@ -274,7 +275,7 @@ Page({
           wx.navigateTo({url: '../promoter/index/index',})
           return ''
         }
-        if(res.data.data.hospitalAdminIs){
+        if(res.data.data.operateIs){
           // 运营端
           wx.navigateTo({url: '../manage/index/index',})
           return ''
@@ -287,7 +288,6 @@ Page({
             content: res.data.codeMsg,
           })
          }
-         
        }
       }
     })
