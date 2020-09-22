@@ -115,7 +115,7 @@ Page({
             if (data.code == 0) {
               wx.showToast({
                 title: '上传成功',
-                icon: 'success',
+                icon: 'none',
                 duration: 2000
               })
               that.setData({ introPic1: data.data.url })
@@ -136,7 +136,7 @@ Page({
     buttonDisabled: true
     wx.showToast({
       title: '资料上传中',
-      icon: 'loading',
+      icon: 'none',
       duration: 5000
     })
 
@@ -199,8 +199,9 @@ Page({
 
         }
         else {
-          wx.showModal({
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }

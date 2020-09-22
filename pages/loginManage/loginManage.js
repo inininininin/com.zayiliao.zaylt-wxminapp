@@ -5,48 +5,48 @@ Page({
    * 页面的初始数据
    */
   data: {
-    code:'',
+    code: '',
     key: '',
     // 密码
     password: '',
     // 密码的显示和隐藏
     isShowPassword: true,
-    selectAgree:true,
+    selectAgree: true,
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
     navbar: ['医院端', '门诊端', '运营端'],
     currentTab: 0,
-    openid:'',
-    loginChange:true,
+    openid: '',
+    loginChange: true,
     times: '获取验证码',
-    time:60
+    time: 60
   },
-  selectEnter(){
+  selectEnter() {
     wx.navigateTo({
       url: '../selectRole/selectRole',
     })
   },
-  timeBack(){
-    var that=this
-      var timer = setInterval(function () {
-        var time=that.data.time-1;
+  timeBack() {
+    var that = this
+    var timer = setInterval(function () {
+      var time = that.data.time - 1;
+      that.setData({
+        times: time + ' s',
+        time: time
+      })
+      if (that.data.time == 0) {
+        clearInterval(timer);
         that.setData({
-          times: time + ' s',
-          time: time
+          times: '获取验证码',
+          time: 60
         })
-        if (that.data.time == 0) {
-          clearInterval(timer);
-          that.setData({
-            times: '获取验证码',
-            time:60
-          })
-        }
-      }, 1000);   
+      }
+    }, 1000);
   },
   // 获取验证码
   smsvcodeGet(e) {
     var that = this
-    
+
     if (that.data.key == '' || that.data.key.length < 11) {
       wx.showToast({
         title: '请填写正确手机号',
@@ -55,7 +55,7 @@ Page({
       return
     } else {
       that.setData({
-        time:60
+        time: 60
       })
       wx.request({
         url: app.globalData.url + '/sendsmsvcode',
@@ -127,7 +127,7 @@ Page({
       currentTab: e.currentTarget.dataset.idx,
     })
   },
-  changePwd(e){
+  changePwd(e) {
     wx.navigateTo({
       url: '../changePwd/changePwd',
     })
@@ -137,20 +137,20 @@ Page({
     var loginChange = !this.data.loginChange;
     this.setData({
       loginChange: loginChange,
-      password:'',
+      password: '',
       times: '获取验证码',
-      time:1,
-      code:'',
+      time: 1,
+      code: '',
     });
   },
 
-  loginXy:function(e) { 
+  loginXy: function (e) {
     wx.navigateTo({
       url: '../registerXy/registerXy',
     })
   },
-  changeHos: function (key, code, password){
-    var that=this
+  changeHos: function (key, code, password) {
+    var that = this
     wx.request({
       url: app.globalData.url + '/hospital/set-pwd-by-phone',
       header: {
@@ -182,7 +182,7 @@ Page({
             title: res.data.codeMsg,
             icon: 'loading',
             duration: 1000,
-          }) 
+          })
           that.setData({
             times: '获取验证码',
           })
@@ -269,13 +269,13 @@ Page({
     })
   },
   // 修改密码
-  makeSure:function(){
-    var that=this
+  makeSure: function () {
+    var that = this
     var key = that.data.key;
     var password = that.data.password;
     var code = that.data.code;
-    var keyPrev = key.slice(0,4)
-    var keyLast = key.slice(key.length-4,key.length)
+    var keyPrev = key.slice(0, 4)
+    var keyLast = key.slice(key.length - 4, key.length)
     console.log(keyPrev, keyLast)
     if (keyPrev == 'test' || keyLast == 'test') {
       app.globalData.url = 'https://test.zaylt.njshangka.com'
@@ -284,10 +284,10 @@ Page({
     } else {
       app.globalData.url = 'https://zaylt.njshangka.com'
     }
-    
-   
-      that.changeMan(key, that.data.code, password)
-     
+
+
+    that.changeMan(key, that.data.code, password)
+
     // setTimeout(function () {
     //   if (that.data.currentTab == 0) {
     //     that.changeHos(key, password)
@@ -301,28 +301,28 @@ Page({
     //     })
     //   }
     // }, 1000)
-    
+
   },
   // 登录
-  loginBtn: function() {
+  loginBtn: function () {
     var that = this
-    if (!that.data.selectAgree){
+    if (!that.data.selectAgree) {
       wx.showToast({
         title: '请勾选登录协议',
         icon: 'loading',
         duration: 1000
       })
-    }else{
+    } else {
       var key = that.data.key;
       var password = that.data.password;
       var keyPrev = key.slice(0, 4)
       var keyLast = key.slice(key.length - 4, key.length)
-      console.log(key,keyPrev, keyLast)
+      console.log(key, keyPrev, keyLast)
       if (keyPrev == 'test' && keyLast == 'test') {
-        app.globalData.url ='https://test.zaylt.njshangka.com'
-        var lengths = that.data.key.length-4
+        app.globalData.url = 'https://test.zaylt.njshangka.com'
+        var lengths = that.data.key.length - 4
         var key = that.data.key.slice(4, lengths);
-      }else{
+      } else {
         app.globalData.url = 'https://zaylt.njshangka.com'
       }
       wx.request({
@@ -347,9 +347,9 @@ Page({
               })
             }
           } else {
-            wx.showModal({
-              showCancel: false,
-              title: res.data.codeMsg
+            wx.showToast({
+              title: res.data.codeMsg,
+              icon: 'none'
             })
           }
         }
@@ -361,18 +361,18 @@ Page({
         duration: 2000
       })
     }
-   
+
   },
 
 
-  loginHos: function (userPhone, userPassword){
+  loginHos: function (userPhone, userPassword) {
     wx.request({
       url: app.globalData.url + '/hospital/login',
       header: {
         'Content-type': 'application/x-www-form-urlencoded'
       },
       method: "post",
-      data:{
+      data: {
         account: userPhone,
         password: userPassword,
       },
@@ -410,47 +410,47 @@ Page({
                     url: app.globalData.url + '/hospital/login-refresh',
                     header: {
                       'Content-type': 'application/x-www-form-urlencoded',
-                      'longitude':app.globalData.longitude,
+                      'longitude': app.globalData.longitude,
                       'latitude': app.globalData.latitude,
                       'device-speed': app.globalData.speed,
                       'cookie': app.globalData.cookie
                     },
                     method: 'post',
                     success: function (res) {
-                     if(res.data.code==0){
-                       app.globalData.phone = res.data.data.phone;
-                       app.globalData.userId = res.data.data.userId;
-                       app.globalData.hospitalId = res.data.data.hospital.hospitalId;
-                       app.globalData.hospitalName = res.data.data.hospital.name;
-                       app.globalData.hospitaladdress = res.data.data.hospital.address;
-                       app.globalData.authenticationIs = res.data.data.hospital.authStatus;
-                       app.globalData.src=app.cover(res.data.data.hospital.license) 
-                       
-                       if (res.data.data.type == 1) {
-                         wx.navigateTo({
-                           url: '../promoter/index/index',
-                         })
-                       } else {
-                         wx.navigateTo({
-                           url: '../index/index',
-                         })
-                       }
-                     }else{
-                       wx.showModal({
-                         title: '',
-                         content: '',
-                       })
-                     }
+                      if (res.data.code == 0) {
+                        app.globalData.phone = res.data.data.phone;
+                        app.globalData.userId = res.data.data.userId;
+                        app.globalData.hospitalId = res.data.data.hospital.hospitalId;
+                        app.globalData.hospitalName = res.data.data.hospital.name;
+                        app.globalData.hospitaladdress = res.data.data.hospital.address;
+                        app.globalData.authenticationIs = res.data.data.hospital.authStatus;
+                        app.globalData.src = app.cover(res.data.data.hospital.license)
+
+                        if (res.data.data.type == 1) {
+                          wx.navigateTo({
+                            url: '../promoter/index/index',
+                          })
+                        } else {
+                          wx.navigateTo({
+                            url: '../index/index',
+                          })
+                        }
+                      } else {
+                        wx.showToast({
+                          title: res.data.codeMsg,
+                          icon:'none'
+                        })
+                      }
                     }
                   })
                 }
               })
             }
-            })
+          })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title: res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -505,7 +505,7 @@ Page({
                       'device-speed': app.globalData.speed,
                       'cookie': app.globalData.cookie
                     },
-                    method:'post',
+                    method: 'post',
                     success: function (res) {
                       app.globalData.phone = res.data.data.phone;
                       app.globalData.userId = res.data.data.userId;
@@ -515,7 +515,7 @@ Page({
                       app.globalData.clinicName = res.data.data.clinic.name;
                       app.globalData.clinicaddress = res.data.data.clinic.address;
                       app.globalData.authenticationIs = res.data.data.clinic.authenticationIs;
-                      app.globalData.src=app.cover(res.data.data.clinic.license) 
+                      app.globalData.src = app.cover(res.data.data.clinic.license)
                       wx.switchTab({
                         url: '../out/index/index',
                       })
@@ -529,9 +529,9 @@ Page({
             }
           })
         } else {
-          wx.showModal({
-            showCancel:false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title: res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -592,15 +592,15 @@ Page({
                       if (res.data.code == 0) {
                         app.globalData.phone = res.data.data.phone;
                         app.globalData.userId = res.data.data.userId;
-                       
-                          wx.navigateTo({
-                            url: '../manage/index/index',
-                          })
-                       
+
+                        wx.navigateTo({
+                          url: '../manage/index/index',
+                        })
+
                       } else {
-                        wx.showModal({
-                          title: '提示',
-                          content: res.data.codeMsg,
+                        wx.showToast({
+                          title: res.data.codeMsg,
+                          icon:'none'
                         })
                       }
                     }
@@ -610,9 +610,9 @@ Page({
             }
           })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title: res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -666,7 +666,7 @@ Page({
     //                 },
     //                 method: 'post',
     //                 success: function (res) {
-                      
+
     //                   app.globalData.phone = res.data.data.phone;
     //                   app.globalData.userId = res.data.data.userId;
     //                   app.globalData.clinicId = res.data.data.clinic.clinicId;
@@ -705,7 +705,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     var that = this
     var openid = wx.getStorageSync('openid')
     that.setData({
@@ -719,49 +719,49 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
     wx.stopPullDownRefresh()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
     if (app.globalData.lastClient == 1) {
       var path = '/pages/index/index'
     } else {

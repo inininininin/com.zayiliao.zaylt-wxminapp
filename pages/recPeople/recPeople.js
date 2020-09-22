@@ -97,9 +97,9 @@ Page({
               that.lastPage(0);
             }, 500)
           } else {
-            wx.showModal({
-              showCancel: false,
-              title: res.data.codeMsg
+            wx.showToast({
+              title:  res.data.codeMsg,
+              icon:'none'
             })
           }
         }
@@ -149,9 +149,9 @@ Page({
             schemeList: that.data.schemeList,
           })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }

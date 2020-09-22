@@ -14,65 +14,65 @@
   </view>
 </view> -->
 <view class="title">
-  <text></text>
-  基本信息
+	<text></text>
+	基本信息
 
-  <view class="save" bindtap="save">
-      <text>保存</text>
-      <image  mode="aspectFill"  src="../img/save@2x.png"></image>
-    </view>
+	<view class="save" bindtap="save">
+		<text>保存</text>
+		<image mode="aspectFill" src="../img/save@2x.png"></image>
+	</view>
 </view>
-<view class='box' style="margin-top:0;">  
-  <view>
-  <text>病员姓名</text><text>{{detail.realname||''}}</text>
-  </view>
-    <view>
-  <text>联系方式</text><text data-phone='{{detail.tel||""}}' bindtap="phoneThis" style="color:#2B77EF">{{detail.tel||''}}</text>
-  </view>
-    <view>
-  <text>证件号码</text><text>{{detail.idcardNo||''}}</text>
-  </view>
-    <view>
-  <text>所属门诊</text><text>{{detail.clinicName||''}}</text>
-  </view>
+<view class='box' style="margin-top:0;">
+	<view>
+		<text>病员姓名</text><text>{{detail.realname||''}}</text>
+	</view>
+	<view>
+		<text>联系方式</text><text data-phone='{{detail.tel||""}}' bindtap="phoneThis" style="color:#2B77EF">{{detail.tel||''}}</text>
+	</view>
+	<view>
+		<text>证件号码</text><text>{{detail.idcardNo||''}}</text>
+	</view>
+	<view>
+		<text>所属门诊</text><text>{{detail.clinicName||''}}</text>
+	</view>
 </view>
 <view class='box'>
+	<view>
+		<text>门诊推送时间</text><text>{{detail.pushTime||''}}</text>
+	</view>
   <view>
-  <text>门诊推送时间</text><text>{{detail.hospitalConfirmTime||''}}</text>
-  </view>
-    <view>
-  <text>确认就诊时间</text><text>{{detail.pushTime||''}}</text>
-  </view>
-    <!-- <view>
+		<text>确认就诊时间</text><text>{{detail.hospitalConfirmTime||''}}</text>
+	</view>
+	<!-- <view>
   <text>发票号码</text><text>钱生钱</text>
   </view>
     <view>
   <text>发票金额</text><text>钱生钱</text>
   </view> -->
-<!-- </view>
+	<!-- </view>
 <view class='box'> -->
-  <view>
-  <text>病种</text>
-  <input style="color:#2B77EF" placeholder="请输入" bindinput="sickness" placeholder-style="color:rgb(43,119,219);color:rgb(43,119,219)" value="{{sickness||''}}"></input>
-  <!-- <text>{{detail.sickness||''}}</text> -->
-  </view>
-    <view>
-  <text>备注</text>
-  <input style="color:#2B77EF" placeholder="请输入" bindinput="remark" placeholder-style="color:rgb(43,119,219);color:rgb(43,119,219)" value="{{remark||''}}"></input>
-  <!-- <text>{{detail.remark||''}}</text> -->
-  </view> 
+	<view>
+		<text>病种</text>
+		<input style="color:#2B77EF" placeholder="请输入" bindinput="sickness" placeholder-style="color:rgb(43,119,219);color:rgb(43,119,219)" value="{{sickness||''}}"></input>
+		<!-- <text>{{detail.sickness||''}}</text> -->
+	</view>
+	<view>
+		<text>备注</text>
+		<input style="color:#2B77EF" placeholder="请输入" bindinput="remark" placeholder-style="color:rgb(43,119,219);color:rgb(43,119,219)" value="{{remark||''}}"></input>
+		<!-- <text>{{detail.remark||''}}</text> -->
+	</view>
 </view>
 <view class="title">
-  <text></text>
-  发票照片
+	<text></text>
+	发票照片
 </view>
-<view class='invoicePhoto' >
-  <view bindtap="addPic">
-    <image  mode="aspectFill"  src="../img/orange_add@2x.png"></image>
-  </view>
-  <view class="imageItem"  wx:for='{{imglist}}'>
-    <image  mode="aspectFill"  data-src="{{item}}"  mode="aspectFill" bindtap="previewImage" src='{{item}}'></image>
-    <image  mode="aspectFill"  class="deletThis" bindtap="deletThis" data-src='{{item}}' src="../img/deleteC.png"></image>
-    <!-- <icon type="clear" size="20"/> -->
-  </view>
+<view class='invoicePhoto'>
+	<view bindtap="addPic">
+		<image mode="aspectFill" src="../img/orange_add@2x.png"></image>
+	</view>
+	<view class="imageItem" wx:for='{{imglist}}'>
+		<image mode="aspectFill" data-src="{{item}}" mode="aspectFill" bindtap="previewImage" src='{{item}}'></image>
+		<image mode="aspectFill" class="deletThis" bindtap="deletThis" data-src='{{item}}' src="../img/deleteC.png"></image>
+		<!-- <icon type="clear" size="20"/> -->
+	</view>
 </view>

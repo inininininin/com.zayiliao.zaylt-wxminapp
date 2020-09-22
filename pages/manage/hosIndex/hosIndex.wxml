@@ -17,11 +17,10 @@
 </view>
 <view class="swiper-container" >
 	<view class="swiper-container-bg" style="background:{{bgColorThisEve}};background-size:{{bgSizeThis}};"></view>
-	<swiper bindchange="swiperChange" class="swiper" current="{{swiperCurrent}}" autoplay="false" interval="2000" duration="500">
+	<!-- <swiper bindchange="swiperChange" class="swiper" current="{{swiperCurrent}}" autoplay="false" interval="2000" duration="500">
 		<block wx:for="{{cover}}" wx:for-index="index">
 			<swiper-item>
 				<navigator wx:if='{{item.jump==0}}'>
-					<!-- <image  mode="aspectFill"  src="{{item}}" class="slide-image" mode="aspectFill" /> -->
 					<view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
 				</navigator>
 				<navigator wx:if='{{item.jump==1}}' url='../../webview/webview?href={{item.jump1Url}}'>
@@ -55,7 +54,22 @@
 		<block wx:for="{{cover}}" wx:key="unique">
 			<view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
 		</block>
-	</view>
+	</view> -->
+	<swiper indicator-dots="{{indicatorDots}}" indicator-active-color="rgb(43,119,239)" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+		<block  wx:for="{{cover}}" wx:key="*this">
+			<swiper-item>
+				<image wx:if='{{item.jump==0}}' data-url='' style="width:100%;height:100%" src="{{item.cover}}" mode="aspectFill"></image>
+				<image bindtap="jumpUrl" wx:if='{{item.jump==1}}' data-url='../../webview/webview?href={{item.jump1Url}}' style="width:100%;height:100%" src="{{item.cover}}" mode="aspectFill"></image>
+				<image bindtap="jumpUrl" wx:if='{{item.jump==2}}' data-url='../../out/articleDetail/articleDetail?id={{item.jump2ArticleId}}' style="width:100%;height:100%" src="{{item.cover}}" mode="aspectFill"></image>
+				<image bindtap="jumpUrl" wx:if='{{item.jump==3}}' data-url='../../out/expertIntroduction/expertIntroduction?id={{item.jump3DoctorId}}' style="width:100%;height:100%" src="{{item.cover}}" mode="aspectFill"></image>
+				<image bindtap="jumpUrl" wx:if='{{item.jump==4}}' data-url='../../out/highQualityCaseDetail/highQualityCaseDetail?id={{item.jump4ProjectId}}' style="width:100%;height:100%" src="{{item.cover}}" mode="aspectFill"></image>
+				<image bindtap="jumpUrl" wx:if='{{item.jump==5}}' data-url='../../newActivity/newActivity?type={{item.jump5ActivityId}}' style="width:100%;height:100%" src="{{item.cover}}" mode="aspectFill"></image>
+				<image bindtap="jumpUrl" wx:if='{{item.jump==6}}' data-url='../../out/hospitalImage/hospitalImage?id={{item.hospitalMaincarouselId}}' style="width:100%;height:100%" src="{{item.cover}}" mode="aspectFill"></image>
+				<image bindtap="jumpUrl" wx:if='{{item.jump==7}}' data-url='../../out/expertIntroduction/expertIntroduction?id={{item.hospitalMaincarouselId}}' style="width:100%;height:100%" src="{{item.cover}}" mode="aspectFill"></image>
+				<image bindtap="jumpUrl" wx:if='{{item.jump==8}}' data-url='../../out/expertIntroduction/expertIntroduction?id={{item.hospitalMaincarouselId}}&currentTab=1' style="width:100%;height:100%" src="{{item.cover}}" mode="aspectFill"></image>
+			</swiper-item>
+		</block>
+	</swiper>
 </view>
 
 

@@ -67,13 +67,15 @@ Page({
     // wx.hideToast()
     var that = this;
     if (that.data.distributionNum == '') {
-      wx.showModal({
-        title: '号码不能为空'
+      wx.showToast({
+        title:  '号码不能为空',
+        icon:'none'
       })
     }
     if (that.data.distributionPassword == '' || that.data.hospitalName == '' || that.data.distributionPassword == '' || that.data.hospitalTel == '' || that.data.hospitalTel == '' || that.data.address == '' || that.data.remark == '') {
-      wx.showModal({
-        title: '请将表格填写完整'
+      wx.showToast({
+        title:  '请将表格填写完整',
+        icon:'none'
       })
     } else {
       // var that = this;
@@ -108,8 +110,9 @@ Page({
 
           }
           else {
-            wx.showModal({
-              title: res.data.codeMsg
+            wx.showToast({
+              title:  res.data.codeMsg,
+              icon:'none'
             })
           }
         }

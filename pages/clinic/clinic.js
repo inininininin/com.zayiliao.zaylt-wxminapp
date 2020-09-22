@@ -73,9 +73,10 @@ Page({
             clinicNumber: res.data.data.rowCount,
           })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -101,9 +102,9 @@ Page({
             newNumber: res.data.data.newPatientCount,
           });
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -189,6 +190,7 @@ Page({
             } else {
               wx.showToast({
                 title: '数据已全部加载',
+                icon: 'none',
                 // icon: 'loading',
                 // duration: 1500
               })
@@ -201,9 +203,9 @@ Page({
             });
           }
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -248,9 +250,9 @@ Page({
             clinicNumber: res.data.data.rowCount,
           })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }

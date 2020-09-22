@@ -96,10 +96,9 @@ Page({
             url: '../../newLogin/newLogin',
           })
         }else{
-          wx.showModal({
-            title:'错误信息',
-            showCancel: false,
-            content: res.data.codeMsg,
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }

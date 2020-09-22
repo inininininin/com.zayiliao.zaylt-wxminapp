@@ -70,9 +70,9 @@ lastPage:function(toPageNo){
           schemeList: that.data.schemeList,
         })
       } else {
-        wx.showModal({
-          showCancel: false,
-          title: res.data.codeMsg
+        wx.showToast({
+          title:  res.data.codeMsg,
+          icon:'none'
         })
       }
     }

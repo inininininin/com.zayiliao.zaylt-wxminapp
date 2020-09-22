@@ -37,10 +37,6 @@ Page({
                 title: resData.data.codeMsg,
                 icon:'none'
               })
-              // wx.showModal({
-              //   showCancel: false,
-              //   title: resData.data.codeMsg
-              // })
             }
           }
         })
@@ -204,10 +200,6 @@ Page({
         
        }else{
          if(!_value){
-          // wx.showModal({
-          //   title: '',
-          //   content: res.data.codeMsg,
-          // })
           wx.showToast({
             title: res.data.codeMsg,
             icon:'none'

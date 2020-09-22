@@ -131,6 +131,7 @@ Page({
         } else {
           wx.showToast({
             title: res.data.codeMsg,
+            icon: 'none',
           })
         }
       }
@@ -163,6 +164,7 @@ Page({
         if (res.data.code == 0) {
           wx.showToast({
             title: '新增成功',
+            icon: 'none',
           })
           setTimeout(function () {
             wx.navigateBack({
@@ -252,6 +254,7 @@ Page({
                 } else {
                   wx.showToast({
                     title: res.data.codeMsg,
+                    icon: 'none',
                   })
                 }
               }
@@ -261,6 +264,7 @@ Page({
         } else {
           wx.showToast({
             title: res.data.codeMsg,
+            icon: 'none',
           })
         }
       }
@@ -289,7 +293,7 @@ Page({
             if (data.code == 0) {
               wx.showToast({
                 title: '上传成功',
-                icon: 'success',
+                icon: 'none',
                 duration: 2000
               })
               if (url.slice(0, 1) != 'h') {

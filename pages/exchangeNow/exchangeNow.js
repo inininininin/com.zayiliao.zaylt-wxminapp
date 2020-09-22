@@ -32,6 +32,7 @@ Page({
     }else{
       wx.showToast({
         title: '库存不足',
+        icon: 'none',
       })
      
     }
@@ -49,10 +50,12 @@ Page({
     } else if (1 >= num){
       wx.showToast({
         title: '兑换数量最少为1',
+        icon: 'none',
       })
     }else{
       wx.showToast({
         title: '库存不足',
+        icon: 'none',
       })
     }
     that.setData({
@@ -70,6 +73,7 @@ Page({
     } else if (0 >= val) {
       wx.showToast({
         title: '兑换数量最少为1',
+        icon: 'none',
       })
       that.setData({
         count: 1
@@ -77,6 +81,7 @@ Page({
     } else {
       wx.showToast({
         title: '库存不足',
+        icon: 'none',
       })
       that.setData({
         count: that.data.stock
@@ -117,9 +122,9 @@ Page({
             stock: res.data.data.stock,
           })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -171,23 +176,26 @@ Page({
                 wx.showLoading({
                   title: '下单成功',
                 })
-                setTimeout(function () {
-                  wx.navigateBack({
-                    delta: 1,
-                  })
-                }, 1000)
+                wx.navigateBack({
+                  delta: 1,
+                })
+                // setTimeout(function () {
+                //   wx.navigateBack({
+                //     delta: 1,
+                //   })
+                // }, 1000)
               } else {
-                wx.showModal({
-                  showCancel: false,
-                  title: res.data.codeMsg
+                wx.showToast({
+                  title:  res.data.codeMsg,
+                  icon:'none'
                 })
               }
             }
           });
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -241,9 +249,9 @@ Page({
 
           }
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }

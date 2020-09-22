@@ -62,6 +62,7 @@ Page({
             });
             wx.showToast({
               title: '数据已全部加载',
+              icon: 'none',
               // icon: 'loading',
               // duration: 1500
             })
@@ -149,6 +150,7 @@ Page({
             });
             wx.showToast({
               title: '数据已全部加载',
+              icon: 'none',
               // icon: 'loading',
               // duration: 1500
             })
@@ -296,6 +298,7 @@ Page({
               } else {
                 wx.showToast({
                   title: res.data.codeMsg,
+                  icon: 'none',
                 })
               }
             }
@@ -369,6 +372,7 @@ Page({
                     });
                     wx.showToast({
                       title: '数据已全部加载',
+                      icon: 'none',
                       // icon: 'loading',
                       // duration: 1500
                     })

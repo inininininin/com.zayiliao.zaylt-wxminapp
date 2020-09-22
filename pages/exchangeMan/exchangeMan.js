@@ -86,7 +86,7 @@ Page({
     if (this.data.intro == '' || this.data.payExchangepoint == '' || this.data.stock == '' || this.data.name == '' ){
       wx.showToast({
         title: '请填写完整信息',
-        icon:'loading',
+        icon: 'none',
       })
     }else{
       this.setData({
@@ -195,6 +195,7 @@ Page({
     if (this.data.color == '#999999') {
       wx.showToast({
         title: '填写完整信息',
+        icon: 'none',
       })
     } else {
       wx.request({
@@ -247,7 +248,7 @@ Page({
               if (data.code == 0) {
                 wx.showToast({
                   title: '上传成功',
-                  icon: 'success',
+                  icon: 'none',
                   duration: 2000
                 })
               
@@ -307,6 +308,7 @@ Page({
             });
             wx.showToast({
               title: '数据已全部加载',
+              icon: 'none',
             })
           } else {
             that.setData({

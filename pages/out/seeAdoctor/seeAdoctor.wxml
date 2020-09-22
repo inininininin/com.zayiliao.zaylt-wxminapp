@@ -11,27 +11,27 @@
 </view> -->
 
 <view class='box'>
-  <view>
-  <text>病员姓名</text><text>{{detail.realname||''}}</text>
-  </view>
-    <view>
-  <text>联系方式</text><text  data-phone='{{detail.tel||""}}' bindtap="phoneThis" style="color:#2B77EF">{{detail.tel||''}}</text>
-  </view>
-    <view>
-  <text>证件号码</text><text>{{detail.idcardNo||''}}</text>
-  </view>
-    <view>
-  <text>所属门诊</text><text>{{detail.clinicName||''}}</text>
-  </view>
+	<view>
+		<text>病员姓名</text><text>{{detail.realname||''}}</text>
+	</view>
+	<view>
+		<text>联系方式</text><text  data-phone='{{detail.tel||""}}' bindtap="phoneThis" style="color:#2B77EF">{{detail.tel||''}}</text>
+	</view>
+	<view>
+		<text>证件号码</text><text>{{detail.idcardNo||''}}</text>
+	</view>
+	<view>
+		<text>所属门诊</text><text>{{detail.clinicName||''}}</text>
+	</view>
 </view>
 <view class='box'>
+	<view>
+		<text>门诊推送时间</text><text>{{detail.pushTime||''}}</text>
+	</view>
   <view>
-  <text>门诊推送时间</text><text>{{detail.hospitalConfirmTime||''}}</text>
-  </view>
-    <view>
-  <text>确认就诊时间</text><text>{{detail.pushTime||''}}</text>
-  </view>
-    <!-- <view>
+		<text>确认就诊时间</text><text>{{detail.hospitalConfirmTime||''}}</text>
+	</view>
+	<!-- <view>
   <text>发票号码</text><text>钱生钱</text>
   </view>
     <view>
@@ -39,15 +39,15 @@
   </view> -->
 </view>
 <view class='box'>
-  <view>
-  <text>病种</text><text>{{detail.sickness||''}}</text>
-  </view>
-    <view>
-  <text>备注</text><text>{{detail.remark||''}}</text>
-  </view>
- 
+	<view>
+		<text>病种</text><text>{{detail.sickness||''}}</text>
+	</view>
+	<view>
+		<text>备注</text><text>{{detail.remark||''}}</text>
+	</view>
+
 </view>
 
-<view class='invoicePhoto' >
-  <image  mode="aspectFill"  wx:for='{{picBlob}}' data-src="{{item.pic}}" bindtap="previewImage" src='{{item.pic}}'></image>
+<view class='invoicePhoto'>
+	<image mode="aspectFill" wx:for='{{picBlob}}' data-src="{{item.pic}}" bindtap="previewImage" src='{{item.pic}}'></image>
 </view>

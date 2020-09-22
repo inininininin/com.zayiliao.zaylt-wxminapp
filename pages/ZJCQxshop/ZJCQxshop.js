@@ -94,9 +94,9 @@ Page({
                 })
                 var showList = that.data.showList
               } else {
-                wx.showModal({
-                  showCancel: false,
-                  title: res.data.codeMsg
+                wx.showToast({
+                  title:  res.data.codeMsg,
+                  icon:'none'
                 })
               }
             }
@@ -140,9 +140,9 @@ Page({
             qixienum: res.data.data.totalCount
           })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -186,9 +186,9 @@ Page({
             movies: res.data.data.ads
           })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -243,9 +243,9 @@ Page({
           })
           var showList = that.data.showList
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -286,9 +286,9 @@ Page({
             showList: that.data.showList,
           })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -326,9 +326,9 @@ Page({
               qixienum: that.data.qixienum -1
             })
           } else {
-            wx.showModal({
-              showCancel: false,
-              title: res.data.codeMsg
+            wx.showToast({
+              title:  res.data.codeMsg,
+              icon:'none'
             })
           }
         }
@@ -358,9 +358,9 @@ Page({
               showList: that.data.showList,
             })
           } else {
-            wx.showModal({
-              showCancel: false,
-              title: res.data.codeMsg
+            wx.showToast({
+              title:  res.data.codeMsg,
+              icon:'none'
             })
           }
         }
@@ -400,9 +400,9 @@ Page({
               showList: that.data.showList,
             })
           } else {
-            wx.showModal({
-              showCancel: false,
-              title: res.data.codeMsg
+            wx.showToast({
+              title:  res.data.codeMsg,
+              icon:'none'
             })
           }
         }
@@ -433,9 +433,9 @@ Page({
               showList: that.data.showList,
             })
           } else {
-            wx.showModal({
-              showCancel: false,
-              title: res.data.codeMsg
+            wx.showToast({
+              title:  res.data.codeMsg,
+              icon:'none'
             })
           }
         }
@@ -465,9 +465,9 @@ Page({
               qixienum: that.data.qixienum - 1
             })
           } else {
-            wx.showModal({
-              showCancel: false,
-              title: res.data.codeMsg
+            wx.showToast({
+              title:  res.data.codeMsg,
+              icon:'none'
             })
           }
         }

@@ -72,9 +72,9 @@ Page({
               that.lastPage(0)
             }, 500)
           } else {
-            wx.showModal({
-              showCancel: false,
-              title: res.data.codeMsg
+            wx.showToast({
+              title:  res.data.codeMsg,
+              icon:'none'
             })
           }
         }
@@ -111,9 +111,9 @@ Page({
                     that.lastPage(0)
                   }, 500)
                 } else {
-                  wx.showModal({
-                    showCancel: false,
-                    title: res.data.codeMsg
+                  wx.showToast({
+                    title:  res.data.codeMsg,
+                    icon:'none'
                   })
                 }
               }
@@ -155,9 +155,9 @@ Page({
             }
           }
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -218,9 +218,9 @@ Page({
               })
             }, 500)
           } else {
-            wx.showModal({
-              showCancel: false,
-              title: res.data.codeMsg
+            wx.showToast({
+              title:  res.data.codeMsg,
+              icon:'none'
             })
           }
         }
@@ -262,9 +262,9 @@ Page({
                   })
                 }, 500)
               } else {
-                wx.showModal({
-                  showCancel: false,
-                  title: res.data.codeMsg
+                wx.showToast({
+                  title:  res.data.codeMsg,
+                  icon:'none'
                 })
               }
             }
@@ -318,9 +318,9 @@ Page({
             clinicNum: res.data.data.rowCount,
           })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -345,9 +345,9 @@ Page({
             remark: res.data.data.remark,
           })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -391,9 +391,9 @@ Page({
             schemeList: that.data.schemeList
           })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }

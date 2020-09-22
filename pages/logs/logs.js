@@ -283,9 +283,9 @@ Page({
         
        }else{
          if(!_value){
-          wx.showModal({
-            title: '',
-            content: res.data.codeMsg,
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
          }
        }

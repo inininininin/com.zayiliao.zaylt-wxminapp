@@ -471,9 +471,9 @@ Page({
           //   },
           // })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: resData.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -624,9 +624,9 @@ Page({
         
        }else{
          if(!_value){
-          wx.showModal({
-            title: '',
-            content: res.data.codeMsg,
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
          }
          

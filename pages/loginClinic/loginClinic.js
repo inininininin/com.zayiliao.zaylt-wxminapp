@@ -348,9 +348,9 @@ Page({
 			  that.loginCli(key, password)
             
           } else {
-            wx.showModal({
-              showCancel: false,
-              title: res.data.codeMsg
+            wx.showToast({
+              title: res.data.codeMsg,
+              icon:'none'
             })
           }
         }
@@ -438,10 +438,10 @@ Page({
                          })
                        }
                      }else{
-                       wx.showModal({
-                         title: '',
-                         content: '',
-                       })
+                      wx.showToast({
+                        title: res.data.codeMsg,
+                        icon:'none'
+                      })
                      }
                     }
                   })
@@ -450,9 +450,9 @@ Page({
             }
             })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title: res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -532,9 +532,10 @@ Page({
             }
           })
         } else {
-          wx.showModal({
-            showCancel:false,
-            title: res.data.codeMsg
+          
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -601,9 +602,9 @@ Page({
                           })
                        
                       } else {
-                        wx.showModal({
-                          title: '提示',
-                          content: res.data.codeMsg,
+                        wx.showToast({
+                          title:  res.data.codeMsg,
+                          icon:'none'
                         })
                       }
                     }
@@ -613,9 +614,9 @@ Page({
             }
           })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }

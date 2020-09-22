@@ -29,8 +29,9 @@ Page({
     var phone = e.currentTarget.dataset.phone;
     console.log(phone)
     if (phone == '') {
-      wx.showModal({
-        title: '当前医院尚未收录号码'
+      wx.showToast({
+        title:  '当前医院尚未收录号码',
+        icon:'none'
       })
     }else{
       wx.makePhoneCall({

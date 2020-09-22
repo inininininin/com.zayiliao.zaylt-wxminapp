@@ -17,7 +17,17 @@ Page({
     zindexThis:0,
     bgColorThis:'',
     colorThis:'#fff',
-    bgSizeThis:''
+    bgSizeThis:'',
+    indicatorDots: true,
+    vertical: false,
+    autoplay: true,
+    interval: 2000,
+    duration: 500
+  },
+  jumpUrl(e){
+    wx.navigateTo({
+      url: e.currentTarget.dataset.url,
+    })
   },
   onPageScroll: function (e) {
     // console.log(e.scrollTop)
@@ -225,9 +235,9 @@ Page({
             });
           }
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }

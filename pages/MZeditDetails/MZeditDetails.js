@@ -79,8 +79,9 @@ Page({
           })
         }
         else {
-          wx.showModal({
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -134,8 +135,9 @@ Page({
 
           }
           else {
-            wx.showModal({
-              title: res.data.codeMsg
+            wx.showToast({
+              title:  res.data.codeMsg,
+              icon:'none'
             })
           }
         }

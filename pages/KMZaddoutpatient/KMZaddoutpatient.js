@@ -172,8 +172,10 @@ Page({
     if (that.data.remark == '' || that.data.chargePeople == '' || that.data.hospitalName == ''
       || that.data.hospitalTel == ''
       || that.data.address == '' || that.data.passward == '' || that.data.phone==''){
-      wx.showModal({
-        title:'请将信息填写完整'
+      
+      wx.showToast({
+        title: '请将信息填写完整',
+        icon:'none'
       })
       }else{
 
@@ -204,8 +206,9 @@ Page({
            })
           }
           else {
-            wx.showModal({
-              title: res.data.codeMsg
+            wx.showToast({
+              title:  res.data.codeMsg,
+              icon:'none'
             })
           }
         }

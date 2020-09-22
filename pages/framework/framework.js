@@ -80,9 +80,9 @@ Page({
             list: that.data.list,
           })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -118,9 +118,9 @@ Page({
                   list: that.data.list,
                 })
               } else {
-                wx.showModal({
-                  showCancel: false,
-                  title: res.data.codeMsg
+                wx.showToast({
+                  title:  res.data.codeMsg,
+                  icon:'none'
                 })
               }
             }

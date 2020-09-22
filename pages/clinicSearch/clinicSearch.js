@@ -12,10 +12,10 @@ Page({
     titleBarHeight: getApp().globalData.titleBarHeight,
     // show: 2,
     kw: '',
-    showIs:true,
-    schemeList:[],
+    showIs: true,
+    schemeList: [],
   },
-  clinicItem(e){
+  clinicItem(e) {
     wx.navigateTo({
       url: '../clinicDetail/clinicDetail?clinicId=' + e.currentTarget.dataset.id + '&name=' + e.currentTarget.dataset.name,
     })
@@ -36,7 +36,7 @@ Page({
       url: '../gene/gene',
     })
   },
-  addNew(){
+  addNew() {
     wx.navigateTo({
       url: '../addClinic/addClinic?typesName=新增门诊',
     })
@@ -63,18 +63,18 @@ Page({
             clinicNumber: res.data.data.rowCount,
           })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title: res.data.codeMsg,
+            icon: 'none'
           })
         }
       }
     });
-    if(options.type==1){
+    if (options.type == 1) {
       that.setData({
-        showIs:true
+        showIs: true
       })
-    }else{
+    } else {
       that.setData({
         showIs: false
       })
@@ -87,7 +87,7 @@ Page({
     that.setData({
       schemeList: [],
       kw: val
-    }) 
+    })
     that.lastpageNo(val)
     that.lastPage(0, val)
   },
@@ -95,7 +95,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
   backHistory: function (e) {
     wx.navigateBack({
@@ -108,8 +108,8 @@ Page({
   onShow: function () {
 
   },
-  lastpageNo(kw){
-    let that=this
+  lastpageNo(kw) {
+    let that = this
     wx.request({
       url: app.globalData.url + '/hospital/admin/hospital-clinics-sum',
       header: {
@@ -128,9 +128,9 @@ Page({
             clinicNumber: res.data.data.rowCount,
           })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title: res.data.codeMsg,
+            icon: 'none'
           })
         }
       }
@@ -146,7 +146,7 @@ Page({
         'cookie': app.globalData.cookie
       },
       data: {
-         pn: toPageNo,
+        pn: toPageNo,
         ps: 16,
         kw: kw,
         // hospitalId: app.globalData.hospitalId,
@@ -159,21 +159,23 @@ Page({
         if (res.data.code == 0) {
           var schemeListArr = that.data.schemeList;
           var newSchemeListArr = schemeListArr.concat(res.data.data.rows)
-         
+
           if (res.data.data.rows.length == 0) {
             that.setData({
               schemeList: newSchemeListArr,
             });
             if (toPageNo == 1) {
-             
+
               wx.showToast({
                 title: '没有更多门诊',
+                icon: 'none',
                 // icon: 'loading',
                 // duration: 1500
               })
             } else {
               wx.showToast({
                 title: '数据已全部加载',
+                icon: 'none',
                 // icon: 'loading',
                 // duration: 1500
               })
@@ -185,9 +187,9 @@ Page({
             });
           }
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title: res.data.codeMsg,
+            icon: 'none'
           })
         }
       }

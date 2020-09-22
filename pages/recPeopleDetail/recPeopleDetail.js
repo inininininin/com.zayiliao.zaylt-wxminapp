@@ -69,6 +69,7 @@ Page({
           if (res.data.code == 0) {
             wx.showToast({
               title: '修改成功',
+              icon: 'none',
             })
             setTimeout(function () {
               that.setData({
@@ -81,9 +82,9 @@ Page({
               that.lastPageNo(0)
             }, 500)
           } else {
-            wx.showModal({
-              showCancel: false,
-              title: res.data.codeMsg
+            wx.showToast({
+              title: res.data.codeMsg,
+              icon:'none'
             })
           }
         }
@@ -110,6 +111,7 @@ Page({
                 if (res.data.code == 0) {
                   wx.showToast({
                     title: '修改成功',
+                    icon: 'none',
                   })
                   setTimeout(function () {
                     that.setData({
@@ -122,9 +124,9 @@ Page({
                     that.lastPageNo(0)
                   }, 500)
                 } else {
-                  wx.showModal({
-                    showCancel: false,
-                    title: res.data.codeMsg
+                  wx.showToast({
+                    title: res.data.codeMsg,
+                    icon:'none'
                   })
                 }
               }
@@ -179,9 +181,9 @@ Page({
             }
           }
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title: res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -227,7 +229,7 @@ Page({
     if (that.data.name == '' || that.data.phone == ''  ) {
       wx.showToast({
         title: '请填写完整表格',
-        icon: 'loading'
+        icon: 'none',
       })
     }else {
       wx.request({
@@ -250,6 +252,7 @@ Page({
           if (res.data.code == 0) {
             wx.showToast({
               title: '修改成功',
+              icon: 'none',
             })
             setTimeout(function () {
               that.setData({
@@ -258,9 +261,9 @@ Page({
               })
             }, 500)
           } else {
-            wx.showModal({
-              showCancel: false,
-              title: res.data.codeMsg
+            wx.showToast({
+              title: res.data.codeMsg,
+              icon:'none'
             })
           }
         }
@@ -289,6 +292,7 @@ Page({
               if (res.data.code == 0) {
                 wx.showToast({
                   title: '删除成功',
+                  icon: 'none',
                 })
                 setTimeout(function () {
                   var pages = getCurrentPages();
@@ -302,9 +306,9 @@ Page({
                   })
                 }, 500)
               } else {
-                wx.showModal({
-                  showCancel: false,
-                  title: res.data.codeMsg
+                wx.showToast({
+                  title: res.data.codeMsg,
+                  icon:'none'
                 })
               }
             }
@@ -384,9 +388,9 @@ Page({
               // remark: res.data.data.remark,
             })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title: res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -411,9 +415,9 @@ Page({
             clinicNum: res.data.data.rowCount,
           })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title: res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -446,6 +450,7 @@ Page({
             });
             wx.showToast({
               title: '数据已全部加载',
+              icon: 'none',
             })
           } else {
             that.setData({
@@ -457,9 +462,9 @@ Page({
             schemeList: that.data.schemeList,
           })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title: res.data.codeMsg,
+            icon:'none'
           })
         }
       }

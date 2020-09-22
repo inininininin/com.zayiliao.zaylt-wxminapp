@@ -53,36 +53,42 @@ Page({
     if(!that.data.name){
       wx.showToast({
         title: '医院名称不能为空',
+        icon: 'none',
       })
       return
     }
     if(!that.data.phone){
       wx.showToast({
         title: '账号不能为空',
+        icon: 'none',
       })
       return
     }
     if(!that.data.pwd){
       wx.showToast({
         title: '分配密码不能为空',
+        icon: 'none',
       })
       return
     }
     if(!that.data.headmanName){
       wx.showToast({
         title: '负责人不能为空',
+        icon: 'none',
       })
       return
     }
     if(!that.data.tel){
       wx.showToast({
         title: '联系方式不能为空',
+        icon: 'none',
       })
       return
     }
     if(!that.data.address){
       wx.showToast({
         title: '医院名地址不能为空',
+        icon: 'none',
       })
       return
     }
@@ -107,6 +113,7 @@ Page({
         if(res.data.code==0){
             wx.showToast({
               title: '新增成功',
+              icon: 'none',
             })
           var pages = getCurrentPages();
           var currPage = pages[pages.length - 1];   //当前页面
@@ -150,7 +157,7 @@ Page({
               if (data.code == 0) {
                 wx.showToast({
                   title: '上传成功',
-                  icon: 'success',
+                  icon: 'none',
                   duration: 2000
                 })
                 if (url.slice(0,1)!='h'){

@@ -9,10 +9,10 @@ Page({
     statusBarHeight: '',
     titleBarHeight: '',
 
-    userHeadImgPhoto:'',
-    schemeList:[],
+    userHeadImgPhoto: '',
+    schemeList: [],
     introPic1: '',
-    distributionNum:'',
+    distributionNum: '',
     distributionPassword: '',
     hospitalName: '',
     hospitalTel: '',
@@ -23,9 +23,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+
   },
-  distributionNum:function(e){
+  distributionNum: function (e) {
     this.setData({
       distributionNum: e.detail.value
     })
@@ -100,7 +100,7 @@ Page({
             if (data.code == 0) {
               wx.showToast({
                 title: '上传成功',
-                icon: 'success',
+                icon: 'none',
                 duration: 2000
               })
               that.setData({ introPic1: data.data.url })
@@ -117,14 +117,14 @@ Page({
 
 
 
-  add:function(){
+  add: function () {
     buttonDisabled: true
     wx.showToast({
       title: '资料上传中',
       icon: 'loading',
       duration: 5000
     })
-   
+
     var that = this
     var introPic1 = that.data.introPic1;
     var distributionNum = that.data.distributionNum;
@@ -132,16 +132,16 @@ Page({
     var hospitalName = that.data.hospitalName;
     var hospitalTel = that.data.hospitalTel;
     var chargePeople = that.data.chargePeople;
- 
+
 
     if (introPic1 == '' || distributionNum == '' || distributionPassword == '' || hospitalName == ''
       || hospitalTel == '' || chargePeople == '') {
-
-      wx.showModal({
-        title:'请将资料填写完整'
-      })
+        wx.showToast({
+          title: '请将资料填写完整',
+          icon:'none'
+        })
     }
-   
+
     var userToken = wx.getStorageSync("userToken")
     // var openId = that.data.openId
     // 网络请求
@@ -168,8 +168,9 @@ Page({
 
         }
         else {
-          wx.showModal({
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }

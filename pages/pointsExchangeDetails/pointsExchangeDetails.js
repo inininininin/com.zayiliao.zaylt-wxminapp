@@ -108,9 +108,9 @@ Page({
           if (res.data.code == 0) {
 
           } else {
-            wx.showModal({
-              showCancel: false,
-              title: res.data.codeMsg
+            wx.showToast({
+              title:  res.data.codeMsg,
+              icon:'none'
             })
           }
         }
@@ -133,9 +133,9 @@ Page({
             wx.hideToast()
             if (res.data.code == 0) {
             } else {
-              wx.showModal({
-                showCancel: false,
-                title: res.data.codeMsg
+              wx.showToast({
+                title:  res.data.codeMsg,
+                icon:'none'
               })
             }
           }
@@ -159,9 +159,9 @@ Page({
                 totalCountInShoppingcart: that.data.totalCountInShoppingcart - 1
               })
             } else {
-              wx.showModal({
-                showCancel: false,
-                title: res.data.codeMsg
+              wx.showToast({
+                title:  res.data.codeMsg,
+                icon:'none'
               })
             }
           }
@@ -216,9 +216,9 @@ Page({
           })
           console.log(that.data.movies)
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }

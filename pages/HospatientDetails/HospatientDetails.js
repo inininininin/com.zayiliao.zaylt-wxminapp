@@ -54,6 +54,7 @@ Page({
             });
             wx.showToast({
               title: '数据已全部加载',
+              icon: 'none',
               // icon: 'loading',
               // duration: 1500
             })
@@ -118,6 +119,7 @@ Page({
         if (res.data.code == 0) {
           wx.showToast({
             title: '接收成功',
+            icon: 'none',
           })
 
         } else if (res.data.code == 20 || res.data.code == 26) {

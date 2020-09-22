@@ -72,9 +72,9 @@ Page({
             
           })
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }
@@ -139,7 +139,7 @@ Page({
               if (data.code == 0) {
                 wx.showToast({
                   title: '上传成功',
-                  icon: 'success',
+                  icon: 'none',
                   duration: 2000
                 })
                 videoBlob = videoBlob+','+ url
@@ -183,7 +183,7 @@ Page({
               if (data.code == 0) {
                 wx.showToast({
                   title: '上传成功',
-                  icon: 'success',
+                  icon: 'none',
                   duration: 2000
                 })
                 picBlob = picBlob + ',' + url

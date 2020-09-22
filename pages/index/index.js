@@ -20,6 +20,16 @@ Page({
     // bgColorThisEve:'url(https://zaylt.njshangka.com/ylt/resource/img/88-1@2x.png)',
     bgSizeThis: 'cover',
     colorThis: '#fff',
+    indicatorDots: true,
+    vertical: false,
+    autoplay: true,
+    interval: 2000,
+    duration: 500
+  },
+  jumpUrl(e){
+    wx.navigateTo({
+      url: e.currentTarget.dataset.url,
+    })
   },
   onPageScroll: function (e) {
     // console.log(e.scrollTop)
@@ -73,13 +83,13 @@ Page({
   ylzy(e) {
     wx.showToast({
       title: '暂未开通',
-      icon: 'loading'
+      icon: 'none',
     })
   },
   qtxm(e) {
     wx.showToast({
       title: '暂未开通',
-      icon: 'loading'
+      icon: 'none',
     })
   },
   swiperChange: function (e) {
@@ -259,12 +269,13 @@ Page({
             if (toPageNo == 1) {
               wx.showToast({
                 title: '尚无运营精选',
-                icon: 'loading',
+                icon: 'none',
                 // duration: 1500
               })
             } else {
               wx.showToast({
                 title: '数据已全部加载',
+                icon: 'none',
                 // icon: 'loading',
                 // duration: 1500
               })
@@ -277,9 +288,9 @@ Page({
             });
           }
         } else {
-          wx.showModal({
-            showCancel: false,
-            title: res.data.codeMsg
+          wx.showToast({
+            title:  res.data.codeMsg,
+            icon:'none'
           })
         }
       }

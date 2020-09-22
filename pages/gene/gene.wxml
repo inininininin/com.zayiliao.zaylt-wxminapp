@@ -39,7 +39,7 @@
   </view>
 </navigator> -->
 
-<view class='tabulate' style='margin-bottom:100rpx;paddint-bottom:100rpx'>
+<view class='tabulate' style='margin-bottom:100rpx;padding-bottom:100rpx'>
   <navigator  wx:for='{{schemeList}}' url='../out/geneDetail/geneDetail?geneTestSamplePackId={{item.geneTestSamplePackId}}'>
     <view class='outpatient'>
       <view class='outLine1'>
