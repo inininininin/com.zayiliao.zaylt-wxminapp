@@ -109,10 +109,10 @@
     <text class='selectBtn'>医院</text>
   </view>
   <!-- <navigator url='../clinic/clinic'> -->
-  <view bindtap='clinic'>
+  <!-- <view bindtap='clinic'>
     <image  mode="aspectFill"  class='bottomBthimg2' src='../../img/Hospital@2x.png'></image>
     <text>门诊</text>
-  </view>
+  </view> -->
   <!-- </navigator> -->
  <!-- <navigator url='../mine/mine'> -->
   <view  bindtap='mine'>

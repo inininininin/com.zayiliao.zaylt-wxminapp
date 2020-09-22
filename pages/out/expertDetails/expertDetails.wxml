@@ -3,7 +3,7 @@
 </view> -->
 <view style="width:100%;height:20rpx;background:#F5F5F5"></view>
 <view class="topline">
-    <image src="{{detail.headimg}}"></image>
+    <image mode="aspectFill" src="{{detail.headimg}}"></image>
     <view class="toplineView">
       <text>{{detail.name}}</text>
       <text>{{detail.hosptialName}}</text>

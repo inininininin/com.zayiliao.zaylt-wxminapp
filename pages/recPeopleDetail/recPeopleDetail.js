@@ -160,7 +160,7 @@ Page({
             
             if(res.data.data.rows[i].hospitalUserId==that.data.hospitalUserId){
               // res.data.data.rows.splice(i+1, 1);
-              res.data.data.rows.splice(i, 1);
+              // res.data.data.rows.splice(i, 1);
             }else{
               array.push(res.data.data.rows[i])
             }

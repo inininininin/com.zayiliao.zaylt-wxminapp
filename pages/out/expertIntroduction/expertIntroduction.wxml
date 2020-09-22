@@ -5,7 +5,7 @@
 <view wx:for='{{schemeList}}'>
   <!-- <navigator url='../docDetail/docDetail'> -->
   <view class='docBox' bindtap="linkDetail"  data-detail='{{item}}'>
-    <image  mode="aspectFill"  class='avator' mode="aspectFill" src='{{item.headimg}}'></image>
+    <image  class='avator' mode="aspectFill" src='{{item.headimg}}'></image>
     <view>
       <text class='name'>{{item.name}}</text>
       <view >

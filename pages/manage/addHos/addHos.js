@@ -50,6 +50,42 @@ Page({
   },
   save(e){
     var that=this
+    if(!that.data.name){
+      wx.showToast({
+        title: '医院名称不能为空',
+      })
+      return
+    }
+    if(!that.data.phone){
+      wx.showToast({
+        title: '账号不能为空',
+      })
+      return
+    }
+    if(!that.data.pwd){
+      wx.showToast({
+        title: '分配密码不能为空',
+      })
+      return
+    }
+    if(!that.data.headmanName){
+      wx.showToast({
+        title: '负责人不能为空',
+      })
+      return
+    }
+    if(!that.data.tel){
+      wx.showToast({
+        title: '联系方式不能为空',
+      })
+      return
+    }
+    if(!that.data.address){
+      wx.showToast({
+        title: '医院名地址不能为空',
+      })
+      return
+    }
     wx.request({
       url: app.globalData.url + '/clientend2/manageend/hospitaladd', //仅为示例，非真实的接口地址
       method: 'post',

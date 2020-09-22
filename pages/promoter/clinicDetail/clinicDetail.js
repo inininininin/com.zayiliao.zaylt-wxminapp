@@ -90,21 +90,22 @@ Page({
   },
   // 点击下拉列表
   navbarTap(e) {
-    let status=''
-    let  totalCount=''
+    let status = ''
+    let totalCount = ''
     let Indexs = e.currentTarget.dataset.idx; //获取点击的下拉列表的下标
+    console.log(Indexs)
     if (Indexs == 0) {
       status = ''
-      totalCount=this.data.totalCount
+      totalCount = this.data.totalCount
     } else if (Indexs == 1) {
       status = '4'
-      totalCount=this.data.totalCount1
+      totalCount = this.data.totalCount1
     } else if (Indexs == 2) {
       status = '1'
-      totalCount=this.data.totalCount2
+      totalCount = this.data.totalCount2
     }
     this.setData({
-      totalCount:totalCount,
+      totalCount: totalCount,
       status: status,
       list1: [],
       currentTab: e.currentTarget.dataset.idx,
@@ -223,14 +224,74 @@ Page({
             success: function (res) {
               console.log(res)
               if (res.data.code == 0) {
+
                 for (var i = 0; i < that.data.list1.length; i++) {
                   if (that.data.list1[i].itemId == id) {
-                    console.log(that.data.list1[i].itemId)
-                    that.data.list1[i].status = 4
+                    if (that.data.currentTab == 2) {
+                      that.data.list1.splice(i, 1)
+                    } else {
+                      that.data.list1[i].status = 4
+                    }
+                    // console.log(that.data.list1[i].itemId)
                   }
                 }
                 that.setData({
                   list1: that.data.list1
+                })
+                wx.request({
+                  url: app.globalData.url + '/c2/patient/items',
+                  method: 'post',
+                  data: {
+                    pn: 1,
+                    ps: 15,
+                    status: '',
+                    clinicId: that.data.clinicId,
+                  },
+                  header: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    'cookie': app.globalData.cookie
+                  },
+                  success: function (res) {
+                    if (res.data.code == 0) {
+                      that.setData({
+                        totalCount: res.data.data.sum.totalCount
+                      })
+                      wx.request({
+                        url: app.globalData.url + '/c2/patient/items',
+                        method: 'post',
+                        data: {
+                          pn: 1,
+                          ps: 15,
+                          status: 4,
+                          clinicId: that.data.clinicId,
+                        },
+                        header: {
+                          "Content-Type": "application/x-www-form-urlencoded",
+                          'cookie': app.globalData.cookie
+                        },
+                        success: function (res) {
+                          if (res.data.code == 0) {
+                            var totalCount1 = parseInt(res.data.data.sum.totalCount)
+                            that.setData({
+                              totalCount1: res.data.data.sum.totalCount,
+                              totalCount2: parseInt(that.data.totalCount) - parseInt(res.data.data.sum.totalCount),
+                              navbar: [{ 'name': '全部', 'count': that.data.totalCount }, { 'name': '已就诊', 'count': totalCount1 }, { 'name': '未就诊', 'count': parseInt(that.data.totalCount) - parseInt(res.data.data.sum.totalCount) }],
+                            })
+                          } else if (res.data.code == 20 || res.data.code == 26) {
+                            wx.hideToast()
+                            wx.navigateTo({
+                              url: '../../newLogin/newLogin',
+                            })
+                          }
+                        }
+                      })
+                    } else if (res.data.code == 20 || res.data.code == 26) {
+                      wx.hideToast()
+                      wx.navigateTo({
+                        url: '../../newLogin/newLogin',
+                      })
+                    }
+                  }
                 })
               } else {
                 wx.showToast({
@@ -262,7 +323,8 @@ Page({
     var that = this
     if (that.data.changeIs == 1) {
       that.setData({
-        list1: []
+        list1: [],
+        currentTab: 2
       })
       wx.request({
         url: app.globalData.url + '/c2/patient/items',
@@ -283,30 +345,13 @@ Page({
               totalCount: res.data.data.sum.totalCount
             })
             var totalCount = res.data.data.sum.totalCount
-            var list1 = that.data.list1;
-            var newlist1 = list1.concat(res.data.data.items)
-            if (res.data.data.items.length == 0) {
-              that.setData({
-                list1: list1,
-                // toPageNo: String(toPageNo)
-              });
-              wx.showToast({
-                title: '数据已全部加载',
-                // icon: 'loading',
-                // duration: 1500
-              })
-            } else {
-              that.setData({
-                list1: newlist1,
-              });
-            }
             wx.request({
               url: app.globalData.url + '/c2/patient/items',
               method: 'post',
               data: {
                 pn: 1,
                 ps: 15,
-                status: 4,
+                status: 1,
                 clinicId: that.data.clinicId,
               },
               header: {
@@ -315,11 +360,36 @@ Page({
               },
               success: function (res) {
                 if (res.data.code == 0) {
-                  var totalCount1 = parseInt(res.data.data.sum.totalCount)
+                  var list1 = that.data.list1;
+                  var newlist1 = list1.concat(res.data.data.items)
+                  if (res.data.data.items.length == 0) {
+                    that.setData({
+                      list1: list1,
+                      // toPageNo: String(toPageNo)
+                    });
+                    wx.showToast({
+                      title: '数据已全部加载',
+                      // icon: 'loading',
+                      // duration: 1500
+                    })
+                  } else {
+                    that.setData({
+                      list1: newlist1,
+                    });
+                  }
+                  var pushTime
+                  for (var i = 0; i < that.data.list1.length; i++) {
+                    pushTime = that.data.list1[i].pushTime
+                    that.data.list1[i].pushTime = app.dateChange(pushTime)
+                  }
                   that.setData({
-                    totalCount1: res.data.data.sum.totalCount,
-                    totalCount2: parseInt(that.data.totalCount) - parseInt(res.data.data.sum.totalCount),
-                    navbar: [{ 'name': '全部', 'count': that.data.totalCount }, { 'name': '已就诊', 'count': totalCount1 }, { 'name': '未就诊', 'count': parseInt(that.data.totalCount) - parseInt(res.data.data.sum.totalCount) }],
+                    list1: that.data.list1,
+                  })
+                  var totalCount2 = parseInt(res.data.data.sum.totalCount)
+                  that.setData({
+                    totalCount2: parseInt(res.data.data.sum.totalCount),
+                    totalCount1: parseInt(that.data.totalCount) - parseInt(res.data.data.sum.totalCount),
+                    navbar: [{ 'name': '全部', 'count': that.data.totalCount }, { 'name': '已就诊', 'count': parseInt(that.data.totalCount) - parseInt(res.data.data.sum.totalCount) }, { 'name': '未就诊', 'count': totalCount2 }],
                   })
                 } else if (res.data.code == 20 || res.data.code == 26) {
                   wx.hideToast()
@@ -335,14 +405,6 @@ Page({
               url: '../../newLogin/newLogin',
             })
           }
-          var pushTime
-          for (var i = 0; i < that.data.list1.length; i++) {
-            pushTime = that.data.list1[i].pushTime
-            that.data.list1[i].pushTime = app.dateChange(pushTime)
-          }
-          that.setData({
-            list1: that.data.list1,
-          })
         }
       })
     }
@@ -390,24 +452,6 @@ Page({
           that.setData({
             totalCount: res.data.data.sum.totalCount
           })
-          // var totalCount = res.data.data.sum.totalCount
-          // var list1 = that.data.list1;
-          // var newlist1 = list1.concat(res.data.data.items)
-          // if (res.data.data.items.length == 0) {
-          //   // that.setData({
-          //   //   list1: list1,
-          //   //   // toPageNo: String(toPageNo)
-          //   // });
-          //   wx.showToast({
-          //     title: '数据已全部加载',
-          //     // icon: 'loading',
-          //     // duration: 1500
-          //   })
-          // } else {
-          //   that.setData({
-          //     list1: newlist1,
-          //   });
-          // }
           wx.request({
             url: app.globalData.url + '/c2/patient/items',
             method: 'post',
@@ -443,14 +487,6 @@ Page({
             url: '../../newLogin/newLogin',
           })
         }
-        var pushTime
-        for (var i = 0; i < that.data.list1.length; i++) {
-          pushTime = that.data.list1[i].pushTime
-          that.data.list1[i].pushTime = app.dateChange(pushTime)
-        }
-        that.setData({
-          list1: that.data.list1,
-        })
       }
     })
     wx.stopPullDownRefresh()

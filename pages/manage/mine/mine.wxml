@@ -14,8 +14,8 @@
 <view class='topline'>
 	<image mode="aspectFill" src='{{headimg}}'></image>
 	<view>
-		<text>{{nickname}}</text>
-		<text>{{phone}}</text>
+		<text>{{nickname||''}}</text>
+		<text>{{phone||''}}</text>
 	</view>
 </view>
 
@@ -40,10 +40,10 @@
 	</view>
 	<!-- </navigator> -->
 	<!-- <navigator  hover-class='none' url='../clinic/clinic'> -->
-	<view bindtap='clinic'>
+	<!-- <view bindtap='clinic'>
 		<image mode="aspectFill" class='bottomBthimg2' src='../../img/Hospital@2x.png'></image>
 		<text>门诊</text>
-	</view>
+	</view> -->
 	<!-- </navigator> -->
 
 	<view>

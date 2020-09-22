@@ -288,14 +288,14 @@ margin-left: 40rpx;
   border-top: 1px solid #e5e5e5;
 }
 .bottomBth navigator{
-    width: 250rpx;
+    width: 375rpx;
   text-align: center;
   display: inline-block;
   font-size: 30rpx;
   color: #9c9c9c;
 }
 .bottomBth view{
-  width: 250rpx;
+  width: 375rpx;
   text-align: center;
   display: inline-block;
   font-size: 30rpx;
@@ -308,19 +308,19 @@ margin-left: 40rpx;
   width: 42rpx;
   height: 44rpx;
   display: block;
-  margin: 10rpx 104rpx 0;
+  margin: 10rpx 166.5rpx 0;
 }
 .bottomBth view>.bottomBthimg2{
   width: 46rpx;
   height: 44rpx;
   display: block;
-  margin: 10rpx 104rpx 0;
+  margin: 10rpx 164.5rpx 0;
 }
 .bottomBth view>.bottomBthimg3{
   width: 44rpx;
   height: 44rpx;
   display: block;
-  margin: 10rpx 104rpx 0;
+  margin: 10rpx 165.5rpx 0;
 }
 
 .hosTitle{
