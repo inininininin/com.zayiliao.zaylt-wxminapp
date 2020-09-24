@@ -133,7 +133,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if(app.loginRefresh.hospital&&app.loginRefresh.hospital.map.cover){
+    if(app.loginRefresh.hospital&&app.loginRefresh.hospital.map&&app.loginRefresh.hospital.map.cover){
       app.loginRefresh.hospital.map.cover=app.cover(app.loginRefresh.hospital.map.cover)
       this.setData({
         srcCover: app.loginRefresh.hospital.map.cover

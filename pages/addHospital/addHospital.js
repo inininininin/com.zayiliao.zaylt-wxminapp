@@ -121,7 +121,7 @@ Page({
     buttonDisabled: true
     wx.showToast({
       title: '资料上传中',
-      icon: 'loading',
+      icon: 'none',
       duration: 5000
     })
 

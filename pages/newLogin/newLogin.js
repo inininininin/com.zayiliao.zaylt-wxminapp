@@ -128,6 +128,7 @@ Page({
     if (that.data.key == '' || that.data.key.length < 11) {
       wx.showToast({
         title: '请填写正确手机号',
+        icon: 'none'
       })
     } else if (that.data.times != '获取验证码') {
       return
@@ -151,7 +152,8 @@ Page({
             that.timeBack()
           } else {
             wx.showToast({
-              title: res.data.codeMsg
+              title: res.data.codeMsg,
+              icon: 'none'
             })
           }
         }
@@ -245,7 +247,7 @@ Page({
         if (res.data.code == 0) {
           wx.showToast({
             title: '修改成功',
-            icon: 'success',
+            icon: 'none',
             duration: 1000,
           })
           setTimeout(function () {
@@ -258,7 +260,7 @@ Page({
         } else {
           wx.showToast({
             title: res.data.codeMsg,
-            icon: 'loading',
+            icon: 'none',
             duration: 1000,
           })
           that.setData({
@@ -286,7 +288,7 @@ Page({
         if (res.data.code == 0) {
           wx.showToast({
             title: '修改成功',
-            icon: 'success',
+            icon: 'none',
             duration: 1000,
           })
           setTimeout(function () {
@@ -299,7 +301,7 @@ Page({
         } else {
           wx.showToast({
             title: res.data.codeMsg,
-            icon: 'loading',
+            icon: 'none',
             duration: 1000,
           })
           that.setData({
@@ -327,7 +329,7 @@ Page({
         if (res.data.data.code == 0) {
           wx.showToast({
             title: '修改成功',
-            icon: 'success',
+            icon: 'none',
             duration: 1000,
           })
           setTimeout(function () {
@@ -339,7 +341,7 @@ Page({
         } else {
           wx.showToast({
             title: res.data.data.codeMsg,
-            icon: 'loading',
+            icon: 'none',
             duration: 1000,
           })
         }
@@ -373,6 +375,7 @@ Page({
       // that.changeMan(key, password)
       wx.showToast({
         title: '维护中',
+        icon: 'none',
         duration: 2000,
       })
     }
@@ -400,28 +403,17 @@ Page({
         icon: 'none',
         duration: 1000
       })
-    } else {
+    } else   if (that.data.key==''||that.data.password=='') {
+      wx.showToast({
+        title: '请填写完整账号密码',
+        icon: 'none',
+        duration: 1000
+      })
+    } else{
       var key = that.data.key;
       var password = that.data.password;
-      // var keyPrev = key.slice(0, 4)
-      // var keyLast = key.slice(key.length - 4, key.length)
-      // console.log(key,keyPrev, keyLast)
-      // if (keyPrev == 'test' && keyLast == 'test') {
-      //   // app.globalData.url ='https://zaylt.njshangka.com'
-      //   app.globalData.url = 'https://dev.inininininin.com/ylt'
-      //   // var lengths = that.data.key.length-4
-      //   // var key = that.data.key.slice(4, lengths);
-      // }else{
-      //   // app.globalData.url = 'https://zaylt.njshangka.com'
-      //   app.globalData.url = 'https://dev.inininininin.com/ylt'
-      // }
       that.loginHos(key, password)
       buttonDisabled: true
-      wx.showToast({
-        title: '登录请求中',
-        icon: 'loading',
-        duration: 2000
-      })
     }
 
   },

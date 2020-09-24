@@ -79,6 +79,7 @@ page {
 }
 
 .address view .addressDv {
+  height: 34rpx;
   font-size: 32rpx;
   line-height: 32rpx !important;
   margin: 0 auto 32rpx 0;

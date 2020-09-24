@@ -115,7 +115,7 @@ Page({
               if (data.code == 0) {
                 wx.showToast({
                   title: '上传成功',
-                  icon: 'success',
+                  icon: 'none',
                   duration: 2000
                 })
                 wx.request({
@@ -190,7 +190,7 @@ Page({
             if (data.code == 0) {
               wx.showToast({
                 title: '上传成功',
-                icon: 'success',
+                icon: 'none',
                 duration: 2000
               })
               that.setData({ introPic1: data.data.url })
@@ -251,13 +251,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if(app.loginRefresh.hospital&&app.loginRefresh.hospital.map.cover){
+    if(app.loginRefresh.hospital&&app.loginRefresh.hospital.map&&app.loginRefresh.hospital.map.cover){
       app.loginRefresh.hospital.map.cover=app.cover(app.loginRefresh.hospital.map.cover)
       this.setData({
         srcCover: app.loginRefresh.hospital.map.cover
       })
     }
-    if(app.loginRefresh.hospital&&app.loginRefresh.hospital.map.license){
+    if(app.loginRefresh.hospital&&app.loginRefresh.hospital.map&&app.loginRefresh.hospital.map.license){
       app.loginRefresh.hospital.map.license=app.cover(app.loginRefresh.hospital.map.license)
       app.globalData.src=app.cover(app.loginRefresh.hospital.map.license)
       // this.setData({

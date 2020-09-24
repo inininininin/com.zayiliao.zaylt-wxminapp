@@ -1,6 +1,6 @@
-<view>
+<!-- <view>
   <include src="../common/common.wxml" />
-</view>
+</view> -->
 <view style="text-align: center;font-size:30rpx;">
   <!-- <view style='font-size:45rpx;'>用户协议</view> -->
   <view style='font-size:40rpx;margin:15rpx auto'>特别提示</view>

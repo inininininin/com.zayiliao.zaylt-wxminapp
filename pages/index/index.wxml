@@ -63,6 +63,7 @@
 				<image bindtap="jumpUrl" wx:if='{{item.type==6}}' data-url='../out/hospitalImage/hospitalImage?id={{item.hospitalAdId}}' style="width:100%;height:100%" src="{{item.cover}}" mode="aspectFill"></image>
 				<image bindtap="jumpUrl" wx:if='{{item.type==7}}' data-url='../out/expertIntroduction/expertIntroduction?id={{item.hospitalAdId}}' style="width:100%;height:100%" src="{{item.cover}}" mode="aspectFill"></image>
 				<image bindtap="jumpUrl" wx:if='{{item.type==8}}' data-url='../out/hospitalImage/hospitalImage?id={{item.hospitalAdId}}&currentTab=1' style="width:100%;height:100%" src="{{item.cover}}" mode="aspectFill"></image>
+				<image bindtap="jumpUrl" wx:if='{{item.type==9}}' data-url='../out/highQualityCase/highQualityCase' style="width:100%;height:100%" src="{{item.cover}}" mode="aspectFill"></image>
 				<!-- <view class="swiper-item {{item}}">{{item}}</view> -->
 			</swiper-item>
 		</block>
