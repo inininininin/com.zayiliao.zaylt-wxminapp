@@ -15,26 +15,26 @@ Page({
     showList: [],
     addressIf: '',
     addressList: [],
-    id:'',
+    id: '',
     cover: '',
     name: '',
     intro: '',
     commodityId: '',
-    payExchangepoint:'',
-    count:'1',
+    payExchangepoint: '',
+    count: '1',
     stock: '',
   },
   add: function (e) {
     var that = this
     var num = e.currentTarget.dataset.num;
-    if (num < that.data.stock){
+    if (num < that.data.stock) {
       num++
-    }else{
+    } else {
       wx.showToast({
         title: '库存不足',
         icon: 'none',
       })
-     
+
     }
     that.setData({
       count: num
@@ -45,14 +45,14 @@ Page({
     var that = this
     var num = e.currentTarget.dataset.num;
     var deviceId = e.currentTarget.dataset.id;
-    if (1<num&&num <= that.data.stock) {
+    if (1 < num && num <= that.data.stock) {
       num--
-    } else if (1 >= num){
+    } else if (1 >= num) {
       wx.showToast({
         title: '兑换数量最少为1',
         icon: 'none',
       })
-    }else{
+    } else {
       wx.showToast({
         title: '库存不足',
         icon: 'none',
@@ -101,7 +101,7 @@ Page({
         'cookie': app.globalData.cookie
       },
       data: {
-         commodityId:that.data.id,
+        commodityId: that.data.id,
         pn: 1,
         ps: 100,
       },
@@ -112,7 +112,7 @@ Page({
           // if (res.data.data.cover.slice(0,1)!='h'){
           //   res.data.data.cover = app.globalData.url + res.data.data.cover
           // }
-          res.data.data.cover=app.cover(res.data.data.cover)
+          res.data.data.cover = app.cover(res.data.data.cover)
           that.setData({
             cover: res.data.data.cover,
             name: res.data.data.name,
@@ -123,8 +123,8 @@ Page({
           })
         } else {
           wx.showToast({
-            title:  res.data.codeMsg,
-            icon:'none'
+            title: res.data.codeMsg,
+            icon: 'none'
           })
         }
       }
@@ -132,7 +132,7 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
-    var id=options.id
+    var id = options.id
     that.setData({
       id: id,
     })
@@ -151,7 +151,7 @@ Page({
         'cookie': app.globalData.cookie
       },
       data: {
-         param: param
+        param: param
       },
       method: 'post',
       success: function (res) {
@@ -161,24 +161,29 @@ Page({
           var strs = { receiverId: receiverId, commodities: [{ id: that.data.id, count: that.data.count }] }
           var params = JSON.stringify(strs)
           wx.request({
-              url: app.globalData.url + '/clientend2/clinicend/pointexchange/order',
+            url: app.globalData.url + '/clientend2/clinicend/pointexchange/order',
             header: {
               "Content-Type": "application/x-www-form-urlencoded",
               'cookie': app.globalData.cookie
             },
             data: {
-               param: params
+              param: params
             },
             method: 'post',
             success: function (res) {
               wx.hideToast()
               if (res.data.code == 0) {
-                wx.showLoading({
-                  title: '下单成功',
+                wx.showToast({
+                  title: 'title',
+                  icon: 'none',
+                  duration: 2000,
+                  success: function (res) {
+                    wx.navigateBack({
+                      delta: 1,
+                    })
+                  }
                 })
-                wx.navigateBack({
-                  delta: 1,
-                })
+
                 // setTimeout(function () {
                 //   wx.navigateBack({
                 //     delta: 1,
@@ -186,16 +191,16 @@ Page({
                 // }, 1000)
               } else {
                 wx.showToast({
-                  title:  res.data.codeMsg,
-                  icon:'none'
+                  title: res.data.codeMsg,
+                  icon: 'none'
                 })
               }
             }
           });
         } else {
           wx.showToast({
-            title:  res.data.codeMsg,
-            icon:'none'
+            title: res.data.codeMsg,
+            icon: 'none'
           })
         }
       }
@@ -206,7 +211,7 @@ Page({
    */
   onReady: function () {
 
-    
+
 
 
   },
@@ -228,7 +233,7 @@ Page({
         'cookie': app.globalData.cookie
       },
       data: {
-         pn: 1,
+        pn: 1,
         ps: 1,
       },
       method: 'post',
@@ -250,8 +255,8 @@ Page({
           }
         } else {
           wx.showToast({
-            title:  res.data.codeMsg,
-            icon:'none'
+            title: res.data.codeMsg,
+            icon: 'none'
           })
         }
       }

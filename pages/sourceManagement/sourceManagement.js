@@ -421,7 +421,7 @@ Page({
       method: 'post',
       data: {
         pn: toPageNo,
-        ps: pageSize,
+        ps: 15,
         status: status,
         kw: that.data.kw,
         hospitalId: app.globalData.hospitalId,
@@ -460,7 +460,7 @@ Page({
             } else {
               that.setData({
                 list1: newlist1,
-                toPageNo: String(toPageNo)
+                toPageNo: parseInt(toPageNo)
               });
             }
           } else if (that.data.currentTab == 2) {
@@ -480,7 +480,7 @@ Page({
             } else {
               that.setData({
                 list2: newlist2,
-                toPageNo: String(toPageNo)
+                toPageNo: parseInt(toPageNo)
               });
             }
           } else {
@@ -500,7 +500,7 @@ Page({
             } else {
               that.setData({
                 list0: newlist0,
-                toPageNo: String(toPageNo)
+                toPageNo: parseInt(toPageNo)
               });
             }
           }
@@ -632,7 +632,7 @@ Page({
    */
   onReachBottom: function () {
     var that = this
-    var toPageNo = that.data.toPageNo
+    var toPageNo = parseInt(that.data.toPageNo)
     if (that.data.currentTab == 1) {
       that.lastPage(toPageNo, 1, that.data.date, that.data.date2, that.data.date3, that.data.date4)
     } else if (that.data.currentTab == 2) {

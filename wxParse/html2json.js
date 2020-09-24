@@ -1,5 +1,5 @@
 'use strict';
-
+const app=getApp();
 /**
  * html2Json 改造来自: https://github.com/Jxck/html2json
  * 
@@ -141,6 +141,25 @@ function html2json(html, bindName) {
             }
 
             //对img添加额外数据
+            // if (node.tag === 'img') {
+            //     node.imgIndex = results.images.length;
+            //     var imgUrl = node.attr.src;
+            //     console.log(imgUrl)
+            //     if (imgUrl[0] == '') {
+            //         imgUrl.splice(0, 1);
+            //     }
+            //     imgUrl = wxDiscode.urlToHttpUrl(imgUrl, __placeImgeUrlHttps);
+            //     imgUrl=app.cover(imgUrl)
+            //     node.attr.src = imgUrl.replace(/[\r\n]/g, '');
+            //     if(node.attr.src&&node.attr.src.split('../..')){
+            //         node.attr.src=node.attr.src.split('../..')[1]
+            //     }
+            //     node.attr.src=app.cover(node.attr.src)
+            //     console.log(node.attr.src)
+            //     node.from = bindName;
+            //     results.images.push(node);
+            //     results.imageUrls.push(imgUrl);
+            // }
             if (node.tag === 'img') {
                 node.imgIndex = results.images.length;
                 var imgUrl = node.attr.src;
@@ -149,10 +168,9 @@ function html2json(html, bindName) {
                 }
                 imgUrl = wxDiscode.urlToHttpUrl(imgUrl, __placeImgeUrlHttps);
                 node.attr.src = imgUrl.replace(/[\r\n]/g, '');
-                if(node.attr.src&&node.attr.src.split('../..')){
-                    node.attr.src=node.attr.src.split('../..')[1]
+                if( node.attr.src.slice(0,1)=='/'){
+                    node.attr.src='https://zaylt.njshangka.com'+node.attr.src
                 }
-                // console.log(node.attr.src)
                 node.from = bindName;
                 results.images.push(node);
                 results.imageUrls.push(imgUrl);

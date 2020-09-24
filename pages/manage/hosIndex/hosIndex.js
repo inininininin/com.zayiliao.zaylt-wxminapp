@@ -81,19 +81,19 @@ Page({
   jyjc: function () {
     wx.showToast({
       title: '暂未开通',
-      icon: 'loading'
+      icon:'none'
     })
   },
   ylzy(e) {
     wx.showToast({
       title: '暂未开通',
-      icon: 'loading'
+      icon:'none'
     })
   },
   qtxm(e) {
     wx.showToast({
       title: '暂未开通',
-      icon: 'loading'
+      icon:'none'
     })
   },
   swiperChange: function (e) {
@@ -217,12 +217,14 @@ Page({
             if (toPageNo == 1) {
               wx.showToast({
                 title: '没有相关文章',
+                icon:'none'
                 // icon: 'loading',
                 // duration: 1500
               })
             } else {
               wx.showToast({
                 title: '数据已全部加载',
+                icon:'none'
                 // icon: 'loading',
                 // duration: 1500
               })

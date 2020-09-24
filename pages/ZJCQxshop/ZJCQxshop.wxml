@@ -1,71 +1,73 @@
 <view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
-  <view class="header">
-    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
-    <view class="title-bar" style="height:{{titleBarHeight}}px">
-      <view>
-        <image  mode="aspectFill"  bindtap='backHistory' style='margin-left:10rpx;border-radius:6rpx;display:inline-block;padding:20rpx;' src='../img/backArrow.png'></image>
-        
-        <view class="searchBox" bindtap="searchBox">
-          <image  mode="aspectFill"  src="../img/search1.png"></image>
-          <text>{{navtitle}}</text>
-        </view>
-      </view>
-    </view>
-  </view>
+	<view class="header">
+		<view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+		<view class="title-bar" style="height:{{titleBarHeight}}px">
+			<view>
+				<image mode="aspectFill" bindtap='backHistory' style='margin-left:10rpx;border-radius:6rpx;display:inline-block;padding:20rpx;' src='../img/backArrow.png'></image>
+
+				<view class="searchBox" bindtap="searchBox">
+					<image mode="aspectFill" src="../img/search1.png"></image>
+					<text>{{navtitle}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
 </view>
 <view class="swiper-container">
-  <swiper bindchange="swiperChange" class="swiper" current="{{swiperCurrent}}" autoplay="false" interval="5000" duration="1000">
-    <block wx:for="{{movies}}">
-      <swiper-item>
-        <navigator wx:if='{{item.type==4}}' url='../ZJCQxDetail/ZJCQxDetail?deviceId={{item.link}}'>
-        <image  mode="aspectFill"  src="{{item.cover}}" class="slide-image" mode="aspectFill" />
-        </navigator>
-        <navigator wx:if='{{item.type==1}}' url='../webview/webview?href={{item.link}}'>
-        <image  mode="aspectFill"  src="{{item.cover}}" class="slide-image" mode="aspectFill" />
-        </navigator>
-        <navigator wx:if='{{item.type==0}}' url=''>
-        <image  mode="aspectFill"  src="{{item.cover}}" class="slide-image" mode="aspectFill" />
-        </navigator>
-      </swiper-item>
-    </block>
-  </swiper>
-  <view class="dots">
-    <block wx:for="{{movies}}" wx:key="unique">
-      <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
-    </block>
-  </view>
+	<swiper indicator-dots="{{indicatorDots}}" indicator-active-color="rgb(43,119,239)" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+		<block wx:for="{{movies}}" wx:key="*this">
+			<swiper-item>
+				<image bindtap="jumpUrl" wx:if='{{item.type==4}}' data-url='../ZJCQxDetail/ZJCQxDetail?deviceId={{item.link}}' mode="aspectFill" src="{{item.cover}}" class="slide-image" mode="aspectFill" />
+				<image bindtap="jumpUrl" wx:if='{{item.type==1}}' data-url='../webview/webview?href={{item.link}}' mode="aspectFill" src="{{item.cover}}" class="slide-image" mode="aspectFill" />
+				<image wx:if='{{item.type==0}}' mode="aspectFill" src="{{item.cover}}" class="slide-image" mode="aspectFill" />
+			</swiper-item>
+		</block>
+	</swiper>
+	<!-- <swiper bindchange="swiperChange" class="swiper" current="{{swiperCurrent}}" autoplay="false" interval="5000" duration="1000">
+		<block wx:for="{{movies}}">
+			<swiper-item>
+				<image bindtap="jumpUrl" wx:if='{{item.type==4}}' data-url='../ZJCQxDetail/ZJCQxDetail?deviceId={{item.link}}' mode="aspectFill" src="{{item.cover}}" class="slide-image" mode="aspectFill" />
+				<image bindtap="jumpUrl" wx:if='{{item.type==1}}' data-url='../webview/webview?href={{item.link}}' mode="aspectFill" src="{{item.cover}}" class="slide-image" mode="aspectFill" />
+				<image wx:if='{{item.type==0}}' mode="aspectFill" src="{{item.cover}}" class="slide-image" mode="aspectFill" />
+			</swiper-item>
+		</block>
+	</swiper>
+	<view class="dots">
+		<block wx:for="{{movies}}" wx:key="unique">
+			<view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+		</block>
+	</view> -->
 </view>
 
 <view class="classify _44f602a">
-  <scroll-view class="classify_catetory _44f602a" scroll-y scroll-with-animation="true">
-    <view style='width:160rpx;' class="name {{ index === activeIndex ? 'active' : '' }} _44f602a" wx:for="{{ rootcateList }}" wx:key="item" bindtap="changeCate" data-index="{{ index }}" data-name='{{item.name}}' style='background:{{item.bgcolor}};color:{{item.color}};border-left: 8px solid {{item.colors}}'
-      data-id="{{ item.typeId }}" data-name="{{ item.name }}">
-      {{ item.name }}
-    </view>
-  </scroll-view>
-  <scroll-view class="classify_detail _44f602a" style="height:{{scrollHeight}}px" scroll-y scroll-with-animation="true">
-    <view class="children _44f602a" class="children_item _44f602a" wx:for="{{ showList }}" wx:for-item="item" wx:key="index">
-      <view hover-class="none">
-        <navigator class='navigator1' url='../ZJCQxDetail/ZJCQxDetail?deviceId={{item.deviceId}}&count={{item.countInShoppingcart}}'>
-          <image  mode="aspectFill"  src='{{item.cover}}'></image>
-        </navigator>
-        <view class="child_name _44f602a" data-name='{{item.name}}' bindtap='selectOver'>
-          <navigator class='navigator2' url='../ZJCQxDetail/ZJCQxDetail?deviceId={{item.deviceId}}&count={{item.countInShoppingcart}}'>
-            <view class='child_name_1'>{{ item.name }}</view>
-            <view class='child_name_2'>{{ item.brief }}</view>
-          </navigator>
-          <view class='adddel'>
-            <image  mode="aspectFill"  data-id="{{ item.deviceId }}" bindtap='del' data-num='{{item.countInShoppingcart}}' wx:if='{{item.countInShoppingcart!=0}}' src='../img/jian@2x.png'></image>
-            <input bindblur='inputVal' type='number' data-num='{{item.countInShoppingcart}}' data-id="{{ item.deviceId }}" wx:if='{{item.countInShoppingcart!=0}}' value='{{item.countInShoppingcart}}'></input>
-            <image  mode="aspectFill"  data-id="{{ item.deviceId }}" bindtap='add' style='float:right' data-num='{{item.countInShoppingcart}}' src='../img/jia@2x.png'></image>
-          </view>
-        </view>
-      </view>
-    </view>
-  </scroll-view>
+	<scroll-view class="classify_catetory _44f602a" scroll-y scroll-with-animation="true">
+		<view style='width:160rpx;' class="name {{ index === activeIndex ? 'active' : '' }} _44f602a" wx:for="{{ rootcateList }}" wx:key="item" bindtap="changeCate" data-index="{{ index }}" data-name='{{item.name}}' style='background:{{item.bgcolor}};color:{{item.color}};border-left: 8px solid {{item.colors}}' data-id="{{ item.typeId }}" data-name="{{ item.name }}">
+			{{ item.name }}
+		</view>
+	</scroll-view>
+	<scroll-view class="classify_detail _44f602a" style="height:{{scrollHeight}}px" scroll-y scroll-with-animation="true">
+		<view class="children _44f602a" class="children_item _44f602a" wx:for="{{ showList }}" wx:for-item="item" wx:key="index">
+			<view hover-class="none">
+				<navigator class='navigator1' url='../ZJCQxDetail/ZJCQxDetail?deviceId={{item.deviceId}}&count={{item.countInShoppingcart}}'>
+					<image mode="aspectFill" src='{{item.cover}}'></image>
+				</navigator>
+				<view class="child_name _44f602a" data-name='{{item.name}}' bindtap='selectOver'>
+					<navigator class='navigator2' url='../ZJCQxDetail/ZJCQxDetail?deviceId={{item.deviceId}}&count={{item.countInShoppingcart}}'>
+						<view class='child_name_1'>{{ item.name }}</view>
+						<view class='child_name_2'>{{ item.brief }}</view>
+					</navigator>
+					<view class='adddel'>
+						<image mode="aspectFill" data-id="{{ item.deviceId }}" bindtap='del' data-num='{{item.countInShoppingcart}}' wx:if='{{item.countInShoppingcart!=0}}' src='../img/jian@2x.png'></image>
+						<input bindblur='inputVal' type='number' data-num='{{item.countInShoppingcart}}' data-id="{{ item.deviceId }}" wx:if='{{item.countInShoppingcart!=0}}' value='{{item.countInShoppingcart}}'></input>
+						<image mode="aspectFill" data-id="{{ item.deviceId }}" bindtap='add' style='float:right' data-num='{{item.countInShoppingcart}}' src='../img/jia@2x.png'></image>
+					</view>
+				</view>
+			</view>
+		</view>
+	</scroll-view>
 </view>
 
 <view class='shoppingCartList' bindtap='shoppingCartList'>
-  <image  mode="aspectFill"  src='../img/jicai-cheng@2x.png'></image>
-  <text>{{qixienum}}</text>
+	<image mode="aspectFill" src='../img/jicai-cheng@2x.png'></image>
+	<text>{{qixienum}}</text>
 </view>

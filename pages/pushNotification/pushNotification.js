@@ -69,7 +69,7 @@ Page({
           } else {
             that.setData({
               schemeList: newSchemeListArr,
-              toPageNo: String(toPageNo)
+              toPageNo: parseInt(toPageNo)
             });
           }
         } else {
@@ -135,7 +135,7 @@ Page({
    */
   onReachBottom: function () {
     var that = this
-    var toPageNo = that.data.toPageNo
+    var toPageNo = parseInt(that.data.toPageNo)
     that.lastPage(toPageNo)
   },
 

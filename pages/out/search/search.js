@@ -12,14 +12,14 @@ Page({
     titleBarHeight: getApp().globalData.titleBarHeight,
     list:[],
     kw: '',
-    toPageNo:'0'
+    toPageNo:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.lastPage(this.data.toPageNo, this.data.kw)
+    this.lastPage(0, this.data.kw)
   },
   input(e){
     var val = e.detail.value
@@ -44,7 +44,7 @@ Page({
       method: 'post',
       data: {
         pn: toPageNo,
-        ps: pageSize,
+        ps: 15,
         clinicId: app.globalData.clinicId,
          kw: kw,
       },
@@ -68,7 +68,7 @@ Page({
             if (res.data.data.items.length == 0) {
               that.setData({
                 list: list,
-                toPageNo: String(toPageNo)
+                toPageNo: parseInt(toPageNo)
               });
               wx.showToast({
                 title: '数据已全部加载',
@@ -78,7 +78,7 @@ Page({
             } else {
               that.setData({
                 list: newlist,
-                toPageNo: String(toPageNo)
+                toPageNo: parseInt(toPageNo)
               });
             }
          
@@ -155,7 +155,7 @@ Page({
    */
   onReachBottom: function () {
     var that = this
-    var toPageNo = that.data.toPageNo
+    var toPageNo = parseInt(that.data.toPageNo)
       that.lastPage(toPageNo, that.data.kw)  
   },
   /**

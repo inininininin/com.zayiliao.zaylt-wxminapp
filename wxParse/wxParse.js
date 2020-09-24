@@ -73,7 +73,15 @@ function wxParse() {
 function wxParseImgTap(e) {
   var that = this;
   var nowImgUrl = e.target.dataset.src;
+  console.log(nowImgUrl)
   var tagFrom = e.target.dataset.from;
+  console.log(tagFrom)
+  console.log(that.data[tagFrom].imageUrls)
+  for(var i in that.data[tagFrom].imageUrls){
+    if (that.data[tagFrom].imageUrls[i].slice(0, 1) == '/') {
+      that.data[tagFrom].imageUrls[i] = 'https://zaylt.njshangka.com'+ that.data[tagFrom].imageUrls[i]
+    }
+  }
   if (typeof tagFrom != 'undefined' && tagFrom.length > 0) {
     wx.previewImage({
       current: nowImgUrl, // 当前显示图片的http链接

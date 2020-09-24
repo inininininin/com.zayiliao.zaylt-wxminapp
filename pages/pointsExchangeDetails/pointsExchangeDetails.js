@@ -20,7 +20,8 @@ Page({
     qxData: [],
     count: 0,
     payExchangepoint: '',
-    commodityId: ''
+    commodityId: '',
+    cover:''
   },
   addCg: function (e) {
     this.setData({
@@ -198,17 +199,18 @@ Page({
       success: function (res) {
         wx.hideToast()
         if (res.data.code == 0) {
-          
-          var cover=res.data.data.cover;
-         var coverBlob=cover.split(',');
-          for(var i=0;i<coverBlob.length;i++){
-            if (coverBlob[i].slice(0,1)!='h'){
-              // coverBlob[i] = app.globalData.url+coverBlob[i]
-              coverBlob[i]=app.cover(coverBlob[i])
-            }
-          }
+          res.data.data.cover=app.cover(res.data.data.cover)
+        //   var cover=res.data.data.cover;
+        //  var coverBlob=cover.split(',');
+        //   for(var i=0;i<coverBlob.length;i++){
+        //     if (coverBlob[i].slice(0,1)!='h'){
+        //       // coverBlob[i] = app.globalData.url+coverBlob[i]
+        //       coverBlob[i]=app.cover(coverBlob[i])
+        //     }
+        //   }
           that.setData({
-            movies: coverBlob,
+            // movies: coverBlob,
+            cover:res.data.data.cover,
             intro:res.data.data.intro,
             title: res.data.data.name,
             payExchangepoint: res.data.data.payExchangepoint,

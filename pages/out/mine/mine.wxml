@@ -34,12 +34,12 @@
 
 
 <view class='list'>
-	<navigator bindtap="bindWxmApp" wx:if='{{wxOpenId}}'>
+	<!-- <navigator bindtap="bindWxmApp" wx:if='{{wxOpenId}}'>
 		<view>
 			<text>绑定微信</text>
 			<image mode="aspectFill" src='../img/ChevronCopy2@2x.png'></image>
 		</view>
-	</navigator>
+	</navigator> -->
   <navigator url='../taskCenter/taskCenter'>
     <view>
       <text>任务中心</text>

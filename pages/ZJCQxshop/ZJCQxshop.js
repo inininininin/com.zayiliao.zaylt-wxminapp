@@ -22,6 +22,16 @@ Page({
     leftborder: '',
     rootcateList: '',
     showIs:false,
+    indicatorDots: true,
+    vertical: false,
+    autoplay: true,
+    interval: 2000,
+    duration: 500
+  },
+  jumpUrl(e){
+    wx.navigateTo({
+      url: e.currentTarget.dataset.url,
+    })
   },
   searchBox(e){
     wx.navigateTo({
@@ -177,10 +187,10 @@ Page({
         wx.hideToast()
         if (res.data.code == 0) {
           for (var i = 0; i < res.data.data.ads.length; i++) {
-            if (res.data.data.ads[i].cover.slice(0, 1) != 'h') {
+            // if (res.data.data.ads[i].cover.slice(0, 1) != 'h') {
               // res.data.data.ads[i].cover = app.globalData.url + res.data.data.ads[i].cover
               res.data.data.ads[i].cover=app.cover(res.data.data.ads[i].cover)
-            }
+            // }
           }
           that.setData({
             movies: res.data.data.ads

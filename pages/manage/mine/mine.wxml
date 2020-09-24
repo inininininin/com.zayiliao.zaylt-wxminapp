@@ -19,12 +19,10 @@
 	</view>
 </view>
 
-<view class='line' bindtap='numberSecurity' bindtap="bindWxmApp" wx:if='{{wxOpenId}}'>
-	<!-- <navigator url='../numberSecurity/numberSecurity'> -->
+<!-- <view class='line' bindtap='numberSecurity' bindtap="bindWxmApp" wx:if='{{wxOpenId}}'>
 	<text>绑定微信</text>
 	<image mode="aspectFill" src='../../img/back.png'></image>
-	<!-- </navigator> -->
-</view>
+</view> -->
 <view class='line' bindtap='numberSecurity'>
 	<!-- <navigator url='../numberSecurity/numberSecurity'> -->
 	<text>账号与安全</text>

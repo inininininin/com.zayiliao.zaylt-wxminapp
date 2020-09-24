@@ -82,7 +82,7 @@ Page({
           } else {
             that.setData({
               list: newlist,
-              toPageNo: String(toPageNo)
+              toPageNo: parseInt(toPageNo)
             });
           }
         } else if (res.data.code == 20 || res.data.code == 26) {
@@ -210,7 +210,7 @@ Page({
    */
   onReachBottom: function () {
     var that = this
-    var toPageNo = that.data.toPageNo
+    var toPageNo = parseInt(that.data.toPageNo)
       that.lastPage(toPageNo)
    
   },
