@@ -47,6 +47,7 @@ Page({
             });
             wx.showToast({
               title: '数据已全部加载',
+              icon: 'none',
               // icon: 'loading',
               // duration: 1500
             })
@@ -203,6 +204,7 @@ Page({
   sendRec(e) {
     wx.showToast({
       title: '请至PC端发布',
+      icon: 'none',
     })
   },
   /**

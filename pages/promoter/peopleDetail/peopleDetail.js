@@ -61,6 +61,7 @@ Page({
           if (res.data.code == 0) {
             wx.showToast({
               title: '修改成功',
+              icon: 'none',
             })
             setTimeout(function () {
               that.setData({
@@ -100,6 +101,7 @@ Page({
                 if (res.data.code == 0) {
                   wx.showToast({
                     title: '修改成功',
+                    icon: 'none',
                   })
                   setTimeout(function () {
                     that.setData({
@@ -189,7 +191,7 @@ Page({
     if (that.data.name == '' || that.data.phone == '' || that.data.remark == '') {
       wx.showToast({
         title: '请填写完整表格',
-        icon: 'loading'
+        icon: 'none',
       })
     } else {
       wx.request({
@@ -210,6 +212,7 @@ Page({
           if (res.data.code == 0) {
             wx.showToast({
               title: '修改成功',
+              icon: 'none',
             })
             setTimeout(function () {
               that.setData({
@@ -249,6 +252,7 @@ Page({
               if (res.data.code == 0) {
                 wx.showToast({
                   title: '删除成功',
+                  icon: 'none',
                 })
                 setTimeout(function () {
                   var pages = getCurrentPages();
@@ -380,6 +384,7 @@ Page({
             });
             wx.showToast({
               title: '数据已全部加载',
+              icon: 'none',
             })
           } else {
             that.setData({

@@ -105,6 +105,7 @@ Page({
     if (this.data.color == '#E5E5E5') {
       wx.showToast({
         title: '填写完整信息',
+        icon: 'none',
       })
     } else {
       this.setData({
@@ -187,7 +188,7 @@ Page({
               if (data.code == 0) {
                 wx.showToast({
                   title: '上传成功',
-                  icon: 'success',
+                  icon: 'none',
                   duration: 2000
                 })
                 that.setData({
