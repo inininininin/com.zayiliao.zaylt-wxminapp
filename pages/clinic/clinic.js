@@ -170,11 +170,6 @@ Page({
       success: function (res) {
         wx.hideToast()
         if (res.data.code == 0) {
-          // if(toPageNo==1){
-          //   that.setData({
-          //     clinicNumber: res.data.data.sum.totalCount
-          //   })
-          // }
           var schemeListArr = that.data.schemeList;
           var newSchemeListArr = schemeListArr.concat(res.data.data.rows)
           if (res.data.data.rows.length == 0) {
