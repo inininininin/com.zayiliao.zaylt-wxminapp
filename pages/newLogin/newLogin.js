@@ -460,36 +460,9 @@ Page({
               })
             },
           })
-          // that.loginRefresh()
-          // wx.login({
-          //   complete: (res) => {
-          //     wx.request({
-          //       url: app.globalData.url + '/bind-wx-mapp',
-          //       header: {
-          //         'Content-type': 'application/x-www-form-urlencoded',
-          //         'cookie': app.globalData.cookie
-          //       },
-          //       method: "post",
-          //       data:{
-          //         jscode: res.code,
-          //       },
-          //       success: function (resData) {
-          //         wx.hideToast()
-          //         if (resData.data.code == 0) {
-          //           that.loginRefresh()
-          //         } else {
-          //           wx.showModal({
-          //             showCancel: false,
-          //             title: resData.data.codeMsg
-          //           })
-          //         }
-          //       }
-          //     })
-          //   },
-          // })
         } else {
           wx.showToast({
-            title: res.data.codeMsg,
+            title: resData.data.codeMsg,
             icon: 'none'
           })
         }
