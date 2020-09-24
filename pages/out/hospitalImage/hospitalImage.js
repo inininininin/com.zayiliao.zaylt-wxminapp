@@ -71,7 +71,8 @@ phone(e){
           })
         } else {
           wx.showToast({
-            title: res.data.codeMsg
+            title: res.data.codeMsg,
+            icon: 'none',
           })
         }
       }
@@ -103,7 +104,8 @@ phone(e){
           })
         } else {
           wx.showToast({
-            title: res.data.codeMsg
+            title: res.data.codeMsg,
+            icon: 'none',
           })
         }
       }

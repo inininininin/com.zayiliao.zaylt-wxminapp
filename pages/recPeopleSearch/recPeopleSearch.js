@@ -58,6 +58,7 @@ Page({
             });
             wx.showToast({
               title: '数据已全部加载',
+              icon: 'none',
             })
           } else {
             that.setData({

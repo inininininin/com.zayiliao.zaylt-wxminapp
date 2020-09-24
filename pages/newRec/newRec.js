@@ -38,6 +38,7 @@ Page({
      })
      wx.showToast({
        title: '已提交,请稍后',
+       icon: 'none',
      })
     if (that.data.type==1){
       var params=''
@@ -87,6 +88,7 @@ Page({
         } else {
           wx.showToast({
             title: res.data.codeMsg,
+            icon: 'none',
           })
           that.setData({
             showIs:true
@@ -151,6 +153,7 @@ Page({
         }else{
           wx.showToast({
             title: res.data.codeMsg,
+            icon: 'none',
           })
         }
       }
@@ -178,6 +181,7 @@ Page({
         } else {
           wx.showToast({
             title: res.data.codeMsg,
+            icon: 'none',
           })
         }
       }

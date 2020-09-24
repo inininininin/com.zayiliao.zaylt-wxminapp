@@ -46,7 +46,7 @@ Page({
     buttonDisabled: true
     wx.showToast({
       title: '登录请求中',
-      icon: 'loading',
+      icon: 'none',
       duration: 5000
     })
     var that = this;

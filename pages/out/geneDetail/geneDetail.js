@@ -117,6 +117,7 @@ Page({
         } else {
           wx.showToast({
             title: res.data.codeMsg,
+            icon: 'none',
           })
         }
 
@@ -129,10 +130,12 @@ Page({
     if (that.data.detail.status == 2) {
       wx.showToast({
         title: '订单收样不可改',
+        icon: 'none',
       })
     } else if (that.data.detail.status == 3) {
       wx.showToast({
         title: '订单已检测完毕',
+        icon: 'none',
       })
     } else {
       wx.request({

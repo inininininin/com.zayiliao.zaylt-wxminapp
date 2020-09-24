@@ -111,12 +111,14 @@ Page({
             if (toPageNo == 1) {
               wx.showToast({
                 title: '没有更多门诊',
+                icon: 'none',
                 // icon: 'loading',
                 // duration: 1500
               })
             } else {
               wx.showToast({
                 title: '数据已全部加载',
+                icon: 'none',
                 // icon: 'loading',
                 // duration: 1500
               })

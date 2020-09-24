@@ -50,6 +50,7 @@ Page({
     if (that.data.key == '' || that.data.key.length < 11) {
       wx.showToast({
         title: '请填写正确手机号',
+        icon: 'none',
       })
     } else if (that.data.times != '获取验证码') {
       return
@@ -73,7 +74,8 @@ Page({
             that.timeBack()
           } else {
             wx.showToast({
-              title: res.data.codeMsg
+              title: res.data.codeMsg,
+              icon: 'none',
             })
           }
         }
@@ -167,7 +169,7 @@ Page({
         if (res.data.code == 0) {
           wx.showToast({
             title: '修改成功',
-            icon: 'success',
+            icon: 'none',
             duration: 1000,
           })
           setTimeout(function () {
@@ -180,7 +182,7 @@ Page({
         } else {
           wx.showToast({
             title: res.data.codeMsg,
-            icon: 'loading',
+            icon: 'none',
             duration: 1000,
           }) 
           that.setData({
@@ -208,7 +210,7 @@ Page({
         if (res.data.code == 0) {
           wx.showToast({
             title: '修改成功',
-            icon: 'success',
+            icon: 'none',
             duration: 1000,
           })
           setTimeout(function () {
@@ -221,7 +223,7 @@ Page({
         } else {
           wx.showToast({
             title: res.data.codeMsg,
-            icon: 'loading',
+            icon: 'none',
             duration: 1000,
           })
           that.setData({
@@ -249,7 +251,7 @@ Page({
         if (res.data.data.code == 0) {
           wx.showToast({
             title: '修改成功',
-            icon: 'success',
+            icon: 'none',
             duration: 1000,
           })
           setTimeout(function () {
@@ -261,7 +263,7 @@ Page({
         } else {
           wx.showToast({
             title: res.data.data.codeMsg,
-            icon: 'loading',
+            icon: 'none',
             duration: 1000,
           })
         }
@@ -317,7 +319,7 @@ Page({
     if (!that.data.selectAgree){
       wx.showToast({
         title: '请勾选登录协议',
-        icon: 'loading',
+        icon: 'none',
         duration: 1000
       })
     }else{
@@ -358,7 +360,7 @@ Page({
       buttonDisabled: true
       wx.showToast({
         title: '登录请求中',
-        icon: 'loading',
+        icon: 'none',
         duration: 2000
       })
     }

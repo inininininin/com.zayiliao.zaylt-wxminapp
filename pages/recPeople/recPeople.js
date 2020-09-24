@@ -60,12 +60,12 @@ Page({
     if (that.data.name == '' || that.data.phone == '' || that.data.password == '' || that.data.passwordConfirm == '') {
       wx.showToast({
         title: '请填写完整表格',
-        icon: 'loading'
+        icon: 'none',
       })
     } else if (that.data.passwordConfirm != that.data.password) {
       wx.showToast({
         title: '输入密码不一致',
-        icon: 'loading'
+        icon: 'none',
       })
     } else {
       wx.request({
@@ -87,6 +87,7 @@ Page({
           if (res.data.code == 0) {
             wx.showToast({
               title: '新增成功',
+              icon: 'none',
             })
 
             setTimeout(function () {
@@ -138,6 +139,7 @@ Page({
             });
             wx.showToast({
               title: '数据已全部加载',
+              icon: 'none',
             })
           } else {
             that.setData({
