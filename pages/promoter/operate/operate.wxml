@@ -24,7 +24,7 @@
 						<text style='color:rgb(153,153,153)'>{{item.addTime}}</text>
 					</view>
 				</view>
-				<image class='image' src="{{item.cover}}" mode="aspectFill"></image>
+				<image class='image' lazy-load="true" src="{{item.cover}}" mode="aspectFill"></image>
 				<!-- <view class='image' style='background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;'>
 				</view> -->
 			</view>

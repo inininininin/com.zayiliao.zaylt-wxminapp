@@ -286,11 +286,57 @@ canvas{
   text-align: center;
 }
 .shareFontNew>text{
-  display: inline-block;
+  display: block;
   float: left;
   line-height: 60rpx;
   width: 1rpx;
   height: 60rpx;
   margin-top: 14rpx;
   background:#2b77ef ;
+}
+
+
+
+.share__canvas {
+  width: 750rpx;
+  /* height: 3500rpx; */
+  background: #fff;
+  margin-bottom: 40rpx;
+  font-size: 32rpx;
+  /* position: absolute;
+  top: 0;
+  z-index: 0;
+  opacity: 0; */
+}
+.shareImg{
+  width: 750rpx;
+  /* position: absolute;
+  background: #fff;
+  top: 0;
+  left: 0;
+  z-index:999;
+  overflow-x: hidden; */
+}
+.popCanvas{
+  width: 100%;
+  height: auto;
+  background: #fff;
+  z-index: 10;
+}
+.imageurl{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.2);
+  z-index: 15;
+}
+.imageurl text{
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+  margin: 20rpx;
 }

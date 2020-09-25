@@ -1,30 +1,24 @@
 <!--pages/out/newsDetail/newsDetail.wxml-->
- <import src="../../../wxParse/wxParse.wxml" />
-<!-- <view>
-	<include src="../../common/common" />
-</view>  -->
-<view class='topImg' style='background:url({{list.cover}}) no-repeat;background-size:cover;background-position: center;'></view>
-<!-- <image  mode="aspectFill"  class='topImg' src='{{list.cover}}'></image> -->
-<text class='title'>{{list.title}}</text>
-<view class="readShare">
-	<text>浏览量：{{list.viewCount}}</text>
-	<text>分享数：{{list.shareCount}}</text>
-</view>
-<view class='hospitalName'>
-	<image mode="aspectFill" src='{{list.hospitalCover}}'></image>
-	<view>
-		<text>{{list.hosptialName}}</text>
-		<text>{{list.addTime}}</text>
+<import src="../../../wxParse/wxParse.wxml" />
+<view class="shareImg">
+	<image class="shareImg1" style="width:750rpx;height:350rpx;" src="{{list.cover}}" mode='aspectFill' data-type="image" data-url="{{list.cover}}"></image>
+	<text class='title shareImg1' data-type="text" data-text="{{list.title}}">{{list.title}}</text>
+	<view class="readShare">
+		<text class="shareImg1"  data-type="text" data-text="浏览量：{{list.viewCount||0}}">浏览量：{{list.viewCount||0}}</text>
+		<text class="shareImg1"   data-type="text" data-text="分享数：{{list.shareCount||0}}">分享数：{{list.shareCount||0}}</text>
 	</view>
-</view>
-<view class='detail'>
-	<!-- <text> -->
-	<!-- {{res}} -->
-	<view class="wxParse" style='font-size:{{fontSize}}rpx !important'>
-		<template is="wxParse" data="{{wxParseData:article.nodes}}" />
+	<view class='hospitalName'>
+		<image class="shareImg1" data-type="image" data-url='{{list.hospitalCover||"../../img/logo@2x.png"}}' mode="aspectFill" src='{{list.hospitalCover||"../../img/logo@2x.png"}}'></image>
+		<view class="">
+			<text class="shareImg1"  data-type="text" data-text="{{list.hosptialName}}">{{list.hosptialName}}</text>
+			<text class="shareImg1" data-type="text" data-text="{{list.addTime}}">{{list.addTime}}</text>
+		</view>
 	</view>
-	<!-- </text> -->
-
+	<view class='detail'>
+		<view class="wxParse" style='font-size:{{fontSize}}rpx !important'>
+			<template is="wxParse" data="{{wxParseData:article.nodes}}" />
+		</view>
+	</view>
 </view>
 
 
@@ -43,6 +37,7 @@
 					<text>分享到微信</text>
 				</button>
 				<!-- bindtap='shareIs' -->
+				<!-- //sharepyqIf -->
 				<button bindtap='sharepyq'>
 					<image mode="aspectFill" class='pyq' src='../../img/pengyouquan@2x.png'></image>
 					<text>分享到朋友圈</text>
@@ -90,7 +85,7 @@
 
 
 <!-- 画布大小按需定制 这里我按照背景图的尺寸定的  -->
-<view class="canvasShow" wx-if='{{canvasShow}}' style="opacity:1" bindtap="closeCanvas">
+<view class="canvasShow" wx:if='{{canvasShow}}' style="opacity:1" bindtap="closeCanvas">
 	<canvas canvas-id='canvas' style='width:{{windowW}}px;height:{{windowW}}px;margin-top:{{windowTop}}px;border:2rpx solid #e5e5e5' catchlongtap="saveCanvas"></canvas>
 	<button type='primary' size='mini' bindtap='saveIs'>保存分享图</button>
 </view>
@@ -99,4 +94,14 @@
 <view hidden='{{hidden}}' class='preview'>
 	<image mode="aspectFill" src='{{prurl}}' mode='widthFix'></image>
 	<button type='primary' size='mini' bindtap='saveIs'>保存分享图</button>
+</view>
+
+<view class="popCanvas" wx:if='{{showCanvasIf}}'>
+	<canvas canvas-id="canvas2" class="share__canvas" style="height:{{cancasHeight}}rpx;background:#fff;"></canvas>
+</view>
+
+<!-- <image src="{{imageurl}}" style='width:750rpx;height:2500rpx'></image> -->
+<view class="imageurl" wx:if='{{showimageurl}}' bindtap="closeshowimageurl">
+	<text>请长按图片保存分享</text>
+	<image src="{{imageurl}}" catchtap="openshowimageurl" style='width:650rpx;height:90%;margin-left:50rpx;background:#fff' bindlongtap="imageurlLoad" mode="aspectFit"></image>
 </view>

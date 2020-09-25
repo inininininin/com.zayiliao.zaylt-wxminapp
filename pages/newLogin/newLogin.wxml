@@ -30,7 +30,10 @@
 		</view>
 	</view>
 	<!-- bindtap="loginBtn"  -->
-	<view class="loginBtn" bindtap="submitGetPerson">
+	<view wx:if='{{loginShow}}' class="loginBtn" bindtap="submitGetPerson">
+		登录
+	</view>
+	<view wx:if='{{!loginShow}}' class="loginBtn">
 		登录
 	</view>
 	<view>

@@ -13,9 +13,10 @@
 	<view class='avaterBox'>
 		<image mode="aspectFill" bindtap="lookcover" src='{{srcCover}}'></image>
 		<!-- <image  mode="aspectFill"  wx:if="{{src==''}}" src="{{src}}" bindtap='bindChooiceProduct' class='avater' src='../../img/logo@2x.png'></image> -->
-		<text class='yirenzheng' wx:if='{{display==1}}'>已认证</text>
+		<text class='yirenzheng' wx:if='{{display==1}}'>已提交</text>
 		<text class='weirenzheng' wx:if='{{display==0}}'>未认证</text>
-		<text class='weirenzheng' wx:if='{{display==2}}'>未通过</text>
+		<text class='weirenzheng' wx:if='{{display==3}}'>未通过</text>
+		<text class='yirenzheng' wx:if='{{display==2}}'>已认证</text>
 	</view>
 
 	<view class='title'>

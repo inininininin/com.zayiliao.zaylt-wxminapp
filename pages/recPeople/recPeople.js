@@ -17,7 +17,8 @@ Page({
     phone: '',
     remark: '',
     passwordConfirm: '',
-    changeIs: ''
+    changeIs: '',
+    saveShow:true,
   },
   search() {
     wx.navigateTo({
@@ -68,6 +69,9 @@ Page({
         icon: 'none',
       })
     } else {
+      that.setData({
+        saveShow:false
+      })
       wx.request({
         url: app.globalData.url + '/hospital/def/hospital-operator-user-add',
         header: {
@@ -84,19 +88,19 @@ Page({
         },
         method: 'post',
         success: function (res) {
+          that.setData({
+            saveShow:true
+          })
           if (res.data.code == 0) {
             wx.showToast({
               title: '新增成功',
               icon: 'none',
             })
-
-            setTimeout(function () {
               that.setData({
                 showIs: true,
                 schemeList: []
               })
               that.lastPage(0);
-            }, 500)
           } else {
             wx.showToast({
               title:  res.data.codeMsg,

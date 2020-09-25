@@ -121,11 +121,9 @@ Page({
           prevPage.setData({
             changeIs: 1
           });
-            setTimeout(function(){
-              wx.navigateBack({
-                
-              })
-            },1000)
+          wx.navigateBack({
+                delta:1
+          })
         }else{
           wx.showToast({
             title: res.data.codeMsg,

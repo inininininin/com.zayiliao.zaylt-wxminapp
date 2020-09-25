@@ -2,6 +2,7 @@
 var app = getApp()
 var utils = require('../../../utils/util.js');
 var WxParse = require('../../../wxParse/wxParse.js');
+import Wxml2Canvas from '../../../src/index';
 Page({
 
   /**
@@ -22,7 +23,126 @@ Page({
     pyqewm: '',
     ids: '',
     canvasShow: false,
+    showCanvasIf: false,
+    showimageurl:false,
+    imageurl:'',
   },
+  closeshowimageurl(e){
+    this.setData({
+      showimageurl:false
+    })
+  },
+  openshowimageurl(e){
+    return
+  },
+  imageurlLoad(e){
+    let that=this
+    this.saveImage(this.data.imageurl)
+  },
+  saveImage(url) {
+    console.log(url)
+    let that=this
+    that.setData({
+      imageurl: url,
+      showCanvasIf: false
+    })
+    wx.saveImageToPhotosAlbum({
+      filePath: url,
+      success(res) {
+        wx.showModal({
+          title: '图片已保存',
+          content:'请至朋友圈进行分享',
+          showCancel:false,
+          success:function(res){
+            that.setData({
+              showimageurl:false,
+              showCanvasIf:false,
+              close:'none',
+            })
+          }
+        })
+      },
+      fail() {
+        wx.showToast({
+          title: '保存失败',
+          icon: 'none'
+        })
+      }
+    })
+  },
+  sharepyqIf(e) {
+    let that = this
+    wx.showToast({
+      title: '请稍等',
+      icon:'none',
+      duration:2000
+    })
+    that.setData({
+      showCanvasIf: true,
+      close:'none',
+    })
+    if(that.data.imageurl){
+      wx.hideToast({
+        complete: (res) => {},
+      })
+      that.setData({
+        showimageurl:true
+      })
+    }else{
+      that.drawImage2();
+    }
+    
+    // setTimeout(function () {
+    //   this.drawImage2();
+    // }, 1000)
+  },
+  drawImage2() {
+    let self = this;
+    this.drawImage2 = new Wxml2Canvas({
+      width: 375,
+      height: 10000,
+      element: 'canvas2',
+      background: '#fff',
+      progress(percent) {
+        console.log(percent)
+      },
+      finish(url) {
+        console.log(url)
+        wx.hideToast({
+          complete: (res) => {},
+        })
+        self.setData({
+          imageurl:url,
+          showCanvasIf: false,
+          showimageurl:true,
+        })
+        // wx.previewImage({
+        //   current: url, // 当前显示图片的http链接
+        //   urls: [url] // 需要预览的图片http链接列表
+        // })
+        // self.saveImage(url)
+      },
+      error(res) {
+        that.setData({
+          showCanvasIf: false
+        })
+        console.log(res)
+      }
+    });
+
+    let data = {
+      list: [{
+        type: 'wxml',
+        class: '.shareImg .shareImg1',
+        limit: '.shareImg',
+        x: 0,
+        y: 0
+      }]
+    }
+    console.log(data)
+    this.drawImage2.draw(data);
+  },
+
   changefont: function (e) {
     this.setData({
       display: 'block'
@@ -119,6 +239,17 @@ Page({
               var article = res.data
               WxParse.wxParse('article', 'html', article, that, 5);
               console.log(article)
+              let query = wx.createSelectorQuery();
+              query.select('.shareImg').boundingClientRect(rect => {
+                let clientHeight = rect.height;
+                let clientWidth = rect.width;
+                let ratio = 750 / clientWidth;
+                let height = clientHeight * ratio;
+                that.setData({
+                  cancasHeight: height
+                })
+                console.log(height);
+              }).exec();
               // that.setData({
               //   res: res.data,
               // })

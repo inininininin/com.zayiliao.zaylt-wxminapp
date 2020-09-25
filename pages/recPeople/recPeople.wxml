@@ -58,5 +58,6 @@
 		<input placeholder="请输入" bindinput="remark" placeholder-class="inputClass" value="{{remark}}"></input>
 	</view> -->
 
-	<view bindtap='save' class='save'>保存</view>
+	<view wx:if='{{saveShow}}' bindtap='save' class='save'>保存</view>
+	<view wx:if='{{!saveShow}}'   class='save'>保存</view>
 </view>

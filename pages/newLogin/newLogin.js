@@ -26,6 +26,7 @@ Page({
     bindlongtap2: false,
     inputYzm: '',//域名修改前的验证码
     inputYm: '',//域名
+    loginShow:true,
   },
   eve(e) {
     console.log('取消点击')
@@ -410,6 +411,9 @@ Page({
         duration: 1000
       })
     } else{
+      that.setData({
+        loginShow:false
+      })
       var key = that.data.key;
       var password = that.data.password;
       that.loginHos(key, password)
@@ -435,6 +439,9 @@ Page({
         wx.hideToast()
         if (resData.data.code == 0) {
           app.globalData.cookie = resData.header['Set-Cookie']
+          that.setData({
+            loginShow:true
+          })
           wx.login({
             complete: (res) => {
               wx.request({
@@ -448,6 +455,9 @@ Page({
                   jscode: res.code,
                 },
                 success: function (resData) {
+                  that.setData({
+                    loginShow:true
+                  })
                   if (resData.data.code == 0) {
                     that.loginRefresh()
                   } else {
@@ -461,6 +471,9 @@ Page({
             },
           })
         } else {
+          that.setData({
+            loginShow:true
+          })
           wx.showToast({
             title: resData.data.codeMsg,
             icon: 'none'

@@ -79,7 +79,7 @@ Page({
     toPageNo++
 
     wx.request({
-      url: app.globalData.url + '/client2/geneTest//samplePacks',
+      url: app.globalData.url + '/client2/geneTest/samplePacks',
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
         'cookie': app.globalData.cookie
@@ -91,7 +91,8 @@ Page({
         status: status,
         sorts: 'addTime',
         orders: 'desc',
-        clinicId: app.globalData.clinicId
+        // clinicId: app.globalData.clinicId,
+        hospitalId:app.loginRefresh.hospitalId
       },
       method: 'post',
       success: function (res) {

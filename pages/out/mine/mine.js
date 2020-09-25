@@ -178,17 +178,13 @@ Page({
         wxOpenId:true
       })
     }
-    if (app.globalData.authenticationIs==0){
+    if (app.loginRefresh.clinic && app.loginRefresh.clinic.map && app.loginRefresh.clinic.map.authStatus) {
       this.setData({
-        display:0
+        display: app.loginRefresh.clinic.map.authStatus
       })
-    } else if (app.globalData.authenticationIs == 3){
+    } else {
       this.setData({
-        display:2
-      })
-    }else{
-      this.setData({
-        display: 1
+        display: 0
       })
     }
 

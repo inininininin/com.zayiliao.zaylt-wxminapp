@@ -16,8 +16,8 @@ Page({
     details: [],
     showIs: true,
     clinicPromoterId: '',
-    remark:'',
-    clinicUserPasswordConfirm:'',
+    remark: '',
+    clinicUserPasswordConfirm: '',
   },
   // bindPickerChange: function (e) {
   //   var clinicPromoterId = ''
@@ -51,12 +51,12 @@ Page({
     this.setData({
       pwd: e.detail.value
     })
-  }, 
+  },
   clinicUserPasswordConfirm: function (e) {
     this.setData({
       clinicUserPasswordConfirm: e.detail.value
     })
-  }, 
+  },
   address: function (e) {
     this.setData({
       address: e.detail.value
@@ -75,38 +75,38 @@ Page({
 
   saveThis(e) {
     var that = this
-    if(!that.data.name){
+    if (!that.data.name) {
       wx.showToast({
         title: '请输入门诊名称',
-        icon:'none'
+        icon: 'none'
       })
       return
     }
-    if(!that.data.phone){
+    if (!that.data.phone) {
       wx.showToast({
         title: '请输入分配账号',
-        icon:'none'
+        icon: 'none'
       })
       return
     }
-    if(!that.data.headmanName){
+    if (!that.data.headmanName) {
       wx.showToast({
         title: '请输入负责人',
-        icon:'none'
+        icon: 'none'
       })
       return
     }
-    if(!that.data.tel){
+    if (!that.data.tel) {
       wx.showToast({
         title: '请输入联系方式',
-        icon:'none'
+        icon: 'none'
       })
       return
     }
-    if(!that.data.address){
+    if (!that.data.address) {
       wx.showToast({
         title: '请输入门诊地址',
-        icon:'none'
+        icon: 'none'
       })
       return
     }
@@ -115,113 +115,111 @@ Page({
     //     title: '请填写密码',
     //   })
     // } else {
-      wx.request({
-        url: app.globalData.url + '/c2/clinic/itemalter', //仅为示例，非真实的接口地址
-        method: 'post',
-        data: {
-           headmanName: that.data.headmanName||'',
-          name: that.data.name||'',
-          // pwd: that.data.pwd,
-          phone: that.data.phone||'',
-          contactTel: that.data.tel||'',
-          address: that.data.address||'',
-          remark: that.data.remark||'',
-          hospitalId: app.globalData.hospitalId||'',
-          license: that.data.license||'',
-          itemId: that.data.id||'',
-        },
-        header: {
-          "Content-Type": "application/x-www-form-urlencoded",
-          'cookie': app.globalData.cookie
-        },
-        success: function (res) {
-          if (res.data.code == 0) {
-            wx.showToast({
-              title: '修改成功',
-              icon:'none'
-            })
-            setTimeout(function () {
-              wx.navigateBack({
-
-              })
-            }, 1000)
-          } else {
-            wx.showToast({
-              title: res.data.codeMsg,
-              icon:'none'
-            })
-          }
+    wx.request({
+      url: app.globalData.url + '/c2/clinic/itemalter', //仅为示例，非真实的接口地址
+      method: 'post',
+      data: {
+        headmanName: that.data.headmanName || '',
+        name: that.data.name || '',
+        // pwd: that.data.pwd,
+        phone: that.data.phone || '',
+        contactTel: that.data.tel || '',
+        address: that.data.address || '',
+        remark: that.data.remark || '',
+        hospitalId: app.globalData.hospitalId || '',
+        license: that.data.license || '',
+        itemId: that.data.id || '',
+      },
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        'cookie': app.globalData.cookie
+      },
+      success: function (res) {
+        if (res.data.code == 0) {
+          wx.showToast({
+            title: '修改成功',
+            icon: 'none'
+          })
+          wx.navigateBack({
+            delta: 1
+          })
+        } else {
+          wx.showToast({
+            title: res.data.codeMsg,
+            icon: 'none'
+          })
         }
-      })
+      }
+    })
     // }
   },
   save(e) {
     var that = this
-    if(!that.data.name){
+    if (!that.data.name) {
       wx.showToast({
         title: '请输入门诊名称',
-        icon:'none'
+        icon: 'none'
       })
       return
     }
-    if(!that.data.phone){
+    if (!that.data.phone) {
       wx.showToast({
         title: '请输入分配账号',
-        icon:'none'
+        icon: 'none'
       })
       return
     }
-    if(!that.data.pwd){
+    if (!that.data.pwd) {
       wx.showToast({
         title: '请输入分配密码',
-        icon:'none'
+        icon: 'none'
       })
       return
     }
-    if(!that.data.clinicUserPasswordConfirm){
+    if (!that.data.clinicUserPasswordConfirm) {
       wx.showToast({
         title: '请输入确认密码',
-        icon:'none'
+        icon: 'none'
       })
       return
     }
-    
-    if(!that.data.headmanName){
+
+    if (!that.data.headmanName) {
       wx.showToast({
         title: '请输入负责人',
-        icon:'none'
+        icon: 'none'
       })
       return
     }
-    if(!that.data.tel){
+    if (!that.data.tel) {
       wx.showToast({
         title: '请输入联系方式',
-        icon:'none'
+        icon: 'none'
       })
       return
     }
-    if(!that.data.address){
+    if (!that.data.address) {
       wx.showToast({
         title: '请输入门诊地址',
-        icon:'none'
+        icon: 'none'
       })
       return
     }
-    if (that.data.clinicUserPasswordConfirm==that.data.pwd){
+    if (that.data.clinicUserPasswordConfirm == that.data.pwd) {
       wx.request({
         url: app.globalData.url + '/hospital/operator/hospital-clinic-add', //仅为示例，非真实的接口地址
         method: 'post',
         data: {
-           headmanName: that.data.headmanName||'',
-          name: that.data.name||'',
-          clinicUserPassword: that.data.pwd||'',
-          clinicUserPhone: that.data.phone||'',
-          contactTel: that.data.tel||'',
-          address: that.data.address||'',
-          remark: that.data.remark||'',
-          hospitalClinicId: app.globalData.hospitalId||'',
-          clinicUserPasswordConfirm: that.data.clinicUserPasswordConfirm||'',
-          license: that.data.license||'',
+          headmanName: that.data.headmanName || '',
+          name: that.data.name || '',
+          clinicUserPassword: that.data.pwd || '',
+          clinicUserPhone: that.data.phone || '',
+          contactTel: that.data.tel || '',
+          address: that.data.address || '',
+          remark: that.data.remark || '',
+          hospitalClinicId: app.globalData.hospitalId || '',
+          clinicUserPasswordConfirm: that.data.clinicUserPasswordConfirm || '',
+          license: that.data.license || '',
         },
         header: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -231,28 +229,26 @@ Page({
           if (res.data.code == 0) {
             wx.showToast({
               title: '新增成功',
-              icon:'none'
+              icon: 'none'
             })
-            setTimeout(function () {
-              wx.navigateBack({
-
-              })
-            }, 1000)
+            wx.navigateBack({
+              delta: 1
+            })
           } else {
             wx.showToast({
               title: res.data.codeMsg,
-              icon:'none'
+              icon: 'none'
             })
           }
         }
       })
-    }else{
+    } else {
       wx.showToast({
         title: '两次密码不一致',
-        icon:'none'
+        icon: 'none'
       })
     }
-   
+
 
   },
   /**
@@ -279,8 +275,8 @@ Page({
         },
         success: function (res) {
           if (res.data.code == 0) {
-           
-           let yyzzimg=app.cover(res.data.data.license) 
+
+            let yyzzimg = app.cover(res.data.data.license)
             // var clinicPromoterName = res.data.data.clinicPromoterName
             // for (var i in array) {
             //   console.log(array[i].name, i, clinicPromoterName)
@@ -305,7 +301,7 @@ Page({
           } else {
             wx.showToast({
               title: res.data.codeMsg,
-              icon:'none'
+              icon: 'none'
             })
           }
         }
@@ -314,42 +310,42 @@ Page({
   },
   yyzzimg(e) {
     // if (app.globalData.src == '' || app.globalData.src == null || app.globalData.src == undefined) {
-      var that = this
-      wx.chooseImage({
-        count: 1, // 默认9
-        sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有
-        sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-        success(res) {
-          const src = res.tempFilePaths[0]
-          var avatar = res.tempFilePaths[0]
-          wx.uploadFile({
-            url: app.globalData.url + '/upload-file?cover&duration', //仅为示例，非真实的接口地址
-            filePath: avatar,
-            name: 'file',
-            success: function (res) {
-              var data = JSON.parse(res.data);
-              var url = data.data.url
-              if (data.code == 0) {
-                wx.showToast({
-                  title: '上传成功',
-                  icon: 'none',
-                  duration: 2000
-                })
-                if (url.slice(0, 1) != 'h') {
-                  url = app.globalData.domain + url
-                }
-                that.setData({
-                  license: data.data.url,
-                  yyzzimg: url
-                })
+    var that = this
+    wx.chooseImage({
+      count: 1, // 默认9
+      sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success(res) {
+        const src = res.tempFilePaths[0]
+        var avatar = res.tempFilePaths[0]
+        wx.uploadFile({
+          url: app.globalData.url + '/upload-file?cover&duration', //仅为示例，非真实的接口地址
+          filePath: avatar,
+          name: 'file',
+          success: function (res) {
+            var data = JSON.parse(res.data);
+            var url = data.data.url
+            if (data.code == 0) {
+              wx.showToast({
+                title: '上传成功',
+                icon: 'none',
+                duration: 2000
+              })
+              if (url.slice(0, 1) != 'h') {
+                url = app.globalData.domain + url
               }
-            },
-            fail: function (res) {
-              console.log(res)
+              that.setData({
+                license: data.data.url,
+                yyzzimg: url
+              })
             }
-          })
-        }
-      })
+          },
+          fail: function (res) {
+            console.log(res)
+          }
+        })
+      }
+    })
     // } else {
     //   wx.navigateTo({
     //     url: '../../cropper/cropper',
@@ -360,7 +356,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   backHistory: function (e) {

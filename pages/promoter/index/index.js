@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navtitle: '- 医院端 -',
+    navtitle: '- 医院运营端 -',
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
     schemeList:[],

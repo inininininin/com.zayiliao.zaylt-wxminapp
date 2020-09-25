@@ -75,7 +75,7 @@ Page({
         status: status,
         sorts: 'addTime',
         orders: 'desc',
-        clinicId: app.globalData.clinicId
+        hospitalId:app.loginRefresh.hospitalId
       },
       method: 'post',
       success: function (res) {

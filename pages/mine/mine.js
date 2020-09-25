@@ -16,10 +16,10 @@ Page({
     address: '',
     display: '2',
     src: '../img/logo@2x.png',
-    srcCover:'../img/logo@2x.png',
+    srcCover: '../img/logo@2x.png',
   },
-  bindWxmApp(e){
-    let that=this
+  bindWxmApp(e) {
+    let that = this
     wx.login({
       complete: (res) => {
         wx.request({
@@ -29,20 +29,20 @@ Page({
             'cookie': app.globalData.cookie
           },
           method: "post",
-          data:{
+          data: {
             jscode: res.code,
           },
           success: function (resData) {
             wx.hideToast()
             if (resData.data.code == 0) {
               that.setData({
-                wxOpenId:false
+                wxOpenId: false
               })
               that.loginRefresh()
             } else {
               wx.showToast({
-                title:  res.data.codeMsg,
-                icon:'none'
+                title: res.data.codeMsg,
+                icon: 'none'
               })
             }
           }
@@ -51,26 +51,26 @@ Page({
     })
   },
   loginout(e) {
- 
+
     var that = this
     wx.showModal({
       title: '退出',
-         content: '确定要退出登录？',
-         success: function (res) {
-            if (res.cancel) {
-               //点击取消,默认隐藏弹框
-            } else {
-               //点击确定
-               app.globalData.cookie=''
-               wx.reLaunch({
-                url: '../newLogin/newLogin',
-              })
-            }
-         },
-         fail: function (res) { }, 
-         complete: function (res) { },
+      content: '确定要退出登录？',
+      success: function (res) {
+        if (res.cancel) {
+          //点击取消,默认隐藏弹框
+        } else {
+          //点击确定
+          app.globalData.cookie = ''
+          wx.reLaunch({
+            url: '../newLogin/newLogin',
+          })
+        }
+      },
+      fail: function (res) { },
+      complete: function (res) { },
     })
-    
+
   },
   index(e) {
     wx.redirectTo({
@@ -87,10 +87,10 @@ Page({
       url: '../gene/gene',
     })
   },
-  lookcover(e){
+  lookcover(e) {
     wx.previewImage({
       current: this.data.srcCover, // 当前显示图片的http链接
-      urls: [ this.data.srcCover] // 需要预览的图片http链接列表
+      urls: [this.data.srcCover] // 需要预览的图片http链接列表
     })
   },
   yyzz(e) {
@@ -130,22 +130,22 @@ Page({
                     'cookie': app.globalData.cookie
                   },
                   success: function (res) {
-                    if(res.data.codeMsg){
+                    if (res.data.codeMsg) {
                       wx.showToast({
-                        title:res.data.codeMsg ,
-                        icon:'none'
+                        title: res.data.codeMsg,
+                        icon: 'none'
                       })
                     }
-                   if(res.data.code==0){
-                    if (url.slice(0, 1) != 'h') {
-                      url = app.globalData.domain + url
-                    }
-                    app.globalData.src = url
-                    that.setData({
-                      src: url
-                    })
+                    if (res.data.code == 0) {
+                      if (url.slice(0, 1) != 'h') {
+                        url = app.globalData.domain + url
+                      }
+                      app.globalData.src = url
+                      that.setData({
+                        src: url
+                      })
 
-                   }
+                    }
                   }
                 })
               }
@@ -214,32 +214,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if(app.loginRefresh.wxOpenId){
+    if (app.loginRefresh.wxOpenId) {
       this.setData({
-        wxOpenId:false
-      })
-    }else{
-      this.setData({
-        wxOpenId:true
-      })
-    }
-    if (app.globalData.authenticationIs == 0) {
-      this.setData({
-        display: 0
+        wxOpenId: false
       })
     } else {
       this.setData({
-        display: 1
+        wxOpenId: true
       })
     }
-    
+    if (app.loginRefresh.hospital && app.loginRefresh.hospital.map && app.loginRefresh.hospital.map.authStatus) {
+      this.setData({
+        display: app.loginRefresh.hospital.map.authStatus
+      })
+    } else {
+      this.setData({
+        display: 0
+      })
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
   backHistory: function (e) {
     wx.navigateBack({
@@ -251,20 +250,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if(app.loginRefresh.hospital&&app.loginRefresh.hospital.map&&app.loginRefresh.hospital.map.cover){
-      app.loginRefresh.hospital.map.cover=app.cover(app.loginRefresh.hospital.map.cover)
+    if (app.loginRefresh.hospital && app.loginRefresh.hospital.map && app.loginRefresh.hospital.map.cover) {
+      app.loginRefresh.hospital.map.cover = app.cover(app.loginRefresh.hospital.map.cover)
       this.setData({
         srcCover: app.loginRefresh.hospital.map.cover
       })
     }
-    if(app.loginRefresh.hospital&&app.loginRefresh.hospital.map&&app.loginRefresh.hospital.map.license){
-      app.loginRefresh.hospital.map.license=app.cover(app.loginRefresh.hospital.map.license)
-      app.globalData.src=app.cover(app.loginRefresh.hospital.map.license)
+    if (app.loginRefresh.hospital && app.loginRefresh.hospital.map && app.loginRefresh.hospital.map.license) {
+      app.loginRefresh.hospital.map.license = app.cover(app.loginRefresh.hospital.map.license)
+      app.globalData.src = app.cover(app.loginRefresh.hospital.map.license)
       // this.setData({
       //   srcLicense: app.loginRefresh.hospital.map.license
       // })
     }
-    
+
     // if(app.globalData.srcCover){
     //   console.log(app.globalData.srcCover)
     //   this.setData({
@@ -278,7 +277,7 @@ Page({
       })
     }
     var tel = app.globalData.phone;
-    if(tel){
+    if (tel) {
       if (tel.length == 8) {
         tel = tel.slice(0, 2) + '****' + tel.slice(6, 8)
       } else if (tel.length == 12) {
@@ -287,7 +286,7 @@ Page({
         tel = tel.slice(0, 3) + '****' + tel.slice(7, 11)
       }
     }
-    
+
 
     this.setData({
       address: app.globalData.hospitaladdress,
@@ -343,7 +342,7 @@ Page({
       }
     }
   },
-  loginRefresh:function(_value){
+  loginRefresh: function (_value) {
     let that = this;
     wx.request({
       url: app.globalData.url + '/login-refresh',
@@ -353,39 +352,39 @@ Page({
       },
       method: 'post',
       success: function (res) {
-       if(res.data.code==0){
-        // wx.redirectTo({
-        //   url: '../selectRole/selectRole',
-        // })
-        if(app.globalData){
-          app.globalData.phone = res.data.data.phone;
-          app.globalData.userId = res.data.data.userId;
-          app.globalData.hospitalId = res.data.data.hospitalId;
-          app.globalData.hospitalName = res.data.data.hospitalName;
-          // app.globalData.hospitaladdress = res.data.data.hospital.address;
-          // app.globalData.authenticationIs = res.data.data.hospital.authStatus;
-          // if (res.data.data.hospital.license == '' || res.data.data.hospital.license == null || res.data.data.hospital.license == undefined) {
-          //   app.globalData.src = ''
-          // } else {
-          //   app.globalData.src = app.globalData.url + res.data.data.hospital.license
-          // }
-          // if (res.data.data.hospital.cover == '' || res.data.data.hospital.cover == null || res.data.data.hospital.cover == undefined) {
-          //   app.globalData.srcCover = ''
-          // } else {
-          //   app.globalData.srcCover = app.globalData.url + res.data.data.hospital.cover
-          // }
+        if (res.data.code == 0) {
+          // wx.redirectTo({
+          //   url: '../selectRole/selectRole',
+          // })
+          if (app.globalData) {
+            app.globalData.phone = res.data.data.phone;
+            app.globalData.userId = res.data.data.userId;
+            app.globalData.hospitalId = res.data.data.hospitalId;
+            app.globalData.hospitalName = res.data.data.hospitalName;
+            // app.globalData.hospitaladdress = res.data.data.hospital.address;
+            // app.globalData.authenticationIs = res.data.data.hospital.authStatus;
+            // if (res.data.data.hospital.license == '' || res.data.data.hospital.license == null || res.data.data.hospital.license == undefined) {
+            //   app.globalData.src = ''
+            // } else {
+            //   app.globalData.src = app.globalData.url + res.data.data.hospital.license
+            // }
+            // if (res.data.data.hospital.cover == '' || res.data.data.hospital.cover == null || res.data.data.hospital.cover == undefined) {
+            //   app.globalData.srcCover = ''
+            // } else {
+            //   app.globalData.srcCover = app.globalData.url + res.data.data.hospital.cover
+            // }
+          }
+          app.loginRefresh = res.data.data;
+
+        } else {
+          if (!_value) {
+            wx.showToast({
+              title: res.data.codeMsg,
+              icon: 'none'
+            })
+          }
+
         }
-        app.loginRefresh = res.data.data;
-        
-       }else{
-         if(!_value){
-          wx.showToast({
-            title:  res.data.codeMsg,
-            icon:'none'
-          })
-         }
-         
-       }
       }
     })
   },

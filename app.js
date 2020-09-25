@@ -25,7 +25,7 @@ App({
     cover: '',
     authenticationIs: '',
     src:'', 
-    Version:'1.0.2009241743',
+    Version:'1.0.2009241933',
     versionIntro: '修复了部分BUG\n优化了部分体验',
     lastClient:'',
     longitude:'',
