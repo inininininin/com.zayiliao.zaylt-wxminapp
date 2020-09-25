@@ -503,6 +503,10 @@ Page({
    */
 
   onShareAppMessage: function (res) {
+    wx.showShareMenu({
+      withShareTicket: true,
+      menus: ['shareAppMessage', 'shareTimeline']
+    })
     wx.request({
       url: app.globalData.url + '/c2/share?articleId=' + this.data.id,
       method: 'get',
@@ -544,6 +548,15 @@ Page({
     // }
   },
 
+  onShareTimeline: function () {
+		return {
+	      title: this.data.list.name,
+	      query: {
+	        id: this.data.id
+	      },
+	      imageUrl: this.data.list.cover
+	    }
+	},
 
   shareIs: function () {
     var that = this

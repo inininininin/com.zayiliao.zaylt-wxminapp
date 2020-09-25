@@ -596,6 +596,10 @@ console.log(article)
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    wx.showShareMenu({
+      withShareTicket: true,
+      menus: ['shareAppMessage', 'shareTimeline']
+    })
     wx.request({
       url: app.globalData.url + '/c2/share?projectId=' + this.data.id,
       method: 'get',
@@ -617,5 +621,14 @@ console.log(article)
       // path: '/pages/out/highQualityCaseDetail/highQualityCaseDetail?id=' + this.data.id,//分享地址
       imageUrl: this.data.list.cover,//分享图片
     }
-  }
+  },
+  onShareTimeline: function () {
+		return {
+	      title: this.data.list.name,
+	      query: {
+	        id: this.data.id
+	      },
+	      imageUrl: this.data.list.cover
+	    }
+	},
 })
