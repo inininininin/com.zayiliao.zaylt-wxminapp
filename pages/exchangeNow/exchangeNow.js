@@ -23,6 +23,7 @@ Page({
     payExchangepoint: '',
     count: '1',
     stock: '',
+    submitIf:true,
   },
   add: function (e) {
     var that = this
@@ -142,6 +143,9 @@ Page({
   },
   submit: function (e) {
     var that = this
+    that.setData({
+      submitIf:false
+    })
     var str = { commodities: [{ id: that.data.id, count: that.data.count }] }
     var param = JSON.stringify(str)
     wx.request({
@@ -174,13 +178,20 @@ Page({
               wx.hideToast()
               if (res.data.code == 0) {
                 wx.showToast({
-                  title: 'title',
+                  title: '兑换成功',
                   icon: 'none',
                   duration: 2000,
                   success: function (res) {
-                    wx.navigateBack({
-                      delta: 1,
-                    })
+                    
+                    setTimeout(function(){
+                      wx.navigateBack({
+                        delta: 1,
+                      })
+                      that.setData({
+                        submitIf:true
+                      })
+                    },1000)
+                   
                   }
                 })
 
@@ -190,6 +201,9 @@ Page({
                 //   })
                 // }, 1000)
               } else {
+                that.setData({
+                  submitIf:true
+                })
                 wx.showToast({
                   title: res.data.codeMsg,
                   icon: 'none'
@@ -198,6 +212,9 @@ Page({
             }
           });
         } else {
+          that.setData({
+            submitIf:true
+          })
           wx.showToast({
             title: res.data.codeMsg,
             icon: 'none'

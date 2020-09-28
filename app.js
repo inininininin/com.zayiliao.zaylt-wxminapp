@@ -7,35 +7,35 @@ App({
     list: [], //存放tabBar的数据
     // url:'https://dev.inininininin.com/ylt',
     // domain:'https://dev.inininininin.com',
-    url:'https://zaylt.njshangka.com/ylt',
-    domain:'https://zaylt.njshangka.com',
+    url: 'https://zaylt.njshangka.com/ylt',
+    domain: 'https://zaylt.njshangka.com',
     token: '',//'1984750073886',
-    userToken:'',
-    clinicId:'',
-    clinicName:'',
+    userToken: '',
+    clinicId: '',
+    clinicName: '',
     hospitalId: '',
-    hospitalName:'',
-    managerName:'',
-    managerId:'',
+    hospitalName: '',
+    managerName: '',
+    managerId: '',
     phone: '',
     userId: '',
-    clinicaddress:'',
-    hospitaladdress:'',
+    clinicaddress: '',
+    hospitaladdress: '',
     license: '',
     cover: '',
     authenticationIs: '',
-    src:'', 
-    Version:'1.0.2009241948',
+    src: '',
+    Version: '1.0.2009281559',
     versionIntro: '修复了部分BUG\n优化了部分体验',
-    lastClient:'',
-    longitude:'',
+    lastClient: '',
+    longitude: '',
     latitude: '',
     speed: '',
   },
   onLaunch: function () {
     this.globalData.usrBaseInfo = '123'
-  
-   
+
+
 
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -69,10 +69,10 @@ App({
       }
     })
 
-   
+
     const vm = this
     wx.getSystemInfo({
-      success: function(res) {
+      success: function (res) {
         let titleBarHeight = 0
         if (res.model.indexOf('iPhone') !== -1) {
           titleBarHeight = 44
@@ -80,13 +80,13 @@ App({
           titleBarHeight = 48
         }
         // that.setData({
-          vm.globalData.statusBarHeight= res.statusBarHeight,
-          vm.globalData.titleBarHeight= titleBarHeight
+        vm.globalData.statusBarHeight = res.statusBarHeight,
+          vm.globalData.titleBarHeight = titleBarHeight
         // });
       },
       failure() {
-        vm.globalData.statusBarHeight= res.statusBarHeight,
-          vm.globalData.titleBarHeight= titleBarHeight
+        vm.globalData.statusBarHeight = res.statusBarHeight,
+          vm.globalData.titleBarHeight = titleBarHeight
       }
     })
     const updateManager = wx.getUpdateManager()
@@ -124,7 +124,7 @@ App({
     wx.getLocation({
       type: 'wgs84',
       isHighAccuracy: true,
-      highAccuracyExpireTime:'3000',
+      highAccuracyExpireTime: '3000',
       success: function (res) {
         vm.globalData.longitude = res.longitude
         vm.globalData.latitude = res.latitude
@@ -176,5 +176,5 @@ App({
     }
     return _cover
   },
-  loginRefresh:{}
+  loginRefresh: {}
 })

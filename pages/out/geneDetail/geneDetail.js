@@ -51,6 +51,7 @@ Page({
           show1: 1,
           casArray2: res.data.data.items,
           casArray3: casArray3,
+          freightNo:res.data.data.items[0].freightCoId
         })
         console.log(that.data.casArray3)
         console.log(that.data.casArray2)
@@ -64,6 +65,20 @@ Page({
   },
   saveData1(e) {
     var that = this
+    if (!that.data.freightCoId) {
+      wx.showToast({
+        title: '请选择运单号',
+        icon: 'none'
+      })
+      return
+    }
+    if (!that.data.freightNo) {
+      wx.showToast({
+        title: '请选择快递公司',
+        icon: 'none'
+      })
+      return
+    }
     wx.request({
       url: app.globalData.url + '/client2/geneTest/freight3',
       header: {
@@ -98,6 +113,27 @@ Page({
   },
   saveData(e) {
     var that = this
+    if (!that.data.detailName) {
+      wx.showToast({
+        title: '请输入姓名',
+        icon: 'none'
+      })
+      return
+    }
+    if (!that.data.detailTel) {
+      wx.showToast({
+        title: '请输入电话',
+        icon: 'none'
+      })
+      return
+    }
+    if (!that.data.testItem) {
+      wx.showToast({
+        title: '请选择检查项目',
+        icon: 'none'
+      })
+      return
+    }
     wx.request({
       url: app.globalData.url + '/client2/geneTest/sample',
       header: {
@@ -162,7 +198,8 @@ Page({
             show1: 2,
             luru: 1,
             casArray: casArray,
-            casIndex: casIndex
+            casIndex: casIndex,
+            testItem: res.data.data.items[0].name
           })
         }
       });

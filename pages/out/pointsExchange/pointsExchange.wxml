@@ -36,7 +36,7 @@
 <view class='popularExchange' style="margin-top:{{titleBarHeight+statusBarHeight+180}}px">
   <view class='hottitle'>
     <text>热门兑换</text>
-    <image  mode="aspectFill"  src='../../img/Chevron Copy 2@2x.png'></image>
+    <image  mode="aspectFill"  src='../../img/ChevronCopy2@2x.png'></image>
     <navigator url='../pointExchangeAll/pointExchangeAll'><text class='more'>更多</text></navigator>
     
   </view>

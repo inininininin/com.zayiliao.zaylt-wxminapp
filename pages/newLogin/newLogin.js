@@ -439,9 +439,7 @@ Page({
         wx.hideToast()
         if (resData.data.code == 0) {
           app.globalData.cookie = resData.header['Set-Cookie']
-          that.setData({
-            loginShow:true
-          })
+          
           wx.login({
             complete: (res) => {
               wx.request({
@@ -455,12 +453,13 @@ Page({
                   jscode: res.code,
                 },
                 success: function (resData) {
-                  that.setData({
-                    loginShow:true
-                  })
+                  
                   if (resData.data.code == 0) {
                     that.loginRefresh()
                   } else {
+                    that.setData({
+                      loginShow:true
+                    })
                     wx.showToast({
                       title: resData.data.codeMsg,
                       icon: 'none'
@@ -571,6 +570,9 @@ Page({
           // wx.redirectTo({
           //   url: '../selectRole/selectRole',
           // })
+          that.setData({
+            loginShow:true
+          })
           if (app.globalData) {
             app.globalData.phone = res.data.data.phone;
             app.globalData.userId = res.data.data.userId;
@@ -626,6 +628,9 @@ Page({
           }
 
         } else {
+          that.setData({
+            loginShow:true
+          })
           if (!_value) {
             wx.showToast({
               title: res.data.codeMsg,

@@ -35,4 +35,5 @@
       </view>
     </view>
 
-<view class='submit' bindtap='submit'>提交</view>
+<view wx:if='{{submitIf}}' class='submit' bindtap='submit'>提交</view>
+<view wx:if='{{!submitIf}}'  class='submit' >提交</view>

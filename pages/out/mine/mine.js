@@ -16,7 +16,7 @@ Page({
     address:'',
     display:'',
     src:'../../img/logo@2x.png',
-    srcCover:'../img/logo@2x.png',
+    srcCover:'../../img/logo@2x.png',
   },
   bindWxmApp(e){
     let that=this

@@ -140,6 +140,57 @@ Page({
   },
   save(e) {
     var that = this
+    if(!that.data.name){
+      wx.showToast({
+        title: '请输入门诊名称',
+        icon:'none',
+      })
+      return
+    }
+    if(!that.data.clinicPromoterId){
+      wx.showToast({
+        title: '请选择推广人',
+        icon:'none',
+      })
+      return
+    }
+    if(!that.data.phone){
+      wx.showToast({
+        title: '请输入分配账号',
+        icon:'none',
+      })
+      return
+    }
+    if(!that.data.pwd){
+      wx.showToast({
+        title: '请输入分配密码',
+        icon:'none',
+      })
+      return
+    }
+    
+    if(!that.data.headmanName){
+      wx.showToast({
+        title: '请输入负责人',
+        icon:'none',
+      })
+      return
+    }
+    if(!that.data.tel){
+      wx.showToast({
+        title: '请输入联系方式',
+        icon:'none',
+      })
+      return
+    }
+    if(!that.data.address){
+      wx.showToast({
+        title: '请输入门诊地址',
+        icon:'none',
+      })
+      return
+    }
+    
     wx.request({
       url: app.globalData.url + '/c2/clinic/itemadd', //仅为示例，非真实的接口地址
       method: 'post',
@@ -213,7 +264,7 @@ Page({
           }
           that.setData({
             array: array,
-            clinicPromoterId: res.data.data.rows[0].hospitalUserId,
+            // clinicPromoterId: res.data.data.rows[0].hospitalUserId,
             id: id,
           })
           if (options.id != '' && options.id != undefined && options.id != null) {

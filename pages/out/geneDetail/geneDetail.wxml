@@ -32,7 +32,7 @@
 <view class='line3 relative' wx:if='{{luru==1}}'>
   <view class='font34 left60'>录入样本数据
   
-    <image  mode="aspectFill"  class='edit'  bindtap='enterData' src='../../img/revise@2x.png'></image>
+    <image  mode="aspectFill"  class='edit' wx:if='{{detail.status==0}}' bindtap='enterData' src='../../img/revise@2x.png'></image>
   </view>
   <view class='font28 left60 col131'>
     <text>姓名：</text>
@@ -50,13 +50,13 @@
 </view>
 <view class='line3  lineN relative' wx:if='{{luru==0}}'>
   <view class='font34 left60  pad70 marginBottom0'>录入样本数据
-    <image  mode="aspectFill"  class='edit' bindtap='enterData' src='../../img/revise@2x.png'></image>
+    <image  mode="aspectFill" wx:if='{{detail.status==0}}'  class='edit' bindtap='enterData' src='../../img/revise@2x.png'></image>
   </view>
   <text class='nofinish absolute'></text>
 </view>
 <view class='line5 relative' wx:if='{{detail.freight3Is==1}}'>
   <view class='font34 left60'>寄回医院
-    <image  mode="aspectFill"  class='edit' bindtap='backHos' src='../../img/revise@2x.png'></image>
+    <image  mode="aspectFill"  class='edit' wx:if='{{detail.status==0}}' bindtap='backHos' src='../../img/revise@2x.png'></image>
   </view>
   <view class='ydh col131 font28 left60'>
     <text class='inputText'>运单号：</text>
@@ -70,7 +70,7 @@
 </view>
 <view class='line5  lineN relative' wx:if='{{detail.freight3Is==0}}'>
   <view class='font34 left60  pad70 marginBottom0'>寄回医院
-    <image  mode="aspectFill"  class='edit' bindtap='backHos' src='../../img/revise@2x.png'></image>
+    <image  mode="aspectFill"  class='edit' wx:if='{{detail.status==0}}' bindtap='backHos' src='../../img/revise@2x.png'></image>
   </view>
   <text class='nofinish absolute'></text>
 </view>
