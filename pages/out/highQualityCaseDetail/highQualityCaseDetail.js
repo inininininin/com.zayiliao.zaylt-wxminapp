@@ -22,11 +22,11 @@ Page({
     showimageurl:false,
     imageurl:'',
   },
-  wxParseTagATap(e){
-    wx.navigateTo({
-      url:'../../webview/webview?href='+encodeURI(e.currentTarget.dataset.src)
-    })
-  },
+  // wxParseTagATap(e){
+  //   wx.navigateTo({
+  //     url:'../../webview/webview?href='+encodeURI(e.currentTarget.dataset.src)
+  //   })
+  // },
   closeshowimageurl(e){
     this.setData({
       showimageurl:false
