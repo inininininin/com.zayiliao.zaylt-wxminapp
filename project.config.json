@@ -35,7 +35,7 @@
     "packNpmRelationList": []
   },
   "compileType": "miniprogram",
-  "libVersion": "2.10.0",
+  "libVersion": "2.12.1",
   "appid": "wx54247d10ddce788b",
   "projectname": "tabBar",
   "debugOptions": {
