@@ -17,6 +17,7 @@
 	<view class='detail'>
 		<view class="wxParse" style='font-size:{{fontSize}}rpx !important'>
 			<template is="wxParse" data="{{wxParseData:article.nodes}}" />
+			<!-- <view>{{wxParseData:article.nodes}}</view> -->
 		</view>
 	</view>
 </view>

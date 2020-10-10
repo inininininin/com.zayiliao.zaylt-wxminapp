@@ -241,6 +241,7 @@ Page({
               'cookie': app.globalData.cookie
             },
             success: function (res) {
+              // console.log(res.data)
               var article = res.data
               WxParse.wxParse('article', 'html', article, that, 5);
               console.log(article)

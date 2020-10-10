@@ -94,9 +94,9 @@ Page({
     })
   },
   yyzz(e) {
+    debugger
     console.log(app.globalData.src)
     if (app.globalData.src == '' || app.globalData.src == null || app.globalData.src == undefined) {
-
       var that = this
       wx.chooseImage({
         count: 1, // 默认9
@@ -250,19 +250,27 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (app.loginRefresh.hospital && app.loginRefresh.hospital.map && app.loginRefresh.hospital.map.cover) {
-      app.loginRefresh.hospital.map.cover = app.cover(app.loginRefresh.hospital.map.cover)
-      this.setData({
-        srcCover: app.loginRefresh.hospital.map.cover
-      })
-    }
-    if (app.loginRefresh.hospital && app.loginRefresh.hospital.map && app.loginRefresh.hospital.map.license) {
-      app.loginRefresh.hospital.map.license = app.cover(app.loginRefresh.hospital.map.license)
-      app.globalData.src = app.cover(app.loginRefresh.hospital.map.license)
-      // this.setData({
-      //   srcLicense: app.loginRefresh.hospital.map.license
-      // })
-    }
+    debugger
+    if(app.loginRefresh.hospital)
+      if (app.loginRefresh.hospital.map && app.loginRefresh.hospital.map.cover) {
+        app.loginRefresh.hospital.map.cover = app.cover(app.loginRefresh.hospital.map.cover)
+        this.setData({
+          srcCover: app.loginRefresh.hospital.map.cover
+        })
+      }
+    if(app.loginRefresh.hospital)
+      if (app.loginRefresh.hospital.map) {
+        if(app.loginRefresh.hospital.map.license){
+          app.loginRefresh.hospital.map.license = app.cover(app.loginRefresh.hospital.map.license)
+          app.globalData.src = app.cover(app.loginRefresh.hospital.map.license)
+        }else{
+          app.globalData.src = app.loginRefresh.hospital.map.license
+        }
+        
+        // this.setData({
+        //   srcLicense: app.loginRefresh.hospital.map.license
+        // })
+      }
 
     // if(app.globalData.srcCover){
     //   console.log(app.globalData.srcCover)

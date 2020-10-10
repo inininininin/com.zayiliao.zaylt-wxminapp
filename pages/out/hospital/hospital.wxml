@@ -4,7 +4,7 @@
     <view class="title-bar" style="height:{{titleBarHeight}}px">
       <view class='search'>
         <image  mode="aspectFill"  bindtap='backHistory' style='display:inline-block;top:{{15+statusBarHeight}}px;left:62rpx;' src='../../img/sousuo@2x.png'></image>
-        <input bindinput='input' placeholder-style='color:#999' placeholder='输入文章关键字'></input>
+        <input bindconfirm='input' confirm-type="search" placeholder-style='color:#999' placeholder='输入文章关键字'></input>
       </view>
     </view>
   </view>

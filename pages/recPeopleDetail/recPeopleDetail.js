@@ -104,7 +104,7 @@ Page({
               },
               data: {
                  // type: 1,    
-                hospitalUserId: that.data.hospitalUserIdNew,
+                 hospitalUserIdNew: that.data.hospitalUserIdNew,
               },
               method: 'post',
               success: function (res) {
@@ -196,6 +196,10 @@ Page({
       showIs:true,
       showIsTwo:true,
       changeClinicName: '该推广人名下全部(' + that.data.clinicNum +'个)门诊',
+    })
+    this.setData({
+      index: 0,
+      hospitalUserIdNew: ''
     })
     this.recPeople()
   },
@@ -346,6 +350,10 @@ Page({
   changeClinic(e){
     var changeClinicId = e.currentTarget.dataset.id
     var changeClinicName = e.currentTarget.dataset.name
+    this.setData({
+      index: 0,
+      hospitalUserIdNew: ''
+    })
     this.setData({
       showIs: true,
       showIsOne: false,

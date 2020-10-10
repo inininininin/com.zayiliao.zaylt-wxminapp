@@ -552,6 +552,8 @@ Page({
       },
       success: function (res) {
         app.globalData.cookie = res.header['Set-Cookie']
+        app.globalData.userToken = res.data.data.token;
+        app.globalData.userToken = res.data.data.token;
         that.loginRefresh()
       }
     })

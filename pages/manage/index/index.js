@@ -260,6 +260,7 @@ Page({
           }
           var hosList = that.data.hosList;
           var newhosList = hosList.concat(res.data.data.items)
+          debugger
           if (res.data.data.items.length == 0) {
             that.setData({
               hosList: hosList,

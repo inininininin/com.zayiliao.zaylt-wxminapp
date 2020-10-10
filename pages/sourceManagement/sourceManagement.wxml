@@ -65,7 +65,7 @@
 
 							<view class='search' style="height:{{titleBarHeight}}px;line-height:{{titleBarHeight}}px">
 								<image mode="aspectFill" src='../img/search1.png'></image>
-								<input bindinput="search" style="height:{{titleBarHeight}}px;" placeholder="搜索病员" placeholder-class="placeholderSs"></input>
+								<input bindconfirm="search" confirm-type="search" style="height:{{titleBarHeight}}px;" placeholder="搜索病员" placeholder-class="placeholderSs"></input>
 								<!-- 搜索 -->
 							</view>
 							<view class='select' bindtap='showview'>

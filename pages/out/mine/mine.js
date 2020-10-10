@@ -208,6 +208,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    debugger
+    var tel = app.globalData.phone;
+    this.setData({
+      hosName: app.globalData.hospitalName,
+      name: app.globalData.clinicName,
+      tel: tel,
+    })
+    debugger
     if(app.loginRefresh.clinic&&app.loginRefresh.hospital.map&&app.loginRefresh.clinic.map.cover){
       app.loginRefresh.clinic.map.cover=app.cover(app.loginRefresh.clinic.map.cover)
       this.setData({
@@ -227,7 +235,7 @@ Page({
         selected: 1
       })
     }
-    var tel = app.globalData.phone;
+    
     console.log(tel, tel.length, tel.slice(0, 3))
     if (tel.length==8){
       tel = tel.slice(0, 2) + '****' + tel.slice(6, 8)
@@ -237,11 +245,7 @@ Page({
       tel = tel.slice(0, 3) + '****' + tel.slice(7, 11)
     }
    
-    this.setData({
-      hosName: app.globalData.hospitalName,
-      name: app.globalData.clinicName,
-      tel: tel,
-    })
+    
   },
   loginout(e) {
  

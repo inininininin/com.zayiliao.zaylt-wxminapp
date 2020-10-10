@@ -54,6 +54,10 @@ Page({
    */
   onLoad: function (options) {
     var that=this
+    that.lastPage(0,'')
+  },
+  getSum: function (_value) {
+    var that=this
     wx.request({
       url: app.globalData.url + '/hospital/operator/hospital-clinics-sum',
       header: {
@@ -61,6 +65,7 @@ Page({
         'cookie': app.globalData.cookie
       },
       data: {
+        kw: _value
         //  hospitalUserId: options.id
       },
       method: 'get',
@@ -78,7 +83,6 @@ Page({
         }
       }
     });
-    that.lastPage(0,'')
   },
   lastPage: function (toPageNo, kw) {
     var that = this
@@ -100,8 +104,10 @@ Page({
       },
       method: 'get',
       success: function (res) {
+        
         wx.hideToast()
         if (res.data.code == 0) {
+          that.getSum(kw)
           var schemeListArr = that.data.schemeList;
           var newSchemeListArr = schemeListArr.concat(res.data.data.rows)
           if (res.data.data.rows.length == 0) {

@@ -70,6 +70,7 @@ Page({
   },
   onLoad(option) {
     var that=this
+    debugger
     that.setData({
       src: app.globalData.src
     })
