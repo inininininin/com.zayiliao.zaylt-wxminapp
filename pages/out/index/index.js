@@ -220,13 +220,13 @@ Page({
       })
       return
     }
-    if(!that.data.idCard||that.data.idCard.length!=18){
-      wx.showToast({
-        title: '请输入正确的身份证号码',
-        icon:'none'
-      })
-      return
-    }
+    // if(!that.data.idCard||that.data.idCard.length!=18){
+    //   wx.showToast({
+    //     title: '请输入正确的身份证号码',
+    //     icon:'none'
+    //   })
+    //   return
+    // }
    
     wx.request({
       url: app.globalData.url + '/c2/patient/itemadd',

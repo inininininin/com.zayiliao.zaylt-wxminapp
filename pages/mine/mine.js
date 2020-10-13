@@ -94,8 +94,6 @@ Page({
     })
   },
   yyzz(e) {
-    debugger
-    console.log(app.globalData.src)
     if (app.globalData.src == '' || app.globalData.src == null || app.globalData.src == undefined) {
       var that = this
       wx.chooseImage({
@@ -250,7 +248,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    debugger
     if(app.loginRefresh.hospital)
       if (app.loginRefresh.hospital.map && app.loginRefresh.hospital.map.cover) {
         app.loginRefresh.hospital.map.cover = app.cover(app.loginRefresh.hospital.map.cover)

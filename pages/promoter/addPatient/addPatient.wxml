@@ -27,17 +27,17 @@
     <text>联系方式</text>
     <input bindinput='phone' value='{{phone}}' type='number' placeholder-class='inputPla' placeholder='请填写'></input>
   </view>
-  <view class='input'>
-    <text>身份证号码</text>
-    <input bindinput='idCard' value='{{idCard}}' type='idcard' placeholder-class='inputPla' placeholder='请填写'></input>
-  </view>
+ 
 
 
   <view class='selectIntro'>
     <image  mode="aspectFill"  src='../../img/xuantian@2x.png'></image>
     <text>选填项</text>
   </view>
-
+  <view class='input'>
+    <text>身份证号码</text>
+    <input bindinput='idCard' value='{{idCard}}' type='idcard' placeholder-class='inputPla' placeholder='请填写'></input>
+  </view>
   <view class='input'>
     <text>备注</text>
     <input bindinput='remark' value='{{remark}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input>

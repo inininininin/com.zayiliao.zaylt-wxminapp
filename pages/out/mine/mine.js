@@ -208,14 +208,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    debugger
     var tel = app.globalData.phone;
     this.setData({
       hosName: app.globalData.hospitalName,
       name: app.globalData.clinicName,
       tel: tel,
     })
-    debugger
     if(app.loginRefresh.clinic&&app.loginRefresh.hospital.map&&app.loginRefresh.clinic.map.cover){
       app.loginRefresh.clinic.map.cover=app.cover(app.loginRefresh.clinic.map.cover)
       this.setData({

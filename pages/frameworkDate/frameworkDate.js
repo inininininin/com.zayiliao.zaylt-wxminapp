@@ -92,7 +92,6 @@ Page({
       navtitle: thisYear,
     })
     console.log(this.data.navtitle)
-    // debugger
     wx.setNavigationBarTitle({
       title: ''+this.data.navtitle,
     })

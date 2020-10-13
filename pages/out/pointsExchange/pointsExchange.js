@@ -45,7 +45,7 @@ Page({
         pn: toPageNo,
         ps: pageSize,
         orders: 'asc',
-        sorts: 'orderNo',
+        sorts: 'addTime',
        },
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
