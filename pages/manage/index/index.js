@@ -122,6 +122,8 @@ Page({
   },
   again(e) {
     this.setData({
+      sorts: '',
+      orders:'',
       color: '#f2f2f2',
       color2: '#f2f2f2',
       color3: '#f2f2f2',

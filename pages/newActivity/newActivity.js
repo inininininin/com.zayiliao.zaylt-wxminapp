@@ -13,7 +13,7 @@ Page({
     titleBarHeight: getApp().globalData.titleBarHeight,
     date: '开始时间', //默认起始时间  
     date2: '结束时间', //默认结束时间 
-    topImg: 'https://zaylt.njshangka.com/ylt/resource/img/Group.png',
+    topImg: '',
     bgColor: 'rgba(229,229,229,1)',
     color: '#E5E5E5',
     content: '',
@@ -216,7 +216,8 @@ Page({
     })
     if (options.type == 'add') {
       that.setData({
-        type: true
+        type: true,
+        topImg:'https://zaylt.njshangka.com/ylt/resource/img/Group.png'
       })
     } else {
       that.setData({
@@ -242,7 +243,7 @@ Page({
             that.setData({
               date: app.dateChange(res.data.data.startTime),
               date2: app.dateChange(res.data.data.endTime),
-              topImg: res.data.data.cover,
+              topImg: res.data.data.cover||'https://zaylt.njshangka.com/ylt/resource/img/Group.png',
               title: res.data.data.title,
               tel: res.data.data.tel,
               brief: res.data.data.brief,

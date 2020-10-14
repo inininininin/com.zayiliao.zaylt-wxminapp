@@ -18,9 +18,6 @@ page {
   background: #fff;
 }
 
-.status-bar {
-  /* background: rgba(255, 0, 0, 0.1); */
-}
 
 .title-bar {
   display: flex;
@@ -222,13 +219,14 @@ line-height: 64rpx;
 }
 
 .adddel input {
-  display: inline-block;
+  /* display: inline-block; */
   width: 60rpx;
   height: 44rpx;
   padding: 0;
   border: 0;
   text-align: center;
   float: left;
+  margin-top: 10rpx;
 }
 
 .children_item {

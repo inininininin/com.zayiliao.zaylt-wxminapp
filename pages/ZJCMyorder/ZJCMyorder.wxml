@@ -16,8 +16,9 @@
 </view>
 
 
+<view style="margin-top:132rpx"> 
 
-<view class='list' wx:for="{{schemeList}}" wx:for-item="item" wx:key="index" wx:if="{{currentTab==0}}">
+  <view class='list' wx:for="{{schemeList}}" wx:for-item="item" wx:key="index" wx:if="{{currentTab==0}}">
   <navigator url='../ZJCOrderDetailnoDetail/ZJCOrderDetailnoDetail?id={{item.orderId}}&overIf=0'>
     <view class='line1'>
       <image  mode="aspectFill"  src='../img/blue1@2x.png'></image>
@@ -62,4 +63,5 @@
       <view wx:if="{{item.status==2}}" class='wancheng'>订单已完成</view>
     </view>
   </navigator>
+</view>
 </view>

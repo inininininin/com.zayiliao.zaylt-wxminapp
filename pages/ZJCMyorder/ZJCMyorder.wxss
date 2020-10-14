@@ -16,6 +16,8 @@ swiper{
   height: 132rpx;
   width: 100%;
   background: #fff;
+  top: 0;
+  left: 0;
   /* margin: 24rpx 0; */
   /* position: fixed; */
 }

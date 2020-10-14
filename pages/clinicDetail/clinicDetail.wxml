@@ -8,7 +8,7 @@
           <!-- <text>保存</text> -->
           <image  mode="aspectFill"  bindtap="edit" src="../img/Preview.png"></image>
         </view>
-        <text class="text">{{navtitle}}</text>
+        <text class="text lineOne">{{navtitle}}</text>
       </view>
     </view>
   </view>

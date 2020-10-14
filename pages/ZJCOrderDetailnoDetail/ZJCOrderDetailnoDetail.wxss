@@ -15,36 +15,37 @@ page{
 /* 地址栏 */
 .address {
   width: 100%;
-  height: 160rpx;
+  /* height: 160rpx; */
   background: #fff;
   margin-top: 20rpx;
   /* line-height: 160rpx; */
 }
 
 .address image:first-child {
-  width: 36rpx;
-  height: 46rpx;
+  
+  width: 37rpx;
+  height: 44rpx;
   float: left;
+  /* display: inline-block; */
   /* display: inline-block; *//* vertical-align: middle; */
   line-height: 160rpx;
-  margin: 57rpx 32rpx;
+  margin: 30rpx 32rpx;
+  /* margin: 57rpx 32rpx; */
 }
 
-.address image:last-child {
+/* .address image:last-child {
   width: 18rpx;
   height: 32rpx;
-  display: inline-block;
-  /* vertical-align: middle; */
   line-height: 160rpx;
   float: right;
   margin: 64rpx 32rpx;
-}
+} */
 
 .address view {
-  float: left;
-  /* display: inline-block; */
+  /* float: left; */
+  display: inline-block;
   width: 550rpx;
-  height: 160rpx;
+  /* height: 160rpx; */
 }
 
 .address view .view1 {
@@ -82,15 +83,16 @@ page{
 
 .address view .addressDv {
   font-size: 32rpx;
-  line-height: 32rpx !important;
-  margin: 0 auto 32rpx 0;
+  line-height: 42rpx !important;
+  /* margin: 0 auto 32rpx 0; */
   display: block;
   color: rgb(51, 51, 51);
    overflow: hidden;
-  text-overflow: ellipsis;
+   padding-bottom:32rpx ;
+  /* text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: vertical; */
 }
 
 .list{
@@ -98,8 +100,9 @@ page{
   height: auto;
   background: #fff;
   margin-top: 24rpx;
-  margin-bottom: 144rpx;
+  /* margin-bottom: 184rpx; */
 }
+
 .listItem{
   height: 196rpx;
   width: 718rpx;

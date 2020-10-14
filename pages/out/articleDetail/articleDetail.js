@@ -555,8 +555,9 @@ Page({
   },
 
   onShareTimeline: function () {
+    console.log(this.data.list.title)
 		return {
-	      title: this.data.list.name,
+	      title: this.data.list.title,
 	      query: {
 	        id: this.data.id
 	      },

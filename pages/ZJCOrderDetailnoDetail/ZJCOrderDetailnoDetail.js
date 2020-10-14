@@ -58,9 +58,10 @@ Page({
         wx.hideToast()
         if (res.data.code == 0) {
           for (var i = 0; i < res.data.data.details.length;i++){
-            if (res.data.data.details[i].deviceCover.slice(0,1)!='h'){
-             res.data.data.details[i].deviceCover = app.globalData.url + res.data.data.details[i].deviceCover
-           }
+          //   if (res.data.data.details[i].deviceCover.slice(0,1)!='h'){
+          //    res.data.data.details[i].deviceCover = app.globalData.url + res.data.data.details[i].deviceCover
+          //  }
+          res.data.data.details[i].deviceCover=app.cover(res.data.data.details[i].deviceCover)
           }
           that.setData({
             receiverTel: res.data.data.receiverTel,

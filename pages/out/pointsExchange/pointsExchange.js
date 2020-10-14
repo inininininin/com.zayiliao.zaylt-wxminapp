@@ -44,7 +44,7 @@ Page({
       data: {
         pn: toPageNo,
         ps: pageSize,
-        orders: 'asc',
+        orders: 'desc',
         sorts: 'addTime',
        },
       header: {

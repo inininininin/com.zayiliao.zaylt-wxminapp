@@ -49,6 +49,7 @@ Page({
   },
   bindDateChange2(e) {
     let that = this;
+    console.log(e.detail.value)
     that.setData({
       date2: e.detail.value,
       color2: 'rgb(255, 255, 190)'
@@ -101,26 +102,51 @@ Page({
   },
   sure(e) {
     let that = this
-
+    console.log(that.data.status )
     if (that.data.status == 1) {
       that.setData({
         currentTab: 1,
         list1: [],
         list2: [],
       })
+      that.lastPageNum(that.data.date, that.data.date2, that.data.date3, that.data.date4);
       that.lastPage(0, 1, that.data.date, that.data.date2, that.data.date3, that.data.date4)
-    } else {
+    } else if (that.data.status == 4){
       that.setData({
         currentTab: 2,
         list1: [],
         list2: [],
       })
+      that.lastPageNum(that.data.date, that.data.date2, that.data.date3, that.data.date4);
       that.lastPage(0, 4, that.data.date, that.data.date2, that.data.date3, that.data.date4)
+    }else{
+      if(that.data.currentTab==1){
+        that.setData({
+          currentTab: 1,
+          list1: [],
+          list2: [],
+        })
+        that.lastPageNum(that.data.date, that.data.date2, that.data.date3, that.data.date4);
+        that.lastPage(0, 1, that.data.date, that.data.date2, that.data.date3, that.data.date4)
+      }else if(that.data.currentTab==2){
+        that.setData({
+          currentTab: 2,
+          list1: [],
+          list2: [],
+        })
+        that.lastPageNum(that.data.date, that.data.date2, that.data.date3, that.data.date4);
+        that.lastPage(0, 4, that.data.date, that.data.date2, that.data.date3, that.data.date4)
+      }else{
+        that.setData({
+          currentTab: 0,
+          list1: [],
+          list2: [],
+        })
+      }
     }
 
     that.setData({
-      display: "none",
-      // translate: '',     
+      display: "none", 
     })
   },
   search(e) {
@@ -167,15 +193,25 @@ Page({
       currentTab: e.currentTarget.dataset.idx,
       list1: [],
       list2: [],
-      date: '开始时间',
-      date2: '结束时间',
-      date3: '开始时间',
-      date4: '结束时间',
+      // date: '开始时间',
+      // date2: '结束时间',
+      // date3: '开始时间',
+      // date4: '结束时间',
     })
     if (e.currentTarget.dataset.idx == 1) {
       this.lastPage(0, 1, this.data.date, this.data.date2, this.data.date3, this.data.date4)
+      this.setData({
+        color5: 'rgb(255, 255, 190)',
+        color6: '#f2f2f2',
+        status: '1',
+      })
     } else if (e.currentTarget.dataset.idx == 2) {
       this.lastPage(0, 4, this.data.date, this.data.date2, this.data.date3, this.data.date4)
+      this.setData({
+        color6: 'rgb(255, 255, 190)',
+        color5: '#f2f2f2',
+        status: '4',
+      })
     }
   },
   name: function (e) {
@@ -255,7 +291,7 @@ Page({
             idCard: '',
             remark: '',
           })
-          that.lastPageNum();
+          that.lastPageNum(that.data.date, that.data.date2, that.data.date3, that.data.date4);
         } else if (res.data.code == 20) {
           wx.navigateTo({
             url: '../../newLogin/newLogin',
@@ -272,8 +308,28 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  lastPageNum: function () {
+  lastPageNum: function (pushTimeStart,pushTimeEnd,hospitalConfirmTimeStart,hospitalConfirmTimeEnd) {
     var that = this;
+    if (pushTimeStart == '开始时间') {
+      pushTimeStart = ''
+    } else {
+      pushTimeStart = Date.parse(new Date(that.data.date));
+    }
+    if (pushTimeEnd == '结束时间') {
+      pushTimeEnd = ''
+    } else {
+      pushTimeEnd = Date.parse(new Date(that.data.date2))+86400;
+    }
+    if (hospitalConfirmTimeStart == '开始时间') {
+      hospitalConfirmTimeStart = ''
+    } else {
+      hospitalConfirmTimeStart = Date.parse(new Date(that.data.date3));
+    }
+    if (hospitalConfirmTimeEnd == '结束时间') {
+      hospitalConfirmTimeEnd = ''
+    } else {
+      hospitalConfirmTimeEnd = Date.parse(new Date(that.data.date4))+86400;
+    }
     wx.request({
       url: app.globalData.url + '/c2/patient/items',
       method: 'post',
@@ -283,6 +339,10 @@ Page({
         ps: 15,
         status: 1,
         clinicId: app.globalData.clinicId,
+        pushTimeStart: pushTimeStart,
+        pushTimeEnd: pushTimeEnd,
+        hospitalConfirmTimeStart: hospitalConfirmTimeStart,
+        hospitalConfirmTimeEnd: hospitalConfirmTimeEnd,
       },
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -303,6 +363,10 @@ Page({
               ps: 15,
               status: 4,
               clinicId: app.globalData.clinicId,
+              pushTimeStart: pushTimeStart,
+              pushTimeEnd: pushTimeEnd,
+              hospitalConfirmTimeStart: hospitalConfirmTimeStart,
+              hospitalConfirmTimeEnd: hospitalConfirmTimeEnd,
             },
             header: {
               "Content-Type": "application/x-www-form-urlencoded",
@@ -362,7 +426,7 @@ Page({
     if (pushTimeEnd == '结束时间') {
       pushTimeEnd = ''
     } else {
-      pushTimeEnd = Date.parse(new Date(that.data.date2));
+      pushTimeEnd = Date.parse(new Date(that.data.date2))+86400;
     }
     if (hospitalConfirmTimeStart == '开始时间') {
       hospitalConfirmTimeStart = ''
@@ -372,7 +436,7 @@ Page({
     if (hospitalConfirmTimeEnd == '结束时间') {
       hospitalConfirmTimeEnd = ''
     } else {
-      hospitalConfirmTimeEnd = Date.parse(new Date(that.data.date4));
+      hospitalConfirmTimeEnd = Date.parse(new Date(that.data.date4))+86400;
     }
 
 
@@ -503,7 +567,7 @@ Page({
           app.globalData.hospitalId = res.data.data.hospitalId;
           app.globalData.hospitalName = res.data.data.hospitalName;
           app.globalData.clinicName = res.data.data.clinicName;
-          that.lastPageNum();
+          that.lastPageNum(that.data.date, that.data.date2, that.data.date3, that.data.date4);
           // app.globalData.clinicaddress = res.data.data.clinic.address;
           // app.globalData.authenticationIs = res.data.data.clinic.authenticationIs;
           // if (res.data.data.clinic.license == '' || res.data.data.clinic.license == null || res.data.data.clinic.license == undefined) {

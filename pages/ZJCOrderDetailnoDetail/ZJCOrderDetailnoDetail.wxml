@@ -1,23 +1,25 @@
 <!--pages/ZJCOrderDetail/ZJCOrderDetail.wxml-->
-<view><include src="../common/common.wxml"/></view>
+<!-- <view><include src="../common/common.wxml"/></view> -->
 <view class='orderId'>订单编号：{{orderId}} </view>
 <view style='clear:both'></view>
-<view   class='address' bindtap='address'>
-  <image  mode="aspectFill"  src='../img/weizhi@2x.png'></image>
+<view class='address' >
+  <image mode="aspectFill" src='../img/weizhi@2x.png'></image>
   <view>
-  <text class='name'>{{receiverName}}</text>
-  <text class='num'>{{receiverTel}}</text>
-  <text class='addressDv'>{{address1}} <text style='display:inline-block;width:10rpx;'></text> {{address2}}</text>
+    <text class='name'>{{receiverName}}</text>
+    <text class='num'>{{receiverTel}}</text>
+    <text class='addressDv'>{{address1}}{{address2}}</text>
+    <!-- <text class='addressDv'>{{address1}} <text style='display:inline-block;width:10rpx;'></text> {{address2}}</text> -->
   </view>
 </view>
 <view class='list'>
-<view class='listTitle' wx:if='{{overIf==1}}'>
-<text class='listTitleName'>订单金额</text><text class='money'>{{totalPrice}}</text><text class='jifen'>{{useBonusPoint||''}}</text><text class='listTitleNames'>已用积分</text>
-</view>
+  <view class='listTitle' wx:if='{{overIf==1}}'>
+    <text class='listTitleName'>订单金额</text><text class='money'>{{totalPrice}}</text><text
+      class='jifen'>{{useBonusPoint||''}}</text><text class='listTitleNames'>已用积分</text>
+  </view>
 
-<view  wx:for="{{details}}" wx:for-item="item" wx:key="index" >
-<view class='listItem'>
-      <image  mode="aspectFill"  src='{{item.deviceCover}}'></image>
+  <view wx:for="{{details}}" wx:for-item="item" wx:key="index">
+    <view class='listItem'>
+      <image mode="aspectFill" src='{{item.deviceCover}}'></image>
       <view class='listDetail'>
         <text class='listName'>{{item.deviceName||""}}</text>
         <text class='listIntro'>{{item.brief||""}}</text>
@@ -25,8 +27,8 @@
       <view class='listNum'>
         <text>数量</text><text>{{item.count}}</text>
       </view>
-  </view> 
+    </view>
+  </view>
 </view>
-</view>
+<view style="height:150rpx;width:100%;opacity: 0;"></view>
 <view class='submit' bindtap='searchWl'>查看物流</view>
-
