@@ -19,7 +19,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var that = this
+    that.setData({
+      schemeList:[]
+    })
+    that.lastPage(0, '')
   },
   input:function(e){
     var val = e.detail.value
@@ -52,15 +56,32 @@ Page({
 
     })
   },
+  ifLogin(){
+    if(app.globalData.cookie==''){
+      wx.showToast({
+        title: '请登录',
+        icon: 'none',
+        duration: 1000,
+        mask: true,
+        complete: function complete(res) {
+            wx.reLaunch({
+              url: '../login/login',
+            })
+            return
+        }
+      });
+    }
+  },
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-    var that = this
-    that.setData({
-      schemeList:[]
-    })
-    that.lastPage(0, '')
+  onShow: function (options) {
+    this.ifLogin()
+    // var that = this
+    // that.setData({
+    //   schemeList:[]
+    // })
+    // that.lastPage(0, '')
   },
   lastPage: function (toPageNo, kw) {
     var that = this

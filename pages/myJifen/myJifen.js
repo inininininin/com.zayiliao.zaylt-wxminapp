@@ -63,7 +63,7 @@ Page({
           that.setData({
             // bonusPoint: res.data.data.bonusPoint,
             schemeList: that.data.schemeList,
-            points: res.data.data.totalCount
+            points: res.data.data.bonusPoint
           })
         } else {
           wx.showModal({

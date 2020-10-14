@@ -3,7 +3,7 @@
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
     <view>
-    <image bindtap='backHistory' style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;padding:12px 10px;'  src='../img/black-backnew.png'></image>
+    <image  mode="aspectFill"  bindtap='backHistory' style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;padding:12px 10px;'  src='../img/black-backnew.png'></image>
     <text>{{navtitle}}</text>
     </view>
     </view>
@@ -11,21 +11,21 @@
 </view>
 <view class="item" bindtap="sendRec" style="margin-top:24rpx;">
   <view>发布推送</view>
-  <image src="../img/back.png"></image>
+  <image  mode="aspectFill"  src="../img/back.png"></image>
 </view>
 <view class="item" bindtap="sendMsg">
   <view>短信群发</view>
-  <image src="../img/back.png"></image>
+  <image  mode="aspectFill"  src="../img/back.png"></image>
 </view>
 <view class="item" bindtap="sendAct">
   <view>投放精准活动</view>
-  <image src="../img/back.png"></image>
+  <image  mode="aspectFill"  src="../img/back.png"></image>
 </view>
 <view class="item" bindtap="article">
   <view >运营文章</view>
-  <image src="../img/back.png"></image>
+  <image  mode="aspectFill"  src="../img/back.png"></image>
 </view>
 <view class="item" bindtap="framework">
   <view style="border-bottom:none">运营成果手册架构</view>
-  <image src="../img/back.png"></image>
+  <image  mode="aspectFill"  src="../img/back.png"></image>
 </view>

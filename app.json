@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/logs/logs",
+    "pages/selectRole/selectRole",
+    "pages/login/login",
     "pages/index/index",
     "pages/manage/index/index",
     "pages/manage/clinicDetail/clinicDetail",
@@ -12,19 +14,13 @@
     "pages/out/geneShare/geneShare",
     "pages/out/geneDetail/geneDetail",
     "pages/out/index/index",
-    "pages/canvas/canvas",
-    "pages/login/login",
     "pages/registerXy/registerXy",
     "pages/webview/webview",
     "pages/ZJCMyorder/ZJCMyorder",
     "pages/ZJCOrderDetail1/ZJCOrderDetail1",
     "pages/ZJCOrderDetailnoDetail/ZJCOrderDetailnoDetail",
-    "pages/changePwd/changePwd",
-    "pages/cropper/cropper",
-    "pages/upload/upload",
     "pages/out/mine/mine",
     "pages/out/highQualityCaseDetail/highQualityCaseDetail",
-    "pages/out/demo/demo",
     "pages/out/taskCenter/taskCenter",
     "pages/ZJCOrderDetailno/ZJCOrderDetailno",
     "pages/ZJCMyjifen/ZJCMyjifen",
@@ -43,7 +39,6 @@
     "pages/out/addpatient/addpatient",
     "pages/out/news/news",
     "pages/editText/editText",
-    "pages/tabbar/tabbar",
     "pages/common/common",
     "pages/commonIndex/commonIndex",
     "pages/out/highQualityCase/highQualityCase",
@@ -57,7 +52,6 @@
     "pages/out/eventAnnouncementDetail/eventAnnouncementDetail",
     "pages/out/search/search",
     "pages/out/checkLogistics/checkLogistics",
-    "pages/tabbar/tabbar1",
     "pages/manage/search/search",
     "pages/manage/numberSecurity/numberSecurity",
     "pages/manage/clinicIndex/clinicIndex",
@@ -102,7 +96,11 @@
     "pages/frameworkDate/frameworkDate",
     "pages/manage/managepatient/managepatient",
     "pages/frameworkDetailChange/frameworkDetailChange",
-    "pages/frameworkIndex/frameworkIndex"
+    "pages/frameworkIndex/frameworkIndex",
+    "pages/loginClinic/loginClinic",
+    "pages/loginManage/loginManage",
+    "pages/out/expertDetails/expertDetails",
+    "pages/cropper/cropper"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -134,7 +132,7 @@
         "pagePath": "pages/out/geneDetection/geneDetection",
         "iconPath": "pages/img/jiyin-gray@2x.png",
         "selectedIconPath": "pages/img/jiyin-blue@2x.png",
-        "text": "采样"
+        "text": "基因"
       },
       {
         "pagePath": "pages/out/mine/mine",

@@ -18,7 +18,7 @@
 </template>
 
 <template name="wxParseImg">
-  <image class="{{item.classStr}} wxParse-{{item.tag}}" data-from="{{item.from}}" data-src="https://zaylt.njshangka.com{{item.attr.src}}" data-idx="{{item.imgIndex}}" src="https://zaylt.njshangka.com{{item.attr.src}}" mode="aspectFit" bindload="wxParseImgLoad" bindtap="wxParseImgTap" mode="widthFix" style="width:{{item.width}}px;"
+  <image  mode="aspectFill"  class="{{item.classStr}} wxParse-{{item.tag}}" data-from="{{item.from}}" data-src="https://zaylt.njshangka.com{{item.attr.src}}" data-idx="{{item.imgIndex}}" src="https://zaylt.njshangka.com{{item.attr.src}}" mode="aspectFit" bindload="wxParseImgLoad" bindtap="wxParseImgTap" mode="widthFix" style="width:{{item.width}}px;"
   />
 </template>
 
@@ -27,7 +27,7 @@
     <block wx:for="{{item.textArray}}" wx:key="">
       <block class="{{item.text == '\\n' ? 'wxParse-hide':''}}" wx:if="{{item.node == 'text'}}">{{item.text}}</block>
       <block wx:elif="{{item.node == 'element'}}">
-        <image class="wxEmoji" src="https://zaylt.njshangka.com{{item.baseSrc}}{{item.text}}" />
+        <image  mode="aspectFill"  class="wxEmoji" src="https://zaylt.njshangka.com{{item.baseSrc}}{{item.text}}" />
       </block>
     </block>
   </view>

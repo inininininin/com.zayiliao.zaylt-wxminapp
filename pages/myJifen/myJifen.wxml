@@ -4,7 +4,7 @@
       <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
       <view class="title-bar" style="height:{{titleBarHeight}}px">
         <view>
-          <image bindtap='backHistory' style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../img/back-white@2x.png'></image>
+          <image  mode="aspectFill"  bindtap='backHistory' style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../img/back-white@2x.png'></image>
           <text>{{navtitle}}</text>
         </view>
       </view>
@@ -14,7 +14,7 @@
     <!-- <text>{{exchangePoint}}</text> -->
 
     <view>
-      <image src="../img/data.png"></image>
+      <image  mode="aspectFill"  src="../img/data.png"></image>
       <text>{{points||0}}</text>
       <!-- <navigator url='../../ZJCMyjifen/ZJCMyjifen'><text>积分明细</text></navigator>
       
@@ -24,7 +24,7 @@
 </view>
 <view class="pointsEx">
   <view class='lineTop'>
-    <image src='../img/lishijilu@2x.png'></image>
+    <image  mode="aspectFill"  src='../img/lishijilu@2x.png'></image>
     <text>积分使用明细</text>
   </view>
 

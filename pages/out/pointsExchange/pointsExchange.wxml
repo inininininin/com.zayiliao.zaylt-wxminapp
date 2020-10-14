@@ -4,7 +4,7 @@
       <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
       <view class="title-bar" style="height:{{titleBarHeight}}px">
         <view>
-        <image bindtap='backHistory' style='display:inline-block;top:{{2+statusBarHeight}}px;left:10rpx;padding:20rpx;' src='../../img/back-white@2x.png'></image>
+        <image  mode="aspectFill"  bindtap='backHistory' style='display:inline-block;top:{{2+statusBarHeight}}px;left:10rpx;padding:20rpx;' src='../../img/back-white@2x.png'></image>
           <text>{{navtitle}}</text>
         </view>
       </view>
@@ -25,7 +25,7 @@
     <swiper-item>
 
       <view class='luckdog'>
-        <image src='../../img/horn@2x.png'></image>
+        <image  mode="aspectFill"  src='../../img/horn@2x.png'></image>
         <text>{{item.str1}}<text>{{item.str2}} </text>{{item.str3}} </text>
       </view>
 
@@ -36,7 +36,7 @@
 <view class='popularExchange' style="margin-top:{{titleBarHeight+statusBarHeight+180}}px">
   <view class='hottitle'>
     <text>热门兑换</text>
-    <image src='../../img/Chevron Copy 2@2x.png'></image>
+    <image  mode="aspectFill"  src='../../img/Chevron Copy 2@2x.png'></image>
     <navigator url='../pointExchangeAll/pointExchangeAll'><text class='more'>更多</text></navigator>
     
   </view>
@@ -47,7 +47,7 @@
     <navigator  wx:for='{{list1}}'  url='../../pointsExchangeDetails/pointsExchangeDetails?id={{item.commodityId}}'>
       <view class='good'>
       <view class='goodimg' style="background: url({{item.cover}}) no-repeat; background-size:cover;background-position: center;"></view>
-        <!-- <image src='{{item.cover}}'></image> -->
+        <!-- <image  mode="aspectFill"  src='{{item.cover}}'></image> -->
         <view>
           <text>{{item.name}}</text>
           <view>

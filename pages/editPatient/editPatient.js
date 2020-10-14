@@ -13,13 +13,13 @@ Page({
     detail: '',
     imgBlob: '',
     imglist: [],
-    sickness:'',
-    remark:''
+    sickness: '',
+    remark: ''
   },
-  phoneThis(e){
-    if (e.currentTarget.dataset.phone==''){
+  phoneThis(e) {
+    if (e.currentTarget.dataset.phone == '') {
       return
-    }else{
+    } else {
       wx.makePhoneCall({
         phoneNumber: e.currentTarget.dataset.phone,
       })
@@ -40,7 +40,7 @@ Page({
       method: 'post',
       data: {
         patientId: id,
-       },
+      },
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
         'cookie': app.globalData.cookie
@@ -110,7 +110,7 @@ Page({
       urls: this.data.imglist // 需要预览的图片http链接列表
     })
   },
-  sickness(e){
+  sickness(e) {
     this.setData({
       sickness: e.detail.value
     })
@@ -120,35 +120,46 @@ Page({
       remark: e.detail.value
     })
   },
-  save:function(){
-    var that=this
+  save: function () {
+    var that = this
     wx.request({
-                  url: app.globalData.url + '/c2/patient/itemalter', //仅为示例，非真实的接口地址
-                  method: 'post',
-                  data: {
-                     invoices: that.data.imgBlob,
-                    sickness: that.data.sickness,
-                    remark: that.data.remark,
-                    patientId: that.data.id,
-                  },
-                  header: {
-                    "Content-Type": "application/x-www-form-urlencoded",
-                    'cookie': app.globalData.cookie
-                  },
-                  success: function (res) {
-                    if(res.data.code==0){
-                      wx.navigateBack({
-                        delta: 1,
-                      })
-                    }
-                  }
+      url: app.globalData.url + '/c2/patient/itemalter', //仅为示例，非真实的接口地址
+      method: 'post',
+      data: {
+        invoices: that.data.imgBlob,
+        sickness: that.data.sickness,
+        remark: that.data.remark,
+        patientId: that.data.id,
+      },
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        'cookie': app.globalData.cookie
+      },
+      success: function (res) {
+        if (res.data.code == 0) {
+          wx.showToast({
+            title: '保存成功',
+            icon: 'none',
+            duration: 2000,
+            mask: true,
+            complete: function complete(res) {
+              setTimeout(function () {
+                wx.navigateBack({
+                  delta: 1,
                 })
+              }, 500);
+            }
+          })
+
+        }
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   backHistory: function (e) {
@@ -158,7 +169,7 @@ Page({
   },
 
   addPic: function (e) {
-    var that=this
+    var that = this
     wx.chooseImage({
       count: 9,
       sizeType: ['original', 'compressed'],
@@ -166,9 +177,9 @@ Page({
       success(res) {
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths
-        var picBlob=that.data.picBlob
-        for (var i in tempFilePaths){
-         
+        var picBlob = that.data.picBlob
+        for (var i in tempFilePaths) {
+
           wx.uploadFile({
             url: app.globalData.url + '/other/fileupload?cover&duration', //仅为示例，非真实的接口地址
             filePath: tempFilePaths[i],
@@ -183,9 +194,9 @@ Page({
                   icon: 'success',
                   duration: 2000
                 })
-                if (that.data.imgBlob==''){
-                  var imgBlob =  url
-                }else{
+                if (that.data.imgBlob == '') {
+                  var imgBlob = url
+                } else {
                   var imgBlob = that.data.imgBlob + ',' + url
                 }
                 console.log(imgBlob)
@@ -195,31 +206,31 @@ Page({
                   imgBlob: imgBlob
                 })
                 console.log(imglist)
-                
+
               }
             },
             fail: function (res) {
               console.log(res)
             }
           })
-        }        
+        }
       }
     })
   },
-  deletThis(e){
-    var img=[],imgBlob=''
-    var src=e.target.dataset.src
+  deletThis(e) {
+    var img = [], imgBlob = ''
+    var src = e.target.dataset.src
     var pic = this.data.imglist
-    for (var i in pic){
-      if (src == pic[i]){
+    for (var i in pic) {
+      if (src == pic[i]) {
         // img = this.data.imgBlob[i] + ','
-      }else{
+      } else {
         img.push(pic[i])
         imgBlob = imgBlob + ',' + pic[i].split('com')[1]
       }
       this.setData({
         imglist: img,
-        imgBlob:imgBlob.substring(1, imgBlob.length)
+        imgBlob: imgBlob.substring(1, imgBlob.length)
       })
     }
   },

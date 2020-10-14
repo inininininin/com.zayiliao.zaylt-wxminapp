@@ -2,7 +2,7 @@
 <template name="hospitalSchemeItem">
   <navigator url='../twoYyQxDetail/twoYyQxDetail?id={{deviceId}}'>
     <view class='qx'>
-    <image src='https://www.njshangka.com{{cover}}'></image>
+    <image  mode="aspectFill"  src='https://www.njshangka.com{{cover}}'></image>
     <view class='qxIntro'>
       <text class='qxIntro1'>{{name}}</text>
       <text class='qxIntro2'>{{brief}}</text>

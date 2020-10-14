@@ -76,6 +76,7 @@ Page({
               shiYingZheng.push(shiYingZhengs[i])
             }
           }
+          console.log(shiYingZheng)
           if (res.data.data.image != '' && res.data.data.image != null && res.data.data.image!=undefined){
             var image = res.data.data.image.split(',')
             
@@ -86,12 +87,10 @@ Page({
                 imgList.push( image[i])
               }              
             }
-            that.setData({
-              imgList: imgList,
-              shiYingZheng: shiYingZheng
-            })
           }
           that.setData({
+            imgList: imgList,
+            shiYingZheng: shiYingZheng,
             detail: res.data.data,
             // license: res.data.data.license,
             navtitle: res.data.data.name

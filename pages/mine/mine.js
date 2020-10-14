@@ -15,24 +15,57 @@ Page({
     name: '',
     address: '',
     display: '2',
-    src: '../../img/logo@2x.png',
+    src: '../img/logo@2x.png',
+    srcCover:'../img/logo@2x.png',
+  },
+  // license(e){
+
+  // },
+  loginout(e) {
+ 
+    var that = this
+    wx.showModal({
+      title: '退出',
+         content: '确定要退出登录？',
+         success: function (res) {
+            if (res.cancel) {
+               //点击取消,默认隐藏弹框
+            } else {
+               //点击确定
+               app.globalData.cookie=''
+               wx.reLaunch({
+                url: '../login/login',
+              })
+            }
+         },
+         fail: function (res) { }, 
+         complete: function (res) { },
+    })
+    
   },
   index(e) {
-    wx.redirectTo({
+    wx.reLaunch({
       url: '../index/index',
     })
   },
   clinic(e) {
-    wx.redirectTo({
+    wx.reLaunch({
       url: '../clinic/clinic',
     })
   },
   gene(e) {
-    wx.redirectTo({
+    wx.reLaunch({
       url: '../gene/gene',
     })
   },
+  lookcover(e){
+    wx.previewImage({
+      current: app.globalData.srcCover, // 当前显示图片的http链接
+      urls: [app.globalData.srcCover] // 需要预览的图片http链接列表
+    })
+  },
   yyzz(e) {
+    console.log(app.globalData.src)
     if (app.globalData.src == '' || app.globalData.src == null || app.globalData.src == undefined) {
 
       var that = this
@@ -89,7 +122,7 @@ Page({
       })
     } else {
       wx.navigateTo({
-        url: '../../cropper/cropper',
+        url: '../cropper/cropper',
       })
     }
 
@@ -154,7 +187,7 @@ Page({
         display: 1
       })
     }
-
+    
   },
 
   /**
@@ -173,6 +206,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    if(app.globalData.srcCover){
+      console.log(app.globalData.srcCover)
+      this.setData({
+        srcCover: app.globalData.srcCover
+      })
+    }
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({

@@ -75,7 +75,9 @@ Page({
         var addTime
         for (var i = 0; i < that.data.items.length; i++) {
           if (that.data.items[i].cover.slice(0,1)!='h'){
-            that.data.items[i].cover = app.globalData.url + that.data.items[i].cover
+            console.log(app.globalData.url,that.data.items[i].cover)
+            that.data.items[i].cover = app.globalData.url+that.data.items[i].cover
+            console.log(that.data.items[i].cover)
           }
           // addTime = that.data.items[i].addTime
           // that.data.items[i].addTime = app.dateChange(addTime)

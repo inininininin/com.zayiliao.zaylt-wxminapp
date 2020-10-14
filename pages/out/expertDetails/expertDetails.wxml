@@ -1,0 +1,19 @@
+<view>
+  <include src="../../common/common.wxml" />
+</view>
+<view style="width:100%;height:20rpx;background:#F5F5F5"></view>
+<view class="topline">
+    <image src="{{detail.headimg}}"></image>
+    <view class="toplineView">
+      <text>{{detail.name}}</text>
+      <text>{{detail.hosptialName}}</text>
+      <text>时间：{{alterTime}}</text>
+    </view>
+</view>
+<view class="doctorintro">
+  <text  wx:for='{{jobTitles}}'>{{item}}</text>
+  <!-- <text>专家</text> -->
+</view>
+<view class="detail">
+{{detail.intro}}
+</view>

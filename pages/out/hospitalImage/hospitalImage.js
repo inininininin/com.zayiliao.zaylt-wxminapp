@@ -22,6 +22,7 @@ Page({
     this.setData({
       currentTab: e.currentTarget.dataset.idx
     })
+    console.log(this.data.currentTab)
   },
 phone(e){
   wx.makePhoneCall({
@@ -33,6 +34,13 @@ phone(e){
    */
   onLoad: function (options) {
     var that=this
+    if(options.currentTab){
+      that.setData({
+        currentTab:options.currentTab
+      })
+      console.log(this.data.currentTab)
+    }
+   
     wx.request({
       url: app.globalData.url + '/c2/hospital/item',
       method: 'post',
@@ -85,7 +93,7 @@ phone(e){
       success: function (res) {
         if (res.data.code == 0) {
           for(var i=0;i<res.data.data.items.length;i++){
-            if (res.data.data.items[i].cover.slice(0, 1) != 'h') {
+            if (res.data.data.items[i].cover&&res.data.data.items[i].cover.slice(0, 1) != 'h') {
               res.data.data.items[i].cover = app.globalData.url + res.data.data.items[i].cover
             }
           }
@@ -94,6 +102,7 @@ phone(e){
           that.setData({
             list: res.data.data.items,
           })
+          console.log(that.data.list)
         } else if (res.data.code == 20) {
           wx.navigateTo({
             url: '../../login/login',
@@ -147,7 +156,7 @@ phone(e){
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    wx.stopPullDownRefresh()
   },
 
   /**

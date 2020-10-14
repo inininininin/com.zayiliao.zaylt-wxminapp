@@ -5,20 +5,20 @@
       <view class="title-bar" style="height:{{titleBarHeight}}px">
         <view>
           <view bindtap='backHistory' class='backHis'>
-            <image style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../img/shape@2x.png'></image>
+            <image  mode="aspectFill"  style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../img/shape@2x.png'></image>
           </view>
-          <image class="search" catchtap="search" src="../img/search1.png"></image>
+          <image  mode="aspectFill"  class="search" catchtap="search" src="../img/search1.png"></image>
           <text class='titleText'>{{navtitle}}</text>
-          <image class="add" catchtap="changeAdd" src="../img/tianjia@2x.png"></image>
+          <image  mode="aspectFill"  class="add" catchtap="changeAdd" src="../img/tianjia@2x.png"></image>
         </view>
       </view>
     </view>
   </view>
   <view>
     <view class="item" bindtap="lookDetail" data-id='{{item.hospitalUserId}}' wx:for='{{schemeList}}'>
-      <image src="../img/ren@2x.png"></image>
+      <image  mode="aspectFill"  src="../img/ren@2x.png"></image>
       <text>{{item.name}}</text>
-      <image src="../img/back.png"></image>
+      <image  mode="aspectFill"  src="../img/back.png"></image>
       <text>门诊数：{{item.clinicCount}}</text>
     </view>
   </view>
@@ -30,7 +30,7 @@
       <view class="title-bar" style="height:{{titleBarHeight}}px">
         <view>
           <view bindtap='changeAdd' class='backHis'>
-            <image style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../img/back-white@2x.png'></image>
+            <image  mode="aspectFill"  style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../img/back-white@2x.png'></image>
           </view>
           <text class='titleText' style="color:#fff;">新增人员</text>
         </view>

@@ -32,9 +32,9 @@
 <!--添加图片  -->
 <!-- <view class='addPic'> -->
 <!-- <text class='lf'>添加图片</text> -->
-<!-- <image bindtap='addPicture' class='lf' src='../img/addPic.png'></image>  -->
-<!-- <image bindtap='addPicture'  class="addPicture userHeadImg lf" wx:if="{{userHeadImgUrl}}" src="{{userHeadImgUrl}}"></image> -->
-<!-- <image bindtap='addPicture'  class="addPicture userHeadImg lf" wx:if="{{!userHeadImgUrl}}" src='../img/addPic.png'></image> -->
+<!-- <image  mode="aspectFill"  bindtap='addPicture' class='lf' src='../img/addPic.png'></image>  -->
+<!-- <image  mode="aspectFill"  bindtap='addPicture'  class="addPicture userHeadImg lf" wx:if="{{userHeadImgUrl}}" src="{{userHeadImgUrl}}"></image> -->
+<!-- <image  mode="aspectFill"  bindtap='addPicture'  class="addPicture userHeadImg lf" wx:if="{{!userHeadImgUrl}}" src='../img/addPic.png'></image> -->
 <!-- </view> -->
 <view class='btn'>
   <button class='makesure' bindtap='add'>确定</button>

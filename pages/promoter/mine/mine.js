@@ -6,13 +6,34 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navtitle: '我的',
+    navtitle: '',
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
     display:0,
     hospitalId:'',
+    srcCover:'../../img/logo@2x.png'
   },
-
+  loginout(){
+    var that = this
+    wx.showModal({
+      title: '退出',
+         content: '确定要退出登录？',
+         success: function (res) {
+            if (res.cancel) {
+               //点击取消,默认隐藏弹框
+            } else {
+               //点击确定
+               app.globalData.cookie=''
+               wx.reLaunch({
+                url:'../../login/login',
+              })
+            }
+         },
+         fail: function (res) { }, 
+         complete: function (res) { },
+    })
+    
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -61,11 +82,22 @@ Page({
   onReady: function () {
     
   },
+  lookcover(e){
+    wx.previewImage({
+      current: app.globalData.srcCover, // 当前显示图片的http链接
+      urls: [app.globalData.srcCover] // 需要预览的图片http链接列表
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if(app.globalData.srcCover){
+      console.log(app.globalData.srcCover)
+      this.setData({
+        srcCover: app.globalData.srcCover
+      })
+    }
   },
 
   /**
@@ -86,7 +118,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    wx.stopPullDownRefresh()
   },
 
   /**

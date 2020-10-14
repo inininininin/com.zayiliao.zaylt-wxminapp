@@ -8,7 +8,7 @@
     <text class='address'>地址：江苏省南京市</text>
     <text class='remark'>备注：院长名称未填写</text>
   </view>
-  <image class='rt' src='../img/back.png'></image>
+  <image  mode="aspectFill"  class='rt' src='../img/back.png'></image>
 </view> -->
 
 <!--可是模板  -->
@@ -22,7 +22,7 @@
         <text class='address'>地址：{{address}}</text>
         <text class='remark'>备注：{{remark}}</text>
       </view>
-      <image class='' src='../img/back.png'></image>
+      <image  mode="aspectFill"  class='' src='../img/back.png'></image>
     </view>
   </navigator>
 </template>

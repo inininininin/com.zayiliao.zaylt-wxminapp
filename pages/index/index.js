@@ -15,44 +15,75 @@ Page({
     kw: '',
     schemeList: [],
     cover:[],
+    zindexThis:0,
+    bgColorThis:'',
+    colorThis:'#fff',
+    bgSizeThis:''
+  },
+  onPageScroll: function (e) {
+    // console.log(e.scrollTop)
+    var heightThis=this.data.titleBarHeight+this.data.statusBarHeight
+    if(e.scrollTop>0){
+      this.setData({
+        zindexThis:1000,
+        bgColorThis:'url(https://zaylt.njshangka.com/resource/img/bj@2x.png)',
+        bgSizeThis:'cover',
+        // colorThis:'#333'
+      })
+    }else{
+      this.setData({
+        zindexThis:0,
+        bgColorThis:'',
+        bgSizeThis:''
+    // colorThis:'#fff'
+      })
+    }
   },
   qdmz:function(e){
+    this.ifLogin()
       wx.navigateTo({
         url: '../clinicSearch/clinicSearch?type=1',
       })
   },
   bygl: function (e) {
+    this.ifLogin()
     wx.navigateTo({
       url: '../sourceManagement/sourceManagement',
     })
   },
   qxjc:function(){
+    this.ifLogin()
     wx.navigateTo({
       url: '../ZJCQxshop/ZJCQxshop',
     })
   },
   yyzx: function () {
+    this.ifLogin()
     wx.navigateTo({
       url: '../operationsCenter/operationsCenter?type=1',
     })
   },
   jyjc:function(){
-    wx.redirectTo({
+    this.ifLogin()
+    wx.reLaunch({
       url: '../gene/gene',
     })
   },
   yyhd: function () {
+    this.ifLogin()
     wx.navigateTo({
       url: '../putInPrecisionActivities/putInPrecisionActivities',
     })
   },
   ylzy(e){
+    this.ifLogin()
     wx.showToast({
       title: '暂未开通',
       icon:'loading'
     })
   },
   qtxm(e) {
+    this.ifLogin()
     wx.showToast({
       title: '暂未开通',
       icon: 'loading'
@@ -64,17 +95,20 @@ Page({
     })
   },
   mine(e){
-    wx.redirectTo({
+    this.ifLogin()
+    wx.reLaunch({
       url: '../mine/mine',
     })
   },
   clinic(e) {
-    wx.redirectTo({
+    this.ifLogin()
+    wx.reLaunch({
       url: '../clinic/clinic',
     })
   },
   gene(e) {
-    wx.redirectTo({
+    this.ifLogin()
+    wx.reLaunch({
       url: '../gene/gene',
     })
   },
@@ -114,6 +148,23 @@ Page({
           wx.navigateTo({
             url: '../login/login',
           })
+        }else if (res.data.code == 0 ){
+          app.globalData.phone = res.data.data.phone;
+                       app.globalData.userId = res.data.data.userId;
+                       app.globalData.hospitalId = res.data.data.hospital.hospitalId;
+                       app.globalData.hospitalName = res.data.data.hospital.name;
+                       app.globalData.hospitaladdress = res.data.data.hospital.address;
+                       app.globalData.authenticationIs = res.data.data.hospital.authStatus;
+                       if (res.data.data.hospital.license == '' || res.data.data.hospital.license == null || res.data.data.hospital.license == undefined) {
+                         app.globalData.src = ''
+                       } else {
+                         app.globalData.src = app.globalData.url + res.data.data.hospital.license
+                       }
+                       if (res.data.data.hospital.cover == '' || res.data.data.hospital.cover == null || res.data.data.hospital.cover == undefined) {
+                        app.globalData.srcCover = ''
+                      } else {
+                        app.globalData.srcCover = app.globalData.url + res.data.data.hospital.cover
+                      }
         }
       }
     })
@@ -248,12 +299,27 @@ Page({
   onReady: function () {
    
   },
-
+  ifLogin(){
+    if(app.globalData.cookie==''){
+      wx.showToast({
+        title: '请登录',
+        icon: 'none',
+        duration: 1000,
+        mask: true,
+        complete: function complete(res) {
+            wx.reLaunch({
+              url: '../login/login',
+            })
+            return
+        }
+      });
+    }
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    this.ifLogin()
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({

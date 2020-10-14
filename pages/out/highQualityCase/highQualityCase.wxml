@@ -7,12 +7,12 @@
     <view class='highBox'>
       <view >
         <text>{{item.name}}</text>
-        <view><image src='../../img/time@2x.png'></image><text>{{item.addTime}}</text></view>
+        <view><image  mode="aspectFill"  src='../../img/time@2x.png'></image><text>{{item.addTime}}</text></view>
       </view>
       <view class='image' style='background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;'>
 
         </view>
-      <!-- <image src='{{item.cover}}'></image> -->
+      <!-- <image  mode="aspectFill"  src='{{item.cover}}'></image> -->
   </view>
   </navigator>
 </view>

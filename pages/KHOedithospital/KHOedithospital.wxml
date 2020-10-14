@@ -14,9 +14,9 @@
 <view class="line1" bindtap="choiceOne">
   <form id="introPic1" class="introPic1">
     <view class='addPic lf'>
-      <image bindtap='addPictureOne' wx:if="{{schemeList.introPic1&&!introPic1}}" class="addPictureOne userHeadImg lf" src='{{schemeList.introPic1}}'></image>
-      <image bindtap='addPictureOne' class="addPictureOne userHeadImg lf" wx:if="{{introPic1}}" src="{{introPic1}}"></image>
-      <image bindtap='addPictureOne' class="addPictureOne userHeadImg lf" wx:if="{{!introPic1&&!schemeList.introPic1}}" src='../img/addPic.png'></image>
+      <image  mode="aspectFill"  bindtap='addPictureOne' wx:if="{{schemeList.introPic1&&!introPic1}}" class="addPictureOne userHeadImg lf" src='{{schemeList.introPic1}}'></image>
+      <image  mode="aspectFill"  bindtap='addPictureOne' class="addPictureOne userHeadImg lf" wx:if="{{introPic1}}" src="{{introPic1}}"></image>
+      <image  mode="aspectFill"  bindtap='addPictureOne' class="addPictureOne userHeadImg lf" wx:if="{{!introPic1&&!schemeList.introPic1}}" src='../img/addPic.png'></image>
       <text class=''>图片一</text>
     </view>
   </form>
@@ -24,10 +24,10 @@
 <view class="line1" bindtap="choiceTwo">
   <form id="introPic2" class="introPic2">
     <view class='addPic lf'>
-     <image bindtap='addPictureTwo' class="addPictureTwo userHeadImgTwo lf" wx:if="{{introPic2}}" src="{{introPic2}}"></image>
-      <image bindtap='addPictureTwo' wx:if="{{schemeList.introPic2&&!introPic2}}" class="addPictureTwo userHeadImgTwo lf" src='{{schemeList.introPic2}}'></image>
+     <image  mode="aspectFill"  bindtap='addPictureTwo' class="addPictureTwo userHeadImgTwo lf" wx:if="{{introPic2}}" src="{{introPic2}}"></image>
+      <image  mode="aspectFill"  bindtap='addPictureTwo' wx:if="{{schemeList.introPic2&&!introPic2}}" class="addPictureTwo userHeadImgTwo lf" src='{{schemeList.introPic2}}'></image>
      
-      <image bindtap='addPictureTwo' class="addPictureTwo userHeadImgTwo lf" wx:if="{{!introPic2&&!schemeList.introPic2}}" src='../img/addPic.png'></image>
+      <image  mode="aspectFill"  bindtap='addPictureTwo' class="addPictureTwo userHeadImgTwo lf" wx:if="{{!introPic2&&!schemeList.introPic2}}" src='../img/addPic.png'></image>
       <text class=''>图片二</text>
     </view>
   </form>

@@ -62,15 +62,15 @@
 
 
               <view class='search' bindtap='search'>
-                <image  src='../../img/search.png'></image>
+                <image  mode="aspectFill"   src='../../img/search.png'></image>
                 <!-- 搜索 -->
               </view>
               <view class='select' bindtap='showview'>
                 <!-- 筛选 -->
-                <image  src='../../img/screen.png'></image>
+                <image  mode="aspectFill"   src='../../img/screen.png'></image>
               </view>
               <view class='newsBox'  bindtap='news'>
-                <image class='news' style='margin-left:30rpx;border-radius:6rpx;display:inline-block' src='../img/xiaoxi@2x.png'></image>
+                <image  mode="aspectFill"  class='news' style='margin-left:30rpx;border-radius:6rpx;display:inline-block' src='../img/xiaoxi@2x.png'></image>
                 <text style='top:{{7+statusBarHeight}}px;left:505rpx;'>{{num}}</text>
               </view>
 
@@ -91,7 +91,7 @@
     <!-- <view class='indexbox' hidden="{{currentTab!==0}}"> -->
     <view class='required' hidden="{{currentTab!==0}}">
       <view>
-        <image src='../../img/bitian@2x.png'></image>
+        <image  mode="aspectFill"  src='../../img/bitian@2x.png'></image>
         <text>必填项</text>
       </view>
 
@@ -106,12 +106,12 @@
       </view>
       <view class='input'>
         <text>身份证号码</text>
-        <input bindinput='idCard' value='{{idCard}}' type='idcard' placeholder-class='inputPla' placeholder='请填写'></input>
+        <input bindinput='idCard' value='{{idCard}}' type='idcard' placeholder-class='inputPla' maxlength="18" placeholder='请填写'></input>
       </view>
 
 
       <view class='selectIntro'>
-        <image src='../../img/xuantian@2x.png'></image>
+        <image  mode="aspectFill"  src='../../img/xuantian@2x.png'></image>
         <text>选填项</text>
       </view>
 
@@ -122,15 +122,15 @@
 
 
       <view bindtap='save' class='save' style='left:460rpx;'>
-        <!-- <image src='../../img/save@2x.png' style='width:30rpx;height:40rpx;'></image> -->
+        <!-- <image  mode="aspectFill"  src='../../img/save@2x.png' style='width:30rpx;height:40rpx;'></image> -->
         保存</view>
     </view>
 
 
     <!-- <navigator url='../addpatient/addpatient'>
 <view class='addOutPatient' bindtap='addOutPatient'>
-<image src='../img/xinzeng@2x.png'></image>
-<text>新增病源</text>
+<image  mode="aspectFill"  src='../img/xinzeng@2x.png'></image>
+<text>新增病员</text>
 </view>
 </navigator>
 
@@ -152,7 +152,7 @@
           <view>
             <text>{{item.realname}}</text>
             <view class='viewRt'>
-              <image src='../img/weijiuzhen@2x.png'></image>
+              <image  mode="aspectFill"  src='../img/weijiuzhen@2x.png'></image>
               <text>未就诊</text>
             </view>
           </view>
@@ -166,7 +166,7 @@
           <view>
             <text>{{item.realname}}</text>
             <view class='viewRt1'>
-              <image src='../img/yijiuzhen@2x.png'></image>
+              <image  mode="aspectFill"  src='../img/yijiuzhen@2x.png'></image>
               <text>已就诊</text>
             </view>
           </view>

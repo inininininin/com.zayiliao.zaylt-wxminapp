@@ -5,7 +5,7 @@
     <view class="title-bar" style="height:{{titleBarHeight}}px">
     <view>
      <view bindtap='backHistory' class='backHis'>
-    <image  style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;'  src='../../img/shape@2x.png'></image>
+    <image  mode="aspectFill"   style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;'  src='../../img/shape@2x.png'></image>
     </view>
     <text class='titleText'>{{navtitle}}</text>
     </view>
@@ -13,11 +13,11 @@
   </view>
 </view>
 <navigator url='../registerXy/registerXy'>
-<view class='line'><view><text>关于我们</text><image src='../img/back.png'></image></view></view>
-<!-- <view class='line'><view><text>地址管理</text><image src='../img/back.png'></image></view></view> -->
+<!-- <view class='line'><view><text>关于我们</text><image  mode="aspectFill"  src='../img/back.png'></image></view></view> -->
+<!-- <view class='line'><view><text>地址管理</text><image  mode="aspectFill"  src='../img/back.png'></image></view></view> -->
 </navigator>
 
-<!-- <view class='line'><view><text>关于我们</text><image src='../img/back.png'></image></view></view> -->
+<!-- <view class='line'><view><text>关于我们</text><image  mode="aspectFill"  src='../img/back.png'></image></view></view> -->
 
-<view class='line'><view><text>版本号</text><text style='float:right;margin-right:30rpx'>{{Version}}</text></view></view>
+<view class='line'><view><text>版本号</text><text style='float:right;margin-right:30rpx' bindtap="version">{{Version}}</text></view></view>
 <view class='loginout' bindtap='loginout'>退出登录</view>

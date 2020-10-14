@@ -16,6 +16,13 @@ Page({
     address:'',
     display:'',
     src:'../../img/logo@2x.png',
+    srcCover:'../img/logo@2x.png',
+  },
+  lookcover(e){
+    wx.previewImage({
+      current: app.globalData.srcCover, // 当前显示图片的http链接
+      urls: [app.globalData.srcCover] // 需要预览的图片http链接列表
+    })
   },
   yyzz(e){
     if (app.globalData.src == '' || app.globalData.src == null || app.globalData.src==undefined){
@@ -77,7 +84,7 @@ Page({
         url: '../../cropper/cropper',
       })
     }
-   
+
   },
  
   bindChooiceProduct: function () {
@@ -159,11 +166,33 @@ Page({
 
     })
   },
-
+  ifLogin(){
+    if(app.globalData.cookie==''){
+      wx.showToast({
+        title: '请登录',
+        icon: 'none',
+        duration: 1000,
+        mask: true,
+        complete: function complete(res) {
+            wx.reLaunch({
+              url: '../login/login',
+            })
+            return
+        }
+      });
+    }
+  },
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function (options) {
+    this.ifLogin()
+    if(app.globalData.srcCover){
+      console.log(app.globalData.srcCover)
+      this.setData({
+        srcCover: app.globalData.srcCover
+      })
+    }
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({
@@ -186,7 +215,28 @@ Page({
       tel: tel,
     })
   },
-
+  loginout(e) {
+ 
+    var that = this
+    wx.showModal({
+      title: '退出',
+         content: '确定要退出登录？',
+         success: function (res) {
+            if (res.cancel) {
+               //点击取消,默认隐藏弹框
+            } else {
+               //点击确定
+               app.globalData.cookie=''
+               wx.reLaunch({
+                url: '../../loginClinic/loginClinic',
+              })
+            }
+         },
+         fail: function (res) { }, 
+         complete: function (res) { },
+    })
+    
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

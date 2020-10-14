@@ -1,6 +1,6 @@
 <view class="container" style="height:{{225+statusBarHeight}}px;padding-top:{{statusBarHeight+titleBarHeight}}px">
   <view class='indexTopBg' style='height:{{160+statusBarHeight}}px'>
-    <view class="header">
+    <view class="header" style="background:{{bgColorThis}};background-size:{{bgSizeThis}};z-index:{{zindexThis}};color:{{colorThis}}">
       <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
       <view class="title-bar" style="height:{{titleBarHeight}}px">
         <view>
@@ -9,36 +9,37 @@
       </view>
     </view>
   </view>
+  
   <view class="swiper-container" style='top:{{45+statusBarHeight}}px'>
     <swiper bindchange="swiperChange" class="swiper" current="{{swiperCurrent}}" autoplay="false" interval="2000" duration="500">
       <block wx:for="{{cover}}" >
         <swiper-item>
           <navigator wx:if='{{item.type==0}}' url=''>
-            <!-- <image src="{{item}}" class="slide-image" mode="aspectFill" /> -->
+            <!-- <image  mode="aspectFill"  src="{{item}}" class="slide-image" mode="aspectFill" /> -->
             <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
           </navigator>
-          <navigator wx:if='{{item.type==1}}' url='../webview/webview?href={{item.jump1Url}}'>
+          <navigator wx:if='{{item.type==1}}' url='../webview/webview?href={{item.type1Url}}'>
             <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
           </navigator>
-          <navigator wx:if='{{item.type==2}}' url='../out/articleDetail/articleDetail?id={{item.jump2ArticleId}}'>
+          <navigator wx:if='{{item.type==2}}' url='../out/articleDetail/articleDetail?id={{item.type2ArticleId}}'>
             <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
           </navigator>
-          <navigator wx:if='{{item.type==3}}' url='../out/expertIntroduction/expertIntroduction?id={{item.jump3DoctorId}}'>
+          <navigator wx:if='{{item.type==3}}' url='../out/expertIntroduction/expertIntroduction?id={{item.type3DoctorId}}'>
             <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
           </navigator>
-          <navigator wx:if='{{item.type==4}}' url='../out/highQualityCaseDetail/highQualityCaseDetail?id={{item.jump4ProjectId}}'>
+          <navigator wx:if='{{item.type==4}}' url='../out/highQualityCaseDetail/highQualityCaseDetail?id={{item.type4ProjectId}}'>
             <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
           </navigator>
-          <navigator wx:if='{{item.type==5}}' url='../out/eventAnnouncementDetail/eventAnnouncementDetail?id={{item.jump5ActivityId}}'>
+          <navigator wx:if='{{item.type==5}}' url='../newActivity/newActivity?type={{item.type5ActivityId}}'>
             <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
           </navigator>
           <navigator wx:if='{{item.type==6}}' url='../out/hospitalImage/hospitalImage?id={{item.hospitalMaincarouselId}}'>
             <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
           </navigator>
-          <navigator wx:if='{{item.type==7}}' url='../out/expertIntroduction/expertIntroduction?id={{item.hospitalMaincarouselId}}'>
+          <navigator wx:if='{{item.type==7}}' url='../out/expertIntroduction/expertIntroduction?id={{item.hospitalAdId}}'>
             <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
           </navigator>
-          <navigator wx:if='{{item.type==8}}' url='../out/expertIntroduction/expertIntroduction?id={{item.hospitalMaincarouselId}}'>
+          <navigator wx:if='{{item.type==8}}' url='../out/hospitalImage/hospitalImage?id={{item.hospitalAdId}}&currentTab=1'>
             <view class="slide-image" mode="aspectFill" style='width:686rpx;height:360rpx;background:url({{item.cover}}) no-repeat;background-size:cover;background-position: center;' class="dis1 img1 color_c"></view>
           </navigator>
         </swiper-item>
@@ -51,41 +52,40 @@
     </view>
   </view>
 </view>
-
 <view class='mainBox'>
   <view>
     <view bindtap='qdmz'>
-      <image src='../img/qudaomenzhen@2x.png'></image>
+      <image  mode="aspectFill"  src='../img/qudaomenzhen@2x.png'></image>
       <text>渠道门诊</text>
     </view>
     <view bindtap='bygl'>
-      <image src='../img/bingyuanguanli@2x.png'></image>
-      <text>病源管理</text>
+      <image  mode="aspectFill"  src='../img/bingyuanguanli@2x.png'></image>
+      <text>病员管理</text>
     </view>
     <view bindtap='qxjc'>
-      <image src='../img/qixiejicai@2x.png'></image>
+      <image  mode="aspectFill"  src='../img/qixiejicai@2x.png'></image>
       <text>器械集采</text>
     </view>
     <view bindtap="yyzx">
-      <image src='../img/yunyingzhongxin@2x.png'></image>
+      <image  mode="aspectFill"  src='../img/yunyingzhongxin@2x.png'></image>
       <text>运营中心</text>
     </view>
   </view>
   <view>
     <view bindtap="jyjc">
-      <image src='../img/jiyinjiance@2x.png'></image>
+      <image  mode="aspectFill"  src='../img/jiyinjiance@2x.png'></image>
       <text>基因检测</text>
     </view>
     <view bindtap="ylzy">
-      <image src='../img/yiliaoziyuan@2x.png'></image>
+      <image  mode="aspectFill"  src='../img/yiliaoziyuan@2x.png'></image>
       <text>医疗资源</text>
     </view>
     <view bindtap="yyhd">
-      <image src='../img/yiyuanhuodong@2x.png'></image>
+      <image  mode="aspectFill"  src='../img/yiyuanhuodong@2x.png'></image>
       <text>医院活动</text>
     </view>
     <view bindtap="qtxm">
-      <image src='../img/qita@2x.png'></image>
+      <image  mode="aspectFill"  src='../img/qita@2x.png'></image>
       <text>其他项目</text>
     </view>
   </view>
@@ -95,7 +95,7 @@
 <view class='operate'>
 
   <view class='yyjx'>
-    <image src='../img/CombinedShape@2x.png'></image>
+    <image  mode="aspectFill"  src='../img/CombinedShape@2x.png'></image>
     <text>运营精选</text>
   </view>
 
@@ -105,7 +105,7 @@
         <view>
           <text>{{item.title}}</text>
           <view>
-            <image src='../img/time@2x.png'></image>
+            <image  mode="aspectFill"  src='../img/time@2x.png'></image>
             <text style='color:rgb(153,153,153)'>{{item.addTime}}</text>
           </view>
         </view>
@@ -120,19 +120,19 @@
 
 <view class='tabbarBtn'>
   <view>
-    <image class='bottomBthimg1' src='../img/shouye-blue@2x.png'></image>
+    <image  mode="aspectFill"  class='bottomBthimg1' src='../img/shouye-blue@2x.png'></image>
     <text class='active'>首页</text>
   </view>
   <view bindtap='clinic'>
-    <image class='bottomBthimg2' src='../img/Hospital@2x.png'></image>
+    <image  mode="aspectFill"  class='bottomBthimg2' src='../img/Hospital@2x.png'></image>
     <text>门诊</text>
   </view>
   <view bindtap='gene'>
-    <image class='bottomBthimg2' src='../img/jiyin-gray@2x.png'></image>
-    <text>集采</text>
+    <image  mode="aspectFill"  class='bottomBthimg2' src='../img/jiyin-gray@2x.png'></image>
+    <text>基因</text>
   </view>
   <view bindtap='mine'>
-    <image class='bottomBthimg3' src='../img/wode@2x.png'></image>
+    <image  mode="aspectFill"  class='bottomBthimg3' src='../img/wode@2x.png'></image>
     <text>我的</text>
   </view>
 </view>

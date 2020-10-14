@@ -97,7 +97,7 @@ page {
 }
 .title text:nth-child(1){
   display: block;
-  width:216rpx;
+  width:300rpx;
 height:34rpx;
 font-size:34rpx;
 font-family:PingFangSC-Regular;
@@ -128,7 +128,7 @@ overflow:hidden;
 }
 .title text:nth-child(3){
   display: block;
-  width:216rpx;
+  width:300rpx;
 height:33rpx;
 font-size:30rpx;
 font-family:PingFangSC-Regular;

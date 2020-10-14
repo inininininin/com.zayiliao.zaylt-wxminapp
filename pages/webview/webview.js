@@ -9,6 +9,7 @@ Page({
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
     href:'',
+
   },
 
   /**
@@ -16,9 +17,20 @@ Page({
    */
   onLoad: function (options) {
     var href = options.href
+    console.log(href)
     this.setData({
       href: href,
     })
+    // wx.request({
+    //   url: 'https://mp.weixin.qq.com/s/pofZ8xVNrNiDF3KwhkfHOg',
+    //   header: {
+    //     "Content-Type": "application/x-www-form-urlencoded",
+    //     'cookie': app.globalData.cookie
+    //   },
+    //   success:function(res){
+    //       console.log(res)
+    //   }
+    // })
   },
 
   /**

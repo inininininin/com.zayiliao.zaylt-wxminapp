@@ -8,10 +8,10 @@
 </view>
 <view class='intro1'>{{schemeList.intro1}}
 </view>
-<image src='https://www.njshangka.com{{schemeList.introPic1}}' class='pic1'></image>
+<image  mode="aspectFill"  src='https://www.njshangka.com{{schemeList.introPic1}}' class='pic1'></image>
 <view class='intro1'>
   {{schemeList.intro2}}</view>
-<image src='https://www.njshangka.com{{schemeList.introPic2}}' class='pic1'></image>
+<image  mode="aspectFill"  src='https://www.njshangka.com{{schemeList.introPic2}}' class='pic1'></image>
 <view class='intro1'>
   {{schemeList.intro3}}
 </view>

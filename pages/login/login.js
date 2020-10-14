@@ -21,6 +21,14 @@ Page({
     times: '获取验证码',
     time:60
   },
+  selectEnter(){
+    // wx.navigateTo({
+    //   url: '../selectRole/selectRole',
+    // })
+    wx.reLaunch({
+      url: '../selectRole/selectRole',
+    })
+  },
   timeBack(){
     var that=this
       var timer = setInterval(function () {
@@ -340,7 +348,7 @@ Page({
         success: function (res) {
           wx.hideToast()
           if (res.data.code == 0) {
-            if (that.data.currentTab == 0) {
+            console.log(res.data.data.hospitalUser,res.data.data.maintainUser)
               if (res.data.data.hospitalUser == 1 || res.data.data.maintainUser==1){
                 app.globalData.lastClient = 1
                 that.loginHos(key, password)
@@ -349,25 +357,7 @@ Page({
                   title: '账号不是医院号',
                 })
               }
-            } else if (that.data.currentTab == 1) {
-              if (res.data.data.clinicUser == 1 ) {
-                app.globalData.lastClient = 2
-                that.loginCli(key, password)
-              } else {
-                wx.showToast({
-                  title: '账号不是门诊号',
-                })
-              }
-            } else {
-              if (res.data.data.managerUser == 1) {
-                app.globalData.lastClient = 3
-                that.loginMan(key, password)
-              } else {
-                wx.showToast({
-                  title: '账号不是运营号',
-                })
-              }
-            } 
+           
           } else {
             wx.showModal({
               showCancel: false,
@@ -451,14 +441,26 @@ Page({
                        } else {
                          app.globalData.src = app.globalData.url + res.data.data.hospital.license
                        }
+                       if (res.data.data.hospital.cover == '' || res.data.data.hospital.cover == null || res.data.data.hospital.cover == undefined) {
+                        app.globalData.srcCover = ''
+                      } else {
+                        app.globalData.srcCover = app.globalData.url + res.data.data.hospital.cover
+                      }
+                       
                        if (res.data.data.type == 1) {
-                         wx.navigateTo({
-                           url: '../promoter/index/index',
+                         wx.reLaunch({
+                          url: '../promoter/index/index',
                          })
+                        //  wx.navigateTo({
+                        //    url: '../promoter/index/index',
+                        //  })
                        } else {
-                         wx.navigateTo({
+                         wx.reLaunch({
                            url: '../index/index',
                          })
+                        //  wx.navigateTo({
+                        //    url: '../index/index',
+                        //  })
                        }
                      }else{
                        wx.showModal({
@@ -545,7 +547,12 @@ Page({
                       } else {
                         app.globalData.src = app.globalData.url + res.data.data.clinic.license
                       }
-
+                      if (res.data.data.clinic.cover == '' || res.data.data.clinic.cover == null || res.data.data.clinic.cover == undefined) {
+                        app.globalData.srcCover = ''
+                      } else {
+                        app.globalData.srcCover = app.globalData.url + res.data.data.clinic.cover
+                      }
+                      
                       wx.switchTab({
                         url: '../out/index/index',
                       })
@@ -623,10 +630,12 @@ Page({
                         app.globalData.phone = res.data.data.phone;
                         app.globalData.userId = res.data.data.userId;
                        
-                          wx.navigateTo({
+                          // wx.navigateTo({
+                          //   url: '../manage/index/index',
+                          // })
+                          wx.redirectTo({
                             url: '../manage/index/index',
                           })
-                       
                       } else {
                         wx.showModal({
                           title: '提示',
@@ -778,7 +787,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-
+    wx.stopPullDownRefresh()
   },
 
   /**

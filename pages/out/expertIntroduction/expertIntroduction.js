@@ -7,11 +7,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navtitle: '专家介绍',
+    navtitle: '专家列表',
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
     array: [{ url: '123132' }, { url: '12卡萨丁2' }, { url: '1asdf' }],
     schemeList: [],
+  },
+  linkDetail(e){
+      wx.navigateTo({
+        url: '../expertDetails/expertDetails?detail=' + JSON.stringify(e.currentTarget.dataset.detail),
+      })
   },
   look(e){
     
@@ -21,7 +26,6 @@ Page({
     var id = e.target.dataset.id;
     if (classed=='line2'){
       for (var i = 0; i < that.data.schemeList.length; i++) {
-        console.log(that.data.schemeList[i].itemId, id)
         if (that.data.schemeList[i].itemId == id) {
           that.data.schemeList[i].icon = '../../img/up-1@2x.png';
           that.data.schemeList[i].class = ' '
@@ -35,13 +39,11 @@ Page({
       }
     }else{
       for (var i = 0; i < that.data.schemeList.length; i++) {
-        console.log(that.data.schemeList[i].itemId, id)
           that.data.schemeList[i].icon = '../../img/down@2x.png';
           that.data.schemeList[i].class = 'line2'
-       
-        that.setData({
-          schemeList: that.data.schemeList
-        })
+          that.setData({
+            schemeList: that.data.schemeList
+          })
       }
     }
     
@@ -70,7 +72,12 @@ Page({
           var addTime
           for (var i = 0; i < res.data.data.items.length; i++) {
             if (res.data.data.items[i].jobTitles != '' && res.data.data.items[i].jobTitles != null && res.data.data.items[i].jobTitles!=undefined){
-              var jobTitles = res.data.data.items[i].jobTitles.split(',')
+              if(res.data.data.items[i].jobTitles.split(',')){
+                var jobTitles = res.data.data.items[i].jobTitles.split(',')
+              }else if(res.data.data.items[i].jobTitles.split('，')){
+                var jobTitles = res.data.data.items[i].jobTitles.split('，')
+              }
+          
               res.data.data.items[i].jobTitles = jobTitles
             }
             

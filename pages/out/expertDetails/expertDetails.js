@@ -1,0 +1,85 @@
+// pages/out/expertIntroduction/expertIntroduction.js
+var app = getApp()
+var utils = require('../../../utils/util.js');
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    navtitle: '专家介绍',
+    statusBarHeight: getApp().globalData.statusBarHeight,
+    titleBarHeight: getApp().globalData.titleBarHeight,
+  },
+  backHistory: function (e) {
+    wx.navigateBack({
+
+    })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    var jobTitles=JSON.parse(options.detail).jobTitles
+    // if (jobTitles != '' && jobTitles != null && jobTitles!=undefined){
+    //   console.log(jobTitles)
+    //    jobTitles = jobTitles.split('，')
+    // }else{
+    //   jobTitles =[]
+    // }
+    this.setData({
+      detail: JSON.parse(options.detail),
+      alterTime:utils.formatTime(JSON.parse(options.detail).alterTime / 1000, 'Y-M-D h:m'),
+      jobTitles:jobTitles,
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    wx.stopPullDownRefresh()
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+})

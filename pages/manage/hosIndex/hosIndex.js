@@ -14,6 +14,29 @@ Page({
     swiperCurrent: 0,
     kw: '',
     schemeList: [],
+    zindexThis:0,
+    bgColorThis:'',
+    colorThis:'#fff',
+    bgSizeThis:''
+  },
+  onPageScroll: function (e) {
+    // console.log(e.scrollTop)
+    var heightThis=this.data.titleBarHeight+this.data.statusBarHeight
+    if(e.scrollTop>0){
+      this.setData({
+        zindexThis:1000,
+        bgColorThis:'url(https://zaylt.njshangka.com/resource/img/bj@2x.png)',
+        bgSizeThis:'cover',
+        // colorThis:'#333'
+      })
+    }else{
+      this.setData({
+        zindexThis:0,
+        bgColorThis:'',
+        bgSizeThis:''
+    // colorThis:'#fff'
+      })
+    }
   },
   backHistory(e) {
     wx.navigateBack({
@@ -169,7 +192,7 @@ Page({
           for (var i = 0; i < res.data.data.items.length; i++) {
             addTime = res.data.data.items[i].addTime
             res.data.data.items[i].addTime = utils.formatTime(addTime / 1000, 'Y-M-D h:m');
-            if (res.data.data.items[i].cover.slice(0, 1) != 'h') {
+            if (res.data.data.items[i].cover&&res.data.data.items[i].cover.slice(0, 1) != 'h') {
               res.data.data.items[i].cover = app.globalData.url + res.data.data.items[i].cover
             }
           }
@@ -181,7 +204,7 @@ Page({
             });
             if (toPageNo == 1) {
               wx.showToast({
-                title: '没有相关类型文章',
+                title: '没有相关文章',
                 // icon: 'loading',
                 // duration: 1500
               })

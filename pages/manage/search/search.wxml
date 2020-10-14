@@ -5,9 +5,9 @@
     <view class="title-bar" style="height:{{titleBarHeight}}px">
       <view class='search'>
        <view bindtap='backHistory' class='backHis'>
-      <image class='back' style='display:inline-block;left:42rpx;' src='../../img/backArrow.png'></image>
+      <image  mode="aspectFill"  class='back' style='display:inline-block;left:42rpx;' src='../../img/backArrow.png'></image>
       </view>
-        <image class='searchIcon' style='display:inline-block;top:{{15+statusBarHeight}}px;left:112rpx;' src='../../img/sousuo@2x.png'></image>
+        <image  mode="aspectFill"  class='searchIcon' style='display:inline-block;top:{{15+statusBarHeight}}px;left:112rpx;' src='../../img/sousuo@2x.png'></image>
         <input bindinput='input' placeholder-style='color:#999' placeholder='输入关键字'></input>
       </view>
     </view>
@@ -17,21 +17,21 @@
 <view style='width:100%;height:100%'>
  <view class='hosList'>
  <view  class='withoutIs' wx:if='{{number==0}}' >咦~，还没有数据呢~</view>
-   <!-- <image class='without' wx:if='{{number==0}}' src='../../img/without1.png'></image> -->
+   <!-- <image  mode="aspectFill"  class='without' wx:if='{{number==0}}' src='../../img/without1.png'></image> -->
     <navigator wx:for='{{hosList}}' url='../hosIndex/hosIndex?id={{item.hospitalId}}'>
       <view class='hos'>
         <view class='hostop'>
           <view>
-            <image src='{{item.cover}}'></image>
+            <image  mode="aspectFill"  src='{{item.cover||"../../img/logo@2x.png"}}'></image>
             <text>{{item.hospitalName}}</text>
           </view>
-          <image wx:if='{{item.authenticationPassIs==0}}' src='../../img/weirenzheng@2x.png'></image>
-          <image wx:if='{{item.authenticationPassIs==1}}' src='../../img/yirenzheng@2x.png'></image>
+          <image  mode="aspectFill"  wx:if='{{item.authStatus==0}}' src='../../img/weirenzheng@2x.png'></image>
+          <image  mode="aspectFill"  wx:if='{{item.authStatus==1}}' src='../../img/yirenzheng@2x.png'></image>
         </view>
         <view class='hosIntro'>
           <text>创建时间：{{item.addTime}}</text>
           <text>门诊数：{{item.clinicCount}}</text>
-          <text>病源数：{{item.patientCount}}</text>
+          <text>病员数：{{item.patientCount}}</text>
         </view>
       </view>
     </navigator>

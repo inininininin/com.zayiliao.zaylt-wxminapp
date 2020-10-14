@@ -1,5 +1,5 @@
 <!--pages/twoQmzdetail/twoQmzdetail.wxml-->
-<image class='topimg' src='../img/he.png'></image>
+<image  mode="aspectFill"  class='topimg' src='../img/he.png'></image>
 <view class='mz'>
   <text class='mztitle'>艺福堂门诊</text>
   <text class='mzdoc'>李医生</text>

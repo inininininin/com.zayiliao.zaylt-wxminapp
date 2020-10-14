@@ -128,14 +128,40 @@ Page({
       cancelText: "取消",
       cancelColor: "#000",
       confirmText: "保存",
-      confirmColor: "rgb(43,119,239)",
+      confirmColor: "#2B77EF",
       success: function (res) {
         if (res.confirm) {
-          that.modify(that.data.modifytype)         
-        }      
-        that.setData({
-          showIs: true,
-        })
+          that.modify(that.data.modifytype)     
+          wx.showToast({
+            title: '修改成功',
+            icon: 'none',
+            duration: 2000,
+            mask: true,
+            complete: function complete(res) {
+              setTimeout(function () {
+                that.setData({
+                  showIs: true,
+                })
+              }, 500);
+            }
+          })    
+        } else{
+          wx.showToast({
+            title: '已取消',
+            icon: 'none',
+            duration: 2000,
+            mask: true,
+            complete: function complete(res) {
+              setTimeout(function () {
+                that.setData({
+                  showIs: true,
+                })
+              }, 500);
+            }
+          })
+        }     
+        
+       
       }
     })
    
@@ -411,7 +437,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    wx.stopPullDownRefresh()
   },
 
   /**

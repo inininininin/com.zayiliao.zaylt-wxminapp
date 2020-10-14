@@ -45,6 +45,8 @@ Page({
         tel: that.data.tel,
         brief: that.data.brief,
         address: that.data.address,
+        shareCount: that.data.shareCount,
+        viewCount: that.data.viewCount,
         hospitalId: app.globalData.hospitalId,
       },
       method: 'post',
@@ -285,7 +287,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    wx.stopPullDownRefresh()
   },
 
   /**

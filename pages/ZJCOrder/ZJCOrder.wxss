@@ -184,4 +184,5 @@ page {
   position: fixed;
   bottom: 24rpx;
   left: 32rpx;
+  z-index: 2;
 }

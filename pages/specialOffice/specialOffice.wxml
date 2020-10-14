@@ -8,7 +8,7 @@
   <scroll-view class="doctorList" scroll-x="true" style=" white-space: nowrap; display: flex">
     <view class="doctorItem" bindtap="lookDoctor" data-id='{{item.itemId}}' wx:for='{{items}}'>
       <view  style='background:url({{item.headimg}}) no-repeat;background-size:cover;background-position: center;'>
-        <!-- <image  src="{{item.headimg}}"></image> -->
+        <!-- <image  mode="aspectFill"   src="{{item.headimg}}"></image> -->
       </view>
       <view>
         <text>{{item.name}}</text>
@@ -28,7 +28,7 @@
     <text></text>科室简介</view>
   <view class="content">
     {{detail.content||''}}
-    <image bindtap="previewImage" wx:for='{{imgList}}' data-src="{{item}}" mode="aspectFill"  src="{{item}}"></image>
+    <image  mode="aspectFill"  bindtap="previewImage" wx:for='{{imgList}}' data-src="{{item}}" mode="aspectFill"  src="{{item}}"></image>
   </view>
 </view>
 <view class="line"></view>
@@ -65,9 +65,9 @@
     <block wx:for="{{items}}" wx:key="*this">
       <swiper-item> 
         <view class="swiper-item {{item}}">
-          <image class="book" src="../img/Bookmark@2x.png"></image>
+          <image  mode="aspectFill"  class="book" src="../img/Bookmark@2x.png"></image>
 
-          <image class="avator" src="{{item.headimg}}"></image>
+          <image  mode="aspectFill"  class="avator" src="{{item.headimg}}"></image>
           <view class="hosTitle">
             <text>{{item.name||''}}</text>
             <text>{{item.jobTitles||''}}</text>
@@ -75,7 +75,7 @@
           <view class="hosName">{{item.hosptialName||''}}</view>
           <text class="hosIntro">{{item.intro||''}}</text>
         </view>
-        <image class="close" bindtap="closeSwiper" src="../img/close2.png"></image>
+        <image  mode="aspectFill"  class="close" bindtap="closeSwiper" src="../img/close2.png"></image>
       </swiper-item>
     </block>
   </swiper>

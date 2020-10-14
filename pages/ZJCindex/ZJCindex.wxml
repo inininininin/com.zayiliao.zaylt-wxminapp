@@ -1,29 +1,29 @@
 <!--pages/ZJCindex/ZJCindex.wxml-->
 <view><include src="../common/common.wxml"/></view>
 <view class='topImg'>
-<image wx:if='{{cover==""}}' src='../img/logo.png'></image>
-<image wx:if='{{cover!=""}}' src='https://www.njshangka.com{{cover}}'></image>
+<image  mode="aspectFill"  wx:if='{{cover==""}}' src='../img/logo.png'></image>
+<image  mode="aspectFill"  wx:if='{{cover!=""}}' src='https://www.njshangka.com{{cover}}'></image>
 <text class='name'>{{name||''}}</text>
 <text class='address'>{{address||''}}</text>
 </view>
  <view class='line' bindtap='myorder'>
- <image class='imglf' src='../img/wodedingdan@2x.png'></image>
+ <image  mode="aspectFill"  class='imglf' src='../img/wodedingdan@2x.png'></image>
  <view>
  <text>我的订单</text>
- <image class='imgrt' src='../img/back.png'></image>
+ <image  mode="aspectFill"  class='imgrt' src='../img/back.png'></image>
  </view>
  </view>
   <view class='line' bindtap='myjifen'>
- <image class='imglf' src='../img/wodejifen@2x.png'></image>
+ <image  mode="aspectFill"  class='imglf' src='../img/wodejifen@2x.png'></image>
  <view>
  <text>我的积分</text>
- <image class='imgrt' src='../img/back.png'></image>
+ <image  mode="aspectFill"  class='imgrt' src='../img/back.png'></image>
  </view>
  </view>
   <view class='line' bindtap='shezhi'>
- <image class='imglf' src='../img/she zhi@2x.png'></image>
+ <image  mode="aspectFill"  class='imglf' src='../img/she zhi@2x.png'></image>
  <view>
  <text>设置</text>
- <image class='imgrt' src='../img/back.png'></image>
+ <image  mode="aspectFill"  class='imgrt' src='../img/back.png'></image>
  </view>
  </view>

@@ -4,7 +4,7 @@
     <view class="title-bar" style="height:{{titleBarHeight}}px">
       <view>
         <view bindtap='backHistory' class='backHis'>
-          <image style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../img/back-white@2x.png'></image>
+          <image  mode="aspectFill"  style='display:inline-block;top:{{12+statusBarHeight}}px;left:30rpx;' src='../img/back-white@2x.png'></image>
         </view>
         <text class='titleText'>{{navtitle}}</text>
       </view>
@@ -13,7 +13,7 @@
 </view>
 <view class='required' wx:if='{{showIs}}'>
   <view>
-    <image src='../img/bitian@2x.png'></image>
+    <image  mode="aspectFill"  src='../img/bitian@2x.png'></image>
     <text>必填项</text>
   </view>
 
@@ -28,7 +28,7 @@
     <view class="picker"  style="text-align:right;color:#2b77ef;">
       {{array[index].name}}
     </view>
-    <image class="downIcon" src="../img/down@2x.png"></image>
+    <image  mode="aspectFill"  class="downIcon" src="../img/down@2x.png"></image>
   </picker>
 
     <!-- <input bindinput='recommendName' value='{{recommendName}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input> -->
@@ -51,12 +51,12 @@
   </view>
   <view class='input'>
     <text>门诊地址</text>
-    <input bindinput='address' value='{{address}}' type='idcard' placeholder-class='inputPla' placeholder='请填写'></input>
+    <input bindinput='address' value='{{address}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input>
   </view>
 
 
   <view class='selectIntro'>
-    <image src='../img/xuantian@2x.png'></image>
+    <image  mode="aspectFill"  src='../img/xuantian@2x.png'></image>
     <text>选填项</text>
   </view>
 
@@ -68,8 +68,8 @@
   <view class=' inputs'>
     <text>营业执照</text>
 
-    <image class='back' src='../img/back.png'></image>
-    <image bindtap='yyzzimg' class='yyzzimg' src='{{yyzzimg}}'></image>
+    <image  mode="aspectFill"  class='back' src='../img/back.png'></image>
+    <image  mode="aspectFill"  bindtap='yyzzimg' class='yyzzimg' src='{{yyzzimg}}'></image>
   </view>
 
 
@@ -79,7 +79,7 @@
 
 <view class='required' wx:if='{{!showIs}}'>
   <view>
-    <image src='../img/bitian@2x.png'></image>
+    <image  mode="aspectFill"  src='../img/bitian@2x.png'></image>
     <text>必填项1</text>
   </view>
 
@@ -94,7 +94,7 @@
     <view class="picker"  style="text-align:right;color:#2b77ef;">
       {{array[index].name}}
     </view>
-    <image class="downIcon" src="../img/down@2x.png"></image>
+    <image  mode="aspectFill"  class="downIcon" src="../img/down@2x.png"></image>
   </picker>
 
     <!-- <input bindinput='recommendName' value='{{recommendName}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input> -->
@@ -117,12 +117,12 @@
   </view>
   <view class='input'>
     <text>门诊地址</text>
-    <input bindinput='address' value='{{address}}' type='idcard' placeholder-class='inputPla' placeholder='请填写'></input>
+    <input bindinput='address' value='{{address}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input>
   </view>
 
 
   <view class='selectIntro'>
-    <image src='../img/xuantian@2x.png'></image>
+    <image  mode="aspectFill"  src='../img/xuantian@2x.png'></image>
     <text>选填项</text>
   </view>
 
@@ -134,8 +134,8 @@
   <view class=' inputs'>
     <text>营业执照</text>
 
-    <image class='back' src='../img/back.png'></image>
-    <image bindtap='yyzzimg' class='yyzzimg' src='{{yyzzimg}}'></image>
+    <image  mode="aspectFill"  class='back' src='../img/back.png'></image>
+    <image  mode="aspectFill"  bindtap='yyzzimg' class='yyzzimg' src='{{yyzzimg}}'></image>
   </view>
 
 

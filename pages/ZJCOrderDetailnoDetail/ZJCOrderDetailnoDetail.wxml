@@ -3,7 +3,7 @@
 <view class='orderId'>订单编号：{{orderId}} </view>
 <view style='clear:both'></view>
 <view   class='address' bindtap='address'>
-  <image src='../img/weizhi@2x.png'></image>
+  <image  mode="aspectFill"  src='../img/weizhi@2x.png'></image>
   <view>
   <text class='name'>{{receiverName}}</text>
   <text class='num'>{{receiverTel}}</text>
@@ -17,7 +17,7 @@
 
 <view  wx:for="{{details}}" wx:for-item="item" wx:key="index" >
 <view class='listItem'>
-      <image src='{{item.deviceCover}}'></image>
+      <image  mode="aspectFill"  src='{{item.deviceCover}}'></image>
       <view class='listDetail'>
         <text class='listName'>{{item.deviceName||""}}</text>
         <text class='listIntro'>{{item.brief||""}}</text>

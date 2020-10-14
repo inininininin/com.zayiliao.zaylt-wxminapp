@@ -36,7 +36,7 @@ Page({
         'cookie': app.globalData.cookie
       },
       data: {
-        token: app.globalData.token,
+        // token: app.globalData.token,
         pn: 1,
         ps: 1,
       },
@@ -93,6 +93,13 @@ Page({
   },
   modify:function(e){
     var that=this
+    if(that.data.address2==''||that.data.address1==''||that.data.name==''||that.data.tel==''){
+      wx.showToast({
+        title: '请输入完整信息',
+        icon:'none'
+      })
+      return
+    }
     wx.request({
       url: app.globalData.url + '/clientend2/clinicend/pointexchange/receiveralter',
       header: {
@@ -193,7 +200,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    wx.stopPullDownRefresh()
   },
 
   /**

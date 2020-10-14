@@ -2,35 +2,35 @@
 <view><include src="../common/common.wxml"/></view>
 <navigator url='../ZJCSetaddress/ZJCSetaddress'>
 <view wx:if='{{addressIf==0}}' class='address' bindtap='address'>
-  <image src='../img/dingweiweizhi@2x.png'></image>
+  <image  mode="aspectFill"  src='../img/dingweiweizhi@2x.png'></image>
   <view>
   <text class='view1'>您需要我们送到哪里？</text>
   <text class='view2'>添加收货地址和联系方式</text>
   </view>
-  <image src='../img/back.png'></image>
+  <image  mode="aspectFill"  src='../img/back.png'></image>
 </view>
 </navigator>
 <navigator url='../ZJCSetaddress/ZJCSetaddress'>
 <view wx:if='{{addressIf!=0}}'  class='address' bindtap='address'>
-  <image src='../img/weizhi@2x.png'></image>
+  <image  mode="aspectFill"  src='../img/weizhi@2x.png'></image>
   <view>
   <text class='name'>{{addressList.name}}</text>
   <text class='num'>{{addressList.tel}}</text>
   <text class='addressDv'>{{addressList.address1}} <text style='display:inline-block;width:10rpx;'></text> {{addressList.address2}}</text>
   </view>
-  <image src='../img/back.png'></image>
+  <image  mode="aspectFill"  src='../img/back.png'></image>
 </view>
 </navigator>
 
  <view class="children _44f602a">
       <view hover-class="none" class="children_item _44f602a" >
-      <image src='{{cover}}'></image>
+      <image  mode="aspectFill"  src='{{cover}}'></image>
         <view class="child_name _44f602a" data-name='{{name}}' bindtap='selectOver'>
           <view class='child_name_1'>{{ name }}</view>
           <view class='child_name_2'>{{ intro }}</view>
-          <view class='adddel'><image data-id="{{ deviceId }}" bindtap='del' data-num='{{count}}' wx:if='{{count!=0}}'  src='../img/jian@2x.png'></image>
+          <view class='adddel'><image  mode="aspectFill"  data-id="{{ deviceId }}" bindtap='del' data-num='{{count}}' wx:if='{{count!=0}}'  src='../img/jian@2x.png'></image>
           <input bindblur='inputVal'data-num='{{count}}' data-id="{{ deviceId }}" wx:if='{{count!=0}}' value='{{count}}'></input>
-          <image data-id="{{ deviceId }}" bindtap='add' style='float:right' data-num='{{count}}' src='../img/jia@2x.png'></image></view>
+          <image  mode="aspectFill"  data-id="{{ deviceId }}" bindtap='add' style='float:right' data-num='{{count}}' src='../img/jia@2x.png'></image></view>
         </view>
       </view>
     </view>

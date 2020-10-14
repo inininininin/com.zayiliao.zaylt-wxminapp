@@ -2,7 +2,6 @@
 var app = getApp()
 var utils = require('../../../utils/util.js');
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -40,7 +39,13 @@ Page({
             if (res.data.data.items[i].cover.slice(0, 1) != 'h') {
               res.data.data.items[i].cover = app.globalData.url + res.data.data.items[i].cover
             }
+            addTime = res.data.data.items[i].addTime
+            res.data.data.items[i].addTime = utils.formatTime(addTime / 1000, 'Y-M-D h:m');
           }
+          // for(var i in res.data.data.items){
+          //   addTime = res.data.data.items[i].addTime
+          //   res.data.data.items[i].addTime = util.formatTime(addTime / 1000, 'Y-M-D h:m');
+          // }
           var schemeListArr = that.data.schemeList;
           var newSchemeListArr = schemeListArr.concat(res.data.data.items)
           if (res.data.data.items.length == 0) {

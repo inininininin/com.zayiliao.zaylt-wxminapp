@@ -3,7 +3,7 @@
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
     <view>
-    <image bindtap='backHistory' style='display:inline-block;top:{{2+statusBarHeight}}px;left:10rpx;padding:20rpx;'  src='../../img/back-white@2x.png'></image>
+    <image  mode="aspectFill"  bindtap='backHistory' style='display:inline-block;top:{{2+statusBarHeight}}px;left:10rpx;padding:20rpx;'  src='../../img/back-white@2x.png'></image>
     <text>{{navtitle}}</text>
     </view>
     </view>
@@ -49,5 +49,5 @@
 </view>
 
 <view class='invoicePhoto' >
-  <image wx:for='{{picBlob}}' data-src="{{item.pic}}" bindtap="previewImage" src='{{item.pic}}'></image>
+  <image  mode="aspectFill"  wx:for='{{picBlob}}' data-src="{{item.pic}}" bindtap="previewImage" src='{{item.pic}}'></image>
 </view>

@@ -17,7 +17,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  color: #fff;
+  /* color: #fff; */
   font-size: 36rpx;
   font-family: PingFangSC-Medium;
   /* background: #fff; */

@@ -3,7 +3,7 @@
   <include src="../common/common.wxml" />
 </view>
 <view class="sendRec" bindtap="sendRecs">
-  <image src="../img/jia.png"></image>
+  <image  mode="aspectFill"  src="../img/jia.png"></image>
   <text>新建活动</text>
 </view>
 <view bindtap="imgItem" data-id='{{item.itemId}}' class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="">

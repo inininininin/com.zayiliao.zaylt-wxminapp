@@ -122,7 +122,7 @@ page {
 .content>text {
   display: inline-block;
   padding: 0 30rpx;
-  height: 62rpx;
+  /* height: 62rpx; */
   line-height: 62rpx;
   background: rgba(255, 249, 242, 1);
   color: #ff951b;

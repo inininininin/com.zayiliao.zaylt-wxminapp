@@ -31,9 +31,9 @@
   <form id="introPic1" class="introPic1">
     <view class='addPic'>
       <!-- <text class='lf'>添加图片</text> -->
-      <!-- <image bindtap='addPicture' class='lf' src='../img/addPic.png'></image> -->
-      <image bindtap='addPicture' class="addPicture userHeadImg lf" wx:if="{{introPic1}}" src="https://www.njshangka.com{{introPic1}}"></image>
-      <image bindtap='addPicture' class="addPicture userHeadImg lf" wx:if="{{!introPic1}}" src='../img/addPic.png'></image>
+      <!-- <image  mode="aspectFill"  bindtap='addPicture' class='lf' src='../img/addPic.png'></image> -->
+      <image  mode="aspectFill"  bindtap='addPicture' class="addPicture userHeadImg lf" wx:if="{{introPic1}}" src="https://www.njshangka.com{{introPic1}}"></image>
+      <image  mode="aspectFill"  bindtap='addPicture' class="addPicture userHeadImg lf" wx:if="{{!introPic1}}" src='../img/addPic.png'></image>
     </view>
   </form>
 </view>

@@ -4,7 +4,7 @@
 </view>
 <view>
   <view class='docD'>
-  <image src='https://www.njshangka.com{{dataItem.headimg}}'></image>
+  <image  mode="aspectFill"  src='https://www.njshangka.com{{dataItem.headimg}}'></image>
   <view class='docview'>
     <view class='name'>{{dataItem.name}}</view>
     <view class='intro'>

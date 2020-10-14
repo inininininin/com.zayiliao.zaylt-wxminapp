@@ -14,7 +14,7 @@ Page({
     num: '0',
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
-    navbar: ['新病源', '未就诊', '已就诊'],
+    navbar: ['新病员', '未就诊', '已就诊'],
     currentTab: 0,
     list2: [],
     list1: [],
@@ -201,6 +201,7 @@ Page({
     })
   },
   news: function(e) {
+    this.ifLogin()
     wx.navigateTo({
       url: '../news/news',
     })
@@ -237,7 +238,7 @@ Page({
           that.lastPageNum();
         } else if (res.data.code == 20) {
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../../loginClinic/loginClinic',
           })
         } else {
           wx.showToast({
@@ -289,13 +290,13 @@ Page({
             success: function (res) {
               if (res.data.code == 0) {
                 that.setData({
-                  navbar: ['新病源', '未就诊(' + that.data.num1+')', '已就诊(' + res.data.data.sum.totalCount+')'],
+                  navbar: ['新病员', '未就诊(' + that.data.num1+')', '已就诊(' + res.data.data.sum.totalCount+')'],
                   num2: res.data.data.sum.totalCount,
                 })
                             } else if (res.data.code == 20 || res.data.code == 26) {
                 wx.hideToast()
                 wx.navigateTo({
-                  url: '../../login/login',
+                  url: '../../loginClinic/loginClinic',
                 })
               }
             }
@@ -303,7 +304,7 @@ Page({
         } else if (res.data.code == 20 || res.data.code == 26) {
           wx.hideToast()
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../../loginClinic/loginClinic',
           })
         }
       }
@@ -430,7 +431,7 @@ Page({
         } else if (res.data.code == 20 || res.data.code == 26) {
           wx.hideToast()
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../../loginClinic/loginClinic',
           })
         }
 
@@ -456,11 +457,27 @@ Page({
   onReady: function() {
     
   },
-
+  ifLogin(){
+    if(app.globalData.cookie==''){
+      wx.showToast({
+        title: '请登录',
+        icon: 'none',
+        duration: 1000,
+        mask: true,
+        complete: function complete(res) {
+            wx.reLaunch({
+              url: '../login/login',
+            })
+            return
+        }
+      });
+    }
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function (options) {
+    this.ifLogin()
     this.lastPageNum();
     wx.request({
       url: app.globalData.url + '/clinic/login-refresh',
@@ -472,8 +489,27 @@ Page({
       success: function (res) {
         if (res.data.code == 20 || res.data.code ==26) {
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../../loginClinic/loginClinic',
           })
+        }else if (res.data.code == 0 ){
+          app.globalData.phone = res.data.data.phone;
+          app.globalData.userId = res.data.data.userId;
+          app.globalData.clinicId = res.data.data.clinic.clinicId;
+          app.globalData.hospitalId = res.data.data.hospital.hospitalId;
+          app.globalData.hospitalName = res.data.data.hospital.name;
+          app.globalData.clinicName = res.data.data.clinic.name;
+          app.globalData.clinicaddress = res.data.data.clinic.address;
+          app.globalData.authenticationIs = res.data.data.clinic.authenticationIs;
+          if (res.data.data.clinic.license == '' || res.data.data.clinic.license == null || res.data.data.clinic.license == undefined) {
+            app.globalData.src = ''
+          } else {
+            app.globalData.src = app.globalData.url + res.data.data.clinic.license
+          }
+          if (res.data.data.clinic.cover == '' || res.data.data.clinic.cover == null || res.data.data.clinic.cover == undefined) {
+            app.globalData.src = ''
+          } else {
+            app.globalData.srcCover = app.globalData.url + res.data.data.clinic.cover
+          }
         }
       }
     })
@@ -510,7 +546,7 @@ Page({
         } else if (res.data.code == 20 || res.data.code == 26) {
           wx.hideToast()
           wx.navigateTo({
-            url: '../../login/login',
+            url: '../../loginClinic/loginClinic',
           })
         }
       }

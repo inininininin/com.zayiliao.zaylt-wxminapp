@@ -3,7 +3,7 @@
   <include src="../common/common.wxml" />
 </view>
 <view wx:if='{{hos==1}}' class='kong'>
-  <image class='kongpic' src='../img/hospital_icon1@2x.png'></image>
+  <image  mode="aspectFill"  class='kongpic' src='../img/hospital_icon1@2x.png'></image>
   <text class='kongte1'>该医院下未添加任何门诊</text>
   <text class='kongte2'>____  请为该医院添加门诊哦！  ____</text>
   <button class='kongadd'>新增</button>
@@ -17,7 +17,7 @@
         <view class='mzlf'>
           <view class='mzname'>{{name}}</view>
           <view class='mznum'>
-            <image src='../img/hospital_icon12@2x.png'></image>病源{{patientCount}}个</view>
+            <image  mode="aspectFill"  src='../img/hospital_icon12@2x.png'></image>病员{{patientCount}}个</view>
           <view class='mzdoc'>
             <text class='mzdocname'>{{headmanName}}</text>
             <text class='mzdocnum'>{{contactTel}}</text>
@@ -26,7 +26,7 @@
           <view class='mzaddress'>{{address}}</view>
         </view>
         <view class='back'>
-          <image src='../img/back.png'></image>
+          <image  mode="aspectFill"  src='../img/back.png'></image>
         </view>
       </view>
     </navigator>

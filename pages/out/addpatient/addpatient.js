@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navtitle: '新增病源',
+    navtitle: '新增病员',
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
   },
@@ -55,7 +55,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    wx.stopPullDownRefresh()
   },
 
   /**

@@ -4,7 +4,7 @@
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
       <view>
-        <image bindtap='backHistory' class="image" style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;padding:12px 10px;' src='../img/back-white@2x.png'></image>
+        <image  mode="aspectFill"  bindtap='backHistory' class="image" style='display:inline-block;top:{{statusBarHeight}}px;left:10rpx;padding:12px 10px;' src='../img/back-white@2x.png'></image>
         <text class="text">{{navtitle}}年</text>
       </view>
     </view>
