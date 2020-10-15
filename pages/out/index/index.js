@@ -102,7 +102,7 @@ Page({
   },
   sure(e) {
     let that = this
-    console.log(that.data.status )
+    console.log(that.data.date, that.data.date2, that.data.date3, that.data.date4 )
     if (that.data.status == 1) {
       that.setData({
         currentTab: 1,
@@ -142,6 +142,7 @@ Page({
           list1: [],
           list2: [],
         })
+        that.lastPageNum(that.data.date, that.data.date2, that.data.date3, that.data.date4);
       }
     }
 
@@ -211,6 +212,12 @@ Page({
         color6: 'rgb(255, 255, 190)',
         color5: '#f2f2f2',
         status: '4',
+      })
+    }else{
+      this.setData({
+        color6: '#f2f2f2',
+        color5: '#f2f2f2',
+        status: '',
       })
     }
   },
@@ -308,27 +315,29 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  lastPageNum: function (pushTimeStart,pushTimeEnd,hospitalConfirmTimeStart,hospitalConfirmTimeEnd) {
+  lastPageNum: function (hospitalConfirmTimeStart,hospitalConfirmTimeEnd, pushTimeStart, pushTimeEnd) {
+    console.log(hospitalConfirmTimeStart,hospitalConfirmTimeEnd, pushTimeStart, pushTimeEnd)
     var that = this;
     if (pushTimeStart == '开始时间') {
       pushTimeStart = ''
     } else {
-      pushTimeStart = Date.parse(new Date(that.data.date));
+      pushTimeStart = Date.parse(new Date(that.data.date3))-28800000;
     }
     if (pushTimeEnd == '结束时间') {
       pushTimeEnd = ''
     } else {
-      pushTimeEnd = Date.parse(new Date(that.data.date2))+86400;
+      pushTimeEnd = Date.parse(new Date(that.data.date4))+57600000;
     }
     if (hospitalConfirmTimeStart == '开始时间') {
       hospitalConfirmTimeStart = ''
     } else {
-      hospitalConfirmTimeStart = Date.parse(new Date(that.data.date3));
+      hospitalConfirmTimeStart = Date.parse(new Date(that.data.date))-28800000;
     }
+    console.log(hospitalConfirmTimeStart,parseInt(Date.parse(new Date(that.data.date)))-28800000,Date.parse(new Date(that.data.date)),that.data.date)
     if (hospitalConfirmTimeEnd == '结束时间') {
       hospitalConfirmTimeEnd = ''
     } else {
-      hospitalConfirmTimeEnd = Date.parse(new Date(that.data.date4))+86400;
+      hospitalConfirmTimeEnd = Date.parse(new Date(that.data.date2))+57600000;
     }
     wx.request({
       url: app.globalData.url + '/c2/patient/items',
@@ -413,7 +422,8 @@ Page({
 
 
   // 
-  lastPage: function (toPageNo, status, pushTimeStart, pushTimeEnd, hospitalConfirmTimeStart, hospitalConfirmTimeEnd) {
+  lastPage: function (toPageNo, status, hospitalConfirmTimeStart, hospitalConfirmTimeEnd, pushTimeStart, pushTimeEnd) {
+    console.log(hospitalConfirmTimeStart,hospitalConfirmTimeEnd, pushTimeStart, pushTimeEnd)
     var that = this;
     var userToken = wx.getStorageSync("userToken")
     var pageSize = 15;
@@ -421,22 +431,22 @@ Page({
     if (pushTimeStart == '开始时间') {
       pushTimeStart = ''
     } else {
-      pushTimeStart = Date.parse(new Date(that.data.date));
+      pushTimeStart = Date.parse(new Date(that.data.date3))-28800000;
     }
     if (pushTimeEnd == '结束时间') {
       pushTimeEnd = ''
     } else {
-      pushTimeEnd = Date.parse(new Date(that.data.date2))+86400;
+      pushTimeEnd = Date.parse(new Date(that.data.date4))+57600000;
     }
     if (hospitalConfirmTimeStart == '开始时间') {
       hospitalConfirmTimeStart = ''
     } else {
-      hospitalConfirmTimeStart = Date.parse(new Date(that.data.date3));
+      hospitalConfirmTimeStart = Date.parse(new Date(that.data.date))-28800000;
     }
     if (hospitalConfirmTimeEnd == '结束时间') {
       hospitalConfirmTimeEnd = ''
     } else {
-      hospitalConfirmTimeEnd = Date.parse(new Date(that.data.date4))+86400;
+      hospitalConfirmTimeEnd = Date.parse(new Date(that.data.date2))+57600000;
     }
 
 

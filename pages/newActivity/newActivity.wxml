@@ -36,7 +36,7 @@
 		</view>
 		<!-- <text class="titleN">活动起始时间：</text> -->
 		<view>
-			<picker mask-style="color:rgba(216, 216, 216, 1);" mode="date" value="{{date}}" end="{{date2}}" bindchange="bindDateChange">
+			<picker  mode="date" value="{{date}}" end="{{date2}}" style="color:{{colorend}}" bindchange="bindDateChange">
 				<view class="picker">
 					{{date}}
 				</view>
@@ -45,7 +45,7 @@
 		</view>
 		<!-- <text class="titleN">活动终止时间：</text> -->
 		<view>
-			<picker mode="date" value="{{date2}}" start="{{date}}" end="2050-01-01" bindchange="bindDateChange2">
+			<picker mode="date" value="{{date2}}" start="{{date}}" style="color:{{colorend2}}" end="2050-01-01" bindchange="bindDateChange2">
 				<view class="picker">
 					{{date2}}
 				</view>

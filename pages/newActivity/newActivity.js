@@ -23,6 +23,8 @@ Page({
     tel: '',
     lookThis: true,
     contentBf: '',
+    colorend:'#999',
+    colorend2:'#999',
   },
   // 发布
   supply() {
@@ -125,15 +127,26 @@ Page({
     }
   },
   bindDateChange(e) {
+    var colorend="#999"
+    if(e.detail.value!='开始时间'){
+      colorend="#333"
+    }
     this.setData({
       date: e.detail.value,
+      colorend:colorend
     })
     this.end()
   },
   bindDateChange2(e) {
+    var colorend2="#999"
+    if(e.detail.value!='结束时间'){
+       colorend2="#333"
+    }
     this.setData({
       date2: e.detail.value,
+      colorend2:colorend2
     })
+   
     this.end()
   },
   content(e) {

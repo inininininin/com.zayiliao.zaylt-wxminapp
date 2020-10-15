@@ -59,7 +59,7 @@
   font-size: 30rpx;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-   color: #333;
+   color: #999;
   /* color: rgba(153, 153, 153, 1); */
 }
 

@@ -19,10 +19,10 @@
 </view>
 <view class='clinicList'>
   <view wx:for='{{schemeList}}' data-id='{{item.hospitalClinicId}}' data-name='{{item.name}}' bindtap="clinicItem" hover-class='hoverClass' class='clinicItem'>
-    <text class="name">{{item.name}}</text>
-    <text wx:if='{{item.hospitalUserName}}' class="clinicPromoterName">推广人：{{item.hospitalUserName}}</text>
-    <text wx:else class="clinicPromoterName" style="color:#fff"> - </text>
-    <text class="pushCount">{{item.patientCount}}人</text>
+    <view class="name lineOne">{{item.name}}</view>
+    <view wx:if='{{item.hospitalUserName}}' class="clinicPromoterName lineOne">推广人：{{item.hospitalUserName}}</view>
+    <view wx:else class="clinicPromoterName lineOne" style="color:#fff"> - </view>
+    <view class="pushCount lineOne">{{item.patientCount}}人</view>
   </view>
 <view class="withoutNum" wx:if='{{clinicNumber==0}}'>
     <image  mode="aspectFill"  src="../../img/wushuju.png"></image>

@@ -26,7 +26,7 @@
             </view>
             <view class='viewRt' wx:if='{{item.status==4}}'>
               <image  mode="aspectFill"  src='../img/yijiuzhen@2x.png'></image>
-              <text>已就诊</text>
+              <text style="color:rgb(77,216,101);">已就诊</text>
             </view>
           </view>
           <view>创建时间：{{item.pushTime}}</view>

@@ -13,6 +13,20 @@ Page({
     list:[],
     toPageNo:'',
   },
+  jumpurl(e){
+    var id=e.currentTarget.dataset.id
+    for(var i in this.data.list){
+      if(id==this.data.list[i].messageId){
+        this.data.list[i].lookIs=1
+      }
+    }
+    this.setData({
+      list:this.data.list
+    })
+    wx.navigateTo({
+      url: e.currentTarget.dataset.url,
+    })
+  },
   lastPage: function (toPageNo, source) {
     var that = this;
     var pageSize = 15;

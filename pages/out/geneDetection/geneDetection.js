@@ -56,7 +56,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+    let that = this
+    that.setData({
+      schemeList:[]
+    })
+    that.lastPage(0, '', that.data.status)
   },
   lastPage: function (toPageNo, kw, status) {
     var that = this
@@ -129,11 +133,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    let that = this
-    that.setData({
-      schemeList:[]
-    })
-    that.lastPage(0, '', that.data.status)
+    
   },
 
   /**

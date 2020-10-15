@@ -147,7 +147,7 @@ page {
 
 .clinicList>view .name {
   font-size: 32rpx;
-  line-height: 32rpx;
+
   margin-top: 18rpx;
   display: block;
   color: rgba(51, 51, 51, 1);
@@ -155,7 +155,8 @@ page {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  height: 32rpx;
+  height: 36rpx;
+  line-height: 36rpx;
 }
 
 .clinicList>view .clinicPromoterName {
