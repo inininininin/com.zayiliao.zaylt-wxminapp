@@ -371,7 +371,7 @@ Page({
     console.log(options.id)
     var that = this
         that.setData({
-      hospitalUserId:options.id
+      hospitalUserId:options.id,
     })
     that.lastPage(0)
     that.lastPageNo()
@@ -490,8 +490,10 @@ Page({
     var pages = getCurrentPages();
     var currPage = pages[pages.length - 1];   //当前页面
     var prevPage = pages[pages.length - 2];  //上一个页面
+    console.log(this.data.kw)
+    
     prevPage.setData({
-      changeIs:1
+      changeIs:1,
     });
     wx.navigateBack({
 

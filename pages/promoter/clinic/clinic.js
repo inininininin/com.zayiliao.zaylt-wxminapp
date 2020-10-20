@@ -70,7 +70,7 @@ Page({
       },
       method: 'get',
       success: function (res) {
-        wx.hideToast()
+        // wx.hideToast()
         if (res.data.code == 0) {
           that.setData({
             clinicNumber: res.data.data.rowCount,
@@ -105,12 +105,13 @@ Page({
       method: 'get',
       success: function (res) {
         
-        wx.hideToast()
+        // wx.hideToast()
         if (res.data.code == 0) {
           that.getSum(kw)
           var schemeListArr = that.data.schemeList;
           var newSchemeListArr = schemeListArr.concat(res.data.data.rows)
-          if (res.data.data.rows.length == 0) {
+          console.log(res.data.data.rows.length)
+          if (res.data.data.rows&&res.data.data.rows.length == 0) {
             that.setData({
               schemeList: newSchemeListArr,
             });
@@ -191,7 +192,7 @@ Page({
       },
       method: 'get',
       success: function (res) {
-        wx.hideToast()
+        // wx.hideToast()
         if (res.data.code == 0) {
           that.setData({
             clinicNumber: res.data.data.rowCount,

@@ -264,8 +264,8 @@ line-height:33rpx;
 }
 .clinicList>view .name{
   font-size: 32rpx;
-  line-height: 36rpx;
-  height: 36rpx;
+  height: 38rpx;
+  line-height: 38rpx;
   margin-top: 18rpx;
   /* display: block; */
   color: rgba(51,51,51,1);

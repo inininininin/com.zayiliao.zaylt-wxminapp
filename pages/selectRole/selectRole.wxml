@@ -4,7 +4,6 @@
 <text class="selectRole">您有以下端口</text>
 <text class="enter">请选择进入</text>
 <view class='boxBoom'>
- 
   <view class='box hospital {{active1}}' bindtap='hospital' wx:if='{{hospitalIs}}'>
     <image  mode="aspectFill"  src="../img/yy.png"></image>
     <view>

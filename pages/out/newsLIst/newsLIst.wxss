@@ -20,7 +20,6 @@ page{
 .newList >view>view:first-child .point{
   width: 16rpx;
   height: 16rpx;
-  display: inline-block;
   float: right;
   margin: 20rpx 20rpx 0 0;
   border-radius: 50%;

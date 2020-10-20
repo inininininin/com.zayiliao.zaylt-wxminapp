@@ -41,6 +41,7 @@ Page({
         taskId: that.data.taskId,
         intro: that.data.intro,
         exchangePoint: that.data.exchangePoint,
+        // exchangePointUpperPerDay:10
       },
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -101,6 +102,7 @@ Page({
       title: options.titles,
     })
     this.setData({
+      exchangePoint:options.point,
       exchangePointUpperPerDay:options.point,
       taskId:options.id,
       intro:options.intro,

@@ -185,8 +185,8 @@ page {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  line-height: 36rpx;
-  height: 36rpx;
+  line-height: 38rpx;
+  height: 38rpx;
 }
 
 .clinicItem text:nth-child(2) {

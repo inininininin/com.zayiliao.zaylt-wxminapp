@@ -103,13 +103,26 @@ Page({
   },
   drawImage2() {
     let self = this;
+    // let query = wx.createSelectorQuery();
+    //           query.select('.shareImg').boundingClientRect(rect => {
+    //             let clientHeight = rect.height;
+    //             let clientWidth = rect.width;
+    //             let ratio = 750 / clientWidth;
+    //             let height = clientHeight * ratio;
+    //             that.setData({
+    //               cancasHeight: height
+    //             })
+    console.log(self.data.clientWidth,self.data.clientHeight,self.data.cancasHeight,wx.getSystemInfoSync().screenHeight,wx.getSystemInfoSync().windowHeight)
+    self.setData({
+      imageHeight:self.data.cancasHeight*65/75
+    })
     this.drawImage2 = new Wxml2Canvas({
-      width: 375,
-      height: 10000,
+      width: 750,
+      height: self.data.cancasHeight,
       element: 'canvas2',
       background: '#fff',
       progress(percent) {
-        console.log(percent)
+        // console.log(percent)
       },
       finish(url) {
         console.log(url)
@@ -252,7 +265,10 @@ Page({
                 let ratio = 750 / clientWidth;
                 let height = clientHeight * ratio;
                 that.setData({
-                  cancasHeight: height
+                  cancasWidth:750,
+                  cancasHeight: height,
+                  clientWidth:clientWidth,
+                  clientHeight:clientHeight
                 })
                 console.log(height);
               }).exec();

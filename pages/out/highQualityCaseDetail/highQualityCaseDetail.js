@@ -97,9 +97,12 @@ Page({
   },
   drawImage2() {
     let self = this;
+    self.setData({
+      imageHeight:self.data.cancasHeight*65/75
+    })
     this.drawImage2 = new Wxml2Canvas({
-      width: 375,
-      height: 10000,
+      width: 750,
+      height: self.data.cancasHeight,
       element: 'canvas2',
       background: '#fff',
       progress(percent) {

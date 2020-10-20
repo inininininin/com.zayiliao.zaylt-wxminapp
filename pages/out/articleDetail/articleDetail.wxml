@@ -21,7 +21,7 @@
 		</view>
 	</view>
 </view>
-
+<view style="width:100%;height:100rpx;opacity:0"></view>
 
 
 <view class='popwindow' style='display:{{close}}'>
@@ -39,7 +39,7 @@
 				</button>
 				<!-- bindtap='shareIs' -->
 				<!-- //sharepyqIf -->
-				<button bindtap='sharepyq'>
+				<button bindtap='sharepyqIf'>
 					<image mode="aspectFill" class='pyq' src='../../img/pengyouquan@2x.png'></image>
 					<text>分享到朋友圈</text>
 				</button>
@@ -92,17 +92,19 @@
 </view>
 
 <!-- 预览区域  -->
-<view hidden='{{hidden}}' class='preview'>
+<view hidden='{{hidden}}' class='preview' >
 	<image mode="aspectFill" src='{{prurl}}' mode='widthFix'></image>
 	<button type='primary' size='mini' bindtap='saveIs'>保存分享图</button>
 </view>
 
-<view class="popCanvas" wx:if='{{showCanvasIf}}'>
+<view class="popCanvas"  wx:if='{{showCanvasIf}}'>
 	<canvas canvas-id="canvas2" class="share__canvas" style="height:{{cancasHeight}}rpx;background:#fff;"></canvas>
 </view>
 
 <!-- <image src="{{imageurl}}" style='width:750rpx;height:2500rpx'></image> -->
 <view class="imageurl" wx:if='{{showimageurl}}' bindtap="closeshowimageurl">
 	<text>请长按图片保存分享</text>
-	<image src="{{imageurl}}" catchtap="openshowimageurl" style='width:650rpx;height:90%;margin-left:50rpx;background:#fff' bindlongtap="imageurlLoad" mode="aspectFit"></image>
+	<view style='width:650rpx;height:90%;overflow-y:scroll;margin-left:50rpx;'>
+		<image src="{{imageurl}}"  show-menu-by-longpress='true' style='width:650rpx;height:{{imageHeight}}rpx;background:#fff'  mode="aspectFill" catchtap='openshowimageurl'></image>
+	</view>
 </view>

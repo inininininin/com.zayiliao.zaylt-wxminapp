@@ -14,9 +14,9 @@ Page({
     changeIs: ''
   },
   lookDetail(e) {
-    console.log(e.currentTarget.dataset.id)
+    console.log(e.currentTarget.dataset.id,this.data.kw)
     wx.navigateTo({
-      url: '../recPeopleDetail/recPeopleDetail?id=' + e.currentTarget.dataset.id,
+      url: '../recPeopleDetail/recPeopleDetail?id=' + e.currentTarget.dataset.id,//+'&kw='+this.data.kw,
     })
   },
   /**
@@ -28,6 +28,7 @@ Page({
   searchKey(e){
     this.setData({
       schemeList: [],
+      kw:e.detail.value
     })
     this.lastPage(0, e.detail.value)
   },
@@ -106,6 +107,7 @@ Page({
       this.setData({
         schemeList: [],
       })
+      console.log(this.data.kw)
       this.lastPage(0, this.data.kw)
     }
   },
