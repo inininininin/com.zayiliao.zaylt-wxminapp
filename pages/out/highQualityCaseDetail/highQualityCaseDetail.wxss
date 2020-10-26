@@ -23,6 +23,7 @@ page{
 .hospitalName image{
   width: 66rpx;
   height: 66rpx;
+  border-radius: 33rpx;
   margin: 0 20rpx 0 32rpx;
 }
 .hospitalName view{

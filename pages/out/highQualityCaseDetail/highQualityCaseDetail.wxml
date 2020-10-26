@@ -4,7 +4,7 @@
 	<image class="shareImg1" style="width:750rpx;height:350rpx;" src="{{list.cover}}" mode='aspectFill' data-type="image" data-url="{{list.cover}}"></image>
 	<text class='title shareImg1' data-type="text" data-text="{{list.title}}">{{list.title}}</text>
 	<view class='hospitalName'>
-		<image class="shareImg1" data-type="image" data-url='../../img/logo@2x.png' mode="aspectFill" src='../../img/logo@2x.png'></image>
+		<image class="shareImg1" data-type="image" data-url='../../img/logo@2x.png' mode="aspectFill" src='{{cover||"../../img/logo@2x.png"}}'></image>
 		<view class="">
 			<text class="shareImg1"  data-type="text" data-text="{{list.hosptialName}}">{{list.hosptialName}}</text>
 			<text class="shareImg1" data-type="text" data-text="{{list.addTime}}">{{list.addTime}}</text>

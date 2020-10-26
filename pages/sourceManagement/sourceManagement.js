@@ -217,7 +217,7 @@ Page({
   // 滑动结束
   touchend: function (e) {
     end_clientX = e.changedTouches[0].clientX;
-    if (start_clientX - end_clientX > 120) {
+    if (start_clientX - end_clientX > 200) {
       this.setData({
         display: "block",
         // translate: 'transform: translateX(-590rpx);'

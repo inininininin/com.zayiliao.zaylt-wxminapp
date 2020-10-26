@@ -298,6 +298,7 @@ Page({
             idCard: '',
             remark: '',
           })
+          that.newsList()
           that.lastPageNum(that.data.date, that.data.date2, that.data.date3, that.data.date4);
         } else if (res.data.code == 20) {
           wx.navigateTo({
@@ -551,12 +552,45 @@ Page({
   onReady: function () {
 
   },
+newsList(){
+  var that = this
+  wx.request({
+    url: app.globalData.url + '/clientend2/clinicend/messages',
+    method: 'post',
+    data: {
+      lookIs: 0,
+      source: '',
+      pn: 1,
+      ps: 30,
+      // orders: 'asc',
+      // sorts: 'orderNo',
+    },
+    header: {
+      "Content-Type": "application/x-www-form-urlencoded",
+      'cookie': app.globalData.cookie
+    },
+    success: function (res) {
+      if (res.data.code == 0) {
+        var num = res.data.data.sum.totalItemCount
+        that.setData({
+          num: num,
+        })
 
+      } else if (res.data.code == 20 || res.data.code == 26) {
+        wx.hideToast()
+        wx.navigateTo({
+          url: '../../newLogin/newLogin',
+        })
+      }
+    }
+  })
+},
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function (options) {
-
+    var that = this
+    that.newsList()
     wx.request({
       url: app.globalData.url + '/login-refresh',
       header: {
@@ -599,38 +633,9 @@ Page({
         selected: 1
       })
     }
-    var that = this
+  
 
-    wx.request({
-      url: app.globalData.url + '/clientend2/clinicend/messages',
-      method: 'post',
-      data: {
-        lookIs: 0,
-        source: '',
-        pn: 1,
-        ps: 30,
-        // orders: 'asc',
-        // sorts: 'orderNo',
-      },
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        'cookie': app.globalData.cookie
-      },
-      success: function (res) {
-        if (res.data.code == 0) {
-          var num = res.data.data.sum.totalItemCount
-          that.setData({
-            num: num,
-          })
-
-        } else if (res.data.code == 20 || res.data.code == 26) {
-          wx.hideToast()
-          wx.navigateTo({
-            url: '../../newLogin/newLogin',
-          })
-        }
-      }
-    })
+    
   },
 
   /**
@@ -656,6 +661,7 @@ Page({
       list1: [],
       list2: [],
     })
+    that.newsList()
     if (that.data.currentTab == 1) {
       that.lastPage(0, 1, that.data.date, that.data.date2, that.data.date3, that.data.date4)
     } else if (that.data.currentTab == 2) {

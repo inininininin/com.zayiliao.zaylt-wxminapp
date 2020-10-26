@@ -21,6 +21,7 @@ Page({
     showCanvasIf: false,
     showimageurl:false,
     imageurl:'',
+    cover:'',
   },
   // wxParseTagATap(e){
   //   wx.navigateTo({
@@ -169,7 +170,10 @@ Page({
     var id = options.id
     var that = this
     that.sys();
-
+    app.loginRefresh.hospital.map.cover=app.cover(app.loginRefresh.hospital.map.cover)
+that.setData({
+  cover:app.loginRefresh.hospital.map.cover
+})
     if (app.globalData.lastClient == 1) {
       var param = encodeURIComponent('pages/out/articleDetail/articleDetail?id=' + id + '&ids=1')
     } else {
