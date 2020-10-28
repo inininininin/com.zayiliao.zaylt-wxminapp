@@ -23,7 +23,14 @@
 	<text>绑定微信</text>
 	<image mode="aspectFill" src='../../img/back.png'></image>
 </view> -->
-<view class='line' bindtap='numberSecurity'>
+
+	<view class='line' bindtap='selectRole'>
+	<!-- <navigator url='../numberSecurity/numberSecurity'> -->
+	<text>切换入口</text>
+	<image mode="aspectFill" src='../../img/back.png'></image>
+	<!-- </navigator> -->
+</view>
+<view class='line' bindtap='numberSecurity' style="margin-top:0;border-top:1rpx solid #e5e5e5">
 	<!-- <navigator url='../numberSecurity/numberSecurity'> -->
 	<text>账号与安全</text>
 	<image mode="aspectFill" src='../../img/back.png'></image>

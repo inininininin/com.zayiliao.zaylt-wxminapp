@@ -10,8 +10,9 @@ Page({
     navtitle: '新增医院',
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
-    license:'',
-    yyzzimg:'../../img/touxiang@2x.png'
+    license: '',
+    yyzzimg: '../../img/touxiang@2x.png',
+    clickMethod: 'save'
   },
   name: function (e) {
     this.setData({
@@ -48,47 +49,68 @@ Page({
       remark: e.detail.value
     })
   },
-  save(e){
-    var that=this
-    if(!that.data.name){
+  save(e) {
+    var that = this
+    that.setData({
+      clickMethod: ''
+    })
+    if (!that.data.name) {
       wx.showToast({
         title: '医院名称不能为空',
         icon: 'none',
       })
+      that.setData({
+        clickMethod: 'save'
+      })
       return
     }
-    if(!that.data.phone){
+    if (!that.data.phone) {
       wx.showToast({
         title: '账号不能为空',
         icon: 'none',
       })
+      that.setData({
+        clickMethod: 'save'
+      })
       return
     }
-    if(!that.data.pwd){
+    if (!that.data.pwd) {
       wx.showToast({
         title: '分配密码不能为空',
         icon: 'none',
       })
+      that.setData({
+        clickMethod: 'save'
+      })
       return
     }
-    if(!that.data.headmanName){
+    if (!that.data.headmanName) {
       wx.showToast({
         title: '负责人不能为空',
         icon: 'none',
       })
+      that.setData({
+        clickMethod: 'save'
+      })
       return
     }
-    if(!that.data.tel){
+    if (!that.data.tel) {
       wx.showToast({
         title: '联系方式不能为空',
         icon: 'none',
       })
+      that.setData({
+        clickMethod: 'save'
+      })
       return
     }
-    if(!that.data.address){
+    if (!that.data.address) {
       wx.showToast({
         title: '医院名地址不能为空',
         icon: 'none',
+      })
+      that.setData({
+        clickMethod: 'save'
       })
       return
     }
@@ -96,45 +118,54 @@ Page({
       url: app.globalData.url + '/clientend2/manageend/hospitaladd', //仅为示例，非真实的接口地址
       method: 'post',
       data: {
-        license: that.data.license||'',
-        headmanName: that.data.headmanName||'',
-        name: that.data.name||'',
-        pwd: that.data.pwd||'',
-        phone: that.data.phone||'',
-        tel: that.data.tel||'',
-        address: that.data.address||'',
-        remark: that.data.remark||'',
+        license: that.data.license || '',
+        headmanName: that.data.headmanName || '',
+        name: that.data.name || '',
+        pwd: that.data.pwd || '',
+        phone: that.data.phone || '',
+        tel: that.data.tel || '',
+        address: that.data.address || '',
+        remark: that.data.remark || '',
       },
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
         'cookie': app.globalData.cookie
       },
       success: function (res) {
-        if(res.data.code==0){
-            wx.showToast({
-              title: '新增成功',
-              icon: 'none',
-            })
+        if (res.data.code == 0) {
+          wx.showToast({
+            title: '新增成功',
+            icon: 'none',
+          })
           var pages = getCurrentPages();
-          var currPage = pages[pages.length - 1];   //当前页面
-          var prevPage = pages[pages.length - 2];  //上一个页面
+          var currPage = pages[pages.length - 1]; //当前页面
+          var prevPage = pages[pages.length - 2]; //上一个页面
           prevPage.setData({
             changeIs: 1
           });
-          wx.navigateBack({
-                delta:1
+          setTimeout(function () {
+            that.setData({
+              clickMethod: 'save'
+            })
+            wx.navigateBack({
+              delta: 1
+            })
+          }, 1000)
+
+        } else {
+          that.setData({
+            clickMethod: 'save'
           })
-        }else{
           wx.showToast({
             title: res.data.codeMsg,
-            icon:'none'
+            icon: 'none'
           })
         }
       }
     })
-    
+
   },
-  yyzzimg(e){
+  yyzzimg(e) {
     if (app.globalData.src == '' || app.globalData.src == null || app.globalData.src == undefined) {
 
       var that = this
@@ -158,12 +189,12 @@ Page({
                   icon: 'none',
                   duration: 2000
                 })
-                if (url.slice(0,1)!='h'){
-                  url = app.globalData.domain +  url
+                if (url.slice(0, 1) != 'h') {
+                  url = app.globalData.domain + url
                 }
                 that.setData({
                   license: url,
-                  yyzzimg:url
+                  yyzzimg: url
                 })
               }
             },
@@ -183,14 +214,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    app.globalData.src=''
+    app.globalData.src = ''
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
   backHistory: function (e) {
     wx.navigateBack({
@@ -246,10 +277,8 @@ Page({
       title: '欢迎使用共享医联体小程序', //分享内容
       path: path, //分享地址
       imageUrl: 'https://zaylt.njshangka.com/favicon.ico', //分享图片
-      success: function (res) {
-      },
-      fail: function (res) {
-      }
+      success: function (res) {},
+      fail: function (res) {}
     }
   }
 })

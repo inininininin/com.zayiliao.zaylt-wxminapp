@@ -20,8 +20,8 @@ page {
 }
 
 .address image:first-child {
-  width: 36rpx;
-  height: 46rpx;
+  width: 37rpx;
+  height: 44rpx;
   float: left;
   /* display: inline-block; *//* vertical-align: middle; */
   line-height: 160rpx;
@@ -81,7 +81,7 @@ page {
 .address view .addressDv {
   height: 34rpx;
   font-size: 32rpx;
-  line-height: 32rpx !important;
+  line-height: 34rpx !important;
   margin: 0 auto 32rpx 0;
   display: block;
   color: rgb(51, 51, 51);

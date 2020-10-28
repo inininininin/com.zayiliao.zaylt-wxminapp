@@ -98,6 +98,11 @@ Page({
       nickname:nickname,
     })
   },
+  selectRole(e){
+    wx.navigateTo({
+      url: '../../selectRole/selectRole',
+    })
+  },
   numberSecurity(e){
     wx.navigateTo({
       url: '../numberSecurity/numberSecurity',

@@ -18,9 +18,6 @@ page{
   z-index: 888;
 }
 
-.status-bar {
-  /* background: rgba(255, 0, 0, 0.1); */
-}
 
 .title-bar {
   display: flex;
@@ -55,8 +52,8 @@ page{
 }
 
 .save>image {
-  width: 38rpx;
-  height: 40rpx;
+  width: 40rpx;
+  height: 38rpx;
   padding: 20rpx;
   margin-left: 90rpx;
   z-index: 999;
@@ -112,7 +109,7 @@ page{
   height: 103rpx;
 }
 .lineTwo>view .finish{
-  display: inline-block;
+  /* display: inline-block; */
   width: 114rpx;
   height: 40rpx;
   border-radius: 4rpx;

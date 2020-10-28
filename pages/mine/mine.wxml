@@ -72,7 +72,12 @@
 			<image mode="aspectFill" src='../img/ChevronCopy2@2x.png'></image>
 		</view>
 	</navigator>
-
+	<navigator url='../selectRole/selectRole'>
+		<view>
+			<text>切换入口</text>
+			<image mode="aspectFill" src='../img/ChevronCopy2@2x.png'></image>
+		</view>
+	</navigator>
 	<navigator bindtap="loginout">
 		<view>
 			<text>退出登录</text>

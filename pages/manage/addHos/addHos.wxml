@@ -14,7 +14,7 @@
 
 <view class='required'>
   <view>
-    <image  mode="aspectFill"  src='../../img/bitian@2x.png'></image>
+    <image mode="aspectFill" src='../../img/bitian@2x.png'></image>
     <text>必填项</text>
   </view>
 
@@ -32,7 +32,8 @@
   </view>
   <view class='input'>
     <text>负责人</text>
-    <input bindinput='headmanName' value='{{headmanName}}' type='text' placeholder-class='inputPla' placeholder='请填写'></input>
+    <input bindinput='headmanName' value='{{headmanName}}' type='text' placeholder-class='inputPla'
+      placeholder='请填写'></input>
   </view>
   <view class='input'>
     <text>联系方式</text>
@@ -45,7 +46,7 @@
 
 
   <view class='selectIntro'>
-    <image  mode="aspectFill"  src='../../img/xuantian@2x.png'></image>
+    <image mode="aspectFill" src='../../img/xuantian@2x.png'></image>
     <text>选填项</text>
   </view>
 
@@ -56,12 +57,13 @@
 
   <view class=' inputs'>
     <text>营业执照</text>
-   
-    <image  mode="aspectFill"  class='back' src='../../img/back.png'></image>
-    <image  mode="aspectFill"  bindtap='yyzzimg' class='yyzzimg' src='{{yyzzimg}}'></image>
+
+    <image mode="aspectFill" class='back' src='../../img/back.png'></image>
+    <image mode="aspectFill" bindtap='yyzzimg' class='yyzzimg' src='{{yyzzimg}}'></image>
   </view>
 
-  <view bindtap='save' class='save' style='left:460rpx;'>
+  <view bindtap='{{clickMethod}}' class='save' style='left:460rpx;'>保存</view>
+  <!-- <view class='save' style='left:460rpx;'>保存</view> -->
     <!-- <image  mode="aspectFill"  src='../../img/save@2x.png' style='width:30rpx;height:40rpx;'></image> -->
-    保存</view>
+    
 </view>

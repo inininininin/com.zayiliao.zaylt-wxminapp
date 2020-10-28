@@ -8,7 +8,7 @@
 					<image mode="aspectFill" wx:if='{{lookThis}}' class="image" bindtap='backHistory' style='display:inline-block;left:10rpx;' src='../img/f1.svg'></image>
 					<image mode="aspectFill" wx:if='{{!lookThis}}' class="image" bindtap='backHistoryOnly' style='display:inline-block;left:10rpx;' src='../img/f1.svg'></image>
 					<text wx:if='{{lookThis}}' class="save" bindtap="save" style=" margin-left: 95rpx !important;background:{{bgColor}};color:{{color}},">预览</text>
-					<text wx:if='{{!lookThis}}' class="save" bindtap="supply" style=" margin-left: 95rpx !important">发布</text>
+					<text wx:if='{{!lookThis}}' class="save" bindtap="{{clickMethod}}" style=" margin-left: 95rpx !important">发布</text>
 					<text class="text" style="margin-left:-195rpx !important">{{navtitle}}</text>
 				</view>
 			</view>

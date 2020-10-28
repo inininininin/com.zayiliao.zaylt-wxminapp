@@ -27,6 +27,7 @@ Page({
     wx.login({
       success: function(res) {
         jscode = res.code;
+        console.log(jscode)
         that.setData({
           jscode: res.code,
         })
@@ -208,8 +209,16 @@ Page({
         // })
 
 
+      },
+      fail:function(res){
+        console.log(res)
+      },
+      error:function(res){
+        console.log(res)
       }
+    
     })
+    console.log(1213)
   },
   loginRefresh:function(_value){
     let that = this;

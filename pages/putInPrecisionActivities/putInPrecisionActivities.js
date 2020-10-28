@@ -46,7 +46,9 @@ Page({
 
           var items = that.data.items;
           var newlist = items.concat(res.data.data.items)
+          var addTime=''
           for(var i in res.data.data.items){
+            res.data.data.items[i].cover=app.cover(res.data.data.items[i].cover)
             addTime = res.data.data.items[i].addTime
             res.data.data.items[i].addTime = util.formatTime(addTime / 1000, 'Y-M-D h:m');
           }
@@ -74,17 +76,17 @@ Page({
           })
         }
 
-        var addTime
-        for (var i = 0; i < that.data.items.length; i++) {
-          that.data.items[i].cover=app.cover(that.data.items[i].cover)
+        // var addTime
+        // for (var i = 0; i < that.data.items.length; i++) {
+        //   that.data.items[i].cover=app.cover(that.data.items[i].cover)
           
-          // addTime = that.data.items[i].addTime
-          // that.data.items[i].addTime = app.dateChange(addTime)
+        //   // addTime = that.data.items[i].addTime
+        //   // that.data.items[i].addTime = app.dateChange(addTime)
          
-        }
-        that.setData({
-          items: that.data.items,
-        })
+        // }
+        // that.setData({
+        //   items: that.data.items,
+        // })
       }
     })
   },

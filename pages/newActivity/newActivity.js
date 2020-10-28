@@ -25,10 +25,14 @@ Page({
     contentBf: '',
     colorend:'#999',
     colorend2:'#999',
+    clickMethod:'supply'
   },
   // 发布
   supply() {
     var that = this
+    that.setData({
+      clickMethod:''
+    })
     var startTime = Date.parse(that.data.date)
     var endTime = Date.parse(that.data.date2)
     var topImg = that.data.topImg.split(app.globalData.domain)[1]
@@ -78,13 +82,22 @@ Page({
                     prevPage.setData({  // 将我们想要传递的参数在这里直接setData。上个页面就会执行这里的操作。
                       change: 1,
                     })
-                    wx.navigateBack({
-                      delta: 1
-                    })
+                    setTimeout(function(){
+                      that.setData({
+                        clickMethod:'supply'
+                      })
+                      wx.navigateBack({
+                        delta: 1
+                      })
+                    },1000)
+                    
                   }
                 })
 
               } else {
+                that.setData({
+                  clickMethod:'supply'
+                })
                 wx.showToast({
                   title:  res.data.codeMsg,
                   icon:'none'
@@ -93,6 +106,9 @@ Page({
             }
           });
         } else {
+          that.setData({
+            clickMethod:'supply'
+          })
           wx.showToast({
             title:  res.data.codeMsg,
             icon:'none'
