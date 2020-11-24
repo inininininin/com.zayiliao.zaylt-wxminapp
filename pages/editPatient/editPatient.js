@@ -186,6 +186,55 @@ Page({
                   delta: 1,
                 })
               }, 500);
+              var pages = getCurrentPages();
+              var currPage = pages[pages.length - 1]; //当前页面
+              var prevPage = pages[pages.length - 2]; //上个页面
+              
+              if(prevPage.data.list1.length){
+                let items = prevPage.data.list1;
+                console.log(that.data.id)
+                let num = prevPage.data.list1.findIndex(function(res){return res.itemId == that.data.id;console.log(res.itemId);})
+                items[num].realname = that.data.realname
+                items[num].tel = that.data.tel
+                items[num].idcardNo = that.data.idcardNo
+                items[num].sickness = that.data.sickness
+                items[num].remark = that.data.remark
+                console.log(items)
+                prevPage.setData({
+                  list1:items
+                });
+                return
+              }
+              if(prevPage.data.list2.length){
+                let items = prevPage.data.list2;
+                console.log(that.data.id)
+                let num = prevPage.data.list2.findIndex(function(res){return res.itemId == that.data.id;console.log(res.itemId);})
+                items[num].realname = that.data.realname
+                items[num].tel = that.data.tel
+                items[num].idcardNo = that.data.idcardNo
+                items[num].sickness = that.data.sickness
+                items[num].remark = that.data.remark
+                console.log(items)
+                prevPage.setData({
+                  list2:items
+                });
+                return
+              }
+              if(prevPage.data.list0.length){
+                let items = prevPage.data.list0;
+                console.log(that.data.id)
+                let num = prevPage.data.list0.findIndex(function(res){return res.itemId == that.data.id;console.log(res.itemId);})
+                items[num].realname = that.data.realname
+                items[num].tel = that.data.tel
+                items[num].idcardNo = that.data.idcardNo
+                items[num].sickness = that.data.sickness
+                items[num].remark = that.data.remark
+                console.log(items)
+                prevPage.setData({
+                  list0:items
+                });
+                return
+              }
             }
           })
 
@@ -285,7 +334,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this
+    
   },
 
   /**

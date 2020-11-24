@@ -548,6 +548,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    console.log(this.data.list0)
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({

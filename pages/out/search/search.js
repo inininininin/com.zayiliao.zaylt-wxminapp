@@ -10,7 +10,7 @@ Page({
     navtitle: '病员搜索',
     statusBarHeight: getApp().globalData.statusBarHeight,
     titleBarHeight: getApp().globalData.titleBarHeight,
-    list:[],
+    list1:[],
     kw: '',
     toPageNo:0
   },
@@ -25,7 +25,7 @@ Page({
     var val = e.detail.value
     var that = this
     that.setData({
-      list: [],
+      list1: [],
       kw: val
     })
     that.lastPage(0, val);
@@ -63,11 +63,11 @@ Page({
 
          
 
-            var list = that.data.list;
+            var list = that.data.list1;
             var newlist = list.concat(res.data.data.items)
             if (res.data.data.items.length == 0) {
               that.setData({
-                list: list,
+                list1: list,
                 toPageNo: parseInt(toPageNo)
               });
               wx.showToast({
@@ -77,7 +77,7 @@ Page({
               })
             } else {
               that.setData({
-                list: newlist,
+                list1: newlist,
                 toPageNo: parseInt(toPageNo)
               });
             }
@@ -138,7 +138,7 @@ Page({
     console.log(1231)
     var that = this
     that.setData({
-      list: [],
+      list1: [],
     })
     that.lastPage(0, that.data.kw)  
 

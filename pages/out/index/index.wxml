@@ -142,7 +142,7 @@
 		</view>
 
 		<view class='indexbox' wx:for='{{list1}}' hidden="{{currentTab!==1}}">
-			<navigator url='../seeAdoctor/seeAdoctor?id={{item.itemId}}'>
+			<navigator url='../../editPatient/editPatient?id={{item.itemId}}'>
 				<view>
 					<view>
 						<text class="viewLf lineOne">{{item.realname}}</text>
@@ -156,7 +156,8 @@
 			</navigator>
 		</view>
 		<view class='indexbox' wx:for='{{list2}}' hidden="{{currentTab!==2}}">
-			<navigator url='../seeAdoctor/seeAdoctor?id={{item.itemId}}'>
+			
+			<navigator url='../../editPatient/editPatient?id={{item.itemId}}'>
 				<view>
 					<view>
 						<text class="viewLf lineOne">{{item.realname}}</text>

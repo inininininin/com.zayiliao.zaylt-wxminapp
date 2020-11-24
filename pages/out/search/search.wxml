@@ -15,8 +15,8 @@
 </view>
 
 <view style='width:100%;height:100%'>
-<view class='indexbox' wx:for='{{list}}'>
-      <navigator url='../seeAdoctor/seeAdoctor?id={{item.itemId}}'>
+<view class='indexbox' wx:for='{{list1}}'>
+      <navigator url='../../editPatient/editPatient?id={{item.itemId}}'>
         <view>
           <view>
             <text>{{item.realname}}</text>
