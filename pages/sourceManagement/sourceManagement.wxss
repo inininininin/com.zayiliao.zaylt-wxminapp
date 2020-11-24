@@ -227,7 +227,7 @@ page {
 
 .indexbox navigator>view>view:nth-child(2) text {
   /* display: inline-block; */
-  display: block;
+  /* display: block; */
   margin: 10rpx 0 0 0;
 }
 

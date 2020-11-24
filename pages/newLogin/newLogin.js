@@ -232,6 +232,27 @@ Page({
   },
   changeHos: function (key, code, password) {
     var that = this
+    if(!that.data.key){
+      wx.showToast({
+        title: '请填写号码',
+        icon:'none',
+      })
+      return
+    }
+    if(!that.data.code){
+      wx.showToast({
+        title: '请填写验证码',
+        icon:'none',
+      })
+      return
+    }
+    if(!that.data.password){
+      wx.showToast({
+        title: '请填写密码',
+        icon:'none',
+      })
+      return
+    }
     wx.request({
       url: app.globalData.url + '/hospital/set-pwd-by-phone',
       header: {
@@ -254,6 +275,7 @@ Page({
           setTimeout(function () {
             var loginChange = !that.data.loginChange;
             that.setData({
+              password:'',
               loginChange: loginChange,
               times: '获取验证码',
             });
@@ -295,6 +317,7 @@ Page({
           setTimeout(function () {
             var loginChange = !that.data.loginChange;
             that.setData({
+              password:'',
               loginChange: loginChange,
               times: '获取验证码',
             });
@@ -327,7 +350,7 @@ Page({
       },
       method: 'post',
       success: function (res) {
-        if (res.data.data.code == 0) {
+        if (res.data.code == 0) {
           wx.showToast({
             title: '修改成功',
             icon: 'none',
@@ -335,15 +358,20 @@ Page({
           })
           setTimeout(function () {
             var loginChange = !that.data.loginChange;
-            this.setData({
-              loginChange: loginChange
+            that.setData({
+              password:'',
+              loginChange: loginChange,
+              times: '获取验证码',
             });
           }, 1000)
         } else {
           wx.showToast({
-            title: res.data.data.codeMsg,
+            title: res.data.codeMsg,
             icon: 'none',
             duration: 1000,
+          })
+          that.setData({
+            times: '获取验证码',
           })
         }
       }
@@ -373,7 +401,7 @@ Page({
     } else if (that.data.currentTab == 1) {
       that.changeCli(key, that.data.code, password)
     } else {
-      // that.changeMan(key, password)
+      that.changeMan(key, that.data.code, password)
       wx.showToast({
         title: '维护中',
         icon: 'none',

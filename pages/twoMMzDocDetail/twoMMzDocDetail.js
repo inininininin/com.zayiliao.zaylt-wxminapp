@@ -39,6 +39,7 @@ Page({
             title: res.data.data.name + '医生介绍'
           })
           var info = res.data.data.intro;
+          info=info.replace(/&lt;/g, "< ").replace(/&gt;/g, " >").replace(/align="left"/g, "style='text-align:left'").replace(/align="center"/g, "style='text-align:center'").replace(/align="right"/g, "style='text-align:right'")
           WxParse.wxParse('info', 'html', info, that, 5);
         }
       }

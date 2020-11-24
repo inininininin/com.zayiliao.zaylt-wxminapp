@@ -503,7 +503,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if(this.data.changeIs==1){
+      var that = this
+      that.setData({
+        schemeList: [],
+      })
+      that.lastPageNo()
+      that.lastPage(0)
+      this.setData({
+        changeIs:0
+      })
+    }
+    
   },
 
   /**
@@ -528,7 +539,9 @@ Page({
     that.setData({
       schemeList: [],
     })
+    that.lastPageNo()
     that.lastPage(0)
+
     wx.stopPullDownRefresh()
   },
 

@@ -4,7 +4,7 @@
 	<image class="shareImg1" style="width:750rpx;height:350rpx;" src="{{list.cover}}" mode='aspectFill' data-type="image" data-url="{{list.cover}}"></image>
 	<text class='title shareImg1' data-type="text" data-text="{{list.title}}">{{list.title}}</text>
 	<view class="readShare">
-		<text class="shareImg1"  data-type="text" data-text="浏览量：{{list.viewCount||0}}">浏览量：{{list.viewCount||0}}</text>
+		<text class="shareImg1"  data-type="text" data-text="浏览量：{{list.viewCount+1||1}}">浏览量：{{list.viewCount+1||1}}</text>
 		<text class="shareImg1"   data-type="text" data-text="分享数：{{list.shareCount||0}}">分享数：{{list.shareCount||0}}</text>
 	</view>
 	<view class='hospitalName'>

@@ -19,30 +19,30 @@ Page({
     id: '',
     display: 'none',
     showCanvasIf: false,
-    showimageurl:false,
-    imageurl:'',
-    cover:'',
+    showimageurl: false,
+    imageurl: '',
+    cover: '',
   },
   // wxParseTagATap(e){
   //   wx.navigateTo({
   //     url:'../../webview/webview?href='+encodeURI(e.currentTarget.dataset.src)
   //   })
   // },
-  closeshowimageurl(e){
+  closeshowimageurl(e) {
     this.setData({
-      showimageurl:false
+      showimageurl: false
     })
   },
-  openshowimageurl(e){
+  openshowimageurl(e) {
     return
   },
-  imageurlLoad(e){
-    let that=this
+  imageurlLoad(e) {
+    let that = this
     this.saveImage(this.data.imageurl)
   },
   saveImage(url) {
     console.log(url)
-    let that=this
+    let that = this
     that.setData({
       imageurl: url,
       showCanvasIf: false
@@ -52,13 +52,13 @@ Page({
       success(res) {
         wx.showModal({
           title: '图片已保存',
-          content:'请至朋友圈进行分享',
-          showCancel:false,
-          success:function(res){
+          content: '请至朋友圈进行分享',
+          showCancel: false,
+          success: function (res) {
             that.setData({
-              showimageurl:false,
-              showCanvasIf:false,
-              close:'none',
+              showimageurl: false,
+              showCanvasIf: false,
+              close: 'none',
             })
           }
         })
@@ -75,21 +75,21 @@ Page({
     let that = this
     wx.showToast({
       title: '请稍等',
-      icon:'none',
-      duration:2000
+      icon: 'none',
+      duration: 2000
     })
     that.setData({
       showCanvasIf: true,
-      close:'none',
+      close: 'none',
     })
-    if(that.data.imageurl){
+    if (that.data.imageurl) {
       wx.hideToast({
         complete: (res) => {},
       })
       that.setData({
-        showimageurl:true
+        showimageurl: true
       })
-    }else{
+    } else {
       that.drawImage2();
     }
     // setTimeout(function () {
@@ -99,7 +99,7 @@ Page({
   drawImage2() {
     let self = this;
     self.setData({
-      imageHeight:self.data.cancasHeight*65/75
+      imageHeight: self.data.cancasHeight * 65 / 75
     })
     this.drawImage2 = new Wxml2Canvas({
       width: 750,
@@ -115,9 +115,9 @@ Page({
           complete: (res) => {},
         })
         self.setData({
-          imageurl:url,
+          imageurl: url,
           showCanvasIf: false,
-          showimageurl:true,
+          showimageurl: true,
         })
         // wx.previewImage({
         //   current: url, // 当前显示图片的http链接
@@ -170,15 +170,14 @@ Page({
     var id = options.id
     var that = this
     that.sys();
-    app.loginRefresh.hospital.map.cover=app.cover(app.loginRefresh.hospital.map.cover)
-that.setData({
-  cover:app.loginRefresh.hospital.map.cover
-})
+   
+    
     if (app.globalData.lastClient == 1) {
-      var param = encodeURIComponent('pages/out/articleDetail/articleDetail?id=' + id + '&ids=1')
+      var param = encodeURIComponent('pages/out/highQualityCaseDetail/highQualityCaseDetail?id=' + id + '&ids=1')
     } else {
-      var param = encodeURIComponent('pages/out/articleDetail/articleDetail?id=' + id + '&ids=2')
+      var param = encodeURIComponent('pages/out/highQualityCaseDetail/highQualityCaseDetail?id=' + id + '&ids=2')
     }
+  
     // var param = encodeURIComponent('pages/out/articleDetail/articleDetail?id=' + id+'&isfrom=1' )
     wx.getImageInfo({
       src: app.globalData.url + '/wxminqrcode?path=' + param + '&width=200',
@@ -222,16 +221,16 @@ that.setData({
             id: id,
           });
           let query = wx.createSelectorQuery();
-              query.select('.shareImg').boundingClientRect(rect => {
-                let clientHeight = rect.height;
-                let clientWidth = rect.width;
-                let ratio = 750 / clientWidth;
-                let height = clientHeight * ratio;
-                that.setData({
-                  cancasHeight: height
-                })
-                console.log(height);
-              }).exec();
+          query.select('.shareImg').boundingClientRect(rect => {
+            let clientHeight = rect.height;
+            let clientWidth = rect.width;
+            let ratio = 750 / clientWidth;
+            let height = clientHeight * ratio;
+            that.setData({
+              cancasHeight: height
+            })
+            console.log(height);
+          }).exec();
           var contentBtId = res.data.data.contentBtId
           wx.request({
             url: app.globalData.domain + contentBtId,
@@ -246,8 +245,9 @@ that.setData({
             success: function (res) {
               // console.log(res.data)
               var article = res.data
+              article=article.replace(/&lt;/g, "< ").replace(/&gt;/g, " >").replace(/align="left"/g, "style='text-align:left'").replace(/align="center"/g, "style='text-align:center'").replace(/align="right"/g, "style='text-align:right'")
               WxParse.wxParse('article', 'html', article, that, 5);
-console.log(article)
+              console.log(article)
               let query = wx.createSelectorQuery();
               query.select('.shareImg').boundingClientRect(rect => {
                 let clientHeight = rect.height;
@@ -272,8 +272,15 @@ console.log(article)
         }
       }
     })
-
-
+console.log(app.loginRefresh.hospital.map.cover)
+    if(app.loginRefresh.hospital){
+      if(app.loginRefresh.hospital.map.cover){
+        app.loginRefresh.hospital.map.cover = app.cover(app.loginRefresh.hospital.map.cover)
+        that.setData({
+          cover: app.loginRefresh.hospital.map.cover
+        })
+      }
+    }
   },
   sharewx: function (e) {
     onShareAppMessage()
@@ -362,8 +369,7 @@ console.log(article)
           "Content-Type": "application/x-www-form-urlencoded",
           'cookie': app.globalData.cookie
         },
-        success: function (res) {
-        }
+        success: function (res) {}
       })
       // that.setData({
       //   pyqewm: app.globalData.url + '/wxminqrcode?path=pages/articleDetail/articleDetail?id=' + that.data.id + '&width=200'
@@ -475,7 +481,7 @@ console.log(article)
       canvasShow: true
     })
     wx.downloadFile({
-      url: that.data.list.cover,//注意公众平台是否配置相应的域名
+      url: that.data.list.cover, //注意公众平台是否配置相应的域名
       success: function (res) {
         console.log(res.tempFilePath)
         that.setData({
@@ -619,28 +625,32 @@ console.log(article)
         "Content-Type": "application/x-www-form-urlencoded",
         'cookie': app.globalData.cookie
       },
-      success: function (res) {
-      }
+      success: function (res) {}
     })
     if (app.globalData.lastClient == 1) {
-      var path = '/pages/index/index?shareId=' + this.data.id + "&isShare=2"
+      var path = 'pages/out/highQualityCaseDetail/highQualityCaseDetail?id=' + this.data.id //+ "&ids=1"
     } else {
-      var path = '/pages/out/index/index?shareId=' + this.data.id + "&isShare=2"
+      var path = 'pages/out/highQualityCaseDetail/highQualityCaseDetail?id=' + this.data.id //+ "&ids=2"
     }
+    // if (app.globalData.lastClient == 1) {
+    //   var path = '/pages/index/index?shareId=' + this.data.id + "&isShare=2"
+    // } else {
+    //   var path = '/pages/out/index/index?shareId=' + this.data.id + "&isShare=2"
+    // }
     return {
-      title: this.data.list.name,//分享内容
+      title: this.data.list.name, //分享内容
       path: path, //分享地址
       // path: '/pages/out/highQualityCaseDetail/highQualityCaseDetail?id=' + this.data.id,//分享地址
-      imageUrl: this.data.list.cover,//分享图片
+      imageUrl: this.data.list.cover, //分享图片
     }
   },
   onShareTimeline: function () {
-		return {
-	      title: this.data.list.name,
-	      query: {
-	        id: this.data.id
-	      },
-	      imageUrl: this.data.list.cover
-	    }
-	},
+    return {
+      title: this.data.list.name,
+      query: {
+        id: this.data.id
+      },
+      imageUrl: this.data.list.cover
+    }
+  },
 })

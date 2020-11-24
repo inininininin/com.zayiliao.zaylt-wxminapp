@@ -145,7 +145,7 @@
 			<navigator url='../seeAdoctor/seeAdoctor?id={{item.itemId}}'>
 				<view>
 					<view>
-						<text>{{item.realname}}</text>
+						<text class="viewLf lineOne">{{item.realname}}</text>
 						<view class='viewRt'>
 							<image mode="aspectFill" src='../img/weijiuzhen@2x.png'></image>
 							<text>未就诊</text>
@@ -159,7 +159,7 @@
 			<navigator url='../seeAdoctor/seeAdoctor?id={{item.itemId}}'>
 				<view>
 					<view>
-						<text>{{item.realname}}</text>
+						<text class="viewLf lineOne">{{item.realname}}</text>
 						<view class='viewRt1'>
 							<image mode="aspectFill" src='../img/yijiuzhen@2x.png'></image>
 							<text>已就诊</text>

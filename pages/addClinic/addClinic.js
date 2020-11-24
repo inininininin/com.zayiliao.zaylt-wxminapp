@@ -120,7 +120,8 @@ Page({
               var currPage = pages[pages.length - 1];   //当前页面
               var prevPage = pages[pages.length - 2];  //上一个页面
               prevPage.setData({
-                navtitle: that.data.name
+                navtitle: that.data.name,
+                changeIs:1
               });
               wx.navigateBack({
 
@@ -298,6 +299,7 @@ Page({
                     remark: res.data.data.remark,
                     license: res.data.data.license,
                     yyzzimg: yyzzimg,
+                    clinicPromoterId:res.data.data.hospitalUserId,
                     showIs: false,
                   })
                 } else {

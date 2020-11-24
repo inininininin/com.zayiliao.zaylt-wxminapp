@@ -11,7 +11,7 @@
 		</view>
 	</view>
 	<view class="readShare">
-		<text class="shareImg1"  data-type="text" data-text="浏览量：{{list.viewCount||0}}">浏览量：{{list.viewCount||0}}</text>
+		<text class="shareImg1"  data-type="text" data-text="浏览量：{{list.viewCount+1||1}}">浏览量：{{list.viewCount+1||1}}</text>
 		<text class="shareImg1"   data-type="text" data-text="分享数：{{list.shareCount||0}}">分享数：{{list.shareCount||0}}</text>
 	</view>
 	<view class='detail ' style='font-size:{{fontSize}}rpx !important'>

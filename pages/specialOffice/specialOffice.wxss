@@ -1,6 +1,6 @@
 /* pages/specialOffice/specialOffice.wxss */
-@import '../common/common.wxss';
-
+/* @import '../common/common.wxss'; */
+@import '../../wxParse/wxParse.wxss';
 page {
   background: #fff;
 }
@@ -68,15 +68,6 @@ page {
   border-radius: 90rpx !important;
    margin: 0 auto;
    display: block;
-}
-.doctorItem>image {
-  
-  /* width: 180rpx;
-  height: 180rpx; */
-  /* margin: 0 auto;
-  display: block;
-  border-radius: 50%; */
-  
 }
 
 .doctorItem>view:nth-child(2) {

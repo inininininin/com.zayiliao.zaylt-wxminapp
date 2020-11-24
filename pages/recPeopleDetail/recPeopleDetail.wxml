@@ -38,7 +38,7 @@
 <view style="margin-top:406rpx">
   <view wx:if='{{clinicNum!=0}}' class="clinicItem" bindtap="clinicDetail" data-id='{{item.hospitalClinicId}}' wx:for='{{schemeList}}'>
     <view>
-      <text>{{item.name||''}}</text>
+      <text  class="lineOne">{{item.name||''}}</text>
       <image  mode="aspectFill"  catchtap="changeClinic" data-id="{{item.hospitalClinicId}}" data-name="{{item.name}}" src="../img/zhuanyi@2x.png"></image>
     </view>
   </view>

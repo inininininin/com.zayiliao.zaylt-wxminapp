@@ -199,6 +199,10 @@ function html2json(html, bindName) {
             //临时记录source资源
             if (node.tag === 'source') {
                 results.source = node.attr.src;
+                if( node.attr.src.slice(0,1)=='/'){
+                    results.source='https://zaylt.njshangka.com'+node.attr.src
+                }
+              
             }
 
             if (unary) {
@@ -223,7 +227,7 @@ function html2json(html, bindName) {
             //当有缓存source资源时于于video补上src资源
             if (node.tag === 'video' && results.source) {
                 node.attr.src = results.source;
-                delete result.source;
+                delete results.source;
             }
 
             if (bufArray.length === 0) {

@@ -11,7 +11,8 @@
     </view>
 </view>
 <view class="doctorintro">
-  <text  wx:for='{{jobTitles}}'>{{item}}</text>
+  <text>{{jobTitles}}</text>
+  <!-- <text  wx:for='{{jobTitles}}'>{{item}}</text> -->
   <!-- <text>专家</text> -->
 </view>
 <view class="detail">

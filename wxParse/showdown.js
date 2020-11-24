@@ -2397,6 +2397,7 @@ showdown.subParser('tables', function (text, options, globals) {
   }
 
   function buildTable(headers, cells) {
+    
     var tb = '<table>\n<thead>\n<tr>\n',
         tblLgn = headers.length;
 
@@ -2414,6 +2415,7 @@ showdown.subParser('tables', function (text, options, globals) {
     }
     tb += '</tbody>\n</table>\n';
     return tb;
+  
   }
 
   text = globals.converter._dispatch('tables.before', text, options, globals);

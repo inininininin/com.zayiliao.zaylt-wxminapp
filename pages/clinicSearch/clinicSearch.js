@@ -106,7 +106,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+if(this.data.changeIs==1){
+  this.setData({
+    schemeList:[]
+  })
+  this.lastpageNo('')
+  this.lastPage(0, '')
+}
   },
   lastpageNo(kw) {
     let that = this

@@ -1,19 +1,6 @@
 <view wx:if='{{type}}'>
 	<!--pages/newActivity/newActivity.wxml-->
-	<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
-		<view class="header">
-			<view class="status-bar" style="height:{{statusBarHeight}}px"></view>
-			<view class="title-bar" style="height:{{titleBarHeight}}px">
-				<view>
-					<image mode="aspectFill" wx:if='{{lookThis}}' class="image" bindtap='backHistory' style='display:inline-block;left:10rpx;' src='../img/f1.svg'></image>
-					<image mode="aspectFill" wx:if='{{!lookThis}}' class="image" bindtap='backHistoryOnly' style='display:inline-block;left:10rpx;' src='../img/f1.svg'></image>
-					<text wx:if='{{lookThis}}' class="save" bindtap="save" style=" margin-left: 95rpx !important;background:{{bgColor}};color:{{color}},">预览</text>
-					<text wx:if='{{!lookThis}}' class="save" bindtap="{{clickMethod}}" style=" margin-left: 95rpx !important">发布</text>
-					<text class="text" style="margin-left:-195rpx !important">{{navtitle}}</text>
-				</view>
-			</view>
-		</view>
-	</view>
+	
 
 	<view wx:if='{{lookThis}}'>
 		<view class="topImg" style="background:url({{topImg}}) no-repeat;background-size:cover;background-position: center;">
@@ -76,25 +63,15 @@
 
 
 <view wx:if='{{!type}}'>
-	<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
-		<view class="header">
-			<view class="status-bar" style="height:{{statusBarHeight}}px"></view>
-			<view class="title-bar" style="height:{{titleBarHeight}}px">
-				<view>
-					<image mode="aspectFill" class="image" bindtap='backHistory' style='display:inline-block;left:10rpx;' src='../img/f1.svg'></image>
-					<text class="text" style="margin-left:0 !important">{{navtitle}}</text>
-				</view>
-			</view>
-		</view>
-	</view>
+	
 
 	<view>
 		<view class="topImg" style="background:url({{topImg}}) no-repeat;background-size:cover;background-position: center;">
 		</view>
 
 		<view class="readShare">
-			<text>浏览量：{{viewCount+1||1}}</text>
-			<text>分享数：{{shareCount+1||1}}</text>
+			<text>浏览量：{{viewCount||0}}</text>
+			<text>分享数：{{shareCount||0}}</text>
 		</view>
 
 		<view>

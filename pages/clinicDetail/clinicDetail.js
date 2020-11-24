@@ -23,7 +23,8 @@ Page({
     status: '',
     totalCount: 0,
     totalCount1: 0,
-    totalCount2: 0
+    totalCount2: 0,
+    changeIs:0
   },
   edit(e) {
     wx.navigateTo({
@@ -401,7 +402,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if(this.data.changeIs==1){
+      var pages = getCurrentPages();
+      var currPage = pages[pages.length - 1];   //当前页面
+      var prevPage = pages[pages.length - 2];  //上一个页面
+      prevPage.setData({
+        changeIs:1
+      });
+      this.setData({
+        changeIs:0
+      })
+    }
+    
   },
 
   /**

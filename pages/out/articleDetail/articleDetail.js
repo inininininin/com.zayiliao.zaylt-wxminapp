@@ -254,8 +254,8 @@ Page({
               'cookie': app.globalData.cookie
             },
             success: function (res) {
-              // console.log(res.data)
               var article = res.data
+              article=article.replace(/&lt;/g, "< ").replace(/&gt;/g, " >").replace(/align="left"/g, "style='text-align:left'").replace(/align="center"/g, "style='text-align:center'").replace(/align="right"/g, "style='text-align:right'")
               WxParse.wxParse('article', 'html', article, that, 5);
               console.log(article)
               let query = wx.createSelectorQuery();
@@ -569,7 +569,6 @@ Page({
     //   }
     // }
   },
-
   onShareTimeline: function () {
     console.log(this.data.list.title)
 		return {

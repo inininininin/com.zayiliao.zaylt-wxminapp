@@ -97,11 +97,11 @@
 					<image mode="aspectFill" wx:if='{{item.status==1}}' src="../img/orange@2x.png"></image>
 					<image mode="aspectFill" wx:if='{{item.status==4}}' src="../img/blue@2x.png"></image>
 					<view>
-						<view>{{item.realname||''}}
+						<view class="lineOne">{{item.realname||''}}
 							<image mode="aspectFill" wx:if='{{item.status==1}}' src="../img/red-up@2x.png" style="margin-left:10rpx;"></image>
 						</view>
-						<text>推送：{{item.pushTime||''}}</text>
-						<text>所属门诊：{{item.clinicName||''}}</text>
+						<text class="lineOne">推送：{{item.pushTime||''}}</text>
+						<text class="lineOne">所属门诊：{{item.clinicName||''}}</text>
 					</view>
 					<view catchtap="makesure" data-id="{{item.itemId}}" style="z-index:999" wx:if='{{item.status==1}}' class="makesure">确认就诊</view>
 					<view wx:if='{{item.status==4}}' class="nosure">已就诊</view>

@@ -1,5 +1,6 @@
 // pages/specialOffice/specialOffice.js
 var app = getApp()
+var WxParse = require('../../wxParse/wxParse.js');
 Page({
 
   /**
@@ -20,6 +21,7 @@ Page({
     duration: 500,
     showIs: false,
     current:1,
+    totalCount:0,
   },
   previewImage: function (e) {
     var currents = e.target.dataset.src;
@@ -70,6 +72,25 @@ Page({
         if (res.data.code == 0) {
           var imgList=[];
           var shiYingZheng=[]
+          if(res.data.data.contentBtId!= '' && res.data.data.contentBtId != null && res.data.data.contentBtId != undefined){
+            let contentBtId= res.data.data.contentBtId
+            wx.request({
+              url: app.globalData.domain + contentBtId,//+'.html',
+              method: 'get',
+              header: {
+                "Content-Type": "application/x-www-form-urlencoded",
+                'cookie': app.globalData.cookie
+              },
+              success: function (res) {
+                var article = res.data
+                article=article.replace(/&lt;/g, "< ").replace(/&gt;/g, " >").replace(/align="left"/g, "style='text-align:left'").replace(/align="center"/g, "style='text-align:center'").replace(/align="right"/g, "style='text-align:right'")
+                WxParse.wxParse('article', 'html', article, that, 5);
+
+              }
+            })
+          }
+          
+         
           if (res.data.data.shiYingZheng != '' && res.data.data.shiYingZheng != null && res.data.data.shiYingZheng != undefined){
             var shiYingZhengs = res.data.data.shiYingZheng.split(',')
             for (var i in shiYingZhengs) {
@@ -131,6 +152,7 @@ Page({
               } 
             }
             that.setData({
+              totalCount:res.data.data.sum.totalCount,
               items: items,
             })
         } else if (res.data.code == 20) {

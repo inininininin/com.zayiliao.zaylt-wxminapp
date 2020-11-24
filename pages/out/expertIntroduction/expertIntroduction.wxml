@@ -9,7 +9,8 @@
     <view>
       <text class='name'>{{item.name}}</text>
       <view >
-        <text wx:for='{{item.jobTitles}}'>{{item}}</text>
+        <text>{{item.jobTitles}}</text>
+        <!-- <text wx:for='{{item.jobTitles}}'>{{item}}</text> -->
       </view>
       <text class='intro {{item.class}}'>{{item.intro}}</text>    
     </view>

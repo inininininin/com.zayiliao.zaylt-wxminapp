@@ -62,6 +62,7 @@ Page({
          pn: toPageNo,
         ps: 10,
         hospitalId: app.globalData.hospitalId,
+        // clinicId:'20200430144318673866665112295932',//app.globalData.clinicId||'',
         sorts: 'addTime',
         orders: 'desc'
       },
@@ -78,7 +79,7 @@ Page({
                 var jobTitles = res.data.data.items[i].jobTitles.split('，')
               }
           
-              res.data.data.items[i].jobTitles = jobTitles
+              // res.data.data.items[i].jobTitles = jobTitles
             }
             
             res.data.data.items[i].headimg=app.cover(res.data.data.items[i].headimg)

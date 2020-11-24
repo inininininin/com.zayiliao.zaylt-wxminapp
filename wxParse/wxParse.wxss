@@ -92,7 +92,13 @@ view{
 .wxParse-video-video{
     width:100%;
 }
-
+.wxParse-audio{
+    text-align: center;
+    margin: 10px 0;
+}
+.wxParse-audio-audio{
+    width:100%;
+}
 .wxParse-img{
     /*background-color: #efefef;*/
     overflow: hidden;
@@ -149,8 +155,10 @@ view{
     background-color: #fff;
     margin-right: 5px;
 }
-
-/*.wxParse-table{
+.wxParse-table{
+    width:auto !important
+}
+/* .wxParse-table{
     width: 100%;
     height: 400px;
 }
@@ -162,7 +170,7 @@ view{
     display: flex;
     width: 580px;
     overflow: auto;
-}*/
+} */
 
 .wxParse-u {
   text-decoration: underline;
@@ -179,17 +187,19 @@ view{
 }
 .wxParse-tr{
 	display: flex;
-	border-right:1px solid #e0e0e0;
+	/* border-right:1px solid #e0e0e0;
 	border-bottom:1px solid #e0e0e0;
-	border-top:1px solid #e0e0e0;
+	border-top:1px solid #e0e0e0; */
 }
 .wxParse-th,
 .wxParse-td{
 	flex:1;
-	padding:5px;
-	font-size:28rpx;
-	border-left:1px solid #e0e0e0;
-	word-break: break-all;
+	/* padding:5px; */
+	/* font-size:28rpx; */
+    border-left:1px solid #e0e0e0;
+    border-bottom:1px solid #e0e0e0;
+    word-break: break-all;
+    box-sizing: border-box;
 }
 .wxParse-td:last{
 	border-top:1px solid #e0e0e0;

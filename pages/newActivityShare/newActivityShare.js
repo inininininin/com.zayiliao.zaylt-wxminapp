@@ -266,18 +266,12 @@ Page({
         success: function (res) {
           wx.hideToast()
           if (res.data.code == 0) {
-            var startTime='开始时间',endTime='结束时间';
             res.data.data.cover = app.cover(res.data.data.cover)
-            if(res.data.data.startTime){
-               startTime=app.dateChange(res.data.data.startTime)
-            }
-            if(res.data.data.endTime){
-               endTime=app.dateChange(res.data.data.endTime)
-            }
+
             var contentBtId = res.data.data.contentBtId
             that.setData({
-              date: startTime,
-              date2: endTime,
+              date: app.dateChange(res.data.data.startTime),
+              date2: app.dateChange(res.data.data.endTime),
               topImg: res.data.data.cover||'https://zaylt.njshangka.com/ylt/resource/img/Group.png',
               title: res.data.data.title,
               tel: res.data.data.tel,
