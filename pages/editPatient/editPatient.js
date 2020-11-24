@@ -14,7 +14,11 @@ Page({
     imgBlob: '',
     imglist: [],
     sickness: '',
-    remark: ''
+    remark: '',
+    idcardNo: '',
+    tel: '',
+    realname: '',
+    saveShow:true
   },
   phoneThis(e) {
     if (e.currentTarget.dataset.phone == '') {
@@ -47,13 +51,14 @@ Page({
       },
       success: function (res) {
         if (res.data.code == 0) {
-          var arr = new Array(), picBlob;
+          var arr = new Array(),
+            picBlob;
 
           if (res.data.data.invoices != '' && res.data.data.invoices != null && res.data.data.invoices != undefined) {
             picBlob = res.data.data.invoices.split(',')
             var imgBlob = res.data.data.invoices.split(',')
             for (var r = 0; r < picBlob.length; r++) {
-              picBlob[r]=app.cover(picBlob[r])
+              picBlob[r] = app.cover(picBlob[r])
             }
             that.setData({
               show: 1,
@@ -72,7 +77,7 @@ Page({
             that.setData({
               navtitle: '已就诊'
             })
-             wx.setNavigationBarTitle({
+            wx.setNavigationBarTitle({
               title: '已就诊',
             })
           }
@@ -91,6 +96,9 @@ Page({
             detail: res.data.data,
             sickness: res.data.data.sickness,
             remark: res.data.data.remark,
+            idcardNo: res.data.data.idcardNo,
+            tel: res.data.data.tel,
+            realname: res.data.data.realname
           })
         } else if (res.data.code == 20) {
           wx.navigateTo({
@@ -98,8 +106,8 @@ Page({
           })
         } else {
           wx.showToast({
-            title:  res.data.codeMsg,
-            icon:'none'
+            title: res.data.codeMsg,
+            icon: 'none'
           })
         }
       }
@@ -122,16 +130,41 @@ Page({
       remark: e.detail.value
     })
   },
+  realname(e) {
+    this.setData({
+      realname: e.detail.value
+    })
+  },
+  tel(e) {
+    this.setData({
+      tel: e.detail.value
+    })
+  },
+  idcardNo(e) {
+    this.setData({
+      idcardNo: e.detail.value
+    })
+  },
   save: function () {
     var that = this
+    wx.showToast({
+      title: '已提交，请稍等',
+      icon:'none',
+    })
+    that.setData({
+      saveShow:false
+    })
     wx.request({
       url: app.globalData.url + '/c2/patient/itemalter', //仅为示例，非真实的接口地址
       method: 'post',
       data: {
-        invoices: that.data.imgBlob||'',
-        sickness: that.data.sickness||'',
-        remark: that.data.remark||'',
-        patientId: that.data.id||'',
+        invoices: that.data.imgBlob || '',
+        sickness: that.data.sickness || '',
+        remark: that.data.remark || '',
+        patientId: that.data.id || '',
+        idcardNo:that.data.idcardNo || '',
+        tel:that.data.tel || '',
+        realname:that.data.realname || '',
       },
       header: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -146,6 +179,9 @@ Page({
             mask: true,
             complete: function complete(res) {
               setTimeout(function () {
+                that.setData({
+                  saveShow:true
+                })
                 wx.navigateBack({
                   delta: 1,
                 })
@@ -153,6 +189,14 @@ Page({
             }
           })
 
+        }else{
+          wx.showToast({
+            title: res.data.codeMsg,
+            icon:'none'
+          })
+          that.setData({
+            saveShow:true
+          })
         }
       }
     })
@@ -220,7 +264,8 @@ Page({
     })
   },
   deletThis(e) {
-    var img = [], imgBlob = ''
+    var img = [],
+      imgBlob = ''
     var src = e.target.dataset.src
     var pic = this.data.imglist
     for (var i in pic) {
@@ -284,10 +329,8 @@ Page({
       title: '欢迎使用共享医联体小程序', //分享内容
       path: path, //分享地址
       imageUrl: 'https://zaylt.njshangka.com/favicon.ico', //分享图片
-      success: function (res) {
-      },
-      fail: function (res) {
-      }
+      success: function (res) {},
+      fail: function (res) {}
     }
   }
 })

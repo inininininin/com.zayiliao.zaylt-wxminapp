@@ -92,7 +92,8 @@
       
     </view> -->
 		<view class='indexbox' wx:for='{{list0}}' hidden="{{currentTab!==0}}">
-			<navigator url='{{item.status==4?"../editPatient/editPatient?id=":"../out/seeAdoctor/seeAdoctor?id="}}{{item.itemId}}'>
+			<!-- <navigator url='{{item.status==4?"../editPatient/editPatient?id=":"../out/seeAdoctor/seeAdoctor?id="}}{{item.itemId}}'> -->
+				<navigator url='../editPatient/editPatient?id={{item.itemId}}'>
 				<view class="box">
 					<image mode="aspectFill" wx:if='{{item.status==1}}' src="../img/orange@2x.png"></image>
 					<image mode="aspectFill" wx:if='{{item.status==4}}' src="../img/blue@2x.png"></image>
@@ -115,7 +116,8 @@
 		</view>
 
 		<view class='indexbox' wx:for='{{list1}}' hidden="{{currentTab!==1}}">
-			<navigator url='{{item.status==4?"../editPatient/editPatient?id=":"../out/seeAdoctor/seeAdoctor?id="}}{{item.itemId}}'>
+			<!-- <navigator url='{{item.status==4?"../editPatient/editPatient?id=":"../out/seeAdoctor/seeAdoctor?id="}}{{item.itemId}}'> -->
+				<navigator url='../editPatient/editPatient?id={{item.itemId}}'>
 				<view class="box">
 					<image mode="aspectFill" wx:if='{{item.status==1}}' src="../img/orange@2x.png"></image>
 					<image mode="aspectFill" wx:if='{{item.status==4}}' src="../img/blue@2x.png"></image>
@@ -132,7 +134,8 @@
 			</navigator>
 		</view>
 		<view class='indexbox' wx:for='{{list2}}' hidden="{{currentTab!==2}}">
-			<navigator url='{{item.status==4?"../editPatient/editPatient?id=":"../out/seeAdoctor/seeAdoctor?id="}}{{item.itemId}}'>
+			<!-- <navigator url='{{item.status==4?"../editPatient/editPatient?id=":"../out/seeAdoctor/seeAdoctor?id="}}{{item.itemId}}'> -->
+				<navigator url='../editPatient/editPatient?id={{item.itemId}}'>
 				<view class="box">
 					<image mode="aspectFill" wx:if='{{item.status==1}}' src="../img/orange@2x.png"></image>
 					<image mode="aspectFill" wx:if='{{item.status==4}}' src="../img/blue@2x.png"></image>

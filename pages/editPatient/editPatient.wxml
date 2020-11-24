@@ -17,13 +17,32 @@
 	<text></text>
 	基本信息
 
-	<view class="save" bindtap="save">
+	<view class="save" bindtap="save" wx:if="{{saveShow}}"> 
+		<text>保存</text>
+		<image mode="aspectFill" src="../img/save@2x.png"></image>
+	</view>
+	<view class="save" wx:if="{{!saveShow}}">
 		<text>保存</text>
 		<image mode="aspectFill" src="../img/save@2x.png"></image>
 	</view>
 </view>
 <view class='box' style="margin-top:0;">
 	<view>
+		<text>病员姓名</text>
+		<input style="color:#2B77EF" placeholder="请输入" bindinput="realname" placeholder-style="color:rgb(43,119,219);color:rgb(43,119,219)" value="{{realname||''}}"></input>
+		<!-- <text>{{detail.remark||''}}</text> -->
+	</view>
+	<view>
+		<text>联系方式</text>
+		<input style="color:#2B77EF" placeholder="请输入" bindinput="tel" placeholder-style="color:rgb(43,119,219);color:rgb(43,119,219)" value="{{tel||''}}"></input>
+		<!-- <text>{{detail.remark||''}}</text> -->
+	</view>
+	<view>
+		<text>证件号码</text>
+		<input style="color:#2B77EF" placeholder="请输入" bindinput="idcardNo" placeholder-style="color:rgb(43,119,219);color:rgb(43,119,219)" value="{{idcardNo||''}}"></input>
+		<!-- <text>{{detail.remark||''}}</text> -->
+	</view>
+	<!-- <view>
 		<text>病员姓名</text><text>{{detail.realname||''}}</text>
 	</view>
 	<view>
@@ -31,7 +50,7 @@
 	</view>
 	<view>
 		<text>证件号码</text><text>{{detail.idcardNo||''}}</text>
-	</view>
+	</view> -->
 	<view>
 		<text>所属门诊</text><text>{{detail.clinicName||''}}</text>
 	</view>
