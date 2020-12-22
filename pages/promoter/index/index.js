@@ -49,8 +49,8 @@ Page({
         pn: toPageNo,
         ps: pageSize,
         kw: kw,
-        sorts: 'addTime',
-        orders: 'desc'
+        sorts: 'orderNo',
+        orders: 'asc'
       },
       method: 'post',
       success: function (res) {

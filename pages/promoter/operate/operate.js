@@ -30,8 +30,8 @@ Page({
         hospitalId: app.globalData.hospitalId,
         pn: toPageNo,
         ps: 15,
-        sorts: 'addTime',
-        orders: 'desc'
+        sorts: 'orderNo',
+        orders: 'asc'
       },
       method: 'post',
       success: function (res) {

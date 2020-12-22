@@ -80,8 +80,8 @@ Page({
          pn: toPageNo,
         ps: 10,
         kw: kw,
-        sorts: 'addTime',
-        orders:'desc',
+        sorts: 'orderNo',
+        orders:'asc',
         hospitalId: app.globalData.hospitalId
       },
       method: 'post',
