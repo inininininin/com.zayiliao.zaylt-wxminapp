@@ -244,8 +244,8 @@ Page({
         pn: toPageNo,
         ps: 10,
         kw: kw,
-        sorts: 'addTime',
-        orders: 'desc'
+        sorts: 'orderNo',
+        orders: 'asc'
       },
       method: 'post',
       success: function (res) {
